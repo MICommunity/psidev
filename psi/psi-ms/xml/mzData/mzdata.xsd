@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.11 2003/11/14 16:51:37 krunte Exp $
+ $Id: mzdata.xsd,v 1.12 2004/07/27 10:26:32 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Kai Runte (EBI)
@@ -11,13 +11,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
     <xs:element name="mzData">
         <xs:annotation>
-            <xs:documentation>The "peak list" is really processed data from an experiment.  There can bemultiple acquisitions, which might be related via a separation, or just in sequence from an automated run.</xs:documentation>
+            <xs:documentation>The "peak list" is really processed data from an experiment.  There can be multiple acquisitions, which might be related via a separation, or just in sequence from an automated run.</xs:documentation>
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="desc">
                     <xs:annotation>
-                        <xs:documentation>Each data set starts with a description section.  Each acquisition given in the 'raw' section has an entry in the description section.  This allows the desc section to be read and then used to find specific entries in the raw section.</xs:documentation>
+                        <xs:documentation>Each data set starts with a description section.</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
@@ -39,32 +39,23 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="raw">
+                <xs:element name="acquisitionList">
                     <xs:annotation>
-                        <xs:documentation>This is the actual peak list data.  All that is stored here is the actual data, all descriptive information is in the desc section.</xs:documentation>
+                        <xs:documentation>List of acquisitions.</xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="acquisitionList">
+                            <xs:element name="acquisition" type="acquisitionType" maxOccurs="unbounded">
                                 <xs:annotation>
-                                    <xs:documentation>List of acquisitions.</xs:documentation>
+                                    <xs:documentation>This is an individual instrument acquisition.  The peak list is considered an array of acquisitions.  there are two primary ways of representing data.  base64 encoded binary or arrays of simple data types.  All arrays used to describe a single acquisition are the same length and the same indexing.</xs:documentation>
                                 </xs:annotation>
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="acquisition" type="acquisitionType" maxOccurs="unbounded">
-                                            <xs:annotation>
-                                                <xs:documentation>This is an individual instrument acquisition.  The peak list is considered an array of acquisitions.  there are two primary ways of representing data.  base64 encoded binary or arrays of simple data types.  All arrays used to describe a single acquisition are the same length and the same indexing.</xs:documentation>
-                                            </xs:annotation>
-                                        </xs:element>
-                                    </xs:sequence>
-                                    <xs:attribute name="count" type="xs:int" use="required"/>
-                                </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                        <xs:attribute name="count" type="xs:int" use="required"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="version" type="xs:string" use="required" fixed="1.00"/>
+            <xs:attribute name="version" type="xs:string" use="required" fixed="1.01"/>
         </xs:complexType>
     </xs:element>
     <xs:complexType name="sourceFileType">
@@ -82,14 +73,6 @@
                     <xs:documentation>File type (typically named by vendor data system)</xs:documentation>
                 </xs:annotation>
             </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="rawDataType">
-        <xs:annotation>
-            <xs:documentation>Data type for non-binary data (m/z and intensity)</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="float" type="xs:float" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="supDataType">
@@ -220,57 +203,29 @@
         <xs:sequence>
             <xs:element name="acqDesc" type="acqDescType">
                 <xs:annotation>
-                    <xs:documentation>There is one acqDesc for each acquisition below.  The ID attribute is keyed to the to acquisition ID.</xs:documentation>
+                    <xs:documentation>There is one acqDesc for each acquisition.</xs:documentation>
                 </xs:annotation>
             </xs:element>
             <xs:element name="supDesc" type="supDescType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
-                    <xs:documentation>There is one supDesc for each supplemental data entry below.  The ID attribute is keyed to the supplement ID below.</xs:documentation>
+                    <xs:documentation>There is one supDesc for each supplemental data entry.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:choice>
+            <xs:sequence>
                 <xs:annotation>
                     <xs:documentation>Each proteomics acquisition must have at least a list of masses and may have intensities associated with those masses.  Within a single acquisition, the arrays must either be stored as base64 encoded floats, or as arrays of simple types.  The intensity array must be stored the same way as the mass array.</xs:documentation>
                 </xs:annotation>
-                <xs:sequence>
-                    <xs:element name="mzArray">
-                        <xs:annotation>
-                            <xs:documentation>Here the mass array can be specified as individual numbers, however, the type must be selected as either float or int for the entire array.  This allows for human readability and editing.</xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="rawDataType">
-                                    <xs:attribute name="length" type="xs:int" use="required"/>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                    <xs:element name="intenArray" minOccurs="0">
-                        <xs:annotation>
-                            <xs:documentation>The intensity array can be specified as an array of ints or an array of floats also. </xs:documentation>
-                        </xs:annotation>
-                        <xs:complexType>
-                            <xs:complexContent>
-                                <xs:extension base="rawDataType">
-                                    <xs:attribute name="length" type="xs:int" use="required"/>
-                                </xs:extension>
-                            </xs:complexContent>
-                        </xs:complexType>
-                    </xs:element>
-                </xs:sequence>
-                <xs:sequence>
-                    <xs:element name="mzArrayBinary" type="mzArrayBinaryType">
-                        <xs:annotation>
-                            <xs:documentation>Here the list of m/z values (for any type of spectrum).  If this is a true mass spectrum, then z=1.  The array is stored as a base64 encoded binary.  The only type allowed is IEEE-754  floating point and the precision must be specified as  either 32 or 64.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element name="intenArrayBinary" type="mzArrayBinaryType" minOccurs="0">
-                        <xs:annotation>
-                            <xs:documentation>Here the intensities of each element of the m/z array are stored also in base64 encoded binary of type float with a specified precision.</xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:choice>
+                <xs:element name="mzArrayBinary" type="mzArrayBinaryType">
+                    <xs:annotation>
+                        <xs:documentation>Here the list of m/z values (for any type of spectrum).  The array is stored as a base64 encoded binary.  The only type allowed is IEEE-754  floating point and the precision must be specified as  either 32 or 64.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="intenArrayBinary" type="mzArrayBinaryType">
+                    <xs:annotation>
+                        <xs:documentation>Here the intensities of each element of the m/z array are stored also in base64 encoded binary of type float with a specified precision.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>For each acquisition, there can be a mixture of binary and simple type data arrays.  This is mostly to allow string and other data not convenently handled by base64 to be associated with binary data.  This choice allow the number of those arrary to be arbitrary.</xs:documentation>
@@ -287,6 +242,7 @@
                 </xs:element>
             </xs:choice>
         </xs:sequence>
+        <xs:attribute name="acqID" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="supDataBinaryType">
         <xs:sequence>
@@ -348,21 +304,6 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" use="required">
-            <xs:annotation>
-                <xs:documentation>Type of ion source (controlled)</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="ESI"/>
-                    <xs:enumeration value="uESI"/>
-                    <xs:enumeration value="nESI"/>
-                    <xs:enumeration value="MALDI"/>
-                    <xs:enumeration value="APCI"/>
-                    <xs:enumeration value="other"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
     </xs:complexType>
     <xs:complexType name="detectorType">
         <xs:sequence>
@@ -377,20 +318,6 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" use="required">
-            <xs:annotation>
-                <xs:documentation>Type of detection for this data set (controlled).</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="EM"/>
-                    <xs:enumeration value="PM"/>
-                    <xs:enumeration value="MPC"/>
-                    <xs:enumeration value="Frequency"/>
-                    <xs:enumeration value="other"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
     </xs:complexType>
     <xs:complexType name="analyzerType">
         <xs:sequence>
@@ -405,33 +332,6 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="type" use="required">
-            <xs:annotation>
-                <xs:documentation>Mass analyzer type (controlled)</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="LinearQuad"/>
-                    <xs:enumeration value="PaulTrap"/>
-                    <xs:enumeration value="LinearTrap"/>
-                    <xs:enumeration value="TOF"/>
-                    <xs:enumeration value="Kingdon"/>
-                    <xs:enumeration value="Sector"/>
-                    <xs:enumeration value="ICR"/>
-                    <xs:enumeration value="other"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="resolution" type="xs:float" use="required">
-            <xs:annotation>
-                <xs:documentation>Base mass analyzer resolution.  This is defined as  full peak width at half maximum intensity divided by mass.  This paramter should hold the full scan resolution if variable resolution is used, or if not otherwise specified in the acquisition section.</xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="accuracy" type="xs:float" use="required">
-            <xs:annotation>
-                <xs:documentation>Base mass accuracy.  This is defined in m/z units.  This element hold the full scan accuracy if variable accuracy is used or not otherwise specified in the acquisition section.</xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
     </xs:complexType>
     <xs:complexType name="instrumentAcqSettingsType">
         <xs:sequence>
@@ -455,23 +355,6 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="acqType" use="required">
-            <xs:annotation>
-                <xs:documentation>Type of acquisition represented by the peak list (controlled).</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="full"/>
-                    <xs:enumeration value="zoom"/>
-                    <xs:enumeration value="SIM"/>
-                    <xs:enumeration value="SRM"/>
-                    <xs:enumeration value="MRM"/>
-                    <xs:enumeration value="Q1"/>
-                    <xs:enumeration value="Q3"/>
-                    <xs:enumeration value="ICR"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
         <xs:attribute name="msLevel" type="xs:int" use="required">
             <xs:annotation>
                 <xs:documentation>Number of stages of mass spectrometry performed to generate the peak list (MS^n).</xs:documentation>
@@ -528,6 +411,7 @@
                             <xs:restriction base="xs:string">
                                 <xs:enumeration value="sum"/>
                                 <xs:enumeration value="average"/>
+                                <xs:enumeration value="other"/>
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
@@ -582,13 +466,14 @@
                     <xs:documentation>Type and energy level used for activation.</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="ion" type="ionType" minOccurs="0">
+            <xs:element name="ion" type="ionType">
                 <xs:annotation>
                     <xs:documentation>This is the trigger m/z (or m/z's) for tandem MS or data dependent scans.  It is optional for broad band and source activation methods.</xs:documentation>
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
         <xs:attribute name="msLevel" type="xs:int" use="required"/>
+        <xs:attribute name="SourceAcqID" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="acqDescType">
         <xs:sequence>
@@ -603,10 +488,15 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="precursor" type="precursorType" maxOccurs="unbounded">
+                        <xs:element name="precursor" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>This is the precursor step.  If  source activation is used then msLevel is 0.  The acqID points to the acquisition from which the precursor was selected.  If source activation was used, then acqID is also 0.</xs:documentation>
                             </xs:annotation>
+                            <xs:complexType>
+                                <xs:complexContent>
+                                    <xs:extension base="precursorType"/>
+                                </xs:complexContent>
+                            </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                     <xs:attribute name="count" type="xs:int" use="required"/>
@@ -670,30 +560,18 @@
         <xs:attribute name="ref" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="activationType">
-        <xs:attribute name="method" use="required">
-            <xs:annotation>
-                <xs:documentation>Activation method (controlled)</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="CID"/>
-                    <xs:enumeration value="PD"/>
-                    <xs:enumeration value="SID"/>
-                    <xs:enumeration value="ECD"/>
-                    <xs:enumeration value="other"/>
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:attribute>
-        <xs:attribute name="energy" type="xs:float" use="optional">
-            <xs:annotation>
-                <xs:documentation>Activation energy.  This is instrument dependent, i.e. the instrument type and method must be known to interpret this value.</xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
+        <xs:sequence>
+            <xs:element name="actMethod" type="xs:string"/>
+            <xs:element name="actParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="actUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="ionType">
-        <xs:attribute name="mz" type="xs:float" use="optional"/>
-        <xs:attribute name="charge" type="xs:int" use="optional"/>
-        <xs:attribute name="intensity" type="xs:float" use="optional"/>
+        <xs:sequence>
+            <xs:element name="mz" type="xs:float"/>
+            <xs:element name="charge" type="xs:int" minOccurs="0"/>
+            <xs:element name="intensity" type="xs:float" minOccurs="0"/>
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="testType">
         <xs:sequence>
