@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Desc.java,v 1.7 2004/01/14 15:57:36 krunte Exp $
+ * $Id: Desc.java,v 1.8 2004/10/11 07:05:40 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -19,7 +19,7 @@ package org.psi.ms.model;
  * description section. This allows the desc section to be read and
  * then used to find specific entries in the raw section.
  *
- * @version $Revision: 1.7 $ $Date: 2004/01/14 15:57:36 $
+ * @version $Revision: 1.8 $ $Date: 2004/10/11 07:05:40 $
  */
 public class Desc implements java.io.Serializable {
 
@@ -32,19 +32,21 @@ public class Desc implements java.io.Serializable {
      * Administrative information pertaining to the entire data set
      * is stored here.
      */
-    private org.psi.ms.model.Admin _admin;
+    private Admin admin;
 
     /**
      * InstrumentCommonSettings information common to all acquisitions is stored
      * in this section.
      */
-    private org.psi.ms.model.InstrumentCommonSettings _instrument;
+    private InstrumentCommonSettings instrument;
 
     /**
      * Experimental information regarding the test which resulted
      * in this data set.
      */
-    private org.psi.ms.model.Test _test;
+    private org.psi.ms.model.Test test;
+    
+    private DataProcessing dataProcessing;
 
 
     //----------------/
@@ -68,9 +70,9 @@ public class Desc implements java.io.Serializable {
      * @return the value of field 'admin'.
      */
     public org.psi.ms.model.Admin getAdmin() {
-        if (_admin == null)
-            _admin = new Admin();
-        return this._admin;
+        if (admin == null)
+            admin = new Admin();
+        return this.admin;
     } //-- org.psi.ms.model.Admin getAdmin()
 
     /**
@@ -82,9 +84,9 @@ public class Desc implements java.io.Serializable {
      * @return the value of field 'instrument'.
      */
     public org.psi.ms.model.InstrumentCommonSettings getInstrument() {
-        if (_instrument == null)
-            _instrument = new InstrumentCommonSettings();
-        return this._instrument;
+        if (instrument == null)
+            instrument = new InstrumentCommonSettings();
+        return this.instrument;
     } //-- org.psi.ms.model.InstrumentCommonSettings getInstrument()
 
     /**
@@ -95,12 +97,25 @@ public class Desc implements java.io.Serializable {
      * @return the value of field 'test'.
      */
     public org.psi.ms.model.Test getTest() {
-        if (_test == null)
-            _test = new Test();
-        return this._test;
+        if (test == null)
+            test = new Test();
+        return this.test;
     } //-- org.psi.ms.model.Test getTest()
 
-    /**
+	/**
+	 * Returns the dataProcessing. The field 'dataProcessing' has the
+	 * following description: Experimental information regarding
+	 * the test which resulted in this data set.
+	 * 
+	 * @return the value of the field 'dataProcessing'.
+	 */
+	public DataProcessing getDataProcessing() {
+		if (dataProcessing == null) 
+			dataProcessing = new DataProcessing();
+		return dataProcessing;
+	}
+
+	/**
      * Sets the value of field 'admin'. The field 'admin' has the
      * following description: Administrative information pertaining
      * to the entire data set is stored here.
@@ -108,7 +123,7 @@ public class Desc implements java.io.Serializable {
      * @param admin the value of field 'admin'.
      */
     public void setAdmin(org.psi.ms.model.Admin admin) {
-        this._admin = admin;
+        this.admin = admin;
     } //-- void setAdmin(org.psi.ms.model.Admin)
 
     /**
@@ -119,7 +134,7 @@ public class Desc implements java.io.Serializable {
      * @param instrument the value of field 'instrument'.
      */
     public void setInstrument(org.psi.ms.model.InstrumentCommonSettings instrument) {
-        this._instrument = instrument;
+        this.instrument = instrument;
     } //-- void setInstrument(org.psi.ms.model.InstrumentCommonSettings)
 
     /**
@@ -130,7 +145,17 @@ public class Desc implements java.io.Serializable {
      * @param test the value of field 'test'.
      */
     public void setTest(org.psi.ms.model.Test test) {
-        this._test = test;
+        this.test = test;
     } //-- void setTest(org.psi.ms.model.Test)
 
+	/**
+	 * Set the dataProcessing. The field 'dataProcessing' has the
+	 * following description: Experimental information regarding
+	 * the test which resulted in this data set.
+	 * 
+	 * @param dataProcessing the value of the field 'dataProcessing'.
+	 */
+	public void setDataProcessing(DataProcessing dataProcessing) {
+		this.dataProcessing = dataProcessing;
+	}
 }

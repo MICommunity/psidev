@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: DataProcessing.java,v 1.4 2004/01/14 15:57:36 krunte Exp $
+ * $Id: DataProcessing.java,v 1.5 2004/10/11 07:05:40 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * This element stores information about how the instance XML
  * document was generated.
  *
- * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
+ * @version $Revision: 1.5 $ $Date: 2004/10/11 07:05:40 $
  */
 public class DataProcessing implements java.io.Serializable {
 
@@ -29,12 +29,12 @@ public class DataProcessing implements java.io.Serializable {
     /**
      * Specific information on the conversion or processing software
      */
-    private org.psi.ms.model.Software _software;
+    private org.psi.ms.model.Software software;
 
     /**
      * Comments regarding data processing are captured as free text.
      */
-    private java.util.Vector _commentList;
+    private java.util.Vector commentList;
 
 
     //----------------/
@@ -43,7 +43,7 @@ public class DataProcessing implements java.io.Serializable {
 
     public DataProcessing() {
         super();
-        _commentList = new Vector();
+        commentList = new Vector();
     } //-- org.psi.ms.model.DataProcessing()
 
 
@@ -58,7 +58,7 @@ public class DataProcessing implements java.io.Serializable {
      */
     public void addComment(java.lang.String vComment)
             throws java.lang.IndexOutOfBoundsException {
-        _commentList.addElement(vComment);
+        commentList.addElement(vComment);
     } //-- void addComment(java.lang.String)
 
     /**
@@ -69,14 +69,14 @@ public class DataProcessing implements java.io.Serializable {
      */
     public void addComment(int index, java.lang.String vComment)
             throws java.lang.IndexOutOfBoundsException {
-        _commentList.insertElementAt(vComment, index);
+        commentList.insertElementAt(vComment, index);
     } //-- void addComment(int, java.lang.String)
 
     /**
      * Method enumerateComment
      */
     public java.util.Enumeration enumerateComment() {
-        return _commentList.elements();
+        return commentList.elements();
     } //-- java.util.Enumeration enumerateComment()
 
     /**
@@ -87,21 +87,21 @@ public class DataProcessing implements java.io.Serializable {
     public java.lang.String getComment(int index)
             throws java.lang.IndexOutOfBoundsException {
         //-- check bounds for index
-        if ((index < 0) || (index > _commentList.size())) {
+        if ((index < 0) || (index > commentList.size())) {
             throw new IndexOutOfBoundsException();
         }
 
-        return (String) _commentList.elementAt(index);
+        return (String) commentList.elementAt(index);
     } //-- java.lang.String getComment(int)
 
     /**
      * Method getComment
      */
     public java.lang.String[] getComment() {
-        int size = _commentList.size();
+        int size = commentList.size();
         java.lang.String[] mArray = new java.lang.String[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (String) _commentList.elementAt(index);
+            mArray[index] = (String) commentList.elementAt(index);
         }
         return mArray;
     } //-- java.lang.String[] getComment()
@@ -110,7 +110,7 @@ public class DataProcessing implements java.io.Serializable {
      * Method getCommentCount
      */
     public int getCommentCount() {
-        return _commentList.size();
+        return commentList.size();
     } //-- int getCommentCount()
 
     /**
@@ -121,14 +121,14 @@ public class DataProcessing implements java.io.Serializable {
      * @return the value of field 'software'.
      */
     public org.psi.ms.model.Software getSoftware() {
-        return this._software;
+        return this.software;
     } //-- org.psi.ms.model.Software getSoftware()
 
     /**
      * Method removeAllComment
      */
     public void removeAllComment() {
-        _commentList.removeAllElements();
+        commentList.removeAllElements();
     } //-- void removeAllComment()
 
     /**
@@ -137,8 +137,8 @@ public class DataProcessing implements java.io.Serializable {
      * @param index
      */
     public java.lang.String removeComment(int index) {
-        java.lang.Object obj = _commentList.elementAt(index);
-        _commentList.removeElementAt(index);
+        java.lang.Object obj = commentList.elementAt(index);
+        commentList.removeElementAt(index);
         return (String) obj;
     } //-- java.lang.String removeComment(int)
 
@@ -151,10 +151,10 @@ public class DataProcessing implements java.io.Serializable {
     public void setComment(int index, java.lang.String vComment)
             throws java.lang.IndexOutOfBoundsException {
         //-- check bounds for index
-        if ((index < 0) || (index > _commentList.size())) {
+        if ((index < 0) || (index > commentList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        _commentList.setElementAt(vComment, index);
+        commentList.setElementAt(vComment, index);
     } //-- void setComment(int, java.lang.String)
 
     /**
@@ -164,9 +164,9 @@ public class DataProcessing implements java.io.Serializable {
      */
     public void setComment(java.lang.String[] commentArray) {
         //-- copy array
-        _commentList.removeAllElements();
+        commentList.removeAllElements();
         for (int i = 0; i < commentArray.length; i++) {
-            _commentList.addElement(commentArray[i]);
+            commentList.addElement(commentArray[i]);
         }
     } //-- void setComment(java.lang.String)
 
@@ -178,7 +178,7 @@ public class DataProcessing implements java.io.Serializable {
      * @param software the value of field 'software'.
      */
     public void setSoftware(org.psi.ms.model.Software software) {
-        this._software = software;
+        this.software = software;
     } //-- void setSoftware(org.psi.ms.model.Software)
 
 }
