@@ -1,5 +1,5 @@
 /**
- * $Id: ProvidedDataItem.java,v 1.1 2003/11/21 15:25:14 krunte Exp $
+ * $Id: ProvidedDataItem.java,v 1.2 2003/12/09 13:48:30 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -14,101 +14,101 @@ import java.util.Hashtable;
  * 
  * @author krunte
  */
-public class ProvidedDataItem {
+public final class ProvidedDataItem {
 
 
     //--------------------------/
     //- Class/Member Variables -/
     //--------------------------/
 
-    public static int DESC_ADMIN_PERSON_CONTACTINFO_TYPE = 0;
-    public static ProvidedDataItem DESC_ADMIN_PERSON_CONTACTINFO =
+    public static final int DESC_ADMIN_PERSON_CONTACTINFO_TYPE = 0;
+    public static final ProvidedDataItem DESC_ADMIN_PERSON_CONTACTINFO =
         new ProvidedDataItem(DESC_ADMIN_PERSON_CONTACTINFO_TYPE, "desc/admin/person/contactInfo");
 
-    public static int DESC_ADMIN_PERSON_INSTITUTION_TYPE = 1;
-    public static ProvidedDataItem DESC_ADMIN_PERSON_INSTITUTION =
+    public static final int DESC_ADMIN_PERSON_INSTITUTION_TYPE = 1;
+    public static final ProvidedDataItem DESC_ADMIN_PERSON_INSTITUTION =
         new ProvidedDataItem(DESC_ADMIN_PERSON_INSTITUTION_TYPE, "desc/admin/person/institution");
 
-    public static int DESC_ADMIN_PERSON_NAME_TYPE = 2;
-    public static ProvidedDataItem DESC_ADMIN_PERSON_NAME =
+    public static final int DESC_ADMIN_PERSON_NAME_TYPE = 2;
+    public static final ProvidedDataItem DESC_ADMIN_PERSON_NAME =
         new ProvidedDataItem(DESC_ADMIN_PERSON_NAME_TYPE, "desc/admin/person/name");
 
-    public static int DESC_ADMIN_SAMPLENAME_TYPE = 3;
-    public static ProvidedDataItem DESC_ADMIN_SAMPLENAME =
+    public static final int DESC_ADMIN_SAMPLENAME_TYPE = 3;
+    public static final ProvidedDataItem DESC_ADMIN_SAMPLENAME =
         new ProvidedDataItem(DESC_ADMIN_SAMPLENAME_TYPE, "desc/admin/sampleName");
 
-    public static int DESC_ADMIN_SOURCEFILE_NAME_TYPE = 4;
-    public static ProvidedDataItem DESC_ADMIN_SOURCEFILE_NAME =
+    public static final int DESC_ADMIN_SOURCEFILE_NAME_TYPE = 4;
+    public static final ProvidedDataItem DESC_ADMIN_SOURCEFILE_NAME =
         new ProvidedDataItem(DESC_ADMIN_SOURCEFILE_NAME_TYPE, "desc/admin/sourceFile/name");
 
-    public static int DESC_ADMIN_SOURCEFILE_TYPE_TYPE = 5;
-    public static ProvidedDataItem DESC_ADMIN_SOURCEFILE_TYPE =
+    public static final int DESC_ADMIN_SOURCEFILE_TYPE_TYPE = 5;
+    public static final ProvidedDataItem DESC_ADMIN_SOURCEFILE_TYPE =
         new ProvidedDataItem(DESC_ADMIN_SOURCEFILE_TYPE_TYPE, "desc/admin/sourceFile/type");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE_TYPE = 7;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE_TYPE = 7;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE_TYPE, "desc/instrumentCommonSettings/analyzer/analyzer@type");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY_TYPE = 8;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY_TYPE = 8;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY_TYPE, "desc/instrumentCommonSettings/analyzer@accuracy");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION_TYPE = 11;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION_TYPE = 11;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION_TYPE, "desc/instrumentCommonSettings/analyzer@resolution");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE_TYPE = 12;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE_TYPE = 12;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE_TYPE, "desc/instrumentCommonSettings/detector/detector@type");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME_TYPE = 15;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME_TYPE = 15;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME_TYPE, "desc/instrumentCommonSettings/instName");
 
-    public static int DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE_TYPE = 20;
-    public static ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE =
+    public static final int DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE_TYPE = 20;
+    public static final ProvidedDataItem DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE =
         new ProvidedDataItem(DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE_TYPE, "desc/instrumentCommonSettings/source/source@type");
 
-    public static int DESC_TEST_DATAPROCESSING_COMMENT_TYPE = 25;
-    public static ProvidedDataItem DESC_TEST_DATAPROCESSING_COMMENT =
+    public static final int DESC_TEST_DATAPROCESSING_COMMENT_TYPE = 25;
+    public static final ProvidedDataItem DESC_TEST_DATAPROCESSING_COMMENT =
         new ProvidedDataItem(DESC_TEST_DATAPROCESSING_COMMENT_TYPE, "desc/test/dataProcessing/comment");
 
-    public static int DESC_TEST_DATAPROCESSING_SOFTWARE_COMPETIONTIME_TYPE = 26;
-    public static ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_COMPETIONTIME =
+    public static final int DESC_TEST_DATAPROCESSING_SOFTWARE_COMPETIONTIME_TYPE = 26;
+    public static final ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_COMPETIONTIME =
         new ProvidedDataItem(DESC_TEST_DATAPROCESSING_SOFTWARE_COMPETIONTIME_TYPE, "desc/test/dataProcessing/software@completionTime");
 
-    public static int DESC_TEST_DATAPROCESSING_SOFTWARE_DESCRIPTION_TYPE = 35;
-    public static ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_DESCRIPTION =
+    public static final int DESC_TEST_DATAPROCESSING_SOFTWARE_DESCRIPTION_TYPE = 35;
+    public static final ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_DESCRIPTION =
         new ProvidedDataItem(DESC_TEST_DATAPROCESSING_SOFTWARE_DESCRIPTION_TYPE, "desc/test/dataProcessing/software/description");
 
-    public static int DESC_TEST_DATAPROCESSING_SOFTWARE_NAME_TYPE = 36;
-    public static ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_NAME =
+    public static final int DESC_TEST_DATAPROCESSING_SOFTWARE_NAME_TYPE = 36;
+    public static final ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_NAME =
         new ProvidedDataItem(DESC_TEST_DATAPROCESSING_SOFTWARE_NAME_TYPE, "desc/test/dataProcessing/software/name");
 
-    public static int DESC_TEST_DATAPROCESSING_SOFTWARE_VERSION_TYPE = 37;
-    public static ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_VERSION =
+    public static final int DESC_TEST_DATAPROCESSING_SOFTWARE_VERSION_TYPE = 37;
+    public static final ProvidedDataItem DESC_TEST_DATAPROCESSING_SOFTWARE_VERSION =
         new ProvidedDataItem(DESC_TEST_DATAPROCESSING_SOFTWARE_VERSION_TYPE, "desc/test/dataProcessing/software/version");
 
-    public static int DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING_TYPE = 39;
-    public static ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING =
+    public static final int DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING_TYPE = 39;
+    public static final ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING =
         new ProvidedDataItem(DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING_TYPE, "desc/test/processingMethod/peakProcessing");
 
-    public static int DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED_TYPE = 40;
-    public static ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED =
+    public static final int DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED_TYPE = 40;
+    public static final ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED =
         new ProvidedDataItem(DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED_TYPE, "desc/test/processingMethod@chargeDeconvolved");
 
-    public static int DESC_TEST_PROCESSINGMETHOD_DEISOTOPED_TYPE = 41;
-    public static ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_DEISOTOPED =
+    public static final int DESC_TEST_PROCESSINGMETHOD_DEISOTOPED_TYPE = 41;
+    public static final ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_DEISOTOPED =
         new ProvidedDataItem(DESC_TEST_PROCESSINGMETHOD_DEISOTOPED_TYPE, "desc/test/processingMethod@deisotoped");
 
-    public static int DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD_TYPE = 42;
-    public static ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD =
+    public static final int DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD_TYPE = 42;
+    public static final ProvidedDataItem DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD =
         new ProvidedDataItem(DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD_TYPE, "desc/test/processingMethod@peakThreshold");
 
 
 /*
-    public static int ADMIN__TYPE = 3;
-    public static ProvidedData ADMIN_ = new ProvidedData(ADMIN__TYPE, "");
+    public static final int ADMIN__TYPE = 3;
+    public static final ProvidedData ADMIN_ = new ProvidedData(ADMIN__TYPE, "");
 */
 
 
