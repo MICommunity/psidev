@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.5 2003/09/15 12:56:30 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.6 2003/09/17 13:25:24 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -11,6 +11,7 @@ package org.psi.ms.test;
 import org.psi.ms.converter.DtaSetConverter;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.model.MzData;
+import org.psi.ms.xml.MzDataWriter;
 
 import java.io.IOException;
 
@@ -24,6 +25,6 @@ public class TestDtaSetConverter {
         DtaSetConverter dtaSetConverter = new DtaSetConverter();
         MzData mzData = new MzData();
         dtaSetConverter = new DtaSetConverter();
-        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData);
+        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.BASE64);
     }
 }

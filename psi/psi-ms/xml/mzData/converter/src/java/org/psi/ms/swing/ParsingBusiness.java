@@ -4,6 +4,7 @@ import org.psi.ms.model.MzData;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.converter.DtaSetConverter;
 import org.psi.ms.converter.ParseListener;
+import org.psi.ms.xml.MzDataWriter;
 
 import java.io.IOException;
 
@@ -27,7 +28,7 @@ public class ParsingBusiness {
     void parseData(String poSource, String poDest, MzData poData, ParseListener poListener) {
 
         try {
-            oConverter.convertDirectory(poSource, poDest, poData, poListener);
+            oConverter.convertDirectory(poSource, poDest, poData, MzDataWriter.OutputType.BASE64, poListener);
         } catch (PsiMsConverterException e) {
             e.printStackTrace();
         } catch (IOException e) {

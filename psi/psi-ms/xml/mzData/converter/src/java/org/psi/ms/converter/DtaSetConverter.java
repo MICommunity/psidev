@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.11 2003/09/15 12:54:24 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.12 2003/09/17 13:25:22 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -34,11 +34,11 @@ public class DtaSetConverter {
         dtaReader = new DtaReader();
     }
 
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData) throws PsiMsConverterException, IOException {
-        this.convertDirectory(sourceDirname, outputFilename, mzData, null);
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType) throws PsiMsConverterException, IOException {
+        this.convertDirectory(sourceDirname, outputFilename, mzData, outputType, null);
     }
 
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, ParseListener listener) throws PsiMsConverterException, IOException {
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType, ParseListener listener) throws PsiMsConverterException, IOException {
         File sourceDir = new File(sourceDirname);
         File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
         File[] ztaFiles = sourceDir.listFiles(new SuffixFileFilter(".zta"));
@@ -91,6 +91,7 @@ public class DtaSetConverter {
         }
 
         MzDataWriter mzDataWriter = new MzDataWriter(new File(outputFilename));
+        mzDataWriter.setOutputType(outputType);
         mzDataWriter.marshall(mzData);
     }
 
@@ -98,6 +99,6 @@ public class DtaSetConverter {
         DtaSetConverter dtaSetConverter = new DtaSetConverter();
         MzData mzData = new MzData();
         dtaSetConverter = new DtaSetConverter();
-        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData);
+        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.BASE64);
     }
 }
