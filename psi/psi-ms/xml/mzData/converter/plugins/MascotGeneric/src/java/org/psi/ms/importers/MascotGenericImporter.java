@@ -1,5 +1,5 @@
 /**
- * $Id: MascotGenericImporter.java,v 1.1 2003/12/05 18:01:51 krunte Exp $
+ * $Id: MascotGenericImporter.java,v 1.2 2003/12/05 18:07:39 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -22,7 +22,7 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /**
- * 
+ *
  * @author krunte
  */
 public class MascotGenericImporter implements ImporterI {
@@ -277,10 +277,11 @@ public class MascotGenericImporter implements ImporterI {
                 acqSettings.setSpecType(AcqSettings.SpecType.DISCRETE);
                 AcqSpecification acqSpecification = acqSettings.getAcqSpecification();
                 acqSpecification.setMethod(AcqSpecification.Method.AVERAGE);
-                org.psi.ms.model.Range range = acqSpecification.getRange();
+                Range range = new Range();
                 // Todo: where do I get these from?
                 range.setStart(-1);
                 range.setEnd(-1);
+                acqSpecification.setRange(range);
                 InstrumentAcqSettings instrument = acqSettings.getInstrument();
                 // Todo: is this correct?
                 instrument.setAcqType(InstrumentAcqSettings.AcqType.FULL);
