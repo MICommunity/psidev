@@ -13,6 +13,7 @@
         <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java" />
         <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test" />
         <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/plugins/dta/src/java" />
+        <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/plugins/MascotGeneric/src/java" />
       </root>
     </sourcePath>
     <classPath>

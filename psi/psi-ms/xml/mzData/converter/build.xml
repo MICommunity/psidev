@@ -40,6 +40,7 @@
             <fileset dir="${doc}/api" includes="**/*.*"/>
         </delete>
         <ant dir="plugins/dta" target="clean" inheritall="false"/>
+        <ant dir="plugins/MascotGeneric" target="clean" inheritall="false"/>
     </target>
 
     <target name="build">
@@ -65,6 +66,7 @@
 
     <target name="plugins" depends="application">
         <ant dir="plugins/dta" target="plugin" inheritall="false"/>
+        <ant dir="plugins/MascotGeneric" target="plugin" inheritall="false"/>
     </target>
 
     <target name="dist" depends="doc,plugins" >
