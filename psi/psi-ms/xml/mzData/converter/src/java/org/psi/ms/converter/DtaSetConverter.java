@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.6 2003/08/28 15:17:12 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.7 2003/09/10 12:45:52 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -46,9 +46,7 @@ public class DtaSetConverter {
         dtaReader = new DtaReader(arrayOutputType);
     }
 
-    public void convertDirectory(String sourceDirname, String outputFilename) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
-        MzData mzData = initConversion();
-
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
         File sourceDir = new File(sourceDirname);
         File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
         File[] ztaFiles = sourceDir.listFiles(new SuffixFileFilter(".zta"));
@@ -89,58 +87,4 @@ public class DtaSetConverter {
             e.printStackTrace();
         }
     }
-
-    private MzData initConversion() {
-        MzData mzData = new MzData();
-        mzData.setVersion("1.00");
-        //mzData.setSampleName("DtaSetConverter");
-
-        Desc desc = new Desc();
-        mzData.setDesc(desc);
-        Admin admin = new Admin();
-        desc.setAdmin(admin);
-
-        // Todo: this information must be provided by the user
-        admin.setSampleName("?");
-        Person contact = new Person();
-        contact.setName("Kai Runte");
-        contact.setInstitution("EMBL Outstation - EBI");
-        admin.setContact(contact);
-
-        // Todo: this information must be provided by the user
-        InstrumentCommonSettings instrument = new InstrumentCommonSettings();
-        instrument.setInstName("unknown");
-        Source source = new Source();
-        source.setType(Source.Type.OTHER);
-        instrument.setSource(source);
-        Analyzer analyzer = new Analyzer();
-        analyzer.setType(Analyzer.Type.OTHER);
-        float unknown = -1;
-        analyzer.setResolution(unknown);
-        analyzer.setAccuracy(unknown);
-        instrument.setAnalyzer(analyzer);
-        Detector detector = new Detector();
-        detector.setType(Detector.Type.OTHER);
-        instrument.setDetector(detector);
-        desc.setInstrument(instrument);
-
-        Test test = new Test();
-        desc.setTest(test);
-
-        DataProcessing dataProcessing = new DataProcessing();
-        test.addDataProcessing(dataProcessing);
-
-        Software software = new Software();
-        software.setName("PSI-MS .dta/.zta converter");
-        software.setVersion("1.00");
-        dataProcessing.setSoftware(software);
-
-        ProcessingMethod processingMethod = new ProcessingMethod();
-        test.setProcessingMethod(processingMethod);
-
-        processingMethod.setPeakProcessing("?");
-
-        return mzData;
-    }
-
 }
