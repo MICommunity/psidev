@@ -1,0 +1,943 @@
+<!--schema name="Pedro" version="1.0"-->
+<PEDRoData xmlns="pd" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="pd 
+http://pedro.man.ac.uk/files/PEDRoSchema.xsd">
+	<Experiment>
+		<hypothesis>The expression of certain genes is under the control of 
+Gcn4p which itself is upregulated when Saccharomyces cerevisiae is 
+starved of amino acids (e.g. histidine)</hypothesis>
+		
+<method_citations>http://www.abdn.ac.uk/%7Egen069/prf1-methods1.doc</method_citations>
+		<Sample>
+			<sample_id>D0117</sample_id>
+			<sample_date>2001-07-09</sample_date>
+			<experimenter>David Stead</experimenter>
+			<SampleOrigin>
+				<description>Wild Type - Control</description>
+				<condition>Standard conditions</condition>
+				<condition_degree>Cells of control (non-starved) group were 
+inoculated initially at OD600 ? 0.125 in Synthetic Complete medium at 30?C, 
+while the cells of experimental (amino acid-starved) group were 
+inoculated initially at OD600 ? 0.125 in the Synthetic Complete medium minus 
+histidine with addition of 40mM 3-aminotriazole (3-AT) at 30?C. 200ml of 
+the control group culture were collected when the OD600 was about 0.5, 
+and an equivalent biomass of experimental (starved) group culture was 
+collected at the same time point</condition_degree>
+				<environment>Standard culture conditions</environment>
+				<cell_component>Total cell extract</cell_component>
+				<technique>Bead beating</technique>
+				<Organism>
+					<species_name>Saccharomyces cerevisiae</species_name>
+					<strain_identifier>BY4743HIS</strain_identifier>
+				</Organism>
+			</SampleOrigin>
+			<Gel2D>
+				<description>Preparative gel for mass spectrometry</description>
+				<raw_image>C:\Chris\CoGeME\MiniCD\Raw Files\2L0190.TIF</raw_image>
+				<annotated_image>C:\Chris\CoGeME\MiniCD\Raw Files\2L0190 
+map.jpg</annotated_image>
+				<equipment>Investigator HT Analyzer; Ettan Dalt system</equipment>
+				<percent_acrylamide>12</percent_acrylamide>
+				<solubilization_buffer>Electrophoresis 
+buffers</solubilization_buffer>
+				<stain_details>Colloidal Coomassie blue</stain_details>
+				<in-gel_digestion>None</in-gel_digestion>
+				<pi_start>4</pi_start>
+				<pi_end>7</pi_end>
+				<mass_start>150</mass_start>
+				<mass_end>10</mass_end>
+				<first_dim_details>Cup Loading at anode, 3-step IEF protocol, 
+ending at 70,000 Vhr</first_dim_details>
+				<second_dim_details>Ettan Dalt system and electrophoresis buffers, 
+30 Watts 1 hr, 180 Watts 4 hr 30 min for set of 12 
+gels</second_dim_details>
+				<Spot>
+					<id>9</id>
+					<area>591</area>
+					<local_background>11154.33</local_background>
+					<annotation>RPC37</annotation>
+					<annotation_source>444</annotation_source>
+					<volume>4812</volume>
+					<normalised_volume>184.66</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel E (control, ref. 
+number 2L0190) spots 1-28 were selected by Phoretix 2D as being 
+downregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 9</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>1323.716752</m_to_z>
+												<abundance>53871.21875</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1362.714887</m_to_z>
+												<abundance>37028.28125</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>2132.044191</m_to_z>
+												<abundance>36614.46094</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>2132.996281</m_to_z>
+												<abundance>18891.45703</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1077.640727</m_to_z>
+												<abundance>17018.61719</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1749.000866</m_to_z>
+												<abundance>13259.5957</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1381.652455</m_to_z>
+												<abundance>12805.84668</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1552.743086</m_to_z>
+												<abundance>12064.08496</abundance>
+											</Peak>
+											<DBSearch>
+												<username>David Stead</username>
+												<id_date>2002-03-06</id_date>
+												<DBSearchParameters>
+													<program>AutoMS-Fit</program>
+													<database>NCBInr32499</database>
+													<database_date>2002-01-01</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<masses_matched>7</masses_matched>
+													<score>12900</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>P36121</accession_number>
+														<gene_name>RPC37</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<orf_number>YKR025w</orf_number>
+														<description>RNA polymerase III, C37 
+subunit</description>
+														<predicted_mass>31977</predicted_mass>
+														<predicted_pi>4.3</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+				<Spot>
+					<id>11</id>
+					<area>1199</area>
+					<local_background>25590</local_background>
+					<annotation>DSK2</annotation>
+					<annotation_source>395</annotation_source>
+					<volume>29492.33</volume>
+					<normalised_volume>1131.93</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel E (control, ref. 
+number 2L0190) spots 1-28 were selected by Phoretix 2D as being 
+downregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 11</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>1504.653718</m_to_z>
+												<abundance>41958.93359</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1137.562784</m_to_z>
+												<abundance>29551.08008</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1487.647579</m_to_z>
+												<abundance>27895.8125</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1594.88139</m_to_z>
+												<abundance>23823.10938</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1201.586282</m_to_z>
+												<abundance>23032.13867</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1039.580264</m_to_z>
+												<abundance>22126.38867</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1120.550716</m_to_z>
+												<abundance>21876.37109</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1153.535282</m_to_z>
+												<abundance>19267.68359</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1503.627136</m_to_z>
+												<abundance>17812.68555</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>866.5134529</m_to_z>
+												<abundance>14654.10059</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1136.531566</m_to_z>
+												<abundance>12457.4834</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>2661.25416</m_to_z>
+												<abundance>12202.63867</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1520.661508</m_to_z>
+												<abundance>11575.0459</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1169.553761</m_to_z>
+												<abundance>10315.52637</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1217.578666</m_to_z>
+												<abundance>10265.57617</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>867.4801282</m_to_z>
+												<abundance>8547.139648</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1218.594456</m_to_z>
+												<abundance>8515.458008</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>845.6251068</m_to_z>
+												<abundance>8228.619141</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1233.573508</m_to_z>
+												<abundance>7921.886719</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>714.4313161</m_to_z>
+												<abundance>7486.776367</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1519.701928</m_to_z>
+												<abundance>7350.700684</abundance>
+											</Peak>
+											<DBSearch>
+												<username>David Stead</username>
+												<id_date>2002-03-06</id_date>
+												<DBSearchParameters>
+													<program>AutoMS-Fit</program>
+													<database>NCBInr32499</database>
+													<database_date>2002-03-06</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<score>71</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>P48510</accession_number>
+														<gene_name>DSK2</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<description>Protein required with Rad23p for duplication 
+of the spindle pole body</description>
+														<predicted_mass>39202</predicted_mass>
+														<predicted_pi>4.9</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+				<Spot>
+					<id>12</id>
+					<area>1050</area>
+					<local_background>22219.33</local_background>
+					<annotation>RAM2</annotation>
+					<annotation_source>424</annotation_source>
+					<volume>17115.67</volume>
+					<normalised_volume>658.06</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel E (control, ref. 
+number 2L0190) spots 1-28 were selected by Phoretix 2D as being 
+downregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 12</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>1058.535609</m_to_z>
+												<abundance>20480.27344</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>912.4659194</m_to_z>
+												<abundance>19547.67578</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>1283.672173</m_to_z>
+												<abundance>11594.59961</abundance>
+											</Peak>
+											<Peak>
+												<m_to_z>832.397517</m_to_z>
+												<abundance>9298.848633</abundance>
+											</Peak>
+											<DBSearch>
+												<username>David Stead</username>
+												<id_date>2002-03-06</id_date>
+												<DBSearchParameters>
+													<program>AutoMS-Fit</program>
+													<database>NCBInr32499</database>
+													<database_date>2002-03-06</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<score>33</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>P29703</accession_number>
+														<gene_name>RAM2</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<description>Protein farnesyltransferase, alpha 
+subunit</description>
+														<predicted_mass>37491</predicted_mass>
+														<predicted_pi>5.0</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+			</Gel2D>
+		</Sample>
+		<Sample>
+			<sample_id>D0118</sample_id>
+			<sample_date>2001-09-07</sample_date>
+			<experimenter>Zhikang Yin</experimenter>
+			<SampleOrigin>
+				<description>Wild Type - Starved</description>
+				<condition>Starvation</condition>
+				<condition_degree>Cells of control (non-starved) group were 
+inoculated initially at OD600 ? 0.125 in Synthetic Complete medium at 30?C, 
+while the cells of experimental (amino acid-starved) group were 
+inoculated initially at OD600 ? 0.125 in the Synthetic Complete medium minus 
+histidine with addition of 40mM 3-aminotriazole (3-AT) at 30?C. 200ml of 
+the control group culture were collected when the OD600 was about 0.5, 
+and an equivalent biomass of experimental (starved) group culture was 
+collected at the same time point</condition_degree>
+				<environment>Amino acid starvation = minus histidine with addition 
+of 40mM 3-aminotriazole (3-AT)</environment>
+				<cell_component>Total cell extract</cell_component>
+				<technique>Bead beating</technique>
+				<Organism>
+					<species_name>Saccharomyces cerevisiae</species_name>
+					<strain_identifier>BY4743HIS</strain_identifier>
+				</Organism>
+			</SampleOrigin>
+			<Gel2D>
+				<description>Preparative gel for mass spectrometry</description>
+				<raw_image>C:\Chris\CoGeME\MiniCD\Raw Files\2L0191.TIF</raw_image>
+				<annotated_image>C:\Chris\CoGeME\MiniCD\Raw Files\2L0191 
+map.jpg</annotated_image>
+				<equipment>Investigator HT Analyzer; Ettan Dalt system</equipment>
+				<percent_acrylamide>12</percent_acrylamide>
+				<solubilization_buffer>Electrophoresis 
+buffers</solubilization_buffer>
+				<stain_details>Colloidal Coomassie blue</stain_details>
+				<in-gel_digestion>None</in-gel_digestion>
+				<pi_start>4</pi_start>
+				<pi_end>7</pi_end>
+				<mass_start>150</mass_start>
+				<mass_end>10</mass_end>
+				<first_dim_details>Cup Loading at anode, 3-step IEF protocol, 
+ending at 70,000 Vhr</first_dim_details>
+				<second_dim_details>Ettan Dalt system and electrophoresis buffers, 
+30 Watts 1 hr, 180 Watts 4 hr 30 min for set of 12 
+gels</second_dim_details>
+				<Spot>
+					<id>20</id>
+					<area>473</area>
+					<local_background>8921.00</local_background>
+					<annotation>HIS3</annotation>
+					<annotation_source>694</annotation_source>
+					<volume>3157.67</volume>
+					<normalised_volume>110.83</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel F (control, ref. 
+number 2L0191) spots 1-28 were selected by Phoretix 2D as being 
+upregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 20</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>789.4694</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1057.6344</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1128.7156</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1243.6679</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1339.8015</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1516.7991</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1591.7912</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1686.7123</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1687.7883</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1703.8311</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1767.9852</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1834.9945</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1883.0037</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1898.9835</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2147.1772</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2196.1659</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2210.0872</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2300.1476</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>3335.6838</m_to_z>
+											</Peak>
+											<DBSearch>
+												<username>Zhikang Yin</username>
+												<id_date>2002-03-13</id_date>
+												<DBSearchParameters>
+													<program>Mascot</program>
+													<database>NCBInr20020220</database>
+													<database_date>2002-02-20</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<masses_matched>7</masses_matched>
+													<score>81</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>P06633</accession_number>
+														<gene_name>HIS3</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<orf_number>YKR025w</orf_number>
+														<description>Imidazoleglycerolphosphate 
+dehydratase</description>
+														<predicted_mass>23694</predicted_mass>
+														<predicted_pi>6.2</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+				<Spot>
+					<id>27</id>
+					<area>332</area>
+					<local_background>5472.33</local_background>
+					<annotation>UBC13</annotation>
+					<annotation_source>705</annotation_source>
+					<volume>2461.33</volume>
+					<normalised_volume>86.38</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel F (control, ref. 
+number 2L0191) spots 1-28 were selected by Phoretix 2D as being 
+upregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 27</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>795.4354</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>811.4293</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>883.5097</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1179.6445</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1297.6178</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1374.7685</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1734.7747</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1750.8058</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1752.7847</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1766.7937</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1768.7969</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1774.7850</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1780.7862</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1784.7857</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1819.9031</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2127.0160</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2233.0600</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2247.2862</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2263.2462</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2527.1346</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2575.2063</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2591.2130</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2913.4802</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2934.6291</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>3183.5411</m_to_z>
+											</Peak>
+											<DBSearch>
+												<username>Zhikang Yin</username>
+												<id_date>2002-03-13</id_date>
+												<DBSearchParameters>
+													<program>Mascot</program>
+													<database>NCBInr20020220</database>
+													<database_date>2002-02-20</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<masses_matched>4</masses_matched>
+													<score>55</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>P52490</accession_number>
+														<gene_name>UBC13</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<orf_number>YKR025w</orf_number>
+														<description>Ubiquitin-conjugating (E2) 
+enzyme</description>
+														<predicted_mass>17332</predicted_mass>
+														<predicted_pi>5.3</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+				<Spot>
+					<id>28</id>
+					<area>170</area>
+					<local_background>2969.33</local_background>
+					<annotation>YDR071C</annotation>
+					<annotation_source>730</annotation_source>
+					<volume>1085.00</volume>
+					<normalised_volume>38.31</normalised_volume>
+					<ChemicalTreatment>
+						<digestion>Trypsin, using ProGest robot</digestion>
+						<derivatisations>None</derivatisations>
+						<TreatedAnalyte>
+							<Column>
+								<description>Reverse phase</description>
+								<manufacturer>Millipore Zip tip</manufacturer>
+								<part_number>na</part_number>
+								<batch_number>na</batch_number>
+								<internal_length>0</internal_length>
+								<internal_diameter>0</internal_diameter>
+								<stationary_phase>na</stationary_phase>
+								<temperature>0</temperature>
+								<Fraction>
+									<start_point>0</start_point>
+									<end_point>1</end_point>
+									<MassSpecExperiment>
+										<description>Experiment number MS0016: Gel F (control, ref. 
+number 2L0191) spots 1-28 were selected by Phoretix 2D as being 
+upregulated by amino acid starvation</description>
+										<MassSpecMachine>
+											<manufacturer>Perspective Biosystems</manufacturer>
+											<model_name>Voyager DE-STR Biospectrometry 
+Workstation</model_name>
+											<software_version>Voyager 5.1</software_version>
+											<IonSource>
+												<MALDI>
+													<laser_wavelength>337</laser_wavelength>
+													<laser_power>1850</laser_power>
+													<matrix_type>a-cyano-4-hydroxycinnamic acid</matrix_type>
+													<grid_voltage>70</grid_voltage>
+													<acceleration_voltage>20</acceleration_voltage>
+													<ion_mode>Postitive</ion_mode>
+												</MALDI>
+												<mzAnalysis>
+													<ToF>
+														<reflectron_state>On</reflectron_state>
+														<internal_length>0</internal_length>
+													</ToF>
+													<Detection>
+														<type>micro-channel plate</type>
+													</Detection>
+												</mzAnalysis>
+											</IonSource>
+										</MassSpecMachine>
+										<PeakList>
+											<list_type>Full list</list_type>
+											<description>Spot 28</description>
+											<mass_value_type>Monoisotopic</mass_value_type>
+											<Peak>
+												<m_to_z>836.4541</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1013.5621</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1023.6418</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1035.6064</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1136.5677</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1158.6071</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1207.6914</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1305.6541</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1742.9006</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1752.8920</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>1971.0176</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2019.0411</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2035.0663</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2475.1415</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2662.3806</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2912.3610</m_to_z>
+											</Peak>
+											<Peak>
+												<m_to_z>2935.2645</m_to_z>
+											</Peak>
+											<DBSearch>
+												<username>Zhikang Yin</username>
+												<id_date>2002-03-13</id_date>
+												<DBSearchParameters>
+													<program>Mascot</program>
+													<database>NCBInr20020220</database>
+													<database_date>2002-02-20</database_date>
+												</DBSearchParameters>
+												<ProteinHit>
+													<masses_matched>7</masses_matched>
+													<score>42</score>
+													<score_type>MOWSE SCORE</score_type>
+													<Protein>
+														<accession_number>Q12447</accession_number>
+														<gene_name>Ydr071c</gene_name>
+														<organism>Saccharomyces cerevisiae</organism>
+														<orf_number>YKR025w</orf_number>
+														<description>Arylalkylamine 
+N-acetyltransferase</description>
+														<predicted_mass>21810</predicted_mass>
+														<predicted_pi>5.6</predicted_pi>
+													</Protein>
+												</ProteinHit>
+											</DBSearch>
+										</PeakList>
+									</MassSpecExperiment>
+								</Fraction>
+							</Column>
+						</TreatedAnalyte>
+					</ChemicalTreatment>
+				</Spot>
+			</Gel2D>
+		</Sample>
+	</Experiment>
+</PEDRoData>
+

@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="hupml" xmlns="hupml" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:element name="proteome">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gel" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="label" type="xs:string" use="required"/>
+			<xs:attribute name="dtd_version" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="submitter" minOccurs="0"/>
+				<xs:element ref="source_info" minOccurs="0"/>
+				<xs:element ref="sample_preparation" minOccurs="0"/>
+				<xs:element ref="gel_conditions" minOccurs="0"/>
+				<xs:element ref="marker_protein" minOccurs="0"/>
+				<xs:element ref="detection" minOccurs="0"/>
+				<xs:element ref="gel_image_info" minOccurs="0"/>
+				<xs:element ref="spot_recognition" minOccurs="0"/>
+				<xs:element ref="spot_list" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="label" type="xs:string" use="required"/>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+			<xs:attribute name="accession" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="submitter">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="person" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="person">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name"/>
+				<xs:element ref="affiliation" minOccurs="0"/>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:element ref="email" minOccurs="0"/>
+				<xs:element ref="phone" minOccurs="0"/>
+				<xs:element ref="fax" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="person_id" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="affiliation" type="xs:string"/>
+	<xs:element name="title" type="xs:string"/>
+	<xs:element name="email" type="xs:string"/>
+	<xs:element name="phone" type="xs:string"/>
+	<xs:element name="fax" type="xs:string"/>
+	<xs:element name="source_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="source" minOccurs="0"/>
+				<xs:element ref="common_name" minOccurs="0"/>
+				<xs:element ref="strain" minOccurs="0"/>
+				<xs:element ref="cultivar" minOccurs="0"/>
+				<xs:element ref="cell_line" minOccurs="0"/>
+				<xs:element ref="organ" minOccurs="0"/>
+				<xs:element ref="tissue" minOccurs="0"/>
+				<xs:element ref="subcellular_fraction" minOccurs="0"/>
+				<xs:element ref="organella" minOccurs="0"/>
+				<xs:element ref="body_fluid" minOccurs="0"/>
+				<xs:element ref="excretion" minOccurs="0"/>
+				<xs:element ref="growth_phase" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="source_info_id" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="source" type="xs:string"/>
+	<xs:element name="common_name" type="xs:string"/>
+	<xs:element name="strain" type="xs:string"/>
+	<xs:element name="cultivar" type="xs:string"/>
+	<xs:element name="cell_line" type="xs:string"/>
+	<xs:element name="organ" type="xs:string"/>
+	<xs:element name="tissue" type="xs:string"/>
+	<xs:element name="subcellular_fraction" type="xs:string"/>
+	<xs:element name="organella" type="xs:string"/>
+	<xs:element name="body_fluid" type="xs:string"/>
+	<xs:element name="excretion" type="xs:string"/>
+	<xs:element name="growth_phase">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sample_preparation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tissue_disruption" minOccurs="0"/>
+				<xs:element ref="extraction" minOccurs="0"/>
+				<xs:element ref="protease_inhibitor" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="conc" minOccurs="0"/>
+				<xs:element ref="other_materials" minOccurs="0"/>
+				<xs:element ref="solution" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="sample_preparation_id" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tissue_disruption" type="xs:string"/>
+	<xs:element name="extraction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="procedure"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protease_inhibitor">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item_protease_inhibitor" maxOccurs="unbounded"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item_protease_inhibitor">
+		<xs:complexType>
+			<xs:attribute name="conc" type="xs:string"/>
+			<xs:attribute name="unit" type="xs:string"/>
+			<xs:attribute name="name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="conc">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="procedure"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="other_materials">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item_other_materials" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item_other_materials">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:string"/>
+			<xs:attribute name="size" type="xs:string"/>
+			<xs:attribute name="size_unit" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solution">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item_solution" maxOccurs="unbounded"/>
+				<xs:element ref="solvent" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="solution_id" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item_solution">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="conc" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+					<xs:attribute name="pH" type="xs:string"/>
+					<xs:attribute name="name" type="xs:string"/>
+					<xs:attribute name="guiding_dye" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="solvent">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="name" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="procedure">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="process" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="process">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice minOccurs="0">
+					<xs:element ref="add_solution"/>
+					<xs:element ref="add_solvent"/>
+					<xs:element ref="gravity"/>
+					<xs:element ref="extraction_with"/>
+				</xs:choice>
+				<xs:element ref="repetition" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>			
+			<xs:attribute name="seq" type="xs:string" use="required"/>
+			<xs:attribute name="action" type="xs:string" use="required"/>
+			<xs:attribute name="collection" type="xs:string" use="required"/>
+			<xs:attribute name="time" type="xs:string"/>
+			<xs:attribute name="time_unit" type="xs:string"/>
+			<xs:attribute name="temperature" type="xs:string"/>
+			<xs:attribute name="temperature_unit" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gravity" type="xs:string"/>
+	<xs:element name="add_solution">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="solution_id" type="xs:string"/>
+					<xs:attribute name="solution_volume" type="xs:string"/>
+					<xs:attribute name="solution_unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="repetition">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="times" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="add_solvent">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="final_conc" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+					<xs:attribute name="name" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="extraction_with">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="solvent" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_conditions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="first_dim" minOccurs="0"/>
+				<xs:element ref="second_dim" minOccurs="0"/>
+				<xs:element ref="solution" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>			
+			<xs:attribute name="gel_conditions_id" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="first_dim">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gel_info" minOccurs="0"/>
+				<xs:element ref="protein_solution" minOccurs="0"/>
+				<xs:element ref="rehydrate" minOccurs="0"/>
+				<xs:element ref="running" minOccurs="0"/>
+				<xs:element ref="load_direction" minOccurs="0"/>
+				<xs:element ref="equipment_info" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="load_direction" type="xs:string"/>
+	<xs:element name="gel_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gel_name"/>
+				<xs:choice minOccurs="0">
+					<xs:choice>
+						<xs:element ref="gel_pH"/>
+					</xs:choice>
+					<xs:sequence>
+						<xs:element ref="gel_conc" minOccurs="0"/>
+						<xs:element ref="gel_bis_conc" minOccurs="0"/>
+						<xs:element ref="gel_gradient_range" minOccurs="0"/>
+					</xs:sequence>
+				</xs:choice>
+				<xs:element ref="gel_size"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_name">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="made_by" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_pH">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="low" type="xs:string"/>
+					<xs:attribute name="high" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_solution">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>			
+			<xs:attribute name="solution_id" type="xs:string"/>
+			<xs:attribute name="solution_volume" type="xs:string"/>
+			<xs:attribute name="solution_unit" type="xs:string"/>
+			<xs:attribute name="protein_amount" type="xs:string"/>
+			<xs:attribute name="protein_unit" type="xs:string"/>
+			<xs:attribute name="guiding_dye" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rehydrate">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="temperature" type="xs:string"/>
+					<xs:attribute name="temperature_unit" type="xs:string"/>
+					<xs:attribute name="time" type="xs:string"/>
+					<xs:attribute name="time_unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="running">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="apply" maxOccurs="unbounded"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="apply">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="step" type="xs:string"/>
+					<xs:attribute name="current" type="xs:string"/>
+					<xs:attribute name="current_unit" type="xs:string"/>
+					<xs:attribute name="voltage" type="xs:string"/>
+					<xs:attribute name="voltage_unit" type="xs:string"/>
+					<xs:attribute name="temperature" type="xs:string"/>
+					<xs:attribute name="temperature_unit" type="xs:string"/>
+					<xs:attribute name="time" type="xs:string"/>
+					<xs:attribute name="time_unit" type="xs:string"/>
+					<xs:attribute name="power" type="xs:string"/>
+					<xs:attribute name="power_unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="equipment_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="equipment_name"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="equipment_name">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="manufacturer" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_conc">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="conc" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_bis_conc">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="conc" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_gradient_range">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="from" type="xs:string"/>
+					<xs:attribute name="to" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gel_size">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="length" type="xs:string"/>
+					<xs:attribute name="width" type="xs:string"/>
+					<xs:attribute name="height" type="xs:string"/>
+					<xs:attribute name="thickness" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="second_dim">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gel_info" minOccurs="0"/>
+				<xs:element ref="equilibrate" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="running" minOccurs="0"/>
+				<xs:element ref="equipment_info" minOccurs="0"/>
+			</xs:sequence>			
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="equilibrate">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="step" type="xs:string"/>
+					<xs:attribute name="solution_id" type="xs:string"/>
+					<xs:attribute name="solution_volume" type="xs:string"/>
+					<xs:attribute name="solution_unit" type="xs:string"/>
+					<xs:attribute name="time" type="xs:string"/>
+					<xs:attribute name="time_unit" type="xs:string"/>
+					<xs:attribute name="temperature" type="xs:string"/>
+					<xs:attribute name="temperature_unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="marker_protein">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="marker_info" maxOccurs="unbounded"/>
+			</xs:sequence>			
+			<xs:attribute name="marker_protein_id" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="marker_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item_marker" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="made_by" type="xs:string"/>
+			<xs:attribute name="product_name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item_marker">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="amount" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+					<xs:attribute name="pi" type="xs:string"/>
+					<xs:attribute name="pi_unit" type="xs:string"/>
+					<xs:attribute name="MW" type="xs:string"/>
+					<xs:attribute name="MW_unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="detection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="detection_method" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="equipment_info" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="detection_id" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="detection_method" type="xs:string"/>
+	<xs:element name="gel_image_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gel_author" minOccurs="0"/>
+				<xs:element ref="registration_date" minOccurs="0"/>
+				<xs:element ref="scanner" minOccurs="0"/>
+				<xs:element ref="image" minOccurs="0"/>
+				<xs:element ref="image_data" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="registration_date" type="xs:string" />
+	<xs:element name="gel_author">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="person" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="scanner">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="manufacturer" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="image">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="url" type="xs:string"/>
+					<xs:attribute name="width" type="xs:string"/>
+					<xs:attribute name="height" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+					<xs:attribute name="dpi" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="image_data">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="type" type="xs:string"/>
+					<xs:attribute name="name" type="xs:string"/>
+					<xs:attribute name="encoding" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_recognition">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="recognition_tool"/>
+				<xs:element ref="property" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="spot_recognition_id" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="recognition_tool">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="made_by" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="property">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="value" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="spot" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="spot_label" minOccurs="0"/>
+				<xs:element ref="spot_location" minOccurs="0"/>
+				<xs:element ref="identification" minOccurs="0"/>
+				<xs:element ref="spot_data" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="accession" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_label" type="xs:string"/>
+	<xs:element name="spot_location">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="spot_position"/>
+				<xs:element ref="spot_volume" minOccurs="0"/>
+				<xs:element ref="spot_area" minOccurs="0"/>
+				<xs:element ref="observed_pi" minOccurs="0"/>
+				<xs:element ref="observed_MW" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_volume" type="xs:string" />
+	<xs:element name="spot_position">
+		<xs:complexType>
+			<xs:attribute name="x" type="xs:string"/>
+			<xs:attribute name="y" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_area">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="intensity" type="xs:string"/>
+					<xs:attribute name="width" type="xs:string"/>
+					<xs:attribute name="height" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="observed_pi">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="observed_MW">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="identification">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="identification_method" minOccurs="0"/>
+				<xs:element ref="sequencing" minOccurs="0"/>
+				<xs:element ref="ms" minOccurs="0"/>
+				<xs:element ref="search_statistics" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="candidate_list" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="identification_method" type="xs:string"/>
+	<xs:element name="sequencing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="sequence_exp" minOccurs="0"/>
+				<xs:element ref="equipment_info" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sequence_exp">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="from" type="xs:string"/>
+					<xs:attribute name="to" type="xs:string"/>
+					<xs:attribute name="count" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ms">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ms_peak_list" minOccurs="0"/>
+				<xs:element ref="equipment_info" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ms_peak_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ms_peak" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ms_peak">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="m_z" type="xs:string"/>
+					<xs:attribute name="strength" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="search_statistics">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="search_statistics_value" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="tool_name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="search_statistics_value">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="item_name" type="xs:string"/>
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="candidate_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="candidate_protein_data" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="candidate_protein_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="candidate_protein_name" minOccurs="0"/>
+				<xs:element ref="candidate_search_statistics" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="candidate_protein_name" type="xs:string"/>
+	<xs:element name="candidate_search_statistics">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="search_statistics_value" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="tool_name" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="spot_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="protein_data" minOccurs="0"/>
+				<xs:element ref="BAD_data" minOccurs="0"/>
+				<xs:element ref="structure_data" minOccurs="0"/>
+				<xs:element ref="gene_data" minOccurs="0"/>
+				<xs:element ref="reference_list" minOccurs="0"/>
+				<xs:element ref="db_accession_list" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="modification">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="target_residue" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="protein_name"/>
+				<xs:element ref="synonym_list" minOccurs="0"/>
+				<xs:element ref="theoretical_pi" minOccurs="0"/>
+				<xs:element ref="theoretical_MW" minOccurs="0"/>
+				<xs:element ref="classification" minOccurs="0"/>
+				<xs:element ref="ec_number" minOccurs="0"/>
+				<xs:element ref="gene_ontology" minOccurs="0"/>
+				<xs:element ref="organism_from_db" minOccurs="0"/>
+				<xs:element ref="common_name_from_db" minOccurs="0"/>
+				<xs:element ref="protein_sequence" minOccurs="0"/>
+				<xs:element ref="composition_calc" minOccurs="0"/>
+				<xs:element ref="superfamily_list" minOccurs="0"/>
+				<xs:element ref="modification" minOccurs="0"/>
+				<xs:element ref="splicing" minOccurs="0"/>
+				<xs:element ref="protein_feature" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_name" type="xs:string"/>
+	<xs:element name="classification" type="xs:string" />
+	<xs:element name="ec_number" type="xs:string"/>
+	<xs:element name="organism_from_db" type="xs:string"/>
+	<xs:element name="common_name_from_db" type="xs:string"/>
+	<xs:element name="synonym_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="synonym_name" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="synonym_name" type="xs:string"/>
+	<xs:element name="theoretical_pi">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="theoretical_MW">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="unit" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gene_ontology">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="molecular_function"/>
+				<xs:element ref="biological_process"/>
+				<xs:element ref="cellular_component"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="molecular_function">
+		<xs:complexType>
+			<xs:attribute name="go_accession" type="xs:string"/>
+			<xs:attribute name="evidence_criteria" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="biological_process">
+		<xs:complexType>
+			<xs:attribute name="go_accession" type="xs:string"/>
+			<xs:attribute name="evidence_criteria" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cellular_component">
+		<xs:complexType>
+			<xs:attribute name="go_accession" type="xs:string"/>
+			<xs:attribute name="evidence_criteria" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_sequence">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="start" type="xs:string"/>
+					<xs:attribute name="end" type="xs:string"/>
+					<xs:attribute name="count" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="composition_calc">
+		<xs:complexType>
+			<xs:attribute name="A" type="xs:string"/>
+			<xs:attribute name="R" type="xs:string"/>
+			<xs:attribute name="N" type="xs:string"/>
+			<xs:attribute name="D" type="xs:string"/>
+			<xs:attribute name="C" type="xs:string"/>
+			<xs:attribute name="Q" type="xs:string"/>
+			<xs:attribute name="E" type="xs:string"/>
+			<xs:attribute name="G" type="xs:string"/>
+			<xs:attribute name="H" type="xs:string"/>
+			<xs:attribute name="I" type="xs:string"/>
+			<xs:attribute name="L" type="xs:string"/>
+			<xs:attribute name="K" type="xs:string"/>
+			<xs:attribute name="M" type="xs:string"/>
+			<xs:attribute name="F" type="xs:string"/>
+			<xs:attribute name="P" type="xs:string"/>
+			<xs:attribute name="S" type="xs:string"/>
+			<xs:attribute name="T" type="xs:string"/>
+			<xs:attribute name="W" type="xs:string"/>
+			<xs:attribute name="Y" type="xs:string"/>
+			<xs:attribute name="V" type="xs:string"/>
+			<xs:attribute name="B" type="xs:string"/>
+			<xs:attribute name="Z" type="xs:string"/>
+			<xs:attribute name="X" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="superfamily_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="superfamily" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="superfamily" type="xs:string"/>
+	<xs:element name="splicing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="target_residue" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="target_residue">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="location" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+					<xs:attribute name="codon" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_feature">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="protein_feature_type" minOccurs="0"/>
+				<xs:element ref="description" minOccurs="0"/>
+				<xs:element ref="seq_spec" minOccurs="0"/>
+				<xs:element ref="status" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="label" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protein_feature_type" type="xs:string"/>
+	<xs:element name="description" type="xs:string"/>
+	<xs:element name="seq_spec" type="xs:string"/>
+	<xs:element name="status" type="xs:string"/>
+	<xs:element name="BAD_data">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="accession" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="structure_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="analysis_method" minOccurs="0"/>
+				<xs:element ref="structure_file" minOccurs="0"/>
+				<xs:element ref="domain_info" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="analysis_method" type="xs:string"/>
+	<xs:element name="structure_file">
+		<xs:complexType>
+			<xs:attribute name="url" type="xs:string"/>
+			<xs:attribute name="format" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="domain_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="domain" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="domain">
+		<xs:complexType>
+			<xs:attribute name="start" type="xs:string"/>
+			<xs:attribute name="end" type="xs:string"/>
+			<xs:attribute name="label" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gene_data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gene_name"/>
+				<xs:element ref="locus" minOccurs="0"/>
+				<xs:element ref="gene_feature" minOccurs="0"/>
+				<xs:element ref="base_count" minOccurs="0"/>
+				<xs:element ref="nucleotide_sequence" minOccurs="0"/>
+				<xs:element ref="gene_mapping" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+			<xs:attribute name="created_date" type="xs:string"/>
+			<xs:attribute name="modified_date" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gene_name" type="xs:string"/>
+	<xs:element name="locus" type="xs:string"/>
+	<xs:element name="gene_mapping" type="xs:string"/>
+	<xs:element name="gene_feature">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gene_feature_source" minOccurs="0"/>
+				<xs:element ref="cds" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gene_feature_source">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="location" minOccurs="0"/>
+				<xs:element ref="qualifiers" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="cds">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="location" minOccurs="0"/>
+				<xs:element ref="qualifiers" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="location" type="xs:string"/>
+	<xs:element name="qualifiers">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="name" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="base_count">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="A" type="xs:string"/>
+					<xs:attribute name="C" type="xs:string"/>
+					<xs:attribute name="G" type="xs:string"/>
+					<xs:attribute name="T" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nucleotide_sequence">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="start" type="xs:string"/>
+					<xs:attribute name="end" type="xs:string"/>
+					<xs:attribute name="count" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reference_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="reference_info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reference_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="reference_authors" minOccurs="0"/>
+				<xs:element ref="reference_title" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="reference_authors" type="xs:string"/>
+	<xs:element name="reference_title" type="xs:string"/>
+	<xs:element name="db_accession_list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="db_accession_info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="db_accession_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="mol_type" minOccurs="0"/>
+				<xs:element ref="comment" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="db_name" type="xs:string"/>
+			<xs:attribute name="accession" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mol_type" type="xs:string"/>
+	<xs:element name="comment" type="xs:string"/>
+	<xs:element name="template">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="person" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="source_info" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="sample_preparation" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="gel_conditions" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="marker_protein" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="detection" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="spot_recognition" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
