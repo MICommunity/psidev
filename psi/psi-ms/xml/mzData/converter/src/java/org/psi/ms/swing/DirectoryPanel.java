@@ -57,5 +57,6 @@ public class DirectoryPanel extends JPanel {
 
     void setDefaultFieldValues() {
         oSourceDirPanel.setDefaultFieldValues();
+        oOutputTypePanel.setDefaultFieldValues();
     }
 }
