@@ -113,22 +113,22 @@ public class AdminPanel extends JPanel {
         //if the fields are available for editing, checks to see if the value is not set
         if (isPopulated()) {
             if (adminData.isFieldActive(ProvidedDataItem.DESC_ADMIN_SAMPLENAME)) {
-                if (adminData.getAdmin().getSampleName() == "") {
+                if (adminData.getAdmin().getSampleName().equals("")) {
                     oSampleNameField.setText(oPrefs.get("SampleName", "Default Sample"));
                 }
             }
             if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_NAME)) {
-                if (personData.getPerson().getName() == "") {
+                if (personData.getPerson().getName().equals("")) {
                     oContactNameField.setText(oPrefs.get("ContactName", "Default Contact"));
                 }
             }
             if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION)) {
-                if (personData.getPerson().getInstitution() == "") {
+                if (personData.getPerson().getInstitution().equals("")) {
                     oContactInstitutionField.setText(oPrefs.get("ContactInstitution", "Default Institute"));
                 }
             }
             if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO)) {
-                if (personData.getPerson().getContactInfo() == "") {
+                if (personData.getPerson().getContactInfo().equals("")) {
                     oContactInfoField.setText(oPrefs.get("ContactInfo", "Default Info"));
                 }
             }
