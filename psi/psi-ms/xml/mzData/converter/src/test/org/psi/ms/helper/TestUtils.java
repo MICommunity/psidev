@@ -1,5 +1,5 @@
 /**
- * $Id: TestUtils.java,v 1.1 2004/01/26 16:50:55 krunte Exp $
+ * $Id: TestUtils.java,v 1.2 2004/10/11 07:06:45 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: Kai Runte
@@ -31,19 +31,12 @@ public class TestUtils extends TestCase {
                 float aFloat = random.nextFloat();
                 floatList.add(new Float(aFloat));
             }
-            // Because of rounding errors the original floatList
-            // will always differ from the first converted list.
-            // However, in the second round of conversion these
-            // errors should be the same, hence create the same
-            // numbers.
             byte[] bytes = Utils.floatListToByteArray(floatList);
             List list = Utils.byteArrayToFloatList(bytes);
-            byte[] bytes2 = Utils.floatListToByteArray(list);
-            List list2 = Utils.byteArrayToFloatList(bytes2);
-            assertEquals("size differs between input and output list!", list.size(), list2.size());
-            for (int iii = 1; iii < list.size(); iii++) {
-                Float original = (Float) list.get(iii);
-                Float converted = (Float) list2.get(iii);
+            assertEquals("size differs between input and output list!", floatList.size(), list.size());
+            for (int iii = 1; iii < floatList.size(); iii++) {
+                Float original = (Float) floatList.get(iii);
+                Float converted = (Float) list.get(iii);
                 assertEquals("converter float differs from original float value!", original, converted);
             }
         }
@@ -58,21 +51,14 @@ public class TestUtils extends TestCase {
                 floatList.add(new Float(aFloat));
             }
             try {
-                // Because of rounding errors the original floatList
-                // will always differ from the first converted list.
-                // However, in the second round of conversion these
-                // errors should be the same, hence create the same
-                // numbers.
                 String base64orig = Utils.floatListToBase64String(floatList);
                 List list = Utils.base64StringToFloatList(base64orig);
                 String base64round1 = Utils.floatListToBase64String(list);
-                List list2 = Utils.base64StringToFloatList(base64round1);
-                String base64round2 = Utils.floatListToBase64String(list2);
-                assertEquals("size differs between input and output list!", list.size(), list2.size());
-                assertEquals("base64 string differs between input and output list!", base64round1, base64round2);
-                for (int iii = 0; iii < list.size(); iii++) {
-                    Float original = (Float) list.get(iii);
-                    Float converted  = (Float) list2.get(iii);
+                assertEquals("size differs between input and output list!", floatList.size(), list.size());
+                assertEquals("base64 string differs between input and output list!", base64orig, base64round1);
+                for (int iii = 0; iii < floatList.size(); iii++) {
+                    Float original = (Float) floatList.get(iii);
+                    Float converted  = (Float) list.get(iii);
                     assertEquals("converter float differs from original float value!", original, converted);
                 }
             } catch (EncoderException e) {
