@@ -1,35 +1,173 @@
-<html>
-<body>
-<a href="http://psidev.sourceforge.net"><img
- src="../images/psi.gif" width="113" height="75" border="0" align="left"
- alt=""></a> <a href="http://www.hupo.org/"><img
- src="../images/hupo.gif" width="113" height="75" border="0"
- align="right" alt=""></a> <br clear="all">
-<center>
-  <h2 align="center">PSI-MS XML Data Format</h2>
-  <p align="left"><b></b>The aim of the PSI is to develop a standard representation 
-    of experimental spectra in the context of the experimental setup and the analysed 
-    system. Such a format will allow to support publications with detailed experimental 
-    results, and will allow data exchange and the comparision of related proteomics 
-    experiments beyond the local research team.</p>
-  <p align="left"><a href="docs/mid-2003.sum.html">An overview of progess and 
-    links to reports.</a></p>
-  <p align="left">The PSI-MS team have developed an XML-based data standard which 
-    is intended to allow data interchange for MS experiments - this format was 
-    presented at the October HUPO World Congress in Montreal and updated based 
-    on public comments.</p>
-  <p align="left"><a href="xml/mzdata/index.html">Latest version of the schema 
-    and it's documentation.</a></p>
-  <p align="left">Java-based converters for popular peak-list formats are under 
-    development as well as visualization and processing tools which use the format. 
-    Send e-mail if you are interested in contributing to this effort or have comments 
-    about the format.</p>
-  <p align="left">&nbsp;</p>
-</center>
-<hr>
-<br>
-<br>
-<address> Randall Julian, <a href="mailto:rkjulian@miner.chem.purdue.edu">rkjulian@miner.chem.purdue.edu</a>, 
-November 7, 2003</address>
-    </body>
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HUPO PSI-MS: Mass Spectrometry Standards Working Group</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script language="JavaScript" type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<div align="left" > <font face="Times New Roman, Times, serif"><a href="http://psidev.sourceforge.net/"><img alt="Proteomics Standards Initiative" src="http://psidev.sourceforge.net/images/psi.gif" width="113" height="75" border="0" align="left" /></a> 
+  <a href="http://www.hupo.org/"><img alt="HUPO Human Proteome Organisation"
+ src="http://psidev.sourceforge.net/images/hupo.gif" width="113" height="75" border="0" align="right" /></a></font>  
+  <h2 align="center"><font face="Times New Roman, Times, serif"><br />
+    PSI-MS: Mass Spectrometry Standards Working Group</font></h2>
+  <p align="center" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="center">| <a href="#aboutUs">About us</a> | <a href="#mzdata">The 
+    mzData format</a> | <a href="#mzident"> The mzIdent format</a> | <a href="#ontology"> 
+    The supporting ontology</a> |<br />
+    | <a href="#meetingReports">Meeting reports</a> | <a href="#discussionList">Email 
+    discussion list</a> | </p>
+  <p align="left"><font size="+2" face="Times New Roman, Times, serif"><em><a name="aboutUs" id="aboutUs"></a> 
+    <strong><br />
+    About us</strong></em></font></p>
+</div>
+<div align="left" > 
+  <p>The PSI-MS working group defines community data formats and ontology terms 
+     facilitating data comparison, exchange and verification. PSI-MS is focused on the field of mass spectrometry.</p>
+    </div>
+<p>
+Our three main achievements and projects are:
+<ul>
+  <li>
+    <div align="left">The <a href="#mzdata">mzData</a> standard, which captures peaklist data. mzData's aim is to unite the large number of current formats (pkl's, dta's, mgf's, .....) into one; mzData.  mzData has been released in a stable production version.
+                      mzData is already supported by some software providers. Other companies, including Bruker Daltonics, Kratos Analytical (Shimadzu Group) and Matrix Science,                      are currently implementing the mzData standard.
+
+    </div>
+  </li>
+  <li> 
+    <div align="left" >The <a href="#mzident">mzIdent</a> standard, which captures 
+      parameters and results of search engines such as Mascot and 
+      Sequest (in addition to <em>many</em> other equivalent tools).<br />
+    </div>
+  </li>
+  <li> 
+    <div align="left" >The supporting <a href="#ontology">ontology</a> that will provide classifiers 
+      for both mzData and mzIdent; this list of clearly defined, contextualised 
+      terms is crucial for the construction of unambiguously worded data files.</div>
+  </li>
+</ul>
+<hr />
+<div align="left" >
+  <p><font face="Times New Roman, Times, serif"><em><a name="mzdata" id="mzdata"></a><br />
+    </em></font><font size="+2" face="Times New Roman, Times, serif"><em><strong>The 
+    mzData standard</strong></em></font></p>
+</div><br>
+Status: stable production version 1.04<br>
+
+<h3><em>mzData in a nutshell</em></h3>
+mzData is a data format capturing peak list information. Its aim is to unite the large number of current formats (pkl's, dta's, mgf's, .....) into one; mzData. mzData is NOT a substitute for the rawfile formats of the instrument vendors. Some vendors, if not all, will provide software transforming their raw files to mzData. There are already a number of programs which can use mzData.
+In order to keep the filesize of mzData limited, mz/intensity information is stored in "binary base 64 format" - even your harddisk will love mzData.
+
+<h3><em>Technical Description of mzData</em></h3>
+xsd schema of mzData: <a href="http://psidev.sourceforge.net/ms/xml/mzdata/mzdata.xsd">mzdata.xsd</a><br>
+<a href="http://psidev.sourceforge.net/ms/xml/mzdata/mzdata.html">mzData Schema Documentation</a><br>
+<a href="http://psidev.sourceforge.net/ms/xml/mzdata/example.xml">mzData example file</a><br>
+Questions? Consult the <a href="https://lists.sourceforge.net/lists/listinfo/psidev-ms-dev">PSI-MS email discussion list</a><br>
+
+<h3><em>Software supporting mzData</em></h3>
+mzData converter from Kai Runte, University of Bielefeld, Germany<br>
+mzData Viewer from Rob Garbutt and David Westhead, University of Leeds, UK<br>
+
+<h3><em>Companies / organisations working on implementing  mzData</em></h3>
+<a href="http://www.isb-sib.ch">SIB:</a> <a href="http://www.expasy.org/tools/aldente/">Aldente</a> (support in the next release)<br>
+<a href="http://www.genebio.com">GeneBio:</a> <a href="http://www.phenyx-ms.com">Phenyx</a> (support in the next release)<br>
+<a href="http://www.matrixscience.com">Matrix Science</a>: <a href="http://www.matrixscience.com/search_intro.html">Mascot</a> (in release 2.1)<br>
+<a href="http://www.bdal.com">Bruker Daltonics</a> (in next release)<br>
+<a href="http://www.kratos.com/">Kratos</a> (in next release)<br>
+<a href="http://www.agilent.com">Agilent</a>, 
+<a href="http://www.appliedbiosystems.com">ABI</a>,
+<a href="http://www.thermo.com">Thermo Electron</a> (exploratory phase)<br>
+<a href="http://www.protagen.de">Protagen</a><br>
+<a href="http://www.ebi.ac.uk">EBI</a>/<a href="http://www.ugent.be">University of Gent</a>: 
+<a href="http://www.ebi.ac.uk/pride">Pride - PRoteomics IDentificasions database</a><br>
+Julian Randall from <a href="http://www.elililly.com/">Eli Lilly</a> has a mzData version of X! Tandem<br>
+<a href="http://www.bioinformaticssolutions.com">Bioinformatics Solutions Inc.</a>: <a href="http://www.bioinformaticssolutions.com/products/peaksstudio.php">Peaks</a><br>
+</ol>
+<br><a href="index.html">to the top</a>
+<hr />
+<div align="left" >
+  <a name="mzident" id="mzident"></a><br />
+  </font><font size="+2" face="Times New Roman, Times, serif"><em><strong>The 
+  mzIdent standard</strong></em></font></div><p>
+
+<div align="left" > 
+  <p align="left">
+   Status: conceptual phase<br>
+   mzIdent captures parameters and results of search engines such as Mascot and Sequest 
+   (in addition to many other equivalent tools). mzIdent as a standard will unify results 
+   from different search engines, facilitating cross-comparisons. PSI and the major 
+   journals are working towards common guidelines for comparing results. 
+   Because of the inclusion of search parameters in mzIdent, 
+   it can potentially also be used as an input file to a search engine. <br>
+   <a href="http://psidev.sourceforge.net/ms/xml/mzident/mzident.xsd">Latest 
+    version of the mzIdent schema</a><br>
+    <a href="http://psidev.sourceforge.net/ms/xml/mzident/mzident.html">mzIdent 
+    schema documentation</a> generated with <a href="http://titanium.dstc.edu.au/xml/xs3p/">xs3p</a></p>
+  </p>
+</div>
+<br><a href="index.html">to the top</a>
+<hr />
+<div align="left" >
+  <a name="ontology" id="ontology"></a><br />
+  </em></font><font size="+2" face="Times New Roman, Times, serif"><em><strong>The 
+  Supporting Ontology</strong></em></font></div><p>
+
+<div align="left" > 
+  <p align="left">Ontology development is initially focused on supporting the 
+    mzdata and mzIdent formats. The source file and a browseable HTML representation 
+    will be made available here by mid-November 2004.
+    This initial ontology will be continually expanded to eventually 
+    support the entire <a href="http://psidev.sourceforge.net/gps/#psiModel">PSI-ML</a>.</p>
+</div>
+<br><a href="index.html">to the top</a>
+<hr />
+<div align="left" >
+<p align="left"><font size="+2" face="Times New Roman, Times, serif"><em>
+    <a name="meetingReports" id="meetingReports"></a></em></font><font size="+2" face="Times New Roman, Times, serif"><em>
+    <strong>Meeting reports</strong></em></font></p>
+<p align="left">
+
+<a href="http://psidev.sourceforge.net/meetings/2002-10/report.htm">First PSI meeting, Hinxton Hall, UK, October 2002</a><br>
+<a href="http://psidev.sourceforge.net/ms/docs/mid-2003.sum.html">ASMS, Montreal, June 2003</a><br>
+<a href="http://psidev.sourceforge.net/ms/docs/mid-2003.sum.html">HUPO Congress, Montreal 2003</a><br>
+<a href="http://psidev.sourceforge.net/meetings/2004-04/2004-04-report.html">Report from PSI Nice 2004 (MS included)</a><br>
+HUPO Congress, Beijing, 2004: <a href="http://psidev.sourceforge.net/meetings/2004-10/2004-10-beijing-agenda.html">PSI Agenda</a><br>
+&nbsp;<br>
+Upcomming meetings:<br>
+Spring 2005 PSI meeting (location to be announced)<br>
+4th HUPO congress, Munich, 28th August - September 1st 2005
+</p>
+<a href="index.html">to the top</a>
+<hr />
+    <a name="discussionList" id="discussionList"></a></em></font><font size="+2" face="Times New Roman, Times, serif"><em><br />
+
+    <strong>Moderated email discussion list</strong></em></font></p>
+  <p align="left">
+We also provide a mail discussion list for mass spectroscopy standard development.<br>
+You can mail to this list at <a href="mailto:psidev-ms-dev@lists.sourceforge.net">psidev-ms-dev@lists.sourceforge.net</a>, <a
+href="http://sourceforge.net/mailarchive/forum.php?forum_id=12725">browse
+the archive</a>, or <a
+ href="http://lists.sourceforge.net/lists/listinfo/psidev-ms-dev">subscribe/unsubscribe</a>.
+</p>
+    <br />
+<a href="index.html">to the top</a>
+<hr />
+<font face="Times New Roman, Times, serif">
+Head of group:<a href="http://www.ebi.ac.uk/Information/Staff/person_maint.php?person_id=88">Weimin Zhu</a> |
+Created 20041023 by <a href="http://www.ebi.ac.uk/Information/Staff/person_maint.php?person_id=437">Chris Taylor</a> |
+Last changed:  20041025 by <a href="http://www.fgcz.ethz.ch/people/fpotthast">Frank Potthast</a> and <a href="http://www.ebi.ac.uk/Information/Staff/person_maint.php?person_id=233">Henning Hermjakob</a> | <a href="mailto:frank@fgcz.ethz.ch">mail change request for this page</a>
+</font>
+<p>&nbsp;</p>
+
+</body>
 </html>
