@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.10 2003/09/11 15:38:59 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.11 2003/09/15 12:54:24 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,19 +8,13 @@
  */
 package org.psi.ms.converter;
 
-import org.exolab.castor.mapping.Mapping;
-import org.exolab.castor.mapping.MappingException;
-import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.ValidationException;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.helper.SuffixFileFilter;
 import org.psi.ms.helper.Utils;
-import org.psi.ms.model.*;
-import org.xml.sax.InputSource;
+import org.psi.ms.model.MzData;
+import org.psi.ms.xml.MzDataWriter;
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.SortedSet;
@@ -34,24 +28,17 @@ import java.util.SortedSet;
  */
 public class DtaSetConverter {
 
-    private int arrayOutputType;
     private DtaReader dtaReader;
 
     public DtaSetConverter() {
-        arrayOutputType = DtaReader.BASE64;
-        dtaReader = new DtaReader(arrayOutputType);
+        dtaReader = new DtaReader();
     }
 
-    public DtaSetConverter(int arrayOutputType) {
-        this.arrayOutputType = arrayOutputType;
-        dtaReader = new DtaReader(arrayOutputType);
-    }
-
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData) throws PsiMsConverterException, IOException {
         this.convertDirectory(sourceDirname, outputFilename, mzData, null);
     }
 
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, ParseListener listener) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, ParseListener listener) throws PsiMsConverterException, IOException {
         File sourceDir = new File(sourceDirname);
         File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
         File[] ztaFiles = sourceDir.listFiles(new SuffixFileFilter(".zta"));
@@ -71,14 +58,24 @@ public class DtaSetConverter {
         while (dtaIterator.hasNext() && ztaIterator.hasNext()) {
             String dtaFile = (String) dtaIterator.next();
             String ztaFile = (String) ztaIterator.next();
-            System.out.println("Converting file: " + dtaFile);
+            //Tell the GUI that we're busy...
+            if (listener != null) {
+                listener.setMessage("Converting file: " + dtaFile);
+            } else {
+                System.out.println("Converting file: " + dtaFile);
+            }
             dtaReader.addAcquisitions(dtaFile, mzData, acqId);
             acqId++;
             //Parsing the .dta file...
             if (listener != null) {
                 listener.fileParsed();
             }
-            System.out.println("Converting file: " + ztaFile);
+            //Tell the GUI that we're busy...
+            if (listener != null) {
+                listener.setMessage("Converting file: " + dtaFile);
+            } else {
+                System.out.println("Converting file: " + dtaFile);
+            }
             dtaReader.addAcquisitions(ztaFile, mzData, acqId);
             acqId++;
             //Parsing the .zta file...
@@ -87,34 +84,20 @@ public class DtaSetConverter {
             }
         }
 
-        FileWriter fileWriter = new FileWriter(outputFilename);
-
         //Writing the XML
         if (listener != null) {
             listener.indeterminiteProcess();
             listener.setMessage("Writing XML...");
         }
 
-        Mapping mapping = new Mapping();
-        try {
-            mapping.loadMapping(new InputSource(DtaReader.class.getResourceAsStream("mzDataXMLMapping.xml")));
-            Marshaller marshaller = new Marshaller(fileWriter);
-            marshaller.setMapping(mapping);
-            marshaller.marshal(mzData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (MappingException e) {
-            e.printStackTrace();
-        }
+        MzDataWriter mzDataWriter = new MzDataWriter(new File(outputFilename));
+        mzDataWriter.marshall(mzData);
     }
 
-    public static void main(String[] argv) throws IOException, PsiMsConverterException, ValidationException, MarshalException {
+    public static void main(String[] argv) throws IOException, PsiMsConverterException {
         DtaSetConverter dtaSetConverter = new DtaSetConverter();
         MzData mzData = new MzData();
-        dtaSetConverter = new DtaSetConverter(DtaReader.XML_ELEMENTS);
+        dtaSetConverter = new DtaSetConverter();
         dtaSetConverter.convertDirectory(argv[0], argv[1], mzData);
-        mzData = new MzData();
-        dtaSetConverter = new DtaSetConverter(DtaReader.BASE64);
-        dtaSetConverter.convertDirectory(argv[0], argv[1] + "_base64", mzData);
     }
 }
