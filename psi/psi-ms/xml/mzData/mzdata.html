@@ -370,9 +370,9 @@ div#legend div.hint {
       <script type="text/javascript">
 <!--
 /* IDs of XML Instance Representation boxes */
-var xiBoxes = new Array('element_mzData_xibox', 'type_sourceFileType_xibox', 'type_supDataType_xibox', 'type_cvLookupType_xibox', 'type_cvParamType_xibox', 'type_personType_xibox', 'type_softwareType_xibox', 'type_dataProcessingType_xibox', 'type_spectrumType_xibox', 'type_supDataBinaryType_xibox', 'type_peakListBinaryType_xibox', 'group_binaryDataGroup_xibox', 'type_adminType_xibox', 'type_acqSettingsType_xibox', 'type_precursorType_xibox', 'type_acqDescType_xibox', 'type_supDescType_xibox', 'type_instrumentDescriptionType_xibox', 'type_paramType_xibox', 'type_userParamType_xibox', 'type_descriptionType_xibox');
+var xiBoxes = new Array('element_mzData_xibox', 'type_sourceFileType_xibox', 'type_supDataType_xibox', 'type_cvLookupType_xibox', 'type_cvParamType_xibox', 'type_personType_xibox', 'type_softwareType_xibox', 'type_dataProcessingType_xibox', 'type_spectrumType_xibox', 'type_supDataBinaryType_xibox', 'type_peakListBinaryType_xibox', 'group_binaryDataGroup_xibox', 'type_adminType_xibox', 'type_spectrumSettingsType_xibox', 'type_precursorType_xibox', 'type_spectrumDescType_xibox', 'type_supDescType_xibox', 'type_instrumentDescriptionType_xibox', 'type_paramType_xibox', 'type_userParamType_xibox', 'type_descriptionType_xibox');
 /* IDs of Schema Component Representation boxes */
-var scBoxes = new Array('schema_scbox', 'element_mzData_scbox', 'type_sourceFileType_scbox', 'type_supDataType_scbox', 'type_cvLookupType_scbox', 'type_cvParamType_scbox', 'type_personType_scbox', 'type_softwareType_scbox', 'type_dataProcessingType_scbox', 'type_spectrumType_scbox', 'type_supDataBinaryType_scbox', 'type_peakListBinaryType_scbox', 'group_binaryDataGroup_scbox', 'type_adminType_scbox', 'type_acqSettingsType_scbox', 'type_precursorType_scbox', 'type_acqDescType_scbox', 'type_supDescType_scbox', 'type_instrumentDescriptionType_scbox', 'type_paramType_scbox', 'type_userParamType_scbox', 'type_descriptionType_scbox');
+var scBoxes = new Array('schema_scbox', 'element_mzData_scbox', 'type_sourceFileType_scbox', 'type_supDataType_scbox', 'type_cvLookupType_scbox', 'type_cvParamType_scbox', 'type_personType_scbox', 'type_softwareType_scbox', 'type_dataProcessingType_scbox', 'type_spectrumType_scbox', 'type_supDataBinaryType_scbox', 'type_peakListBinaryType_scbox', 'group_binaryDataGroup_scbox', 'type_adminType_scbox', 'type_spectrumSettingsType_scbox', 'type_precursorType_scbox', 'type_spectrumDescType_scbox', 'type_supDescType_scbox', 'type_instrumentDescriptionType_scbox', 'type_paramType_scbox', 'type_userParamType_scbox', 'type_descriptionType_scbox');
 
 /**
  * Can get the ID of the button controlling
@@ -729,14 +729,6 @@ if (gc != null) {
             <a href="#SchemaDefinitions">Global Definitions</a>
             <ul>
                <li>
-                  <a href="#type_acqDescType">Complex Type: <strong>acqDescType</strong>
-                  </a>
-               </li>
-               <li>
-                  <a href="#type_acqSettingsType">Complex Type: <strong>acqSettingsType</strong>
-                  </a>
-               </li>
-               <li>
                   <a href="#type_adminType">Complex Type: <strong>adminType</strong>
                   </a>
                </li>
@@ -782,6 +774,14 @@ if (gc != null) {
                </li>
                <li>
                   <a href="#type_sourceFileType">Complex Type: <strong>sourceFileType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_spectrumDescType">Complex Type: <strong>spectrumDescType</strong>
+                  </a>
+               </li>
+               <li>
+                  <a href="#type_spectrumSettingsType">Complex Type: <strong>spectrumSettingsType</strong>
                   </a>
                </li>
                <li>
@@ -912,10 +912,7 @@ setState('schema_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>Peak lists are processed data from an experiment. There can be
-                multiple peak lists in an mzData file, which might be related via a separation, or
-                just in sequence from an automated run. Any one peak list (spectrum) may also be
-                composed of a number of acquisitions.</td>
+            <td>This schema can capture the use of a mass spectrometer, the data generated, and the initial processing of that data (to the level of the peak list). Peak lists are processed data from a mass spectrometry experiment. There can be multiple peak lists in an mzData file, which might be related via a separation, or  just in sequence from an automated run. Any one peak list (mass spectrum) may also be composed of a number of acquisitions, which can be described individually herein.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -925,57 +922,60 @@ setState('schema_scbox', false);
          </div>
          <div id="element_mzData_xibox" class="contents">
             <div style="margin-left: 0em">&lt;mzData<br/>
-               <span style="margin-left: 0.5em"> version="<span class="fixed">1.04</span> 
-                  <span class="occurs">[1]</span>"</span>
+               <span style="margin-left: 0.5em"> version="<span class="fixed">1.05</span> 
+                  <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The development version of this mzData schema.'); viewDocumentation('Attribute', 'version', docArray);">?</a>"</span>
                <br/>
                <span style="margin-left: 0.5em"> accessionNumber="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
                   <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The accession number for this particular mzData file.'); viewDocumentation('Attribute', 'accessionNumber', docArray);">?</a>"</span>&gt; <br/>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The accession number assigned arbitrarily to a particular mzData instance (i.e. data) file, by the generator of that file. This accession number is intended to serve as a (locally) unique reference by which to identify a particular mzData instance file, and is not intended to be related to any other accession number, such as that for a particular entry in a reference database such as Uniprot, or the element sampleName under the admin branch of mzData.'); viewDocumentation('Attribute', 'accessionNumber', docArray);">?</a>"</span>&gt; <br/>
                <div style="margin-left: 1.5em">&lt;cvLookup&gt; <span class="type">
                      <a title="Jump to &#34;cvLookupType&#34; type definition." href="#type_cvLookupType">cvLookupType</a>
                   </span> &lt;/cvLookup&gt; <span class="occurs">[0..*]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This stores the lookup information for a referred-to controlled vocabulary source.'); viewDocumentation('Element', 'cvLookup', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This stores the location, name, version and a short, arbitrarily assigned in-file reference label, for one or more controlled vocabulary sources. Short labels are for use elsewhere in the data file, primarily in the cvLabel attribute, to indicate the use of a particular source for an item of controlled vocabulary.'); viewDocumentation('Element', 'cvLookup', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;description&gt;  <span class="occurs">[1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Each data set starts with a description section.'); viewDocumentation('Element', 'description', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Each data set starts with a description section. This section captures \'general\' information; such as the instrument on which the data were generated.'); viewDocumentation('Element', 'description', docArray);">?</a>
                   <br/>
                   <div style="margin-left: 1.5em">&lt;admin&gt; <span class="type">
                         <a title="Jump to &#34;adminType&#34; type definition." href="#type_adminType">adminType</a>
                      </span> &lt;/admin&gt; <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Administrative information pertaining to the entire data set is stored here.'); viewDocumentation('Element', 'admin', docArray);">?</a>
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Administrative information pertaining to the entire mzData file (i.e. not specific to any part of the data set) is stored here.'); viewDocumentation('Element', 'admin', docArray);">?</a>
                   </div>
                   <div style="margin-left: 1.5em">&lt;instrument&gt; <span class="type">
                         <a title="Jump to &#34;instrumentDescriptionType&#34; type definition." href="#type_instrumentDescriptionType">instrumentDescriptionType</a>
                      </span> &lt;/instrument&gt; <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Instrument descripton (not parameters); common to all acquisitions.'); viewDocumentation('Element', 'instrument', docArray);">?</a>
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Instrument descripton (not \'run time\' parameters, which should properly be captured in spectrumInstrument); these features must be common to all acquisitions.'); viewDocumentation('Element', 'instrument', docArray);">?</a>
                   </div>
                   <div style="margin-left: 1.5em">&lt;dataProcessing&gt; <span class="type">
                         <a title="Jump to &#34;dataProcessingType&#34; type definition." href="#type_dataProcessingType">dataProcessingType</a>
                      </span> &lt;/dataProcessing&gt; <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description of the raw data processing which occurred.'); viewDocumentation('Element', 'dataProcessing', docArray);">?</a>
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description of the default processing by which the peak list(s) were generated.'); viewDocumentation('Element', 'dataProcessing', docArray);">?</a>
                   </div>&lt;/description&gt;</div>
                <div style="margin-left: 1.5em">&lt;spectrumList<br/>
                   <span style="margin-left: 0.5em"> count="<span class="type">
                         <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                     <span class="occurs">[1]</span>"</span>&gt;  <span class="occurs">[1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('All peak lists and the acquisitions underlying them are attached here.'); viewDocumentation('Element', 'spectrumList', docArray);">?</a>
+                     <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The number of spectra that are to be found in the attached list.'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[1]</span>  
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('All mass spectra and the acquisitions underlying them are described and attached here. Subsidiary data arrays are also both described and attached here.'); viewDocumentation('Element', 'spectrumList', docArray);">?</a>
                   <br/>
                   <div style="margin-left: 1.5em">&lt;spectrum<br/>
                      <span style="margin-left: 0.5em"> id="<span class="type">
                            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                        <span class="occurs">[1]</span>"</span>&gt;  <span class="occurs">[1..*]</span>  
+                        <span class="occurs">[1]</span> 
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The identifier for a particular spectrum; to serve as both an internal (to the file) reference with which to order spectra and also to as a means to associate them with each other (e.g. parent and child soectra from a tandem experiment). This number should be provided whether it legitmately comes from the source data, or has to be generated. In the absence of a parent spectrum for an MS'); viewDocumentation('Attribute', 'id', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  
                      <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This is an individual spectrum.The spectrum is considered to be composed of an array of acquisitions. There are two primary ways of representing data; base64 encoded binary (single or double precision) or arrays of simple data types. All arrays used to describe a single spectrum are the same length, with the same indexing.'); viewDocumentation('Element', 'spectrum', docArray);">?</a>
                      <br/>
-                     <div style="margin-left: 1.5em">&lt;acqDesc&gt; <span class="type">
-                           <a title="Jump to &#34;acqDescType&#34; type definition." href="#type_acqDescType">acqDescType</a>
-                        </span> &lt;/acqDesc&gt; <span class="occurs">[1]</span> 
-                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one acqDesc for each acquisition.'); viewDocumentation('Element', 'acqDesc', docArray);">?</a>
+                     <div style="margin-left: 1.5em">&lt;spectrumDesc&gt; <span class="type">
+                           <a title="Jump to &#34;spectrumDescType&#34; type definition." href="#type_spectrumDescType">spectrumDescType</a>
+                        </span> &lt;/spectrumDesc&gt; <span class="occurs">[1]</span> 
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one spectrumDesc per spectrum. It captures both the instance-specific parameters for the underlying acquisitions, and where applicable, the postion of this spectrum in a possible hierarchy of spectra. For example, for \'tandem\' mass spectrometry; the id attribute on the spectrum element allows the survey scan to be identified from which the parent ion was selected that gave rise to this MSMS spectrum - note that these identifying numbers can be given, in a list if necessary, whether or not the actual referred-to spectra are present in the file - they are the \'family tree\' of this spectrum.'); viewDocumentation('Element', 'spectrumDesc', docArray);">?</a>
                      </div>
                      <div style="margin-left: 1.5em">&lt;supDesc&gt; <span class="type">
                            <a title="Jump to &#34;supDescType&#34; type definition." href="#type_supDescType">supDescType</a>
                         </span> &lt;/supDesc&gt; <span class="occurs">[0..*]</span> 
-                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one supDesc for each individual supDataArray (binary or otherwise).'); viewDocumentation('Element', 'supDesc', docArray);">?</a>
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one supDesc for each supDataArray (binary or otherwise) found under this particular spectrum element.'); viewDocumentation('Element', 'supDesc', docArray);">?</a>
                      </div>
                      <div style="margin-left: 1.5em">&lt;mzArrayBinary&gt; <span class="type">
                            <a title="Jump to &#34;peakListBinaryType&#34; type definition." href="#type_peakListBinaryType">peakListBinaryType</a>
@@ -1060,7 +1060,7 @@ setState('element_mzData_xibox', true);
                      <span class="scTag">name</span>="<span class="scContent">version</span>" <span class="scTag">type</span>="<span class="scContent">
                         <span class="type">
                            <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">use</span>="<span class="scContent">required</span>" <span class="scTag">fixed</span>="<span class="scContent">1.04</span>"/&gt;</div>
+                     </span>" <span class="scTag">use</span>="<span class="scContent">required</span>" <span class="scTag">fixed</span>="<span class="scContent">1.05</span>"/&gt;</div>
                   <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
                      <span class="scTag">name</span>="<span class="scContent">accessionNumber</span>" <span class="scTag">type</span>="<span class="scContent">
                         <span class="type">
@@ -1080,292 +1080,6 @@ setState('element_mzData_scbox', false);
       <h2>
          <a name="SchemaDefinitions">Global Definitions</a>
       </h2>
-      <h3>Complex Type: <a name="type_acqDescType" class="name">acqDescType</a>
-      </h3>
-      <table class="hierarchy">
-         <tr>
-            <th>Super-types:</th>
-            <td>None</td>
-         </tr>
-         <tr>
-            <th>Sub-types:</th>
-            <td>None</td>
-         </tr>
-      </table>
-      <table class="properties">
-         <tr>
-            <th>Name</th>
-            <td>acqDescType</td>
-         </tr>
-         <tr>
-            <th>
-               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
-            </th>
-            <td>no</td>
-         </tr>
-         <tr>
-            <th>Documentation</th>
-            <td>Description of the process of performing an acquisition</td>
-         </tr>
-      </table>
-      <div class="sample box">
-         <div>
-            <input type="button" id="type_acqDescType_xibox_button" class="control" onclick="switchState('type_acqDescType_xibox'); return false;" style="display: none"/> 
-            <span class="caption">XML Instance Representation</span>
-         </div>
-         <div id="type_acqDescType_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;acqSettings&gt; <span class="type">
-                     <a title="Jump to &#34;acqSettingsType&#34; type definition." href="#type_acqSettingsType">acqSettingsType</a>
-                  </span> &lt;/acqSettings&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Settings for this specific acquisition.'); viewDocumentation('Element', 'acqSettings', docArray);">?</a>
-               </div>
-               <div style="margin-left: 1.5em">&lt;precursorList<br/>
-                  <span style="margin-left: 0.5em"> count="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                     <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The number of precursor selection processes described in the attached list.'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[0..1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('List of precursors from the current acquisition.'); viewDocumentation('Element', 'precursorList', docArray);">?</a>
-                  <br/>
-                  <div style="margin-left: 1.5em">&lt;precursor&gt; <span class="type">
-                        <a title="Jump to &#34;precursorType&#34; type definition." href="#type_precursorType">precursorType</a>
-                     </span> &lt;/precursor&gt; <span class="occurs">[1..*]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This is the precursor step. If source activation is used then msLevel is 0. The acqRef points to the acquisition from which the precursor was selected. If source activation was used, then acqRef is also 0.'); viewDocumentation('Element', 'precursor', docArray);">?</a>
-                  </div>&lt;/precursorList&gt;</div>
-               <div style="margin-left: 1.5em">&lt;comments&gt; <span class="type">
-                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..*]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Comments regarding the acquisition are captured here as free text.'); viewDocumentation('Element', 'comments', docArray);">?</a>
-               </div>&lt;/...&gt;</div>
-         </div>
-         <script type="text/javascript">
-<!--
-setState('type_acqDescType_xibox', true);
-// -->
-</script>
-      </div>
-      <div class="schemaComponent box">
-         <div>
-            <input type="button" id="type_acqDescType_scbox_button" class="control" onclick="switchState('type_acqDescType_scbox'); return false;" style="display: none"/> 
-            <span class="caption">Schema Component Representation</span>
-         </div>
-         <div id="type_acqDescType_scbox" class="contents">
-            <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">acqDescType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">acqSettings</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a title="Jump to &#34;acqSettingsType&#34; type definition." href="#type_acqSettingsType">acqSettingsType</a>
-                        </span>
-                     </span>"/&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">precursorList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                              <span class="scTag">name</span>="<span class="scContent">precursor</span>" <span class="scTag">type</span>="<span class="scContent">
-                                 <span class="type">
-                                    <a title="Jump to &#34;precursorType&#34; type definition." href="#type_precursorType">precursorType</a>
-                                 </span>
-                              </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>
-                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                           <span class="scTag">name</span>="<span class="scContent">count</span>" <span class="scTag">type</span>="<span class="scContent">
-                              <span class="type">
-                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
-                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">comments</span>" <span class="scTag">type</span>="<span class="scContent">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
-         </div>
-         <script type="text/javascript">
-<!--
-setState('type_acqDescType_scbox', false);
-// -->
-</script>
-      </div>
-      <div style="text-align: right; clear: both;">
-         <a href="#top">top</a>
-      </div>
-      <hr/>
-      <h3>Complex Type: <a name="type_acqSettingsType" class="name">acqSettingsType</a>
-      </h3>
-      <table class="hierarchy">
-         <tr>
-            <th>Super-types:</th>
-            <td>None</td>
-         </tr>
-         <tr>
-            <th>Sub-types:</th>
-            <td>None</td>
-         </tr>
-      </table>
-      <table class="properties">
-         <tr>
-            <th>Name</th>
-            <td>acqSettingsType</td>
-         </tr>
-         <tr>
-            <th>
-               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
-            </th>
-            <td>no</td>
-         </tr>
-         <tr>
-            <th>Documentation</th>
-            <td>Description of the parameters for the mass spectrometer for a given
-                acquisition (or list of)</td>
-         </tr>
-      </table>
-      <div class="sample box">
-         <div>
-            <input type="button" id="type_acqSettingsType_xibox_button" class="control" onclick="switchState('type_acqSettingsType_xibox'); return false;" style="display: none"/> 
-            <span class="caption">XML Instance Representation</span>
-         </div>
-         <div id="type_acqSettingsType_xibox" class="contents">
-            <div style="margin-left: 0em">&lt;...&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;acqSpecification<br/>
-                  <span style="margin-left: 0.5em"> spectrumType="<span class="constraint">
-                        <span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> (<em>value</em> comes from list: {'discrete'|'continuous'})</span> 
-                     <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Discrete or continuous spectra.'); viewDocumentation('Attribute', 'spectrumType', docArray);">?</a>"</span>
-                  <br/>
-                  <span style="margin-left: 0.5em"> methodOfCombination="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
-                     <span class="occurs">[1]</span>"</span>
-                  <br/>
-                  <span style="margin-left: 0.5em"> count="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                     <span class="occurs">[1]</span>"</span>&gt;  <span class="occurs">[0..1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Specification for combining raw scans/acquisitions into a single peak list. A list of acquisitions from the original raw file can be specified here.'); viewDocumentation('Element', 'acqSpecification', docArray);">?</a>
-                  <br/>
-                  <div style="margin-left: 1.5em">&lt;acquisition<br/>
-                     <span style="margin-left: 0.5em"> acqNumber="<span class="type">
-                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                        <span class="occurs">[1]</span> 
-                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The actual acquisition number from the raw file.'); viewDocumentation('Attribute', 'acqNumber', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Scan or acquisition from original raw file used to create this peak list.'); viewDocumentation('Element', 'acquisition', docArray);">?</a>
-                     <br/>
-                     <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
-                        <span class="occurs">[0..*]</span>
-                     </span>
-                     <br/>
-                     <div style="margin-left: 3em">&lt;cvParam&gt; <span class="type">
-                           <a title="Jump to &#34;cvParamType&#34; type definition." href="#type_cvParamType">cvParamType</a>
-                        </span> &lt;/cvParam&gt; <span class="occurs">[1]</span> 
-                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Only controlled values are allowed here.'); viewDocumentation('Element', 'cvParam', docArray);">?</a>
-                     </div>
-                     <div style="margin-left: 3em">&lt;userParam&gt; <span class="type">
-                           <a title="Jump to &#34;userParamType&#34; type definition." href="#type_userParamType">userParamType</a>
-                        </span> &lt;/userParam&gt; <span class="occurs">[1]</span> 
-                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Uncontrolled, or user controlled values are allowed here.'); viewDocumentation('Element', 'userParam', docArray);">?</a>
-                     </div>
-                     <span class="group" style="margin-left: 1.5em">End Choice</span>
-                     <br/>&lt;/acquisition&gt;</div>&lt;/acqSpecification&gt;</div>
-               <div style="margin-left: 1.5em">&lt;acqInstrument<br/>
-                  <span style="margin-left: 0.5em"> msLevel="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                     <span class="occurs">[1]</span>"</span>
-                  <br/>
-                  <span style="margin-left: 0.5em"> mzRangeStart="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span> 
-                     <span class="occurs">[0..1]</span>"</span>
-                  <br/>
-                  <span style="margin-left: 0.5em"> mzRangeStop="<span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span> 
-                     <span class="occurs">[0..1]</span>"</span>&gt;  <span class="occurs">[1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The instrument\'s \'run time\' parameters; common to the whole spectrum.'); viewDocumentation('Element', 'acqInstrument', docArray);">?</a>
-                  <br/>
-                  <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
-                     <span class="occurs">[0..*]</span>
-                  </span>
-                  <br/>
-                  <div style="margin-left: 3em">&lt;cvParam&gt; <span class="type">
-                        <a title="Jump to &#34;cvParamType&#34; type definition." href="#type_cvParamType">cvParamType</a>
-                     </span> &lt;/cvParam&gt; <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Only controlled values are allowed here.'); viewDocumentation('Element', 'cvParam', docArray);">?</a>
-                  </div>
-                  <div style="margin-left: 3em">&lt;userParam&gt; <span class="type">
-                        <a title="Jump to &#34;userParamType&#34; type definition." href="#type_userParamType">userParamType</a>
-                     </span> &lt;/userParam&gt; <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Uncontrolled, or user controlled values are allowed here.'); viewDocumentation('Element', 'userParam', docArray);">?</a>
-                  </div>
-                  <span class="group" style="margin-left: 1.5em">End Choice</span>
-                  <br/>&lt;/acqInstrument&gt;</div>&lt;/...&gt;</div>
-         </div>
-         <script type="text/javascript">
-<!--
-setState('type_acqSettingsType_xibox', true);
-// -->
-</script>
-      </div>
-      <div class="schemaComponent box">
-         <div>
-            <input type="button" id="type_acqSettingsType_scbox_button" class="control" onclick="switchState('type_acqSettingsType_scbox'); return false;" style="display: none"/> 
-            <span class="caption">Schema Component Representation</span>
-         </div>
-         <div id="type_acqSettingsType_scbox" class="contents">
-            <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
-               <span class="scTag">name</span>="<span class="scContent">acqSettingsType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">acqSpecification</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                              <span class="scTag">name</span>="<span class="scContent">acquisition</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
-                                       <span class="scTag">base</span>="<span class="scContent">
-                                          <span class="type">
-                                             <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
-                                          </span>
-                                       </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                                          <span class="scTag">name</span>="<span class="scContent">acqNumber</span>" <span class="scTag">type</span>="<span class="scContent">
-                                             <span class="type">
-                                                <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
-                                          </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>
-                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                           <span class="scTag">name</span>="<span class="scContent">spectrumType</span>" <span class="scTag">use</span>="<span class="scContent">required</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> 
-                                 <span class="scTag">base</span>="<span class="scContent">
-                                    <span class="type">
-                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                                 </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> 
-                                    <span class="scTag">value</span>="<span class="scContent">discrete</span>"/&gt;</div>
-                                 <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> 
-                                    <span class="scTag">value</span>="<span class="scContent">continuous</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>&lt;/<span class="scTag">xs:attribute</span>&gt;</div>
-                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                           <span class="scTag">name</span>="<span class="scContent">methodOfCombination</span>" <span class="scTag">type</span>="<span class="scContent">
-                              <span class="type">
-                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
-                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>
-                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                           <span class="scTag">name</span>="<span class="scContent">count</span>" <span class="scTag">type</span>="<span class="scContent">
-                              <span class="type">
-                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
-                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>
-                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">acqInstrument</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
-                              <span class="scTag">base</span>="<span class="scContent">
-                                 <span class="type">
-                                    <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
-                                 </span>
-                              </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                                 <span class="scTag">name</span>="<span class="scContent">msLevel</span>" <span class="scTag">type</span>="<span class="scContent">
-                                    <span class="type">
-                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
-                                 </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>
-                              <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                                 <span class="scTag">name</span>="<span class="scContent">mzRangeStart</span>" <span class="scTag">type</span>="<span class="scContent">
-                                    <span class="type">
-                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span>
-                                 </span>" <span class="scTag">use</span>="<span class="scContent">optional</span>"/&gt;</div>
-                              <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
-                                 <span class="scTag">name</span>="<span class="scContent">mzRangeStop</span>" <span class="scTag">type</span>="<span class="scContent">
-                                    <span class="type">
-                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span>
-                                 </span>" <span class="scTag">use</span>="<span class="scContent">optional</span>"/&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
-         </div>
-         <script type="text/javascript">
-<!--
-setState('type_acqSettingsType_scbox', false);
-// -->
-</script>
-      </div>
-      <div style="text-align: right; clear: both;">
-         <a href="#top">top</a>
-      </div>
-      <hr/>
       <h3>Complex Type: <a name="type_adminType" class="name">adminType</a>
       </h3>
       <table class="hierarchy">
@@ -1391,7 +1105,7 @@ setState('type_acqSettingsType_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>'Header' information -- sample description, contact details, comments</td>
+            <td>'Header' information - sample description, contact details, comments</td>
          </tr>
       </table>
       <div class="sample box">
@@ -1403,22 +1117,22 @@ setState('type_acqSettingsType_scbox', false);
             <div style="margin-left: 0em">&lt;...&gt; <br/>
                <div style="margin-left: 1.5em">&lt;sampleName&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/sampleName&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A label that is referable to the sample used to generate the dataset.'); viewDocumentation('Element', 'sampleName', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A short label that is referable to the sample used to generate the dataset. This will often be a copy of the internal (lab) reference code for the sample being analysed.'); viewDocumentation('Element', 'sampleName', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;sampleDescription&gt; <span class="type">
                      <a title="Jump to &#34;descriptionType&#34; type definition." href="#type_descriptionType">descriptionType</a>
                   </span> &lt;/sampleDescription&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Expansible description of the sample used to generate the dataset.'); viewDocumentation('Element', 'sampleDescription', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Expansible description of the sample used to generate the dataset, named in sampleName.'); viewDocumentation('Element', 'sampleDescription', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;sourceFile&gt; <span class="type">
                      <a title="Jump to &#34;sourceFileType&#34; type definition." href="#type_sourceFileType">sourceFileType</a>
                   </span> &lt;/sourceFile&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Information about the original source file used in generating the instance document.'); viewDocumentation('Element', 'sourceFile', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Information about the original source file (i.e. that generated by the instrument) used in generating the instance document.'); viewDocumentation('Element', 'sourceFile', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;contact&gt; <span class="type">
                      <a title="Jump to &#34;personType&#34; type definition." href="#type_personType">personType</a>
                   </span> &lt;/contact&gt; <span class="occurs">[1..*]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Contact person(s) for this dataset.'); viewDocumentation('Element', 'contact', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Audit information concerning the means by which the originator/owner of this mzData file can be identified, and contacted if necessary.'); viewDocumentation('Element', 'contact', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -1507,7 +1221,7 @@ setState('type_adminType_scbox', false);
                <span style="margin-left: 0.5em"> cvLabel="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
                   <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The short label to be referred to from cvParamType.'); viewDocumentation('Attribute', 'cvLabel', docArray);">?</a>"</span>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The short label to be used as a reference tag with which to refer to this particulart Controlled Vocabulary source description, from an instance of the cvLabel attribute, where it appears (i.e. in things of type paramType).'); viewDocumentation('Attribute', 'cvLabel', docArray);">?</a>"</span>
                <br/>
                <span style="margin-left: 0.5em"> fullName="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
@@ -1616,12 +1330,12 @@ setState('type_cvLookupType_scbox', false);
                <span style="margin-left: 0.5em"> name="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
                   <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The actual name for the parameter, from the controlled vocabulary.'); viewDocumentation('Attribute', 'name', docArray);">?</a>"</span>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The actual name for the parameter, from the referred-to controlled vocabulary.'); viewDocumentation('Attribute', 'name', docArray);">?</a>"</span>
                <br/>
                <span style="margin-left: 0.5em"> value="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
                   <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The value for the parameter, where appropriate (may also come from CV...).'); viewDocumentation('Attribute', 'value', docArray);">?</a>"</span>/&gt; </div>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The value for the parameter; may be absent if not appropriate, or a numeric or symbolic value, or may itself be CV (legal values for a parameter should be enumerated and defined in the ontology).'); viewDocumentation('Attribute', 'value', docArray);">?</a>"</span>/&gt; </div>
          </div>
          <script type="text/javascript">
 <!--
@@ -1692,8 +1406,7 @@ setState('type_cvParamType_scbox', false);
          </tr>
          <tr>
             <th>Documentation</th>
-            <td>Description of the software, and the way in which it was used to
-                generate the peak list.</td>
+            <td>Description of the software, and the way in which it was used to generate the peak list.</td>
          </tr>
       </table>
       <div class="sample box">
@@ -1706,22 +1419,26 @@ setState('type_cvParamType_scbox', false);
                <div style="margin-left: 1.5em">&lt;software<br/>
                   <span style="margin-left: 0.5em"> completionTime="<span class="type">
                         <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span> 
-                     <span class="occurs">[0..1]</span>"</span>&gt;  <span class="occurs">[1]</span>  
+                     <span class="occurs">[0..1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The time to complete the processing that resulted in this mzData file, if the mzData file was generated in a single use of the software (i.e. if the software was not used with more than one parameter set, not whether the job was completed in several phases).'); viewDocumentation('Attribute', 'completionTime', docArray);">?</a>"</span>&gt;  <span class="occurs">[1]</span>  
                   <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Specific information on the conversion or processing software.'); viewDocumentation('Element', 'software', docArray);">?</a>
                   <br/>
                   <div style="margin-left: 1.5em">&lt;name&gt; <span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/name&gt; <span class="occurs">[1]</span>
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/name&gt; <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The official name for the software package used.'); viewDocumentation('Element', 'name', docArray);">?</a>
                   </div>
                   <div style="margin-left: 1.5em">&lt;version&gt; <span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/version&gt; <span class="occurs">[1]</span>
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/version&gt; <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The version number of the software package.'); viewDocumentation('Element', 'version', docArray);">?</a>
                   </div>
                   <div style="margin-left: 1.5em">&lt;comments&gt; <span class="type">
-                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..1]</span>
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Additional comments on the use of the software.'); viewDocumentation('Element', 'comments', docArray);">?</a>
                   </div>&lt;/software&gt;</div>
                <div style="margin-left: 1.5em">&lt;processingMethod&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/processingMethod&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description of the peak processing method.This element describes the base method used if a variable method is used or not otherwise specified in the acquisition section.'); viewDocumentation('Element', 'processingMethod', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description of the default peak processing method.This element describes the base method used in the generation of a particular mzData file. Variable methods should be described in the appropriate acquisition section - if no acquisition-specific details are found, then this information serves as the default.'); viewDocumentation('Element', 'processingMethod', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -1802,7 +1519,7 @@ setState('type_dataProcessingType_scbox', false);
                <span style="margin-left: 0.5em" class="newFields"> comment="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
                   <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Free text supplement to the main CV-based description.'); viewDocumentation('Attribute', 'comment', docArray);">?</a>"</span>&gt; <br/>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Free text opportunity to supplement, but not to replace, to the main CV-based description.'); viewDocumentation('Attribute', 'comment', docArray);">?</a>"</span>&gt; <br/>
                <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
                   <span class="occurs">[0..*]</span>
                </span>
@@ -1891,34 +1608,34 @@ setState('type_descriptionType_scbox', false);
             <div style="margin-left: 0em">&lt;...&gt; <br/>
                <div style="margin-left: 1.5em">&lt;instrumentName&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/instrumentName&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Descriptive name of the instrument (make, model, customisations).'); viewDocumentation('Element', 'instrumentName', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Descriptive name of the instrument (make, model, significant customisations).'); viewDocumentation('Element', 'instrumentName', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;source&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/source&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Invariant ion source information.'); viewDocumentation('Element', 'source', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Invariant ion source (e.g. MALDI) information, as a run of name-value pairs.'); viewDocumentation('Element', 'source', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;analyzerList<br/>
                   <span style="margin-left: 0.5em"> count="<span class="type">
                         <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
                      <span class="occurs">[1]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The number of analyzers described in the attached list.'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[1]</span>  
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Ordered mass analyzer component list.'); viewDocumentation('Element', 'analyzerList', docArray);">?</a>
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The number of analyzers that are described in the attached list.'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[1]</span>  
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Mass analyzer component list; ordered so as to reflect the physical order of the desribed components in the mass spectrometer.'); viewDocumentation('Element', 'analyzerList', docArray);">?</a>
                   <br/>
                   <div style="margin-left: 1.5em">&lt;analyzer&gt; <span class="type">
                         <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                      </span> &lt;/analyzer&gt; <span class="occurs">[1..*]</span> 
-                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A single component of the mass analyzer; e.g. quadrupole, collision cell.'); viewDocumentation('Element', 'analyzer', docArray);">?</a>
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('A single component of the mass analyzer (e.g. quadrupole, collision cell), decribed with a run of name-value pairs.'); viewDocumentation('Element', 'analyzer', docArray);">?</a>
                   </div>&lt;/analyzerList&gt;</div>
                <div style="margin-left: 1.5em">&lt;detector&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/detector&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Ion detector information.'); viewDocumentation('Element', 'detector', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Ion detector information, as a run of name-value pairs.'); viewDocumentation('Element', 'detector', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;additional&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/additional&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Subsidiary information about the instrument, captured as a run of additional parameters.'); viewDocumentation('Element', 'additional', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Subsidiary information about the instrument; a run of additional parameters captured as name-value pairs'); viewDocumentation('Element', 'additional', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -2197,15 +1914,15 @@ setState('type_peakListBinaryType_scbox', false);
             <div style="margin-left: 0em">&lt;...&gt; <br/>
                <div style="margin-left: 1.5em">&lt;name&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/name&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Name of contact person'); viewDocumentation('Element', 'name', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Contact person name, or role name (e.g. \&#34;Group leader of team 42\&#34;) of the individual responsible for this dataset.'); viewDocumentation('Element', 'name', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;institution&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/institution&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Academic or corporate organisation with which the contact person is associated.'); viewDocumentation('Element', 'institution', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Academic or corporate organisation with which the contact person or role is associated.'); viewDocumentation('Element', 'institution', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;contactInfo&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/contactInfo&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Phone number, email, postal address or whatever.'); viewDocumentation('Element', 'contactInfo', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Phone number, email, postal address or other appropriate means of contact.'); viewDocumentation('Element', 'contactInfo', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -2293,12 +2010,12 @@ setState('type_personType_scbox', false);
                <div style="margin-left: 1.5em">&lt;ionSelection&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/ionSelection&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This is the trigger m/z (or m/z\'s), neutral loss etc. for tandem MS or data dependent scans.'); viewDocumentation('Element', 'ionSelection', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This captures the type of ion selection being performed, and trigger m/z (or m/z\'s), neutral loss criteria etc. for tandem MS or data dependent scans.'); viewDocumentation('Element', 'ionSelection', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;activation&gt; <span class="type">
                      <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
                   </span> &lt;/activation&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Type and energy level used for activation.'); viewDocumentation('Element', 'activation', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The type and energy level used for activation.'); viewDocumentation('Element', 'activation', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -2384,15 +2101,19 @@ setState('type_precursorType_scbox', false);
             <div style="margin-left: 0em">&lt;...<br/>
                <span style="margin-left: 0.5em"> completionTime="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:dateTime</span> 
-                  <span class="occurs">[0..1]</span>"</span>&gt; <br/>
+                  <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The time to complete the processing that resulted in this mzData file, if the mzData file was generated in a single use of the software (i.e. if the software was not used with more than one parameter set, not whether the job was completed in several phases).'); viewDocumentation('Attribute', 'completionTime', docArray);">?</a>"</span>&gt; <br/>
                <div style="margin-left: 1.5em">&lt;name&gt; <span class="type">
-                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/name&gt; <span class="occurs">[1]</span>
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/name&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The official name for the software package used.'); viewDocumentation('Element', 'name', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;version&gt; <span class="type">
-                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/version&gt; <span class="occurs">[1]</span>
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/version&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The version number of the software package.'); viewDocumentation('Element', 'version', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;comments&gt; <span class="type">
-                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..1]</span>
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Additional comments on the use of the software.'); viewDocumentation('Element', 'comments', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -2476,15 +2197,15 @@ setState('type_softwareType_scbox', false);
             <div style="margin-left: 0em">&lt;...&gt; <br/>
                <div style="margin-left: 1.5em">&lt;nameOfFile&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/nameOfFile&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Name of source file for supplemental data.'); viewDocumentation('Element', 'nameOfFile', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Name of the source file, without reference to location (either URI or local path).'); viewDocumentation('Element', 'nameOfFile', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;pathToFile&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:anyURI</span> &lt;/pathToFile&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('URI-formatted path to file, without actual file name appended.'); viewDocumentation('Element', 'pathToFile', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('URI-formatted full path to file, without actual file name appended.'); viewDocumentation('Element', 'pathToFile', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;fileType&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/fileType&gt; <span class="occurs">[0..1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Type of the file (typically named by vendor data system; e.g. ThermoFinnigan XCalibur 1.0).'); viewDocumentation('Element', 'fileType', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Type of the file if appropriate, else a description of the software or reference resource used.'); viewDocumentation('Element', 'fileType', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -2526,6 +2247,293 @@ setState('type_sourceFileType_scbox', false);
          <a href="#top">top</a>
       </div>
       <hr/>
+      <h3>Complex Type: <a name="type_spectrumDescType" class="name">spectrumDescType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>spectrumDescType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>Description of the process of performing an acquisition</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button" id="type_spectrumDescType_xibox_button" class="control" onclick="switchState('type_spectrumDescType_xibox'); return false;" style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_spectrumDescType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;spectrumSettings&gt; <span class="type">
+                     <a title="Jump to &#34;spectrumSettingsType&#34; type definition." href="#type_spectrumSettingsType">spectrumSettingsType</a>
+                  </span> &lt;/spectrumSettings&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Both run time instrument settings and variations in software parameters all leading to the generation of the specific spectrum being described.'); viewDocumentation('Element', 'spectrumSettings', docArray);">?</a>
+               </div>
+               <div style="margin-left: 1.5em">&lt;precursorList<br/>
+                  <span style="margin-left: 0.5em"> count="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
+                     <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The number of precursor selection processes described in the attached list.'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[0..1]</span>  
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('List and descriptions of precursors to the spectrum currently being described.'); viewDocumentation('Element', 'precursorList', docArray);">?</a>
+                  <br/>
+                  <div style="margin-left: 1.5em">&lt;precursor&gt; <span class="type">
+                        <a title="Jump to &#34;precursorType&#34; type definition." href="#type_precursorType">precursorType</a>
+                     </span> &lt;/precursor&gt; <span class="occurs">[1..*]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This is the precursor step. If source activation is used then both msLevel and spectrumRef have the value 0. The spectrumRef holds the value of the id attrubute of the spectrum from which the precursor ion was selected. An ordered list of these precursors can be given; the referred-to id numbers my not represent spectra present in the mzData file, but this should not present a bar to providing the history of this scan. Example (trivially); MS survey scan has id = 1 and the first MSMS spectrum has id= 2, with the spectrumRef attribute on precursor for the MSMS spectrum having the value 1.'); viewDocumentation('Element', 'precursor', docArray);">?</a>
+                  </div>&lt;/precursorList&gt;</div>
+               <div style="margin-left: 1.5em">&lt;comments&gt; <span class="type">
+                     <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/comments&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Additional comments regarding the acquisition are captured here as free text. This should only be used as a lifeboat for when the cv/userParams are inappropriate; or as a \'scratch\' comment space.'); viewDocumentation('Element', 'comments', docArray);">?</a>
+               </div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_spectrumDescType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button" id="type_spectrumDescType_scbox_button" class="control" onclick="switchState('type_spectrumDescType_scbox'); return false;" style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_spectrumDescType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">spectrumDescType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">spectrumSettings</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a title="Jump to &#34;spectrumSettingsType&#34; type definition." href="#type_spectrumSettingsType">spectrumSettingsType</a>
+                        </span>
+                     </span>"/&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">precursorList</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                              <span class="scTag">name</span>="<span class="scContent">precursor</span>" <span class="scTag">type</span>="<span class="scContent">
+                                 <span class="type">
+                                    <a title="Jump to &#34;precursorType&#34; type definition." href="#type_precursorType">precursorType</a>
+                                 </span>
+                              </span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                           <span class="scTag">name</span>="<span class="scContent">count</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
+                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">comments</span>" <span class="scTag">type</span>="<span class="scContent">
+                        <span class="type">
+                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                     </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"/&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_spectrumDescType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
+      <h3>Complex Type: <a name="type_spectrumSettingsType" class="name">spectrumSettingsType</a>
+      </h3>
+      <table class="hierarchy">
+         <tr>
+            <th>Super-types:</th>
+            <td>None</td>
+         </tr>
+         <tr>
+            <th>Sub-types:</th>
+            <td>None</td>
+         </tr>
+      </table>
+      <table class="properties">
+         <tr>
+            <th>Name</th>
+            <td>spectrumSettingsType</td>
+         </tr>
+         <tr>
+            <th>
+               <a title="Look up 'Abstract' in glossary" href="#term_Abstract">Abstract</a>
+            </th>
+            <td>no</td>
+         </tr>
+         <tr>
+            <th>Documentation</th>
+            <td>Description of the parameters for the mass spectrometer for a given acquisition (or list of)</td>
+         </tr>
+      </table>
+      <div class="sample box">
+         <div>
+            <input type="button" id="type_spectrumSettingsType_xibox_button" class="control" onclick="switchState('type_spectrumSettingsType_xibox'); return false;" style="display: none"/> 
+            <span class="caption">XML Instance Representation</span>
+         </div>
+         <div id="type_spectrumSettingsType_xibox" class="contents">
+            <div style="margin-left: 0em">&lt;...&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;acqSpecification<br/>
+                  <span style="margin-left: 0.5em"> spectrumType="<span class="constraint">
+                        <span class="type">
+                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> (<em>value</em> comes from list: {'discrete'|'continuous'})</span> 
+                     <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Whether these are discrete or continuous spectra.'); viewDocumentation('Attribute', 'spectrumType', docArray);">?</a>"</span>
+                  <br/>
+                  <span style="margin-left: 0.5em"> methodOfCombination="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> 
+                     <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The method (most usually summing or some form of averaging) by which the acquisitions were combined to make the spectrum.'); viewDocumentation('Attribute', 'methodOfCombination', docArray);">?</a>"</span>
+                  <br/>
+                  <span style="margin-left: 0.5em"> count="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
+                     <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The total number of acquisitions attached (as a simple data integrity check).'); viewDocumentation('Attribute', 'count', docArray);">?</a>"</span>&gt;  <span class="occurs">[0..1]</span>  
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Specification for combining raw scans/acquisitions into a single peak list or spectrum. A list of acquisitions from the original raw file can be specified. Software parameters specified in the cv/userParams under acquisition automatically override the default parameters given in dataProcessing.'); viewDocumentation('Element', 'acqSpecification', docArray);">?</a>
+                  <br/>
+                  <div style="margin-left: 1.5em">&lt;acquisition<br/>
+                     <span style="margin-left: 0.5em"> acqNumber="<span class="type">
+                           <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
+                        <span class="occurs">[1]</span> 
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The actual acquisition number taken directly from the raw file.'); viewDocumentation('Attribute', 'acqNumber', docArray);">?</a>"</span>&gt;  <span class="occurs">[1..*]</span>  
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Scan or acquisition from original raw file used to create this peak list, as specified in sourceFile.'); viewDocumentation('Element', 'acquisition', docArray);">?</a>
+                     <br/>
+                     <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
+                        <span class="occurs">[0..*]</span>
+                     </span>
+                     <br/>
+                     <div style="margin-left: 3em">&lt;cvParam&gt; <span class="type">
+                           <a title="Jump to &#34;cvParamType&#34; type definition." href="#type_cvParamType">cvParamType</a>
+                        </span> &lt;/cvParam&gt; <span class="occurs">[1]</span> 
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Only controlled values are allowed here.'); viewDocumentation('Element', 'cvParam', docArray);">?</a>
+                     </div>
+                     <div style="margin-left: 3em">&lt;userParam&gt; <span class="type">
+                           <a title="Jump to &#34;userParamType&#34; type definition." href="#type_userParamType">userParamType</a>
+                        </span> &lt;/userParam&gt; <span class="occurs">[1]</span> 
+                        <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Uncontrolled, or user controlled values are allowed here.'); viewDocumentation('Element', 'userParam', docArray);">?</a>
+                     </div>
+                     <span class="group" style="margin-left: 1.5em">End Choice</span>
+                     <br/>&lt;/acquisition&gt;</div>&lt;/acqSpecification&gt;</div>
+               <div style="margin-left: 1.5em">&lt;spectrumInstrument<br/>
+                  <span style="margin-left: 0.5em"> msLevel="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
+                     <span class="occurs">[1]</span>"</span>
+                  <br/>
+                  <span style="margin-left: 0.5em"> mzRangeStart="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span> 
+                     <span class="occurs">[0..1]</span>"</span>
+                  <br/>
+                  <span style="margin-left: 0.5em"> mzRangeStop="<span class="type">
+                        <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span> 
+                     <span class="occurs">[0..1]</span>"</span>&gt;  <span class="occurs">[1]</span>  
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The instrument\'s \'run time\' parameters; common to the whole of this spectrum.'); viewDocumentation('Element', 'spectrumInstrument', docArray);">?</a>
+                  <br/>
+                  <span class="group" style="margin-left: 1.5em">Start <a title="Look up 'Choice' in glossary" href="#term_Choice">Choice</a> 
+                     <span class="occurs">[0..*]</span>
+                  </span>
+                  <br/>
+                  <div style="margin-left: 3em">&lt;cvParam&gt; <span class="type">
+                        <a title="Jump to &#34;cvParamType&#34; type definition." href="#type_cvParamType">cvParamType</a>
+                     </span> &lt;/cvParam&gt; <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Only controlled values are allowed here.'); viewDocumentation('Element', 'cvParam', docArray);">?</a>
+                  </div>
+                  <div style="margin-left: 3em">&lt;userParam&gt; <span class="type">
+                        <a title="Jump to &#34;userParamType&#34; type definition." href="#type_userParamType">userParamType</a>
+                     </span> &lt;/userParam&gt; <span class="occurs">[1]</span> 
+                     <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('This element holds additional data or annotation. Uncontrolled, or user controlled values are allowed here.'); viewDocumentation('Element', 'userParam', docArray);">?</a>
+                  </div>
+                  <span class="group" style="margin-left: 1.5em">End Choice</span>
+                  <br/>&lt;/spectrumInstrument&gt;</div>&lt;/...&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_spectrumSettingsType_xibox', true);
+// -->
+</script>
+      </div>
+      <div class="schemaComponent box">
+         <div>
+            <input type="button" id="type_spectrumSettingsType_scbox_button" class="control" onclick="switchState('type_spectrumSettingsType_scbox'); return false;" style="display: none"/> 
+            <span class="caption">Schema Component Representation</span>
+         </div>
+         <div id="type_spectrumSettingsType_scbox" class="contents">
+            <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
+               <span class="scTag">name</span>="<span class="scContent">spectrumSettingsType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">acqSpecification</span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                              <span class="scTag">name</span>="<span class="scContent">acquisition</span>" <span class="scTag">maxOccurs</span>="<span class="scContent">unbounded</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                                       <span class="scTag">base</span>="<span class="scContent">
+                                          <span class="type">
+                                             <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
+                                          </span>
+                                       </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                                          <span class="scTag">name</span>="<span class="scContent">acqNumber</span>" <span class="scTag">type</span>="<span class="scContent">
+                                             <span class="type">
+                                                <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
+                                          </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                           <span class="scTag">name</span>="<span class="scContent">spectrumType</span>" <span class="scTag">use</span>="<span class="scContent">required</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:simpleType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:restriction</span> 
+                                 <span class="scTag">base</span>="<span class="scContent">
+                                    <span class="type">
+                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                                 </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> 
+                                    <span class="scTag">value</span>="<span class="scContent">discrete</span>"/&gt;</div>
+                                 <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:enumeration</span> 
+                                    <span class="scTag">value</span>="<span class="scContent">continuous</span>"/&gt;</div>&lt;/<span class="scTag">xs:restriction</span>&gt;</div>&lt;/<span class="scTag">xs:simpleType</span>&gt;</div>&lt;/<span class="scTag">xs:attribute</span>&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                           <span class="scTag">name</span>="<span class="scContent">methodOfCombination</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span>
+                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>
+                        <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                           <span class="scTag">name</span>="<span class="scContent">count</span>" <span class="scTag">type</span>="<span class="scContent">
+                              <span class="type">
+                                 <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
+                           </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>
+                  <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
+                     <span class="scTag">name</span>="<span class="scContent">spectrumInstrument</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexType</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:complexContent</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:extension</span> 
+                              <span class="scTag">base</span>="<span class="scContent">
+                                 <span class="type">
+                                    <a title="Jump to &#34;paramType&#34; type definition." href="#type_paramType">paramType</a>
+                                 </span>
+                              </span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                                 <span class="scTag">name</span>="<span class="scContent">msLevel</span>" <span class="scTag">type</span>="<span class="scContent">
+                                    <span class="type">
+                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span>
+                                 </span>" <span class="scTag">use</span>="<span class="scContent">required</span>"/&gt;</div>
+                              <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                                 <span class="scTag">name</span>="<span class="scContent">mzRangeStart</span>" <span class="scTag">type</span>="<span class="scContent">
+                                    <span class="type">
+                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span>
+                                 </span>" <span class="scTag">use</span>="<span class="scContent">optional</span>"/&gt;</div>
+                              <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:attribute</span> 
+                                 <span class="scTag">name</span>="<span class="scContent">mzRangeStop</span>" <span class="scTag">type</span>="<span class="scContent">
+                                    <span class="type">
+                                       <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:float</span>
+                                 </span>" <span class="scTag">use</span>="<span class="scContent">optional</span>"/&gt;</div>&lt;/<span class="scTag">xs:extension</span>&gt;</div>&lt;/<span class="scTag">xs:complexContent</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>&lt;/<span class="scTag">xs:element</span>&gt;</div>&lt;/<span class="scTag">xs:sequence</span>&gt;</div>&lt;/<span class="scTag">xs:complexType</span>&gt;</div>
+         </div>
+         <script type="text/javascript">
+<!--
+setState('type_spectrumSettingsType_scbox', false);
+// -->
+</script>
+      </div>
+      <div style="text-align: right; clear: both;">
+         <a href="#top">top</a>
+      </div>
+      <hr/>
       <h3>Complex Type: <a name="type_spectrumType" class="name">spectrumType</a>
       </h3>
       <table class="hierarchy">
@@ -2552,7 +2560,7 @@ setState('type_sourceFileType_scbox', false);
          <tr>
             <th>Documentation</th>
             <td>The structure tha captures the generation of a peak list (including
-                the underlying acquisitions)</td>
+ the underlying acquisitions)</td>
          </tr>
       </table>
       <div class="sample box">
@@ -2564,16 +2572,17 @@ setState('type_sourceFileType_scbox', false);
             <div style="margin-left: 0em">&lt;...<br/>
                <span style="margin-left: 0.5em"> id="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                  <span class="occurs">[1]</span>"</span>&gt; <br/>
-               <div style="margin-left: 1.5em">&lt;acqDesc&gt; <span class="type">
-                     <a title="Jump to &#34;acqDescType&#34; type definition." href="#type_acqDescType">acqDescType</a>
-                  </span> &lt;/acqDesc&gt; <span class="occurs">[1]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one acqDesc for each acquisition.'); viewDocumentation('Element', 'acqDesc', docArray);">?</a>
+                  <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The identifier for a particular spectrum; to serve as both an internal (to the file) reference with which to order spectra and also to as a means to associate them with each other (e.g. parent and child soectra from a tandem experiment). This number should be provided whether it legitmately comes from the source data, or has to be generated. In the absence of a parent spectrum for an MS'); viewDocumentation('Attribute', 'id', docArray);">?</a>"</span>&gt; <br/>
+               <div style="margin-left: 1.5em">&lt;spectrumDesc&gt; <span class="type">
+                     <a title="Jump to &#34;spectrumDescType&#34; type definition." href="#type_spectrumDescType">spectrumDescType</a>
+                  </span> &lt;/spectrumDesc&gt; <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one spectrumDesc per spectrum. It captures both the instance-specific parameters for the underlying acquisitions, and where applicable, the postion of this spectrum in a possible hierarchy of spectra. For example, for \'tandem\' mass spectrometry; the id attribute on the spectrum element allows the survey scan to be identified from which the parent ion was selected that gave rise to this MSMS spectrum - note that these identifying numbers can be given, in a list if necessary, whether or not the actual referred-to spectra are present in the file - they are the \'family tree\' of this spectrum.'); viewDocumentation('Element', 'spectrumDesc', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;supDesc&gt; <span class="type">
                      <a title="Jump to &#34;supDescType&#34; type definition." href="#type_supDescType">supDescType</a>
                   </span> &lt;/supDesc&gt; <span class="occurs">[0..*]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one supDesc for each individual supDataArray (binary or otherwise).'); viewDocumentation('Element', 'supDesc', docArray);">?</a>
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('There is one supDesc for each supDataArray (binary or otherwise) found under this particular spectrum element.'); viewDocumentation('Element', 'supDesc', docArray);">?</a>
                </div>
                <div style="margin-left: 1.5em">&lt;mzArrayBinary&gt; <span class="type">
                      <a title="Jump to &#34;peakListBinaryType&#34; type definition." href="#type_peakListBinaryType">peakListBinaryType</a>
@@ -2617,9 +2626,9 @@ setState('type_spectrumType_xibox', true);
          <div id="type_spectrumType_scbox" class="contents">
             <div style="margin-left: 0em">&lt;<span class="scTag">xs:complexType</span> 
                <span class="scTag">name</span>="<span class="scContent">spectrumType</span>"&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:sequence</span>&gt;<div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">acqDesc</span>" <span class="scTag">type</span>="<span class="scContent">
+                     <span class="scTag">name</span>="<span class="scContent">spectrumDesc</span>" <span class="scTag">type</span>="<span class="scContent">
                         <span class="type">
-                           <a title="Jump to &#34;acqDescType&#34; type definition." href="#type_acqDescType">acqDescType</a>
+                           <a title="Jump to &#34;spectrumDescType&#34; type definition." href="#type_spectrumDescType">spectrumDescType</a>
                         </span>
                      </span>"/&gt;</div>
                   <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
@@ -2706,7 +2715,8 @@ setState('type_spectrumType_scbox', false);
             <div style="margin-left: 0em">&lt;...<br/>
                <span style="margin-left: 0.5em"> id="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                  <span class="occurs">[1]</span>"</span>&gt; <br/>
+                  <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The value to which the supDataArrayRef attribute on suppDesc refers; values should never be shared between binary and non-binary supplemental arrays.'); viewDocumentation('Attribute', 'id', docArray);">?</a>"</span>&gt; <br/>
                <div style="margin-left: 1.5em">&lt;arrayName&gt; <span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:string</span> &lt;/arrayName&gt; <span class="occurs">[1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Name of the supplemental data array.'); viewDocumentation('Element', 'arrayName', docArray);">?</a>
@@ -2807,7 +2817,8 @@ setState('type_supDataBinaryType_scbox', false);
             <div style="margin-left: 0em">&lt;...<br/>
                <span style="margin-left: 0.5em"> id="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
-                  <span class="occurs">[1]</span>"</span>
+                  <span class="occurs">[1]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('The value to which the supDataArrayRef attribute on suppDesc refers; values should never be shared between binary and non-binary supplemental arrays.'); viewDocumentation('Attribute', 'id', docArray);">?</a>"</span>
                <br/>
                <span style="margin-left: 0.5em"> length="<span class="type">
                      <a href="#ns_xs" title="Find out namespace of 'xs' prefix">xs</a>:int</span> 
@@ -2983,10 +2994,10 @@ setState('type_supDataType_scbox', false);
                   </span> &lt;/supDataDesc&gt; <span class="occurs">[0..1]</span> 
                   <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Description of the supplemental dataset, in both CV and free-text.'); viewDocumentation('Element', 'supDataDesc', docArray);">?</a>
                </div>
-               <div style="margin-left: 1.5em">&lt;sourceFile&gt; <span class="type">
+               <div style="margin-left: 1.5em">&lt;supSourceFile&gt; <span class="type">
                      <a title="Jump to &#34;sourceFileType&#34; type definition." href="#type_sourceFileType">sourceFileType</a>
-                  </span> &lt;/sourceFile&gt; <span class="occurs">[0..*]</span> 
-                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Information about the original source file used to generate the instance document.'); viewDocumentation('Element', 'sourceFile', docArray);">?</a>
+                  </span> &lt;/supSourceFile&gt; <span class="occurs">[0..*]</span> 
+                  <a href="javascript:void(0)" title="View Documentation" class="documentation" onclick="docArray = new Array('Information about the original source file used to generate the supDataArray.'); viewDocumentation('Element', 'supSourceFile', docArray);">?</a>
                </div>&lt;/...&gt;</div>
          </div>
          <script type="text/javascript">
@@ -3009,7 +3020,7 @@ setState('type_supDescType_xibox', true);
                         </span>
                      </span>" <span class="scTag">minOccurs</span>="<span class="scContent">0</span>"/&gt;</div>
                   <div style="margin-left: 1.5em">&lt;<span class="scTag">xs:element</span> 
-                     <span class="scTag">name</span>="<span class="scContent">sourceFile</span>" <span class="scTag">type</span>="<span class="scContent">
+                     <span class="scTag">name</span>="<span class="scContent">supSourceFile</span>" <span class="scTag">type</span>="<span class="scContent">
                         <span class="type">
                            <a title="Jump to &#34;sourceFileType&#34; type definition." href="#type_sourceFileType">sourceFileType</a>
                         </span>
