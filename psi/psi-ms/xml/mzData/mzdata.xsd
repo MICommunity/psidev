@@ -142,6 +142,8 @@
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:enumeration value="ESI"/>
+																<xs:enumeration value="uESI"/>
+																<xs:enumeration value="nESI"/>
 																<xs:enumeration value="MALDI"/>
 																<xs:enumeration value="APCI"/>
 																<xs:enumeration value="other"/>
@@ -174,6 +176,8 @@
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
+													<xs:element name="resolution" type="xs:float"/>
+													<xs:element name="accuracy" type="xs:float"/>
 													<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
 															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
