@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.6 2003/11/28 15:53:54 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.7 2003/12/03 17:41:26 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -12,6 +12,7 @@ import org.apache.commons.codec.EncoderException;
 import org.psi.ms.helper.Utils;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.model.*;
+import org.psi.ms.converter.ExporterI;
 import org.xmlpull.mxp1_serializer.MXSerializer;
 import org.xmlpull.v1.XmlSerializer;
 
@@ -30,7 +31,7 @@ import java.util.zip.ZipOutputStream;
  *
  * @author krunte
  */
-public class MzDataWriter {
+public class MzDataWriter implements ExporterI {
 
     /**
      * This class is responsible for writing
@@ -681,7 +682,7 @@ public class MzDataWriter {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.6 $ $Date: 2003/11/28 15:53:54 $
+     * @version $Revision: 1.7 $ $Date: 2003/12/03 17:41:26 $
      */
     public static class OutputType implements java.io.Serializable {
 
