@@ -17,6 +17,7 @@
         <pathelement location="${build}"/>
         <pathelement location="${lib}/commons-codec-1.1.jar"/>
         <pathelement location="${lib}/xpp3-1.1.3.4-RC3.jar"/>
+        <pathelement location="${lib}/log4j-1.2.7.jar"/>
     </path>
 
 
@@ -53,6 +54,7 @@
             <fileset dir="${build}"/>
             <zipgroupfileset dir="lib" includes="commons-codec-1.1.jar"/>
             <zipgroupfileset dir="lib" includes="xpp3-1.1.3.4-RC3.jar"/>
+            <zipgroupfileset dir="lib" includes="log4j-1.2.7.jar"/>
             <manifest>
               <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.psi.ms.swing.MainPanel"/>
