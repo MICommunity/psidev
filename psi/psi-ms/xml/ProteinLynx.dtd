@@ -1,0 +1,2731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	ProteinLynx.dtd
+	Version 1.0	13/01/2002
+	Copyright (c) 2002 Micromass Ltd.
+ 
+ 	This is free software; you can redistribute it and/or
+	modify it under the terms of the GNU Lesser General Public
+	License as published by the Free Software Foundation; either
+	version 2.1 of the License, or (at your option) any later version.
+	This code is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+	Lesser General Public License for more details.
+ 
+	You should have received a copy of the GNU Lesser General Public
+	License along with this library; if not, write to the Free Software
+	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA	
+-->
+<!--
+	================================================================================
+	This DTD describes all the XML structures currently used in the ProteinLynx
+	Global Server 2 system.
+
+	The DTD is broken down into three parts corresponding to the documents saved and
+	retrieved via the PlugIn architecture. These document types are:
+
+	Project - containing user and project information, sample and gel descriptions
+	along with templates for processing data and specifying queries to the
+	search engine.
+
+	Mass_spectrum - containing the processing parameters used to produce the
+	deisotoped spectrum from the raw data and the spectral data itself.
+
+	Workflow - containing query parameters and the results of the queries. The
+	sequence of queries is defined in the Workflow document along with filters
+	which act on data before it is sent to the search engine, providing a flexible
+	automatic tool for protein identification.
+
+	A Query document is also defined for expressing queries to be executed by the
+	PlugIn.
+
+	Some elements are applicable to more than one document type.
+
+	All element and attribute names are defined in uppercase. This is not adhered to
+	in the comments to make them more easily distinguishable from the definitions.
+	================================================================================
+-->
+<!--
+	================================================================================
+	Entity definitions
+	================================================================================
+-->
+<!--
+	Define a set of instrument modes to better define the applicability of spectra
+	processing parameters
+-->
+<!ENTITY % instrument_mode "INSTRUMENT_MODE ( Maldi-QTOF-MS | Maldi-QTOF-MSMS | Maldi-MS | QTOF-MS | QTOF-MSMS )">
+<!-- 
+	Set of attributes to be used for plate elements (ie microtitre_plate &
+	target_plate)
+
+	@type -		specifies whether a plate is a microtitre or target plate.
+	@barcode -		barcode of the plate
+	@capacity -		capacity of the plate (96 = standard)
+	@no_of_rows - 	number of rows of wells/spots (8 = standard)
+	@no_of_columns - 	number of columns of wells/spots (12 = standard)
+	@track -		
+-->
+<!ENTITY % plate_attributes "DATE						CDATA				#REQUIRED
+	TYPE					( microtitre | target )			#REQUIRED
+	BARCODE						CDATA				#REQUIRED
+	CAPACITY					CDATA				#REQUIRED
+	NO_OF_ROWS					CDATA				#REQUIRED
+	NO_OF_COLUMNS					CDATA				#REQUIRED
+	TRACK						CDATA				#IMPLIED">
+<!-- Define a set of status indicators to be used as an attribute -->
+<!ENTITY % status "STATUS ( Pending | Started | Finished | Failed | Cancelled | Stopped | Unknown ) 'Unknown'">
+<!--
+	================================================================================
+	Query document definitions
+	================================================================================
+-->
+<!-- Query
+
+	Description:
+	This describes a query to a PlugIn and possibly the result of the query
+
+	Documents:
+	Query
+
+	Attributes:
+	@username -	the username for authentication
+	@password -	the password for authentication
+-->
+<!ELEMENT QUERY (((INSERT | UPDATE | SELECT | DELETE)+) | TAG)>
+<!ATTLIST QUERY
+	USERNAME CDATA #IMPLIED
+	PASSWORD CDATA #IMPLIED
+>
+<!-- Insert
+
+	Description:
+      Describes a document to be inserted
+        
+      Document:
+      Query
+        
+      Attributes:
+-->
+<!ELEMENT INSERT ((REFERENCE, URL) | TAG)>
+<!-- Update
+
+	Description:
+      Describes an element to be updated
+        
+      Document:
+      Query
+        
+      Attributes:
+      @element_type -	the type of element
+-->
+<!ELEMENT UPDATE (REFERENCE*, TAG)>
+<!ATTLIST UPDATE
+	ELEMENT_TYPE CDATA #REQUIRED
+>
+<!-- Select
+
+	Description:
+      Describes a select query
+        
+      Document:
+      Query
+        
+      Attributes:
+      @element_type -	the type of element to return
+	@return - 		the type of data to return
+-->
+<!ELEMENT SELECT (REFERENCE*)>
+<!ATTLIST SELECT
+	ELEMENT_TYPE CDATA #REQUIRED
+	RETURN (document | reference | url) "document"
+>
+<!-- Delete
+
+	Description:
+      Describes a document to be deleted
+        
+      Document:
+      Query
+        
+      Attributes:
+      @element_type -	the type of element to be deleted
+-->
+<!ELEMENT DELETE (REFERENCE*)>
+<!ATTLIST DELETE
+	ELEMENT_TYPE CDATA #REQUIRED
+>
+<!-- Tag
+
+	Description:
+      A place-holder for any tag
+        
+      Document:
+      Query
+        
+      Attributes:
+-->
+<!ELEMENT TAG ANY>
+<!-- Reference
+
+	Description:
+	This is a reference to an external XML document.
+	It is also used to define the element to search for in a query.
+
+	Documents:
+	Project, Query
+
+	Attributes:
+	@name -	the name of the element
+-->
+<!ELEMENT REFERENCE (REF_ATTRIBUTE*, REF_TEXT?, REFERENCE*)>
+<!ATTLIST REFERENCE
+	NAME CDATA #REQUIRED
+>
+<!-- Ref_attribute
+
+	Description:
+	This describes an attribute of an element referred to by a reference.
+
+	Documents:
+	Query
+
+	Attributes:
+	@name -	the name of the attribute
+	@value -	the value of the attribute
+-->
+<!ELEMENT REF_ATTRIBUTE EMPTY>
+<!ATTLIST REF_ATTRIBUTE
+	NAME CDATA #REQUIRED
+	VALUE CDATA #REQUIRED
+>
+<!-- Ref_text
+
+	Description:
+	This describes PCDATA of an element referred to by a reference
+
+	Documents:
+	Query
+
+	Attributes:
+-->
+<!ELEMENT REF_TEXT (#PCDATA)>
+<!-- Url
+
+	Description:
+	Describes a url.
+
+	Documents:
+	Query, Project
+
+	Attributes:
+	@protocol -	the protocol
+	@host -	the hostname or ip address
+	@port -	the port number
+	@path -	the path
+-->
+<!ELEMENT URL EMPTY>
+<!ATTLIST URL
+	PROTOCOL (http | https | file) "file"
+	HOST CDATA #IMPLIED
+	PORT CDATA #IMPLIED
+	PATH CDATA #REQUIRED
+>
+<!--
+	================================================================================
+	Project document definitions
+	================================================================================
+-->
+<!--	Project
+
+	Description:
+	Describes a project: users, samples, the gels samples are taken from and the
+	containers the samples are transferred to for analysis.
+
+	Documents:
+	Project
+
+	Attributes:
+	@project_id -	id of the project
+	@title -		title of the project
+	@description -	description of the project
+	@org_unit_name -	name of the unit/department responsible for the project
+	@org_name -		name of the organisation that owns the project.
+-->
+<!ELEMENT PROJECT (USERS, PROCESSING_PARAMETERS_TEMPLATES, WORKFLOW_TEMPLATES, CONTAINERS, GELS, SAMPLES, SAMPLE_HISTORIES, EXPRESSION_ANALYSES)>
+<!ATTLIST PROJECT
+	PROJECT_ID ID #REQUIRED
+	TITLE CDATA #REQUIRED
+	DESCRIPTION CDATA #REQUIRED
+	ORG_UNIT_NAME CDATA #IMPLIED
+	ORG_NAME CDATA #IMPLIED
+>
+<!--	Element_ref
+
+	Description:
+	This element is used to refer to a element elsewhere in the document
+	(rather than repeating the information inside that element)
+
+	Documents:
+	Project
+
+	Attributes:
+	@name -	name of the element being referred to
+	@id -		id of the element being referred to
+-->
+<!ELEMENT ELEMENT_REF EMPTY>
+<!ATTLIST ELEMENT_REF
+	NAME CDATA #REQUIRED
+	ID IDREF #REQUIRED
+>
+<!--	Samples
+
+	Description:
+	This element groups the samples related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SAMPLES (SAMPLE*)>
+<!--	Sample_histories
+
+	Description:
+	This element groups the sample histories related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SAMPLE_HISTORIES (SAMPLE_HISTORY*)>
+<!--	Expression_analyses
+
+	Description:
+	This element groups the expression analyses related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT EXPRESSION_ANALYSES (EXPRESSION_ANALYSIS_EXTERNAL_REF*)>
+<!--	Expression_analysis_external_ref
+
+	Description:
+	This element represents a reference to an external XML file holding the
+	EXPRESSION_ANALYSIS XML.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT EXPRESSION_ANALYSIS_EXTERNAL_REF (REFERENCE)>
+<!--	Gels
+
+	Description:
+	This element groups the gels related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT GELS (GEL*)>
+<!--	Users
+
+	Description:
+	This element groups the users related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT USERS (USER*)>
+<!-- Postal_address
+
+	Description:
+	Specifies the postal address of a user
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT POSTAL_ADDRESS (#PCDATA)>
+<!-- Email_address
+
+	Description:
+	Specifies the e-mail address of a user
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT EMAIL_ADDRESS (#PCDATA)>
+<!-- User
+
+	Description:
+	Describes a user
+
+	Documents:
+	Project
+
+	Attributes:
+	@user_id -		the id of the user
+	@username -		the username if different from the id
+	@org_unit_name -	the name of the organisational unit the user belongs to.
+	@org_name -		the name of the organisation the user belongs to.
+-->
+<!ELEMENT USER (POSTAL_ADDRESS*, EMAIL_ADDRESS*)>
+<!ATTLIST USER
+	USER_ID ID #REQUIRED
+	USERNAME CDATA #IMPLIED
+	ORG_UNIT_NAME CDATA #IMPLIED
+	ORG_NAME CDATA #IMPLIED
+>
+<!--	Processing_parameters_templates
+
+	Description:
+	This element groups the processing_parameters_templates related to a project
+	together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT PROCESSING_PARAMETERS_TEMPLATES (PROCESSING_PARAMETERS_TEMPLATE*)>
+<!-- Processing_parameters_template
+
+	Description:
+	A template for processing raw spectrum data
+
+	Documents:
+	Project
+
+	Attributes:
+	@processing_parameters_template_id -	the id of the template
+	@instrument_mode -				the instrument type and operation mode
+								the template applies to
+-->
+<!ELEMENT PROCESSING_PARAMETERS_TEMPLATE (LEVEL+)>
+<!ATTLIST PROCESSING_PARAMETERS_TEMPLATE PROCESSING_PARAMETERS_TEMPLATE_ID	ID				#REQUIRED
+	%instrument_mode;							#REQUIRED
+	TITLE					CDATA				#IMPLIED
+>
+<!-- 	Containers
+
+	Description:
+	This element groups together elements describing containers for samples
+	(microtitre plates, target plates, vials).
+	All its children have "container_id" attributes.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT CONTAINERS (MICROTITRE_PLATES, TARGET_PLATES, VIALS)>
+<!--	Microtitre_plates
+
+	Description:
+	This element groups the microtitre_plates related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT MICROTITRE_PLATES (MICROTITRE_PLATE*)>
+<!--	Target_plates
+
+	Description:
+	This element groups the target_plates related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT TARGET_PLATES (TARGET_PLATE*)>
+<!--	Vials
+
+	Description:
+	This element groups the vials related to a project together
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT VIALS (VIAL*)>
+<!-- Microtitre_plate
+
+	Description:
+	Describes a microtitre plate (each time a plate is washed it is considered to be
+	a new plate).
+	The processing_parameters_template_ref refers to the
+	processing_parameters_template containing the default processing parameters for
+	the plate.
+
+	Documents:
+	Project
+
+	Attributes:
+	@microtitre_plate_id -	ID of the microtitre plate
+	@type -			specifies whether a plate is a microtitre or target plate.
+	@barcode -			barcode of the plate
+	@capacity -			capacity of the plate (96 = standard)
+	@no_of_rows - 		number of rows of wells/spots (8 = standard)
+	@no_of_columns - 		number of columns of wells/spots (12 = standard)
+	@track -
+-->
+<!ELEMENT MICROTITRE_PLATE (PROCESSING_PARAMETERS_TEMPLATE_REF?)>
+<!ATTLIST MICROTITRE_PLATE
+	MICROTITRE_PLATE_ID ID #REQUIRED
+	%plate_attributes; 
+>
+<!-- Target_plate
+
+	Description:
+	Describes a target plate (each time a plate is washed it is considered to be a
+	new plate).
+	The processing_parameters_template_ref refers to the
+	processing_parameters_template containing the default processing parameters for
+	the plate.
+
+	Documents:
+	Project
+
+	Attributes:
+	@target_plate_id -	ID of the target plate
+	@type -			specifies whether a plate is a microtitre or target plate.
+	@barcode -			barcode of the plate
+	@capacity -			capacity of the plate (96 = standard)
+	@no_of_rows - 		number of rows of wells/spots (8 = standard)
+	@no_of_columns - 		number of columns of wells/spots (12 = standard)
+	@track -
+-->
+<!ELEMENT TARGET_PLATE (PROCESSING_PARAMETERS_TEMPLATE_REF?)>
+<!ATTLIST TARGET_PLATE
+	TARGET_PLATE_ID ID #REQUIRED
+	%plate_attributes; 
+>
+<!-- Vial
+
+	Description:
+	A vial element describes a vial or other non-plate container which holds a single sample.
+	the processing_parameters_template_ref refers to the processing_parameters_template
+	containing the default processing parameters for the vial.
+
+	Documents:
+	Project
+
+	Attributes:
+	@vial_id -		ID of the vial
+	@date -		date vial was "created" (ie date sample was transferred to vial)
+	@name -		human-readable vial identifier
+-->
+<!ELEMENT VIAL (PROCESSING_PARAMETERS_TEMPLATE_REF?)>
+<!ATTLIST VIAL
+	VIAL_ID ID #REQUIRED
+	DATE CDATA #REQUIRED
+	NAME CDATA #REQUIRED
+>
+<!-- Gel
+
+	Description:
+	A Gel element describes a gel and the spots on it.
+
+	Documents:
+	Project
+
+	Attributes:
+	@gel_id -		ID of the gel
+	@name -		name of the gel (human-readable ID)
+	@type -		type of gel eg polyacrylamide 2d
+	@no_of_spots -	number of spots on the gel for which data is stored (should be
+				equal to the number of GELSPOT elements that are children of
+				this element).
+	@size_x -		width of the gel
+	@size_y -		height of the gel
+	@size_units -	unit of measurement used for the size_x & size_y attributes of
+				this gel (and the centre_x, centre_y, size_y and size_x
+				attributes of all its GELSPOT children).
+-->
+<!ELEMENT GEL (GEL_IMAGE_EXTERNAL_REF?, GELSPOT*)>
+<!ATTLIST GEL
+	GEL_ID ID #REQUIRED
+	NAME CDATA #IMPLIED
+	TYPE CDATA #IMPLIED
+	NO_OF_SPOTS CDATA #IMPLIED
+	SIZE_X CDATA #IMPLIED
+	SIZE_Y CDATA #IMPLIED
+	SIZE_UNITS (mm | cm | in | none) "none"
+>
+<!--	Gel_image_external_ref
+
+	Description:
+	Holds a reference to a jpg image file
+
+	Documents:
+	Project
+	
+	Attributes:
+-->
+<!ELEMENT GEL_IMAGE_EXTERNAL_REF (REFERENCE)>
+<!-- Gel_spot
+
+	Description:
+	Describes a single spot on the parent gel
+
+	Document:
+	Project
+
+	Attributes:
+	@gelspot_id -	ID of the gel spot
+	@center_x -		x co-ordinate of the centre of this spot (must be in the units
+				specified by the size_units attribute of the parent GEL element)
+	@center_y -		y co-ordinate of the centre of this spot (must be in the units
+				specified by the size_units attribute of the parent GEL element)
+	@size_x -		width of the spot, measured along the x axis (must be in the
+				units specified by the size_units attribute of the parent GEL
+				element)
+	@size_y -		height of the spot, measured along the y axis (must be in the
+				units specified by the size_units attribute of the parent GEL
+				element)
+-->
+<!ELEMENT GELSPOT EMPTY>
+<!ATTLIST GELSPOT
+	GELSPOT_ID ID #REQUIRED
+	CENTER_X CDATA #REQUIRED
+	CENTER_Y CDATA #REQUIRED
+	SIZE_X CDATA #IMPLIED
+	SIZE_Y CDATA #IMPLIED
+>
+<!--	Sample
+
+	Description:
+	Describes a sample which has been/will be analysed.
+	Samples are normally spots cut from gels, but may come from other sources.
+	The gelspot_ref, if present, refers to the gel spot from which the sample was
+	taken.
+
+	Documents:
+	Project
+
+	Attributes:
+	@id -		unique identifer for the sample
+	@name	-	human-readable identifier for the sample
+-->
+<!ELEMENT SAMPLE (SAMPLE_TRACKING*, GELSPOT_REF?, DATE?, KEYWORD*, ORGANISM?, SPECIES?, ORGAN?, TISSUE?, SEX?, AGE?, SUBCELLULAR_LOCATION?, GENOTYPE?, PHENOTYPE?, CONDITION?, SAMPLE_TAG?, DATABANK_HYPERLINK*)>
+<!ATTLIST SAMPLE
+	ID ID #REQUIRED
+	NAME CDATA #IMPLIED
+>
+<!-- Gelspot_ref
+
+	Description:
+	References a gel spot element.
+
+	Document:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT GELSPOT_REF (ELEMENT_REF)>
+<!--	Container_position
+
+	Description:
+	References a container and describes a position in/on it.
+
+	Documents:
+	Project
+
+	Attribute:
+	@row -	row number of well/spot (if the container is a vial or the row is
+			unknown this should be 0)
+	@column -	column number of well/spot (if the container is a vial or the column
+			is unknown this should be 0)
+	@position -	number indicating the position of the well/spot/vial (should be 0 if
+			unknown/not relevant)
+-->
+<!ELEMENT CONTAINER_POSITION (CONTAINER_REF)>
+<!ATTLIST CONTAINER_POSITION
+	ROW CDATA #REQUIRED
+	COLUMN CDATA #REQUIRED
+	POSITION CDATA #REQUIRED
+>
+<!--	Container_ref
+
+	Description:
+	References one of the container elements (microtitre_plate/target_plate/vial)
+	via their container_id attribute.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT CONTAINER_REF (ELEMENT_REF)>
+<!-- Date
+
+	Description:
+	A date
+
+	Documents:
+	Project
+	
+	Attributes:
+-->
+<!ELEMENT DATE (#PCDATA)>
+<!-- Keyword
+
+	Description:
+	Represents a keyword that can be used in data mining
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT KEYWORD (#PCDATA)>
+<!-- Organism
+
+	Description:
+	The organism from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT ORGANISM (#PCDATA)>
+<!-- Species
+
+	Description:
+	The species from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SPECIES (#PCDATA)>
+<!-- Organ
+
+	Description:
+	The organ from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT ORGAN (#PCDATA)>
+<!-- Tissue
+
+	Description:
+	The tissue from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT TISSUE (#PCDATA)>
+<!-- Sex
+
+	Description:
+	Sex of the organism from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SEX (#PCDATA)>
+<!-- Age
+
+	Description:
+	The age of the organism from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT AGE (#PCDATA)>
+<!-- Subcellular_location
+
+	Description:
+	The subcellular location from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SUBCELLULAR_LOCATION (#PCDATA)>
+<!-- Genotype
+
+	Description:
+	The genotype from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT GENOTYPE (#PCDATA)>
+<!-- Phenotype
+
+	Description:
+	The phenotype from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT PHENOTYPE (#PCDATA)>
+<!-- Disease_state
+
+	Description:
+	A freetext field to describe the state of the disease
+	in the organism from which the sample came
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT CONDITION (#PCDATA)>
+<!-- Sample_tag
+
+	Description:
+	A reagent used to tag this sample. For example, an MCAT reagent.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT SAMPLE_TAG (#PCDATA)>
+<!-- Label
+
+	Description:
+	A freetext field to describe any labelling that the
+	sample has undergone
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT LABEL (#PCDATA)>
+<!-- Databank_hyperlink
+
+	Description:
+	Describes an hyperlink to a publicly-available databank
+
+	Documents:
+	Project
+
+	Attributes:
+	@unique_id -	the unique identifier of the databank entry
+	@databank -		the identifier of the databank
+-->
+<!ELEMENT DATABANK_HYPERLINK EMPTY>
+<!ATTLIST DATABANK_HYPERLINK
+	UNIQUE_ID CDATA #IMPLIED
+	DATABANK CDATA #REQUIRED
+>
+<!--	Sample_history
+
+	Description:
+	A sample_history element represents a relationship between a number of samples.
+	For example, a MCAT sample is produced from two separate samples: a tagged and
+	an untagged.
+
+	The relationship is such that the new sample is referred to through the ID
+	attribute, and any parent samples are represented by PARENT_SAMPLE elements.
+
+	In both cases, the ID tags are references to SAMPLEs in the same project.
+
+	Documents:
+	Project
+
+	Attributes:
+	@id -	a reference to the ID of a SAMPLE
+-->
+<!ELEMENT SAMPLE_HISTORY (PARENT_SAMPLE+)>
+<!ATTLIST SAMPLE_HISTORY
+	ID IDREF #REQUIRED
+>
+<!-- Parent_sample
+
+	Description:
+	A parent_sample in a sample_history.
+
+	Documents:
+	Project
+
+	Attributes:
+	@id -	a reference to the ID of a SAMPLE
+-->
+<!ELEMENT PARENT_SAMPLE EMPTY>
+<!ATTLIST PARENT_SAMPLE
+	ID IDREF #REQUIRED
+>
+<!--	Expression_analysis
+
+	Description:
+	An expression_analysis element represents an expression analysis experiment.
+
+	The experiment consists of a file path representing the original raw MS spectrum,
+	and a sample history, representing a processed sample.
+
+	In the case of the sample_history, the ID tag is a reference to a SAMPLE_HISTORY
+	in the same project.
+
+	Documents:
+	Project
+
+	Attributes:
+	@expression_analysis_id	-	unique identifier for the expression analysis
+	@name	-				name for the expression analysis experiment
+	@type	-				specifies the type of expression analysis	
+-->
+<!-- <!ELEMENT EXPRESSION_ANALYSIS (SAMPLE_HISTORY_EXTERNAL_REF, CONTAINER_POSITION, SAMPLE_TRACKING_IDS, START?, END?, STEP?, OVERLAP?)> -->
+<!--
+	Element definition was altered because it includes SAMPLE_HISTORY_EXTERNAL_REF
+	as a child element when this element type is not defined within this DTD
+	Catriona Rennie 20/11/2002
+-->
+<!ELEMENT EXPRESSION_ANALYSIS (CONTAINER_POSITION, SAMPLE_TRACKING_IDS, START?, END?, STEP?, OVERLAP?)>
+<!ATTLIST EXPRESSION_ANALYSIS
+	EXPRESSION_ANALYSIS_ID ID #REQUIRED
+	NAME CDATA #REQUIRED
+	TYPE (TARGETTED | SHOTGUN | ADVANCED_SHOTGUN) #REQUIRED
+>
+<!--	Start
+
+	Description:
+	Specifies the processing start time
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT START EMPTY>
+<!--	End
+
+	Description:
+	Specifies the processing end time
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT END EMPTY>
+<!--	Step
+
+	Description:
+	Specifies the processing step time
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT STEP EMPTY>
+<!--	Overlap
+
+	Description:
+	Specifies the processing overlap time
+
+	Documents:
+	Project
+	
+	Attributes:
+-->
+<!ELEMENT OVERLAP EMPTY>
+<!--	Sample_tracking
+
+	Description:
+	A sample_tracking element represents a mass spectrum obtained from the parent
+	sample and contains all the workflows carried out on it.
+
+	Documents:
+	Project
+
+	Attributes:
+	@id -				unique identifier of the sample_tracking
+	@olb_produced -		flag indicating whether details of this sample have been
+					exported to MassLynx in an olb file.
+	@ms_data_name -		the name of the raw data file
+	@obsolete -			flag indicating that the data referred to by the
+					sample_tracking are no longer used within the project
+	@auto_processing -	flag indicating whether this sample tracking is awaiting
+					the results of automated processing
+	@auto_searching -		flag indicating whether this sample tracking is awaiting
+					the results of automated searching
+	@user_field_1 -		additional field for storing user-defined information
+	@user_field_2 -		additional field for storing user-defined information
+	@user_field_3 -		additional field for storing user-defined information
+	@user_field_4 -		additional field for storing user-defined information
+	@user_field_5 -		additional field for storing user-defined information
+-->
+<!ELEMENT SAMPLE_TRACKING (CONTAINER_POSITION+, PROCESSING_PARAMETERS_TEMPLATE_REF?, WORKFLOW_TEMPLATE_REFS?, (MASS_SPECTRUM_EXTERNAL_REF, ((PROTEIN | EST)?, WORKFLOW_EXTERNAL_REF+)?)?, USER_REF?, AUTOMATION_WORKFLOW_TEMPLATE_REF?, ACQUISITION_PARAMETERS?)>
+<!ATTLIST SAMPLE_TRACKING
+	ID ID #REQUIRED
+	OLB_PRODUCED (true | false) "false"
+	MS_DATA_NAME CDATA #IMPLIED
+	OBSOLETE (true | false) "false"
+	AUTO_PROCESSING (true | false) "false"
+	AUTO_SEARCHING (true | false) "false"
+	USER_FIELD_1 CDATA #IMPLIED
+	USER_FIELD_2 CDATA #IMPLIED
+	USER_FIELD_3 CDATA #IMPLIED
+	USER_FIELD_4 CDATA #IMPLIED
+	USER_FIELD_5 CDATA #IMPLIED
+>
+<!-- Mass_spectrum_external_ref
+
+	Description:
+	Holds a reference to a mass spectrum (the "name" attribute of the REFERENCE
+	element must be "MASS_SPECTRUM").
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT MASS_SPECTRUM_EXTERNAL_REF (REFERENCE)>
+<!-- Workflow_external_ref
+
+	Description:
+	Holds a reference to a workflow (the "name" attribute of the REFERENCE
+	element must be "WORKFLOW").
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT WORKFLOW_EXTERNAL_REF (REFERENCE)>
+<!-- Processing_parameters_template_ref
+
+	Description:
+	Holds a reference to a processing_parameters template
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT PROCESSING_PARAMETERS_TEMPLATE_REF (ELEMENT_REF)>
+<!-- Workflow_template_refs
+
+	Description:
+	Holds references to workflow templates to be used for future searches.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT WORKFLOW_TEMPLATE_REFS (ELEMENT_REF*)>
+<!-- Automation_workflow_template_ref
+
+	Description:
+	Holds a reference to the workflow template to be used for an automated search.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT AUTOMATION_WORKFLOW_TEMPLATE_REF (ELEMENT_REF)>
+<!--	Acquisition_parameters
+
+	Description:
+	A description of the parameters used by the spectrometer during data acquisition.
+	Currently contains only a precursor selection list reference, but may be extended
+	in future.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT ACQUISITION_PARAMETERS (PRECURSOR_SELECTION_LIST_EXTERNAL_REF)>
+<!-- Precursor_selection_list_external_ref
+
+	Description:
+	Holds a reference to a precursor selection list (the "name" attribute of the
+	REFERENCE element must be "PRECURSOR_SELECTION_LIST").
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT PRECURSOR_SELECTION_LIST_EXTERNAL_REF (REFERENCE)>
+<!-- User_ref
+
+	Description:
+	Holds a reference to the user who owns the item represented by the parent element
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT USER_REF (ELEMENT_REF)>
+<!-- Sample_tracking_ids
+	
+	Description:
+	Holds a reference to a sample tracking (the "name" attribute of the REFERENCE
+	element must be "SAMPLE_TRACKING"
+	
+	Documents:
+	
+	Attributes:
+-->
+<!ELEMENT SAMPLE_TRACKING_IDS (REFERENCE)>
+<!-- Workflow_templates
+
+	Description:
+	Groups the workflow_template elements pertaining to the project together.
+
+	Documents:
+	Project
+
+	Attributes:
+-->
+<!ELEMENT WORKFLOW_TEMPLATES (WORKFLOW_TEMPLATE*)>
+<!-- Workflow_template
+
+	Description:
+	A workflow_template describes the queries to be run on a spectrum, but does not
+	include a mass_spectrum or results.
+
+	Documents:
+	Project
+
+	Attributes:
+	@workflow_template_id -	an identifier for the workflow_template (to be used in
+					the element_ref of workflow)
+	@project_id -		the identifier of the Project to which this
+					workflow_template belongs
+	@title -			the title of the workflow_template
+-->
+<!ELEMENT WORKFLOW_TEMPLATE (PROTEINLYNX_QUERY+)>
+<!ATTLIST WORKFLOW_TEMPLATE
+	WORKFLOW_TEMPLATE_ID ID #REQUIRED
+	PROJECT_ID CDATA #IMPLIED
+	TITLE CDATA #IMPLIED
+>
+<!--
+	================================================================================
+	Workflow document definitions
+	================================================================================
+-->
+<!-- Workflow
+
+	Description:
+	A Workflow document describes the tree of queries to be run on a spectrum.
+	The results of each query are included in the document and can be filtered
+	to produce input to subsequent queries.
+	The element_ref tag should refer to the workflow_template used to create the
+	workflow, if available.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -			an identifier for the Workflow
+	@project_id -	the identifier of the Project to which this Workflow belongs
+	@userid -		the identifier of the user who submitted the Workflow
+	@title -		the title of the Workflow
+	@status -		the status of the Workflow
+-->
+<!ELEMENT WORKFLOW (MASS_SPECTRUM, PROTEINLYNX_QUERY+, TEMPLATE_REF?)>
+<!ATTLIST WORKFLOW
+	ID CDATA #IMPLIED
+	PROJECT_ID CDATA #IMPLIED
+	USERID CDATA #IMPLIED
+	TITLE CDATA #IMPLIED
+	%status; 
+>
+<!--	Template_ref
+
+	Description:
+	refers to the template used to create the parent element.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT TEMPLATE_REF (ELEMENT_REF)>
+<!-- Filter
+
+	Description:
+	A filter can be used to produce the input to a query.
+	It can refer to the input and output of ancestor queries.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@name -	a descriptive name for the filter
+	@type -	the type of the Filter. Either xsl or built-in.
+	@url -	if the type is xsl, this is the url of the stylesheet.
+-->
+<!ELEMENT FILTER (FILTER_PARAMETER*)>
+<!ATTLIST FILTER
+	NAME CDATA #REQUIRED
+	TYPE (xsl | built-in) "built-in"
+	URL CDATA #IMPLIED
+>
+<!-- Filter_parameter
+
+	Description:
+	Provides a parameter for a filter.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@name -	the name of the parameter
+	@value -	the value of the parameter
+-->
+<!ELEMENT FILTER_PARAMETER EMPTY>
+<!ATTLIST FILTER_PARAMETER
+	NAME CDATA #REQUIRED
+	VALUE CDATA #REQUIRED
+>
+<!-- Proteinlynx_query
+
+	Description:
+	A container for all the different types of query, the associated spectrum and
+	filter.
+	If no filter is specified, the full spectrum assigned to the parent workflow will
+	be used for this query.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@id -				the identifier for the query
+	@type -			the type of query
+	@spectrum_status -	whether the spectrum is included in the query or needs to
+					be generated by a filter
+	@status -			the status of the query
+-->
+<!ELEMENT PROTEINLYNX_QUERY (FILTER?, MASS_SPECTRUM?, ((DATABANK_SEARCH_QUERY_PARAMETERS, RESULT?) | (AUTOMOD_QUERY_PARAMETERS, RESULT?) | (DENOVO_QUERY_PARAMETERS, RESULT?) | (BLASTALL_PARAMETERS, RESULT?) | (MERGED_WORKFLOW_PARAMETERS, RESULT?))?, PROTEINLYNX_QUERY*)>
+<!ATTLIST PROTEINLYNX_QUERY
+	ID CDATA #IMPLIED
+	TYPE (Databank-search | Auto-mod | De-novo | Blast | Merged) #IMPLIED
+	SPECTRUM_STATUS (Included | Required) #IMPLIED
+	%status; 
+>
+<!-- Query types -->
+<!-- Databank_search_query_parameters
+
+	Description:
+	Describes the parameters for a databank search (either MS or MSMS)
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT DATABANK_SEARCH_QUERY_PARAMETERS (SEARCH_DATABASE+, SEARCH_SPECIES_LIST?, ANALYSIS_DIGESTOR*, SEARCH_TYPE, PEP_MASS_TOL, PEP_FRAG_TOL?, MAX_HITS_TO_RETURN, MIN_PEPS_TO_MATCH_PROTEIN, PROTEIN_MW, PROTEIN_PI, ANALYSIS_MODIFIER*, EXCLUDE_MASS*)>
+<!-- Automod_query_parameters
+
+	Description:
+	Describes the parameters for the AutoMod module.
+	This module allows the generation of amino acid modifications and substitutions
+	for a set of input sequences and matches the digested sequence against a spectrum
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT AUTOMOD_QUERY_PARAMETERS ((PROTEIN | EST | CHROMOSOME)*, ANALYSIS_DIGESTOR*, PEP_MASS_TOL, PEP_FRAG_TOL?, ANALYSIS_MODIFIER*, SEARCH_DEPTH)>
+<!-- Denovo_query_parameters
+
+	Description:
+	Describes the parameters for the DeNovo module.
+	This module generates possible peptide sequences for MSMS data ab initio.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT DENOVO_QUERY_PARAMETERS (ANALYSIS_DIGESTOR*, MAX_HITS_TO_RETURN, PEP_FRAG_TOL?, MIN_MASS_STANDARD_DEVIATION, ANALYSIS_MODIFIER*)>
+<!-- Blastall_parameters
+
+	Description:
+	Describes the parameters for sequence homology searching.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT BLASTALL_PARAMETERS (PROTEIN, BLASTABLE_STEM, BLASTALL_PARAMETERS_SCORING, BLASTALL_PARAMETERS_OUTPUT-OPTIONS)>
+<!-- Blastable_stem
+
+	Description:
+	File like stem - usually the file name of the Databank file
+	
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT BLASTABLE_STEM (#PCDATA)>
+<!-- Blastall_parameters_scoring
+
+	Description:
+	Stores scoring parameters for sequence homology searches
+
+	Documents:
+	Workflow
+
+	Attributes:
+      @program -		BLAST program to use for search (e.g. blastp, blastn, blastx,
+				tblastn)
+	@expect -		a statistical significance threshold for reporting matches
+				against databank sequences. E.g. a value of 10 would indicate
+				that 10 matches are expected to be found by chance. Lower
+				expect values are more stringent, resulting in fewer chance
+				matches being reported
+	@matrix_name -	name of the substitution matrix used to assign scores to amino
+				acid alignments (e.g. BLOSUM62, PAM70)
+	@gapped -		whether gaps in the alignments should be permitted
+	@filter -		whether the alingments should be filtered (e.g. for low-
+				complexity regions in the sequence)
+-->
+<!ELEMENT BLASTALL_PARAMETERS_SCORING EMPTY>
+<!ATTLIST BLASTALL_PARAMETERS_SCORING
+	PROGRAM CDATA #REQUIRED
+	EXPECT CDATA #REQUIRED
+	MATRIX_NAME CDATA #REQUIRED
+	GAPPED (true | false) "false"
+	FILTER (true | false) "false"
+>
+<!-- Blastall_parameters_input-options
+
+	Description:
+	Stores parameters for input to the BLAST search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@translation -	not used	
+-->
+<!ELEMENT BLASTALL_PARAMETERS_INPUT-OPTIONS EMPTY>
+<!ATTLIST BLASTALL_PARAMETERS_INPUT-OPTIONS
+	TRANSLATION CDATA #IMPLIED
+>
+<!-- Blastall_parameters_output-options
+
+	Description:
+	Stores parameters for output from the BLAST search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@number_alignments -	number of hits for which pairwise sequence aignments
+					should be included in the output
+-->
+<!ELEMENT BLASTALL_PARAMETERS_OUTPUT-OPTIONS EMPTY>
+<!ATTLIST BLASTALL_PARAMETERS_OUTPUT-OPTIONS
+	NUMBER_ALIGNMENTS CDATA #IMPLIED
+>
+<!-- Merged_workflow_parameters
+
+	Description:
+	Indicates the results were formed by merging several different workflow results
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT MERGED_WORKFLOW_PARAMETERS (PEP_FRAG_TOL?)>
+<!-- Result types -->
+<!-- Result
+
+	Description:
+	Describes the results of a search (for any search type)
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -				the identifier of the query (should match the parent
+					Proteinlynx_query id).
+	@time_calculated -	a timestamp for the generation of these results.
+	@entries_searched -	the number of databank entries that the query searched
+					against
+-->
+<!ELEMENT RESULT (PEPTIDE*, HIT*, QUERY_MASS*, MODIFIER*)>
+<!ATTLIST RESULT
+	ID CDATA #IMPLIED
+	TIME_CALCULATED CDATA #REQUIRED
+	ENTRIES_SEARCHED CDATA #REQUIRED
+>
+<!-- Query parameter elements -->
+<!-- Search_database
+
+	Description:
+	Describes the databank used in the search.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@name - the name of the databank e.g. SWISSPROT
+-->
+<!ELEMENT SEARCH_DATABASE EMPTY>
+<!ATTLIST SEARCH_DATABASE
+	NAME CDATA #REQUIRED
+>
+<!-- Search_species_list
+
+	Description:
+	Lists the species to which the search should be restricted
+
+	Document:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT SEARCH_SPECIES_LIST (SEARCH_SPECIES*)>
+<!-- Search_species
+
+	Description:
+	Describes a species to which the search should be restricted
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@name -	the name of the species e.g. HUMAN
+	@path -	pathname of the directory in whcih the species-specific data are
+			stored
+-->
+<!ELEMENT SEARCH_SPECIES EMPTY>
+<!ATTLIST SEARCH_SPECIES
+	NAME CDATA #REQUIRED
+	PATH CDATA #IMPLIED
+>
+<!-- Digest_reagents
+
+	Description:
+	Describes a list of reagents which are available for used in simulated
+	digestion of a protein sequence
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT DIGEST_REAGENTS (AMINO_ACID_SEQUENCE_DIGESTOR*)>
+<!-- Analysis_digestor
+
+	Description:
+	Describes a reagent used in the simulated digestion of a protein sequence.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@missed_cleavages - the number of missed cleavages allowed for this reagent
+-->
+<!ELEMENT ANALYSIS_DIGESTOR (AMINO_ACID_SEQUENCE_DIGESTOR)>
+<!ATTLIST ANALYSIS_DIGESTOR
+	MISSED_CLEAVAGES CDATA #IMPLIED
+>
+<!-- Amino_acid_sequence_digestor
+
+	Description:
+	Describes a reagent used in the simulated digestion of a protein sequence
+
+	Documents:
+	Workflow, Project
+
+	@name - the unique name for this digest reagent
+-->
+<!ELEMENT AMINO_ACID_SEQUENCE_DIGESTOR (CLEAVES_AT*)>
+<!ATTLIST AMINO_ACID_SEQUENCE_DIGESTOR
+	NAME CDATA #REQUIRED
+>
+<!-- Cleaves_at
+
+	Description:
+	Describes a cleave point that a digest reagent acts upon.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@amino_acid -	the amino acid at which the digestor cleaves
+	@position -		the side of the amino acid at which the digestor cleaves
+-->
+<!ELEMENT CLEAVES_AT (EXCLUDES*)>
+<!ATTLIST CLEAVES_AT
+	AMINO_ACID (A | C | D | E | F | G | H | I | K | L | M | N | P | Q | R | S | T | V | W | Y) #REQUIRED
+	POSITION (N-TERM | C-TERM) #REQUIRED
+>
+<!-- Excludes
+
+	Description:
+	Describes an exclusion point for a cleave point that a digest reagent will not
+	act upon.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@amino_acid -	the amino acid which inhibits cleavage
+	@position -		the side of the potential cleavage site at which this inhibitor
+				amino acid sits
+-->
+<!ELEMENT EXCLUDES EMPTY>
+<!ATTLIST EXCLUDES
+	AMINO_ACID (A | C | D | E | F | G | H | I | K | L | M | N | P | Q | R | S | T | V | W | Y) #REQUIRED
+	POSITION (N-TERM | C-TERM) #REQUIRED
+>
+<!-- Search_type
+
+	Description:
+	Describes the type of databank search to perform.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@name - either MS, MSMS,MS-MSMS or Unknown
+-->
+<!ELEMENT SEARCH_TYPE EMPTY>
+<!ATTLIST SEARCH_TYPE
+	NAME (MS | MSMS | MS-MSMS | Unknown) #REQUIRED
+>
+<!-- Pep_mass_tol
+
+	Description:
+	Contains the tolerance to use in matching an MS peak or a parent MSMS ion.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@unit -	the units in which tolerance is specified. Either Da (Daltons), ppm
+			(parts per million) or pc (percent)
+-->
+<!ELEMENT PEP_MASS_TOL (#PCDATA)>
+<!ATTLIST PEP_MASS_TOL
+	UNIT (Da | ppm | pc) #REQUIRED
+>
+<!-- Pep_frag_tol
+
+	Description:
+	Contains the tolerance to use in matching an MSMS fragment peak
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@unit - 	the units in which tolerance is specified. Either Da (Daltons), ppm
+			(parts per million) or pc (percent)
+-->
+<!ELEMENT PEP_FRAG_TOL (#PCDATA)>
+<!ATTLIST PEP_FRAG_TOL
+	UNIT (Da) "Da"
+>
+<!-- Min_mass_standard_deviation
+
+	Description:
+	Contains the minimum mass standard deviation. Any mass standard deviations below
+	the stated level are set to this value.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@unit -	the units in which mass standard deviation is specified. Either Da
+			(Daltons) or ppm (parts per million).
+-->
+<!ELEMENT MIN_MASS_STANDARD_DEVIATION (#PCDATA)>
+<!ATTLIST MIN_MASS_STANDARD_DEVIATION
+	UNIT (Da | ppm) #REQUIRED
+>
+<!-- Max_hits_to_return
+
+	Description:
+	Contains the maximum number of hits to return in the results.
+	A hit consists of those proteins which have been matched using the same set or
+	subset of peptides.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT MAX_HITS_TO_RETURN (#PCDATA)>
+<!-- Min_peps_to_match_protein
+
+	Description:
+	Contains the minimum number of peptides required to signal a matched protein
+	sequence.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+-->
+<!ELEMENT MIN_PEPS_TO_MATCH_PROTEIN (#PCDATA)>
+<!-- Protein_mw
+
+	Description:
+	Describes the molecular weight range allowed for matched proteins
+
+	Documents:
+	Workflow, Projects
+
+	Attributes:
+	@from -	the minumum protein molecular weight
+	@to -		the maximum protein molecular weight
+-->
+<!ELEMENT PROTEIN_MW EMPTY>
+<!ATTLIST PROTEIN_MW
+	FROM CDATA #REQUIRED
+	TO CDATA #REQUIRED
+>
+<!-- Protein_pi
+
+	Description:
+	Describes the iso-electric point (pI) range allowed for matched proteins
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@from -	the minumum protein pI
+	@to -		the maximum protein pI
+-->
+<!ELEMENT PROTEIN_PI EMPTY>
+<!ATTLIST PROTEIN_PI
+	FROM CDATA #REQUIRED
+	TO CDATA #REQUIRED
+>
+<!-- Analysis modifier
+
+	Description:
+	Describes a post-translational modification to be simulated in generating amino
+	acid masses.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@status -	either FIXED (the modification is always applied) or VARIABLE (amino
+			acid masses are generated both with and without the modification).
+-->
+<!ELEMENT ANALYSIS_MODIFIER (MODIFIER)>
+<!ATTLIST ANALYSIS_MODIFIER
+	STATUS (FIXED | VARIABLE) #REQUIRED
+>
+<!-- Search_depth
+
+	Description:
+	Specifies the permutations an AutoMod search will consider.
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@max -	Specifies the maximum number of modified / substituted residues per
+			peptide
+	@subs -	Specifies whether substitutions are to be considered
+	@mods -	Specifieds whether modifications are to be considered
+	@blosum -	Specifies the minimum Blosum62 score to consider when applying
+			substitutions. Any substitutions with a Blosum62 score under this
+			value will NOT be considered.
+			Blosum62 scores range from -4 to 11. 0 is the default. Specifying -4
+			will consider all possible substitutions, but this will affect
+			performance.
+-->
+<!ELEMENT SEARCH_DEPTH EMPTY>
+<!ATTLIST SEARCH_DEPTH
+	MAX CDATA #REQUIRED
+	SUBS (true | false) #REQUIRED
+	MODS (true | false) #REQUIRED
+	BLOSUM CDATA #IMPLIED
+>
+<!-- Exclude_mass
+
+	Description:
+	Describes a peak from an MS spectrum to exclude from a databank search
+
+	Documents:
+	Workflow, Project
+
+	Attributes:
+	@value -	specifies the peak to exclude
+
+-->
+<!ELEMENT EXCLUDE_MASS EMPTY>
+<!ATTLIST EXCLUDE_MASS
+	VALUE CDATA #REQUIRED
+>
+<!-- Results elements -->
+<!-- Peptide
+
+	Description:
+	Describes a digestion product which has been matched against the spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -		the identifier of the peptide
+	@sequence - the amino acid sequence of the peptide
+	@mass -	the mass (including any modifications) of the peptide
+-->
+<!ELEMENT PEPTIDE (MATCH_MODIFIER*)>
+<!ATTLIST PEPTIDE
+	ID CDATA #REQUIRED
+	SEQUENCE CDATA #REQUIRED
+	MASS CDATA #REQUIRED
+>
+<!-- Match_modifier
+
+	Description:
+	Describes a post-translational modification used to obtain a match for the parent
+	peptide.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@name -	modifier name
+	@pos -	the position (starting from zero) in the peptide sequence of the
+			modification (for MSMS searches).
+-->
+<!ELEMENT MATCH_MODIFIER EMPTY>
+<!ATTLIST MATCH_MODIFIER
+	NAME CDATA #REQUIRED
+	POS CDATA #IMPLIED
+>
+<!-- Hit
+
+	Description:
+	A set of entities from which amino acid sequences can be derived which have been
+	matched using the same set or subset of peptides. If an identification could
+	belong to more than one hit (i.e. the peptides matched are a subset of more than
+	one set), the identification is associated with the hit containing the largest
+	score.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT HIT ((PROTEIN | EST | CHROMOSOME)+)>
+<!-- Entry
+
+	Description:
+	Contains the name of a databank entry.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT ENTRY (#PCDATA)>
+<!-- Readframe
+
+	Description:
+	Identifies the reading frame for a nucleotide sequence.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT READFRAME (#PCDATA)>
+<!-- Accession
+
+	Description:
+	Contains a databank entry accession number
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT ACCESSION (#PCDATA)>
+<!--Description
+
+	Description:
+	Contains a databank entry description.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT DESCRIPTION (#PCDATA)>
+<!-- Mw
+
+	Description:
+	Contains a molecular weight.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT MW (#PCDATA)>
+<!-- Pi
+
+	Description:
+	Contains an iso-electric point.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT PI (#PCDATA)>
+<!-- Sequence
+
+	Description:
+	Contains an amino acid sequence.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT SEQUENCE (#PCDATA)>
+<!-- Cdna_sequence
+
+	Description:
+	Contains a nucleotide sequence.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT CDNA_SEQUENCE (#PCDATA)>
+<!-- Databank_source
+
+	Description:
+	Contains a databank name.
+
+	Documents:
+	Workflow
+
+	Attributes:
+-->
+<!ELEMENT DATABANK_SOURCE (#PCDATA)>
+<!-- Protein
+
+	Description:
+	Describes a protein matched against a spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@score -			the combined score of the match
+	@probability -		a percentage which describes the probability of this
+					protein being a correct match given the data.
+	@coverage -			the percentage of the protien sequence that is covered by
+					the matched peptides
+	@confidence_level - 	a number between 0 and 1 representing confidence in the
+					match to the data (for MS and MS+MSMS searches only)
+-->
+<!ELEMENT PROTEIN (ENTRY?, ACCESSION?, DATABANK_SOURCE?, DESCRIPTION?, MW?, PI?, SEQUENCE, SEQUENCE_MATCH*)>
+<!ATTLIST PROTEIN
+	SCORE CDATA #REQUIRED
+	PROBABILITY CDATA #IMPLIED
+	COVERAGE CDATA #REQUIRED
+	CONFIDENCE_LEVEL CDATA #IMPLIED
+>
+<!-- Est
+
+	Description:
+	Describes an expressed sequence tag matched against a spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@score -			the combined score of the match
+	@probability -		a percentage which describes the probability of this
+					EST being a correct match given the data.
+	@coverage -			the percentage of the translated EST sequence that is
+					covered by the matched peptides
+	@confidence_level -	a number between 0 and 1 representing confidence in the
+					match to the data (for MS and MS+MSMS searches only)
+-->
+<!ELEMENT EST (ENTRY?, ACCESSION?, DATABANK_SOURCE?, DESCRIPTION?, CDNA_SEQUENCE, TRANSLATION?)>
+<!ATTLIST EST
+	SCORE CDATA #REQUIRED
+	PROBABILITY CDATA #IMPLIED
+	COVERAGE CDATA #REQUIRED
+	CONFIDENCE_LEVEL CDATA #IMPLIED
+>
+<!-- Chromosome
+
+	Description:
+	Describes a chromosome matched against a spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@name -	the name of the chromosome
+-->
+<!ELEMENT CHROMOSOME (DESCRIPTION?, DATABANK_SOURCE?, REGION*)>
+<!ATTLIST CHROMOSOME
+	NAME CDATA #REQUIRED
+>
+<!-- Region
+
+	Description:
+	Describes a region of the parent chromosome.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@start -	the start position of the region in the chromosome
+	@end -	the end position of the region in the chromosome
+-->
+<!ELEMENT REGION (CDNA_SEQUENCE, TRANSLATION*)>
+<!ATTLIST REGION
+	START CDATA #REQUIRED
+	END CDATA #REQUIRED
+>
+<!-- Translation
+
+	Description:
+	Describes a translation of a nucleotide sequence into an amino acid sequence.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@read_frame -	the reading frame used to translate the genetic sequence (1 - 6);
+-->
+<!ELEMENT TRANSLATION (SEQUENCE?, SEQUENCE_MATCH*)>
+<!ATTLIST TRANSLATION
+	READ_FRAME CDATA #REQUIRED
+>
+<!-- Sequence_match
+
+	Description:
+	Describes a peptide present in the parent amino acid sequence which matched
+	against the spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -		ID refers to PEPTIDE ID
+	@start -	the start position of the peptide in the parent sequence
+	@end -	the end position of the peptide in the parent sequence
+	@score -	the score of this sequence match (exclusively used in MS searches)
+-->
+<!ELEMENT SEQUENCE_MATCH (SUBSTITUTED*)>
+<!ATTLIST SEQUENCE_MATCH
+	ID CDATA #REQUIRED
+	START CDATA #REQUIRED
+	END CDATA #REQUIRED
+	SCORE CDATA #IMPLIED
+>
+<!-- Substituted
+
+	Description:
+	Describes a substituted peptide.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@amino_acid -	the original amino acid that was substituted.
+	@pos -		the position of the original amino acid within the peptide
+				(1-indexed).
+-->
+<!ELEMENT SUBSTITUTED EMPTY>
+<!ATTLIST SUBSTITUTED
+	AMINO_ACID (A | C | D | E | F | G | H | I | K | L | M | N | P | Q | R | S | T | V | W | Y) #REQUIRED
+	POS CDATA #REQUIRED
+>
+<!-- Modifier
+
+	Description:
+	Describes a post-translational modification used to obtain peptide matches to the
+	data.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@name -		the name of the post-translational modification e.g. Oxidation
+	@icat_reagent -	true or false depending upon whether or not this reagent is a
+				MCAT reagent 
+-->
+<!ELEMENT MODIFIER (MODIFIES)>
+<!ATTLIST MODIFIER
+	NAME CDATA #REQUIRED
+	MCAT_REAGENT (TRUE | FALSE) #REQUIRED
+>
+<!-- Modifies
+
+	Description:
+	Describes the site at which a post-translational modification can occur.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@applies_to -	the site(s) upon which the modification applies
+	@delta_mass -	the additional mass of the modified residue / terminus
+	@type -		modifications can occur on either the N-terminus, the
+				C-terminus, or a sidechain residue
+-->
+<!ELEMENT MODIFIES (FRAGMENT*)>
+<!ATTLIST MODIFIES
+	APPLIES_TO CDATA #REQUIRED
+	DELTA_MASS CDATA #REQUIRED
+	TYPE (N-TERM | SIDECHAIN | C-TERM) #REQUIRED
+>
+<!-- Fragment
+
+	Description:
+	Fragments of the modifier reagent that may be present in MSMS spectra
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@mass -		the mass of the fragment. A positive mass corresponds to a
+				fragment peak, a negative mass corresponds to a peak generated
+				through loss from the precursor ion.
+	@probability - 	the probability of the fragmentation occuring.
+-->
+<!ELEMENT FRAGMENT EMPTY>
+<!ATTLIST FRAGMENT
+	MASS CDATA #REQUIRED
+	PROBABILITY CDATA #REQUIRED
+>
+<!-- Query_mass
+
+	Description:
+	Describes a (de-isotoped) MS peak or an MSMS parent ion present in a spectrum.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -			ID is the position of the peak in the spectrum for MS data or
+				the PRECURSOR for MSMS data
+	@type -		describes the type of spectrum data (MS or MSMS)
+	@mass -		the m/z value for the ion
+	@charge -		charge of the ion
+	@retention_time -	the retention time of the ion
+	@evidence -		the probability that the data is consistent with the class of
+				model used to obtain peptide sequences
+-->
+<!ELEMENT QUERY_MASS (MASS_MATCH*)>
+<!ATTLIST QUERY_MASS
+	ID CDATA #REQUIRED
+	MASS CDATA #REQUIRED
+	CHARGE CDATA #REQUIRED
+	RETENTION_TIME CDATA #IMPLIED
+	EVIDENCE CDATA #IMPLIED
+>
+<!-- Mass_match
+
+	Description:
+	Describes a match between the parent query mass and a peptide.
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@id -				id refers to PEPTIDE ID
+	@score -			the score of this mass match (exclusively used in MSMS
+					searches)
+	@pr_seq_and_data -	the probability of the sequence and the data for de novo
+					results
+	@pr_seq_given_data -	the probability of the sequence given the data for de
+					novo results
+	@secondary_score -	any score obtained by an alternative scoring algorithm
+-->
+<!ELEMENT MASS_MATCH (RES_ANAL*, BOND_ANAL*, SER_FRAG_ANAL*, INT_FRAG_ANAL*)>
+<!ATTLIST MASS_MATCH
+	ID CDATA #REQUIRED
+	SCORE CDATA #IMPLIED
+	PR_SEQ_AND_DATA CDATA #IMPLIED
+	PR_SEQ_GIVEN_DATA CDATA #IMPLIED
+	SECONDARY_SCORE CDATA #IMPLIED
+>
+<!-- Res_anal
+
+	Description:
+	Describes the analysis of an amino acid residue identified in a de novo search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@res_name -			the name of the residue
+	@pos -			the position of the residue in the parent peptide
+	@pr_res_given_deta -	the probability of the residue being correct given the
+					data
+-->
+<!ELEMENT RES_ANAL EMPTY>
+<!ATTLIST RES_ANAL
+	RES_NAME CDATA #REQUIRED
+	POS CDATA #REQUIRED
+	PR_RES_GIVEN_DATA CDATA #REQUIRED
+>
+<!-- Bond_anal
+
+	Description
+	Describes the analysis of a bond between residues identified in a de novo search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@res_names -		the names of the two surrounding amino acid residues
+	@pos -			the position of the bond in the parent peptide sequence
+	@pr_bond_given_data -	the probability of the bond given the data
+-->
+<!ELEMENT BOND_ANAL EMPTY>
+<!ATTLIST BOND_ANAL
+	RES_NAMES CDATA #REQUIRED
+	POS CDATA #REQUIRED
+	PR_BOND_GIVEN_DATA CDATA #REQUIRED
+>
+<!-- Ser_frag_anal
+
+	Description:
+	Describes the analysis of a series (i.e. a,b,c,x,y,z) for a peptide fragment in a
+	de novo search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@frag_name -		the name of the fragment series
+	@number -			the series number
+	@mass -			the mass of the fragment including any modifications
+	@delta_mass -		discrepancy between the observed and calculated fragment
+					mass
+	@pr_frag_given_data -	the probability of the fragment given the data
+	@inf_of_data -		the influence of the data
+-->
+<!ELEMENT SER_FRAG_ANAL EMPTY>
+<!ATTLIST SER_FRAG_ANAL
+	FRAG_NAME CDATA #REQUIRED
+	NUMBER CDATA #REQUIRED
+	MASS CDATA #REQUIRED
+	DELTA_MASS CDATA #REQUIRED
+	PR_FRAG_GIVEN_DATA CDATA #REQUIRED
+	INF_OF_DATA CDATA #REQUIRED
+>
+<!-- Int_frag_anal
+
+	Description:
+	Describes the analysis of a peptide internal fragment (including immonium ions)
+	in a de novo search
+
+	Documents:
+	Workflow
+
+	Attributes:
+	@frag_seq -			the sequence of the fragment
+	@mass -			the mass of the fragment including any modifications
+	@delta_mass -		discrepancy between the observed and calculated fragment mass
+	@pr_frag_given_data -	the probability of the fragment given the data
+	@inf_of_data -		the influence of the data
+-->
+<!ELEMENT INT_FRAG_ANAL EMPTY>
+<!ATTLIST INT_FRAG_ANAL
+	FRAG_SEQ CDATA #REQUIRED
+	MASS CDATA #REQUIRED
+	DELTA_MASS CDATA #REQUIRED
+	PR_FRAG_GIVEN_DATA CDATA #REQUIRED
+	INF_OF_DATA CDATA #REQUIRED
+>
+<!--
+	================================================================================
+	Mass_spectrum document definitions
+	================================================================================
+-->
+<!-- Mass_spectrum
+
+	Description:
+	Describes a mass spectrum, either MS or MSMS.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+	@ms_data_name -		the name of the raw data file from which this spectrum
+					was taken.
+	@job_code -			the job code of the run in which this spectrum was
+					acquired.
+	@plate -			the plate from which this spectrum was acquired
+	@well -			the row, column well position (e.g. B,6) from which this
+					spectrum was acquired
+	@sample_tracking_id -	the identifier for the sample in the well
+	@type -			the type of spectrum (MS, MSMS or MS_MSMS)
+	@merged -			indicates whether this spectrum represents a merge of
+					several sets of data
+	@user_field_1 -		additional field for storing user-defined information
+	@user_field_2 -		additional field for storing user-defined information
+	@user_field_3 -		additional field for storing user-defined information
+	@user_field_4 -		additional field for storing user-defined information
+	@user_field_5 -		additional field for storing user-defined information
+-->
+<!ELEMENT MASS_SPECTRUM (PROCESSING_PARAMETERS?, FORMAT*, MS?)>
+<!ATTLIST MASS_SPECTRUM
+	MS_DATA_NAME CDATA #REQUIRED
+	JOB_CODE CDATA #REQUIRED
+	PLATE CDATA #IMPLIED
+	WELL CDATA #REQUIRED
+	SAMPLE_TRACKING_ID CDATA #REQUIRED
+	TYPE (MS | MSMS | MS_MSMS) #IMPLIED
+	MERGED (true | false) "false"
+	USER_FIELD_1 CDATA #IMPLIED
+	USER_FIELD_2 CDATA #IMPLIED
+	USER_FIELD_3 CDATA #IMPLIED
+	USER_FIELD_4 CDATA #IMPLIED
+	USER_FIELD_5 CDATA #IMPLIED
+>
+<!-- Processing_parameters
+
+	Description:
+	Describes the processing of raw data used to obtain the spectrum.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+	@instrument_mode -	the instrument type and operation mode that these
+					parameters apply to
+-->
+<!ELEMENT PROCESSING_PARAMETERS (LEVEL+)>
+<!ATTLIST PROCESSING_PARAMETERS %instrument_mode;							#REQUIRED
+>
+<!-- Level
+
+	Description:
+	The processing parameters for this fragmentation level of data.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@fragmentation_level -	the fragmentation level that these parameters apply to
+-->
+<!ELEMENT LEVEL (COMBINE?, MASS_MEASURE?, CALIBRATE?, SPECTRUM_SELECT?, DEISOTOPE?)>
+<!ATTLIST LEVEL
+	FRAGMENTATION_LEVEL (0 | 1 | 2 | 3 | 4) "0"
+>
+<!--
+	Processing information
+-->
+<!--
+	Combining scans
+-->
+<!-- Combine
+
+	Description:
+	Describes the method used to combine scans for an MS run.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@method - the method by which scans are combined
+-->
+<!ELEMENT COMBINE ((AUTO_SELECT | USER_INPUT)?)>
+<!ATTLIST COMBINE
+	METHOD (All | User-input | Auto-select) #IMPLIED
+>
+<!-- Auto_select
+
+	Description:
+	Describes the parameters for auto-selection of scans for combination.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@low_mass_threshold -		the low mass threshold for acceptance
+	@low_intensity_threshold -	the low intensity threshold for acceptance
+	@high_intensity_threshold -	the high intensity threshold for acceptance
+-->
+<!ELEMENT AUTO_SELECT EMPTY>
+<!ATTLIST AUTO_SELECT
+	LOW_MASS_THRESHOLD CDATA #REQUIRED
+	LOW_INTENSITY_THRESHOLD CDATA #REQUIRED
+	HIGH_INTENSITY_THRESHOLD CDATA #REQUIRED
+>
+<!--	User_input
+
+	Description:
+	Describes a user-defined range of scans for combination.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@first -	the first scan to combine
+	@last -	the last scan to combine
+-->
+<!ELEMENT USER_INPUT EMPTY>
+<!ATTLIST USER_INPUT
+	FIRST CDATA #REQUIRED
+	LAST CDATA #REQUIRED
+>
+<!--	Spectrum_select
+
+	Description:
+	Describes the parameters for MS-MS spectrum selection.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@spectrum_filter -	a number describing a quality threshold for a fragment
+					spectrum
+-->
+<!ELEMENT SPECTRUM_SELECT EMPTY>
+<!ATTLIST SPECTRUM_SELECT
+	SPECTRUM_FILTER CDATA #IMPLIED
+>
+<!--
+	Background subtract, smooth and centroid
+-->
+<!-- Background_subtract
+
+	Description:
+	Describes background subtraction parameters.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@polynomial_order -	the number of regions the data is split into for
+					calculating background polynomials
+	@below_curve -		the number of points required to be on or below the
+					background curve
+	@tolerance -		the tolerance with which points are considered to lie on
+					the curve
+	@flatten_edges -		if true, the edges of the background curve are flattened
+-->
+<!ELEMENT BACKGROUND_SUBTRACT EMPTY>
+<!ATTLIST BACKGROUND_SUBTRACT
+	POLYNOMIAL_ORDER CDATA #REQUIRED
+	BELOW_CURVE CDATA #REQUIRED
+	TOLERANCE CDATA #IMPLIED
+	FLATTEN_EDGES (true | false) #IMPLIED
+>
+<!-- Peak_detection
+
+	Description:
+	Describes the method used to produce stick data.
+	Either data reduction or smooth and centroid | top | median.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+-->
+<!ELEMENT PEAK_DETECTION (DATA_REDUCTION | (SMOOTH?, (CENTROID | TOP | MEDIAN)))>
+<!-- Data_reduction
+
+	Description:
+	John Skilling's new peak detection algorithm.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+-->
+<!ELEMENT DATA_REDUCTION EMPTY>
+<!-- Smooth
+
+	Description:
+	Describes smoothing parameters.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@window - the size of the smoothing window
+	@number - the number of iterations
+	@method - the smoothing method
+-->
+<!ELEMENT SMOOTH EMPTY>
+<!ATTLIST SMOOTH
+	WINDOW CDATA #REQUIRED
+	NUMBER CDATA #REQUIRED
+	METHOD (Mean | Savitzky-Golay) #REQUIRED
+>
+<!-- Centroid
+
+	Description:
+	Describes parameters for centroiding.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@min_peak_width -	the minimum width (maximum noise) for a peak to be considered
+	@centroid_top -	the percentage of the peak above the highest shoulder to
+				include
+-->
+<!ELEMENT CENTROID EMPTY>
+<!ATTLIST CENTROID
+	MIN_PEAK_WIDTH CDATA #REQUIRED
+	CENTROID_TOP CDATA #IMPLIED
+>
+<!-- Top
+
+	Description:
+	Top really means the top data point of a peak.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@min_peak_width -	the minimum width (maximum noise) for a peak to be considered
+-->
+<!ELEMENT TOP EMPTY>
+<!ATTLIST TOP
+	MIN_PEAK_WIDTH CDATA #REQUIRED
+>
+<!-- Median
+
+	Description:
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@min_peak_width -	the minimum width (maximum noise) for a peak to be considered
+-->
+<!ELEMENT MEDIAN EMPTY>
+<!ATTLIST MEDIAN
+	MIN_PEAK_WIDTH CDATA #REQUIRED
+>
+<!-- Maxent3
+
+	Description:
+	Describes parameters for maxent3 processing.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@min_mass -				specifies minimum mass to output
+	@max_mass -				specifies maximum mass to output
+	@max_no_charges -			the maximum number of charges to consider
+	@peak_width_1 -			a user supplied measurement of peak width at low
+						mass
+	@peak_width_2 -			a user supplied measurement of peak width at high
+						mass
+	@auto_peak_width -		whether to determine peak widths automatically
+	@number_of_ensemble_members -	number of simultaneous explorations
+	@its_per_ensemble_member -	controls the rate of cooling and amount of time
+						spent exploring the optimal region
+	@compress_data -			averages consecutive data points to speed up
+						algorithm
+-->
+<!ELEMENT MAXENT3 (BACKGROUND_SUBTRACT?)>
+<!ATTLIST MAXENT3
+	MIN_MASS CDATA #IMPLIED
+	MAX_MASS CDATA #IMPLIED
+	MAX_NO_OF_CHARGES CDATA #IMPLIED
+	PEAK_WIDTH_1 CDATA #IMPLIED
+	PEAK_WIDTH_2 CDATA #IMPLIED
+	AUTO_PEAK_WIDTH (true | false) #IMPLIED
+	NUMBER_OF_ENSEMBLE_MEMBERS CDATA #REQUIRED
+	ITS_PER_ENSEMBLE_MEMBER CDATA #REQUIRED
+	COMPRESS_DATA (true | false) #REQUIRED
+>
+<!-- Maxent_lite
+
+	Description:
+	Describes parameters for maxent lite processing.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@min_mass -			specifies minimum mass to output
+	@max_mass -			specifies maximum mass to output
+	@max_no_of_charges -	the maximum number of charges to consider
+	@threshold -		lower bound on the percentage of peak intensities as
+					compared against the highest peak
+-->
+<!ELEMENT MAXENT_LITE (BACKGROUND_SUBTRACT?)>
+<!ATTLIST MAXENT_LITE
+	MIN_MASS CDATA #IMPLIED
+	MAX_MASS CDATA #IMPLIED
+	MAX_NO_OF_CHARGES CDATA #IMPLIED
+	THRESHOLD CDATA #REQUIRED
+>
+<!-- Transform
+
+	Description:
+	Describes the deisotoping for stick data.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@type -	consider only singly-charged ions or multiply-charged ions
+-->
+<!ELEMENT TRANSFORM EMPTY>
+<!ATTLIST TRANSFORM
+	TYPE (single-charge | multiple-charge) "multiple-charge"
+>
+<!-- Mass_measure
+
+	Description:
+	Describes the method to reduce the raw data to a stick spectrum.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+-->
+<!ELEMENT MASS_MEASURE (BACKGROUND_SUBTRACT?, PEAK_DETECTION)>
+<!-- Calibrate
+
+	Description:
+	Describes parameters for calibration.
+	Calibration is meant to fit Maldi, TOF, electrospray acquisition
+	LOCK_MASS_EXT is the near mass for Maldi, LOCK_MASS_INT_1 is the
+	internal and LOCK_MASS_INT_2 the alternative internal.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@lock_mass_ext -		external lock mass, if present
+	@lock_mass_int_1 -	internal lock mass, if present
+	@lock_mass_int_2 -	internal lock mass, if present
+	@tolerance -		the window around the specified lock mass in which to
+					look (Da)
+	@tof_resolution -		the resolution (M / FWHM)
+	@np_multiplier -		instrument-dependent. Required for correction of detector
+					dead-time
+	@lockspray_avg_scans -	the number of reference scans for each precursor to
+					combine in a lock spray experiment
+-->
+<!ELEMENT CALIBRATE EMPTY>
+<!ATTLIST CALIBRATE
+	LOCK_MASS_EXT CDATA #IMPLIED
+	LOCK_MASS_INT_1 CDATA #IMPLIED
+	LOCK_MASS_INT_2 CDATA #IMPLIED
+	TOLERANCE CDATA #IMPLIED
+	TOF_RESOLUTION CDATA #IMPLIED
+	NP_MULTIPLIER CDATA #IMPLIED
+	LOCKSPRAY_AVG_SCANS CDATA #IMPLIED
+>
+<!-- Deisotope
+
+	Description:
+	Describes the method used to deisotope the spectrum.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attributes:
+	@method -	the method used
+-->
+<!ELEMENT DEISOTOPE (MONOISO_SELECT?, (MAXENT3 | MAXENT_LITE | TRANSFORM))>
+<!ATTLIST DEISOTOPE
+	METHOD (Transform | Maxent3 | MaxentLite) #REQUIRED
+>
+<!-- Monoiso_select
+
+	Description:
+	Monoisotopic mass selection for "txt" output.
+
+	Documents:
+	Mass_spectrum, Project
+
+	Attribute:
+	@start_mass -	the starting mass to output
+	@fit_threshold -
+	@prob_detect -
+	@num_monoiso -
+-->
+<!ELEMENT MONOISO_SELECT EMPTY>
+<!ATTLIST MONOISO_SELECT
+	START_MASS CDATA #IMPLIED
+	FIT_THRESHOLD_QUOT CDATA #IMPLIED
+	PROB_DETECT CDATA "0.0"
+	NUM_MONOISO CDATA #IMPLIED
+>
+<!-- Format
+
+	Description:
+	Use the FORMAT element to specify the instructions for secondary parsing of the
+	PCDATA which comprise the spectrum data values.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+	@fragmentation_level -	0 for MS, 1 for MSMS, etc
+	@type -			the standard name for this format defaults to "default"
+					for this level
+	@deisotoped -		true if this level of spectra contain deisotoped data,
+					false otherwise.
+-->
+<!ELEMENT FORMAT (FIELD*)>
+<!ATTLIST FORMAT
+	FRAGMENTATION_LEVEL (0 | 1 | 2 | 3 | 4) "0"
+	TYPE CDATA "default"
+	DEISOTOPED (true | false) #IMPLIED
+>
+<!-- Field
+
+	Description:
+	Specifies a field in the Data text.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+	@position -	the position of the field
+	@name -	the name of the field
+-->
+<!ELEMENT FIELD EMPTY>
+<!ATTLIST FIELD
+	POSITION CDATA #REQUIRED
+	NAME CDATA #REQUIRED
+>
+<!-- Ms
+
+	Description:
+	Contains root (fragmentation level 0) MS data.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+-->
+<!ELEMENT MS (DATA, FRAGMENTATION*)>
+<!-- Data
+
+	Description:
+	Contains spectrum data in the format pertaining to the level.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+-->
+<!ELEMENT DATA (#PCDATA)>
+<!-- Fragmentation
+
+	Description:
+	Contains fragmentation data for a single precursor ion.
+
+	Documents:
+	Mass_spectrum
+
+	Attributes:
+	@precursor_index - the position of the precursor in the parent spectrum
+-->
+<!ELEMENT FRAGMENTATION (DATA, FRAGMENTATION*)>
+<!ATTLIST FRAGMENTATION
+	PRECURSOR_INDEX CDATA #IMPLIED
+>
+<!--
+	================================================================================
+	Unused definitions
+	================================================================================
+-->
+<!-- Start of unused tags -->
+<!-- Define a set of container types. Unused at present -->
+<!ENTITY % container_type "CONTAINER_TYPE ( Target_plate_12x8 | Microtitre_plate_12x8 | Vial )">
+<!ELEMENT TITLE (#PCDATA)>
+<!--	Tags for describing the merging of output from filters on various ancestors
+
+	Currently unused - multiple ancestors can be filtered by writing a
+	specific xsl filter to do the job.
+-->
+<!ELEMENT MERGE (FILTER+, RULE*)>
+<!--	If no rule is given for a tag, the rule defaults to
+
+	<RULE TYPE="or" TAG="my_tag_name">
+		<PRIORITY>
+			<ANCESTOR ORDER="descending" />
+		</PRIORITY>
+	</RULE>
+
+	The absence of IDENTITY_ATTR_NAME implies elements are allowed to appear only once.
+-->
+<!ELEMENT RULE (PRIORITY?)>
+<!ATTLIST RULE
+	TYPE (and | or) "or"
+	TAG CDATA #REQUIRED
+	IDENTITY_ATTR_NAME CDATA #IMPLIED
+>
+<!--	If priority is not present, the priority defaults to
+
+	<PRIORITY>
+		<ANCESTOR ORDER="descending" />
+	</PRIORITY>
+
+	This means that the lowest ancestor level takes precedence
+-->
+<!ELEMENT PRIORITY (ANCESTOR | ATTRIBUTE)>
+<!ELEMENT ANCESTOR EMPTY>
+<!ATTLIST ANCESTOR
+	ORDER (ascending | descending) "descending"
+>
+<!ELEMENT ATTRIBUTE EMPTY>
+<!ATTLIST ATTRIBUTE
+	NAME CDATA #REQUIRED
+>
+<!-- End of unused tags -->

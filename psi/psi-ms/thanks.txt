@@ -1,0 +1,1 @@
+* Phillip Young, Micromass, (phillip.young@micromass.co.uk) for the ProteinLynx DTD and allowing it to be released under the LGPL
