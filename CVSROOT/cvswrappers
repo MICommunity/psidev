@@ -20,4 +20,13 @@
 #
 #  and value is a single-quote delimited value.
 # For example:
-#*.gif -k 'b'
+*.gif -kb
+*.png -kb
+*.jpg -kb
+*.jpeg -kb
+*.xls -kb
+*.rft -kb
+*.ppt -kb
+*.doc -kb
+*.class -kb
+*.exe -kb
