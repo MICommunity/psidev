@@ -140,10 +140,10 @@
         <field name="id" type="int" required="true">
             <bind-xml name="id" node="attribute"/>
         </field>
-        <field name="mzArray" type="org.psi.ms.model.MzArray">
+        <field name="mzArray" type="org.psi.ms.model.RawDataType">
             <bind-xml name="mzArray" node="element"/>
         </field>
-        <field name="intenArray" type="org.psi.ms.model.IntenArray">
+        <field name="intenArray" type="org.psi.ms.model.RawDataType">
             <bind-xml name="intenArray" node="element"/>
         </field>
         <field name="mzArrayBinary" type="org.psi.ms.model.MzArrayBinary">
@@ -605,8 +605,8 @@
             <bind-xml name="PCDATA" node="text"/>
         </field>
     </class>
-    <class name="org.psi.ms.model.MzArray">
-        <description>Default mapping for class org.psi.ms.model.MzArray</description>
+    <class name="org.psi.ms.model.RawDataType">
+        <description>Default mapping for class org.psi.ms.model.RawDataType</description>
         <map-to xml="mzArray"/>
         <field name="length" type="int" required="true">
             <bind-xml name="length" node="attribute"/>
@@ -626,16 +626,6 @@
         </field>
         <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
             <bind-xml name="-error-if-this-is-used-" node="element"/>
-        </field>
-    </class>
-    <class name="org.psi.ms.model.IntenArray">
-        <description>Default mapping for class org.psi.ms.model.IntenArray</description>
-        <map-to xml="intenArray"/>
-        <field name="length" type="int" required="true">
-            <bind-xml name="length" node="attribute"/>
-        </field>
-        <field name="float" type="float" required="true" collection="array">
-            <bind-xml name="float" node="element"/>
         </field>
     </class>
     <class name="org.psi.ms.model.SupDescList">
