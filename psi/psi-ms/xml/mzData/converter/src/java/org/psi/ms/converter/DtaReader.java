@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.8 2003/08/21 10:58:11 krunte Exp $
+ * $Id: DtaReader.java,v 1.9 2003/08/21 14:28:01 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,9 +8,8 @@
  */
 package org.psi.ms.converter;
 
-import org.psi.ms.model.*;
-import org.psi.ms.model.types.*;
 import org.psi.ms.helper.Utils;
+import org.psi.ms.model.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

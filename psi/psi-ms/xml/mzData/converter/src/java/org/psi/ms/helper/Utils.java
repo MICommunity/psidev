@@ -1,5 +1,5 @@
 /**
- * $Id: Utils.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: Utils.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,18 +8,17 @@
  */
 package org.psi.ms.helper;
 
-import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.codec.EncoderException;
 import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.EncoderException;
+import org.apache.commons.codec.binary.Base64;
 
 import java.io.*;
-import java.util.Vector;
 import java.util.List;
 import java.util.TreeSet;
-import java.util.Collection;
+import java.util.Vector;
 
 /**
- * 
+ *
  * @author krunte
  */
 public class Utils {
@@ -57,10 +56,10 @@ public class Utils {
         ObjectInputStream oInputStream = new ObjectInputStream(bInputStream);
         Vector floatList = new Vector();
         try {
-        while (true) {
-            float f = oInputStream.readFloat();
-            floatList.add(new Float(f));
-        }
+            while (true) {
+                float f = oInputStream.readFloat();
+                floatList.add(new Float(f));
+            }
         } catch (IOException e) {
             //end of file reached
         }

@@ -1,5 +1,5 @@
 /**
- * $Id: SuffixFileFilter.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: SuffixFileFilter.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,8 +8,8 @@
  */
 package org.psi.ms.helper;
 
-import java.io.FilenameFilter;
 import java.io.File;
+import java.io.FilenameFilter;
 
 /**
  * A FilenameFilter for filtering according to the suffix of the filename.

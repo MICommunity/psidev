@@ -1,42 +1,34 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: DataArray.java,v 1.2 2003/08/21 12:23:47 krunte Exp $
+ * $Id: DataArray.java,v 1.3 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import java.util.Vector;
-
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
+
+import java.util.Vector;
 
 /**
  * If the raw data representation method was not binary or if the
  * supplemental data array was a string- or other non-binary type,
  * then it can be represented in the dataArray element.
- * 
- * @version $Revision: 1.2 $ $Date: 2003/08/21 12:23:47 $
+ *
+ * @version $Revision: 1.3 $ $Date: 2003/08/21 14:28:01 $
  */
-public class DataArray extends org.psi.ms.model.SuppDataType 
-implements java.io.Serializable
-{
+public class DataArray extends org.psi.ms.model.SuppDataType
+        implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -105,7 +97,7 @@ implements java.io.Serializable
 
 
     //----------------/
-     //- Constructors -/
+    //- Constructors -/
     //----------------/
 
     public DataArray() {
@@ -118,65 +110,60 @@ implements java.io.Serializable
     } //-- org.psi.ms.model.DataArray()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method deleteOffset
      */
-    public void deleteOffset()
-    {
-        this._has_offset= false;
-    } //-- void deleteOffset() 
+    public void deleteOffset() {
+        this._has_offset = false;
+    } //-- void deleteOffset()
 
     /**
      * Returns the value of field 'arrayName'. The field
      * 'arrayName' has the following description: Name of the
      * supplemental data array
-     * 
+     *
      * @return the value of field 'arrayName'.
      */
-    public java.lang.String getArrayName()
-    {
+    public java.lang.String getArrayName() {
         return this._arrayName;
-    } //-- java.lang.String getArrayName() 
+    } //-- java.lang.String getArrayName()
 
     /**
      * Returns the value of field 'description'. The field
      * 'description' has the following description: Description of
      * the supplemental data array
-     * 
+     *
      * @return the value of field 'description'.
      */
-    public java.lang.String getDescription()
-    {
+    public java.lang.String getDescription() {
         return this._description;
-    } //-- java.lang.String getDescription() 
+    } //-- java.lang.String getDescription()
 
     /**
      * Returns the value of field 'indexed'. The field 'indexed'
      * has the following description: Each dataArray can either be
      * related to the mzArray or not. If the elements are related
      * to the mzArray then this flag is set to 1.
-     * 
+     *
      * @return the value of field 'indexed'.
      */
-    public boolean getIndexed()
-    {
+    public boolean getIndexed() {
         return this._indexed;
-    } //-- boolean getIndexed() 
+    } //-- boolean getIndexed()
 
     /**
      * Returns the value of field 'length'. The field 'length' has
      * the following description: Number of items in the dataArray
-     * 
+     *
      * @return the value of field 'length'.
      */
-    public int getLength()
-    {
+    public int getLength() {
         return this._length;
-    } //-- int getLength() 
+    } //-- int getLength()
 
     /**
      * Returns the value of field 'offset'. The field 'offset' has
@@ -184,125 +171,113 @@ implements java.io.Serializable
      * this value gives the element count (starting from 1) in the
      * mzArray which aligns with the first element in this
      * dataArray.
-     * 
+     *
      * @return the value of field 'offset'.
      */
-    public int getOffset()
-    {
+    public int getOffset() {
         return this._offset;
-    } //-- int getOffset() 
+    } //-- int getOffset()
 
     /**
      * Method hasIndexed
      */
-    public boolean hasIndexed()
-    {
+    public boolean hasIndexed() {
         return this._has_indexed;
-    } //-- boolean hasIndexed() 
+    } //-- boolean hasIndexed()
 
     /**
      * Method hasLength
      */
-    public boolean hasLength()
-    {
+    public boolean hasLength() {
         return this._has_length;
-    } //-- boolean hasLength() 
+    } //-- boolean hasLength()
 
     /**
      * Method hasOffset
      */
-    public boolean hasOffset()
-    {
+    public boolean hasOffset() {
         return this._has_offset;
-    } //-- boolean hasOffset() 
+    } //-- boolean hasOffset()
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
-        throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Sets the value of field 'arrayName'. The field 'arrayName'
      * has the following description: Name of the supplemental data
      * array
-     * 
+     *
      * @param arrayName the value of field 'arrayName'.
      */
-    public void setArrayName(java.lang.String arrayName)
-    {
+    public void setArrayName(java.lang.String arrayName) {
         this._arrayName = arrayName;
-    } //-- void setArrayName(java.lang.String) 
+    } //-- void setArrayName(java.lang.String)
 
     /**
      * Sets the value of field 'description'. The field
      * 'description' has the following description: Description of
      * the supplemental data array
-     * 
+     *
      * @param description the value of field 'description'.
      */
-    public void setDescription(java.lang.String description)
-    {
+    public void setDescription(java.lang.String description) {
         this._description = description;
-    } //-- void setDescription(java.lang.String) 
+    } //-- void setDescription(java.lang.String)
 
     /**
      * Sets the value of field 'indexed'. The field 'indexed' has
      * the following description: Each dataArray can either be
      * related to the mzArray or not. If the elements are related
      * to the mzArray then this flag is set to 1.
-     * 
+     *
      * @param indexed the value of field 'indexed'.
      */
-    public void setIndexed(boolean indexed)
-    {
+    public void setIndexed(boolean indexed) {
         this._indexed = indexed;
         this._has_indexed = true;
-    } //-- void setIndexed(boolean) 
+    } //-- void setIndexed(boolean)
 
     /**
      * Sets the value of field 'length'. The field 'length' has the
      * following description: Number of items in the dataArray
-     * 
+     *
      * @param length the value of field 'length'.
      */
-    public void setLength(int length)
-    {
+    public void setLength(int length) {
         this._length = length;
         this._has_length = true;
-    } //-- void setLength(int) 
+    } //-- void setLength(int)
 
     /**
      * Sets the value of field 'offset'. The field 'offset' has the
@@ -310,32 +285,29 @@ implements java.io.Serializable
      * value gives the element count (starting from 1) in the
      * mzArray which aligns with the first element in this
      * dataArray.
-     * 
+     *
      * @param offset the value of field 'offset'.
      */
-    public void setOffset(int offset)
-    {
+    public void setOffset(int offset) {
         this._offset = offset;
         this._has_offset = true;
-    } //-- void setOffset(int) 
+    } //-- void setOffset(int)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.psi.ms.model.DataArray unmarshal(java.io.Reader reader)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (org.psi.ms.model.DataArray) Unmarshaller.unmarshal(org.psi.ms.model.DataArray.class, reader);
-    } //-- org.psi.ms.model.DataArray unmarshal(java.io.Reader) 
+    } //-- org.psi.ms.model.DataArray unmarshal(java.io.Reader)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     } //-- void validate()
@@ -346,8 +318,7 @@ implements java.io.Serializable
      * @param vString
      */
     public void addString(String vString)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _stringList.addElement(vString);
     } //-- void addString(java.lang.String)
 
@@ -358,8 +329,7 @@ implements java.io.Serializable
      * @param vString
      */
     public void addString(int index, String vString)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _stringList.insertElementAt(vString, index);
     } //-- void addString(int, java.lang.String)
 
@@ -369,8 +339,7 @@ implements java.io.Serializable
      * @param vTime
      */
     public void addTime(org.exolab.castor.types.Duration vTime)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _timeList.addElement(vTime);
     } //-- void addTime(org.exolab.castor.types.Duration)
 
@@ -381,8 +350,7 @@ implements java.io.Serializable
      * @param vTime
      */
     public void addTime(int index, org.exolab.castor.types.Duration vTime)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _timeList.insertElementAt(vTime, index);
     } //-- void addTime(int, org.exolab.castor.types.Duration)
 
@@ -392,8 +360,7 @@ implements java.io.Serializable
      * @param vURI
      */
     public void addURI(String vURI)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _URIList.addElement(vURI);
     } //-- void addURI(java.lang.String)
 
@@ -404,8 +371,7 @@ implements java.io.Serializable
      * @param vURI
      */
     public void addURI(int index, String vURI)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _URIList.insertElementAt(vURI, index);
     } //-- void addURI(int, java.lang.String)
 
@@ -415,8 +381,7 @@ implements java.io.Serializable
      * @param v_float
      */
     public void addFloat(float v_float)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _floatList.addElement(new Float(v_float));
     } //-- void addFloat(float)
 
@@ -427,8 +392,7 @@ implements java.io.Serializable
      * @param v_float
      */
     public void addFloat(int index, float v_float)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _floatList.insertElementAt(new Float(v_float), index);
     } //-- void addFloat(int, float)
 
@@ -438,8 +402,7 @@ implements java.io.Serializable
      * @param v_int
      */
     public void addInt(int v_int)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _intList.addElement(new Integer(v_int));
     } //-- void addInt(int)
 
@@ -450,48 +413,42 @@ implements java.io.Serializable
      * @param v_int
      */
     public void addInt(int index, int v_int)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         _intList.insertElementAt(new Integer(v_int), index);
     } //-- void addInt(int, int)
 
     /**
      * Method enumerateString
      */
-    public java.util.Enumeration enumerateString()
-    {
+    public java.util.Enumeration enumerateString() {
         return _stringList.elements();
     } //-- java.util.Enumeration enumerateString()
 
     /**
      * Method enumerateTime
      */
-    public java.util.Enumeration enumerateTime()
-    {
+    public java.util.Enumeration enumerateTime() {
         return _timeList.elements();
     } //-- java.util.Enumeration enumerateTime()
 
     /**
      * Method enumerateURI
      */
-    public java.util.Enumeration enumerateURI()
-    {
+    public java.util.Enumeration enumerateURI() {
         return _URIList.elements();
     } //-- java.util.Enumeration enumerateURI()
 
     /**
      * Method enumerateFloat
      */
-    public java.util.Enumeration enumerate_float()
-    {
+    public java.util.Enumeration enumerate_float() {
         return _floatList.elements();
     } //-- java.util.Enumeration enumerateFloat()
 
     /**
      * Method enumerate_int
      */
-    public java.util.Enumeration enumerate_int()
-    {
+    public java.util.Enumeration enumerate_int() {
         return _intList.elements();
     } //-- java.util.Enumeration enumerate_int()
 
@@ -501,25 +458,23 @@ implements java.io.Serializable
      * @param index
      */
     public String getString(int index)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _stringList.size())) {
             throw new IndexOutOfBoundsException();
         }
 
-        return (String)_stringList.elementAt(index);
+        return (String) _stringList.elementAt(index);
     } //-- java.lang.String getString(int)
 
     /**
      * Method getString
      */
-    public String[] getString()
-    {
+    public String[] getString() {
         int size = _stringList.size();
         String[] mArray = new String[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (String)_stringList.elementAt(index);
+            mArray[index] = (String) _stringList.elementAt(index);
         }
         return mArray;
     } //-- java.lang.String[] getString()
@@ -527,8 +482,7 @@ implements java.io.Serializable
     /**
      * Method getStringCount
      */
-    public int getStringCount()
-    {
+    public int getStringCount() {
         return _stringList.size();
     } //-- int getStringCount()
 
@@ -538,8 +492,7 @@ implements java.io.Serializable
      * @param index
      */
     public org.exolab.castor.types.Duration getTime(int index)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _timeList.size())) {
             throw new IndexOutOfBoundsException();
@@ -551,8 +504,7 @@ implements java.io.Serializable
     /**
      * Method getTime
      */
-    public org.exolab.castor.types.Duration[] getTime()
-    {
+    public org.exolab.castor.types.Duration[] getTime() {
         int size = _timeList.size();
         org.exolab.castor.types.Duration[] mArray = new org.exolab.castor.types.Duration[size];
         for (int index = 0; index < size; index++) {
@@ -564,8 +516,7 @@ implements java.io.Serializable
     /**
      * Method getTimeCount
      */
-    public int getTimeCount()
-    {
+    public int getTimeCount() {
         return _timeList.size();
     } //-- int getTimeCount()
 
@@ -575,25 +526,23 @@ implements java.io.Serializable
      * @param index
      */
     public String getURI(int index)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _URIList.size())) {
             throw new IndexOutOfBoundsException();
         }
 
-        return (String)_URIList.elementAt(index);
+        return (String) _URIList.elementAt(index);
     } //-- java.lang.String getURI(int)
 
     /**
      * Method getURI
      */
-    public String[] getURI()
-    {
+    public String[] getURI() {
         int size = _URIList.size();
         String[] mArray = new String[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = (String)_URIList.elementAt(index);
+            mArray[index] = (String) _URIList.elementAt(index);
         }
         return mArray;
     } //-- java.lang.String[] getURI()
@@ -601,8 +550,7 @@ implements java.io.Serializable
     /**
      * Method getURICount
      */
-    public int getURICount()
-    {
+    public int getURICount() {
         return _URIList.size();
     } //-- int getURICount()
 
@@ -612,25 +560,23 @@ implements java.io.Serializable
      * @param index
      */
     public float getFloat(int index)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _floatList.size())) {
             throw new IndexOutOfBoundsException();
         }
 
-        return ((Float)_floatList.elementAt(index)).floatValue();
+        return ((Float) _floatList.elementAt(index)).floatValue();
     } //-- float getFloat(int)
 
     /**
      * Method getFloat
      */
-    public float[] getFloat()
-    {
+    public float[] getFloat() {
         int size = _floatList.size();
         float[] mArray = new float[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = ((Float)_floatList.elementAt(index)).floatValue();
+            mArray[index] = ((Float) _floatList.elementAt(index)).floatValue();
         }
         return mArray;
     } //-- float[] getFloat()
@@ -638,8 +584,7 @@ implements java.io.Serializable
     /**
      * Method getFloatCount
      */
-    public int getFloatCount()
-    {
+    public int getFloatCount() {
         return _floatList.size();
     } //-- int getFloatCount()
 
@@ -649,25 +594,23 @@ implements java.io.Serializable
      * @param index
      */
     public int getInt(int index)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _intList.size())) {
             throw new IndexOutOfBoundsException();
         }
 
-        return ((Integer)_intList.elementAt(index)).intValue();
+        return ((Integer) _intList.elementAt(index)).intValue();
     } //-- int getInt(int)
 
     /**
      * Method getInt
      */
-    public int[] getInt()
-    {
+    public int[] getInt() {
         int size = _intList.size();
         int[] mArray = new int[size];
         for (int index = 0; index < size; index++) {
-            mArray[index] = ((Integer)_intList.elementAt(index)).intValue();
+            mArray[index] = ((Integer) _intList.elementAt(index)).intValue();
         }
         return mArray;
     } //-- int[] getInt()
@@ -675,48 +618,42 @@ implements java.io.Serializable
     /**
      * Method getIntCount
      */
-    public int getIntCount()
-    {
+    public int getIntCount() {
         return _intList.size();
     } //-- int getIntCount()
 
     /**
      * Method removeAllString
      */
-    public void removeAllString()
-    {
+    public void removeAllString() {
         _stringList.removeAllElements();
     } //-- void removeAllString()
 
     /**
      * Method removeAllTime
      */
-    public void removeAllTime()
-    {
+    public void removeAllTime() {
         _timeList.removeAllElements();
     } //-- void removeAllTime()
 
     /**
      * Method removeAllURI
      */
-    public void removeAllURI()
-    {
+    public void removeAllURI() {
         _URIList.removeAllElements();
     } //-- void removeAllURI()
 
     /**
      * Method removeAllFloat
      */
-    public void removeAll_float()
-    {
+    public void removeAll_float() {
         _floatList.removeAllElements();
     } //-- void removeAllFloat()
 
     /**
      * Method removeAll_int
      */
-    public void removeAll_int()
-    {
+    public void removeAll_int() {
         _intList.removeAllElements();
     } //-- void removeAll_int()
 
@@ -725,11 +662,10 @@ implements java.io.Serializable
      *
      * @param index
      */
-    public String removeString(int index)
-    {
+    public String removeString(int index) {
         Object obj = _stringList.elementAt(index);
         _stringList.removeElementAt(index);
-        return (String)obj;
+        return (String) obj;
     } //-- java.lang.String removeString(int)
 
     /**
@@ -737,8 +673,7 @@ implements java.io.Serializable
      *
      * @param index
      */
-    public org.exolab.castor.types.Duration removeTime(int index)
-    {
+    public org.exolab.castor.types.Duration removeTime(int index) {
         Object obj = _timeList.elementAt(index);
         _timeList.removeElementAt(index);
         return (org.exolab.castor.types.Duration) obj;
@@ -749,11 +684,10 @@ implements java.io.Serializable
      *
      * @param index
      */
-    public String removeURI(int index)
-    {
+    public String removeURI(int index) {
         Object obj = _URIList.elementAt(index);
         _URIList.removeElementAt(index);
-        return (String)obj;
+        return (String) obj;
     } //-- java.lang.String removeURI(int)
 
     /**
@@ -761,11 +695,10 @@ implements java.io.Serializable
      *
      * @param index
      */
-    public float remove_float(int index)
-    {
+    public float remove_float(int index) {
         Object obj = _floatList.elementAt(index);
         _floatList.removeElementAt(index);
-        return ((Float)obj).floatValue();
+        return ((Float) obj).floatValue();
     } //-- float removeFloat(int)
 
     /**
@@ -773,11 +706,10 @@ implements java.io.Serializable
      *
      * @param index
      */
-    public int remove_int(int index)
-    {
+    public int remove_int(int index) {
         Object obj = _intList.elementAt(index);
         _intList.removeElementAt(index);
-        return ((Integer)obj).intValue();
+        return ((Integer) obj).intValue();
     } //-- int remove_int(int)
 
     /**
@@ -787,8 +719,7 @@ implements java.io.Serializable
      * @param vString
      */
     public void setString(int index, String vString)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _stringList.size())) {
             throw new IndexOutOfBoundsException();
@@ -801,8 +732,7 @@ implements java.io.Serializable
      *
      * @param stringArray
      */
-    public void setString(String[] stringArray)
-    {
+    public void setString(String[] stringArray) {
         //-- copy array
         _stringList.removeAllElements();
         for (int i = 0; i < stringArray.length; i++) {
@@ -817,8 +747,7 @@ implements java.io.Serializable
      * @param vTime
      */
     public void setTime(int index, org.exolab.castor.types.Duration vTime)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _timeList.size())) {
             throw new IndexOutOfBoundsException();
@@ -831,8 +760,7 @@ implements java.io.Serializable
      *
      * @param timeArray
      */
-    public void setTime(org.exolab.castor.types.Duration[] timeArray)
-    {
+    public void setTime(org.exolab.castor.types.Duration[] timeArray) {
         //-- copy array
         _timeList.removeAllElements();
         for (int i = 0; i < timeArray.length; i++) {
@@ -847,8 +775,7 @@ implements java.io.Serializable
      * @param vURI
      */
     public void setURI(int index, String vURI)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _URIList.size())) {
             throw new IndexOutOfBoundsException();
@@ -861,8 +788,7 @@ implements java.io.Serializable
      *
      * @param URIArray
      */
-    public void setURI(String[] URIArray)
-    {
+    public void setURI(String[] URIArray) {
         //-- copy array
         _URIList.removeAllElements();
         for (int i = 0; i < URIArray.length; i++) {
@@ -877,8 +803,7 @@ implements java.io.Serializable
      * @param v_float
      */
     public void setFloat(int index, float v_float)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _floatList.size())) {
             throw new IndexOutOfBoundsException();
@@ -891,8 +816,7 @@ implements java.io.Serializable
      *
      * @param _floatArray
      */
-    public void setFloat(float[] _floatArray)
-    {
+    public void setFloat(float[] _floatArray) {
         //-- copy array
         _floatList.removeAllElements();
         for (int i = 0; i < _floatArray.length; i++) {
@@ -907,8 +831,7 @@ implements java.io.Serializable
      * @param v_int
      */
     public void setInt(int index, int v_int)
-        throws IndexOutOfBoundsException
-    {
+            throws IndexOutOfBoundsException {
         //-- check bounds for index
         if ((index < 0) || (index > _intList.size())) {
             throw new IndexOutOfBoundsException();
@@ -921,8 +844,7 @@ implements java.io.Serializable
      *
      * @param _intArray
      */
-    public void setInt(int[] _intArray)
-    {
+    public void setInt(int[] _intArray) {
         //-- copy array
         _intList.removeAllElements();
         for (int i = 0; i < _intArray.length; i++) {

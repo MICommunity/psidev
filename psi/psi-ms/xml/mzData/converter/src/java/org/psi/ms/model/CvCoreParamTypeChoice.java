@@ -1,37 +1,29 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvCoreParamTypeChoice.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: CvCoreParamTypeChoice.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import java.util.Date;
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * Class CvCoreParamTypeChoice.
- * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ *
+ * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
  */
 public class CvCoreParamTypeChoice implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -70,8 +62,8 @@ public class CvCoreParamTypeChoice implements java.io.Serializable {
     private java.lang.String _URI;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public CvCoreParamTypeChoice() {
@@ -79,187 +71,169 @@ public class CvCoreParamTypeChoice implements java.io.Serializable {
     } //-- org.psi.ms.model.CvCoreParamTypeChoice()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Returns the value of field 'float'.
-     * 
+     *
      * @return the value of field 'float'.
      */
-    public float getFloat()
-    {
+    public float getFloat() {
         return this._float;
-    } //-- float getFloat() 
+    } //-- float getFloat()
 
     /**
      * Returns the value of field 'int'.
-     * 
+     *
      * @return the value of field 'int'.
      */
-    public int getInt()
-    {
+    public int getInt() {
         return this._int;
-    } //-- int getInt() 
+    } //-- int getInt()
 
     /**
      * Returns the value of field 'string'.
-     * 
+     *
      * @return the value of field 'string'.
      */
-    public java.lang.String getString()
-    {
+    public java.lang.String getString() {
         return this._string;
-    } //-- java.lang.String getString() 
+    } //-- java.lang.String getString()
 
     /**
      * Returns the value of field 'time'.
-     * 
+     *
      * @return the value of field 'time'.
      */
-    public java.util.Date getTime()
-    {
+    public java.util.Date getTime() {
         return this._time;
-    } //-- java.util.Date getTime() 
+    } //-- java.util.Date getTime()
 
     /**
      * Returns the value of field 'URI'.
-     * 
+     *
      * @return the value of field 'URI'.
      */
-    public java.lang.String getURI()
-    {
+    public java.lang.String getURI() {
         return this._URI;
-    } //-- java.lang.String getURI() 
+    } //-- java.lang.String getURI()
 
     /**
      * Method hasFloat
      */
-    public boolean hasFloat()
-    {
+    public boolean hasFloat() {
         return this._has_float;
-    } //-- boolean hasFloat() 
+    } //-- boolean hasFloat()
 
     /**
      * Method hasInt
      */
-    public boolean hasInt()
-    {
+    public boolean hasInt() {
         return this._has_int;
-    } //-- boolean hasInt() 
+    } //-- boolean hasInt()
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
-        throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Sets the value of field 'float'.
-     * 
+     *
      * @param _float
      * @param float the value of field 'float'.
      */
-    public void setFloat(float _float)
-    {
+    public void setFloat(float _float) {
         this._float = _float;
         this._has_float = true;
-    } //-- void setFloat(float) 
+    } //-- void setFloat(float)
 
     /**
      * Sets the value of field 'int'.
-     * 
+     *
      * @param _int
      * @param int the value of field 'int'.
      */
-    public void setInt(int _int)
-    {
+    public void setInt(int _int) {
         this._int = _int;
         this._has_int = true;
-    } //-- void setInt(int) 
+    } //-- void setInt(int)
 
     /**
      * Sets the value of field 'string'.
-     * 
+     *
      * @param string the value of field 'string'.
      */
-    public void setString(java.lang.String string)
-    {
+    public void setString(java.lang.String string) {
         this._string = string;
-    } //-- void setString(java.lang.String) 
+    } //-- void setString(java.lang.String)
 
     /**
      * Sets the value of field 'time'.
-     * 
+     *
      * @param time the value of field 'time'.
      */
-    public void setTime(java.util.Date time)
-    {
+    public void setTime(java.util.Date time) {
         this._time = time;
-    } //-- void setTime(java.util.Date) 
+    } //-- void setTime(java.util.Date)
 
     /**
      * Sets the value of field 'URI'.
-     * 
+     *
      * @param URI the value of field 'URI'.
      */
-    public void setURI(java.lang.String URI)
-    {
+    public void setURI(java.lang.String URI) {
         this._URI = URI;
-    } //-- void setURI(java.lang.String) 
+    } //-- void setURI(java.lang.String)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.psi.ms.model.CvCoreParamTypeChoice unmarshal(java.io.Reader reader)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (org.psi.ms.model.CvCoreParamTypeChoice) Unmarshaller.unmarshal(org.psi.ms.model.CvCoreParamTypeChoice.class, reader);
-    } //-- org.psi.ms.model.CvCoreParamTypeChoice unmarshal(java.io.Reader) 
+    } //-- org.psi.ms.model.CvCoreParamTypeChoice unmarshal(java.io.Reader)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

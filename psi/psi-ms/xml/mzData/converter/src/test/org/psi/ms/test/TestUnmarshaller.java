@@ -1,5 +1,5 @@
 /**
- * $Id: TestUnmarshaller.java,v 1.3 2003/08/20 16:44:12 krunte Exp $
+ * $Id: TestUnmarshaller.java,v 1.4 2003/08/21 14:28:02 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -10,8 +10,11 @@ package org.psi.ms.test;
 
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.ValidationException;
-import org.psi.ms.model.*;
 import org.psi.ms.helper.Utils;
+import org.psi.ms.model.Acquisition;
+import org.psi.ms.model.AcquisitionList;
+import org.psi.ms.model.MzArrayBinary;
+import org.psi.ms.model.MzData;
 
 import java.io.FileReader;
 import java.io.IOException;

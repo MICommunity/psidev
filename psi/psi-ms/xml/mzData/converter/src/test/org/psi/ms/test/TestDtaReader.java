@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaReader.java,v 1.4 2003/08/21 10:58:12 krunte Exp $
+ * $Id: TestDtaReader.java,v 1.5 2003/08/21 14:28:02 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,14 +8,13 @@
  */
 package org.psi.ms.test;
 
-import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.ValidationException;
-import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.mapping.Mapping;
 import org.exolab.castor.mapping.MappingException;
-import org.psi.ms.model.*;
-import org.psi.ms.model.types.SourceTypeTypeType;
+import org.exolab.castor.xml.MarshalException;
+import org.exolab.castor.xml.Marshaller;
+import org.exolab.castor.xml.ValidationException;
 import org.psi.ms.converter.DtaReader;
+import org.psi.ms.model.*;
 import org.xml.sax.InputSource;
 
 import java.io.FileWriter;

@@ -1,32 +1,26 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSettings.java,v 1.3 2003/08/21 10:58:11 krunte Exp $
+ * $Id: AcqSettings.java,v 1.4 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import java.util.Hashtable;
-
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
+
+import java.io.Serializable;
+import java.util.Hashtable;
 
 /**
  * Settings for this specific acquisition.
- * 
- * @version $Revision: 1.3 $ $Date: 2003/08/21 10:58:11 $
+ *
+ * @version $Revision: 1.4 $ $Date: 2003/08/21 14:28:01 $
  */
 public class AcqSettings implements java.io.Serializable {
     /**
@@ -50,7 +44,7 @@ public class AcqSettings implements java.io.Serializable {
 
 
     //----------------/
-     //- Constructors -/
+    //- Constructors -/
     //----------------/
 
     public AcqSettings() {
@@ -58,65 +52,59 @@ public class AcqSettings implements java.io.Serializable {
     } //-- org.psi.ms.model.AcqSettings()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
-        throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.psi.ms.model.AcqSettings unmarshal(java.io.Reader reader)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (org.psi.ms.model.AcqSettings) Unmarshaller.unmarshal(org.psi.ms.model.AcqSettings.class, reader);
-    } //-- org.psi.ms.model.AcqSettings unmarshal(java.io.Reader) 
+    } //-- org.psi.ms.model.AcqSettings unmarshal(java.io.Reader)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
     } //-- void validate()
@@ -130,8 +118,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @return the value of field 'acqSpecification'.
      */
-    public AcqSpecification getAcqSpecification()
-    {
+    public AcqSpecification getAcqSpecification() {
         return this._acqSpecification;
     } //-- org.psi.ms.model.AcqSpecification getAcqSpecification()
 
@@ -140,8 +127,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @return the value of field 'acqTime'.
      */
-    public AcqTime getAcqTime()
-    {
+    public AcqTime getAcqTime() {
         return this._acqTime;
     } //-- org.psi.ms.model.AcqTime getAcqTime()
 
@@ -150,8 +136,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @return the value of field 'instrument'.
      */
-    public InstrumentAcqSettings getInstrument()
-    {
+    public InstrumentAcqSettings getInstrument() {
         return this._instrument;
     } //-- org.psi.ms.model.InstrumentAcqSettings getInstrument2()
 
@@ -161,8 +146,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @return the value of field 'specType'.
      */
-    public SpecType getSpecType()
-    {
+    public SpecType getSpecType() {
         return this._specType;
     } //-- org.psi.ms.model.types.SpecType getSpecType()
 
@@ -175,8 +159,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @param acqSpecification the value of field 'acqSpecification'
      */
-    public void setAcqSpecification(AcqSpecification acqSpecification)
-    {
+    public void setAcqSpecification(AcqSpecification acqSpecification) {
         this._acqSpecification = acqSpecification;
     } //-- void setAcqSpecification(org.psi.ms.model.AcqSpecification)
 
@@ -185,8 +168,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @param acqTime the value of field 'acqTime'.
      */
-    public void setAcqTime(AcqTime acqTime)
-    {
+    public void setAcqTime(AcqTime acqTime) {
         this._acqTime = acqTime;
     } //-- void setAcqTime(org.psi.ms.model.AcqTime)
 
@@ -195,8 +177,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @param instrument the value of field 'instrument'.
      */
-    public void setInstrument(InstrumentAcqSettings instrument)
-    {
+    public void setInstrument(InstrumentAcqSettings instrument) {
         this._instrument = instrument;
     } //-- void setInstrument(org.psi.ms.model.InstrumentAcqSettings)
 
@@ -206,8 +187,7 @@ public class AcqSettings implements java.io.Serializable {
      *
      * @param specType the value of field 'specType'.
      */
-    public void setSpecType(SpecType specType)
-    {
+    public void setSpecType(SpecType specType) {
         this._specType = specType;
     } //-- void setSpecType(org.psi.ms.model.types.SpecType)
 
@@ -218,8 +198,8 @@ public class AcqSettings implements java.io.Serializable {
     public static class SpecType implements Serializable {
 
 
-          //--------------------------/
-         //- Class/Member Variables -/
+        //--------------------------/
+        //- Class/Member Variables -/
         //--------------------------/
 
         /**
@@ -258,8 +238,8 @@ public class AcqSettings implements java.io.Serializable {
         private String stringValue = null;
 
 
-          //----------------/
-         //- Constructors -/
+        //----------------/
+        //- Constructors -/
         //----------------/
 
         private SpecType(int type, String value) {
@@ -269,16 +249,15 @@ public class AcqSettings implements java.io.Serializable {
         } //-- org.psi.ms.model.types.SpecType(int, java.lang.String)
 
 
-          //-----------/
-         //- Methods -/
+        //-----------/
+        //- Methods -/
         //-----------/
 
         /**
          * Method enumerateReturns an enumeration of all possible
          * instances of SpecType
          */
-        public static java.util.Enumeration enumerate()
-        {
+        public static java.util.Enumeration enumerate() {
             return _memberTable.elements();
         } //-- java.util.Enumeration enumerate()
 
@@ -286,16 +265,14 @@ public class AcqSettings implements java.io.Serializable {
          * Method getTypeReturns the type of this
          * SpecType
          */
-        public int getType()
-        {
+        public int getType() {
             return this.type;
         } //-- int getType()
 
         /**
          * Method init
          */
-        private static java.util.Hashtable init()
-        {
+        private static java.util.Hashtable init() {
             Hashtable members = new Hashtable();
             members.put("discrete", DISCRETE);
             members.put("continuous", CONTINUOUS);
@@ -306,8 +283,7 @@ public class AcqSettings implements java.io.Serializable {
          * Method toStringReturns the String representation of this
          * SpecType
          */
-        public String toString()
-        {
+        public String toString() {
             return this.stringValue;
         } //-- java.lang.String toString()
 
@@ -317,8 +293,7 @@ public class AcqSettings implements java.io.Serializable {
          *
          * @param string
          */
-        public static SpecType valueOf(String string)
-        {
+        public static SpecType valueOf(String string) {
             Object obj = null;
             if (string != null) obj = _memberTable.get(string);
             if (obj == null) {

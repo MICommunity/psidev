@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.4 2003/08/21 10:58:11 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.5 2003/08/21 14:28:01 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,16 +8,15 @@
  */
 package org.psi.ms.converter;
 
-import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.ValidationException;
-import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.mapping.Mapping;
 import org.exolab.castor.mapping.MappingException;
-import org.psi.ms.model.*;
-import org.psi.ms.model.types.*;
+import org.exolab.castor.xml.MarshalException;
+import org.exolab.castor.xml.Marshaller;
+import org.exolab.castor.xml.ValidationException;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.helper.SuffixFileFilter;
 import org.psi.ms.helper.Utils;
+import org.psi.ms.model.*;
 import org.xml.sax.InputSource;
 
 import java.io.File;

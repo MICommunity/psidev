@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.2 2003/08/20 16:44:12 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.3 2003/08/21 14:28:02 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -17,7 +17,7 @@ import org.psi.ms.helper.PsiMsConverterException;
 import java.io.IOException;
 
 /**
- * 
+ *
  * @author krunte
  */
 public class TestDtaSetConverter {

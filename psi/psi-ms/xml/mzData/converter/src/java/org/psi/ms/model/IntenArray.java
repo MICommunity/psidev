@@ -1,39 +1,31 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: IntenArray.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: IntenArray.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * The intensity array can be specified as an array of ints or an
- * array of floats also. 
- * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ * array of floats also.
+ *
+ * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
  */
-public class IntenArray extends org.psi.ms.model.RawDataType 
-implements java.io.Serializable
-{
+public class IntenArray extends org.psi.ms.model.RawDataType
+        implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -47,8 +39,8 @@ implements java.io.Serializable
     private boolean _has_length;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public IntenArray() {
@@ -56,96 +48,87 @@ implements java.io.Serializable
     } //-- org.psi.ms.model.IntenArray()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Returns the value of field 'length'.
-     * 
+     *
      * @return the value of field 'length'.
      */
-    public int getLength()
-    {
+    public int getLength() {
         return this._length;
-    } //-- int getLength() 
+    } //-- int getLength()
 
     /**
      * Method hasLength
      */
-    public boolean hasLength()
-    {
+    public boolean hasLength() {
         return this._has_length;
-    } //-- boolean hasLength() 
+    } //-- boolean hasLength()
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
-        throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Sets the value of field 'length'.
-     * 
+     *
      * @param length the value of field 'length'.
      */
-    public void setLength(int length)
-    {
+    public void setLength(int length) {
         this._length = length;
         this._has_length = true;
-    } //-- void setLength(int) 
+    } //-- void setLength(int)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.psi.ms.model.IntenArray unmarshal(java.io.Reader reader)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (org.psi.ms.model.IntenArray) Unmarshaller.unmarshal(org.psi.ms.model.IntenArray.class, reader);
-    } //-- org.psi.ms.model.IntenArray unmarshal(java.io.Reader) 
+    } //-- org.psi.ms.model.IntenArray unmarshal(java.io.Reader)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

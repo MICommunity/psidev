@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Analyzer.java,v 1.2 2003/08/21 10:58:11 krunte Exp $
+ * $Id: Analyzer.java,v 1.3 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -14,13 +14,13 @@ package org.psi.ms.model;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
-import java.util.Vector;
 import java.util.Hashtable;
+import java.util.Vector;
 
 /**
  * Mass analyzer information
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 10:58:11 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/21 14:28:01 $
  */
 public class Analyzer implements java.io.Serializable {
     /**
@@ -440,13 +440,13 @@ public class Analyzer implements java.io.Serializable {
     /**
      * Class Type.
      *
-     * @version $Revision: 1.2 $ $Date: 2003/08/21 10:58:11 $
+     * @version $Revision: 1.3 $ $Date: 2003/08/21 14:28:01 $
      */
     public static class Type implements java.io.Serializable {
 
 
-          //--------------------------/
-         //- Class/Member Variables -/
+        //--------------------------/
+        //- Class/Member Variables -/
         //--------------------------/
 
         /**
@@ -545,8 +545,8 @@ public class Analyzer implements java.io.Serializable {
         private java.lang.String stringValue = null;
 
 
-          //----------------/
-         //- Constructors -/
+        //----------------/
+        //- Constructors -/
         //----------------/
 
         private Type(int type, java.lang.String value) {
@@ -556,32 +556,29 @@ public class Analyzer implements java.io.Serializable {
         } //-- Type(int, java.lang.String)
 
 
-          //-----------/
-         //- Methods -/
+        //-----------/
+        //- Methods -/
         //-----------/
 
         /**
          * Method enumerateReturns an enumeration of all possible
          * instances of Type
          */
-        public static java.util.Enumeration enumerate()
-        {
+        public static java.util.Enumeration enumerate() {
             return _memberTable.elements();
         } //-- java.util.Enumeration enumerate()
 
         /**
          * Method getTypeReturns the type of this Type
          */
-        public int getType()
-        {
+        public int getType() {
             return this.type;
         } //-- int getType()
 
         /**
          * Method init
          */
-        private static java.util.Hashtable init()
-        {
+        private static java.util.Hashtable init() {
             Hashtable members = new Hashtable();
             members.put("LinearQuad", LINEARQUAD);
             members.put("PaulTrap", PAULTRAP);
@@ -598,8 +595,7 @@ public class Analyzer implements java.io.Serializable {
          * Method toStringReturns the String representation of this
          * Type
          */
-        public java.lang.String toString()
-        {
+        public java.lang.String toString() {
             return this.stringValue;
         } //-- java.lang.String toString()
 
@@ -609,8 +605,7 @@ public class Analyzer implements java.io.Serializable {
          *
          * @param string
          */
-        public static Type valueOf(java.lang.String string)
-        {
+        public static Type valueOf(java.lang.String string) {
             java.lang.Object obj = null;
             if (string != null) obj = _memberTable.get(string);
             if (obj == null) {

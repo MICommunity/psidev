@@ -1,33 +1,27 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: IonType.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: IonType.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
 
 /**
  * Class IonType.
- * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ *
+ * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
  */
 public abstract class IonType implements java.io.Serializable {
 
 
-      //--------------------------/
-     //- Class/Member Variables -/
+    //--------------------------/
+    //- Class/Member Variables -/
     //--------------------------/
 
     /**
@@ -71,8 +65,8 @@ public abstract class IonType implements java.io.Serializable {
     private boolean _has_intensity;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public IonType() {
@@ -80,180 +74,161 @@ public abstract class IonType implements java.io.Serializable {
     } //-- org.psi.ms.model.IonType()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method deleteAcqID
      */
-    public void deleteAcqID()
-    {
-        this._has_acqID= false;
-    } //-- void deleteAcqID() 
+    public void deleteAcqID() {
+        this._has_acqID = false;
+    } //-- void deleteAcqID()
 
     /**
      * Method deleteCharge
      */
-    public void deleteCharge()
-    {
-        this._has_charge= false;
-    } //-- void deleteCharge() 
+    public void deleteCharge() {
+        this._has_charge = false;
+    } //-- void deleteCharge()
 
     /**
      * Method deleteIntensity
      */
-    public void deleteIntensity()
-    {
-        this._has_intensity= false;
-    } //-- void deleteIntensity() 
+    public void deleteIntensity() {
+        this._has_intensity = false;
+    } //-- void deleteIntensity()
 
     /**
      * Method deleteMz
      */
-    public void deleteMz()
-    {
-        this._has_mz= false;
-    } //-- void deleteMz() 
+    public void deleteMz() {
+        this._has_mz = false;
+    } //-- void deleteMz()
 
     /**
      * Returns the value of field 'acqID'.
-     * 
+     *
      * @return the value of field 'acqID'.
      */
-    public int getAcqID()
-    {
+    public int getAcqID() {
         return this._acqID;
-    } //-- int getAcqID() 
+    } //-- int getAcqID()
 
     /**
      * Returns the value of field 'charge'.
-     * 
+     *
      * @return the value of field 'charge'.
      */
-    public int getCharge()
-    {
+    public int getCharge() {
         return this._charge;
-    } //-- int getCharge() 
+    } //-- int getCharge()
 
     /**
      * Returns the value of field 'intensity'.
-     * 
+     *
      * @return the value of field 'intensity'.
      */
-    public float getIntensity()
-    {
+    public float getIntensity() {
         return this._intensity;
-    } //-- float getIntensity() 
+    } //-- float getIntensity()
 
     /**
      * Returns the value of field 'mz'.
-     * 
+     *
      * @return the value of field 'mz'.
      */
-    public float getMz()
-    {
+    public float getMz() {
         return this._mz;
-    } //-- float getMz() 
+    } //-- float getMz()
 
     /**
      * Method hasAcqID
      */
-    public boolean hasAcqID()
-    {
+    public boolean hasAcqID() {
         return this._has_acqID;
-    } //-- boolean hasAcqID() 
+    } //-- boolean hasAcqID()
 
     /**
      * Method hasCharge
      */
-    public boolean hasCharge()
-    {
+    public boolean hasCharge() {
         return this._has_charge;
-    } //-- boolean hasCharge() 
+    } //-- boolean hasCharge()
 
     /**
      * Method hasIntensity
      */
-    public boolean hasIntensity()
-    {
+    public boolean hasIntensity() {
         return this._has_intensity;
-    } //-- boolean hasIntensity() 
+    } //-- boolean hasIntensity()
 
     /**
      * Method hasMz
      */
-    public boolean hasMz()
-    {
+    public boolean hasMz() {
         return this._has_mz;
-    } //-- boolean hasMz() 
+    } //-- boolean hasMz()
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Sets the value of field 'acqID'.
-     * 
+     *
      * @param acqID the value of field 'acqID'.
      */
-    public void setAcqID(int acqID)
-    {
+    public void setAcqID(int acqID) {
         this._acqID = acqID;
         this._has_acqID = true;
-    } //-- void setAcqID(int) 
+    } //-- void setAcqID(int)
 
     /**
      * Sets the value of field 'charge'.
-     * 
+     *
      * @param charge the value of field 'charge'.
      */
-    public void setCharge(int charge)
-    {
+    public void setCharge(int charge) {
         this._charge = charge;
         this._has_charge = true;
-    } //-- void setCharge(int) 
+    } //-- void setCharge(int)
 
     /**
      * Sets the value of field 'intensity'.
-     * 
+     *
      * @param intensity the value of field 'intensity'.
      */
-    public void setIntensity(float intensity)
-    {
+    public void setIntensity(float intensity) {
         this._intensity = intensity;
         this._has_intensity = true;
-    } //-- void setIntensity(float) 
+    } //-- void setIntensity(float)
 
     /**
      * Sets the value of field 'mz'.
-     * 
+     *
      * @param mz the value of field 'mz'.
      */
-    public void setMz(float mz)
-    {
+    public void setMz(float mz) {
         this._mz = mz;
         this._has_mz = true;
-    } //-- void setMz(float) 
+    } //-- void setMz(float)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }
