@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Test.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Test.java,v 1.4 2003/09/15 12:43:59 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * Experimental information regarding the test which resulted in
  * this data set.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/09/15 12:43:59 $
  */
 public class Test implements java.io.Serializable {
     /**
@@ -53,6 +53,14 @@ public class Test implements java.io.Serializable {
         _dataProcessingList = new Vector();
         _testParamList = new Vector();
         _testUserParamList = new Vector();
+
+        DataProcessing dataProcessing = new DataProcessing();
+        addDataProcessing(dataProcessing);
+
+        Software software = new Software();
+        software.setName("PSI-MS .dta/.zta converter");
+        software.setVersion("1.00");
+        dataProcessing.setSoftware(software);
     } //-- org.psi.ms.model.Test()
 
 
