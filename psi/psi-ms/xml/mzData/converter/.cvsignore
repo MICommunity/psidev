@@ -1,5 +1,7 @@
 build
 application
-maven
+target
 dist
 doc
+maven.log
+velocity.log
