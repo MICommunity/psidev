@@ -1,25 +1,18 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Acquisition.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: Acquisition.java,v 1.2 2003/08/21 12:23:47 krunte Exp $
  */
 
 package org.psi.ms.model;
 
-  //---------------------------------/
- //- Imported classes and packages -/
+//---------------------------------/
+//- Imported classes and packages -/
 //---------------------------------/
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Serializable;
-import java.io.Writer;
-import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
 
 /**
  * This is an individual instrument acquisition. The peak list is
@@ -27,16 +20,48 @@ import org.xml.sax.ContentHandler;
  * of representing data. base64 encoded binary or arrays of simple
  * data types. All arrays used to describe a single acquisition are
  * the same length and the same indexing.
- * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ *
+ * @version $Revision: 1.2 $ $Date: 2003/08/21 12:23:47 $
  */
-public class Acquisition extends AcquisitionType 
-implements java.io.Serializable
-{
+public class Acquisition implements java.io.Serializable {
+    /**
+     * Field _id
+     */
+    private int _id;
+    /**
+     * keeps track of state for field: _id
+     */
+    private boolean _has_id;
+    /**
+     * Here the mass array can be specified as individual numbers,
+     * however, the type must be selected as either float or int
+     * for the entire array. This allows for human readability and
+     * editing.
+     */
+    private MzArray _mzArray;
+    /**
+     * The intensity array can be specified as an array of ints or
+     * an array of floats also.
+     */
+    private IntenArray _intenArray;
+    /**
+     * Here the list of m/z values (for any type of spectrum). If
+     * this is a true mass spectrum, then z=1. The array is stored
+     * as a base64 encoded binary. The only type allowed is
+     * IEEE-754 floating point and the precision must be specified
+     * as either 32 or 64.
+     */
+    private MzArrayBinary _mzArrayBinary;
+    /**
+     * Here the intensities of each element of the m/z array are
+     * stored also in base64 encoded binary of type float with a
+     * specified precision.
+     */
+    private IntenArrayBinary _intenArrayBinary;
 
 
-      //----------------/
-     //- Constructors -/
+    //----------------/
+    //- Constructors -/
     //----------------/
 
     public Acquisition() {
@@ -44,67 +69,192 @@ implements java.io.Serializable
     } //-- org.psi.ms.model.Acquisition()
 
 
-      //-----------/
-     //- Methods -/
+    //-----------/
+    //- Methods -/
     //-----------/
 
     /**
      * Method isValid
      */
-    public boolean isValid()
-    {
+    public boolean isValid() {
         try {
             validate();
-        }
-        catch (org.exolab.castor.xml.ValidationException vex) {
+        } catch (org.exolab.castor.xml.ValidationException vex) {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method marshal
-     * 
+     *
      * @param out
      */
     public void marshal(java.io.Writer out)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer) 
+    } //-- void marshal(java.io.Writer)
 
     /**
      * Method marshal
-     * 
+     *
      * @param handler
      */
     public void marshal(org.xml.sax.ContentHandler handler)
-        throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
-        
+            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
+
         Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler) 
+    } //-- void marshal(org.xml.sax.ContentHandler)
 
     /**
      * Method unmarshal
-     * 
+     *
      * @param reader
      */
     public static org.psi.ms.model.Acquisition unmarshal(java.io.Reader reader)
-        throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
         return (org.psi.ms.model.Acquisition) Unmarshaller.unmarshal(org.psi.ms.model.Acquisition.class, reader);
-    } //-- org.psi.ms.model.Acquisition unmarshal(java.io.Reader) 
+    } //-- org.psi.ms.model.Acquisition unmarshal(java.io.Reader)
 
     /**
      * Method validate
      */
     public void validate()
-        throws org.exolab.castor.xml.ValidationException
-    {
+            throws org.exolab.castor.xml.ValidationException {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
+
+    /**
+     * Returns the value of field 'intenArray'. The field
+     * 'intenArray' has the following description: The intensity
+     * array can be specified as an array of ints or an array of
+     * floats also.
+     *
+     * @return the value of field 'intenArray'.
+     */
+    public IntenArray getIntenArray() {
+        return this._intenArray;
+    } //-- org.psi.ms.model.IntenArray getIntenArray()
+
+    /**
+     * Returns the value of field 'mzArray'. The field 'mzArray'
+     * has the following description: Here the mass array can be
+     * specified as individual numbers, however, the type must be
+     * selected as either float or int for the entire array. This
+     * allows for human readability and editing.
+     *
+     * @return the value of field 'mzArray'.
+     */
+    public MzArray getMzArray() {
+        return this._mzArray;
+    } //-- org.psi.ms.model.MzArray getMzArray()
+
+    /**
+     * Returns the value of field 'intenArrayBinary'. The field
+     * 'intenArrayBinary' has the following description: Here the
+     * intensities of each element of the m/z array are stored also
+     * in base64 encoded binary of type float with a specified
+     * precision.
+     *
+     * @return the value of field 'intenArrayBinary'.
+     */
+    public IntenArrayBinary getIntenArrayBinary() {
+        return this._intenArrayBinary;
+    } //-- org.psi.ms.model.IntenArrayBinary getIntenArrayBinary()
+
+    /**
+     * Returns the value of field 'mzArrayBinary'. The field
+     * 'mzArrayBinary' has the following description: Here the list
+     * of m/z values (for any type of spectrum). If this is a true
+     * mass spectrum, then z=1. The array is stored as a base64
+     * encoded binary. The only type allowed is IEEE-754 floating
+     * point and the precision must be specified as either 32 or
+     * 64.
+     *
+     * @return the value of field 'mzArrayBinary'.
+     */
+    public MzArrayBinary getMzArrayBinary() {
+        return this._mzArrayBinary;
+    } //-- org.psi.ms.model.MzArrayBinary getMzArrayBinary()
+
+    /**
+     * Returns the value of field 'id'.
+     *
+     * @return the value of field 'id'.
+     */
+    public int getId() {
+        return this._id;
+    } //-- int getId()
+
+    /**
+     * Method hasId
+     */
+    public boolean hasId() {
+        return this._has_id;
+    } //-- boolean hasId()
+
+    /**
+     * Sets the value of field 'intenArray'. The field 'intenArray'
+     * has the following description: The intensity array can be
+     * specified as an array of ints or an array of floats also.
+     *
+     * @param intenArray the value of field 'intenArray'.
+     */
+    public void setIntenArray(IntenArray intenArray) {
+        this._intenArray = intenArray;
+    } //-- void setIntenArray(org.psi.ms.model.IntenArray)
+
+    /**
+     * Sets the value of field 'mzArray'. The field 'mzArray' has
+     * the following description: Here the mass array can be
+     * specified as individual numbers, however, the type must be
+     * selected as either float or int for the entire array. This
+     * allows for human readability and editing.
+     *
+     * @param mzArray the value of field 'mzArray'.
+     */
+    public void setMzArray(MzArray mzArray) {
+        this._mzArray = mzArray;
+    } //-- void setMzArray(org.psi.ms.model.MzArray)
+
+    /**
+     * Sets the value of field 'intenArrayBinary'. The field
+     * 'intenArrayBinary' has the following description: Here the
+     * intensities of each element of the m/z array are stored also
+     * in base64 encoded binary of type float with a specified
+     * precision.
+     *
+     * @param intenArrayBinary the value of field 'intenArrayBinary'
+     */
+    public void setIntenArrayBinary(IntenArrayBinary intenArrayBinary) {
+        this._intenArrayBinary = intenArrayBinary;
+    } //-- void setIntenArrayBinary(org.psi.ms.model.IntenArrayBinary)
+
+    /**
+     * Sets the value of field 'mzArrayBinary'. The field
+     * 'mzArrayBinary' has the following description: Here the list
+     * of m/z values (for any type of spectrum). If this is a true
+     * mass spectrum, then z=1. The array is stored as a base64
+     * encoded binary. The only type allowed is IEEE-754 floating
+     * point and the precision must be specified as either 32 or
+     * 64.
+     *
+     * @param mzArrayBinary the value of field 'mzArrayBinary'.
+     */
+    public void setMzArrayBinary(MzArrayBinary mzArrayBinary) {
+        this._mzArrayBinary = mzArrayBinary;
+    } //-- void setMzArrayBinary(org.psi.ms.model.MzArrayBinary)
+
+    /**
+     * Sets the value of field 'id'.
+     *
+     * @param id the value of field 'id'.
+     */
+    public void setId(int id) {
+        this._id = id;
+        this._has_id = true;
+    } //-- void setId(int)
 
 }
