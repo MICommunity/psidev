@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<document>
+
+    <properties>
+        <title>Overview</title>
+        <author email="nospam@nowhere.edu">Kai Runte</author>
+    </properties>
+
+    <body>
+        <section name="Introduction">
+            <p>This Java-based converter reads popular peak-list formats and
+                transforms them into the M/Z data XML format. Where
+                necessary (i.e. the source does not provide this information)
+                the user is presented a form to fill in additional
+                information required by the M/Z data XML format. There is also
+                a
+                <a href="schemadoc/mzdata.xsd.html">schema documentation</a>
+                available.
+            </p>
+            <p>There is a Swing-based GUI available and a Struts-based
+                web-application in planning. The following input formats
+                are planned to be supported:</p>
+            <table>
+                <tr>
+                    <th>Format</th>
+                    <th>Implemented</th>
+                </tr>
+                <tr>
+                    <td>DTA (Thermo Finnigan)</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>Mascot Generic</td>
+                    <td>yes</td>
+                </tr>
+                <tr>
+                    <td>Sashimi</td>
+                    <td>partly</td>
+                </tr>
+                <tr>
+                    <td>ProteinLynx</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>DAT (ABI)</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>ASC (Thermo Finnigan)</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>PKS (Perspective)</td>
+                    <td>no</td>
+                </tr>
+                <tr>
+                    <td>CVS/XPT (Ciphergen)</td>
+                    <td>no</td>
+                </tr>
+            </table>
+        </section>
+    </body>
+</document>

@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<document>
+
+    <properties>
+        <title>General Concepts</title>
+        <author email="nospam@nowhere.edu">Kai Runte</author>
+    </properties>
+
+    <body>
+        <section name="Introduction">
+            <p>Each file format comes with a different set of information regarding
+                a mass spectrometry experiments. The simplest ones (e.g. DTA, PKL) just
+                the mass/intensity pairs for a single run, others (e.g. Sashimi) are
+                quite rich in their description of a complete mass spectrometry experiment
+                including not only instrument setting, but also can accommodate
+                <em>all</em> of the runs done for this experiment. The M/Z data format
+                is similar in complexity to the Sashimi format and requires some
+                information that is not provided by the most basic formats.
+            </p>
+            <p>This led to the conclusion that we need a system for detecting what
+                kind of information is provided by a certain format and data the
+                user needs to provide. Additionally we need a flexible user
+                interface that request only the information that is not provided
+                by the file format and ideally displays information extracted
+                from the source file format as quality assurance for the user.
+            </p>
+            <p>The first task (detect the file format, import it and report
+                what information is missing) led to the development of the
+                &quot;converter&quot; package, which is described in the
+                section
+                <a href="#org.psi.ms.converter">The org.psi.ms.converter Package</a>.
+                The second task (provide a flexible user interface requesting the
+                missing required information) led to the development of the
+                &quot;view&quot; package, which is described in the
+                section
+                <a href="#org.psi.ms.view">The org.psi.ms.view Package</a>.
+            </p>
+        </section>
+        <section name="The org.psi.ms.converter Package">
+            <a name="org.psi.ms.converter"/>
+            <subsection name="ImporterI">
+                <p>This interface defines the functionality of an importer
+                    for a certain file format. The ImporterI implementation
+                    is stored in a Jar file which is loaded by the
+                    <a href="#ImporterLoader">ImporterLoader class</a>.
+                    In order to be accepted as a importer module each
+                    converter must implement this interface and also
+                    be flagged as a Bean in the Jar file it is stored in.
+                    Each converter class must be able to do the following
+                    things:
+                </p>
+                <ul>
+                    <li>initialize the conversion process by filling the Desc(ription) object.</li>
+                    <li>a method "getProvidedData" returning which data the source format can
+                        provide (e.g. to pre-fill fields in the GUI or to make certain other
+                        field mandatory, for example the precursor for Sciex API III format)</li>
+                    <li>the plugin should give feedback to the GUI in some way or another
+                        (e.g. conversion process)</li>
+                    <li>a method for stating whether this import module can handle files or
+                        directories</li>
+                    <li>a detector method simply returning true/false stating whether the
+                        plugin recognises the selected data file(s)</li>
+                </ul>
+                <p>After initializing the application can fetch each
+                    acquisition by calling the method getNextAcquisition().
+                    If there are no further acquisitions, this method
+                    returns null. To check for additional acquisitions
+                    the methodhasMoreAcquisitions() can be called.
+                </p>
+            </subsection>
+            <subsection name="ImporterLoader">
+                <a name="ImporterLoader"/>
+                <p>
+
+                </p>
+            </subsection>
+            <subsection name="ExporterI">
+                <p>This interface is for future purposes (e.g. export to
+                    PRIDE or MIAPE databases) and not used yet.
+                </p>
+            </subsection>
+        </section>
+        <section name="The org.psi.ms.view Package">
+            <a name="org.psi.ms.view"/>
+            <p>
+
+            </p>
+        </section>
+    </body>
+</document>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="M/Z Data Converter">
+    <title>M/Z Data Converter</title>
+    <body>
+        <links>
+            <item name="PSI (Sourceforge)" href="http://psidev.sourceforge.net/"/>
+            <item name="PSI-MS (Sourceforge)" href="http://psidev.sourceforge.net/ms/"/>
+            <item name="HUPO" href="http://www.hupo.org/"/>
+            <item name="Yates Lab: SQT and MS2 Formats" href="http://fields.scripps.edu/sequest/SQTFormat.html"/>
+            <item name="Data File Format" href="http://www.matrixscience.com/help/data_file_help.html"/>
+            <item name="SASHIMI Main" href="http://sashimi.sourceforge.net/"/>
+            <item name="PRIDE project - PRIDE project" href="http://genesis.ugent.be/pride/"/>
+            <item name="PEDRoWeb -- Proteomics data management" href="http://pedro.man.ac.uk/home.shtml"/>
+            <item name="Protomics project meeting minutes" href="http://www3.ebi.ac.uk/~sp/intern/projects/proteomics/minutes/"/>
+            <item name="Maven" href="http://maven.apache.org/"/>
+        </links>
+        <menu name="M/Z Data Converter">
+            <item name="Overview" href="/index.html"/>
+            <item name="General Concepts" href="/concept.html"/>
+            <item name="M/Z Data Schema Doc" href="/schemadoc/mzdata.xsd.html"/>
+        </menu>
+    </body>
+</project>
