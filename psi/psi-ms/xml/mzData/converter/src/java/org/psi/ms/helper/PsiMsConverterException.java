@@ -1,5 +1,5 @@
 /**
- * $Id: PsiMsConverterException.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: PsiMsConverterException.java,v 1.3 2003/09/15 12:44:58 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -17,4 +17,13 @@ public class PsiMsConverterException extends Exception {
     public PsiMsConverterException(String message) {
         super(message);
     }
+
+    public PsiMsConverterException(String message, Throwable throwable) {
+        super(message, throwable);
+    }
+
+    public PsiMsConverterException(Throwable throwable) {
+        super(throwable);
+    }
+
 }
