@@ -261,7 +261,7 @@
 			</xs:element>
 			<xs:element name="processingMethod" type="paramType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Description of the default peak processing method.This element describes the base method used in the generation of a particular mzData file. Variable methods should be described in the appropriate acquisition section -- if no acquisition-specific details are found, then this information serves as the default.</xs:documentation>
+					<xs:documentation>Description of the default peak processing method.This element describes the base method used in the generation of a particular mzData file. Variable methods should be described in the appropriate acquisition section - if no acquisition-specific details are found, then this information serves as the default.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -274,7 +274,7 @@
 		<xs:sequence>
 			<xs:element name="spectrumDesc" type="spectrumDescType">
 				<xs:annotation>
-					<xs:documentation>There is one spectrumDesc per spectrum. It captures both the instance-specific parameters for the underlying acquisitions, and where applicable, the postion of this spectrum in a possible hierarchy of spectra. For example, for 'tandem' mass spectrometry; the id attribute on the spectrum element allows the survey scan to be identified from which the parent ion was selected that gave rise to this MSMS spectrum -- note that these identifying numbers can be given, in a list if necessary, whether or not the actual referred-to spectra are present in the file -- they are the 'family tree' of this spectrum.</xs:documentation>
+					<xs:documentation>There is one spectrumDesc per spectrum. It captures both the instance-specific parameters for the underlying acquisitions, and where applicable, the postion of this spectrum in a possible hierarchy of spectra. For example, for 'tandem' mass spectrometry; the id attribute on the spectrum element allows the survey scan to be identified from which the parent ion was selected that gave rise to this MSMS spectrum - note that these identifying numbers can be given, in a list if necessary, whether or not the actual referred-to spectra are present in the file - they are the 'family tree' of this spectrum.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="supDesc" type="supDescType" minOccurs="0" maxOccurs="unbounded">
@@ -372,7 +372,7 @@
 	</xs:group>
 	<xs:complexType name="adminType">
 		<xs:annotation>
-			<xs:documentation>'Header' information -- sample description, contact details, comments</xs:documentation>
+			<xs:documentation>'Header' information - sample description, contact details, comments</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="sampleName" type="xs:string">
