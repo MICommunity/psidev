@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.14 2004/08/02 12:22:24 krunte Exp $
+ $Id: mzdata.xsd,v 1.15 2004/08/05 12:46:47 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Andreas Wilke, Kai Runte (Bielefeld University)
@@ -60,7 +60,7 @@
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
-            <xs:attribute name="version" type="xs:string" use="required" fixed="1.02"/>
+            <xs:attribute name="version" type="xs:string" use="required" fixed="1.03"/>
             <xs:attribute name="accessionNumber" type="xs:string" use="required">
                 <xs:annotation>
                     <xs:documentation>The accession number for the particular mzData file</xs:documentation>
@@ -460,7 +460,7 @@
                     <xs:documentation>Ion detector information</xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="additional" type="paramType">
+            <xs:element name="additional" type="paramType" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation>Subsidiary information about the instrument, captured as a run of additional parameters</xs:documentation>
                 </xs:annotation>
