@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.8 2003/09/10 14:51:33 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.9 2003/09/10 16:53:24 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -84,5 +84,15 @@ public class DtaSetConverter {
         } catch (MappingException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void main(String[] argv) throws IOException, PsiMsConverterException, ValidationException, MarshalException {
+        DtaSetConverter dtaSetConverter = new DtaSetConverter();
+        MzData mzData = new MzData();
+        dtaSetConverter = new DtaSetConverter(DtaReader.XML_ELEMENTS);
+        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData);
+        mzData = new MzData();
+        dtaSetConverter = new DtaSetConverter(DtaReader.BASE64);
+        dtaSetConverter.convertDirectory(argv[0], argv[1] + "_base64", mzData);
     }
 }
