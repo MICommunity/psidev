@@ -25,4 +25,4 @@
 # can be useful for creating a module that consists of many directories
 # spread out over the entire source repository.
 mi -a psi/mi
-ms -a psi/psi-ms
+psi-ms -a psi/psi-ms
