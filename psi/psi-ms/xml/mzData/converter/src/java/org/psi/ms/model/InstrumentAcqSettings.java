@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: InstrumentAcqSettings.java,v 1.5 2003/12/04 18:20:38 krunte Exp $
+ * $Id: InstrumentAcqSettings.java,v 1.6 2003/12/05 15:44:38 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -20,13 +20,13 @@ import java.util.Vector;
  * this section.
  * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.5 $ $Date: 2003/12/04 18:20:38 $
+ * @version $Revision: 1.6 $ $Date: 2003/12/05 15:44:38 $
  */
 public class InstrumentAcqSettings implements Serializable {
     /**
      * Type of acquisition represented by the peak list (controlled)
      */
-    private AcqType _acqType = AcqType.FULL;
+    private AcqType _acqType;
     /**
      * Number of stages of mass spectrometry performed to generate
      * the peak list (MS^n).
@@ -388,7 +388,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class AcqType.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/12/04 18:20:38 $
+     * @version $Revision: 1.6 $ $Date: 2003/12/05 15:44:38 $
      */
     public static class AcqType implements java.io.Serializable {
 
@@ -570,7 +570,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class Polarity.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/12/04 18:20:38 $
+     * @version $Revision: 1.6 $ $Date: 2003/12/05 15:44:38 $
      */
     public static class Polarity implements java.io.Serializable {
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSpecification.java,v 1.4 2003/12/04 18:20:37 krunte Exp $
+ * $Id: AcqSpecification.java,v 1.5 2003/12/05 15:44:38 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ import java.util.Hashtable;
  * peak list. Either a list of acquisitions, or a range of
  * acquisitions can be specified.
  *
- * @version $Revision: 1.4 $ $Date: 2003/12/04 18:20:37 $
+ * @version $Revision: 1.5 $ $Date: 2003/12/05 15:44:38 $
  */
 public class AcqSpecification implements java.io.Serializable {
 
@@ -30,7 +30,7 @@ public class AcqSpecification implements java.io.Serializable {
     /**
      * Field _method
      */
-    private Method _method = Method.AVERAGE;
+    private Method _method;
 
     /**
      * A list of acquisitions used to create the peak list. (May
@@ -125,7 +125,7 @@ public class AcqSpecification implements java.io.Serializable {
     /**
      * Class Method.
      *
-     * @version $Revision: 1.4 $ $Date: 2003/12/04 18:20:37 $
+     * @version $Revision: 1.5 $ $Date: 2003/12/05 15:44:38 $
      */
     public static class Method implements java.io.Serializable {
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSettings.java,v 1.6 2003/12/04 18:20:37 krunte Exp $
+ * $Id: AcqSettings.java,v 1.7 2003/12/05 15:44:38 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,13 +17,13 @@ import java.util.Hashtable;
 /**
  * Settings for this specific acquisition.
  *
- * @version $Revision: 1.6 $ $Date: 2003/12/04 18:20:37 $
+ * @version $Revision: 1.7 $ $Date: 2003/12/05 15:44:38 $
  */
 public class AcqSettings implements java.io.Serializable {
     /**
      * Type of spectrum
      */
-    private SpecType _specType = SpecType.DISCRETE;
+    private SpecType _specType;
     /**
      * Specification for combining raw scans/acquisitions into a
      * single peak list. Either a list of acquisitions, or a range
