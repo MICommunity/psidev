@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Chris Taylor 
+(University of Manchester) -->
+<!-- Top thing (PEDRoData) is first followed by all other classes in 
+alphabetical order -->
+<!-- All classes are declared seperately, then referred to with 'ref' 
+-->
+<!-- All choices are declared after classes, alphabetically, as 
+seperate named groups, then referred to with 'ref' -->
+<!-- ClassNames have all words capitalised, with no underscores, 
+field_names have all words in all lower case, with underscores -->
+<!-- All times are assumed to be in seconds, all dates as DDMMYYYY -->
+<xs:schema targetNamespace="pd" xmlns="pd" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" 
+attributeFormDefault="unqualified">
+	<xs:element name="PEDRoData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Experiment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AssayDataPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="time" type="xs:decimal"/>
+				<xs:element name="protein_assay" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Band">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:integer"/>
+				<xs:element name="area" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="intensity" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="local_background" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="annotation" type="xs:string" minOccurs="0"/>
+				<xs:element name="annotation_source" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="volume" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_x_coord" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_y_coord" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_radius" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="normalisation" type="xs:string" minOccurs="0"/>
+				<xs:element name="normalised_volume" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="lane_number" type="xs:integer"/>
+				<xs:element name="apparent_mass" type="xs:decimal"/>
+				<xs:element ref="BoundaryPoint" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="DiGEGelItem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RelatedGelItem" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="BoundaryPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pixel_x_coord" type="xs:decimal"/>
+				<xs:element name="pixel_y_coord" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChemicalTreatment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="digestion" type="xs:string" minOccurs="0"/>
+				<xs:element name="derivatisations" type="xs:string" minOccurs="0"/>
+				<xs:element ref="TreatedAnalyte"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChromatogramPoint">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="time_point" type="xs:decimal"/>
+				<xs:element name="ion_count" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CollisionCell">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gas_type" type="xs:string"/>
+				<xs:element name="gas_pressure" type="xs:decimal"/>
+				<xs:element name="collision_offset" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Column">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="manufacturer" type="xs:string"/>
+				<xs:element name="part_number" type="xs:string"/>
+				<xs:element name="batch_number" type="xs:string"/>
+				<xs:element name="internal_length" type="xs:decimal"/>
+				<xs:element name="internal_diameter" type="xs:decimal"/>
+				<xs:element name="stationary_phase" type="xs:string"/>
+				<xs:element name="bead_size" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pore_size" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="temperature" type="xs:decimal"/>
+				<xs:element name="flow_rate" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="injection_volume" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="parameters_file" type="xs:anyURI" minOccurs="0"/>
+				<xs:element ref="Column" minOccurs="0"/>
+				<xs:element ref="AssayDataPoint" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="MobilePhaseComponent" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="GradientStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="Fraction" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DBSearchParameters">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="program" type="xs:string"/>
+				<xs:element name="database" type="xs:string"/>
+				<xs:element name="database_date" type="xs:date"/>
+				<xs:element name="parameters_file" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="taxonomical_filter" type="xs:boolean" 
+minOccurs="0"/>
+				<xs:element name="fixed_modifications" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="variable_modifications" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="max_missed_cleavages" type="xs:integer" 
+minOccurs="0"/>
+				<xs:element name="mass_value_type" type="xs:string" minOccurs="0"/>
+				<xs:element name="fragment_ion_tolerance" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="peptide_mass_tolerance" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="accurate_mass_mode" type="xs:boolean" 
+minOccurs="0"/>
+				<xs:element name="mass_error_type" type="xs:string" minOccurs="0"/>
+				<xs:element name="mass_error" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="protonated" type="xs:boolean" minOccurs="0"/>
+				<xs:element name="icat_option" type="xs:boolean" minOccurs="0"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DBSearch">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="username" type="xs:string"/>
+				<xs:element name="id_date" type="xs:date"/>
+				<xs:element name="n-terminal_aa" type="xs:string" minOccurs="0"/>
+				<xs:element name="c-terminal_aa" type="xs:string" minOccurs="0"/>
+				<xs:element name="count_of_specific_aa" type="xs:integer" 
+minOccurs="0"/>
+				<xs:element name="name_of_counted_aa" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="regex_pattern" type="xs:string" minOccurs="0"/>
+				<xs:element ref="DBSearchParameters"/>
+				<xs:element ref="TandemSequenceData" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="PeptideHit" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="ProteinHit" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Detection">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="photomultiplier"/>
+							<xs:enumeration value="electron multiplier"/>
+							<xs:enumeration value="micro-channel plate"/>
+							<xs:enumeration value="ICR"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DiGEGel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dye_type" type="xs:string"/>
+				<xs:element name="excitation_wavelength" type="xs:decimal"/>
+				<xs:element name="exposure_time" type="xs:decimal"/>
+				<xs:element name="tiff_image" type="xs:anyURI"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DiGEGelItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dye_type" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Electrospray">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="spray_tip_voltage" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="spray_tip_diameter" type="xs:decimal"/>
+				<xs:element name="solution_voltage" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="cone_voltage" type="xs:decimal"/>
+				<xs:element name="loading_type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="LC"/>
+							<xs:enumeration value="DI"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="solvent" type="xs:string"/>
+				<xs:element name="interface_manufacturer" type="xs:string"/>
+				<xs:element name="spray_tip_manufacturer" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Experiment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hypothesis" type="xs:string"/>
+				<xs:element name="method_citations" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="result_citations" type="xs:string" 
+minOccurs="0"/>
+				<xs:element ref="Sample" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Fraction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="start_point" type="xs:decimal"/>
+				<xs:element name="end_point" type="xs:decimal"/>
+				<xs:element name="protein_assay" type="xs:decimal" minOccurs="0"/>
+				<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Gel1D">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="raw_image" type="xs:anyURI"/>
+				<xs:element name="annotated_image" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="software_version" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="warped_image" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="warping_map" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="equipment" type="xs:string"/>
+				<xs:element name="percent_acrylamide" type="xs:string"/>
+				<xs:element name="solubilization_buffer" type="xs:string"/>
+				<xs:element name="stain_details" type="xs:string"/>
+				<xs:element name="protein_assay" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="in-gel_digestion" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="background" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_size_x" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_size_y" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="denaturing_agent" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="mass_start" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="mass_end" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="run_details" type="xs:string" minOccurs="0"/>
+				<xs:element ref="DiGEGel" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Band" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Gel2D">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="raw_image" type="xs:anyURI"/>
+				<xs:element name="annotated_image" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="software_version" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="warped_image" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="warping_map" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="equipment" type="xs:string"/>
+				<xs:element name="percent_acrylamide" type="xs:string"/>
+				<xs:element name="solubilization_buffer" type="xs:string"/>
+				<xs:element name="stain_details" type="xs:string"/>
+				<xs:element name="protein_assay" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="in-gel_digestion" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="background" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_size_x" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_size_y" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pi_start" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pi_end" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="mass_start" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="mass_end" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="first_dim_details" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="second_dim_details" type="xs:string" 
+minOccurs="0"/>
+				<xs:element ref="DiGEGel" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Spot" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GradientStep">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="step_time" type="xs:decimal"/>
+				<xs:element ref="PercentX" minOccurs="2" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hexapole">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IonSource">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="collision_energy" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:group ref="IonisationType"/>
+				<xs:element ref="mzAnalysis" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IonTrap">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="gas_type" type="xs:string"/>
+				<xs:element name="gas_pressure" type="xs:decimal"/>
+				<xs:element name="rf_frequency" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="excitation_amplitude" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="isolation_centre" type="xs:decimal"/>
+				<xs:element name="isolation_width" type="xs:decimal"/>
+				<xs:element name="final_ms_level" type="xs:decimal" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ListProcessing">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="smoothing_process" type="xs:string"/>
+				<xs:element name="background_threshold" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MALDI">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="laser_wavelength" type="xs:decimal"/>
+				<xs:element name="laser_power" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="matrix_type" type="xs:string" minOccurs="0"/>
+				<xs:element name="grid_voltage" type="xs:decimal"/>
+				<xs:element name="acceleration_voltage" type="xs:decimal"/>
+				<xs:element name="ion_mode" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MassSpecExperiment">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string" minOccurs="0"/>
+				<xs:element name="parameters_file" type="xs:anyURI" minOccurs="0"/>
+				<xs:element ref="MassSpecMachine"/>
+				<xs:element ref="PeakList" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MassSpecMachine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="manufacturer" type="xs:string"/>
+				<xs:element name="model_name" type="xs:string"/>
+				<xs:element name="software_version" type="xs:string"/>
+				<xs:element ref="IonSource"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MobilePhaseComponent">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="concentration" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MSMSFraction">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="target_m_to_z" type="xs:decimal"/>
+				<xs:element name="plus_or_minus" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mzAnalysis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="mzAnalysisType"/>
+				<xs:element ref="Detection" minOccurs="0"/>
+				<!--				<xs:element ref="mzAnalysis" minOccurs="0"/>-->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OntologyEntry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="category" type="xs:string"/>
+				<xs:element name="value" type="xs:string"/>
+				<xs:element name="description" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Organism">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="species_name" type="xs:string"/>
+				<xs:element name="strain_identifier" type="xs:string"/>
+				<xs:element name="relevant_genotype" type="xs:string" 
+minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherAnalyte">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherAnalyteProcessingStep">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="OtherAnalyte" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OtherIonisation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OthermzAnalysis">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name" type="xs:string"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Peak">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="m_to_z" type="xs:decimal"/>
+				<xs:element name="abundance" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="multiplicity" type="xs:decimal" minOccurs="0"/>
+				<xs:element ref="PeakSpecificChromatogramIntegration" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="ChromatogramPoint" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeakList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="list_type">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="Full list"/>
+							<xs:enumeration value="Edited list"/>
+							<xs:enumeration value="MSMS Result"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="mass_value_type" type="xs:string"/>
+				<xs:element ref="ListProcessing" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="MSMSFraction" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="Peak" maxOccurs="unbounded"/>
+				<xs:element ref="DBSearch" minOccurs="0" maxOccurs="unbounded"/>
+				<!--				<xs:element ref="PeakList" minOccurs="0" 
+maxOccurs="unbounded"/>-->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeakSpecificChromatogramIntegration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="resolution" type="xs:string"/>
+				<xs:element name="software_version" type="xs:string"/>
+				<xs:element name="background_threshold" type="xs:decimal"/>
+				<xs:element name="area_under_curve" type="xs:decimal"/>
+				<xs:element name="peak_description" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="sister_peak_reference" type="xs:decimal" 
+minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PeptideHit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="score" type="xs:decimal"/>
+				<xs:element name="score_type" type="xs:string"/>
+				<xs:element name="sequence" type="xs:string"/>
+				<xs:element name="information" type="xs:string" minOccurs="0"/>
+				<xs:element name="probability" type="xs:decimal" minOccurs="0"/>
+				<xs:element ref="OntologyEntry" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PercentX">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier" type="xs:string"/>
+				<xs:element name="percentage" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Protein">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accession_number" type="xs:string"/>
+				<xs:element name="gene_name" type="xs:string" minOccurs="0"/>
+				<xs:element name="synonyms" type="xs:string" minOccurs="0"/>
+				<xs:element name="organism" type="xs:string" minOccurs="0"/>
+				<xs:element name="orf_number" type="xs:string" minOccurs="0"/>
+				<xs:element name="description" type="xs:string" minOccurs="0"/>
+				<xs:element name="sequence" type="xs:string" minOccurs="0"/>
+				<xs:element name="modifications" type="xs:string" minOccurs="0"/>
+				<xs:element name="predicted_mass" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="predicted_pi" type="xs:decimal" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProteinHit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="all_peptides_matched" type="xs:boolean" 
+minOccurs="0"/>
+				<xs:element name="component_peptides" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="masses_matched" type="xs:string" minOccurs="0"/>
+				<xs:element name="score" type="xs:string" minOccurs="0"/>
+				<xs:element name="score_type" type="xs:string" minOccurs="0"/>
+				<xs:element ref="Protein"/>
+				<xs:element ref="RelatedGelItem" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Quadrupole">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RelatedGelItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="gel_reference" type="xs:anyURI"/>
+				<xs:element name="item_reference" type="xs:integer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Sample">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="sample_id" type="xs:string"/>
+				<xs:element name="sample_date" type="xs:date"/>
+				<xs:element name="experimenter" type="xs:string"/>
+				<xs:element ref="SampleOrigin" maxOccurs="unbounded"/>
+				<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SampleOrigin">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="description" type="xs:string"/>
+				<xs:element name="condition" type="xs:string"/>
+				<xs:element name="condition_degree" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="environment" type="xs:string"/>
+				<xs:element name="tissue_type" type="xs:string" minOccurs="0"/>
+				<xs:element name="cell_type" type="xs:string" minOccurs="0"/>
+				<xs:element name="cell_cycle_phase" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="cell_component" type="xs:string" minOccurs="0"/>
+				<xs:element name="technique" type="xs:string" minOccurs="0"/>
+				<xs:element name="metabolic_label" type="xs:string" minOccurs="0"/>
+				<xs:element ref="Organism"/>
+				<xs:element ref="TaggingProcess" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Spot">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:integer"/>
+				<xs:element name="area" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="intensity" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="local_background" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="annotation" type="xs:string" minOccurs="0"/>
+				<xs:element name="annotation_source" type="xs:string" 
+minOccurs="0"/>
+				<xs:element name="volume" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_x_coord" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_y_coord" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pixel_radius" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="normalisation" type="xs:string" minOccurs="0"/>
+				<xs:element name="normalised_volume" type="xs:decimal" 
+minOccurs="0"/>
+				<xs:element name="apparent_pi" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="apparent_mass" type="xs:decimal" minOccurs="0"/>
+				<xs:element ref="BoundaryPoint" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:element ref="DiGEGelItem" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="RelatedGelItem" minOccurs="0" 
+maxOccurs="unbounded"/>
+				<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TaggingProcess">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="lysis_buffer" type="xs:string"/>
+				<xs:element name="tag_type" type="xs:string"/>
+				<xs:element name="tag_purity" type="xs:decimal"/>
+				<xs:element name="protein_concentration" type="xs:decimal"/>
+				<xs:element name="tag_concentration" type="xs:decimal"/>
+				<xs:element name="final_volume" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TandemSequenceData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="source_type" type="xs:string"/>
+				<xs:element name="sequence" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ToF">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="reflectron_state">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="On"/>
+							<xs:enumeration value="Off"/>
+							<xs:enumeration value="None"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="internal_length" type="xs:decimal"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TreatedAnalyte">
+		<xs:complexType>
+			<xs:group ref="AnalyteProcessingStep" minOccurs="0" 
+maxOccurs="unbounded"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- Named groups for choices go after here...-->
+	<xs:group name="AnalyteProcessingStep">
+		<xs:choice>
+			<xs:element ref="Column" minOccurs="0"/>
+			<xs:element ref="Gel1D" minOccurs="0"/>
+			<xs:element ref="Gel2D" minOccurs="0"/>
+			<xs:element ref="ChemicalTreatment" minOccurs="0"/>
+			<xs:element ref="OtherAnalyteProcessingStep" minOccurs="0"/>
+			<xs:element ref="MassSpecExperiment" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="IonisationType">
+		<xs:choice>
+			<xs:element ref="Electrospray" minOccurs="0"/>
+			<xs:element ref="MALDI" minOccurs="0"/>
+			<xs:element ref="OtherIonisation" minOccurs="0"/>
+		</xs:choice>
+	</xs:group>
+	<xs:group name="mzAnalysisType">
+		<xs:choice>
+			<xs:element ref="Quadrupole"/>
+			<xs:element ref="Hexapole"/>
+			<xs:element ref="CollisionCell"/>
+			<xs:element ref="IonTrap"/>
+			<xs:element ref="ToF"/>
+			<xs:element ref="OthermzAnalysis"/>
+		</xs:choice>
+	</xs:group>
+</xs:schema>

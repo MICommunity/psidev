@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>HUPO PSI meeting report January 2003</title>
+     
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+</head>
+<body>
+<a href="http://psidev.sourceforge.net"><img src="../../images/psi.gif"
+ width="113" height="75" border="0" align="left"></a><a
+ href="http://www.hupo.org/"><img src="../../images/hupo.gif"
+ width="113" height="75" border="0" align="right"></a>
+<h1 align="center">Towards Common Standards for exchanging Proteomics Data
+</h1>
+<div align="center"></div>
+<h3 align="center">Report on the Second Meeting of the HUPO Proteomics Standards
+Initiative</h3>
+<div align="center"></div>
+<h3 align="center">Hinxton, Cambridge, UK </h3>
+<div align="center"></div>
+<h3 align="center">January 22 - 24, 2003.</h3>
+<br>
+<h4>Introduction</h4>
+The meeting was opened by Rolf Apweiler (European Bioinformatics Institute).
+Henning Hermjakob then explained that, whilst presenting the current status
+of the existing PSI projects to the various HUPO committees, a strong community
+desire for a standard to allow the storage and exchange of data for the entire
+range of proteomics data had been expressed. It was recognised that, at a
+minimum, such a standard was essential both for access to published data
+and for exchange between collaborators. Due to the complex nature of such
+a project, the individual tools may be developed as an overall framework
+but certain common components, such as sample preparation techniques and
+protein representation, could be shared.<br>
+<br>
+A series of presentations were followed where examples of such systems were
+described.<br>
+<br>
+<b>Steven Oliver, University of Manchester, UK </b><br>
+The increasing volume of proteomic data demands a robust representation of
+both methodology used and results obtained whilst remaining flexible enough
+to encompass future developments. PEDRo has been developed to encode laboratory
+produced data, producing an XML-based PEML&nbsp; (Proteomics Experiment Mark-up
+Language) file for local storage or submission to a repository. Any such repository
+would need to be capable of validating the data, and have an associated set
+of software tools capable of extracting and analysing the data.<br>
+<br>
+PEDRo allows the storage of sample origin and processing, mass spectroscopy
+data and in silico analysis.&nbsp; A prototype data entry tool has been developed
+that reflects the hierarchical nature of the XML schema and contains a number
+of mandatory fields, which could form the basis of minimal data required for
+submission to a repository. The consistent XML tree allows for an audit trail
+to be established. The entry currently requires a large amount of accompanying
+data but templates are available when information is common to many entries.
+The data is interrogated at Manchester using GIMS (Genome Information Management
+System) which allows complex queries linking both transcriptome and proteome.
+Images can be stored within PEDRo but the system is not currently set up to
+allow image comparison.<br>
+<br>
+A practical demonstration of the system was given by Chris Taylor (Manchester)
+The PEML schema is being made available via the web in order to encourage
+usage and debate over the future direction of the project. Software will be
+open source with the <a href="http://pedro.man.ac.uk/uc.htm">XML schema</a>
+being released first.<br>
+<br>
+<b>Sangyun Cho, Yonsei University, Korea&nbsp; </b><br>
+YPRC-PDC has been designed to systematically organise, store and analyse proteomic
+data - the example given being that from human liver samples. It can act
+as a repository of data in various formats and has a dynamic user report
+system linked to a reference protein database. The system has been designed
+to handle clinical data and sample preparation details. Mass spectrometry
+data is input as a text file from which the system can generate graphical
+images. Non-confidential data will be released over the next 12 months and
+could be converted into any XML-based exchange format agreed by the community.
+The system is also to be offered as a public service to which individual research
+groups can connect via the internet and use to manage their own experimental
+results. Alternatively, the group plan to distribute KAST, a simplified version
+of the database based on My-SQL and Linux.<br>
+<br>
+<b>Martin Bl&uuml;ggel, Protagen AG, Dortmund, Germany </b><br>
+Automated handling of high throughput data generated from brain proteome analysis
+has been achieved by using meta-scoring of the readouts from several different
+analytical machines. Scores are boosted by the use of multi-step calibration
+based on known contaminants and internal calibrants and noise-out filters.
+A PTM explorer checks for PTM by systematic permutation and cross correlation
+to identified proteins. Data management is hierarchically structured and
+gel images are stored at low resolution. Sample preparation is described through
+protocols and MS data imported as peak lists using 6 different algorithms
+to handle the output from different vendors. <br>
+<br>
+A pilot project looking at the proteome of mouse brain identified 818 spots
+(estimated 8-10% of total) which were shown to derive from 417 unique proteins.
+&nbsp;<br>
+<br>
+<h4>Open discussion</h4>
+An open debate then followed on the potential structure of any tool adopted
+globally for handling proteomic data, with the more immediate problem of assisting
+laboratories participating in HUPO initiatives to store and exchange the
+information they generate. There was some feeling that only minimal data should
+be stored in any public repository, with detail being maintained in local
+LIMS, however it was also recognised that technology in this area is currently
+in flux, and being too prescriptive may compromise attempts to analyse the
+data in the future. Biologists will require a simple single system and not
+wish to enter information into many different databases - a modular system
+where repetitive data could be stored in common protocols may go some way
+towards solving this. Development would need to start in well-defined areas,
+such as 2-DE and mass spectrometry; technical developments could be tackled
+by developing ontologies which would update whilst the schema remained constant.<br>
+<br>
+It was observed that instrument manufacturers would have to be involved from
+an early stage to provide a common input format. Any repository should be
+designed with the searches, which would be performed over the data in mind,
+however these would be difficult to predict. The merits of starting with an
+existing system, such as PEDRo were debated. There were some reservations
+in that PEDRo may be regarded as a LIMS rather than a data repository but
+it could be used to feed any eventual repository. PEDRo also lacks practical
+testing at laboratory level. However, there was agreement that PEDRo/PEML
+should be opened up for criticism and discussion and would provide a practical
+starting point for the development of a comprehensive proteomics data exchange
+format. A PSI "<a href="../../proteomics/relevantEfforts.html">proteomics</a>"
+page listing links to PEDRo/PEML and related efforts will be set up.<br>
+<br>
+The meeting then separated into two sessions - the Mass Spectrometry and Protein-Protein
+Interaction groups.<br>
+<br>
+<h4>Mass Spectrometry</h4>
+The meeting of the mass spectrometry group, chaired by Weimin Zhu (EBI) began
+with a report of a preliminary meeting that had been held between lead players
+in the first PSI meeting and hardware and software vendors.&nbsp; In this
+meeting, the vendors had expressed a strong willingness to establish and support
+a standard representation for proteomics-related mass-spectrometry data.&nbsp;
+Randall Julian (Eli Lilly), the chair of the ASTM (American Society for
+Tests and Measurements) committee E01.25, which is responsible for an existing
+mass spectrometry standard, presented this to both the preliminary meeting
+and the open session.&nbsp; The E01.25 standard has the strongest vendor
+support of all existing standards; but its scope does not cover all types
+mass spectrometry experiments, and it is implemented in netCDF, which is
+not a highly descriptive format.&nbsp; Recently, two other putative standards
+have emerged, both using XML representations: SpectroML, and GAML, and a second
+ASTM committee, E13, is looking at expanding their scope to create a general
+standard for mass spectrometry to replace the E01.25 standard.&nbsp;&nbsp;
+However, all existing standards focus on "raw" mass spectrometry data, i.e.
+the direct output produced by an instrument; and not on its subsequent extension
+to proteomics. &nbsp;<br>
+<br>
+In general discussions, it was felt useful to attempt to define a standard
+representation for annotated peak lists (i.e. peak lists plus peptide and
+protein identifications); and to insert such a representation into the emerging
+standard for raw mass spectrometry data.&nbsp; Randall agreed to steer a collaborative
+sharing of the XML schemae already developed by participating vendors, with
+the intention of reporting back to the PSI within 3 months.&nbsp; PSI could
+contribute to the process by providing a specification of what information
+researchers in the field of proteomics would find useful to have captured
+within such a standard.<br>
+<br>
+The open session continued with a presentation from Yixue Yu (HUPO Liver Workgroup)
+who presented the bioinformatics efforts that are occurring as part of the
+Human Liver Proteome Project.&nbsp; A comprehensive system has been designed
+to capture and analyse many sorts of proteomic data, including those derived
+from mass spectrometry experiments.&nbsp; Dr. Yu expressed a willingness
+to support a new standard emerging from the PSI process.<br>
+<br>
+In subsequent general discussion, both the scope of the group and the minimum
+requirements for a possible repository were discussed.&nbsp; To maximise the
+interpretability of the results, the full biological context of an experiment
+(as described in a paper) would need to be deposited; to maximise reproducibility,
+the full details of the "raw" experiment (at the instrument-level) would need
+to be captured.&nbsp; The desire to be able to understand, compare and (to
+some extent) repeat experiments was agreed upon, but practical, technical
+and size limitations make the complete achievement of these goals impossible.<br>
+<br>
+To move forward, the group split into two working parties under Pierre-Alain
+Binz (Swiss Institute of Bioinformatics) and Kathryn Lilley (Cambridge Centre
+for Proteomics).&nbsp; These groups took pieces of the PEDRo data model (as
+defined in PEML) as a concrete starting point for working on the definition
+of data structures to hold information on mass spectrometry experiments and
+their interpretation, and on "pre-MS", i.e. the proteomic sample preparation
+techniques that are necessary to produce the material that is subsequently
+evaluated by mass spectrometry.<br>
+<br>
+Both groups made good progress.&nbsp; The "pre-MS" group designed a flexible
+data structure for proteomics experiments with separative (e.g. chromatographic)
+and analytical (e.g. spectrometric) phases to support configurable workflows.&nbsp;
+The group also designed detailed models for many particular separative techniques.
+The group listened to a presentation from Ugis Sarkis (EBI), a member of the
+MGED consortium that has helped define standards for transcriptomics experiments,
+a domain with some natural overlap to proteomics.<br>
+<br>
+The "MS" workgroup, meanwhile, focused their discussion on clearly defining
+the many different levels at which data is produced or interpreted during
+a mass spectrometry experiment; and focused in particular on the key question
+of the representation of peak lists.<br>
+<br>
+<br>
+<h4>Protein:Protein Interactions</h4>
+The session was opened by a number of presentations.<br>
+<br>
+<b>Michael Lappe, European Bioinformatics Institute</b><br>
+The understanding of the proteome through protein:protein interactions (PPIs)
+could result in an accurate description of protein function and reliable structural
+annotation but this is complicated by the large potential number of pairings,
+with additional levels of complexity added by PTMs, splice variants and time-dependent
+protein expression. A method to limit the number of laboratory experiments
+required to confirm potential PPIs has been sought. A virtual pull-down experiment
+lead to a graph of all known PPIs. The average connectivity of a protein
+is 2-4 interactions, confirming highly connected (&gt;4) nodes first speeds
+the process of exploring a new interactome by up to 5-fold. Data from external
+sources - expression data, text-mining, homology studies can be used to strengthen
+the evidence. The algorithm can then be run over any database and will predict
+which proteins should be the next to be examined experimentally. Results
+obtained to date suggests the algorithm operates within 70-80% of a theoretical
+optimum.<br>
+<br>
+<b>Gary Bader, Memorial Sloan-Kettering Cancer Center</b><br>
+A number of databases storing and displaying data on biological pathways (signalling
+and metabolic) are looking for a common format with which to exchange data.
+The <a href="http://www.biopax.org">BioPAX</a> group is affiliated to the BioPathways consortium and hope to have buy-in 
+from all of the major databases should a format be agreed upon. The group
+are attempting to capitalise on the work of a number of related projects,
+such as the PPI data exchange format and CML (chemical mark-up language)
+to describe small molecules. Any model needs to be programming language independent
+and needs to be extensible, with a fairly loose definition of the concept
+of pathway, to encapsulate one pathway into one record, to be compatible
+with existing standards and ontologies and flexible enough such that co-operating
+databases do not have to change their own definition of a pathway. A BioPAX
+record contains a set of entities with the option of defining types, states
+and attributes. Timing of changes in both the state of an entity and in its
+relationships, including translocation, can all be included in a record.
+Evidence sources can also be listed, for example a PubMed reference. A small
+core group is currently advancing the standard, with a larger group contributing
+via a mailing list.<br>
+<br>
+<b>Yves Deville, Universit&eacute; Catholique de Louvain </b><br>
+aMAZE is one example of a database containing both PPI and pathway information
+which could benefit from a close co-operation between the PSI PPI data exchange
+format and the BioPAX initiatve. aMAZE contains both metabolic and signal
+transduction data described in an object-orientated model which is capable
+of handling information on proteins, nucleic acids and small molecules. The
+ability to see PPIs in a functional context leads to the development of biochemical
+networks, the ability to model complexes, molecular states, activation/inactivation
+and changes in location is paramount.<br>
+<br>
+<b>Christian von Mering, EMBL</b><br>
+In order to compare and benchmark different data sets, a common ground for
+comparison which can deal with different data types needs to be established.
+Known interactions can be mapped onto a 2D map of function which demonstrates
+that no one method of demonstrating PPI e.g. yeast 2-hybrid (Y2H) or TAP shows
+a pattern of linking to function but there is some indication that methods
+are complementary. Genomic association can be indicative of a functional interactions
+- this includes methods such as looking for a pattern of genes present and
+absent when genomes are compared, a conserved neighbourhood such as an operon
+in prokaryotic genomes and gene fusion events. STRING is a database into
+which a protein sequence I.D. may be input and an in silico analysis of both
+interaction and function will then be made. <br>
+<br>
+PPI methodologies show a strong bias towards high abundance proteins in terms
+of interaction coverage, although this is not true of Y2H or synthetic lethals.
+A trade-off is always seen between accuracy and coverage of PPI measurement.
+<br>
+<br>
+<b>Henning Hermjakob, EBI</b><br>
+The current status of the XML model which was produced as a result of discussions
+at the first PSI and further refined via the e-mail discussion list was described.
+A key question was how far the model would need to be refined to ensure compatibility
+with BioPAX, and whether this could be achieved without loosing simplicity
+and ease of use. The current model also cannot deal with different levels
+of confidence in interactions within a dataset, for example, the Cellzome
+dataset is known to contain "sticky" proteins which form non-specific interactions
+with many proteins. The effect of an interaction being seen twice within one
+entry on confidence scores was also discussed.<br>
+<br>
+<b>Luisa Montecchi, University of Rome</b><br>
+A number of controlled vocabularies have been developed, initially for use
+in the IntAct project but it has now been agreed that these will be made available
+to describe aspects of experimental design and implementation within the
+PPI data exchange format. Following some discussion, it was agreed to group
+these using a DAG format (following the GO model) rather than a hierarchy.
+A procedure to add new terms was discussed and Luisa agreed to continue to
+act as an editor with back-up being supplied by further volunteers. <br>
+<br>
+<h4>Open discussion</h4>
+The session was then declared open and further discussion of the XML model
+ensued. The model was extensively reworked to allow for BioPAX compatibility
+resulting in a generic list of interactors described in the entry being listed
+at the top level of each entry. Each interactor can be described via a pointer
+to the generic list, by a feature table, and by its role in the interaction
+- additional information such as tagged protein or over-expressed protein
+can also be added but this may cause some problems when other classes of interactor
+are added to the model. Final conversion to BioPAX format could be scripted
+to be effected by the push of a button by biologists. Confidence levels may
+now optionally be described at 3 levels - the interaction, the interactors
+and the experimental protocol. Each entry can be stamped with an experimental
+date(s), a submission date and an exchange date. <br>
+<br>
+There was further discussion on the problem of an interaction being seen twice
+within one entry. This could be collapsed into one entry but it was decided
+this should not be part of the standard but could be provided as a data-processing
+option. <br>
+<br>
+&nbsp;A web-page is to be started on which level 2 issues will be collected
+- currently other molecule types (including small molecules), organelle encoded
+proteins, PTMs/cleavge as a result of an interaction and maintaining compatibility
+with BioPAX are seen as issues. <br>
+<br>
+A report of the first PSI meeting will appear in Comparative and Functional
+Genomics and a follow-up article on this meeting has also been requested by
+the journal. A wider range of journals willing to accept a short article or
+paragraph describing progress to date will also be actively sought. A major
+publication containing the XML schema, controlled vocabularies and future
+plans will be written for submission to Bioinformatics. All participants in
+the meeting will be invited to be on the author list, as will known additional
+contributors, BioPAX and P.I.s of contributors. Personnel at the EBI and Luisa
+Montecchi will undertake actual writing of the first draft.<br>
+<br>
+Deliverables All tools and deliverables should be in place for the submission
+of the paper i.e. by end February 2003, the infra-structure will need to be
+in place by publication (April, May). The following were seen as deliverables:<br>
+<br>
+<ol>
+  <li>Databases actively providing data download in the standard format (within
+this year).</li>
+  <li>Software - to include</li>
+  <ol>
+    <li>Style sheets to allow unfolding of pointers and downloading of data
+in tree-like format.</li>
+    <li>PSI-BioPAX conversion tool</li>
+  </ol>
+  <li>Documentation, examples and use-cases</li>
+</ol>
+<br>
+<b>Action Items</b><br>
+<ol>
+  <li>Finish XML format and maintain via CVS - Henning Hermjakob</li>
+  <li>Style sheets - David Sherman and Lucasz Salwinski</li>
+  <li>Use cases - David Sherman</li>
+  <li>Documentation - Henning Hermjakob and Gary Bader (Luisa Montecchi and
+Sandra Orchard to check for ease of understanding by biologists)</li>
+  <li>Controlled vocabularies - Luisa Montecchi (to be submitted as additional
+material for the paper)</li>
+  <li> Example data sheet - J&eacute;r&ocirc;me Wojcik, Hybrigenics</li>
+  <li>Request official HUPO sanction - Henning Hermjakob</li>
+</ol>
+<br>
+A versioning system should be included in the specification - this should
+be managed via a CVS tag which would update automatically on minor releases,
+the version would be manually updated on a major release.<br>
+<br>
+It was further suggested that place-holders be built into the XML schema to
+allow users to customise it for internal use. All software built to the standard
+would ignore anything placed in these positions but if the contents proved
+useful, they could be built into the next level. This can be discussed by
+e-mail once the schema is complete.<br>
+<br>
+The paper will need to list support from databases - BIND, DIP, MINT, IntAct,
+Hybrigenics are on board, STRING to confirm, Cellzome, Holger Husi (PPID)
+and Bernard Jacq (GIN-DB) to be contacted. All participating databases should
+put the PSI logo on the web and link to the exchange format website. <br>
+<br>
+Once the exchange format is public and databases are ready to accept submissions,
+we will approach journals with regard to an obligate submissions policy -
+this could take the form of an open letters addressed to the editor, as used
+by the MGED consortium.<br>
+<br>
+Data exchange between databases has political implications which will be addressed
+after the release of the exchange format. Lukasz Salkinski offered to write
+a tool to allow initial merging of entries from more than one database into
+a common format.&nbsp; This was seen as a desirable&nbsp; -other tools may
+also be written by users and the web site should encourage their publication
+for use by other groups. <br>
+<br>
+Future Plans The exchange format needs to be released and utilised before
+it is worth discussing further development - it was agreed that there is little
+point in meeting before the second HUPO convention in October. At this point,
+updates to Level 1 and the content of Level 2 could be discussed.<br>
+<br>
+Common grant proposals were briefly discussed - the E.S.F. will fund workshops
+with a possibility of a 5 year funding for conferences, travel and seminars
+to advertise the new standard. Alphonso Valencia will investigate this in
+more detail.&nbsp; The Marie Curie Foundation may also be willing to sponsor
+a meeting.<br>
+<br>
+<h4>Summary </h4>
+The two groups converged for the final summary.<br>
+<br>
+<b>Mass spectrometry -&nbsp; Weimin Zhu (EBI) spectrometry repository model.</b><br>
+<br>
+1. The two working groups will continue to refine and formalise their data
+models.<br>
+<br>
+2. It is hoped to collaborate with MGED in developing common guidelines for
+experimental description.<br>
+<br>
+3. The hardware and software manufacturers will work to ensure that a proteomics-specific
+extension is created for the emerging ASTM mass spectrometry standard.<br>
+<br>
+The aim is that a draft specification will be presented to the ASMS (American
+Society for Mass Spectrometry) meeting in June this year.<br>
+<br>
+<br>
+<b>PPI - Henning Hermjakob (EBI) </b><br>
+<br>
+1. The XML model for level 1 of the data exchange format is now essentially
+complete and on track for publication in early summer.<br>
+<br>
+2.&nbsp; Plans are in place to support the exchange format with software,
+use cases, examples and appropriate documentation.<br>
+<br>
+3.&nbsp; Initial ideas for Level 2 will be discussed at the 2nd HUPO congress
+in Montreal, October 2003. &nbsp;<br>
+<br>
+<hr width="100%" size="2">Sandra Orchard, Paul Kersey, <a
+ href="mailto:hhe@ebi.ac.uk">Henning Hermjakob</a>, 29/1/2003<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type"
+ content="text/html; charset=windows-1252">
+  <meta name="Generator" content="Microsoft Word 97">
+  <title>HUPO Proteomics Standards Initiative</title>
+</head>
+<body link="#0000ff" vlink="#800080">
+<a href="http://psidev.sourceforge.net"><img src="../../images/psi.gif"
+ width="113" height="75" border="0" align="left"></a><a
+ href="http://www.hupo.org/"><img src="../../images/hupo.gif"
+ width="113" height="75" border="0" align="right"></a><b></b>
+<p align="center"><b>Minutes of the <br>
+HUPO Proteomics Standards Initiative Meeting </b></p>
+<p align="center"><b>Hinxton, Cambridge, UK, </b></p>
+<p align="center"><b>October 19 and 20, 2002.</b></p>
+<p align="center"></p>
+<p><b>Introduction </b><br>
+The forum was opened with a brief introduction by Rolf Apweiler who 	outlined
+the background to the current meeting. At the April 	2002 meeting jointly
+organised by HUPO and NAS, the 	<em>Proteomics Standards Initiative</em>
+was formed, whose 	remit is to define and promote standards which will allow
+free 	exchange and comparison of proteomics data. It was decided 	that this
+would first be addressed in the fields of mass 	spectroscopy and protein-protein
+interactions (PPI). This 	inaugural meeting of the Proteomics Standards Initiative
+has 	brought together representatives from the data producer, 	database producer,
+user and software producer communities who 	are seen as essential in establishing
+and maintaining the 	required standards.</p>
+  <b></b>
+<p><b>Alvis Brazma, EBI: The <a href="http://www.mged.org/">MGED</a> standardisation
+process </b><br>
+The expression array community have gone through a similar realisation that
+a public repository was required where data could be freely accessed by laboratory
+workers and bioinformaticians, and that a common standard needed to be developed
+which would allow the transfer of such data between user and databases. It
+was felt the that the lessons learned from their experience would give the
+PSI a valuable insight into the problems ahead.</p>
+<p>MGED first identified those parts of the problem that were effectively
+being dealt with by other groups such as the standardization of gene names
+and gene annotation (GO). They then concentrated their efforts to issues
+unique to the microarray field, recognising that this required 2-tiered thinking,
+identifying what could be rapidly implemented and what were more longer-
+term requirements.</p>
+<ul>
+  <li>Standardization of experimental procedures - maintained in protocols.</li>
+  <li>Experimental platform - chip design</li>
+  <li>Information processing</li>
+  <li>Nature and structure of data and annotation complex - including development
+of controlled vocabularies.</li>
+</ul>
+<p>MGED is now the international organisation for facilitating sharing of
+functional genomic and proteomic data and has developed two working standards
+- MIAME and MAGE-OM(ML).</p>
+<p>MIAME is the annotation standard and outlines the minimum information
+required to unambiguously interpret and potentially reproduce any array based
+expression experiment. Several key journals have adopted a checklist based
+on this standard and will require submission to a public repository before
+publishing any data. MAGE-OM is an XML-based exchange format which has been
+developed and adopted by the OMG as the standard for microarrays. Data standardization
+and normalisation was recognised as being a second part of the process, which
+was not feasible to implement immediately. MAGE-OM has been adopted by manufacturers
+and will be used to develop data analysis software as well as public repositories
+and LIMS systems.</p>
+<p>The meeting then divided into 2 parallel sessions - Mass spectroscopy
+and PPI</p>
+<h3>Summary</h3>
+<b>
+<h4>Mass Spectroscopy</h4>
+</b>
+<ul>
+  <li>A repository of mass spectroscopy data is only useful if it stores 	
+     the data in the context of the workflow of a complete 	      proteomics
+experiment.</li>
+  <li>Three workgroups have been established:</li>
+  <ul>
+    <li>Definition of MS data and MS data analysis</li>
+    <li>Modelisation of sample preparation</li>
+    <li>Use cases - demands of a public repository for MS data</li>
+  </ul>
+  <li>Workgroups have defined remit and components</li>
+  <li>Group discussions will be continued via email.  Each group to document
+discussion and send results to <a href="mailto:weimin@ebi.ac.uk">Weimin</a>
+for collation  and circulation of draft proposals</li>
+  <li>Draft document to be presented at session before <a
+ href="http://www.hupo.org/new/congress1/index.html">HUPO conference in Versailles</a>.</li>
+</ul>
+<b></b>
+<p><b>Protein-protein interactions</b></p>
+<ul>
+  <li>Agreement to define a common standard for protein interaction data
+exchange.</li>
+  <li>The standard will have multiple levels. Level 1 will define a basic
+standard for the exchange of core interaction data.  Higher levels will introduce
+more complex detail data and will be developed subsequently.</li>
+  <li>The <a href="#ppi-format">elements to be contained in the exchange
+format</a> have been defined.</li>
+  <li>A draft standard will be circulated before 6th November,      partners
+will reconvene in Versailles at the HUPO conference and      will meet to
+finalise the draft in January.</li>
+  <li>A proposal for Level 1 will be made public within 6 months.</li>
+</ul>
+<hr>
+<h3>Detailed reports</h3>
+<h4> Mass Spectroscopy</h4>
+Chair: Rolf Apweiler, Weimin Zhu, EBI
+<p>The meeting could be summarised as a discussion of two questions:</p>
+<ol type="i">
+  <li>what is the use of  standards in the field of mass-spectrometry?</li>
+</ol>
+<ol start="2" type="i">
+  <li>if a repository is set up, what is its purpose?</li>
+</ol>
+<p>Following presentations on various aspects of mass spectrometry, the group
+received a demonstration of PEDRo, a tool developed at the University of
+Manchester to capture data and meta data from proteomics experiments that
+include mass spectrometry as one component.  PEDRo has been designed according
+to the MGED guidelines and has a similar scope to the micro array data model,
+capturing the complete process of scientific experiment from hypotheses formation
+through to peak identification. A consideration of PEDRo led to the raising
+of questions that continued to be discussed throughout the meeting, such
+as: what is proteomics? Is it one thing or many? And if it is many things,
+do we need separate standards for each type of experiment, with separate
+repositories for each type of data?  As the complications involved became
+apparent, questions of feasibility were also raised.  The example of BIORAD's
+workspace was given.  Originally an ambitious plan to design software that
+supported data from all types of proteomics experiments, it had been replaced
+by a less ambitious project aimed at capturing one particular work-flow.</p>
+<p>Subsequently, the following specific points were discussed.</p>
+<ol>
+  <u><li>The purpose of new repositories.</li>
+  </u> One purpose was to provide an audit trail for publications, so that
+the producers of bulk or complex data would be able to fully describe (and
+be held to account for) methodologies that could not appear in print medium;
+this would require the co-operation of journals. Another purpose was to provide
+an implementation to allow the user to explore/mine the data, preferably
+in biological context.  Important concepts here are "the minimal description
+of the experiment" and "validation criteria. <u><li>How many repositories?</li>
+  </u>  Component-based approach, with different repositories for different
+types of proteomics experiment,  was considered, but fears were expressed
+that this would disrupt the audit trail or make biological interpretation
+of the data impossible.  How to capture the meaningful results of an experiment,
+(which may be, for example, a conclusion that two proteins interacted) without
+a wasteful overlap with PPI databases was discussed at intervals throughout
+the meeting, with many expressing a desire to collaborate with the PPI working
+group on this issue.
+</ol>
+<ol start="3">
+  <u><li>Would the users enter all the data?</li>
+  </u> The hope was expressed that if a standard could be produced, LIMS
+systems might automatically produce compliant output. However, proteomics
+is often not fully automated and many data points might be missing.
+</ol>
+<p>4.  <u>Participation of equipment manufacturers.</u>  The view was expressed
+that the participation of equipment manufacturers was essential to the ultimate
+success of any new standard</p>
+<u></u>
+<p>5.  <u>Co-operation with MGED/GOBO.</u>  In areas such as hypotheses description
+and preliminary sample preparation, substantial opportunities for overlap
+with other groups involved in standardization were perceived, and enthusiasm
+expressed for taking these forward.</p>
+<ol start="6">
+  <u><li>Pre-existing mass-spec standards.</li>
+  </u>  Certain pre-existing standards already exist for mass spectrometry,
+the netCDF and the ANDI standards.<u><li>Error Rates.</li>
+  </u>  There is little public awareness among potential users of the data
+of problems like estimating error and the statistical complexity in producing
+the final protein identifications.  We need to raise community awareness
+of these issues.
+</ol>
+<u></u>
+<p><u>Initial conclusions</u>:</p>
+<p>Mass spectrometry data exists at many levels: from raw data through  peak
+lists  and   peptide identification to protein identification; on top of
+this is the desire to mine data.  Huge amounts of variation (and manual interpretation)
+exist in the processes that effect these transformations.   2 approaches
+of MGED to analogous problems were considered:</p>
+<ol type="i">
+  <li>Deal with the problem of the variety of potential workflows by considering
+an experiment to consist recursively of a sequence of data sets with transformations
+between them.</li>
+  <li>Build an comprehensive model without an a priori commitment to complete
+implementation</li>
+</ol>
+<p>The group then decided to split into smaller working parties to consider
+more limited aspects of the problem.</p>
+<u></u>
+<p><u>Group 1</u> worked on the description of the mass spectrometry, and
+the subsequent data analysis, as far as protein identification.  A draft
+model was presented, including the facility for recursive analysis and refinement
+of the peak list.</p>
+<u></u>
+<p><u>Group 2</u> worked on the consideration of the overall workflow of
+proteomics experiments in which "mass spectrometry" was one component, up
+to the point where a sample was ready to be loaded into the spectrometer.
+ Again, a recursive model was used, whereby a sample could undergo many cycles
+of preparative steps as far as this point.</p>
+<u></u>
+<p><u>Group 3</u> considered likely user demands of any implemented system.
+ The interests of expert "mass spectrometrists" and biological users were
+both considered.  A system should support the ability to query with peak
+lists, and with known sample compositions, against the results of previous
+experiments; and should also allow users to query across experiments to observe
+the concomitttant changes in identified species.</p>
+<p>Finally it was decided that the working groups should continue to research
+their own areas, communicating with the aid of email and a password-controlled
+website, with the aim of producing a draft standard ASAP.</p>
+<hr><a name="ppi-detail"></a>
+<h4><a name="ppi-detail">Protein-Protein Interactions</a></h4>
+<a name="ppi-detail">Chair: Henning Hermjakob, EBI </a>
+<p><a name="ppi-detail">The session commenced with brief presentations  by
+database providers represented at the meeting.</a></p>
+<a name="ppi-detail"><b></b></a>
+<p><a name="ppi-detail"><b>Database of Interacting Proteins (</b></a><a
+ href="http://dip.doe-mbi.ucla.edu/"><b>DIP</b></a><b>): Ioannis Xenarios,
+UCLA </b><br>
+DIP originally only contained PPI experimentally determined by X-ray crystallography
+and was developed as a tool to benchmark predictions. The database cross-references
+to original papers and procedures but makes no interpretation step. Literature
+data is now included to give a low-coverage, highly annotated database which
+can be freely downloaded by academics in flat-file or XML format. DIP currently
+contains 18000 interactions, and 2000 journal references.</p>
+<b></b>
+<p><b>A Platform for the Integration and Analysis of PPI Data: Jerome Wojcik,
+<a href="http://www.hybrigenics.com/">Hybrigenics S.A.</a> </b><br>
+This database was built with the aim of cataloguing PPI identified in a high
+throughput manner for eventual drug target identification to be confirmed
+in cellular assays. 2-hybrid experiments are performed using one bait molecule
+against a library of random expressed transcipts, identification of positive
+hits potentially results in a number of peptide fragments from the same protein
+being identified and a selected interacting domain (SID) within that protein
+being described. A confidence code is attached, once the SID has been identified,
+which takes into account false positive reactions and gives the user confidence
+that all interactions are biochemically, if not necessarily biologically,
+relevant. </p>
+<p>Requirements for a PPI standard:</p>
+<ul>
+  <li>exhaustive and unambiguous interactor identification 			</li>
+  <li>explicit data source 			  </li>
+  <li>experimental data type 			    </li>
+  <li>intellectual property status 			      </li>
+  <li>avoid redundancy 				</li>
+  <li>annotation on interaction, e.g. quality scores</li>
+</ul>
+<b></b>
+<p><b>The Biomolecular Interaction Network Database (<a
+ href="http://bind.ca">BIND</a>): Chris 		      Hogue, Samuel Lunenfeld Research
+Institute, 		      Toronto</b><br>
+BIND archives and exchanges 		    molecular assembly information and contains
+		    details on interactions, complexes and pathways. A 		    BIND entry
+points to 2 objects annotated in other 		    databases, typically RefSeq.
+BIND is available in 		    ASN.1 and XML and includes update metadata such
+as 		    submitters details, history information and an 		    audit trail
+as part of a schema published in a 		    peer-reviewed journal. BIND intend
+to act as both 		    a primary and secondary database; RefBIND will be 		
+   curated, containing structural information and add 		    literature support
+evidence. BIND has recently 		    received major funding, mainly for a large-scale
+		    literature curation effort.</p>
+  <b></b>
+<p><b>Molecular Interaction Database (<a
+ href="http://cbm.bio.uniroma2.it/mint/">MINT</a>): Gianni Cesareni, University
+of Rome. </b><br>
+MINT stores manually annotated interactions and enzymic modifications taken
+from the literature, in addition to original phage display data. Mint contains
+3800 manually curated interactions, thereof 1799 of mammalian origin.</p>
+ Authors of relevant publications in FEBS letters are now kindly requested
+to submit their interaction data to MINT <em>after</em> their papers have
+been accepted. About 50% of the authors do submit their data subsequently.
+<b></b>
+<p><b>Holger Husi, Centre for Neurosciences, Edinburgh. </b><br>
+A database of neurological receptors based on the isolation of complexes
+and characterisation of binding partners. Literature and homology data has
+also been included. Splice sites, signal peptides, localisation domains,
+PPI and Protein DNA interactions are identified in rat, mouse and human tissue.</p>
+<b></b>
+<p><b>Gene Information Networks DB (GIN-DB): Bernard Jacq, 			  Developmental
+Biology Institute of 			  Marseilles. </b><br>
+GIN-DB concentrates on 4 			model organisms  (yeast, drosophila, mouse and
+			human) and 4 interaction types (PPI, protein-DNA, protein-RNA and genetic)
+and uses 			information computed from complex interactions 			to study eukaryotic
+molecular and genetic 			networks, functional comparisons of proteins, 			transcription
+networks, evolutionary networks 			and the dynamic modelling of networks.
+A 			functional distance is calculated between 			proteins, taking into account
+all individual 			and shared interacting partners. Cluster 			analysis of
+these distances then shows 			proteins of shared function to nest 			together.
+An Oracle-based information 			extraction program has been developed to 			transfer
+data directly  from Medline. The 			database will be available from Spring
+			2003.</p>
+<p>Requirements for PPI standard:</p>
+<ul>
+			    <li>controlled vocabularies for interaction partners, domains 			
+     </li>
+  <li>controlled vocabulary for methods, 				interaction "output" (activation,
+				inhibition, ...) 				</li>
+  <li>integration with other data types</li>
+</ul>
+<b></b>
+<p><b><a href="http://www.ebi.ac.uk/intact/">IntAct</a>: Henning Hermjakob,
+EBI </b><br>
+IntAct is designed 			  primarily as a public repository of PPI 			  data.
+The IntAct beta release is planned for 			  December 2002. Open source software
+will allow local installation of IntAct nodes to  				    facilitate the
+analysis of  private, confidential data in the context of publicly available
+data, and to facilitate submission to public databases after publication
+of the data.  The data structure models both binary and n-ary (complex) interactions.
+A focus of the IntAct project is the development of controlled vocabularies
+(CVs).</p>
+<b></b>
+<p><b>IntAct Controlled Vocabularies: Luisa Montecchi-Palazzi, University
+of Rome</b>.<br>
+  A number of controlled vocabularies are under development.  A CV for post
+translational modifications has been based on the <a
+ href="http://home.earthlink.net/%7Ejsgaravelli/RESIDInfo.HTML">RESID database</a>,
+a well-annotated controlled vocabulary for experimental methods for identifying
+PPI has been collated and will be made available to the scientific community
+via <a href="http://www.geneontology.org">GOBO</a>. <b>
+<h3>Protein-Protein Interaction Open Session: Towards a common standard for
+data exchange</h3>
+</b><b></b></p>
+<p><b>Is there a requirement for a community standard?</b><br>
+Data exchange is seen as  essential for the purposes of data comparison,
+benchmarking and quality control. A community standard should  allow simple
+access to core protein interaction data, while being extensible to  exchange
+data with a high level of detail. Many users will require only simple indexing
+and interface systems,  larger organisations will have more complex requirements
+but  will have the infrastructure to develop much of this themselves.  The
+problem of confidential data was discussed, this can be flagged and retained
+by the parent database as already happens in sequence databases.<b> </b>A
+minimum standard for data exchange needs to be  developed and a formal mechanism
+for monitoring and maintaining this standard put in place.  The MGED model
+for this can be used, where appropriate.</p>
+<b></b>
+<p><b>Definition of Use Cases </b>The potential use of the data had to be
+understood before  the minimum common standard could be defined.  Most groups
+were interested in making graphical representations of PPIs  and in making
+inter-species comparisons or homology models.  For this, details of species,
+strain and in some cases tissue,  cell type and disease state are of importance.
+Domain identification and the dynamic properties of PPI  were also common
+requirements whilst the functional outcome of PPI and  the effects of mutations
+were also seen as desirables.  Some users have a requirement for in-depth
+experimental detail,  however this was felt to be beyond the scope of a data
+exchange format and  would have to be retrieved from the literature.  PubMed
+I.D.s were seen as essential when available but would not be required  since
+this would compromise the transfer of unpublished data between  collaborating
+laboratories.</p>
+<b></b>
+<p><b>Outline Data Structure </b>The need for a levelled approach was soon
+recognised,  with Level 1 designed to fulfil basic requirements and  be suitable
+for rapid implementation with subsequent levels  containing more features
+whilst remaining backwards compatible.  Level 1 would address PPI data only,
+interactions with nucleic acids and small molecules would be formally  covered
+in Level 2, although the exchange model may prove flexible enough  for this
+to be possible at Level 1. It was also proposed that Level 1  should be restricted
+to binary data but this was felt to be too limiting  whereas sets of 1-n
+interactors would allow data on both complexes and  auto-interactors to be
+made available for exchange.  The topology of a particular complex formation
+could be described within each set.</p>
+<p>Each Interchange Format Record will report an interaction with one or
+more interactors, supported by one or more experiments.</p>
+<p>The interchange format may be used with hypothetical interactions (in-silico).
+ </p>
+<p>Most databases wanted to be able to accurately represent protein sequence
+in particular when a protein has been modified,  or is a fragment of a published
+sequence. It was agreed to use  accession numbers from public databases whenever
+possible and annotate changes  through a feature table.  The protein sequence
+must be given if it is not identified by reference to public  databases,
+and may always be given.</p>
+<p>Each entry will contain the accession number of its parent database. Parent
+databases will be identified by a prefix.  This will require a registry service,
+which will have to be recognised and maintained.  The PSI/HUPO should be
+used as the authority for this and a  host site will have to be established.
+An operating procedure will be written and maintained.</p>
+<p>  Once PSI PPI level 1 standard is established, the major public database
+providers will  collectively approach journals and funding agencies to request
+that deposition of published interaction data in public databases will be
+required.</p>
+<p>The standardization of experimental design was discussed,  but this is
+a far more complex field than that tackled  by MGED with a more diverse set
+of techniques available for experimenters.  It was decided that this was
+better approached through the development of  C.V.s to describe the work
+done rather than imposed standards -  the work already initiated by the IntAct
+project was seen as a suitable starting point.  </p>
+<p> </p>
+<b>
+<p>Administrative Issues and Timelines</p>
+</b>
+<p>The initial report will be circulated within 2 weeks,  any objections
+should be voiced by the end of November -  silence will be seen as agreement
+with the content.  Two journals have asked for reports of this meeting  but
+these will have to completed to a tight deadline and will have to 			   
+  be written  without full consultation of all the members present at the
+meeting.   A potentially closely related effort in facilitating data exchange
+is being planned by the  Biopathways Consortium and it was agreed that documentation
+from this meeting should be prepared in time for BIND to represent the PSI
+at this meeting (New York, November 6<sup>th</sup>).       <br>
+[SEO/PK/HH]</p>
+<p>Henning will establish a PPI mailing list - members to submit names of
+other parties who may be interested in becoming involved.<br>
+[HH]</p>
+<p>A follow-up meeting is to be organised around  the HUPO World Congress,
+21<sup>st</sup>-24<sup>th</sup> November, Versailles. A full meeting will
+be held early next year, Marseilles is a possible venue for this.     <br>
+[HH/BJ]</p>
+<p>An XML draft  is to be produced, with pointers to existing or required
+C.V.s is to be written and circulated. This is then to be discussed on the
+mailing list and finalised at the January meeting.<br>
+[HH/GB/CH]</p>
+<p>Funding for future meetings should be sought - the Wellcome Trust, ESF
+and industry are all seen as possible sponsors.<br>
+[HH]</p>
+<a name="ppi-format"></a>
+<h4><a name="ppi-format">PSI Molecular Interaction Interchange Format Record
+Structure:</a></h4>
+<a name="ppi-format">				</a>
+<dl>
+  <dt><a name="ppi-format">1: Required: Sequence Information List 				  
+ </a></dt>
+  <dd><a name="ppi-format">Sequence describes an 				      unambiguous chemical
+biopolymer 				      (i.e. never a consensus 				      sequence). 				  
+   </a>
+    <ul>
+      <a name="ppi-format">					<li>Required: Unambiguous sequence identifier,
+normally 			    Accession.version. May be replaced by a 					  local identifier
+in case of 					  a sequence not in public 					  databases. In this case
+the 					  sequence is mandatory. 					      </li>
+      <li>Required: Sequence short label, according to standard naming conventions.
+					  </li>
+      <li>Optional: Database crossreferences 					    </li>
+      <li>Required: Molecule type (DNA, RNA, AA), extensible to small molecules
+						</li>
+      <li>Required: Unique local sequence identifier. 						  </li>
+      <li>Required: NCBI 						    tax ID of source organism 						    </li>
+      <li>Optional: Organism name 						      </li>
+      <li>Optional: Further specification, e.g. tissue, cell line. 							</li>
+      <li>Optional:							  Sequence 							  Instance: 							  for 							
+ proteins, 							  use 20 							  letter code 							  with PTM 							
+ modifications in BIND FASTA-PTM format. Example: GDKNADG[Y:po]IEFEEL 				
+     </li>
+      </a>
+    </ul>
+  </dd>
+  <dt><a name="ppi-format">2: Optional: Feature list</a></dt>
+  <dd><a name="ppi-format">Describes sequence features.</a>
+    <ul>
+      <a name="ppi-format">					  <li>Overlapping features are allowed 					
+   </li>
+      <li>A feature may cover 					      the length of the entire 					 
+    protein 					      </li>
+      <li>A feature may describe the binding site 						</li>
+      <li>A feature may describe a PTM 					      </li>
+      <li>For each feature: 						
+        <ul>
+						  <li>Required: Unique local feature identifier 						</li>
+        </ul>
+						</li>
+      <li>Required: Ranges, 						  sites, discontinuous 						  ranges according
+to 						  Genbank FF format 						  parse rules in a 						  string or an
+						  acceptable XML 						  structure.  						  </li>
+      <li>3: Optional: Structural Domain Annotation (one per feature) with
+Interpro/CDD Primary Key. 							</li>
+      <li>Optional: Experimental conditions in which the feature has been
+identified. </li>
+      </a>
+    </ul>
+  </dd>
+  <dt><a name="ppi-format">4: Optional: Interaction topology list</a></dt>
+  <dd><a name="ppi-format">List of pairs of features that annotate pairs
+of sites between 					  sequences using pairs of 					  internal identifiers.
+ With 					  each pair a term from a CV with 					  descriptive information
+					  corresponding to the 					  pairwise interaction may be 					  assigned</a>
+    <p><a name="ppi-format">Example: (p1)F1-F4(p2) </a></p>
+    <p><a name="ppi-format">For each feature pair, an interaction description
+is required.</a></p>
+  </dd>
+  <dt><a name="ppi-format">5: Required: Experimental Conditions List</a></dt>
+  <dd>
+    <ul>
+      <li><a name="ppi-format">Optional: List the feature(s) the experimental
+condition applies to, or to all (if there are no features, all is implied).</a></li>
+      <li><a name="ppi-format">Required: Interaction method using ONE C.V.
+methodology term.</a></li>
+      <li><a name="ppi-format">Required: Interaction attributes include PMID
+(if available) and confidence level (if available).</a></li>
+      <li><a name="ppi-format">Required (if applicable): Methods using host
+organism MUST provide NCBI tax id. And MAY provide free-text strain info</a></li>
+      <li><a name="ppi-format">Optional: Exp. Design SHOULD be documented;
+standard provides minimal structure and recommendation for tissue, keywords</a></li>
+      <li><a name="ppi-format">Optional: Exp. Conditions SHOULD be documented;
+standard provides 				      minimal structure with 				      recommendations
+for 				      keywords</a></li>
+    </ul>
+    <a name="ppi-format">				</a></dd>
+</dl>
+<hr>
+<address><a name="ppi-format">Sandra Orchard, Paul Kersey, Henning Hermjakob,
+</a><a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a></address>
+<br>
+</body>
+</html>

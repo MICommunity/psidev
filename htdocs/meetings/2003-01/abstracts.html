@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>PSI meeting abstracts</title>
+  </head>
+
+  <body>
+    <h1>PSI meeting abstracts</h1>
+<a name="pedro">
+<h3>Steve Oliver, University of Manchester: A systematic approach to modelling capturing and disseminating proteomics
+experimental data
+</h3>
+
+Both the generation and the analysis of proteome data are becoming
+increasingly widespread, and the field is moving incrementally towards
+high-throughput approaches. Techniques are also increasing in complexity as
+the relevant technologies evolve. A standard representation of both the
+methods employed and the data generated in proteomics experiments, analogous
+to that of the MIAME guidelines for transcriptomics, and the associated MAGE
+object model and XML implementation, has yet to emerge. This hinders the
+handling, exchange and dissemination of proteomics data. We will present a
+UML model of proteomics experimental data, describe XML and SQL
+implementations of that model, and discuss capture, storage and
+dissemination strategies. These make explicit what data might most usefully
+be captured about proteomics experiments and provide complementary routes
+towards the implementation of a proteome repository.
+
+<a name="interactionSpace">
+<h3>Michael Lappe, EBI: Covering Interaction Space</h3>
+We address the problem of achieving completeness in functional genomics. By identifying a 
+screening strategy with the order in which of the proteins are used as bait in the screening 
+process we demonstrate that the learning curve (or information gain) is determined by the 
+strategy applied to cover interaction space. 
+The question of completeness seems to hinge on establishing a reliable ab-initio estimate of 
+the degree of all proteins. Since we do not know the interaction network that is to be explored 
+yet, all we know the list of nodes (proteins) and have to determine how they are connected 
+(interacting) by experiments. Here we provide an efficient algorithmic solution to cover 
+interaction space with an almost minimal effort in terms of  the required number of 
+experiments. Our framework and tools allow, with the benefit of hindsight, to analyse the 
+existing knowledge on protein Interactions and compare different strategies. Furthermore, we 
+demonstrate it performs within ~75% of a theoretical optimum and is several times faster than 
+random screening for exploring a new interactome.
+The strategic relevance of this work lies in its ability to quickly generate an overall scaffold for 
+functional prediction. The algorithm can easily be implemented based on current data 
+suggesting the most promising baits for further experimental studies. In order to co-ordinate 
+screening efforts the results will make an ideal supplement to public repositories like IntAct. 
+
+<a name="amaze">
+<h3>Yves Deville, Universite Libre de Bruxelles: Modelling protein-protein interactions in biochemical networks</h3>
+Well-established databases for protein-protein interactions are usually limited to the representation of such interactions.  Protein-protein interactions play however an important role in many biochemical chemical processes, where the many interactions formed between components of the living cell (such as proteins DNA, RNA and small molecules) can be thought of as forming networks. We present a model allowing the representation of protein-protein interactions in such networks.  These interactions are thus connected to other data so as to represent the entire network in a way that also enables the analysis of the corresponding biochemical processes.
+The presented model is object-oriented.  A prototype database has been developed.  It contains data, including protein-protein interactions, on signal transduction pathways in yeast. This prototype is part of the aMAZE  project.
+
+<a name="mering">
+<h3>Christian von Mering, EMBL: Comparative Assessment and Network Assembly</h3>
+Large-scale experimental and computational approaches are currently generating valuable protein-protein interaction data in many model organisms. One of the best-covered organisms is yeast, and a comparative assessment of yeast interaction datasets can hel
+p identify the potential of the various approaches, as well as their biases, strengths and weaknesses. Various ways to benchmark and compare interaction data are discussed, as well as approaches to integrate them into networks of interacting proteins. Part
+icular emphasis is placed on computational methods for predicting functional interaction networks.
+
+    <hr>
+    <address><a href="mailto:hhe@ebi.ac.uk">Henning Hermjakob</a></address>
+<!-- Created: Mon Jan 13 18:51:05 GMT 2003 -->
+<!-- hhmts start -->
+Last modified: Mon Jan 20 18:11:52 GMT 2003
+<!-- hhmts end -->
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HUPO PPP Pilot Phase Model -->
+<!-- ClassNames have all words capitalised, fieldNames have all all but the first word capitalised -->
+<!-- Classes are declared first seperately, then associated with refs, choices then types go at the end of the schema -->
+<!-- Henning Hermjakob (European Bioinformatics Institute, UK), David States (University of Michigan, USA) -->
+<!-- Richard Simpson (Ludwig Institute, Aus.), Chris Taylor (University of Manchester, UK) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="EntrySet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Entry" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Entry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="participatingLab" type="xs:string"/>
+				<xs:element ref="HupoSpecimen" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExperimentalProtocol">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="protocolTitle" type="xs:string"/>
+				<xs:element name="abbreviatedTitleReference" type="xs:string"/>
+				<xs:element name="protocolDescription" type="xs:string"/>
+				<xs:element name="references" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HupoSpecimen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hupoSpecimenName">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="NIBSC"/>
+							<xs:enumeration value="b1-EDTA"/>
+							<xs:enumeration value="b1-HEP"/>
+							<xs:enumeration value="b1-CIT"/>
+							<xs:enumeration value="b1-SERUM"/>
+							<xs:enumeration value="b2-EDTA"/>
+							<xs:enumeration value="b2-HEP"/>
+							<xs:enumeration value="b2-CIT"/>
+							<xs:enumeration value="b2-SERUM"/>
+							<xs:enumeration value="c1-EDTA"/>
+							<xs:enumeration value="c1-HEP"/>
+							<xs:enumeration value="c1-CIT"/>
+							<xs:enumeration value="c1-SERUM"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element ref="ExperimentalProtocol" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="IdentifiedProtein" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TechnologyAndResourcesUsed" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="IdentifiedProtein">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="idNumber" type="xs:integer"/>
+				<xs:element name="proteinNameList" type="xs:string"/>
+				<xs:element name="sourceDatabaseList" type="xs:string"/>
+				<xs:element name="accessionNumberList" type="xs:string"/>
+				<xs:element name="taxonomicSpecies" type="xs:string"/>
+				<xs:element name="proteinVariantTypeAndName" type="xs:string" minOccurs="0"/>
+				<xs:element name="spotBandOrFractionReference" type="xs:string" minOccurs="0"/>
+				<xs:element name="identificationMethodAbbreviation" type="xs:string"/>
+				<xs:element name="peptideSequenceList" type="xs:string" minOccurs="0"/>
+				<xs:element name="percentSequenceCoverage" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="identificationConfidence">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="High"/>
+							<xs:enumeration value="Low"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="molecularWeightInKDa" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="pI" type="xs:decimal" minOccurs="0"/>
+				<xs:element name="intensity" type="xs:string" minOccurs="0"/>
+				<xs:element name="abundance" type="xs:string" minOccurs="0"/>
+				<xs:element name="urlLinkToDetailedData" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="comments" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="identificationMethodAbbreviationKey">
+			<xs:selector xpath="Protocol"/>
+			<xs:field xpath="abbreviatedTitleReference"/>
+		</xs:key>
+		<xs:keyref name="identificationMethodAbbreviationKeyRef" refer="identificationMethodAbbreviationKey">
+			<xs:selector xpath="identificationMethodAbbreviation"/>
+			<xs:field xpath="id"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:element name="TechnologyAndResourcesUsed">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="protocolTitleAbbreviation" type="xs:string"/>
+				<xs:element name="platformTechnologyApplied" type="xs:string"/>
+				<xs:element name="volumeUsedInul" type="xs:decimal"/>
+				<xs:element name="timeForSeparationInDays" type="xs:decimal"/>
+				<xs:element name="timeForTotalAnalysisInDays" type="xs:decimal"/>
+				<xs:element name="approxCapitalCostsInUSD" type="xs:decimal"/>
+				<xs:element name="approxOperationCostsInUSD" type="xs:decimal"/>
+				<xs:element name="approxLabourCostsInUSD" type="xs:decimal"/>
+				<xs:element name="comments" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="protocolTitleAbbreviationKey">
+			<xs:selector xpath="Protocol"/>
+			<xs:field xpath="abbreviatedTitleReference"/>
+		</xs:key>
+		<xs:keyref name="protocolTitleAbbreviationKeyRef" refer="protocolTitleAbbreviationKey">
+			<xs:selector xpath="TechnologyAndResourcesUsed"/>
+			<xs:field xpath="protocolTitleAbbreviation"/>
+		</xs:keyref>
+	</xs:element>
+</xs:schema>

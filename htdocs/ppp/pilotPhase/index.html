@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>HUPO Plasma Proteome Project</title>
+</head>
+<body>
+<a href="http://psidev.sourceforge.net"><img
+ alt="Proteomics Standards Initiative" src="/images/psi.gif" width="113"
+ height="75" border="0" align="left" /></a>
+<a
+ href="http://www.hupo.org/"><img
+ src="/images/hupo.gif"
+ style="border: 0px solid ; width: 113px; height: 75px;" align="right"
+ title="" alt="HUPO logo"></a>
+ <br clear="all">
+	
+<center>
+<h2>Plasma Proteome Project - <br>
+</h2>
+<h2>Pilot Phase Data Collection Resources<br>
+</h2>
+</center>
+<h3><a name="mozTocId610362" class="mozTocH3"></a>Introduction</h3>
+A key aspect of the pilot phase of the Plasma Proteome Project (PPP) is
+the comparative analysis of the experimental approaches and protein
+identifications from the participating laboratories. As a prerequisite
+to the comparative analysis, all data need to be centrally collected.
+This page describes the resources for the data collection.<br>
+<br>
+<h3>Table of contents</h3>
+<ol>
+  <li><a href="#mozTocId610362">Introduction</a></li>
+  <li><a href="#mozTocId898520">Deadlines</a></li>
+  <li><a href="#mozTocId379805">Common resources</a></li>
+  <li><a href="#mozTocId753381">Data submission</a></li>
+  <li><a href="#mozTocId562224">Mailing lists</a>&nbsp;</li>
+</ol>
+<h3><a name="mozTocId898520" class="mozTocH3"></a>Deadlines</h3>
+<ul>
+  <li>August 15: All participating laboratories register at the website <a href="http://www.bioinformatics.med.umich.edu/proteome/hupo/ppp">http://www.bioinformatics.med.umich.edu/proteome/hupo/ppp</a> 
+<li>by August 22: Test submissions: To find out problems in the
+data processing, we need one test submission from each participating
+lab. This should ideally contain samples of special cases you expect.</li>
+  <li>by September 15: Submission of PPP reference specimen initial results up to date. We
+won't be able to process any data between this date and the HUPO world congress, we'll only have three
+weeks for the data analysis!</li>
+  <li>October 10: Presentation of preliminary results analysis during
+the <a href="http://www.hupo2003.com/">HUPO world congress</a> in
+Montreal<br>
+  </li>
+</ul>
+<h3><a name="mozTocId379805" class="mozTocH3"></a>Common resources</h3>
+<h4>Shared databases</h4>
+To be able to compare protein identifications, we need to refer to
+identified proteins by database accession numbers, not by names or
+descriptions. Furthermore, the final protein identifications are
+significantly influenced by the database against which the peptide
+searches are performed. To improve the comparability of results, we urge
+all participating labs to perform database searches against the Human
+section of the <a href="http://www.ebi.ac.uk/IPI/">International
+Protein Index (IPI)</a>. IPI is a non-redundant data set created from
+Swiss-Prot/TrEMBL, Ensembl, and RefSeq. It provides a high level of
+completeness, a minimal level of redundancy, and monthly updates. To
+have an identical search base, we recommend all labs participating in
+the PPP pilot phase use IPI human of July 2nd, 2003:&nbsp; <a
+ href="ftp://ftp.ebi.ac.uk/pub/databases/IPI/old/HUMAN/ipi.fasta.v2.21.gz">ftp://ftp.ebi.ac.uk/pub/databases/IPI/old/HUMAN/ipi.fasta.v2.21.gz</a><br>
+Please note that this is a human-only dataset, you might need to add
+specific "contaminants", e.g. trypsin, depending on your experimental
+protocol.<br>
+<br>
+If the database/search engine you are using is not under your control,
+please provide Swiss-Prot/TrEMBL accession numbers for the identified
+proteins.<br>
+<h3><a name="mozTocId753381" class="mozTocH3"></a>Data submission</h3>
+For the data submission, we provide two alternative methods.
+Participants may either insert their data into Excel forms and submit
+the forms, or they may submit their data in XML according to a common
+XML schema. Please choose one of the two methods. XML based submission
+is the preferred method, because it puts less workload on the central
+data collection and processing team.<br>
+<h4>Excel based data submission</h4>
+We have prepared a set of Excel spreadsheets for data submission. Each
+sheet is accompanied with a detailed instruction document. Please use
+only these forms for Excel-based submissions, we won't be able to
+process forms in a different format. All forms and instructions are
+available at: <a href="http://psidev.sourceforge.net/ppp/pilotPhase/excelForms/">http://psidev.sourceforge.net/ppp/pilotPhase/excelForms/</a><br>
+Please note: The forms have been updated with respect to the original
+forms which have been sent to participants. We prefer submissions in the
+updated forms.<br>
+<br>
+Please use the submission system at the University of Michigan <br><a href="http://www.bioinformatics.med.umich.edu/proteome/hupo/ppp/">http://www.bioinformatics.med.umich.edu/proteome/hupo/ppp/</a> or send your data to <a href="mailto:Simone.Pakin@Ludwig.edu.au">Simone.Pakin@Ludwig.edu.au</a> at the Ludwig Institute.
+<h4>XML based data submission</h4>
+To facilitate the processing of submitted data, we encourage data
+submission in XML. We have developed an XML schema which stores the same
+data as the Excel forms. The schema is available from 
+<a href="http://psidev.sourceforge.net/ppp/pilotPhase/xml/HUPO-PPP-Schema.xsd">http://psidev.sourceforge.net/ppp/pilotPhase/xml/HUPO-PPP-Schema.xsd</a>, the auto-generated
+schema documentation from <a href="http://psidev.sourceforge.net/ppp/pilotPhase/xml/doc/">http://psidev.sourceforge.net/ppp/pilotPhase/xml/doc/</a>
+<br>
+If bioinformatics support is available in your lab, it is probably the
+easiest to directly format your data according to the XML form by a
+script. <br>
+<br>
+For detail editing, or if no bioinformatics support is available, we
+offer a <a href="pedro/PedroForHUPOPPPv1.exe">customised version of the prototype
+PEDRo tool</a> to provide a user-friendly interface to create the XML
+formatted data. Please see the <a href="pedro/README">README</a> on how
+to install and use it.<br>
+<br>
+Please send all XML formatted submissions to <a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a> at the European Bioinformatics Institute.<br>
+<h3><a name="mozTocId562224" class="mozTocH3"></a>Mailing lists</h3>
+  <a name="lists"><ul>	 <li>psidev-ppp-help@lists.sourceforge.net 		<br>
+		  HUPO Plasma Proteome Project help requests
+		    You can </li>
+  </a><a href="mailto:psidev-ppp-help@lists.sourceforge.net">mail
+psidev-ppp-help@lists.sourceforge.net</a>, <a
+ href="http://sourceforge.net/mailarchive/forum.php?forum=psidev-ppp-help">browse
+list archive</a>, or <a
+ href="http://lists.sourceforge.net/lists/listinfo/psidev-ppp-help">subscribe/unsubscribe</a>.
+	       	 <li>psidev-ppp-dev@lists.sourceforge.net 		<br>
+
+		  Data handling team of the HUPO Plasma Proteome Project
+		 <br>
+		    You can <a href="mailto:psidev-ppp-dev@lists.sourceforge.net">mail
+psidev-ppp-dev@lists.sourceforge.net</a>, <a
+ href="http://sourceforge.net/mailarchive/forum.php?forum=psidev-ppp-dev">browse
+list archive</a>, or <a
+ href="http://lists.sourceforge.net/lists/listinfo/psidev-ppp-dev">subscribe/unsubscribe</a>.
+	 </li>
+</ul>
+<hr>	
+<address>		Henning Hermjakob, <a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a>,
+August 12, 2003<br>
+</address>
+</body>
+</html>

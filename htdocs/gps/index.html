@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>HUPO Proteomics Standards Initiative</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<script language="JavaScript" type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF">
+<div align="left" > <font face="Times New Roman, Times, serif"><a href="http://psidev.sourceforge.net/" target="_blank"><img alt="Proteomics Standards Initiative"
+ src="../images/psi.gif" width="113" height="75" border="0" align="left" /></a> 
+  <a href="http://www.hupo.org/" target="_blank"><img alt="HUPO Human Proteome Organisation"
+ src="../images/hupo.gif" width="113" height="75" border="0" align="right" /></a></font>  
+  <h2 align="center"><font face="Times New Roman, Times, serif"><br />
+    General Proteomics Standards</font></h2>
+  <p align="center" />&nbsp;&nbsp;&nbsp;&nbsp; 
+  <p align="center">| <a href="#aboutUs">About us</a> | <a href="#miape">The MIAPE 
+    minimum reporting requirement</a> | The PSI <a href="#psiModel">Object Model</a> 
+    and <a href="#psiOntology">Ontology</a> |<br />
+    | <a href="#discussionDocs"> Other discussion documents</a> | <a href="#meetingReports">Meeting 
+    reports</a> | <a href="#discussionList">Email discussion list</a> | <a href="#collaborators">Collaborators</a> 
+    | <a href="#contactDetails">Contact details</a> | </p>
+  <p align="left"><font size="+1" face="Times New Roman, Times, serif"><em><a name="aboutUs" id="aboutUs"></a> 
+    <strong><br />
+    About us</strong></em></font></p>
+</div>
+<div align="left" >
+<p><font face="Times New Roman, Times, serif">The HUPO PSI General Proteomics 
+    Standards workgroup (GPS) is tasked to provide standards with relevance to 
+    the whole of proteomics; we are developing solutions in several areas:</font></p>
+</div>
+<ul>
+  <li>
+    <div align="left" >
+      <div align="left"><em><strong>Minimum reporting requirements</strong></em> 
+        -- the evolving Minimum Information About a Proteomics Experiment (MIAPE) 
+        document contains guidelines on how to fully report a proteomics experiment. 
+        It is expected that this document will eventually go into print, and that 
+        the requirement be enforced by journals, compliant repositories and funders 
+        (<em>cf</em>. <a href="http://www.mged.org/Workgroups/MIAME/miame.html">MIAME</a>).</div>
+    </div>
+  </li>
+  <li><em><strong>XML format for data exchange</strong></em> -- derived from the 
+    GPS proteomics workflow/data object model, PSI-OM, this markup language (known 
+    as PSI-ML) is designed to become the standard format for exchanging data between 
+    researchers, and submission to repositories or journals. We will also provide 
+    a generic SQL implementation, but this should only be viewed as a refernece 
+    implementation. The model and the exchange format will eventually form part 
+    of the emerging functional genomics model, which will be part developed by 
+    GPS in collaboration with the developers of the <a href="http://www.mged.org/workgroups/mage/mage.html">MAGE</a> 
+    model for transcriptomics.</li>
+  <li><em><strong>Ontologies</strong></em> -- these lists of clearly defined terms 
+    are crucial for the construction of unambiguously worded data files. The GPS 
+    will contribute terms to the <a href="http://www.mged.org/">MGED</a> <a href="http://mged.sourceforge.net/ontologies/mgedontology.php">ontology</a> 
+    (extended), under the 'psi' namespace. We will also coordinate with the Mass 
+    Spec (and Search Engines) working group, whose ontology terms will likely 
+    be owned by the American Society for Mass Spectrometry (<a href="http://www.asms.org/" target="_parent">ASMS</a>).</li>
+  <li><font face="Times New Roman, Times, serif"><strong><em>Other activities</em></strong> 
+    -- We will soon produce a finished 'Design Principles' document, which summarises 
+    the principles we utiilise when evolving the design of both MIAPE and PSI-OM/ML. 
+    We are also coordinating the generation of a document examining the comparability 
+    of search engine metrics (<em>e.g.</em> Mascot versus SeQuest).</font></li>
+</ul>
+<div align="left" >
+  <p><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a></font></p>
+  <p><font face="Times New Roman, Times, serif"><a href="psi-gps.html"><em> </em></a><em><a name="miape" id="miape"></a><br />
+    </em></font><font size="+1" face="Times New Roman, Times, serif"><em><strong>The 
+    MIAPE minimum reporting requirement</strong></em></font></p>
+</div>
+<div align="left" > 
+  <p align="left">The context-sensitive nature of both transcriptome and proteome 
+    data necessitates the capture of a richer set of metadata (data about the 
+    data) than is required for basic genetic sequence, where usually knowing the 
+    organism of origin will suffice. The use of paper citations as proxies for 
+    actual metadata hinders the reassessment of data sets, and obstructs non&#8211;standard 
+    searching (e.g. by the order that different liquid chromatography columns 
+    were coupled). The requirements of the various journals also differ, so important 
+    detail may be lacking in some cases, or presented in an esoteric fashion.</p>
+  <p>There is then a need for public repositories that contain information from 
+    whole proteomics experiments; making explicit both where samples came from, 
+    and how analyses of them were performed. It is therefore appropriate to attempt 
+    to define the minimum set of information about a proteomics experiment that 
+    would be required by such a repository.</p>
+  <p align="left">The first draft of this document will be presented at <a href="http://www.asms.org/confASMS2004GenInfo.php">ASMS 
+    Nashville</a> (May 23 - 27, 2004). The working draft, once available in CVS, 
+    will be linked from here...</p>
+</div>
+<div align="left" ><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+  to the top &#710;&#710;</a><br /><br />
+  <a name="psiModel" id="psiModel"></a><br />
+  </font><font size="+1" face="Times New Roman, Times, serif"><em><strong>The 
+  PSI Object Model</strong></em></font></div>
+<div align="left" > 
+  <p align="left">Data and metadata produced in different places may be in different 
+    formats, making comparison and exchange difficult. We therefore seek to develop 
+    a consensus object model and derived interchange format (XML Schema), to facilitate 
+    the development of effective search and analysis tools, simplifying both the 
+    dissemination and exchange of data. The development of the OM will be guided 
+    by our design principles, as laid out in the appropriate document, and will 
+    factor in the wisdom and experience of a wide range of concerned people, both 
+    in academia and industry. The XML Schema (PSI-ML) will be offered as a standard 
+    format for data exchange; a reference generic SQL implementation will also 
+    be offered, but as a guide only.</p>
+  <p align="left">The object model (in various formats) will be viewable here, 
+    as will the markup and SQL implementations.</p>
+  </div>
+<div align="left" ><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+  to the top &#710;&#710;</a><em><br /><br />
+  <a name="psiOntology" id="psiOntology"></a><br />
+  </em></font><font size="+1" face="Times New Roman, Times, serif"><em><strong>The 
+  PSI Ontology</strong></em></font></div>
+<div align="left" > 
+  <p align="left">The GPS ontology (notionally titled PSI-Ont) will take the form 
+    of an extension of the <a href="http://mged.sourceforge.net/ontologies/MGEDontology.php">MGED 
+    ontology</a>. The particulars of this developmental approach are still being 
+    worked out, details will be posted a.s.a.p.; however in the meantime a Word 
+    document will be made available here.</p>
+  <p align="left"><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a><em><br />
+    <br />
+    <a name="discussionDocs" id="discussionDocs"></a></em></font><font size="+1" face="Times New Roman, Times, serif"><em><br />
+    <strong>Discussion documents</strong></em></font></p>
+  <p align="left">As stated above, two general documents will be developed and 
+    disseminated through this site:</p>
+</div>
+<ul>
+  <li>
+    <div align="left" >GPS Design Principles: This document will lay out our general 
+      approaches in all aspects of our design (for example, describing the level 
+      of detail we would seek to require for MIAPE compliance, or the kinds of 
+      structures we will use in out modelling). General in nature, it is expected 
+      that this document will reach a settled form in a short space of time.</div>
+  </li>
+</ul>
+<div align="left" >
+  <p align="left"><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a><em><br />
+    <br />
+    <a name="meetingReports" id="meetingReports"></a></em></font><font size="+1" face="Times New Roman, Times, serif"><em><br />
+    <strong>Meeting reports</strong></em></font></p>
+  <p align="left">Meeting reports (including that for the GPS sessions at Carros, 
+    April 2004) will go here.</p>
+  <p align="left"><font face="Times New Roman, Times, serif"> &nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a><em><br />
+    <br />
+    <a name="discussionList" id="discussionList"></a></em></font><font size="+1" face="Times New Roman, Times, serif"><em><br />
+    <strong>Moderated email discussion list</strong></em></font></p>
+  <p align="left">A list will soon be instantiated catering specifically to the 
+    GPS workgroup's activities. Details will appear here.</p>
+  <p align="left"><font face="Times New Roman, Times, serif"> &nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a><em><br />
+    <br />
+    <a name="collaborators" id="collaborators"></a></em></font><font size="+1" face="Times New Roman, Times, serif"><em><br />
+    <strong>Collaborators</strong></em></font></p>
+  <p align="left">Collaborators list to go here. There's lots of them :)</p>
+  <p align="left"><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a><em><br />
+    <br />
+    <a name="contactDetails" id="contactDetails"></a></em></font><font size="+1" face="Times New Roman, Times, serif"><em><br />
+    <strong>Contact details (organisers)</strong></em></font></p>
+  <p align="left">For now, any queries or grumbles should be emailed to Chris 
+    Taylor on <font face="Times New Roman, Times, serif"><em>christ@ebi.ac.uk</em></font></p>
+  <p align="left"><font face="Times New Roman, Times, serif">&nbsp;<a href="psi-gps.html">&#710;&#710; 
+    to the top &#710;&#710;</a></font></p>
+  <p align="left">&nbsp;</p>
+  <hr />
+  <div align="left">
+    <p><font face="Times New Roman, Times, serif"><em>Chris Taylor, christ@ebi.ac.uk, 
+      May 4th, 2004.</em></font></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div>
+</div>
+</body>
+</html>
