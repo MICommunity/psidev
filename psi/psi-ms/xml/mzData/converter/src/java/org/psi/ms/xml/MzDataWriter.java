@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.2 2003/09/12 16:04:55 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.3 2003/09/15 12:42:39 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,6 +8,9 @@
  */
 package org.psi.ms.xml;
 
+import org.apache.commons.codec.EncoderException;
+import org.psi.ms.helper.Utils;
+import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.model.*;
 import org.xmlpull.mxp1_serializer.MXSerializer;
 import org.xmlpull.v1.XmlSerializer;
@@ -17,7 +20,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.zip.GZIPOutputStream;
 
 /**
@@ -26,9 +31,36 @@ import java.util.zip.GZIPOutputStream;
  */
 public class MzDataWriter {
 
+    /**
+     * This class is responsible for writing
+     * the XML code.
+     */
     private XmlSerializer xmlSerializer;
+
+    /**
+     * The output stream used for the XML output.
+     */
     private OutputStream stream;
+
+    /**
+     * Flag, whether the MzDataWriter has to close
+     * the stream after writing (in the case it
+     * created the stream itself) or not (in the
+     * case the calling application created the
+     * stream).
+     */
     private boolean close = false;
+
+    /**
+     * The ouput type. Either XML elements or base 64 data block.
+     * Default is base 64 block.
+     */
+    private OutputType outputType = OutputType.BASE64;
+
+    /**
+     * This formatter creates/parses the W3C XML type xs:dateTime
+     */
+    private SimpleDateFormat xsDateTimeFormatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 
     public MzDataWriter() {
         xmlSerializer = new MXSerializer();
@@ -48,6 +80,22 @@ public class MzDataWriter {
         close = true;
     }
 
+    /**
+     * Returns the output type. Either XML elements or Base 64 data block.
+     * @return the output type.
+     */
+    public OutputType getOutputType() {
+        return outputType;
+    }
+
+    /**
+     * Sets the output type. Either XML elements or Base 64 data block.
+     * @param outputType The output type.
+     */
+    public void setOutputType(OutputType outputType) {
+        this.outputType = outputType;
+    }
+
     private void startTag(String namespace, String tagName) throws IOException {
         xmlSerializer.startTag(namespace, tagName);
     }
@@ -64,24 +112,32 @@ public class MzDataWriter {
         xmlSerializer.text(s);
     }
 
-    public void marshall(MzData mzData) throws IOException {
-        xmlSerializer.setOutput(stream, "UTF-8");
-        xmlSerializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-indentation", "  ");
-        xmlSerializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-line-separator", "\n");
-        xmlSerializer.startDocument("UTF-8", null);
+    public void marshall(MzData mzData) throws PsiMsConverterException {
+        try {
+            xmlSerializer.setOutput(stream, "UTF-8");
+            xmlSerializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-indentation", "  ");
+            xmlSerializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-line-separator", "\n");
+            xmlSerializer.startDocument("UTF-8", null);
 
-        text("\n");
-        startTag(null, "mzData");
-        attribute(null, "version", mzData.getVersion());
-        marshall(mzData.getDesc());
-        marshall(mzData.getRaw());
-        endTag(null, "mzData");
-        text("\n");
+            text("\n");
+            startTag(null, "mzData");
+            attribute(null, "version", mzData.getVersion());
+            marshall(mzData.getDesc());
+            marshall(mzData.getRaw());
+            endTag(null, "mzData");
+            text("\n");
 
-        xmlSerializer.endDocument();
-        stream.flush();
-        if (close)
-            stream.close();
+            xmlSerializer.endDocument();
+            stream.flush();
+            if (close)
+                stream.close();
+        } catch (IOException e) {
+            throw new PsiMsConverterException(e);
+        } catch (IllegalArgumentException e) {
+            throw new PsiMsConverterException(e);
+        } catch (IllegalStateException e) {
+            throw new PsiMsConverterException(e);
+        }
     }
 
     private void marshall(Desc desc) throws IOException {
@@ -255,10 +311,9 @@ public class MzDataWriter {
 
     private void marshall(Software software) throws IOException {
         startTag(null, "software");
-        //Todo: the date is most certainly not in xs:dateTime format. Fix that!
         Date completionTime = software.getCompletionTime();
         if (completionTime != null) {
-            attribute(null, "completionTime", completionTime);
+            attribute(null, "completionTime", xsDateTimeFormatter.format(completionTime));
         }
         startTag(null, "name");
         text(software.getName());
@@ -404,7 +459,7 @@ public class MzDataWriter {
     private void marshall(AcqTime acqTime) throws IOException {
         startTag(null, "acqTime");
         attribute(null, "units", acqTime.getUnits());
-        text(acqTime.getContent().toString());
+        text(xsDateTimeFormatter.format(acqTime.getContent()));
         endTag(null, "acqTime");
     }
 
@@ -501,7 +556,7 @@ public class MzDataWriter {
         endTag(null, "supDesc");
     }
 
-    private void marshall(Raw raw) throws IOException {
+    private void marshall(Raw raw) throws IOException, PsiMsConverterException {
         startTag(null, "raw");
         marshall(raw.getAcquisitionList());
         SupplementList supplementList = raw.getSupplementList();
@@ -511,7 +566,7 @@ public class MzDataWriter {
         endTag(null, "raw");
     }
 
-    private void marshall(AcquisitionList acquisitionList) throws IOException {
+    private void marshall(AcquisitionList acquisitionList) throws IOException, PsiMsConverterException {
         startTag(null, "acquisitionList");
         int count = acquisitionList.getCount();
         attribute(null, "count", Integer.toString(count));
@@ -521,7 +576,7 @@ public class MzDataWriter {
         endTag(null, "acquisitionList");
     }
 
-    private void marshall(Acquisition acquisition) throws IOException {
+    private void marshall(Acquisition acquisition) throws IOException, PsiMsConverterException {
         startTag(null, "acquisition");
         attribute(null, "id", Integer.toString(acquisition.getId()));
         marshall(acquisition.getMzArray(), "mzArray");
@@ -529,16 +584,33 @@ public class MzDataWriter {
         endTag(null, "acquisition");
     }
 
-    private void marshall(RawDataType rawDataType, String tagName) throws IOException {
-        startTag(null, tagName);
-        int length = rawDataType.getLength();
-        attribute(null, "length", Integer.toString(length));
-        for (int iii = 0; iii < length; iii++) {
-            startTag(null, "float");
-            text(Float.toString(rawDataType.getFloat(iii)));
-            endTag(null, "float");
+    private void marshall(RawDataType rawDataType, String tagName) throws IOException, PsiMsConverterException {
+        if (this.outputType.equals(OutputType.BASE64)) {
+            startTag(null, tagName + "Binary");
+            startTag(null, "data");
+            attribute(null, "precision", "32");
+            int length = rawDataType.getLength();
+            attribute(null, "length", Integer.toString(length));
+            String base64String = "";
+            try {
+                base64String = Utils.floatListToBase64String(rawDataType.getFloat());
+            } catch (EncoderException e) {
+                throw new PsiMsConverterException("Could not create base 64 encoded string!");
+            }
+            text(base64String);
+            endTag(null, "data");
+            endTag(null, tagName + "Binary");
+        } else if (outputType.equals(OutputType.XML)) {
+            startTag(null, tagName);
+            int length = rawDataType.getLength();
+            attribute(null, "length", Integer.toString(length));
+            for (int iii = 0; iii < length; iii++) {
+                startTag(null, "float");
+                text(Float.toString(rawDataType.getFloat(iii)));
+                endTag(null, "float");
+            }
+            endTag(null, tagName);
         }
-        endTag(null, tagName);
     }
 
     private void marshall(SupplementList supplementList) throws IOException {
@@ -606,14 +678,127 @@ public class MzDataWriter {
             endTag(null, "float");
         } else if (value instanceof Date) {
             startTag(null, "time");
-            //Todo: the date is most certainly not in xs:dateTime format. Fix that!
-            text(value.toString());
+            text(xsDateTimeFormatter.format(value));
             endTag(null, "time");
         } else if (value instanceof URI) {
             startTag(null, "URI");
             text(value.toString());
             endTag(null, "URI");
         }
+    }
+
+    /**
+     * Class OutputType.
+     *
+     * @version $Revision: 1.3 $ $Date: 2003/09/15 12:42:39 $
+     */
+    public static class OutputType implements java.io.Serializable {
+
+
+        //--------------------------/
+        //- Class/Member Variables -/
+        //--------------------------/
+
+        /**
+         * The XML type
+         */
+        public static final int XML_TYPE = 0;
+
+        /**
+         * The instance of the XML output type
+         */
+        public static final OutputType XML = new OutputType(XML_TYPE, "XML");
+
+        /**
+         * The BASE64 output type
+         */
+        public static final int BASE64_TYPE = 1;
+
+        /**
+         * The instance of the BASE64 output type
+         */
+        public static final OutputType BASE64 = new OutputType(BASE64_TYPE, "BASE64");
+
+        /**
+         * Field _memberTable
+         */
+        private static java.util.Hashtable _memberTable = init();
+
+        /**
+         * Field type
+         */
+        private int type = -1;
+
+        /**
+         * Field stringValue
+         */
+        private java.lang.String stringValue = null;
+
+
+        //----------------/
+        //- Constructors -/
+        //----------------/
+
+        private OutputType(int type, java.lang.String value) {
+            super();
+            this.type = type;
+            this.stringValue = value;
+        } //-- Type(int, java.lang.String)
+
+
+        //-----------/
+        //- Methods -/
+        //-----------/
+
+        /**
+         * Method enumerateReturns an enumeration of all possible
+         * instances of OutputType
+         */
+        public static java.util.Enumeration enumerate() {
+            return _memberTable.elements();
+        } //-- java.util.Enumeration enumerate()
+
+        /**
+         * Method getTypeReturns the type of this OutputType
+         */
+        public int getType() {
+            return this.type;
+        } //-- int getType()
+
+        /**
+         * Method init
+         */
+        private static java.util.Hashtable init() {
+            Hashtable members = new Hashtable();
+            members.put("XML", XML);
+            members.put("BASE64", BASE64);
+            return members;
+        } //-- java.util.Hashtable init()
+
+        /**
+         * Method toStringReturns the String representation of this
+         * OutputType
+         */
+        public java.lang.String toString() {
+            return this.stringValue;
+        } //-- java.lang.String toString()
+
+        /**
+         * Method valueOfReturns a new OutputType based on
+         * the given String value.
+         *
+         * @param string
+         */
+        public static OutputType valueOf(java.lang.String string) {
+            java.lang.Object obj = null;
+            if (string != null) obj = _memberTable.get(string);
+            if (obj == null) {
+                String err = "'" + string + "' is not a valid Type";
+                throw new IllegalArgumentException(err);
+            }
+            return (OutputType) obj;
+        } //-- Type valueOf(java.lang.String)
+
     }
 
 }
