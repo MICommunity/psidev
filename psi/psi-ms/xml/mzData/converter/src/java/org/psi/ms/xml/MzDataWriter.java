@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.7 2003/12/03 17:41:26 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.8 2003/12/05 16:02:54 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -354,7 +354,7 @@ public class MzDataWriter implements ExporterI {
         endTag(null, "processingMethod");
     }
 
-    private void marshall(AcqDesc acqDesc) throws IOException {
+    private void marshall(AcqDesc acqDesc) throws IOException, PsiMsConverterException {
         startTag(null, "acqDesc");
         marshall(acqDesc.getAcqSettings());
         PrecursorList precursorList = acqDesc.getPrecursorList();
@@ -387,9 +387,14 @@ public class MzDataWriter implements ExporterI {
         endTag(null, "acqDesc");
     }
 
-    private void marshall(AcqSettings acqSettings) throws IOException {
+    private void marshall(AcqSettings acqSettings) throws IOException, PsiMsConverterException {
         startTag(null, "acqSettings");
-        attribute(null, "specType", acqSettings.getSpecType());
+        AcqSettings.SpecType specType = acqSettings.getSpecType();
+        if (specType != null) {
+            attribute(null, "specType", specType);
+        } else {
+            throw new PsiMsConverterException("acqSettings@specType is a required atttribute.");
+        }
         marshall(acqSettings.getAcqSpecification());
         marshall(acqSettings.getInstrument());
         AcqTime acqTime = acqSettings.getAcqTime();
@@ -399,11 +404,19 @@ public class MzDataWriter implements ExporterI {
         endTag(null, "acqSettings");
     }
 
-    private void marshall(AcqSpecification acqSpecification) throws IOException {
+    private void marshall(AcqSpecification acqSpecification) throws IOException, PsiMsConverterException {
         startTag(null, "acqSpecification");
-        attribute(null, "method", acqSpecification.getMethod());
+        AcqSpecification.Method method = acqSpecification.getMethod();
+        if (method != null) {
+            attribute(null, "method", method);
+        } else {
+            throw new PsiMsConverterException("acqSpecification@method is a required attribute.");
+        }
         Range range = acqSpecification.getRange();
         List list = acqSpecification.getList();
+        if (range == null && list == null) {
+            throw new PsiMsConverterException("Either acqSpecification/range or acqSpecification/list must be available.");
+        }
         if (range != null && list == null) {
             marshall(range);
         }
@@ -432,10 +445,19 @@ public class MzDataWriter implements ExporterI {
         endTag(null, "list");
     }
 
-    private void marshall(InstrumentAcqSettings instrumentAcqSettings) throws IOException {
+    private void marshall(InstrumentAcqSettings instrumentAcqSettings) throws IOException, PsiMsConverterException {
         startTag(null, "acqInst");
-        attribute(null, "acqType", instrumentAcqSettings.getAcqType());
-        attribute(null, "msLevel", Integer.toString(instrumentAcqSettings.getMsLevel()));
+        InstrumentAcqSettings.AcqType acqType = instrumentAcqSettings.getAcqType();
+        if (acqType != null) {
+            attribute(null, "acqType", acqType);
+        } else {
+            throw new PsiMsConverterException("acqInst@acqType is a required attribute.");
+        }
+        if (instrumentAcqSettings.hasMsLevel()) {
+            attribute(null, "msLevel", Integer.toString(instrumentAcqSettings.getMsLevel()));
+        } else {
+            throw new PsiMsConverterException("acqInst@msLevel is a required attribute.");
+        }
         InstrumentAcqSettings.Polarity polarity = instrumentAcqSettings.getPolarity();
         if (polarity != null) {
             attribute(null, "polarity", polarity);
@@ -682,7 +704,7 @@ public class MzDataWriter implements ExporterI {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.7 $ $Date: 2003/12/03 17:41:26 $
+     * @version $Revision: 1.8 $ $Date: 2003/12/05 16:02:54 $
      */
     public static class OutputType implements java.io.Serializable {
 
