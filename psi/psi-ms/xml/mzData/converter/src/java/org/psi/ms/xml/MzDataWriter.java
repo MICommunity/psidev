@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.1 2003/09/12 15:49:15 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.2 2003/09/12 16:04:55 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -12,10 +12,13 @@ import org.psi.ms.model.*;
 import org.xmlpull.mxp1_serializer.MXSerializer;
 import org.xmlpull.v1.XmlSerializer;
 
-import java.io.*;
-import java.util.zip.GZIPOutputStream;
-import java.util.Date;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URI;
+import java.util.Date;
+import java.util.zip.GZIPOutputStream;
 
 /**
  *
@@ -289,7 +292,7 @@ public class MzDataWriter {
         endTag(null, "processingMethod");
     }
 
-    private void marshall(org.psi.ms.model.AcqDesc acqDesc) throws IOException {
+    private void marshall(AcqDesc acqDesc) throws IOException {
         startTag(null, "acqDesc");
         attribute(null, "id", Integer.toString(acqDesc.getId()));
         marshall(acqDesc.getAcqSettings());
@@ -323,7 +326,7 @@ public class MzDataWriter {
         endTag(null, "acqDesc");
     }
 
-    private void marshall(org.psi.ms.model.AcqSettings acqSettings) throws IOException {
+    private void marshall(AcqSettings acqSettings) throws IOException {
         startTag(null, "acqSettings");
         attribute(null, "specType", acqSettings.getSpecType());
         marshall(acqSettings.getAcqSpecification());
@@ -335,7 +338,7 @@ public class MzDataWriter {
         endTag(null, "acqSettings");
     }
 
-    private void marshall(org.psi.ms.model.AcqSpecification acqSpecification) throws IOException {
+    private void marshall(AcqSpecification acqSpecification) throws IOException {
         startTag(null, "acqSpecification");
         attribute(null, "method", acqSpecification.getMethod());
         Range range = acqSpecification.getRange();
@@ -349,14 +352,14 @@ public class MzDataWriter {
         endTag(null, "acqSpecification");
     }
 
-    private void marshall(org.psi.ms.model.Range range) throws IOException {
+    private void marshall(Range range) throws IOException {
         startTag(null, "range");
         attribute(null, "start", Integer.toString(range.getStart()));
         attribute(null, "end", Integer.toString(range.getEnd()));
         endTag(null, "range");
     }
 
-    private void marshall(org.psi.ms.model.List list) throws IOException {
+    private void marshall(List list) throws IOException {
         startTag(null, "list");
         int count = list.getCount();
         text(Integer.toString(count));
@@ -368,7 +371,7 @@ public class MzDataWriter {
         endTag(null, "list");
     }
 
-    private void marshall(org.psi.ms.model.InstrumentAcqSettings instrumentAcqSettings) throws IOException {
+    private void marshall(InstrumentAcqSettings instrumentAcqSettings) throws IOException {
         startTag(null, "instrument");
         attribute(null, "acqType", instrumentAcqSettings.getAcqType());
         attribute(null, "msLevel", Integer.toString(instrumentAcqSettings.getMsLevel()));
@@ -391,21 +394,21 @@ public class MzDataWriter {
         endTag(null, "instrument");
     }
 
-    private void marshall(org.psi.ms.model.MzRange mzRange) throws IOException {
+    private void marshall(MzRange mzRange) throws IOException {
         startTag(null, "mzRange");
         attribute(null, "start", Integer.toString(mzRange.getStart()));
         attribute(null, "stop", Integer.toString(mzRange.getStop()));
         endTag(null, "mzRange");
     }
 
-    private void marshall(org.psi.ms.model.AcqTime acqTime) throws IOException {
+    private void marshall(AcqTime acqTime) throws IOException {
         startTag(null, "acqTime");
         attribute(null, "units", acqTime.getUnits());
         text(acqTime.getContent().toString());
         endTag(null, "acqTime");
     }
 
-    private void marshall(org.psi.ms.model.PrecursorList precursorList) throws IOException {
+    private void marshall(PrecursorList precursorList) throws IOException {
         startTag(null, "precursorList");
         int count = precursorList.getCount();
         attribute(null, "count", Integer.toString(count));
@@ -415,7 +418,7 @@ public class MzDataWriter {
         endTag(null, "precursorList");
     }
 
-    private void marshall(org.psi.ms.model.Precursor precursor) throws IOException {
+    private void marshall(Precursor precursor) throws IOException {
         startTag(null, "precursor");
         attribute(null, "msLevel", Integer.toString(precursor.getMsLevel()));
         attribute(null, "acqID", Integer.toString(precursor.getAcqID()));
@@ -427,7 +430,7 @@ public class MzDataWriter {
         endTag(null, "precursor");
     }
 
-    private void marshall(org.psi.ms.model.Activation activation) throws IOException {
+    private void marshall(Activation activation) throws IOException {
         startTag(null, "activation");
         attribute(null, "method", activation.getMethod());
         if (activation.hasEnergy()) {
@@ -436,7 +439,7 @@ public class MzDataWriter {
         endTag(null, "activation");
     }
 
-    private void marshall(org.psi.ms.model.Ion ion, String tagName) throws IOException {
+    private void marshall(Ion ion, String tagName) throws IOException {
         startTag(null, tagName);
         if (ion.hasAcqID()) {
             attribute(null, "acqID", Integer.toString(ion.getAcqID()));
@@ -453,7 +456,7 @@ public class MzDataWriter {
         endTag(null, tagName);
     }
 
-    private void marshall(org.psi.ms.model.Summary summary) throws IOException {
+    private void marshall(Summary summary) throws IOException {
         startTag(null, "summary");
         if (summary.hasHighMZ()) {
             attribute(null, "highMZ", Float.toString(summary.getHighMZ()));
@@ -471,7 +474,7 @@ public class MzDataWriter {
         endTag(null, "summary");
     }
 
-    private void marshall(org.psi.ms.model.SupDesc supDesc) throws IOException {
+    private void marshall(SupDesc supDesc) throws IOException {
         startTag(null, "supDesc");
         attribute(null, "id", Integer.toString(supDesc.getId()));
         startTag(null, "supDataName");
@@ -498,7 +501,7 @@ public class MzDataWriter {
         endTag(null, "supDesc");
     }
 
-    private void marshall(org.psi.ms.model.Raw raw) throws IOException {
+    private void marshall(Raw raw) throws IOException {
         startTag(null, "raw");
         marshall(raw.getAcquisitionList());
         SupplementList supplementList = raw.getSupplementList();
@@ -508,7 +511,7 @@ public class MzDataWriter {
         endTag(null, "raw");
     }
 
-    private void marshall(org.psi.ms.model.AcquisitionList acquisitionList) throws IOException {
+    private void marshall(AcquisitionList acquisitionList) throws IOException {
         startTag(null, "acquisitionList");
         int count = acquisitionList.getCount();
         attribute(null, "count", Integer.toString(count));
@@ -518,7 +521,7 @@ public class MzDataWriter {
         endTag(null, "acquisitionList");
     }
 
-    private void marshall(org.psi.ms.model.Acquisition acquisition) throws IOException {
+    private void marshall(Acquisition acquisition) throws IOException {
         startTag(null, "acquisition");
         attribute(null, "id", Integer.toString(acquisition.getId()));
         marshall(acquisition.getMzArray(), "mzArray");
@@ -526,7 +529,7 @@ public class MzDataWriter {
         endTag(null, "acquisition");
     }
 
-    private void marshall(org.psi.ms.model.RawDataType rawDataType, String tagName) throws IOException {
+    private void marshall(RawDataType rawDataType, String tagName) throws IOException {
         startTag(null, tagName);
         int length = rawDataType.getLength();
         attribute(null, "length", Integer.toString(length));
@@ -538,7 +541,7 @@ public class MzDataWriter {
         endTag(null, tagName);
     }
 
-    private void marshall(org.psi.ms.model.SupplementList supplementList) throws IOException {
+    private void marshall(SupplementList supplementList) throws IOException {
         startTag(null, "supplementList");
         int count = supplementList.getCount();
         attribute(null, "count", Integer.toString(count));
@@ -548,14 +551,14 @@ public class MzDataWriter {
         endTag(null, "supplementList");
     }
 
-    private void marshall(org.psi.ms.model.Supplement supplement) throws IOException {
+    private void marshall(Supplement supplement) throws IOException {
         startTag(null, "supplement");
         attribute(null, "id", Integer.toString(supplement.getId()));
         marshall(supplement.getDataArray());
         endTag(null, "supplement");
     }
 
-    private void marshall(org.psi.ms.model.DataArray dataArray) throws IOException {
+    private void marshall(DataArray dataArray) throws IOException {
         startTag(null, "dataArray");
         attribute(null, "length", Integer.toString(dataArray.getLength()));
         attribute(null, "indexed", Boolean.toString(dataArray.getIndexed()));
@@ -613,13 +616,4 @@ public class MzDataWriter {
         }
     }
 
-
-/* Template
-
-    private void marshall() throws IOException {
-        startTag(null, "");
-
-        endTag(null, "");
-    }
-*/
 }
