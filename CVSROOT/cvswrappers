@@ -28,6 +28,7 @@
 *.rft -kb
 *.ppt -kb
 *.doc -kb
+*.pdf -kb
 *.class -kb
 *.exe -kb
 *.zip -kb
