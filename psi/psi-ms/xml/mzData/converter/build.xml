@@ -35,7 +35,7 @@
 
     <target name="doc">
         <mkdir dir="doc/api"/>
-        <javadoc packagenames="uk.ac.ebi.sptr.xml.*"
+        <javadoc packagenames="org.psi.ms.*"
             sourcepath="${src}/java"
             destdir="${doc}/api"
             access="protected"
