@@ -1,5 +1,7 @@
 package org.psi.ms.swing;
 
+import org.psi.ms.xml.MzDataWriter;
+
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
@@ -17,6 +19,7 @@ public class DirectoryPanel extends JPanel {
 
     private DirectoryChooserPanel oSourceDirPanel;
     private DirectoryChooserPanel oDestDirPanel;
+    private OutputTypePanel oOutputTypePanel;
 
     public DirectoryPanel() {
         prepareFields();
@@ -26,16 +29,18 @@ public class DirectoryPanel extends JPanel {
     private void layoutPanel() {
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(new CompoundBorder
-                (new TitledBorder(new EtchedBorder(), "Admin"),
+                (new TitledBorder(new EtchedBorder(), "Source/Output"),
                         new EmptyBorder(3, 3, 3, 3)));
 
-        this.add(new ContainedJComponent("Source dir", oSourceDirPanel));
-        this.add(new ContainedJComponent("Output dir", oDestDirPanel));
+        this.add(new ContainedJComponent("Source", oSourceDirPanel));
+        this.add(new ContainedJComponent("Output", oDestDirPanel));
+        this.add(new ContainedJComponent("Type",oOutputTypePanel));
     }
 
     private void prepareFields() {
         oSourceDirPanel = new DirectoryChooserPanel(JFileChooser.DIRECTORIES_ONLY);
         oDestDirPanel = new DirectoryChooserPanel(JFileChooser.FILES_ONLY);
+        oOutputTypePanel = new OutputTypePanel();
     }
 
     String getSourceFilePath() {
@@ -44,6 +49,10 @@ public class DirectoryPanel extends JPanel {
 
     String getDestinationFilePath() {
         return oDestDirPanel.getFilePath();
+    }
+
+    MzDataWriter.OutputType getOutputType() {
+        return oOutputTypePanel.getOutputType();
     }
 
     void setDefaultFieldValues() {

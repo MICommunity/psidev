@@ -11,6 +11,8 @@ import java.awt.*;
 import java.util.Vector;
 import java.util.Enumeration;
 import java.util.prefs.Preferences;
+import java.text.NumberFormat;
+import java.text.DecimalFormat;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,8 +33,8 @@ public class InstrumentSettingsPanel extends JPanel {
     private DefaultComboBoxModel oDetectorTypeBoxModel;
 
     private JTextField oInstrumentNameField;
-    private JTextField oResolutionField;
-    private JTextField oAccuracyField;
+    private FloatField oResolutionField;
+    private FloatField oAccuracyField;
 
     public InstrumentSettingsPanel() {
         prepareFields();
@@ -87,11 +89,19 @@ public class InstrumentSettingsPanel extends JPanel {
 
     private void prepareFields() {
 
+        float ofloat = 2221.2345678456F;
+        System.out.println("float is " + ofloat);
+
+        DecimalFormat oFormat = (DecimalFormat)NumberFormat.getNumberInstance();
+        oFormat.setGroupingUsed(false);
+        //oFormat.applyPattern("########");
         oInstrumentNameField = new JTextField();
         oInstrumentNameField.setMargin(new Insets(0,2,0,2));
-        oResolutionField = new JTextField();
+        //todo this field needs validating for floats
+        oResolutionField = new FloatField();
         oResolutionField.setMargin(new Insets(0,2,0,2));
-        oAccuracyField = new JTextField();
+        //todo this field needs validating for floats
+        oAccuracyField = new FloatField();
         oAccuracyField.setMargin(new Insets(0,2,0,2));
 
         Vector oSourceTypes = new Vector();

@@ -86,6 +86,8 @@ public class DirectoryChooserPanel extends JPanel {
             oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
         } else {
             oFileField.setText(oPrefs.get("DestDir", "/"));
+            //todo need to get the caret position to appear at the end of the path, this code
+            //does not work for some reason
             oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
         }
         //oSampleNameField.setText(oPrefs.get("SampleName", "Default Sample"));

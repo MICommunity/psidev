@@ -44,13 +44,13 @@ public class AdminPanel extends JPanel {
 
         JPanel oInnerPanel = new JPanel();
         oInnerPanel.setLayout(new BoxLayout(oInnerPanel, BoxLayout.Y_AXIS));
-        oInnerPanel.setBorder(new CompoundBorder
-                (new TitledBorder(new EtchedBorder(), "Contact"),
-                        new EmptyBorder(3, 3, 3, 3)));
+//        oInnerPanel.setBorder(new CompoundBorder
+//                (new TitledBorder(new EtchedBorder(), "Contact"),
+//                        new EmptyBorder(3, 3, 3, 3)));
 
         JPanel oInnerTopPanel = new JPanel();
         oInnerTopPanel.setLayout(new BoxLayout(oInnerTopPanel, BoxLayout.Y_AXIS));
-        oInnerTopPanel.add(new ContainedJComponent("Sample",oSampleNameField,6), BorderLayout.NORTH);
+        //oInnerTopPanel.add(new ContainedJComponent("Sample",oSampleNameField,6), BorderLayout.NORTH);
         oInnerPanel.add(new ContainedJComponent("Name",oContactNameField,15));
         oInnerPanel.add(new ContainedJComponent("Institute",oContactInstitutionField,5));
 
@@ -90,7 +90,7 @@ public class AdminPanel extends JPanel {
         oContactInfoField.setMargin(new Insets(0,5,0,2));
         oContactInfoScroller = new JScrollPane(){
             public Dimension getPreferredSize() {
-                return new Dimension(super.getPreferredSize().width,100);
+                return new Dimension(super.getPreferredSize().width,200);
             }
         };
         oContactInfoScroller.getViewport().add(oContactInfoField);
@@ -115,6 +115,7 @@ public class AdminPanel extends JPanel {
         Admin oData = new Admin();
         Person oContact = new Person();
 
+        //not setting the name anymore as this is retrieved elsewhere
         oContact.setName(oContactNameField.getText());
         oContact.setInstitution(oContactInstitutionField.getText());
         oContact.setContactInfo(oContactInfoField.getText());

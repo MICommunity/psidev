@@ -25,10 +25,14 @@ public class ParsingBusiness {
 
     }
 
-    void parseData(String poSource, String poDest, MzData poData, ParseListener poListener) {
+    void parseData(String poSource,
+                   String poDest,
+                   MzData poData,
+                   MzDataWriter.OutputType poType,
+                   ParseListener poListener) {
 
         try {
-            oConverter.convertDirectory(poSource, poDest, poData, MzDataWriter.OutputType.BASE64, poListener);
+            oConverter.convertDirectory(poSource, poDest, poData, poType, poListener);
         } catch (PsiMsConverterException e) {
             e.printStackTrace();
         } catch (IOException e) {

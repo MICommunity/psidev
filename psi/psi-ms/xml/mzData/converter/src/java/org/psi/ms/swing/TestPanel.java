@@ -25,7 +25,7 @@ public class TestPanel extends JPanel {
     Preferences oPrefs = Preferences.userNodeForPackage(this.getClass());
 
     JTextField oPeakProcessingField;
-    JTextField oPeakThresholdField;
+    FloatField oPeakThresholdField;
     JCheckBox oPeakprocessingBox;
     JCheckBox oDeIsotopedBox;
     JCheckBox oChargeDeconvolvedBox;
@@ -43,20 +43,26 @@ public class TestPanel extends JPanel {
                 (new TitledBorder(new EtchedBorder(), "Test"),
                         new EmptyBorder(3, 3, 3, 3)));
 
-        JPanel oInnerPanel = new JPanel(new GridLayout(4, 0));
+        JPanel oInnerPanel = new JPanel(new GridLayout(3, 0));
         //oInnerPanel.add(oPeakprocessingBox);
         oInnerPanel.add(new ContainedJComponent("Processing", oPeakProcessingField, 6));
         oInnerPanel.add(new ContainedJComponent("Threshold", oPeakThresholdField));
-        oInnerPanel.add(new ContainedJComponent("Deisotoped ?", oDeIsotopedBox));
-        oInnerPanel.add(new ContainedJComponent("Deconvolved ?", oChargeDeconvolvedBox, 3));
+        FlowLayout oLayout = new FlowLayout(FlowLayout.LEFT,0,0);
+        JPanel oCheckPanel = new JPanel(oLayout);
+        oCheckPanel.add(new ContainedJComponent("Deisotoped ?", oDeIsotopedBox));
+        oCheckPanel.add(Box.createRigidArea(new Dimension(50,0)));
+        oCheckPanel.add(new ContainedJComponent("Deconvolved ?", oChargeDeconvolvedBox));
+        oInnerPanel.add(oCheckPanel);
 
         this.add(oInnerPanel, BorderLayout.NORTH);
     }
 
     private void prepareFields() {
+
+        //todo does this field need validating?
         oPeakProcessingField = new JTextField();
         oPeakProcessingField.setMargin(new Insets(0, 2, 0, 2));
-        oPeakThresholdField = new JTextField();
+        oPeakThresholdField = new FloatField();
         oPeakThresholdField.setMargin(new Insets(0, 2, 0, 2));
 
         oPeakprocessingBox = new JCheckBox();
