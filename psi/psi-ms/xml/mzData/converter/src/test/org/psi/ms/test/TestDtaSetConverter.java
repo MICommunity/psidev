@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.6 2003/09/17 13:25:24 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.7 2003/09/17 15:53:54 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -25,6 +25,6 @@ public class TestDtaSetConverter {
         DtaSetConverter dtaSetConverter = new DtaSetConverter();
         MzData mzData = new MzData();
         dtaSetConverter = new DtaSetConverter();
-        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.BASE64);
+        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.XML);
     }
 }

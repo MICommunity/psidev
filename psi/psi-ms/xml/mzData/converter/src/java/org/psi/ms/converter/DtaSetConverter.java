@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.12 2003/09/17 13:25:22 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.13 2003/09/17 15:53:54 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -72,9 +72,9 @@ public class DtaSetConverter {
             }
             //Tell the GUI that we're busy...
             if (listener != null) {
-                listener.setMessage("Converting file: " + dtaFile);
+                listener.setMessage("Converting file: " + ztaFile);
             } else {
-                System.out.println("Converting file: " + dtaFile);
+                System.out.println("Converting file: " + ztaFile);
             }
             dtaReader.addAcquisitions(ztaFile, mzData, acqId);
             acqId++;
