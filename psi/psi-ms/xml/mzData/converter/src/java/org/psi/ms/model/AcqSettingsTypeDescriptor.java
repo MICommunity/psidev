@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSettingsTypeDescriptor.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: AcqSettingsTypeDescriptor.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class AcqSettingsTypeDescriptor.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/11 17:59:00 $
  */
 public class AcqSettingsTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
@@ -150,7 +150,7 @@ public class AcqSettingsTypeDescriptor extends org.exolab.castor.xml.util.XMLCla
             {
                 try {
                     AcqSettingsType target = (AcqSettingsType) object;
-                    target.setInstrument( (org.psi.ms.model.Instrument) value);
+                    target.setInstrument( (org.psi.ms.model.Instrument2) value);
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());

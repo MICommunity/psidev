@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: DtaReader.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -125,7 +125,7 @@ public class DtaReader {
         ion.setCharge(peptideCharge.intValue());
         precursor.setIon(ion);
         Activation activation = new Activation();
-        activation.setMethod(ActivationMethodType.OTHER);
+        activation.setMethod(ActivationTypeMethodType.OTHER);
         precursor.setActivation(activation);
         precursor.setMsLevel(-1);
         precursor.setAcqID(-1);
@@ -211,12 +211,16 @@ public class DtaReader {
         IntenArrayBinary intenArrayBinary = new IntenArrayBinary();
         acquisitionSequence2.setIntenArrayBinary(intenArrayBinary);
 
-        mzArrayBinary.setContent(mzFloatArray);
-        mzArrayBinary.setLength(size);
-        mzArrayBinary.setPrecision(MzArrayBinaryTypePrecisionType.VALUE_0);
-        intenArrayBinary.setContent(intensityArray);
-        intenArrayBinary.setLength(size);
-        intenArrayBinary.setPrecision(MzArrayBinaryTypePrecisionType.VALUE_0);
+        Data mzData = new Data();
+        mzData.setContent(mzFloatArray);
+        mzData.setLength(size);
+        mzData.setPrecision(DataPrecisionType.VALUE_0);
+        mzArrayBinary.setData(mzData);
+        Data intenData = new Data();
+        intenData.setContent(intensityArray);
+        intenData.setLength(size);
+        intenData.setPrecision(DataPrecisionType.VALUE_0);
+        intenArrayBinary.setData(intenData);
 
         return size;
     }

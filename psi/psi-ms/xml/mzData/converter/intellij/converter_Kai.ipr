@@ -4,25 +4,25 @@
     <jdk name="java version &quot;1.4.1_01&quot;" />
     <projectPath>
       <root type="composite">
-        <root type="simple" url="file://$PROJECT_DIR$" />
+        <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter" />
       </root>
     </projectPath>
     <sourcePath>
       <root type="composite">
         <root type="jdk" rootType="sourcePath" name="java version &quot;1.4.1_01&quot;" />
-        <root type="simple" url="file://$PROJECT_DIR$/src/java" />
-        <root type="simple" url="file://$PROJECT_DIR$/src/test" />
+        <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java" />
+        <root type="simple" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test" />
       </root>
     </sourcePath>
     <classPath>
       <root type="composite">
         <root type="jdk" rootType="classPath" name="java version &quot;1.4.1_01&quot;" />
         <root type="output" />
-        <root type="simple" url="jar://$PROJECT_DIR$/lib/commons-codec-1.1.jar!/" />
-        <root type="simple" url="jar://$PROJECT_DIR$/lib/castor-0.9.5-xml.jar!/" />
-        <root type="simple" url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
-        <root type="simple" url="jar://$PROJECT_DIR$/lib/xmlParserAPIs.jar!/" />
         <root type="simple" url="jar:///System/Library/Frameworks/JavaVM.framework/Versions/1.4.1/Classes/classes.jar!/" />
+        <root type="simple" url="jar:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/lib/castor-0.9.5-xml.jar!/" />
+        <root type="simple" url="jar:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/lib/commons-codec-1.1.jar!/" />
+        <root type="simple" url="jar:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/lib/xercesImpl.jar!/" />
+        <root type="simple" url="jar:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/lib/xmlParserAPIs.jar!/" />
       </root>
     </classPath>
     <excludePath>
@@ -41,7 +41,7 @@
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <option name="SYNCHRONIZE_OUTPUT_DIRECTORY" value="false" />
-    <option name="DEFAULT_OUTPUT_PATH" value="$PROJECT_DIR$/build" />
+    <option name="DEFAULT_OUTPUT_PATH" value="/Users/krunte/work/psi/psi-ms/xml/mzData/converter/build" />
     <option name="OUTPUT_MODE" value="single" />
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html)" />
@@ -66,24 +66,6 @@
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
   <component name="AntConfiguration">
-    <buildFile url="file://$PROJECT_DIR$/build.xml">
-      <useEmacsModeOutput value="true" />
-      <useCustomJdk value="true" />
-      <treeView value="true" />
-      <customJdkName value="java version &quot;1.4.1_01&quot;" />
-      <useJavaw value="false" />
-      <verbose value="true" />
-      <includeProjectClasspath value="true" />
-      <includeParser value="false" />
-      <maximumHeapSize value="128" />
-      <viewClosedWhenNoErrors value="false" />
-      <targetFilters>
-        <filter targetName="doc" isVisible="false" />
-        <filter targetName="clean" isVisible="false" />
-        <filter targetName="build" isVisible="true" />
-        <filter targetName="deploy" isVisible="false" />
-      </targetFilters>
-    </buildFile>
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>

@@ -1,5 +1,5 @@
 /**
- * $Id: TestUnmarshaller.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: TestUnmarshaller.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -37,7 +37,7 @@ public class TestUnmarshaller {
             Acquisition acquisition = acquisionList.getAcquisition(iii);
             AcquisitionTypeSequence2 acquisitionSequence2 = acquisition.getAcquisitionTypeSequence2();
             if (acquisitionSequence2 != null) {
-                byte[] raw = acquisitionSequence2.getMzArrayBinary().getContent();
+                byte[] raw = acquisitionSequence2.getMzArrayBinary().getData().getContent();
                 List mzFloatList = Utils.byteArrayToFloatList(raw);
                 for (int jjj = 0; jjj < mzFloatList.size(); jjj++) {
                     System.out.print(mzFloatList.get(jjj).toString());

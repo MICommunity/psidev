@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSettingsType.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: AcqSettingsType.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -22,7 +22,7 @@ import org.psi.ms.model.types.AcqSettingsTypeSpecTypeType;
 /**
  * Class AcqSettingsType.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/11 17:59:00 $
  */
 public abstract class AcqSettingsType implements java.io.Serializable {
 
@@ -46,7 +46,7 @@ public abstract class AcqSettingsType implements java.io.Serializable {
     /**
      * Field _instrument
      */
-    private org.psi.ms.model.Instrument _instrument;
+    private org.psi.ms.model.Instrument2 _instrument;
 
     /**
      * Field _acqTime
@@ -96,10 +96,10 @@ public abstract class AcqSettingsType implements java.io.Serializable {
      * 
      * @return the value of field 'instrument'.
      */
-    public org.psi.ms.model.Instrument getInstrument()
+    public org.psi.ms.model.Instrument2 getInstrument()
     {
         return this._instrument;
-    } //-- org.psi.ms.model.Instrument getInstrument() 
+    } //-- org.psi.ms.model.Instrument2 getInstrument2()
 
     /**
      * Returns the value of field 'specType'. The field 'specType'
@@ -155,10 +155,10 @@ public abstract class AcqSettingsType implements java.io.Serializable {
      * 
      * @param instrument the value of field 'instrument'.
      */
-    public void setInstrument(org.psi.ms.model.Instrument instrument)
+    public void setInstrument(org.psi.ms.model.Instrument2 instrument)
     {
         this._instrument = instrument;
-    } //-- void setInstrument(org.psi.ms.model.Instrument) 
+    } //-- void setInstrument(org.psi.ms.model.Instrument2)
 
     /**
      * Sets the value of field 'specType'. The field 'specType' has

@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaReader.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: TestDtaReader.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -51,6 +51,7 @@ public class TestDtaReader {
         desc.setAdmin(admin);
 
         // Todo: this information must be provided by the user
+        admin.setSampleName("?");
         Contact contact = new Contact();
         contact.setName("Kai Runte");
         contact.setInstitution("EMBL Outstation - EBI");
@@ -87,9 +88,7 @@ public class TestDtaReader {
         ProcessingMethod processingMethod = new ProcessingMethod();
         test.setProcessingMethod(processingMethod);
 
-        PeakProcessing peakProcessing = new PeakProcessing();
-        peakProcessing.setDesc("?");
-        processingMethod.setPeakProcessing(peakProcessing);
+        processingMethod.setPeakProcessing("?");
 
         return mzData;
     }
