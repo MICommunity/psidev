@@ -31,13 +31,9 @@ public class ParsingBusiness {
         try {
             oConverter.convertDirectory(poSource, poDest, poData, poListener);
         } catch (PsiMsConverterException e) {
-            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+            e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-        } catch (ValidationException e) {
-            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
-        } catch (MarshalException e) {
-            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+            e.printStackTrace();
         }
     }
 }
