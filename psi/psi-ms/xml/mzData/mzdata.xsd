@@ -95,13 +95,20 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="peakProcessing">
+				<xs:annotation>
+					<xs:documentation>The type of peak processing performed.</xs:documentation>
+				</xs:annotation>
 				<xs:complexType>
 					<xs:attribute name="desc" type="xs:string" use="required"/>
 					<xs:attribute name="deisotoped" type="xs:boolean" use="optional"/>
 					<xs:attribute name="chargedeconvolved" type="xs:boolean" use="optional"/>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="peakThreshold" type="xs:float" minOccurs="0"/>
+			<xs:element name="peakThreshold" type="xs:float" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>A threshold intensity value for a peak to be included in this file.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="deisotoped" type="xs:boolean" use="optional" default="false"/>
 		<xs:attribute name="chargeDeconvolved" type="xs:boolean" use="optional" default="false"/>
@@ -113,9 +120,15 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="desc">
+					<xs:annotation>
+						<xs:documentation>Each data set starts with a description section.  Each acquisition given in the 'raw' section has an entry in the description section.  This allows the desc section to be read and then used to find specific entries in the raw section.</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="admin">
+								<xs:annotation>
+									<xs:documentation>Administrative information pertaining to the entire data set is stored here.</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="contact" type="personType">
@@ -132,13 +145,26 @@
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="instrument">
+								<xs:annotation>
+									<xs:documentation>Instrument information common to all acquisitions is stored in this section.</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
-										<xs:element name="instName" type="xs:string"/>
+										<xs:element name="instName" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Descriptive name of the instrument</xs:documentation>
+											</xs:annotation>
+										</xs:element>
 										<xs:element name="source">
+											<xs:annotation>
+												<xs:documentation>Invariant ion source information</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="sourceType">
+														<xs:annotation>
+															<xs:documentation>Type of ion source (controlled)</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:enumeration value="ESI"/>
@@ -152,17 +178,27 @@
 													</xs:element>
 													<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
+															<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="analyzer">
+											<xs:annotation>
+												<xs:documentation>Mass analyzer information </xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="analyzerType">
+														<xs:annotation>
+															<xs:documentation>Mass analyzer type (controlled)</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:enumeration value="LinearQuad"/>
@@ -176,21 +212,39 @@
 															</xs:restriction>
 														</xs:simpleType>
 													</xs:element>
-													<xs:element name="resolution" type="xs:float"/>
-													<xs:element name="accuracy" type="xs:float"/>
-													<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+													<xs:element name="resolution" type="xs:float">
 														<xs:annotation>
-															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
+															<xs:documentation>Base mass analyzer resolution.  This is defined as  full peak width at half maximum intensity divided by mass.  This paramter should hold the full scan resolution if variable resolution is used, or if not otherwise specified in the acquisition section.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="accuracy" type="xs:float">
+														<xs:annotation>
+															<xs:documentation>Base mass accuracy.  This is defined in m/z units.  This element hold the full scan accuracy if variable accuracy is used or not otherwise specified in the acquisition section.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="detector">
+											<xs:annotation>
+												<xs:documentation>Detection information</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="detectorType">
+														<xs:annotation>
+															<xs:documentation>Type of detection for this data set (controlled).</xs:documentation>
+														</xs:annotation>
 														<xs:simpleType>
 															<xs:restriction base="xs:string">
 																<xs:enumeration value="EM"/>
@@ -203,23 +257,34 @@
 													</xs:element>
 													<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
+															<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
 										<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
+												<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="test">
+								<xs:annotation>
+									<xs:documentation>Experimental information regarding the test which resulted in this data set.</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="dataProcessing" maxOccurs="unbounded">
@@ -228,7 +293,7 @@
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="software" type="softwareType" minOccurs="0">
+													<xs:element name="software" type="softwareType">
 														<xs:annotation>
 															<xs:documentation>Specific information on the conversion or processing software.</xs:documentation>
 														</xs:annotation>
@@ -241,29 +306,46 @@
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
-										<xs:element name="processingMethod" type="processingMethodType"/>
-										<xs:element name="testParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+										<xs:element name="processingMethod" type="processingMethodType">
 											<xs:annotation>
-												<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
+												<xs:documentation>Description of the peak processing method.  This element describes the base method used if a variable method is used or not otherwise specified in the acquisition section.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="testUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="testParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="testUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="acqDescList">
+								<xs:annotation>
+									<xs:documentation>List of descriptive information for each acquisition in the raw section</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="acqDesc" maxOccurs="unbounded">
 											<xs:annotation>
-												<xs:documentation>There is one acqDesc for each acquisition below.</xs:documentation>
+												<xs:documentation>There is one acqDesc for each acquisition below.  The ID attribute is keyed to the to acquisition ID.</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="acqSettings">
+														<xs:annotation>
+															<xs:documentation>Settings for this specific acquisition.</xs:documentation>
+														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>
 																<xs:element name="specType">
+																	<xs:annotation>
+																		<xs:documentation>Type of spectrum </xs:documentation>
+																	</xs:annotation>
 																	<xs:simpleType>
 																		<xs:restriction base="xs:string">
 																			<xs:enumeration value="discrete"/>
@@ -272,16 +354,30 @@
 																	</xs:simpleType>
 																</xs:element>
 																<xs:element name="acqSpecification">
+																	<xs:annotation>
+																		<xs:documentation>Specification for combining raw scans/acquisitions into a single peak list.  Either a list of acquisitions, or a range of acquisitions can be specified.</xs:documentation>
+																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:choice>
 																			<xs:element name="list">
+																				<xs:annotation>
+																					<xs:documentation>A list of acquisitions used to create the peak list.  (May contain a single entry)</xs:documentation>
+																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="acq" type="xs:int" maxOccurs="unbounded"/>
+																						<xs:element name="acq" type="xs:int" maxOccurs="unbounded">
+																							<xs:annotation>
+																								<xs:documentation>Scan or acquisition number from original raw file used to create this peak list.</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
 																					</xs:sequence>
+																					<xs:attribute name="count" type="xs:int" use="required"/>
 																				</xs:complexType>
 																			</xs:element>
 																			<xs:element name="range">
+																				<xs:annotation>
+																					<xs:documentation>If a range of scans or acquistions was used to create the peak list then a start and end value can be specified.</xs:documentation>
+																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:attribute name="start" type="xs:int" use="required"/>
 																					<xs:attribute name="end" type="xs:int" use="required"/>
@@ -302,6 +398,9 @@
 																	<xs:complexType>
 																		<xs:sequence>
 																			<xs:element name="acqType">
+																				<xs:annotation>
+																					<xs:documentation>Type of acquisition represented by the peak list (controlled).</xs:documentation>
+																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:string">
 																						<xs:enumeration value="full"/>
@@ -315,8 +414,15 @@
 																					</xs:restriction>
 																				</xs:simpleType>
 																			</xs:element>
-																			<xs:element name="msLevel" type="xs:int"/>
+																			<xs:element name="msLevel" type="xs:int">
+																				<xs:annotation>
+																					<xs:documentation>Number of stages of mass spectrometry performed to generate the peak list (MS^n).</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
 																			<xs:element name="polarity" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Polarity of the ionization/mass analyzer (controlled).</xs:documentation>
+																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:string">
 																						<xs:enumeration value="+"/>
@@ -326,25 +432,12 @@
 																				</xs:simpleType>
 																			</xs:element>
 																			<xs:element name="mzRange" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Range in m/z units of the mass analysis.</xs:documentation>
+																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:attribute name="start" type="xs:int" use="required"/>
 																					<xs:attribute name="stop" type="xs:int" use="required"/>
-																				</xs:complexType>
-																			</xs:element>
-																			<xs:element name="activation" minOccurs="0">
-																				<xs:complexType>
-																					<xs:attribute name="method" use="required">
-																						<xs:simpleType>
-																							<xs:restriction base="xs:string">
-																								<xs:enumeration value="CID"/>
-																								<xs:enumeration value="PD"/>
-																								<xs:enumeration value="SID"/>
-																								<xs:enumeration value="ECD"/>
-																								<xs:enumeration value="other"/>
-																							</xs:restriction>
-																						</xs:simpleType>
-																					</xs:attribute>
-																					<xs:attribute name="energy" type="xs:float" use="optional"/>
 																				</xs:complexType>
 																			</xs:element>
 																			<xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
@@ -352,7 +445,11 @@
 																					<xs:documentation>This element holds additional  data or annotation information.  It is named, has a value and optionally a description.</xs:documentation>
 																				</xs:annotation>
 																			</xs:element>
-																			<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded"/>
+																			<xs:element name="instUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+																				<xs:annotation>
+																					<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
 																		</xs:sequence>
 																	</xs:complexType>
 																</xs:element>
@@ -379,30 +476,73 @@
 															</xs:sequence>
 														</xs:complexType>
 													</xs:element>
-													<xs:element name="precursor" minOccurs="0">
+													<xs:element name="precursorList" minOccurs="0">
 														<xs:annotation>
-															<xs:documentation>This is the trigger m/z (or m/z's) for tandem MS or data dependent scans.</xs:documentation>
+															<xs:documentation>List of precursor ions for the current acquisition.</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
-															<xs:attribute name="mz" type="xs:float" use="required"/>
-															<xs:attribute name="acqNum" type="xs:positiveInteger" use="optional">
-																<xs:annotation>
-																	<xs:documentation>This is a unique identifier in case more than one trigger ion was selected to generate the spectrum</xs:documentation>
-																</xs:annotation>
-															</xs:attribute>
-															<xs:attribute name="intensity" type="xs:float" use="optional">
-																<xs:annotation>
-																	<xs:documentation>This is the Intensity of the trigger Ion. It is required in case of future exporting to pkl format. This should be the intensity as measured by the instrument</xs:documentation>
-																</xs:annotation>
-															</xs:attribute>
-															<xs:attribute name="charge" type="xs:positiveInteger" use="optional">
-																<xs:annotation>
-																	<xs:documentation>Charge state of the trigger ion</xs:documentation>
-																</xs:annotation>
-															</xs:attribute>
+															<xs:sequence>
+																<xs:element name="precursor" maxOccurs="unbounded">
+																	<xs:annotation>
+																		<xs:documentation>This is the precursor step.  If  source activation is used then msLevel is 0.  The acqID points to the acquisition from which the precursor was selected.  If source activation was used, then acqID is also 0.</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="activation">
+																				<xs:annotation>
+																					<xs:documentation>Type and energy level used for activation.</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:attribute name="method" use="required">
+																						<xs:simpleType>
+																							<xs:restriction base="xs:string">
+																								<xs:enumeration value="CID"/>
+																								<xs:enumeration value="PD"/>
+																								<xs:enumeration value="SID"/>
+																								<xs:enumeration value="ECD"/>
+																								<xs:enumeration value="other"/>
+																							</xs:restriction>
+																						</xs:simpleType>
+																					</xs:attribute>
+																					<xs:attribute name="energy" type="xs:float" use="optional"/>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="ion" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>This is the trigger m/z (or m/z's) for tandem MS or data dependent scans.  It is optional for broad band and source activation methods.</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:attribute name="mz" type="xs:float" use="required"/>
+																					<xs:attribute name="acqID" type="xs:int" use="optional">
+																						<xs:annotation>
+																							<xs:documentation>This is a unique identifier in case more than one trigger ion was selected to generate the spectrum</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="intensity" type="xs:float" use="optional">
+																						<xs:annotation>
+																							<xs:documentation>This is the Intensity of the trigger Ion. It is required in case of future exporting to pkl format. This should be the intensity as measured by the instrument</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																					<xs:attribute name="charge" type="xs:int" use="optional">
+																						<xs:annotation>
+																							<xs:documentation>Charge state of the trigger ion</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="msLevel" type="xs:int" use="required"/>
+																		<xs:attribute name="acqID" type="xs:int" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="count" type="xs:int" use="required"/>
 														</xs:complexType>
 													</xs:element>
 													<xs:element name="summary" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Summary information for this acquisition.</xs:documentation>
+														</xs:annotation>
 														<xs:complexType>
 															<xs:attribute name="lowMZ" type="xs:float" use="optional"/>
 															<xs:attribute name="highMZ" type="xs:float" use="optional"/>
@@ -417,17 +557,21 @@
 													</xs:element>
 													<xs:element name="acqParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
-															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a sinlge value and optionally a description.</xs:documentation>
+															<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="acqUserParam" type="cvUserParamType" minOccurs="0"/>
+													<xs:element name="acqUserParam" type="cvUserParamType" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 													<xs:element name="comment" type="xs:string" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
 															<xs:documentation>Comments regarding acquisition are captured as free text.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="num" type="xs:int" use="required"/>
+												<xs:attribute name="id" type="xs:int" use="required"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -435,18 +579,32 @@
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="supDescList" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of descriptive information for each supplemental data entry in the raw section</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="supDesc" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>There is one supDesc for each supplemental data entry below.  The ID attribute is keyed to the supplement ID below.</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="supDataName" type="xs:string"/>
-													<xs:element name="supParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+													<xs:element name="supDataName" type="xs:string">
 														<xs:annotation>
-															<xs:documentation>This element holds additional  data or annotation information.  It is named, has a sinlge value and optionally a description.</xs:documentation>
+															<xs:documentation>Name of supplemental data set.</xs:documentation>
 														</xs:annotation>
 													</xs:element>
-													<xs:element name="supUserParam" type="cvUserParamType" minOccurs="0"/>
+													<xs:element name="supParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Only controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="supUserParam" type="cvUserParamType" minOccurs="0" maxOccurs="unbounded">
+														<xs:annotation>
+															<xs:documentation>This element holds additional  data or annotation information.  Uncontrolled, or user controlled name values are allowed here.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 													<xs:element name="sourceFile" type="sourceFileType" minOccurs="0" maxOccurs="unbounded">
 														<xs:annotation>
 															<xs:documentation>Information about the original source file used to generate the instance document.</xs:documentation>
@@ -458,7 +616,7 @@
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
-												<xs:attribute name="num"/>
+												<xs:attribute name="id" type="xs:int" use="required"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -469,9 +627,15 @@
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="raw">
+					<xs:annotation>
+						<xs:documentation>This is the actual peak list data.  All that is stored here is the actual data, all descriptive information is in the desc section.</xs:documentation>
+					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="acquisionList">
+								<xs:annotation>
+									<xs:documentation>List of acquisitions.</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="acquisition" maxOccurs="unbounded">
@@ -552,7 +716,7 @@
 														</xs:element>
 													</xs:sequence>
 												</xs:choice>
-												<xs:attribute name="number" type="xs:int" use="required"/>
+												<xs:attribute name="id" type="xs:int" use="required"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
@@ -560,9 +724,15 @@
 								</xs:complexType>
 							</xs:element>
 							<xs:element name="supplementList" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>List of supplemental data arrays</xs:documentation>
+								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="supplement" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>This is an individual supplemental data item.  These may or may not be keyed to an acqusition.</xs:documentation>
+											</xs:annotation>
 											<xs:complexType>
 												<xs:choice>
 													<xs:annotation>
@@ -627,8 +797,7 @@
 														</xs:complexType>
 													</xs:element>
 												</xs:choice>
-												<xs:attribute name="arrayLength" type="xs:int"/>
-												<xs:attribute name="id"/>
+												<xs:attribute name="id" type="xs:int" use="required"/>
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
