@@ -13,7 +13,6 @@
 
     <path id="classpath">
         <pathelement location="${build}"/>
-        <pathelement location="${lib}/castor-0.9.5-xml.jar"/>
         <pathelement location="${lib}/commons-codec-1.1.jar"/>
         <pathelement location="${lib}/xpp3-1.1.3.4-RC3.jar"/>
     </path>
@@ -41,7 +40,6 @@
 
     <target name="build">
         <mkdir dir="${build}"/>
-        <copy file="${src}/xml/mzDataXMLMapping.xml" todir="${build}/org/psi/ms/converter"/>
         <javac debug="${debug}" srcdir="${src}/java" destdir="${build}" nowarn="true">
             <classpath refid="classpath"/>
         </javac>
@@ -51,7 +49,8 @@
         <mkdir dir="${application}"/>
         <jar jarfile="${application}/converter.jar" update="no" index="yes">
             <fileset dir="${build}"/>
-            <zipgroupfileset dir="lib" includes="**.jar"/>
+            <zipgroupfileset dir="lib" includes="commons-codec-1.1.jar"/>
+            <zipgroupfileset dir="lib" includes="xpp3-1.1.3.4-RC3.jar"/>
             <manifest>
               <attribute name="Built-By" value="${user.name}"/>
                 <attribute name="Main-Class" value="org.psi.ms.swing.MainPanel"/>
