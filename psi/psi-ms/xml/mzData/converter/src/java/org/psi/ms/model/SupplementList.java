@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SupplementList.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: SupplementList.java,v 1.4 2003/09/10 14:11:41 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Vector;
 /**
  * List of supplemental data arrays
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/09/10 14:11:41 $
  */
 public class SupplementList implements java.io.Serializable {
 
@@ -24,16 +24,6 @@ public class SupplementList implements java.io.Serializable {
     //--------------------------/
     //- Class/Member Variables -/
     //--------------------------/
-
-    /**
-     * Field _count
-     */
-    private int _count;
-
-    /**
-     * keeps track of state for field: _count
-     */
-    private boolean _has_count;
 
     /**
      * This is an individual supplemental data item. These may or
@@ -78,13 +68,6 @@ public class SupplementList implements java.io.Serializable {
     } //-- void addSupplement(int, org.psi.ms.model.Supplement)
 
     /**
-     * Method deleteCount
-     */
-    public void deleteCount() {
-        this._has_count = false;
-    } //-- void deleteCount()
-
-    /**
      * Method enumerateSupplement
      */
     public java.util.Enumeration enumerateSupplement() {
@@ -97,7 +80,7 @@ public class SupplementList implements java.io.Serializable {
      * @return the value of field 'count'.
      */
     public int getCount() {
-        return this._count;
+        return this._supplementList.size();
     } //-- int getCount()
 
     /**
@@ -138,7 +121,7 @@ public class SupplementList implements java.io.Serializable {
      * Method hasCount
      */
     public boolean hasCount() {
-        return this._has_count;
+        return true;
     } //-- boolean hasCount()
 
     /**
@@ -165,8 +148,6 @@ public class SupplementList implements java.io.Serializable {
      * @param count the value of field 'count'.
      */
     public void setCount(int count) {
-        this._count = count;
-        this._has_count = true;
     } //-- void setCount(int)
 
     /**

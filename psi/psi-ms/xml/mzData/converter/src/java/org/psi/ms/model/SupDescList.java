@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SupDescList.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: SupDescList.java,v 1.4 2003/09/10 14:11:41 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * List of descriptive information for each supplemental data entry
  * in the raw section
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/09/10 14:11:41 $
  */
 public class SupDescList implements java.io.Serializable {
 
@@ -25,16 +25,6 @@ public class SupDescList implements java.io.Serializable {
     //--------------------------/
     //- Class/Member Variables -/
     //--------------------------/
-
-    /**
-     * Field _count
-     */
-    private int _count;
-
-    /**
-     * keeps track of state for field: _count
-     */
-    private boolean _has_count;
 
     /**
      * There is one supDesc for each supplemental data entry below.
@@ -79,13 +69,6 @@ public class SupDescList implements java.io.Serializable {
     } //-- void addSupDesc(int, org.psi.ms.model.SupDesc)
 
     /**
-     * Method deleteCount
-     */
-    public void deleteCount() {
-        this._has_count = false;
-    } //-- void deleteCount()
-
-    /**
      * Method enumerateSupDesc
      */
     public java.util.Enumeration enumerateSupDesc() {
@@ -98,7 +81,7 @@ public class SupDescList implements java.io.Serializable {
      * @return the value of field 'count'.
      */
     public int getCount() {
-        return this._count;
+        return this._supDescList.size();
     } //-- int getCount()
 
     /**
@@ -139,7 +122,7 @@ public class SupDescList implements java.io.Serializable {
      * Method hasCount
      */
     public boolean hasCount() {
-        return this._has_count;
+        return true;
     } //-- boolean hasCount()
 
     /**
@@ -166,8 +149,6 @@ public class SupDescList implements java.io.Serializable {
      * @param count the value of field 'count'.
      */
     public void setCount(int count) {
-        this._count = count;
-        this._has_count = true;
     } //-- void setCount(int)
 
     /**
