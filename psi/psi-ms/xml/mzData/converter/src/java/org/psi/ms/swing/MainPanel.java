@@ -30,7 +30,7 @@ public class MainPanel extends JPanel {
     private InstrumentSettingsPanel oSettingsPanel;
     private TestPanel oTestPanel;
     private DirectoryPanel oDirectoryPanel;
-    final private JButton oParseButton = new JButton("Parse");
+    final private JButton oParseButton = new JButton("Convert");
     private ParseThread oParseThread;
 
     final private ProgressPanel oProgressPanel = new ProgressPanel();
@@ -118,7 +118,7 @@ public class MainPanel extends JPanel {
     }
 
     public static void main(String[] args) {
-        JFrame oFrame = new JFrame("PSI Converter");
+        JFrame oFrame = new JFrame("PSI-MS Converter");
         final MainPanel oMainPanel = new MainPanel();
         oFrame.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
