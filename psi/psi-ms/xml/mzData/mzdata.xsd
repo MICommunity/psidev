@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.9 2003/11/07 18:06:38 krunte Exp $
+ $Id: mzdata.xsd,v 1.10 2003/11/14 11:49:32 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Kai Runte (EBI)
@@ -286,7 +286,6 @@
                 </xs:element>
             </xs:choice>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="supDataBinaryType">
         <xs:sequence>
