@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Precursor.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Precursor.java,v 1.4 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -19,7 +19,7 @@ package org.psi.ms.model;
  * precursor was selected. If source activation was used, then
  * acqID is also 0.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Precursor implements java.io.Serializable {
     /**
@@ -30,14 +30,6 @@ public class Precursor implements java.io.Serializable {
      * keeps track of state for field: _msLevel
      */
     private boolean _has_msLevel;
-    /**
-     * Field _acqID
-     */
-    private int _acqID;
-    /**
-     * keeps track of state for field: _acqID
-     */
-    private boolean _has_acqID;
     /**
      * Type and energy level used for activation.
      */
@@ -62,15 +54,6 @@ public class Precursor implements java.io.Serializable {
     //-----------/
     //- Methods -/
     //-----------/
-
-    /**
-     * Returns the value of field 'acqID'.
-     *
-     * @return the value of field 'acqID'.
-     */
-    public int getAcqID() {
-        return this._acqID;
-    } //-- int getAcqID()
 
     /**
      * Returns the value of field 'activation'. The field
@@ -105,28 +88,11 @@ public class Precursor implements java.io.Serializable {
     } //-- int getMsLevel()
 
     /**
-     * Method hasAcqID
-     */
-    public boolean hasAcqID() {
-        return this._has_acqID;
-    } //-- boolean hasAcqID()
-
-    /**
      * Method hasMsLevel
      */
     public boolean hasMsLevel() {
         return this._has_msLevel;
     } //-- boolean hasMsLevel()
-
-    /**
-     * Sets the value of field 'acqID'.
-     *
-     * @param acqID the value of field 'acqID'.
-     */
-    public void setAcqID(int acqID) {
-        this._acqID = acqID;
-        this._has_acqID = true;
-    } //-- void setAcqID(int)
 
     /**
      * Sets the value of field 'activation'. The field 'activation'

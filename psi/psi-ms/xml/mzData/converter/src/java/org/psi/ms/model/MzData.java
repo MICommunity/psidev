@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: MzData.java,v 1.6 2003/09/15 12:46:45 krunte Exp $
+ * $Id: MzData.java,v 1.7 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * There can bemultiple acquisitions, which might be related via a
  * separation, or just in sequence from an automated run.
  *
- * @version $Revision: 1.6 $ $Date: 2003/09/15 12:46:45 $
+ * @version $Revision: 1.7 $ $Date: 2003/11/14 16:49:30 $
  */
 public class MzData implements java.io.Serializable {
 
@@ -41,11 +41,13 @@ public class MzData implements java.io.Serializable {
     private org.psi.ms.model.Desc _desc;
 
     /**
+     * List of acquisitions.
      * This is the actual peak list data. All that is stored here
      * is the actual data, all descriptive information is in the
      * desc section.
      */
-    private org.psi.ms.model.Raw _raw;
+    private org.psi.ms.model.AcquisitionList _acquisitionList;
+
 
 
     //----------------/
@@ -115,16 +117,17 @@ public class MzData implements java.io.Serializable {
     } //-- org.psi.ms.model.Desc getDesc()
 
     /**
-     * Returns the value of field 'raw'. The field 'raw' has the
-     * following description: This is the actual peak list data.
-     * All that is stored here is the actual data, all descriptive
-     * information is in the desc section.
+     * Returns the value of field 'acquisitionList'. The field
+     * 'acquisitionList' has the following description: List of
+     * acquisitions.
      *
-     * @return the value of field 'raw'.
+     * @return the value of field 'acquisitionList'.
      */
-    public org.psi.ms.model.Raw getRaw() {
-        return this._raw;
-    } //-- org.psi.ms.model.Raw getRaw()
+    public org.psi.ms.model.AcquisitionList getAcquisitionList() {
+        if (_acquisitionList == null)
+            _acquisitionList = new AcquisitionList();
+        return this._acquisitionList;
+    } //-- org.psi.ms.model.AcquisitionList getAcquisitionList()
 
     /**
      * Returns the value of field 'version'.
@@ -150,16 +153,15 @@ public class MzData implements java.io.Serializable {
     } //-- void setDesc(org.psi.ms.model.Desc)
 
     /**
-     * Sets the value of field 'raw'. The field 'raw' has the
-     * following description: This is the actual peak list data.
-     * All that is stored here is the actual data, all descriptive
-     * information is in the desc section.
+     * Sets the value of field 'acquisitionList'. The field
+     * 'acquisitionList' has the following description: List of
+     * acquisitions.
      *
-     * @param raw the value of field 'raw'.
+     * @param acquisitionList the value of field 'acquisitionList'.
      */
-    public void setRaw(org.psi.ms.model.Raw raw) {
-        this._raw = raw;
-    } //-- void setRaw(org.psi.ms.model.Raw)
+    public void setAcquisitionList(org.psi.ms.model.AcquisitionList acquisitionList) {
+        this._acquisitionList = acquisitionList;
+    } //-- void setAcquisitionList(org.psi.ms.model.AcquisitionList)
 
     /**
      * Sets the value of field 'version'.

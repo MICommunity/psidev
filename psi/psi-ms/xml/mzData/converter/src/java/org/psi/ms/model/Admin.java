@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Admin.java,v 1.4 2003/09/10 12:31:55 krunte Exp $
+ * $Id: Admin.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,13 +18,13 @@ import java.util.Vector;
  * stored here.
  * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/10 12:31:55 $
+ * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Admin implements java.io.Serializable {
     /**
      * Field _sampleName
      */
-    private String _sampleName;
+    private String _sampleName = "";
     /**
      * Person person for this dataset.
      */
@@ -86,6 +86,8 @@ public class Admin implements java.io.Serializable {
      * @return the value of field 'contact'.
      */
     public Person getContact() {
+        if (_contact == null)
+            _contact = new Person();
         return this._contact;
     } //-- org.psi.ms.model.Person getContact()
 

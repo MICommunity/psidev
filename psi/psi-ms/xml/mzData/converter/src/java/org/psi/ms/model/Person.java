@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Person.java,v 1.1 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Person.java,v 1.2 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,21 +16,21 @@ package org.psi.ms.model;
 /**
  * Person person for this dataset.
  *
- * @version $Revision: 1.1 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.2 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Person implements java.io.Serializable {
     /**
      * Field _name
      */
-    private String _name;
+    private String _name = "";
     /**
      * Field _institution
      */
-    private String _institution;
+    private String _institution = "";
     /**
      * Field _contactInfo
      */
-    private String _contactInfo;
+    private String _contactInfo = "";
 
 
     //----------------/

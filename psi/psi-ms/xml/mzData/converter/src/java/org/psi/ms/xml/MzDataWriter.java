@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.4 2003/10/20 10:03:02 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -123,7 +123,9 @@ public class MzDataWriter {
             startTag(null, "mzData");
             attribute(null, "version", mzData.getVersion());
             marshall(mzData.getDesc());
-            marshall(mzData.getRaw());
+            startTag(null, "raw");
+            marshall(mzData.getAcquisitionList());
+            endTag(null, "raw");
             endTag(null, "mzData");
             text("\n");
 
@@ -145,28 +147,6 @@ public class MzDataWriter {
         marshall(desc.getAdmin());
         marshall(desc.getInstrument());
         marshall(desc.getTest());
-        AcqDescList acqDescList = desc.getAcqDescList();
-        if (acqDescList != null) {
-            int count = acqDescList.getCount();
-            startTag(null, "acqDescList");
-            attribute(null, "count", Integer.toString(count));
-            for (int iii = 0; iii < count; iii++) {
-                marshall(acqDescList.getAcqDesc(iii));
-            }
-            endTag(null, "acqDescList");
-        }
-        SupDescList supDescList = desc.getSupDescList();
-        if (supDescList != null) {
-            int count = supDescList.getCount();
-            if (count > 0) {
-                startTag(null, "supDescList");
-                attribute(null, "count", Integer.toString(count));
-                for (int iii = 0; iii < count; iii++) {
-                    marshall(supDescList.getSupDesc(iii));
-                }
-                endTag(null, "supDescList");
-            }
-        }
         endTag(null, "desc");
     }
 
@@ -349,7 +329,6 @@ public class MzDataWriter {
 
     private void marshall(AcqDesc acqDesc) throws IOException {
         startTag(null, "acqDesc");
-        attribute(null, "id", Integer.toString(acqDesc.getId()));
         marshall(acqDesc.getAcqSettings());
         PrecursorList precursorList = acqDesc.getPrecursorList();
         if (precursorList != null) {
@@ -476,7 +455,6 @@ public class MzDataWriter {
     private void marshall(Precursor precursor) throws IOException {
         startTag(null, "precursor");
         attribute(null, "msLevel", Integer.toString(precursor.getMsLevel()));
-        attribute(null, "acqID", Integer.toString(precursor.getAcqID()));
         marshall(precursor.getActivation());
         Ion ion = precursor.getIon();
         if (ion != null) {
@@ -556,16 +534,6 @@ public class MzDataWriter {
         endTag(null, "supDesc");
     }
 
-    private void marshall(Raw raw) throws IOException, PsiMsConverterException {
-        startTag(null, "raw");
-        marshall(raw.getAcquisitionList());
-        SupplementList supplementList = raw.getSupplementList();
-        if (supplementList != null) {
-            marshall(supplementList);
-        }
-        endTag(null, "raw");
-    }
-
     private void marshall(AcquisitionList acquisitionList) throws IOException, PsiMsConverterException {
         startTag(null, "acquisitionList");
         int count = acquisitionList.getCount();
@@ -578,9 +546,26 @@ public class MzDataWriter {
 
     private void marshall(Acquisition acquisition) throws IOException, PsiMsConverterException {
         startTag(null, "acquisition");
-        attribute(null, "id", Integer.toString(acquisition.getId()));
+        marshall(acquisition.getAcqDesc());
+        boolean hasSupplements = acquisition.hasSupplementList();
+        SupplementList supplementList = null;
+        int count = -1;
+        if (hasSupplements) {
+            supplementList = acquisition.getSupplementList();
+            count = supplementList.getCount();
+            for (int iii = 0; iii < count; iii++) {
+                Supplement supplement = supplementList.getSupplement(iii);
+                marshall(supplement.getSupDesc());
+            }
+        }
         marshall(acquisition.getMzArray(), "mzArray");
         marshall(acquisition.getIntenArray(), "intenArray");
+        if (hasSupplements) {
+            for (int iii = 0; iii < count; iii++) {
+                Supplement supplement = supplementList.getSupplement(iii);
+                marshall(supplement);
+            }
+        }
         endTag(null, "acquisition");
     }
 
@@ -611,16 +596,6 @@ public class MzDataWriter {
             }
             endTag(null, tagName);
         }
-    }
-
-    private void marshall(SupplementList supplementList) throws IOException {
-        startTag(null, "supplementList");
-        int count = supplementList.getCount();
-        attribute(null, "count", Integer.toString(count));
-        for (int iii = 0; iii < count; iii++) {
-            marshall(supplementList.getSupplement(iii));
-        }
-        endTag(null, "supplementList");
     }
 
     private void marshall(Supplement supplement) throws IOException {
@@ -690,7 +665,7 @@ public class MzDataWriter {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.4 $ $Date: 2003/10/20 10:03:02 $
+     * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
      */
     public static class OutputType implements java.io.Serializable {
 

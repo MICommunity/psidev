@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqDesc.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: AcqDesc.java,v 1.4 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,17 +17,9 @@ import java.util.Vector;
  * There is one acqDesc for each acquisition below. The ID
  * attribute is keyed to the to acquisition ID.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/11/14 16:49:30 $
  */
 public class AcqDesc implements java.io.Serializable {
-    /**
-     * Field _id
-     */
-    private int _id;
-    /**
-     * keeps track of state for field: _id
-     */
-    private boolean _has_id;
     /**
      * Settings for this specific acquisition.
      */
@@ -226,15 +218,6 @@ public class AcqDesc implements java.io.Serializable {
     } //-- int getCommentCount()
 
     /**
-     * Returns the value of field 'id'.
-     *
-     * @return the value of field 'id'.
-     */
-    public int getId() {
-        return this._id;
-    } //-- int getId()
-
-    /**
      * Returns the value of field 'precursorList'. The field
      * 'precursorList' has the following description: List of
      * precursor ions for the current acquisition.
@@ -267,13 +250,6 @@ public class AcqDesc implements java.io.Serializable {
     public Summary getSummary() {
         return this._summary;
     } //-- org.psi.ms.model.Summary getSummary()
-
-    /**
-     * Method hasId
-     */
-    public boolean hasId() {
-        return this._has_id;
-    } //-- boolean hasId()
 
     /**
      * Method removeAcqParam
@@ -390,16 +366,6 @@ public class AcqDesc implements java.io.Serializable {
             _commentList.addElement(commentArray[i]);
         }
     } //-- void setComment(java.lang.String)
-
-    /**
-     * Sets the value of field 'id'.
-     *
-     * @param id the value of field 'id'.
-     */
-    public void setId(int id) {
-        this._id = id;
-        this._has_id = true;
-    } //-- void setId(int)
 
     /**
      * Sets the value of field 'precursorList'. The field

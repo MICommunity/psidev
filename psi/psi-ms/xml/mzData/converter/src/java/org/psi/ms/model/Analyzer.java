@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Analyzer.java,v 1.4 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Analyzer.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,13 +17,13 @@ import java.util.Vector;
 /**
  * Mass analyzer information
  *
- * @version $Revision: 1.4 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Analyzer implements java.io.Serializable {
     /**
      * Mass analyzer type (controlled)
      */
-    private Type _type;
+    private Type _type = Type.OTHER;
     /**
      * Base mass analyzer resolution. This is defined as full peak
      * width at half maximum intensity divided by mass. This
@@ -384,7 +384,7 @@ public class Analyzer implements java.io.Serializable {
     /**
      * Class Type.
      *
-     * @version $Revision: 1.4 $ $Date: 2003/08/28 15:17:12 $
+     * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
      */
     public static class Type implements java.io.Serializable {
 

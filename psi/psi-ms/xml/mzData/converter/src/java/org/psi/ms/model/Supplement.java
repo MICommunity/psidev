@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Supplement.java,v 1.4 2003/09/15 13:44:57 krunte Exp $
+ * $Id: Supplement.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ package org.psi.ms.model;
  * This is an individual supplemental data item. These may or may
  * not be keyed to an acqusition.
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/15 13:44:57 $
+ * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Supplement implements java.io.Serializable {
     /**
@@ -34,6 +34,10 @@ public class Supplement implements java.io.Serializable {
      * element.
      */
     private DataArray _dataArray;
+    /**
+     * The descriptive information for this supplemental data entry.
+     */
+    private SupDesc supDesc;
 
     //----------------/
     //- Constructors -/
@@ -60,6 +64,14 @@ public class Supplement implements java.io.Serializable {
     public DataArray getDataArray() {
         return this._dataArray;
     } //-- org.psi.ms.model.DataArray getDataArray()
+
+    /**
+     * Returns the descriptive information for this supplemental data entry.
+     * @return the descriptive information for this supplemental data entry.
+     */
+    public SupDesc getSupDesc() {
+        return supDesc;
+    }
 
     /**
      * Returns the value of field 'id'.
@@ -89,6 +101,14 @@ public class Supplement implements java.io.Serializable {
     public void setDataArray(DataArray dataArray) {
         this._dataArray = dataArray;
     } //-- void setDataArray(org.psi.ms.model.DataArray)
+
+    /**
+     * Sets the descriptive information for this supplemental data entry.
+     * @param supDesc the descriptive information for this supplemental data entry.
+     */
+    public void setSupDesc(SupDesc supDesc) {
+        this.supDesc = supDesc;
+    }
 
     /**
      * Sets the value of field 'id'.

@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetImporter.java,v 1.1 2003/11/10 10:21:12 krunte Exp $
+ * $Id: DtaSetImporter.java,v 1.2 2003/11/14 16:49:30 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.SortedSet;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -32,24 +33,31 @@ import java.util.regex.Matcher;
  *
  * @author krunte
  */
-public class DtaSetImporter implements ImporterI{
+public class DtaSetImporter implements ImporterI {
 
     private DtaReader dtaReader;
 
     private SortedSet dtaFileSet = null;
+    private Iterator dtaIterator = null;
     private SortedSet ztaFileSet = null;
+    private Iterator ztaIterator = null;
 
-    private int scanNumber = -1;
-    private int acquisitionTime = -1;
+    /**
+     * This defines which file type (.dta or .zta) should be returned
+     * with the next call of {@link #getNextAcquisition() getNextAcquisition}.
+     */
+    private int currentFileType = -1;
+
+    /**
+     * The ParseListener for providing feedback to the (graphical) user interface.
+     */
+    ParseListener parseListener = null;
 
     public DtaSetImporter() {
         dtaReader = new DtaReader();
     }
 
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType) throws PsiMsConverterException, IOException {
-        this.convertDirectory(sourceDirname, outputFilename, mzData, outputType, null);
-    }
-
+    // Todo: swing package relies on this method still.
     public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType, ParseListener listener) throws PsiMsConverterException, IOException {
         File sourceDir = new File(sourceDirname);
         File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
@@ -59,13 +67,14 @@ public class DtaSetImporter implements ImporterI{
         }
         dtaFileSet = Utils.fileArrayToTreeSet(dtaFiles);
         ztaFileSet = Utils.fileArrayToTreeSet(ztaFiles);
-        Iterator dtaIterator = dtaFileSet.iterator();
-        Iterator ztaIterator = ztaFileSet.iterator();
-        int acqId = 0;
+        dtaIterator = dtaFileSet.iterator();
+        ztaIterator = ztaFileSet.iterator();
         //Tell the GUI that we're busy...
         if (listener != null) {
             listener.setMessage("Parsing...");
         }
+
+        org.psi.ms.model.AcquisitionList acquisitionList = mzData.getAcquisitionList();
 
         while (dtaIterator.hasNext() && ztaIterator.hasNext()) {
             String dtaFile = (String) dtaIterator.next();
@@ -76,8 +85,8 @@ public class DtaSetImporter implements ImporterI{
             } else {
                 System.out.println("Converting file: " + dtaFile);
             }
-            dtaReader.addAcquisitions(dtaFile, mzData, acqId);
-            acqId++;
+            Acquisition acquisition = dtaReader.addAcquisitions(dtaFile);
+            acquisitionList.addAcquisition(acquisition);
             //Parsing the .dta file...
             if (listener != null) {
                 listener.fileParsed();
@@ -88,8 +97,8 @@ public class DtaSetImporter implements ImporterI{
             } else {
                 System.out.println("Converting file: " + ztaFile);
             }
-            dtaReader.addAcquisitions(ztaFile, mzData, acqId);
-            acqId++;
+            acquisition = dtaReader.addAcquisitions(ztaFile);
+            acquisitionList.addAcquisition(acquisition);
             //Parsing the .zta file...
             if (listener != null) {
                 listener.fileParsed();
@@ -107,13 +116,6 @@ public class DtaSetImporter implements ImporterI{
         mzDataWriter.marshall(mzData);
     }
 
-    public static void main(String[] argv) throws IOException, PsiMsConverterException {
-        DtaSetImporter dtaSetConverter = new DtaSetImporter();
-        MzData mzData = new MzData();
-        dtaSetConverter = new DtaSetImporter();
-        dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.BASE64);
-    }
-
     /**
      * Initializes a Desc(ription) object from the provide source file or directory.
      * @param source The source file or directory.
@@ -125,14 +127,27 @@ public class DtaSetImporter implements ImporterI{
     public Desc initialize(File source,
                            ParseListener listener) throws PsiMsConverterException, IOException {
         Desc desc = new Desc();
-        if(source.isDirectory()) {
+        if (source.isDirectory()) {
             File[] dtaFiles = source.listFiles(new SuffixFileFilter(".dta"));
             File[] ztaFiles = source.listFiles(new SuffixFileFilter(".zta"));
+/*
             if (ztaFiles.length != 0 && dtaFiles.length != ztaFiles.length) {
                 throw new PsiMsConverterException("Number of .dta and .zta files differs!");
             }
+*/
             dtaFileSet = Utils.fileArrayToTreeSet(dtaFiles);
             ztaFileSet = Utils.fileArrayToTreeSet(ztaFiles);
+
+            currentFileType = DtaReader.DTA;
+            if (dtaFileSet.size() == 0) {
+                if (ztaFileSet.size() > 0) {
+                    currentFileType = DtaReader.ZTA;
+                } else {
+                    throw new PsiMsConverterException("No .dta/.zta files found!");
+                }
+            }
+            dtaIterator = dtaFileSet.iterator();
+            ztaIterator = ztaFileSet.iterator();
 
             String filename = dtaFiles[0].getName();
             Pattern pattern = Pattern.compile("(.+)_(\\d+).(\\d+)_(\\d+).(zta|dta)");
@@ -144,12 +159,29 @@ public class DtaSetImporter implements ImporterI{
                     sampleName = matcher.group(1);
                     admin.setSampleName(sampleName);
                 }
-                String scanNumberString = matcher.group(2);
-                scanNumber = new Integer(scanNumberString).intValue();
-                String acquisitionTimeString = matcher.group(3);
-                acquisitionTime = new Integer(acquisitionTimeString).intValue();
             }
         } else if (source.isFile()) {
+            dtaFileSet = new TreeSet();
+            ztaFileSet = new TreeSet();
+            String filename = source.getName();
+            Pattern pattern = Pattern.compile("(.+)_(\\d+).(\\d+)_(\\d+).(zta|dta)");
+            Matcher matcher = pattern.matcher(filename);
+            if (matcher.matches()) {
+                Admin admin = desc.getAdmin();
+                String sampleName = admin.getSampleName();
+                if (sampleName == null || sampleName.equals("")) {
+                    sampleName = matcher.group(1);
+                    admin.setSampleName(sampleName);
+                }
+                String suffix = matcher.group(5);
+                if (suffix.equals("dta")) {
+                    dtaFileSet.add(filename);
+                    currentFileType = DtaReader.DTA;
+                } else if (suffix.equals("zta")) {
+                    ztaFileSet.add(filename);
+                    currentFileType = DtaReader.ZTA;
+                }
+            }
         }
         return desc;
     }
@@ -159,6 +191,8 @@ public class DtaSetImporter implements ImporterI{
      * Tells the (graphical) user interface which pieces of information it does not
      * need to request from the user.
      * @return a list of class objects (must be classes of the package org.psi.ms.model).
+     *
+     * Todo: implement getProvidedData()!
      */
     public List getProvidedData() {
         return null;
@@ -169,7 +203,7 @@ public class DtaSetImporter implements ImporterI{
      * @return whether single file input is supported or not.
      */
     public boolean supportsFile() {
-        return false;
+        return true;
     }
 
     /**
@@ -177,7 +211,7 @@ public class DtaSetImporter implements ImporterI{
      * @return whether directory input is supported or not.
      */
     public boolean supportsDirectory() {
-        return false;
+        return true;
     }
 
     /**
@@ -186,6 +220,15 @@ public class DtaSetImporter implements ImporterI{
      * @return whether the File object points to a valid input source for this plugin or not.
      */
     public boolean isSupportedInputFormat(File file) {
+        Pattern pattern = Pattern.compile("(.+)_(\\d+).(\\d+)_(\\d+).(zta|dta)");
+        if (file.isDirectory()) {
+            File[] files = file.listFiles(new SuffixFileFilter(".dta"));
+            Matcher matcher = pattern.matcher(files[0].getName());
+            return matcher.matches();
+        } else if (file.isFile()) {
+            Matcher matcher = pattern.matcher(file.getName());
+            return matcher.matches();
+        }
         return false;
     }
 
@@ -200,7 +243,9 @@ public class DtaSetImporter implements ImporterI{
      * @throws IOException in case of an file/directory access error.
      */
     public int getAcquisitionCount() throws PsiMsConverterException, IOException {
-        return 0;
+        if (dtaFileSet == null || ztaFileSet == null)
+            throw new PsiMsConverterException("Importer was not initialized!");
+        return dtaFileSet.size() + ztaFileSet.size();
     }
 
     /**
@@ -212,7 +257,19 @@ public class DtaSetImporter implements ImporterI{
      * @see #initialize
      */
     public boolean hasMoreAcquisitions() throws PsiMsConverterException {
-        return false;
+        if (dtaIterator == null || ztaIterator == null)
+            throw new PsiMsConverterException("Importer was not initialized!");
+        // This is bit trickier to implement as if there are .zta files,
+        // we have to alternate between returning .dta and .zta
+        // acquisitions.
+        switch (currentFileType) {
+            case DtaReader.DTA:
+                return dtaIterator.hasNext();
+            case DtaReader.ZTA:
+                return ztaIterator.hasNext();
+            default:
+                throw new PsiMsConverterException("Importer was not initialized!");
+        }
     }
 
     /**
@@ -221,6 +278,23 @@ public class DtaSetImporter implements ImporterI{
      * @return the next available Acquisition or null.
      */
     public Acquisition getNextAcquisition() throws IOException {
-        return null;
+        // This is bit trickier to implement as if there are .zta files,
+        // we have to alternate between returning .dta and .zta
+        // acquisitions.
+        Acquisition acquisition = null;
+        switch (currentFileType) {
+            case DtaReader.DTA:
+                acquisition = dtaReader.addAcquisitions((String) dtaIterator.next());
+                if (ztaFileSet.size() != 0)
+                    currentFileType = DtaReader.ZTA;
+                break;
+            case DtaReader.ZTA:
+                acquisition = dtaReader.addAcquisitions((String) ztaIterator.next());
+                if (dtaFileSet.size() != 0)
+                    currentFileType = DtaReader.DTA;
+                break;
+        }
+        return acquisition;
     }
+
 }

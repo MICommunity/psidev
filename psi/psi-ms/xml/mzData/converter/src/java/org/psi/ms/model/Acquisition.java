@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Acquisition.java,v 1.4 2003/09/15 13:44:57 krunte Exp $
+ * $Id: Acquisition.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -20,13 +20,9 @@ package org.psi.ms.model;
  * data types. All arrays used to describe a single acquisition are
  * the same length and the same indexing.
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/15 13:44:57 $
+ * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
  */
 public class Acquisition implements java.io.Serializable {
-    /**
-     * Field _id
-     */
-    private int _id;
     /**
      * keeps track of state for field: _id
      */
@@ -43,6 +39,15 @@ public class Acquisition implements java.io.Serializable {
      * an array of floats also.
      */
     private RawDataType _intenArray;
+    /**
+     *
+     */
+    private AcqDesc acqDesc;
+    /**
+     *
+     */
+    private SupplementList supplementList;
+
 
     //----------------/
     //- Constructors -/
@@ -83,20 +88,33 @@ public class Acquisition implements java.io.Serializable {
     } //-- org.psi.ms.model.RawDataType getMzArray()
 
     /**
-     * Returns the value of field 'id'.
-     *
-     * @return the value of field 'id'.
-     */
-    public int getId() {
-        return this._id;
-    } //-- int getId()
-
-    /**
      * Method hasId
      */
     public boolean hasId() {
         return this._has_id;
     } //-- boolean hasId()
+
+    /**
+     * Returns the acquisition's description.
+     * @return the acquisition's description.
+     */
+    public AcqDesc getAcqDesc() {
+        return acqDesc;
+    }
+
+    /**
+     * Returns the list of supplements.
+     * @return the list of supplements.
+     */
+    public SupplementList getSupplementList() {
+        if (supplementList == null)
+            supplementList = new SupplementList();
+        return supplementList;
+    }
+
+    public boolean hasSupplementList() {
+        return supplementList != null && supplementList.getCount() != 0;
+    }
 
     /**
      * Sets the value of field 'intenArray'. The field 'intenArray'
@@ -123,13 +141,18 @@ public class Acquisition implements java.io.Serializable {
     } //-- void setMzArray(org.psi.ms.model.MzArray)
 
     /**
-     * Sets the value of field 'id'.
-     *
-     * @param id the value of field 'id'.
+     * Sets the acquisition's description.
+     * @param acqDesc the acquisition's description.
      */
-    public void setId(int id) {
-        this._id = id;
-        this._has_id = true;
-    } //-- void setId(int)
+    public void setAcqDesc(AcqDesc acqDesc) {
+        this.acqDesc = acqDesc;
+    }
 
+    /**
+     * Sets the list of supplements.
+     * @param supplementList the list of supplements.
+     */
+    public void setSupplementList(SupplementList supplementList) {
+        this.supplementList = supplementList;
+    }
 }
