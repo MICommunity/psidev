@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Detector.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: Detector.java,v 1.6 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
 /**
  * Detection information
  *
- * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.6 $ $Date: 2004/01/14 15:57:36 $
  */
 public class Detector implements java.io.Serializable {
     /**
@@ -293,7 +293,7 @@ public class Detector implements java.io.Serializable {
     /**
      * Class Type.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+     * @version $Revision: 1.6 $ $Date: 2004/01/14 15:57:36 $
      */
     public static class Type implements java.io.Serializable {
 

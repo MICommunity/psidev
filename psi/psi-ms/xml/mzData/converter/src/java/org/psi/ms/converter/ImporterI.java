@@ -1,8 +1,8 @@
 /**
- * $Id: ImporterI.java,v 1.3 2003/11/28 15:49:45 krunte Exp $
+ * $Id: ImporterI.java,v 1.4 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Oct 21, 2003
  * Time: 5:11:45 PM
  */

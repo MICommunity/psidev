@@ -1,8 +1,8 @@
 /**
- * $Id: MzDataWriter.java,v 1.8 2003/12/05 16:02:54 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.9 2004/01/14 15:57:36 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Sep 10, 2003
  * Time: 6:42:23 PM
  */
@@ -29,7 +29,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class MzDataWriter implements ExporterI {
 
@@ -704,7 +704,7 @@ public class MzDataWriter implements ExporterI {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.8 $ $Date: 2003/12/05 16:02:54 $
+     * @version $Revision: 1.9 $ $Date: 2004/01/14 15:57:36 $
      */
     public static class OutputType implements java.io.Serializable {
 

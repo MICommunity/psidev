@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqTime.java,v 1.5 2003/10/20 10:03:02 krunte Exp $
+ * $Id: AcqTime.java,v 1.6 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Hashtable;
 /**
  * Class AcqTime.
  *
- * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
+ * @version $Revision: 1.6 $ $Date: 2004/01/14 15:57:36 $
  */
 public class AcqTime implements java.io.Serializable {
 
@@ -90,7 +90,7 @@ public class AcqTime implements java.io.Serializable {
     /**
      * Class Units.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
+     * @version $Revision: 1.6 $ $Date: 2004/01/14 15:57:36 $
      */
     public static class Units implements java.io.Serializable {
 

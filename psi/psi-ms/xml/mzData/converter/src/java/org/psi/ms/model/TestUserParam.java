@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: TestUserParam.java,v 1.4 2003/09/10 12:31:55 krunte Exp $
+ * $Id: TestUserParam.java,v 1.5 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * Uncontrolled, or user controlled name values are allowed here.
  * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/10 12:31:55 $
+ * @version $Revision: 1.5 $ $Date: 2004/01/14 15:57:36 $
  */
 public class TestUserParam extends CvUserParamType
         implements java.io.Serializable {

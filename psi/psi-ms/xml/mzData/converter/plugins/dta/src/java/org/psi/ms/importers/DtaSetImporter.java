@@ -1,8 +1,8 @@
 /**
- * $Id: DtaSetImporter.java,v 1.2 2003/12/04 18:15:23 krunte Exp $
+ * $Id: DtaSetImporter.java,v 1.3 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 23, 2003
  * Time: 5:24:22 PM
  */
@@ -30,7 +30,7 @@ import java.util.regex.Matcher;
  * into a single peaklist XML document. Per default the arrays are
  * stored in the space-saving base64 format.
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class DtaSetImporter implements ImporterI {
 

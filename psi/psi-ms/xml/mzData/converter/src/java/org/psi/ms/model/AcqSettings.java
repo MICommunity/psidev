@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqSettings.java,v 1.7 2003/12/05 15:44:38 krunte Exp $
+ * $Id: AcqSettings.java,v 1.8 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Hashtable;
 /**
  * Settings for this specific acquisition.
  *
- * @version $Revision: 1.7 $ $Date: 2003/12/05 15:44:38 $
+ * @version $Revision: 1.8 $ $Date: 2004/01/14 15:57:36 $
  */
 public class AcqSettings implements java.io.Serializable {
     /**

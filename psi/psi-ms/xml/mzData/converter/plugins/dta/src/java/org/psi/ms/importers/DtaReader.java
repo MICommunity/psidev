@@ -1,8 +1,8 @@
 /**
- * $Id: DtaReader.java,v 1.1 2003/12/03 17:49:38 krunte Exp $
+ * $Id: DtaReader.java,v 1.2 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 23, 2003
  * Time: 11:30:26 AM
  */
@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 /**
  * Reads in a given .dta file and adds it to a given MzData.
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class DtaReader {
     public final static int BASE64 = 1;

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: RawDataType.java,v 1.7 2003/09/15 10:31:48 krunte Exp $
+ * $Id: RawDataType.java,v 1.8 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Vector;
 /**
  * Data type for non-binary data (m/z and intensity)
  *
- * @version $Revision: 1.7 $ $Date: 2003/09/15 10:31:48 $
+ * @version $Revision: 1.8 $ $Date: 2004/01/14 15:57:36 $
  */
 public class RawDataType implements java.io.Serializable {
 

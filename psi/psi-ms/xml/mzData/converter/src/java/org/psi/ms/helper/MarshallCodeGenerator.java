@@ -1,8 +1,8 @@
 /**
- * $Id: MarshallCodeGenerator.java,v 1.1 2003/11/21 15:24:06 krunte Exp $
+ * $Id: MarshallCodeGenerator.java,v 1.2 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Sep 12, 2003
  * Time: 1:18:45 BASE64
  */
@@ -18,7 +18,7 @@ import java.util.Vector;
  * It takes the class name as only argument and prints the marshall
  * code to System.out
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class MarshallCodeGenerator {
 

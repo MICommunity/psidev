@@ -1,8 +1,8 @@
 /**
- * $Id: ProvidedDataItem.java,v 1.3 2004/01/13 15:14:04 lbower Exp $
+ * $Id: ProvidedDataItem.java,v 1.4 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Nov 20, 2003
  * Time: 5:27:02 PM
  */
@@ -12,7 +12,7 @@ import java.util.Hashtable;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public final class ProvidedDataItem {
 

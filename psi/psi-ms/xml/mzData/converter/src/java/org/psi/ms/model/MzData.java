@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: MzData.java,v 1.8 2003/11/28 15:51:35 krunte Exp $
+ * $Id: MzData.java,v 1.9 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * There can bemultiple acquisitions, which might be related via a
  * separation, or just in sequence from an automated run.
  *
- * @version $Revision: 1.8 $ $Date: 2003/11/28 15:51:35 $
+ * @version $Revision: 1.9 $ $Date: 2004/01/14 15:57:36 $
  */
 public class MzData implements java.io.Serializable {
 

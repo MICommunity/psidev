@@ -1,8 +1,8 @@
 /**
- * $Id: MultiTypeValue.java,v 1.1 2003/09/11 16:31:56 krunte Exp $
+ * $Id: MultiTypeValue.java,v 1.2 2004/01/14 15:57:36 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Sep 11, 2003
  * Time: 5:26:33 PM
  */
@@ -13,7 +13,7 @@ import java.net.URI;
 
 /**
  * 
- * @author krunte
+ * @author Kai Runte
  */
 public class MultiTypeValue {
     /**

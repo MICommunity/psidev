@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqParam.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: AcqParam.java,v 1.4 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ package org.psi.ms.model;
  * This element holds additional data or annotation information.
  * Only controlled name values are allowed here.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
  */
 public class AcqParam extends CvCoreParamType
         implements java.io.Serializable {

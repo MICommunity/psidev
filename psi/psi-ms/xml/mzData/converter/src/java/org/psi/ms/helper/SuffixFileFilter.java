@@ -1,8 +1,8 @@
 /**
- * $Id: SuffixFileFilter.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: SuffixFileFilter.java,v 1.3 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 23, 2003
  * Time: 5:40:56 PM
  */

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqDesc.java,v 1.5 2003/12/04 18:20:37 krunte Exp $
+ * $Id: AcqDesc.java,v 1.6 2004/01/14 15:57:35 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * There is one acqDesc for each acquisition below. The ID
  * attribute is keyed to the to acquisition ID.
  *
- * @version $Revision: 1.5 $ $Date: 2003/12/04 18:20:37 $
+ * @version $Revision: 1.6 $ $Date: 2004/01/14 15:57:35 $
  */
 public class AcqDesc implements java.io.Serializable {
     /**

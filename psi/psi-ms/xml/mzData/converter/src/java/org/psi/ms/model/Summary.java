@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Summary.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Summary.java,v 1.4 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ package org.psi.ms.model;
 /**
  * Summary information for this acquisition.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
  */
 public class Summary implements java.io.Serializable {
     /**

@@ -1,8 +1,8 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.11 2003/12/03 17:52:31 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.12 2004/01/14 15:57:36 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 23, 2003
  * Time: 6:19:32 PM
  */
@@ -21,7 +21,7 @@ import java.io.File;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class TestDtaSetConverter {
 

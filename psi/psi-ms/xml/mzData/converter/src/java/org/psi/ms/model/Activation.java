@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Activation.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Activation.java,v 1.4 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Hashtable;
 /**
  * Type and energy level used for activation.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
  */
 public class Activation implements java.io.Serializable {
     /**
@@ -110,7 +110,7 @@ public class Activation implements java.io.Serializable {
     /**
      * Class Method.
      *
-     * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+     * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
      */
     public static class Method implements java.io.Serializable {
 

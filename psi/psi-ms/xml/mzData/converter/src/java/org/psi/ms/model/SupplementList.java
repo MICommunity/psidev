@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SupplementList.java,v 1.4 2003/09/10 14:11:41 krunte Exp $
+ * $Id: SupplementList.java,v 1.5 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Vector;
 /**
  * List of supplemental data arrays
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/10 14:11:41 $
+ * @version $Revision: 1.5 $ $Date: 2004/01/14 15:57:36 $
  */
 public class SupplementList implements java.io.Serializable {
 

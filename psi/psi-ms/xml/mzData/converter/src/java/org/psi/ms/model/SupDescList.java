@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SupDescList.java,v 1.4 2003/09/10 14:11:41 krunte Exp $
+ * $Id: SupDescList.java,v 1.5 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * List of descriptive information for each supplemental data entry
  * in the raw section
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/10 14:11:41 $
+ * @version $Revision: 1.5 $ $Date: 2004/01/14 15:57:36 $
  */
 public class SupDescList implements java.io.Serializable {
 

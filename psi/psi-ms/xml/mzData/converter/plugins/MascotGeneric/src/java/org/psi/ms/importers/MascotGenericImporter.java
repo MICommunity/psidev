@@ -1,8 +1,8 @@
 /**
- * $Id: MascotGenericImporter.java,v 1.2 2003/12/05 18:07:39 krunte Exp $
+ * $Id: MascotGenericImporter.java,v 1.3 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Dec 4, 2003
  * Time: 2:07:25 PM
  */
@@ -23,7 +23,7 @@ import java.util.regex.Matcher;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class MascotGenericImporter implements ImporterI {
 

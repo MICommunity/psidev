@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Ion.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: Ion.java,v 1.4 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * dependent scans. It is optional for broad band and source
  * activation methods.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2004/01/14 15:57:36 $
  */
 public class Ion implements java.io.Serializable {
     /**

@@ -1,8 +1,8 @@
 /**
- * $Id: PsiMsConverterException.java,v 1.3 2003/09/15 12:44:58 krunte Exp $
+ * $Id: PsiMsConverterException.java,v 1.4 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 23, 2003
  * Time: 5:45:33 PM
  */
@@ -10,7 +10,7 @@ package org.psi.ms.helper;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class PsiMsConverterException extends Exception {
 

@@ -1,8 +1,8 @@
 /**
- * $Id: ProvidedDataTypeGenerator.java,v 1.1 2003/11/21 15:24:06 krunte Exp $
+ * $Id: ProvidedDataTypeGenerator.java,v 1.2 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Nov 20, 2003
  * Time: 6:12:15 PM
  */
@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 /**
  * 
- * @author krunte
+ * @author Kai Runte
  */
 public class ProvidedDataTypeGenerator {
 

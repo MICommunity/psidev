@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: InstrumentCommonSettings.java,v 1.4 2003/11/14 16:49:30 krunte Exp $
+ * $Id: InstrumentCommonSettings.java,v 1.5 2004/01/14 15:57:36 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ import java.util.Vector;
  * this section.
  * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.4 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.5 $ $Date: 2004/01/14 15:57:36 $
  */
 public class InstrumentCommonSettings implements java.io.Serializable {
     /**

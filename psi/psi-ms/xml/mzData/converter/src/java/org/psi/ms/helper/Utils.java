@@ -1,8 +1,8 @@
 /**
- * $Id: Utils.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: Utils.java,v 1.3 2004/01/14 15:57:35 krunte Exp $
  *
  * Created by IntelliJ IDEA.
- * User: krunte
+ * User: Kai Runte
  * Date: Jul 22, 2003
  * Time: 11:00:54 AM
  */
@@ -19,7 +19,7 @@ import java.util.Vector;
 
 /**
  *
- * @author krunte
+ * @author Kai Runte
  */
 public class Utils {
 
