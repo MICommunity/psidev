@@ -1,0 +1,43 @@
+package org.psi.ms.swing;
+
+import org.psi.ms.model.MzData;
+import org.psi.ms.helper.PsiMsConverterException;
+import org.psi.ms.converter.DtaSetConverter;
+import org.psi.ms.converter.ParseListener;
+import org.exolab.castor.xml.ValidationException;
+import org.exolab.castor.xml.MarshalException;
+
+import java.io.IOException;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: lbower
+ * Date: Sep 10, 2003
+ * Time: 4:13:04 PM
+ * To change this template use Options | File Templates.
+ */
+public class ParsingBusiness {
+
+    public static final String PARSE = "org.psi.ms.swing.parsingbusiness.parse";
+
+    private DtaSetConverter oConverter = new DtaSetConverter();
+
+    public ParsingBusiness() {
+
+    }
+
+    void parseData(String poSource, String poDest, MzData poData, ParseListener poListener) {
+
+        try {
+            oConverter.convertDirectory(poSource, poDest, poData, poListener);
+        } catch (PsiMsConverterException e) {
+            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        } catch (ValidationException e) {
+            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        } catch (MarshalException e) {
+            e.printStackTrace();  //To change body of catch statement use Options | File Templates.
+        }
+    }
+}
