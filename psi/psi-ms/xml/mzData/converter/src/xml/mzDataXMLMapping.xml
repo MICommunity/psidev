@@ -92,8 +92,8 @@
             <bind-xml name="acqTime" node="element"/>
         </field>
     </class>
-    <class name="org.psi.ms.model.Contact">
-        <description>Default mapping for class org.psi.ms.model.Contact</description>
+    <class name="org.psi.ms.model.Person">
+        <description>Default mapping for class org.psi.ms.model.Person</description>
         <map-to xml="contact"/>
         <field name="name" type="java.lang.String" required="true">
             <bind-xml name="name" node="element"/>
@@ -434,7 +434,7 @@
         <field name="TIC" type="float">
             <bind-xml name="TIC" node="attribute"/>
         </field>
-        <field name="baseIon" type="org.psi.ms.model.BaseIon">
+        <field name="baseIon" type="org.psi.ms.model.Ion">
             <bind-xml name="baseIon" node="element"/>
         </field>
     </class>
@@ -540,7 +540,7 @@
         <field name="sampleName" type="java.lang.String" required="true">
             <bind-xml name="sampleName" node="element"/>
         </field>
-        <field name="contact" type="org.psi.ms.model.Contact" required="true">
+        <field name="contact" type="org.psi.ms.model.Person" required="true">
             <bind-xml name="contact" node="element"/>
         </field>
         <field name="sourceFile" type="org.psi.ms.model.SourceFile" collection="array">
@@ -626,22 +626,6 @@
         </field>
         <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
             <bind-xml name="-error-if-this-is-used-" node="element"/>
-        </field>
-    </class>
-    <class name="org.psi.ms.model.BaseIon">
-        <description>Default mapping for class org.psi.ms.model.BaseIon</description>
-        <map-to xml="baseIon"/>
-        <field name="mz" type="float">
-            <bind-xml name="mz" node="attribute"/>
-        </field>
-        <field name="charge" type="int">
-            <bind-xml name="charge" node="attribute"/>
-        </field>
-        <field name="acqID" type="int">
-            <bind-xml name="acqID" node="attribute"/>
-        </field>
-        <field name="intensity" type="float">
-            <bind-xml name="intensity" node="attribute"/>
         </field>
     </class>
     <class name="org.psi.ms.model.IntenArray">

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvCoreParamType.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: CvCoreParamType.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ package org.psi.ms.model;
  * Data type for single valued properties from the core controlled
  * vocabulary
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public abstract class CvCoreParamType implements java.io.Serializable {
 
@@ -96,18 +96,6 @@ public abstract class CvCoreParamType implements java.io.Serializable {
     } //-- boolean hasXref()
 
     /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
      * Sets the value of field 'cvCoreParamTypeChoice'.
      *
      * @param cvCoreParamTypeChoice the value of field
@@ -137,14 +125,5 @@ public abstract class CvCoreParamType implements java.io.Serializable {
         this._xref = xref;
         this._has_xref = true;
     } //-- void setXref(int)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
 
 }

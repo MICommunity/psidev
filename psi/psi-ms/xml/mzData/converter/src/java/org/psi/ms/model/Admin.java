@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Admin.java,v 1.2 2003/08/21 12:23:47 krunte Exp $
+ * $Id: Admin.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -11,16 +11,13 @@ package org.psi.ms.model;
 //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
-
 import java.util.Vector;
 
 /**
  * Administrative information pertaining to the entire data set is
  * stored here.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 12:23:47 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public class Admin implements java.io.Serializable {
     /**
@@ -28,9 +25,9 @@ public class Admin implements java.io.Serializable {
      */
     private String _sampleName;
     /**
-     * Contact person for this dataset.
+     * Person person for this dataset.
      */
-    private Contact _contact;
+    private Person _contact;
     /**
      * Information about the original source file used to generate
      * the instance document.
@@ -51,59 +48,6 @@ public class Admin implements java.io.Serializable {
     //-----------/
     //- Methods -/
     //-----------/
-
-    /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
-     * Method marshal
-     *
-     * @param out
-     */
-    public void marshal(java.io.Writer out)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer)
-
-    /**
-     * Method marshal
-     *
-     * @param handler
-     */
-    public void marshal(org.xml.sax.ContentHandler handler)
-            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler)
-
-    /**
-     * Method unmarshal
-     *
-     * @param reader
-     */
-    public static org.psi.ms.model.Admin unmarshal(java.io.Reader reader)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (org.psi.ms.model.Admin) Unmarshaller.unmarshal(org.psi.ms.model.Admin.class, reader);
-    } //-- org.psi.ms.model.Admin unmarshal(java.io.Reader)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
 
     /**
      * Method addSourceFile
@@ -135,14 +79,14 @@ public class Admin implements java.io.Serializable {
 
     /**
      * Returns the value of field 'contact'. The field 'contact'
-     * has the following description: Contact person for this
+     * has the following description: Person person for this
      * dataset.
      *
      * @return the value of field 'contact'.
      */
-    public Contact getContact() {
+    public Person getContact() {
         return this._contact;
-    } //-- org.psi.ms.model.Contact getContact()
+    } //-- org.psi.ms.model.Person getContact()
 
     /**
      * Returns the value of field 'sampleName'.
@@ -207,13 +151,13 @@ public class Admin implements java.io.Serializable {
 
     /**
      * Sets the value of field 'contact'. The field 'contact' has
-     * the following description: Contact person for this dataset.
+     * the following description: Person person for this dataset.
      *
      * @param contact the value of field 'contact'.
      */
-    public void setContact(Contact contact) {
+    public void setContact(Person contact) {
         this._contact = contact;
-    } //-- void setContact(org.psi.ms.model.Contact)
+    } //-- void setContact(org.psi.ms.model.Person)
 
     /**
      * Sets the value of field 'sampleName'.

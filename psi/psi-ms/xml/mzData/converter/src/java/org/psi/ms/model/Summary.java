@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Summary.java,v 1.2 2003/08/21 12:23:47 krunte Exp $
+ * $Id: Summary.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -11,13 +11,12 @@ package org.psi.ms.model;
 //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
+
 
 /**
  * Summary information for this acquisition.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 12:23:47 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public class Summary implements java.io.Serializable {
     /**
@@ -47,7 +46,7 @@ public class Summary implements java.io.Serializable {
     /**
      * Field _baseIon
      */
-    private BaseIon _baseIon;
+    private Ion _baseIon;
 
 
     //----------------/
@@ -62,59 +61,6 @@ public class Summary implements java.io.Serializable {
     //-----------/
     //- Methods -/
     //-----------/
-
-    /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
-     * Method marshal
-     *
-     * @param out
-     */
-    public void marshal(java.io.Writer out)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer)
-
-    /**
-     * Method marshal
-     *
-     * @param handler
-     */
-    public void marshal(org.xml.sax.ContentHandler handler)
-            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler)
-
-    /**
-     * Method unmarshal
-     *
-     * @param reader
-     */
-    public static org.psi.ms.model.Summary unmarshal(java.io.Reader reader)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (org.psi.ms.model.Summary) Unmarshaller.unmarshal(org.psi.ms.model.Summary.class, reader);
-    } //-- org.psi.ms.model.Summary unmarshal(java.io.Reader)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
 
     /**
      * Method deleteHighMZ
@@ -142,7 +88,7 @@ public class Summary implements java.io.Serializable {
      *
      * @return the value of field 'baseIon'.
      */
-    public BaseIon getBaseIon() {
+    public Ion getBaseIon() {
         return this._baseIon;
     } //-- org.psi.ms.model.BaseIon getBaseIon()
 
@@ -199,7 +145,7 @@ public class Summary implements java.io.Serializable {
      *
      * @param baseIon the value of field 'baseIon'.
      */
-    public void setBaseIon(BaseIon baseIon) {
+    public void setBaseIon(Ion baseIon) {
         this._baseIon = baseIon;
     } //-- void setBaseIon(org.psi.ms.model.BaseIon)
 

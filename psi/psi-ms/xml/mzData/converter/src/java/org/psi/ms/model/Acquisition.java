@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Acquisition.java,v 1.2 2003/08/21 12:23:47 krunte Exp $
+ * $Id: Acquisition.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -11,8 +11,7 @@ package org.psi.ms.model;
 //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
+
 
 /**
  * This is an individual instrument acquisition. The peak list is
@@ -21,7 +20,7 @@ import org.exolab.castor.xml.Unmarshaller;
  * data types. All arrays used to describe a single acquisition are
  * the same length and the same indexing.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 12:23:47 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public class Acquisition implements java.io.Serializable {
     /**
@@ -38,12 +37,12 @@ public class Acquisition implements java.io.Serializable {
      * for the entire array. This allows for human readability and
      * editing.
      */
-    private MzArray _mzArray;
+    private RawDataType _mzArray;
     /**
      * The intensity array can be specified as an array of ints or
      * an array of floats also.
      */
-    private IntenArray _intenArray;
+    private RawDataType _intenArray;
     /**
      * Here the list of m/z values (for any type of spectrum). If
      * this is a true mass spectrum, then z=1. The array is stored
@@ -74,59 +73,6 @@ public class Acquisition implements java.io.Serializable {
     //-----------/
 
     /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
-     * Method marshal
-     *
-     * @param out
-     */
-    public void marshal(java.io.Writer out)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer)
-
-    /**
-     * Method marshal
-     *
-     * @param handler
-     */
-    public void marshal(org.xml.sax.ContentHandler handler)
-            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler)
-
-    /**
-     * Method unmarshal
-     *
-     * @param reader
-     */
-    public static org.psi.ms.model.Acquisition unmarshal(java.io.Reader reader)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (org.psi.ms.model.Acquisition) Unmarshaller.unmarshal(org.psi.ms.model.Acquisition.class, reader);
-    } //-- org.psi.ms.model.Acquisition unmarshal(java.io.Reader)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
-
-    /**
      * Returns the value of field 'intenArray'. The field
      * 'intenArray' has the following description: The intensity
      * array can be specified as an array of ints or an array of
@@ -134,9 +80,9 @@ public class Acquisition implements java.io.Serializable {
      *
      * @return the value of field 'intenArray'.
      */
-    public IntenArray getIntenArray() {
+    public RawDataType getIntenArray() {
         return this._intenArray;
-    } //-- org.psi.ms.model.IntenArray getIntenArray()
+    } //-- org.psi.ms.model.RawDataType getIntenArray()
 
     /**
      * Returns the value of field 'mzArray'. The field 'mzArray'
@@ -147,9 +93,9 @@ public class Acquisition implements java.io.Serializable {
      *
      * @return the value of field 'mzArray'.
      */
-    public MzArray getMzArray() {
+    public RawDataType getMzArray() {
         return this._mzArray;
-    } //-- org.psi.ms.model.MzArray getMzArray()
+    } //-- org.psi.ms.model.RawDataType getMzArray()
 
     /**
      * Returns the value of field 'intenArrayBinary'. The field
@@ -202,7 +148,7 @@ public class Acquisition implements java.io.Serializable {
      *
      * @param intenArray the value of field 'intenArray'.
      */
-    public void setIntenArray(IntenArray intenArray) {
+    public void setIntenArray(RawDataType intenArray) {
         this._intenArray = intenArray;
     } //-- void setIntenArray(org.psi.ms.model.IntenArray)
 
@@ -215,7 +161,7 @@ public class Acquisition implements java.io.Serializable {
      *
      * @param mzArray the value of field 'mzArray'.
      */
-    public void setMzArray(MzArray mzArray) {
+    public void setMzArray(RawDataType mzArray) {
         this._mzArray = mzArray;
     } //-- void setMzArray(org.psi.ms.model.MzArray)
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: RawDataType.java,v 1.4 2003/08/21 14:28:02 krunte Exp $
+ * $Id: RawDataType.java,v 1.5 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,9 +16,9 @@ import java.util.Vector;
 /**
  * Data type for non-binary data (m/z and intensity)
  *
- * @version $Revision: 1.4 $ $Date: 2003/08/21 14:28:02 $
+ * @version $Revision: 1.5 $ $Date: 2003/08/28 15:17:12 $
  */
-public abstract class RawDataType implements java.io.Serializable {
+public class RawDataType implements java.io.Serializable {
 
 
     //--------------------------/
@@ -29,6 +29,14 @@ public abstract class RawDataType implements java.io.Serializable {
      * Field _floatList
      */
     private java.util.Vector _floatList;
+    /**
+     * Field _length
+     */
+    private int _length;
+    /**
+     * keeps track of state for field: _length
+     */
+    private boolean _has_length;
 
 
     //----------------/
@@ -108,18 +116,6 @@ public abstract class RawDataType implements java.io.Serializable {
     } //-- int getFloatCount()
 
     /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
      * Method removeAllFloat
      */
     public void removeAllFloat() {
@@ -166,12 +162,29 @@ public abstract class RawDataType implements java.io.Serializable {
     } //-- void setFloat(float)
 
     /**
-     * Method validate
+     * Returns the value of field 'length'.
+     *
+     * @return the value of field 'length'.
      */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
+    public int getLength() {
+        return this._length;
+    } //-- int getLength()
+
+    /**
+     * Method hasLength
+     */
+    public boolean hasLength() {
+        return this._has_length;
+    } //-- boolean hasLength()
+
+    /**
+     * Sets the value of field 'length'.
+     *
+     * @param length the value of field 'length'.
+     */
+    public void setLength(int length) {
+        this._length = length;
+        this._has_length = true;
+    } //-- void setLength(int)
 
 }

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvUserParamTypeChoice.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: CvUserParamTypeChoice.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -11,13 +11,12 @@ package org.psi.ms.model;
 //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
+
 
 /**
  * Class CvUserParamTypeChoice.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public class CvUserParamTypeChoice implements java.io.Serializable {
 
@@ -135,44 +134,10 @@ public class CvUserParamTypeChoice implements java.io.Serializable {
     } //-- boolean hasInt()
 
     /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (org.exolab.castor.xml.ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
-     * Method marshal
-     *
-     * @param out
-     */
-    public void marshal(java.io.Writer out)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer)
-
-    /**
-     * Method marshal
-     *
-     * @param handler
-     */
-    public void marshal(org.xml.sax.ContentHandler handler)
-            throws java.io.IOException, org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-
-        Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler)
-
-    /**
      * Sets the value of field 'float'.
      *
      * @param _float
-     * @param float the value of field 'float'.
+     * @param _float the value of field 'float'.
      */
     public void setFloat(float _float) {
         this._float = _float;
@@ -183,7 +148,7 @@ public class CvUserParamTypeChoice implements java.io.Serializable {
      * Sets the value of field 'int'.
      *
      * @param _int
-     * @param int the value of field 'int'.
+     * @param _int the value of field 'int'.
      */
     public void setInt(int _int) {
         this._int = _int;
@@ -216,24 +181,5 @@ public class CvUserParamTypeChoice implements java.io.Serializable {
     public void setURI(java.lang.String URI) {
         this._URI = URI;
     } //-- void setURI(java.lang.String)
-
-    /**
-     * Method unmarshal
-     *
-     * @param reader
-     */
-    public static org.psi.ms.model.CvUserParamTypeChoice unmarshal(java.io.Reader reader)
-            throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (org.psi.ms.model.CvUserParamTypeChoice) Unmarshaller.unmarshal(org.psi.ms.model.CvUserParamTypeChoice.class, reader);
-    } //-- org.psi.ms.model.CvUserParamTypeChoice unmarshal(java.io.Reader)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws org.exolab.castor.xml.ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
 
 }

@@ -1,5 +1,5 @@
 /**
- * $Id: TestUnmarshaller.java,v 1.4 2003/08/21 14:28:02 krunte Exp $
+ * $Id: TestUnmarshaller.java,v 1.5 2003/08/28 15:17:12 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -10,11 +10,16 @@ package org.psi.ms.test;
 
 import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.ValidationException;
+import org.exolab.castor.xml.Unmarshaller;
+import org.exolab.castor.mapping.Mapping;
+import org.exolab.castor.mapping.MappingException;
 import org.psi.ms.helper.Utils;
 import org.psi.ms.model.Acquisition;
 import org.psi.ms.model.AcquisitionList;
 import org.psi.ms.model.MzArrayBinary;
 import org.psi.ms.model.MzData;
+import org.psi.ms.converter.DtaReader;
+import org.xml.sax.InputSource;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -25,9 +30,14 @@ import java.util.List;
  * @author krunte
  */
 public class TestUnmarshaller {
-    public static void main(String[] argv) throws IOException, ValidationException, MarshalException {
+    public static void main(String[] argv) throws IOException, ValidationException, MarshalException, MappingException {
         FileReader fileReader = new FileReader(argv[0]);
-        MzData mzData = MzData.unmarshal(fileReader);
+
+        Mapping mapping = new Mapping();
+        mapping.loadMapping(new InputSource(DtaReader.class.getResourceAsStream("mzDataXMLMapping.xml")));
+        Unmarshaller unmarshaller = new Unmarshaller();
+        unmarshaller.setMapping(mapping);
+        MzData mzData = (MzData) unmarshaller.unmarshal(fileReader);
 
         AcquisitionList acquisionList = mzData.getRaw().getAcquisitionList();
         int acquisitionCount = acquisionList.getAcquisitionCount();

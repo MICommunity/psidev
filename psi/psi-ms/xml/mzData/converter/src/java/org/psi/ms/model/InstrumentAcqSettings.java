@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: InstrumentAcqSettings.java,v 1.2 2003/08/21 14:28:01 krunte Exp $
+ * $Id: InstrumentAcqSettings.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -11,16 +11,7 @@ package org.psi.ms.model;
 //- Imported classes and packages -/
 //---------------------------------/
 
-import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.Unmarshaller;
-import org.exolab.castor.xml.ValidationException;
-import org.xml.sax.ContentHandler;
-
-import java.io.IOException;
-import java.io.Reader;
 import java.io.Serializable;
-import java.io.Writer;
 import java.util.Hashtable;
 import java.util.Vector;
 
@@ -28,7 +19,7 @@ import java.util.Vector;
  * InstrumentCommonSettings information common to all acquisitions is stored in
  * this section.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
+ * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
  */
 public class InstrumentAcqSettings implements Serializable {
     /**
@@ -80,59 +71,6 @@ public class InstrumentAcqSettings implements Serializable {
     //-----------/
     //- Methods -/
     //-----------/
-
-    /**
-     * Method isValid
-     */
-    public boolean isValid() {
-        try {
-            validate();
-        } catch (ValidationException vex) {
-            return false;
-        }
-        return true;
-    } //-- boolean isValid()
-
-    /**
-     * Method marshal
-     *
-     * @param out
-     */
-    public void marshal(Writer out)
-            throws MarshalException, ValidationException {
-
-        Marshaller.marshal(this, out);
-    } //-- void marshal(java.io.Writer)
-
-    /**
-     * Method marshal
-     *
-     * @param handler
-     */
-    public void marshal(ContentHandler handler)
-            throws IOException, MarshalException, ValidationException {
-
-        Marshaller.marshal(this, handler);
-    } //-- void marshal(org.xml.sax.ContentHandler)
-
-    /**
-     * Method unmarshal
-     *
-     * @param reader
-     */
-    public static InstrumentAcqSettings unmarshal(Reader reader)
-            throws MarshalException, ValidationException {
-        return (InstrumentAcqSettings) Unmarshaller.unmarshal(InstrumentAcqSettings.class, reader);
-    } //-- org.psi.ms.model.InstrumentAcqSettings unmarshal(java.io.Reader)
-
-    /**
-     * Method validate
-     */
-    public void validate()
-            throws ValidationException {
-        org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
-        validator.validate(this);
-    } //-- void validate()
 
     /**
      * Method addInstParam
@@ -449,7 +387,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class AcqType.
      *
-     * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
+     * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
      */
     public static class AcqType implements java.io.Serializable {
 
@@ -631,7 +569,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class Polarity.
      *
-     * @version $Revision: 1.2 $ $Date: 2003/08/21 14:28:01 $
+     * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
      */
     public static class Polarity implements java.io.Serializable {
 

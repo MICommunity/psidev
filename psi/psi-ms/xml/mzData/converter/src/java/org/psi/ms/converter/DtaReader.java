@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.9 2003/08/21 14:28:01 krunte Exp $
+ * $Id: DtaReader.java,v 1.10 2003/08/28 15:17:12 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -145,9 +145,9 @@ public class DtaReader {
 
     private int addXMLArrays(Acquisition acquisition, BufferedReader bufferedReader) {
         StringTokenizer stringTokenizer;
-        MzArray mzArray = new MzArray();
+        RawDataType mzArray = new RawDataType();
         acquisition.setMzArray(mzArray);
-        IntenArray intenArray = new IntenArray();
+        RawDataType intenArray = new RawDataType();
         acquisition.setIntenArray(intenArray);
 
         String line;

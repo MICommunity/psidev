@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.5 2003/08/21 14:28:01 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.6 2003/08/28 15:17:12 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -102,7 +102,7 @@ public class DtaSetConverter {
 
         // Todo: this information must be provided by the user
         admin.setSampleName("?");
-        Contact contact = new Contact();
+        Person contact = new Person();
         contact.setName("Kai Runte");
         contact.setInstitution("EMBL Outstation - EBI");
         admin.setContact(contact);
