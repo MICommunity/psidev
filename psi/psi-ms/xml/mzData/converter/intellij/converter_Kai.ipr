@@ -122,8 +122,9 @@
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
       <option name="birdViewUpdateDelay" value="2000" />
-      <option name="knownFile0" value="file://$PROJECT_DIR$/psi-ms model.suml" />
+      <option name="knownFile0" value="file://$PROJECT_DIR$/ConverterI.suml" />
       <option name="defaultFileLocation" value="file://$PROJECT_DIR$" />
+      <option name="knownFile1" value="file://$PROJECT_DIR$/psi-ms model.suml" />
     </General>
     <Classdiagram>
       <option name="diagramTitleFont" value="SansSerif,1,12" />
