@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: RawDataType.java,v 1.5 2003/08/28 15:17:12 krunte Exp $
+ * $Id: RawDataType.java,v 1.6 2003/09/12 15:56:44 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Vector;
 /**
  * Data type for non-binary data (m/z and intensity)
  *
- * @version $Revision: 1.5 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.6 $ $Date: 2003/09/12 15:56:44 $
  */
 public class RawDataType implements java.io.Serializable {
 
@@ -29,15 +29,6 @@ public class RawDataType implements java.io.Serializable {
      * Field _floatList
      */
     private java.util.Vector _floatList;
-    /**
-     * Field _length
-     */
-    private int _length;
-    /**
-     * keeps track of state for field: _length
-     */
-    private boolean _has_length;
-
 
     //----------------/
     //- Constructors -/
@@ -167,15 +158,8 @@ public class RawDataType implements java.io.Serializable {
      * @return the value of field 'length'.
      */
     public int getLength() {
-        return this._length;
+        return _floatList.size();
     } //-- int getLength()
-
-    /**
-     * Method hasLength
-     */
-    public boolean hasLength() {
-        return this._has_length;
-    } //-- boolean hasLength()
 
     /**
      * Sets the value of field 'length'.
@@ -183,8 +167,6 @@ public class RawDataType implements java.io.Serializable {
      * @param length the value of field 'length'.
      */
     public void setLength(int length) {
-        this._length = length;
-        this._has_length = true;
     } //-- void setLength(int)
 
 }

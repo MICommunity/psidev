@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvUserParamType.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: CvUserParamType.java,v 1.4 2003/09/12 15:56:44 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,9 +16,9 @@ package org.psi.ms.model;
  * Data type for user parameters with or without xref numbers
  * (uncontrolled vocabulary)
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/09/12 15:56:44 $
  */
-public abstract class CvUserParamType implements java.io.Serializable {
+public abstract class CvUserParamType extends MultiTypeValue implements java.io.Serializable {
 
 
     //--------------------------/

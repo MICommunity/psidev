@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: DataArray.java,v 1.4 2003/08/28 15:17:12 krunte Exp $
+ * $Id: DataArray.java,v 1.5 2003/09/12 15:56:44 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,11 @@ import java.util.Vector;
  * supplemental data array was a string- or other non-binary type,
  * then it can be represented in the dataArray element.
  *
- * @version $Revision: 1.4 $ $Date: 2003/08/28 15:17:12 $
+ * Todo: This class needs to be simplified so that there is only one Vector.
+ * The values accepted in this Vector are defined by the first item
+ * added to this Vector.
+ *
+ * @version $Revision: 1.5 $ $Date: 2003/09/12 15:56:44 $
  */
 public class DataArray implements java.io.Serializable {
 
