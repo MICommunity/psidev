@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.10 2003/11/14 11:49:32 krunte Exp $
+ $Id: mzdata.xsd,v 1.11 2003/11/14 16:51:37 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Kai Runte (EBI)
@@ -115,6 +115,7 @@
                 <xs:element name="URI" type="xs:anyURI" maxOccurs="unbounded"/>
             </xs:choice>
         </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
         <xs:attribute name="length" type="xs:int" use="required">
             <xs:annotation>
                 <xs:documentation>Number of items in the dataArray</xs:documentation>
@@ -217,7 +218,7 @@
     </xs:complexType>
     <xs:complexType name="acquisitionType">
         <xs:sequence>
-            <xs:element name="acqDesc" type="acqDescType" maxOccurs="unbounded">
+            <xs:element name="acqDesc" type="acqDescType">
                 <xs:annotation>
                     <xs:documentation>There is one acqDesc for each acquisition below.  The ID attribute is keyed to the to acquisition ID.</xs:documentation>
                 </xs:annotation>
@@ -270,7 +271,7 @@
                     </xs:element>
                 </xs:sequence>
             </xs:choice>
-            <xs:choice minOccurs="0">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>For each acquisition, there can be a mixture of binary and simple type data arrays.  This is mostly to allow string and other data not convenently handled by base64 to be associated with binary data.  This choice allow the number of those arrary to be arbitrary.</xs:documentation>
                 </xs:annotation>
@@ -293,6 +294,7 @@
             <xs:element name="description" type="xs:string" minOccurs="0"/>
             <xs:group ref="binaryDataGroup"/>
         </xs:sequence>
+        <xs:attribute name="id" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="mzArrayBinaryType">
         <xs:group ref="binaryDataGroup"/>
@@ -665,7 +667,7 @@
                 </xs:annotation>
             </xs:element>
         </xs:sequence>
-        <xs:attribute name="id" type="xs:int" use="required"/>
+        <xs:attribute name="ref" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="activationType">
         <xs:attribute name="method" use="required">
