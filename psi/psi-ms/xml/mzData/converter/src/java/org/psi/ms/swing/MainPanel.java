@@ -121,7 +121,6 @@ public class MainPanel extends JPanel {
     void parseData() {
         String oSourceDir = oDirectoryPanel.getSourceFilePath();
         File oSourceFile = new File(oSourceDir);
-        oProgressPanel.setMax(oSourceFile.listFiles().length);
         String oDestDir = oDirectoryPanel.getDestinationFilePath();
         MzDataWriter.OutputType oType = oDirectoryPanel.getOutputType();
 
