@@ -55,6 +55,7 @@
 
     <target name="build">
         <mkdir dir="${build}"/>
+        <copy file="${src}/xml/mzDataXMLMapping.xml" todir="${build}/org/psi/ms/converter"/>
         <javac debug="${debug}" srcdir="${src}/java" destdir="${build}" nowarn="true">
             <classpath refid="classpath"/>
         </javac>

@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapping>
+    <description>Castor generated mapping file</description>
+    <class name="org.psi.ms.model.MzRange">
+        <description>Default mapping for class org.psi.ms.model.MzRange</description>
+        <map-to xml="mzRange"/>
+        <field name="start" type="int" required="true">
+            <bind-xml name="start" node="attribute"/>
+        </field>
+        <field name="stop" type="int" required="true">
+            <bind-xml name="stop" node="attribute"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Test">
+        <description>Default mapping for class org.psi.ms.model.Test</description>
+        <map-to xml="test"/>
+        <field name="dataProcessing" type="org.psi.ms.model.DataProcessing" required="true" collection="array">
+            <bind-xml name="dataProcessing" node="element"/>
+        </field>
+        <field name="processingMethod" type="org.psi.ms.model.ProcessingMethod" required="true">
+            <bind-xml name="processingMethod" node="element"/>
+        </field>
+        <field name="testParam" type="org.psi.ms.model.TestParam" collection="array">
+            <bind-xml name="testParam" node="element"/>
+        </field>
+        <field name="testUserParam" type="org.psi.ms.model.TestUserParam" collection="array">
+            <bind-xml name="testUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SupplementList">
+        <description>Default mapping for class org.psi.ms.model.SupplementList</description>
+        <map-to xml="supplementList"/>
+        <field name="count" type="int">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="supplement" type="org.psi.ms.model.Supplement" required="true" collection="array">
+            <bind-xml name="supplement" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Activation">
+        <description>Default mapping for class org.psi.ms.model.Activation</description>
+        <map-to xml="activation"/>
+        <field name="method" type="org.psi.ms.model.types.ActivationTypeMethodType" required="true">
+            <bind-xml name="method" node="attribute"/>
+        </field>
+        <field name="energy" type="float">
+            <bind-xml name="energy" node="attribute"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Analyzer">
+        <description>Default mapping for class org.psi.ms.model.Analyzer</description>
+        <map-to xml="analyzer"/>
+        <field name="type" type="org.psi.ms.model.types.AnalyzerTypeTypeType" required="true">
+            <bind-xml name="type" node="attribute"/>
+        </field>
+        <field name="resolution" type="float" required="true">
+            <bind-xml name="resolution" node="attribute"/>
+        </field>
+        <field name="accuracy" type="float" required="true">
+            <bind-xml name="accuracy" node="attribute"/>
+        </field>
+        <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
+            <bind-xml name="instParam" node="element"/>
+        </field>
+        <field name="instUserParam" type="org.psi.ms.model.InstUserParam" collection="array">
+            <bind-xml name="instUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.List">
+        <description>Default mapping for class org.psi.ms.model.List</description>
+        <map-to xml="list"/>
+        <field name="count" type="int" required="true">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="acq" type="int" required="true" collection="array">
+            <bind-xml name="acq" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqSettings">
+        <description>Default mapping for class org.psi.ms.model.AcqSettings</description>
+        <map-to xml="acqSettings"/>
+        <field name="specType" type="org.psi.ms.model.types.AcqSettingsTypeSpecTypeType" required="true">
+            <bind-xml name="specType" node="attribute"/>
+        </field>
+        <field name="acqSpecification" type="org.psi.ms.model.AcqSpecification" required="true">
+            <bind-xml name="acqSpecification" node="element"/>
+        </field>
+        <field name="instrument" type="org.psi.ms.model.Instrument2" required="true">
+            <bind-xml name="instrument" node="element"/>
+        </field>
+        <field name="acqTime" type="org.psi.ms.model.AcqTime">
+            <bind-xml name="acqTime" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Contact">
+        <description>Default mapping for class org.psi.ms.model.Contact</description>
+        <map-to xml="contact"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="institution" type="java.lang.String" required="true">
+            <bind-xml name="institution" node="element"/>
+        </field>
+        <field name="contactInfo" type="java.lang.String">
+            <bind-xml name="contactInfo" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Supplement">
+        <description>Default mapping for class org.psi.ms.model.Supplement</description>
+        <map-to xml="supplement"/>
+        <field name="id" type="int" required="true">
+            <bind-xml name="id" node="attribute"/>
+        </field>
+        <field name="dataArray" type="org.psi.ms.model.DataArray" required="true">
+            <bind-xml name="dataArray" node="element"/>
+        </field>
+        <field name="dataArrayBinary" type="org.psi.ms.model.DataArrayBinary" required="true">
+            <bind-xml name="dataArrayBinary" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Precursor">
+        <description>Default mapping for class org.psi.ms.model.Precursor</description>
+        <map-to xml="precursor"/>
+        <field name="msLevel" type="int" required="true">
+            <bind-xml name="msLevel" node="attribute"/>
+        </field>
+        <field name="acqID" type="int" required="true">
+            <bind-xml name="acqID" node="attribute"/>
+        </field>
+        <field name="activation" type="org.psi.ms.model.Activation" required="true">
+            <bind-xml name="activation" node="element"/>
+        </field>
+        <field name="ion" type="org.psi.ms.model.Ion">
+            <bind-xml name="ion" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Acquisition">
+        <description>Default mapping for class org.psi.ms.model.Acquisition</description>
+        <map-to xml="acquisition"/>
+        <field name="id" type="int" required="true">
+            <bind-xml name="id" node="attribute"/>
+        </field>
+        <field name="mzArray" type="org.psi.ms.model.MzArray">
+            <bind-xml name="mzArray" node="element"/>
+        </field>
+        <field name="intenArray" type="org.psi.ms.model.IntenArray">
+            <bind-xml name="intenArray" node="element"/>
+        </field>
+        <field name="mzArrayBinary" type="org.psi.ms.model.MzArrayBinary">
+            <bind-xml name="mzArrayBinary" node="element"/>
+        </field>
+        <field name="intenArrayBinary" type="org.psi.ms.model.IntenArrayBinary">
+            <bind-xml name="intenArrayBinary" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqSpecification">
+        <description>Default mapping for class org.psi.ms.model.AcqSpecification</description>
+        <map-to xml="acqSpecification"/>
+        <field name="method" type="org.psi.ms.model.types.AcqSpecificationMethodType" required="true">
+            <bind-xml name="method" node="attribute"/>
+        </field>
+        <field name="list" type="org.psi.ms.model.List">
+            <bind-xml name="list" node="element"/>
+        </field>
+        <field name="range" type="org.psi.ms.model.Range">
+            <bind-xml name="range" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqUserParam">
+        <description>Default mapping for class org.psi.ms.model.AcqUserParam</description>
+        <map-to xml="acqUserParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvUserParamTypeChoice" type="org.psi.ms.model.CvUserParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.IntenArrayBinary">
+        <description>Default mapping for class org.psi.ms.model.IntenArrayBinary</description>
+        <map-to xml="intenArrayBinary"/>
+        <field name="data" type="org.psi.ms.model.Data" required="true">
+            <bind-xml name="data" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqDesc">
+        <description>Default mapping for class org.psi.ms.model.AcqDesc</description>
+        <map-to xml="acqDesc"/>
+        <field name="id" type="int" required="true">
+            <bind-xml name="id" node="attribute"/>
+        </field>
+        <field name="acqSettings" type="org.psi.ms.model.AcqSettings" required="true">
+            <bind-xml name="acqSettings" node="element"/>
+        </field>
+        <field name="precursorList" type="org.psi.ms.model.PrecursorList">
+            <bind-xml name="precursorList" node="element"/>
+        </field>
+        <field name="summary" type="org.psi.ms.model.Summary">
+            <bind-xml name="summary" node="element"/>
+        </field>
+        <field name="sourceFile" type="org.psi.ms.model.SourceFile">
+            <bind-xml name="sourceFile" node="element"/>
+        </field>
+        <field name="acqParam" type="org.psi.ms.model.AcqParam" collection="array">
+            <bind-xml name="acqParam" node="element"/>
+        </field>
+        <field name="acqUserParam" type="org.psi.ms.model.AcqUserParam">
+            <bind-xml name="acqUserParam" node="element"/>
+        </field>
+        <field name="comment" type="java.lang.String" collection="array">
+            <bind-xml name="comment" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Range">
+        <description>Default mapping for class org.psi.ms.model.Range</description>
+        <map-to xml="range"/>
+        <field name="start" type="int" required="true">
+            <bind-xml name="start" node="attribute"/>
+        </field>
+        <field name="end" type="int" required="true">
+            <bind-xml name="end" node="attribute"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.InstParam">
+        <description>Default mapping for class org.psi.ms.model.InstParam</description>
+        <map-to xml="instParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int" required="true">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Software">
+        <description>Default mapping for class org.psi.ms.model.Software</description>
+        <map-to xml="software"/>
+        <field name="completionTime" type="java.util.Date">
+            <bind-xml name="completionTime" node="attribute"/>
+        </field>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="version" type="java.lang.String" required="true">
+            <bind-xml name="version" node="element"/>
+        </field>
+        <field name="description" type="java.lang.String">
+            <bind-xml name="description" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Detector">
+        <description>Default mapping for class org.psi.ms.model.Detector</description>
+        <map-to xml="detector"/>
+        <field name="type" type="org.psi.ms.model.types.DetectorTypeTypeType" required="true">
+            <bind-xml name="type" node="attribute"/>
+        </field>
+        <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
+            <bind-xml name="instParam" node="element"/>
+        </field>
+        <field name="instUserParam" type="org.psi.ms.model.InstUserParam" collection="array">
+            <bind-xml name="instUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Ion">
+        <description>Default mapping for class org.psi.ms.model.Ion</description>
+        <map-to xml="ion"/>
+        <field name="mz" type="float">
+            <bind-xml name="mz" node="attribute"/>
+        </field>
+        <field name="charge" type="int">
+            <bind-xml name="charge" node="attribute"/>
+        </field>
+        <field name="acqID" type="int">
+            <bind-xml name="acqID" node="attribute"/>
+        </field>
+        <field name="intensity" type="float">
+            <bind-xml name="intensity" node="attribute"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.CvUserParamTypeChoice">
+        <description>Default mapping for class org.psi.ms.model.CvUserParamTypeChoice</description>
+        <map-to/>
+        <field name="string" type="java.lang.String" required="true">
+            <bind-xml name="string" node="element"/>
+        </field>
+        <field name="int" type="int" required="true">
+            <bind-xml name="int" node="element"/>
+        </field>
+        <field name="float" type="float" required="true">
+            <bind-xml name="float" node="element"/>
+        </field>
+        <field name="time" type="java.util.Date" required="true">
+            <bind-xml name="time" node="element"/>
+        </field>
+        <field name="URI" type="java.lang.String" required="true">
+            <bind-xml name="URI" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqTime">
+        <description>Default mapping for class org.psi.ms.model.AcqTime</description>
+        <map-to xml="acqTime"/>
+        <field name="units" type="org.psi.ms.model.types.AcqTimeUnitsType" required="true">
+            <bind-xml name="units" node="attribute"/>
+        </field>
+        <field name="content" type="java.util.Date">
+            <bind-xml name="PCDATA" node="text"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Raw">
+        <description>Default mapping for class org.psi.ms.model.Raw</description>
+        <map-to xml="raw"/>
+        <field name="acquisitionList" type="org.psi.ms.model.AcquisitionList" required="true">
+            <bind-xml name="acquisitionList" node="element"/>
+        </field>
+        <field name="supplementList" type="org.psi.ms.model.SupplementList">
+            <bind-xml name="supplementList" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.DataProcessing">
+        <description>Default mapping for class org.psi.ms.model.DataProcessing</description>
+        <map-to xml="dataProcessing"/>
+        <field name="software" type="org.psi.ms.model.Software" required="true">
+            <bind-xml name="software" node="element"/>
+        </field>
+        <field name="comment" type="java.lang.String" collection="array">
+            <bind-xml name="comment" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.CvCoreParamTypeChoice">
+        <description>Default mapping for class org.psi.ms.model.CvCoreParamTypeChoice</description>
+        <map-to/>
+        <field name="string" type="java.lang.String" required="true">
+            <bind-xml name="string" node="element"/>
+        </field>
+        <field name="int" type="int" required="true">
+            <bind-xml name="int" node="element"/>
+        </field>
+        <field name="float" type="float" required="true">
+            <bind-xml name="float" node="element"/>
+        </field>
+        <field name="time" type="java.util.Date" required="true">
+            <bind-xml name="time" node="element"/>
+        </field>
+        <field name="URI" type="java.lang.String" required="true">
+            <bind-xml name="URI" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SourceFile">
+        <description>Default mapping for class org.psi.ms.model.SourceFile</description>
+        <map-to xml="sourceFile"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="type" type="java.lang.String">
+            <bind-xml name="type" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Instrument">
+        <description>Default mapping for class org.psi.ms.model.Instrument</description>
+        <map-to xml="instrument"/>
+        <field name="instName" type="java.lang.String" required="true">
+            <bind-xml name="instName" node="element"/>
+        </field>
+        <field name="source" type="org.psi.ms.model.Source" required="true">
+            <bind-xml name="source" node="element"/>
+        </field>
+        <field name="analyzer" type="org.psi.ms.model.Analyzer" required="true">
+            <bind-xml name="analyzer" node="element"/>
+        </field>
+        <field name="detector" type="org.psi.ms.model.Detector" required="true">
+            <bind-xml name="detector" node="element"/>
+        </field>
+        <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
+            <bind-xml name="instParam" node="element"/>
+        </field>
+        <field name="instUserParam" type="org.psi.ms.model.InstUserParam" collection="array">
+            <bind-xml name="instUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.MzArrayBinary">
+        <description>Default mapping for class org.psi.ms.model.MzArrayBinary</description>
+        <map-to xml="mzArrayBinary"/>
+        <field name="data" type="org.psi.ms.model.Data" required="true">
+            <bind-xml name="data" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcquisitionList">
+        <description>Default mapping for class org.psi.ms.model.AcquisitionList</description>
+        <map-to xml="acquisitionList"/>
+        <field name="count" type="int" required="true">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="acquisition" type="org.psi.ms.model.Acquisition" required="true" collection="array">
+            <bind-xml name="acquisition" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.PrecursorList">
+        <description>Default mapping for class org.psi.ms.model.PrecursorList</description>
+        <map-to xml="precursorList"/>
+        <field name="count" type="int" required="true">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="precursor" type="org.psi.ms.model.Precursor" required="true" collection="array">
+            <bind-xml name="precursor" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SupUserParam">
+        <description>Default mapping for class org.psi.ms.model.SupUserParam</description>
+        <map-to xml="supUserParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvUserParamTypeChoice" type="org.psi.ms.model.CvUserParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Summary">
+        <description>Default mapping for class org.psi.ms.model.Summary</description>
+        <map-to xml="summary"/>
+        <field name="lowMZ" type="float">
+            <bind-xml name="lowMZ" node="attribute"/>
+        </field>
+        <field name="highMZ" type="float">
+            <bind-xml name="highMZ" node="attribute"/>
+        </field>
+        <field name="TIC" type="float">
+            <bind-xml name="TIC" node="attribute"/>
+        </field>
+        <field name="baseIon" type="org.psi.ms.model.BaseIon">
+            <bind-xml name="baseIon" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SupDesc">
+        <description>Default mapping for class org.psi.ms.model.SupDesc</description>
+        <map-to xml="supDesc"/>
+        <field name="id" type="int" required="true">
+            <bind-xml name="id" node="attribute"/>
+        </field>
+        <field name="supDataName" type="java.lang.String" required="true">
+            <bind-xml name="supDataName" node="element"/>
+        </field>
+        <field name="supParam" type="org.psi.ms.model.SupParam" collection="array">
+            <bind-xml name="supParam" node="element"/>
+        </field>
+        <field name="supUserParam" type="org.psi.ms.model.SupUserParam" collection="array">
+            <bind-xml name="supUserParam" node="element"/>
+        </field>
+        <field name="sourceFile" type="org.psi.ms.model.SourceFile" collection="array">
+            <bind-xml name="sourceFile" node="element"/>
+        </field>
+        <field name="comment" type="java.lang.String" collection="array">
+            <bind-xml name="comment" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.ProcessingMethod">
+        <description>Default mapping for class org.psi.ms.model.ProcessingMethod</description>
+        <map-to xml="processingMethod"/>
+        <field name="deisotoped" type="boolean">
+            <bind-xml name="deisotoped" node="attribute"/>
+        </field>
+        <field name="chargeDeconvolved" type="boolean">
+            <bind-xml name="chargeDeconvolved" node="attribute"/>
+        </field>
+        <field name="peakThreshold" type="float">
+            <bind-xml name="peakThreshold" node="attribute"/>
+        </field>
+        <field name="peakProcessing" type="java.lang.String" required="true">
+            <bind-xml name="peakProcessing" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Desc">
+        <description>Default mapping for class org.psi.ms.model.Desc</description>
+        <map-to xml="desc"/>
+        <field name="admin" type="org.psi.ms.model.Admin" required="true">
+            <bind-xml name="admin" node="element"/>
+        </field>
+        <field name="instrument" type="org.psi.ms.model.Instrument" required="true">
+            <bind-xml name="instrument" node="element"/>
+        </field>
+        <field name="test" type="org.psi.ms.model.Test" required="true">
+            <bind-xml name="test" node="element"/>
+        </field>
+        <field name="acqDescList" type="org.psi.ms.model.AcqDescList" required="true">
+            <bind-xml name="acqDescList" node="element"/>
+        </field>
+        <field name="supDescList" type="org.psi.ms.model.SupDescList">
+            <bind-xml name="supDescList" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.DataArrayBinary">
+        <description>Default mapping for class org.psi.ms.model.DataArrayBinary</description>
+        <map-to xml="dataArrayBinary"/>
+        <field name="data" type="org.psi.ms.model.Data" required="true">
+            <bind-xml name="data" node="element"/>
+        </field>
+        <field name="arrayName" type="java.lang.String" required="true">
+            <bind-xml name="arrayName" node="element"/>
+        </field>
+        <field name="description" type="java.lang.String">
+            <bind-xml name="description" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SupParam">
+        <description>Default mapping for class org.psi.ms.model.SupParam</description>
+        <map-to xml="supParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int" required="true">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Source">
+        <description>Default mapping for class org.psi.ms.model.Source</description>
+        <map-to xml="source"/>
+        <field name="type" type="org.psi.ms.model.types.SourceTypeTypeType" required="true">
+            <bind-xml name="type" node="attribute"/>
+        </field>
+        <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
+            <bind-xml name="instParam" node="element"/>
+        </field>
+        <field name="instUserParam" type="org.psi.ms.model.InstUserParam" collection="array">
+            <bind-xml name="instUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Admin">
+        <description>Default mapping for class org.psi.ms.model.Admin</description>
+        <map-to xml="admin"/>
+        <field name="sampleName" type="java.lang.String" required="true">
+            <bind-xml name="sampleName" node="element"/>
+        </field>
+        <field name="contact" type="org.psi.ms.model.Contact" required="true">
+            <bind-xml name="contact" node="element"/>
+        </field>
+        <field name="sourceFile" type="org.psi.ms.model.SourceFile" collection="array">
+            <bind-xml name="sourceFile" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.DataArray">
+        <description>Default mapping for class org.psi.ms.model.DataArray</description>
+        <map-to xml="dataArray"/>
+        <field name="length" type="int" required="true">
+            <bind-xml name="length" node="attribute"/>
+        </field>
+        <field name="indexed" type="boolean" required="true">
+            <bind-xml name="indexed" node="attribute"/>
+        </field>
+        <field name="offset" type="int">
+            <bind-xml name="offset" node="attribute"/>
+        </field>
+        <field name="float" type="float" required="true" collection="array">
+            <bind-xml name="float" node="element"/>
+        </field>
+        <field name="int" type="int" required="true" collection="array">
+            <bind-xml name="int" node="element"/>
+        </field>
+        <field name="string" type="java.lang.String" required="true" collection="array">
+            <bind-xml name="string" node="element"/>
+        </field>
+        <field name="time" type="org.exolab.castor.types.Duration" required="true" collection="array">
+            <bind-xml name="time" node="element"/>
+        </field>
+        <field name="URI" type="java.lang.String" required="true" collection="array">
+            <bind-xml name="URI" node="element"/>
+        </field>
+        <field name="arrayName" type="java.lang.String" required="true">
+            <bind-xml name="arrayName" node="element"/>
+        </field>
+        <field name="description" type="java.lang.String">
+            <bind-xml name="description" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqDescList">
+        <description>Default mapping for class org.psi.ms.model.AcqDescList</description>
+        <map-to xml="acqDescList"/>
+        <field name="count" type="int" required="true">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="acqDesc" type="org.psi.ms.model.AcqDesc" required="true" collection="array">
+            <bind-xml name="acqDesc" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Data">
+        <description>Default mapping for class org.psi.ms.model.Data</description>
+        <map-to xml="data"/>
+        <field name="precision" type="org.psi.ms.model.types.DataPrecisionType" required="true">
+            <bind-xml name="precision" node="attribute"/>
+        </field>
+        <field name="length" type="int" required="true">
+            <bind-xml name="length" node="attribute"/>
+        </field>
+        <!-- "[B" is the class name for byte[] !!! -->
+        <field name="content" type="[B">
+            <bind-xml name="PCDATA" node="text"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.MzArray">
+        <description>Default mapping for class org.psi.ms.model.MzArray</description>
+        <map-to xml="mzArray"/>
+        <field name="length" type="int" required="true">
+            <bind-xml name="length" node="attribute"/>
+        </field>
+        <field name="float" type="float" required="true" collection="array">
+            <bind-xml name="float" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.TestParam">
+        <description>Default mapping for class org.psi.ms.model.TestParam</description>
+        <map-to xml="testParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int" required="true">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.BaseIon">
+        <description>Default mapping for class org.psi.ms.model.BaseIon</description>
+        <map-to xml="baseIon"/>
+        <field name="mz" type="float">
+            <bind-xml name="mz" node="attribute"/>
+        </field>
+        <field name="charge" type="int">
+            <bind-xml name="charge" node="attribute"/>
+        </field>
+        <field name="acqID" type="int">
+            <bind-xml name="acqID" node="attribute"/>
+        </field>
+        <field name="intensity" type="float">
+            <bind-xml name="intensity" node="attribute"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.IntenArray">
+        <description>Default mapping for class org.psi.ms.model.IntenArray</description>
+        <map-to xml="intenArray"/>
+        <field name="length" type="int" required="true">
+            <bind-xml name="length" node="attribute"/>
+        </field>
+        <field name="float" type="float" required="true" collection="array">
+            <bind-xml name="float" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.SupDescList">
+        <description>Default mapping for class org.psi.ms.model.SupDescList</description>
+        <map-to xml="supDescList"/>
+        <field name="count" type="int">
+            <bind-xml name="count" node="attribute"/>
+        </field>
+        <field name="supDesc" type="org.psi.ms.model.SupDesc" required="true" collection="array">
+            <bind-xml name="supDesc" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.MzData">
+        <description>Default mapping for class org.psi.ms.model.MzData</description>
+        <map-to xml="mzData"/>
+        <field name="version" type="java.lang.String" required="true">
+            <bind-xml name="version" node="attribute"/>
+        </field>
+        <field name="desc" type="org.psi.ms.model.Desc" required="true">
+            <bind-xml name="desc" node="element"/>
+        </field>
+        <field name="raw" type="org.psi.ms.model.Raw" required="true">
+            <bind-xml name="raw" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.AcqParam">
+        <description>Default mapping for class org.psi.ms.model.AcqParam</description>
+        <map-to xml="acqParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int" required="true">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvCoreParamTypeChoice" type="org.psi.ms.model.CvCoreParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.Instrument2">
+        <description>Default mapping for class org.psi.ms.model.Instrument2</description>
+        <map-to xml="instrument"/>
+        <field name="acqType" type="org.psi.ms.model.types.InstrumentAcqSettingsTypeAcqTypeType" required="true">
+            <bind-xml name="acqType" node="attribute"/>
+        </field>
+        <field name="msLevel" type="int" required="true">
+            <bind-xml name="msLevel" node="attribute"/>
+        </field>
+        <field name="polarity" type="org.psi.ms.model.types.InstrumentAcqSettingsTypePolarityType">
+            <bind-xml name="polarity" node="attribute"/>
+        </field>
+        <field name="mzRange" type="org.psi.ms.model.MzRange">
+            <bind-xml name="mzRange" node="element"/>
+        </field>
+        <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
+            <bind-xml name="instParam" node="element"/>
+        </field>
+        <field name="instUserParam" type="org.psi.ms.model.InstUserParam" collection="array">
+            <bind-xml name="instUserParam" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.InstUserParam">
+        <description>Default mapping for class org.psi.ms.model.InstUserParam</description>
+        <map-to xml="instUserParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvUserParamTypeChoice" type="org.psi.ms.model.CvUserParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+    <class name="org.psi.ms.model.TestUserParam">
+        <description>Default mapping for class org.psi.ms.model.TestUserParam</description>
+        <map-to xml="testUserParam"/>
+        <field name="name" type="java.lang.String" required="true">
+            <bind-xml name="name" node="element"/>
+        </field>
+        <field name="xref" type="int">
+            <bind-xml name="xref" node="element"/>
+        </field>
+        <field name="cvUserParamTypeChoice" type="org.psi.ms.model.CvUserParamTypeChoice" required="true">
+            <bind-xml name="-error-if-this-is-used-" node="element"/>
+        </field>
+    </class>
+</mapping>

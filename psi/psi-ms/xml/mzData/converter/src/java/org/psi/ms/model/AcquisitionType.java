@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcquisitionType.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: AcquisitionType.java,v 1.2 2003/08/20 16:44:11 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -21,7 +21,7 @@ import org.exolab.castor.xml.ValidationException;
 /**
  * Class AcquisitionType.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/20 16:44:11 $
  */
 public abstract class AcquisitionType implements java.io.Serializable {
 
@@ -41,14 +41,34 @@ public abstract class AcquisitionType implements java.io.Serializable {
     private boolean _has_id;
 
     /**
-     * Field _acquisitionTypeSequence
+     * Here the mass array can be specified as individual numbers,
+     * however, the type must be selected as either float or int
+     * for the entire array. This allows for human readability and
+     * editing.
      */
-    private org.psi.ms.model.AcquisitionTypeSequence _acquisitionTypeSequence;
+    private org.psi.ms.model.MzArray _mzArray;
 
     /**
-     * Field _acquisitionTypeSequence2
+     * The intensity array can be specified as an array of ints or
+     * an array of floats also.
      */
-    private org.psi.ms.model.AcquisitionTypeSequence2 _acquisitionTypeSequence2;
+    private org.psi.ms.model.IntenArray _intenArray;
+
+    /**
+     * Here the list of m/z values (for any type of spectrum). If
+     * this is a true mass spectrum, then z=1. The array is stored
+     * as a base64 encoded binary. The only type allowed is
+     * IEEE-754 floating point and the precision must be specified
+     * as either 32 or 64.
+     */
+    private org.psi.ms.model.MzArrayBinary _mzArrayBinary;
+
+    /**
+     * Here the intensities of each element of the m/z array are
+     * stored also in base64 encoded binary of type float with a
+     * specified precision.
+     */
+    private org.psi.ms.model.IntenArrayBinary _intenArrayBinary;
 
 
       //----------------/
@@ -65,24 +85,61 @@ public abstract class AcquisitionType implements java.io.Serializable {
     //-----------/
 
     /**
-     * Returns the value of field 'acquisitionTypeSequence'.
-     * 
-     * @return the value of field 'acquisitionTypeSequence'.
+     * Returns the value of field 'intenArray'. The field
+     * 'intenArray' has the following description: The intensity
+     * array can be specified as an array of ints or an array of
+     * floats also.
+     *
+     * @return the value of field 'intenArray'.
      */
-    public org.psi.ms.model.AcquisitionTypeSequence getAcquisitionTypeSequence()
+    public org.psi.ms.model.IntenArray getIntenArray()
     {
-        return this._acquisitionTypeSequence;
-    } //-- org.psi.ms.model.AcquisitionTypeSequence getAcquisitionTypeSequence() 
+        return this._intenArray;
+    } //-- org.psi.ms.model.IntenArray getIntenArray()
 
     /**
-     * Returns the value of field 'acquisitionTypeSequence2'.
-     * 
-     * @return the value of field 'acquisitionTypeSequence2'.
+     * Returns the value of field 'mzArray'. The field 'mzArray'
+     * has the following description: Here the mass array can be
+     * specified as individual numbers, however, the type must be
+     * selected as either float or int for the entire array. This
+     * allows for human readability and editing.
+     *
+     * @return the value of field 'mzArray'.
      */
-    public org.psi.ms.model.AcquisitionTypeSequence2 getAcquisitionTypeSequence2()
+    public org.psi.ms.model.MzArray getMzArray()
     {
-        return this._acquisitionTypeSequence2;
-    } //-- org.psi.ms.model.AcquisitionTypeSequence2 getAcquisitionTypeSequence2() 
+        return this._mzArray;
+    } //-- org.psi.ms.model.MzArray getMzArray()
+
+    /**
+     * Returns the value of field 'intenArrayBinary'. The field
+     * 'intenArrayBinary' has the following description: Here the
+     * intensities of each element of the m/z array are stored also
+     * in base64 encoded binary of type float with a specified
+     * precision.
+     *
+     * @return the value of field 'intenArrayBinary'.
+     */
+    public org.psi.ms.model.IntenArrayBinary getIntenArrayBinary()
+    {
+        return this._intenArrayBinary;
+    } //-- org.psi.ms.model.IntenArrayBinary getIntenArrayBinary()
+
+    /**
+     * Returns the value of field 'mzArrayBinary'. The field
+     * 'mzArrayBinary' has the following description: Here the list
+     * of m/z values (for any type of spectrum). If this is a true
+     * mass spectrum, then z=1. The array is stored as a base64
+     * encoded binary. The only type allowed is IEEE-754 floating
+     * point and the precision must be specified as either 32 or
+     * 64.
+     *
+     * @return the value of field 'mzArrayBinary'.
+     */
+    public org.psi.ms.model.MzArrayBinary getMzArrayBinary()
+    {
+        return this._mzArrayBinary;
+    } //-- org.psi.ms.model.MzArrayBinary getMzArrayBinary()
 
     /**
      * Returns the value of field 'id'.
@@ -117,26 +174,60 @@ public abstract class AcquisitionType implements java.io.Serializable {
     } //-- boolean isValid() 
 
     /**
-     * Sets the value of field 'acquisitionTypeSequence'.
-     * 
-     * @param acquisitionTypeSequence the value of field
-     * 'acquisitionTypeSequence'.
+     * Sets the value of field 'intenArray'. The field 'intenArray'
+     * has the following description: The intensity array can be
+     * specified as an array of ints or an array of floats also.
+     *
+     * @param intenArray the value of field 'intenArray'.
      */
-    public void setAcquisitionTypeSequence(org.psi.ms.model.AcquisitionTypeSequence acquisitionTypeSequence)
+    public void setIntenArray(org.psi.ms.model.IntenArray intenArray)
     {
-        this._acquisitionTypeSequence = acquisitionTypeSequence;
-    } //-- void setAcquisitionTypeSequence(org.psi.ms.model.AcquisitionTypeSequence) 
+        this._intenArray = intenArray;
+    } //-- void setIntenArray(org.psi.ms.model.IntenArray)
 
     /**
-     * Sets the value of field 'acquisitionTypeSequence2'.
-     * 
-     * @param acquisitionTypeSequence2 the value of field
-     * 'acquisitionTypeSequence2'.
+     * Sets the value of field 'mzArray'. The field 'mzArray' has
+     * the following description: Here the mass array can be
+     * specified as individual numbers, however, the type must be
+     * selected as either float or int for the entire array. This
+     * allows for human readability and editing.
+     *
+     * @param mzArray the value of field 'mzArray'.
      */
-    public void setAcquisitionTypeSequence2(org.psi.ms.model.AcquisitionTypeSequence2 acquisitionTypeSequence2)
+    public void setMzArray(org.psi.ms.model.MzArray mzArray)
     {
-        this._acquisitionTypeSequence2 = acquisitionTypeSequence2;
-    } //-- void setAcquisitionTypeSequence2(org.psi.ms.model.AcquisitionTypeSequence2) 
+        this._mzArray = mzArray;
+    } //-- void setMzArray(org.psi.ms.model.MzArray)
+
+    /**
+     * Sets the value of field 'intenArrayBinary'. The field
+     * 'intenArrayBinary' has the following description: Here the
+     * intensities of each element of the m/z array are stored also
+     * in base64 encoded binary of type float with a specified
+     * precision.
+     *
+     * @param intenArrayBinary the value of field 'intenArrayBinary'
+     */
+    public void setIntenArrayBinary(org.psi.ms.model.IntenArrayBinary intenArrayBinary)
+    {
+        this._intenArrayBinary = intenArrayBinary;
+    } //-- void setIntenArrayBinary(org.psi.ms.model.IntenArrayBinary)
+
+    /**
+     * Sets the value of field 'mzArrayBinary'. The field
+     * 'mzArrayBinary' has the following description: Here the list
+     * of m/z values (for any type of spectrum). If this is a true
+     * mass spectrum, then z=1. The array is stored as a base64
+     * encoded binary. The only type allowed is IEEE-754 floating
+     * point and the precision must be specified as either 32 or
+     * 64.
+     *
+     * @param mzArrayBinary the value of field 'mzArrayBinary'.
+     */
+    public void setMzArrayBinary(org.psi.ms.model.MzArrayBinary mzArrayBinary)
+    {
+        this._mzArrayBinary = mzArrayBinary;
+    } //-- void setMzArrayBinary(org.psi.ms.model.MzArrayBinary)
 
     /**
      * Sets the value of field 'id'.

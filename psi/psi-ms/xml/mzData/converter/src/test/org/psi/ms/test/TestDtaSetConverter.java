@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.1 2003/08/11 17:22:16 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.2 2003/08/20 16:44:12 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -24,8 +24,9 @@ public class TestDtaSetConverter {
 
     public static void main(String[] argv) throws IOException, PsiMsConverterException, ValidationException, MarshalException {
         DtaSetConverter dtaSetConverter = new DtaSetConverter();
-        dtaSetConverter.convertDirectory(argv[0], argv[1] + "_base64");
         dtaSetConverter = new DtaSetConverter(DtaReader.XML_ELEMENTS);
         dtaSetConverter.convertDirectory(argv[0], argv[1]);
+        dtaSetConverter = new DtaSetConverter(DtaReader.BASE64);
+        dtaSetConverter.convertDirectory(argv[0], argv[1] + "_base64");
     }
 }

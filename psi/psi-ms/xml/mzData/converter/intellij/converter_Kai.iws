@@ -2,42 +2,40 @@
 <project version="3" relativePaths="false">
   <component name="FileEditorManager">
     <history>
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/mzdata.xsd" line="1" column="21" vertical-scroll-proportion="0.027888447" horizontal-scroll-proportion="0.16742598" />
-      <source-position-entry url="file:///Users/krunte/work/mzdata.xsd" line="17" column="0" vertical-scroll-proportion="0.4741036" horizontal-scroll-proportion="0.0" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/Instrument2Descriptor.java" line="4" column="18" vertical-scroll-proportion="0.18064517" horizontal-scroll-proportion="0.14350797" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/Instrument2.java" line="90" column="28" vertical-scroll-proportion="0.58064514" horizontal-scroll-proportion="0.22323462" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/AcqSettings.java" line="27" column="13" vertical-scroll-proportion="0.30478087" horizontal-scroll-proportion="0.10364465" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/AcqSettingsType.java" line="160" column="29" vertical-scroll-proportion="0.5387097" horizontal-scroll-proportion="0.2312073" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaReader.java" line="221" column="35" vertical-scroll-proportion="1.483871" horizontal-scroll-proportion="0.2790433" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestDtaSetConverter.java" line="22" column="13" vertical-scroll-proportion="0.7225807" horizontal-scroll-proportion="0.10364465" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestUnmarshaller.java" line="39" column="79" vertical-scroll-proportion="1.1258065" horizontal-scroll-proportion="0.62984055" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/AcqSettingsTypeDescriptor.java" line="152" column="71" vertical-scroll-proportion="0.33266932" horizontal-scroll-proportion="0.56605923" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaSetConverter.java" line="88" column="0" vertical-scroll-proportion="0.36774194" horizontal-scroll-proportion="0.0" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestDtaReader.java" line="54" column="0" vertical-scroll-proportion="0.5580645" horizontal-scroll-proportion="0.0" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/MzArray.java" line="0" column="0" vertical-scroll-proportion="0.0" horizontal-scroll-proportion="0.0" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/IntenArray.java" line="0" column="0" vertical-scroll-proportion="0.0" horizontal-scroll-proportion="0.0" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/MzArrayBinaryType.java" line="35" column="4" vertical-scroll-proportion="0.65384614" horizontal-scroll-proportion="0.031904288" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/IntenArrayBinary.java" line="30" column="46" vertical-scroll-proportion="0.33216783" horizontal-scroll-proportion="0.3668993" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/Data.java" line="164" column="0" vertical-scroll-proportion="1.5646853" horizontal-scroll-proportion="0.0" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/AcquisitionType.java" line="54" column="32" vertical-scroll-proportion="-5.0926576" horizontal-scroll-proportion="0.2552343" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/xml/mzDataXMLMapping.xml" line="604" column="44" vertical-scroll-proportion="0.62762237" horizontal-scroll-proportion="0.35094717" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaReader.java" line="0" column="0" vertical-scroll-proportion="0.0" horizontal-scroll-proportion="0.0" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/build.xml" line="57" column="40" vertical-scroll-proportion="0.7132867" horizontal-scroll-proportion="0.31904286" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestDtaReader.java" line="49" column="0" vertical-scroll-proportion="0.6730769" horizontal-scroll-proportion="0.0">
+        <folding>
+          <element signature="imports" expanded="true" />
+        </folding>
+      </source-position-entry>
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestDtaSetConverter.java" line="25" column="21" vertical-scroll-proportion="0.5646853" horizontal-scroll-proportion="0.1674975" />
+      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaSetConverter.java" line="83" column="0" vertical-scroll-proportion="0.7325175" horizontal-scroll-proportion="0.0" />
     </history>
-    <open-files>
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaReader.java" line="221" column="35" vertical-scroll-proportion="1.483871" horizontal-scroll-proportion="0.2790433" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter/DtaSetConverter.java" line="88" column="0" vertical-scroll-proportion="0.36774194" horizontal-scroll-proportion="0.0" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestUnmarshaller.java" line="39" column="79" vertical-scroll-proportion="1.1258065" horizontal-scroll-proportion="0.62984055" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test/TestDtaReader.java" line="54" column="0" vertical-scroll-proportion="0.5580645" horizontal-scroll-proportion="0.0" selected="true" />
-      <source-position-entry url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model/AcqSettingsType.java" line="160" column="29" vertical-scroll-proportion="0.5387097" horizontal-scroll-proportion="0.2312073" />
-    </open-files>
+    <open-files />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="22" width="989" height="680" extended-state="0" />
+    <frame x="6" y="22" width="1114" height="750" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="docked" type="docked" visible="false" weight="0.24953446" order="1" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.24955752" order="5" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="true" weight="0.33097345" order="2" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.2488189" order="5" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33070865" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="2" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="7" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="sliding" type="sliding" visible="false" weight="0.4" order="0" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="docked" type="docked" visible="false" weight="0.24868283" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="true" internal_type="docked" type="docked" visible="false" weight="0.24860336" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.4" order="3" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="1" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33097345" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="sliding" type="sliding" visible="false" weight="0.33097345" order="8" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.24953446" order="1" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33070865" order="1" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="true" internal_type="sliding" type="sliding" visible="false" weight="0.33070865" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.4" order="6" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.25" order="2" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="docked" type="docked" visible="false" weight="0.33" order="0" />
@@ -146,6 +144,12 @@
     <option name="GROUP_GETTERS_AND_SETTERS" value="true" />
   </component>
   <component name="CvsConfiguration">
+    <cvs_root>
+      <option name="METHOD" value="ext" />
+      <option name="USER_NAME" value="krunte" />
+      <option name="HOST" value="cvs.sourceforge.net" />
+      <option name="REPOSITORY" value="/cvsroot/psidev" />
+    </cvs_root>
     <Checkout>
       <option name="DATE_TAG" value="" />
       <option name="REVISION_TAG" value="" />
@@ -233,23 +237,28 @@
     <option name="HIDE_UP_TO_DATE_FILES" value="false" />
   </component>
   <component name="CvsVcs">
-    <expanded_paths />
+    <expanded_paths>
+      <path value="/Users/krunte/work/psi/psi-ms/xml/mzData/converter" />
+    </expanded_paths>
   </component>
   <component name="ProjectViewSettings">
     <navigator currentView="ProjectPane" flattenPackages="false" showMembers="false" showStructure="false" autoscrollToSource="false" splitterProportion="0.5" />
     <view id="ProjectPane">
-      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi" />
-      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/xml" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java" />
-      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org" />
-      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/maven" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms" />
-      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi/ms/test" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/converter" />
       <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/java/org/psi/ms/model" />
+      <expanded_node type="directory" url="file:///Users/krunte/work/psi/psi-ms/xml/mzData/converter/src/test/org/psi" />
     </view>
     <view id="SourcepathPane" />
     <view id="ClasspathPane" />
@@ -295,7 +304,7 @@
       <Port>5050</Port>
       <LaunchServer>false</LaunchServer>
     </configuration>
-    <configuration name="TestDtaReader" type="Application" default="false" selected="true">
+    <configuration name="TestDtaReader" type="Application" default="false" selected="false">
       <option name="MAIN_CLASS_NAME" value="org.psi.ms.test.TestDtaReader" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" value="/Users/krunte/work/mass_spec/R527_2_00030_0.846333_1.dta" />
@@ -307,11 +316,17 @@
       <option name="PROGRAM_PARAMETERS" value="/Users/krunte/work/mass_spec/R527_2_00030_0.846333_1.dta.xml" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="TestDtaSetConverter" type="Application" default="false" selected="false">
+    <configuration name="TestDtaSetConverter" type="Application" default="false" selected="true">
       <option name="MAIN_CLASS_NAME" value="org.psi.ms.test.TestDtaSetConverter" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" value="/Users/krunte/work/mass_spec/20030722_0831/test2/good/ /Users/krunte/work/mass_spec/test2.xml" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="Create Mapping File" type="Application" default="false" selected="false">
+      <option name="MAIN_CLASS_NAME" value="org.exolab.castor.tools.MappingTool" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" value="-i org.psi.ms.model.MzData -o src/xml/MzData.xml" />
+      <option name="WORKING_DIRECTORY" value="/Users/krunte/work/psi/psi-ms/xml/mzData/converter" />
     </configuration>
   </component>
   <component name="BookmarkManager" />
