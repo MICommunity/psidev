@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.13 2004/07/30 14:57:45 krunte Exp $
+ $Id: mzdata.xsd,v 1.14 2004/08/02 12:22:24 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Andreas Wilke, Kai Runte (Bielefeld University)
@@ -307,35 +307,27 @@
         <xs:sequence>
             <xs:element name="acqSpecification">
                 <xs:annotation>
-                    <xs:documentation>Specification for combining raw scans/acquisitions into a single peak list.  Either a list of acquisitions, or a range of acquisitions can be specified.</xs:documentation>
+                    <xs:documentation>Specification for combining raw scans/acquisitions into a single peak list.  A list of acquisitions can be specified here.</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:choice>
-                        <xs:element name="list">
+                    <xs:sequence>
+                        <xs:element name="acquisition" maxOccurs="unbounded">
                             <xs:annotation>
-                                <xs:documentation>A list of acquisitions used to create the peak list.  (May contain a single entry)</xs:documentation>
+                                <xs:documentation>Scan or acquisition number from original raw file used to create this peak list.</xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="acq" type="xs:int" maxOccurs="unbounded">
-                                        <xs:annotation>
-                                            <xs:documentation>Scan or acquisition number from original raw file used to create this peak list.</xs:documentation>
-                                        </xs:annotation>
-                                    </xs:element>
-                                </xs:sequence>
-                                <xs:attribute name="count" type="xs:int" use="required"/>
+                                <xs:complexContent>
+                                    <xs:extension base="paramType">
+                                        <xs:attribute name="acqNumber" type="xs:int" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>The actual acquisition number from the raw file</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:attribute>
+                                    </xs:extension>
+                                </xs:complexContent>
                             </xs:complexType>
                         </xs:element>
-                        <xs:element name="range">
-                            <xs:annotation>
-                                <xs:documentation>If a range of scans or acquistions was used to create the peak list then a start and end value can be specified.</xs:documentation>
-                            </xs:annotation>
-                            <xs:complexType>
-                                <xs:attribute name="start" type="xs:int" use="required"/>
-                                <xs:attribute name="end" type="xs:int" use="required"/>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:choice>
+                    </xs:sequence>
                     <xs:attribute name="spectrumType" use="required">
                         <xs:annotation>
                             <xs:documentation>Discrete or continuous spectra</xs:documentation>
@@ -348,41 +340,21 @@
                         </xs:simpleType>
                     </xs:attribute>
                     <xs:attribute name="methodOfCombination" type="xs:string" use="required"/>
+                    <xs:attribute name="count" type="xs:int" use="required"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="acqInstrument">
+                <xs:annotation>
+                    <xs:documentation>Parameters common to the whole spectrum</xs:documentation>
+                </xs:annotation>
                 <xs:complexType>
                     <xs:complexContent>
                         <xs:extension base="paramType">
                             <xs:attribute name="msLevel" type="xs:int" use="required"/>
-                            <xs:attribute name="mzRangeStart" type="xs:float" use="required"/>
-                            <xs:attribute name="mzRangeStop" type="xs:float" use="required"/>
+                            <xs:attribute name="mzRangeStart" type="xs:float" use="optional"/>
+                            <xs:attribute name="mzRangeStop" type="xs:float" use="optional"/>
                         </xs:extension>
                     </xs:complexContent>
-                </xs:complexType>
-            </xs:element>
-            <xs:element name="acqTime" minOccurs="0">
-                <xs:annotation>
-                    <xs:documentation>The absolute time from the start of the ms run at which an acquisition takes place</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                    <xs:simpleContent>
-                        <xs:extension base="xs:float">
-                            <xs:attribute name="units" use="required">
-                                <xs:simpleType>
-                                    <xs:restriction base="xs:string">
-                                        <xs:enumeration value="day"/>
-                                        <xs:enumeration value="hr"/>
-                                        <xs:enumeration value="min"/>
-                                        <xs:enumeration value="sec"/>
-                                        <xs:enumeration value="ms"/>
-                                        <xs:enumeration value="us"/>
-                                        <xs:enumeration value="ns"/>
-                                    </xs:restriction>
-                                </xs:simpleType>
-                            </xs:attribute>
-                        </xs:extension>
-                    </xs:simpleContent>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
@@ -474,12 +446,13 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="analyzer" type="paramType">
+                        <xs:element name="analyzer" type="paramType" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation>A single component of the mass analyzer; e.g. quadrupole</xs:documentation>
                             </xs:annotation>
                         </xs:element>
                     </xs:sequence>
+                    <xs:attribute name="count" type="xs:int" use="required"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="detector" type="paramType">
