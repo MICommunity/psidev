@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.11 2003/09/10 14:51:33 krunte Exp $
+ * $Id: DtaReader.java,v 1.12 2003/09/15 12:53:02 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,18 +8,15 @@
  */
 package org.psi.ms.converter;
 
-import org.psi.ms.helper.Utils;
 import org.psi.ms.model.*;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.File;
-import java.util.List;
 import java.util.StringTokenizer;
-import java.util.Vector;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Reads in a given .dta file and adds it to a given MzData.
@@ -27,7 +24,6 @@ import java.util.regex.Matcher;
  * @author krunte
  */
 public class DtaReader {
-    private int arrayOutputType = BASE64;
     public final static int BASE64 = 1;
     public final static int XML_ELEMENTS = 2;
     public final static int DTA = 1;
@@ -38,9 +34,6 @@ public class DtaReader {
     }
 
     public DtaReader(int arrayOutputType) {
-        if (arrayOutputType == BASE64 || arrayOutputType == XML_ELEMENTS) {
-            this.arrayOutputType = arrayOutputType;
-        }
     }
 
     public void addAcquisitions(String filepath, MzData mzData, int acqId) throws IOException {
@@ -187,11 +180,7 @@ public class DtaReader {
         acquisition.setId(acqId);
         acquisitionList.addAcquisition(acquisition);
         // Now create the mass and intensity arrays
-        if (arrayOutputType == XML_ELEMENTS) {
-            addXMLArrays(acquisition, bufferedReader);
-        } else if (arrayOutputType == BASE64) {
-            addBinaryArrays(acquisition, bufferedReader);
-        }
+        addXMLArrays(acquisition, bufferedReader);
     }
 
 
@@ -221,54 +210,6 @@ public class DtaReader {
 
         mzArray.setLength(size);
         intenArray.setLength(size);
-        return size;
-    }
-
-    private int addBinaryArrays(Acquisition acquisition, BufferedReader bufferedReader) throws IOException {
-        StringTokenizer stringTokenizer;
-        List mzFloatList = new Vector();
-        List intensityFloatList = new Vector();
-        String line;
-        int size = 0;
-        try {
-            while ((line = bufferedReader.readLine()) != null) {
-                size++;
-                stringTokenizer = new StringTokenizer(line);
-                String mzString = stringTokenizer.nextToken();
-                String intensityString = stringTokenizer.nextToken();
-                Float mz = new Float(mzString);
-                Float intensity = new Float(intensityString);
-                mzFloatList.add(mz);
-                intensityFloatList.add(intensity);
-            }
-        } catch (IOException e) {
-            // EOF
-        }
-        byte[] mzFloatArray = Utils.floatListToByteArray(mzFloatList);
-        byte[] intensityArray = Utils.floatListToByteArray(intensityFloatList);
-
-/*
-        System.out.println("Length of mzFloatArray: " + mzFloatArray.length);
-        System.out.println("Length of mzFloatList: " + mzFloatList.size());
-        System.out.println("Length of intensityArray: " + intensityArray.length);
-        System.out.println("Length of intensityFloatList: " + intensityFloatList.size());
-*/
-        MzArrayBinary mzArrayBinary = new MzArrayBinary();
-        acquisition.setMzArrayBinary(mzArrayBinary);
-        IntenArrayBinary intenArrayBinary = new IntenArrayBinary();
-        acquisition.setIntenArrayBinary(intenArrayBinary);
-
-        Data mzData = new Data();
-        mzData.setContent(mzFloatArray);
-        mzData.setLength(size);
-        mzData.setPrecision(Data.Precision.THIRTYTWO);
-        mzArrayBinary.setData(mzData);
-        Data intenData = new Data();
-        intenData.setContent(intensityArray);
-        intenData.setLength(size);
-        intenData.setPrecision(Data.Precision.THIRTYTWO);
-        intenArrayBinary.setData(intenData);
-
         return size;
     }
 }
