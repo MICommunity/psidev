@@ -1,5 +1,0 @@
-term: deletion analysis
-goid: PSI-MI:0023
-definition: In this approach, once a protein is demonstrated to participate in an interaction, several deletion derivatives are produced and tested in the binding assay to identify the minimal fragment (domain) that can still support the interaction.
-definition_reference: PMID:INTACT
-
