@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.9 2004/01/14 15:57:36 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.10 2004/10/20 11:47:36 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: Kai Runte
@@ -617,7 +617,7 @@ public class MzDataWriter implements ExporterI {
             attribute(null, "length", Integer.toString(length));
             String base64String = "";
             try {
-                base64String = Utils.floatListToBase64String(rawDataType.getFloat());
+                base64String = Utils.floatListToBase64String(rawDataType.getFloat(), true);
             } catch (EncoderException e) {
                 throw new PsiMsConverterException("Could not create base 64 encoded string!");
             }
@@ -704,7 +704,7 @@ public class MzDataWriter implements ExporterI {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.9 $ $Date: 2004/01/14 15:57:36 $
+     * @version $Revision: 1.10 $ $Date: 2004/10/20 11:47:36 $
      */
     public static class OutputType implements java.io.Serializable {
 
