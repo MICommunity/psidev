@@ -2,13 +2,10 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvCoreParamType.java,v 1.4 2003/09/12 15:56:44 krunte Exp $
+ * $Id: CvCoreParamType.java,v 1.5 2003/10/20 10:03:02 krunte Exp $
  */
 
 package org.psi.ms.model;
-
-import java.util.Date;
-import java.net.URI;
 
 //---------------------------------/
 //- Imported classes and packages -/
@@ -19,7 +16,7 @@ import java.net.URI;
  * Data type for single valued properties from the core controlled
  * vocabulary
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/12 15:56:44 $
+ * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
  */
 public abstract class CvCoreParamType extends MultiTypeValue implements java.io.Serializable {
 
@@ -31,23 +28,12 @@ public abstract class CvCoreParamType extends MultiTypeValue implements java.io.
     /**
      * parameter name (controlled)
      */
-    private java.lang.String _name;
+    protected java.lang.String _name;
 
     /**
      * named parameter ID
      */
-    private int _xref;
-
-    /**
-     * keeps track of state for field: _xref
-     */
-    private boolean _has_xref;
-
-
-    /**
-     * Field _cvCoreParamTypeChoice
-     */
-    private org.psi.ms.model.CvCoreParamTypeChoice _cvCoreParamTypeChoice;
+    protected int _xref = -1;
 
 
     //----------------/
@@ -62,15 +48,6 @@ public abstract class CvCoreParamType extends MultiTypeValue implements java.io.
     //-----------/
     //- Methods -/
     //-----------/
-
-    /**
-     * Returns the value of field 'cvCoreParamTypeChoice'.
-     *
-     * @return the value of field 'cvCoreParamTypeChoice'.
-     */
-    public org.psi.ms.model.CvCoreParamTypeChoice getCvCoreParamTypeChoice() {
-        return this._cvCoreParamTypeChoice;
-    } //-- org.psi.ms.model.CvCoreParamTypeChoice getCvCoreParamTypeChoice()
 
     /**
      * Returns the value of field 'name'. The field 'name' has the
@@ -93,23 +70,6 @@ public abstract class CvCoreParamType extends MultiTypeValue implements java.io.
     } //-- int getXref()
 
     /**
-     * Method hasXref
-     */
-    public boolean hasXref() {
-        return this._has_xref;
-    } //-- boolean hasXref()
-
-    /**
-     * Sets the value of field 'cvCoreParamTypeChoice'.
-     *
-     * @param cvCoreParamTypeChoice the value of field
-     * 'cvCoreParamTypeChoice'.
-     */
-    public void setCvCoreParamTypeChoice(org.psi.ms.model.CvCoreParamTypeChoice cvCoreParamTypeChoice) {
-        this._cvCoreParamTypeChoice = cvCoreParamTypeChoice;
-    } //-- void setCvCoreParamTypeChoice(org.psi.ms.model.CvCoreParamTypeChoice)
-
-    /**
      * Sets the value of field 'name'. The field 'name' has the
      * following description: parameter name (controlled)
      *
@@ -127,7 +87,6 @@ public abstract class CvCoreParamType extends MultiTypeValue implements java.io.
      */
     public void setXref(int xref) {
         this._xref = xref;
-        this._has_xref = true;
     } //-- void setXref(int)
 
 }

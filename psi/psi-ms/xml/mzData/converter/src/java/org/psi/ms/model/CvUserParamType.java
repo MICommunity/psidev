@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: CvUserParamType.java,v 1.4 2003/09/12 15:56:44 krunte Exp $
+ * $Id: CvUserParamType.java,v 1.5 2003/10/20 10:03:02 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,35 +16,14 @@ package org.psi.ms.model;
  * Data type for user parameters with or without xref numbers
  * (uncontrolled vocabulary)
  *
- * @version $Revision: 1.4 $ $Date: 2003/09/12 15:56:44 $
+ * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
  */
-public abstract class CvUserParamType extends MultiTypeValue implements java.io.Serializable {
+public abstract class CvUserParamType extends CvCoreParamType implements java.io.Serializable {
 
 
     //--------------------------/
     //- Class/Member Variables -/
     //--------------------------/
-
-    /**
-     * parameter name
-     */
-    private java.lang.String _name;
-
-    /**
-     * This is a user-maintaiend ID (if user desires to control the
-     * vocabulary)
-     */
-    private int _xref;
-
-    /**
-     * keeps track of state for field: _xref
-     */
-    private boolean _has_xref;
-
-    /**
-     * Field _cvUserParamTypeChoice
-     */
-    private org.psi.ms.model.CvUserParamTypeChoice _cvUserParamTypeChoice;
 
 
     //----------------/
@@ -64,76 +43,14 @@ public abstract class CvUserParamType extends MultiTypeValue implements java.io.
      * Method deleteXref
      */
     public void deleteXref() {
-        this._has_xref = false;
+        this._xref = -1;
     } //-- void deleteXref()
-
-    /**
-     * Returns the value of field 'cvUserParamTypeChoice'.
-     *
-     * @return the value of field 'cvUserParamTypeChoice'.
-     */
-    public org.psi.ms.model.CvUserParamTypeChoice getCvUserParamTypeChoice() {
-        return this._cvUserParamTypeChoice;
-    } //-- org.psi.ms.model.CvUserParamTypeChoice getCvUserParamTypeChoice()
-
-    /**
-     * Returns the value of field 'name'. The field 'name' has the
-     * following description: parameter name
-     *
-     * @return the value of field 'name'.
-     */
-    public java.lang.String getName() {
-        return this._name;
-    } //-- java.lang.String getName()
-
-    /**
-     * Returns the value of field 'xref'. The field 'xref' has the
-     * following description: This is a user-maintaiend ID (if user
-     * desires to control the vocabulary)
-     *
-     * @return the value of field 'xref'.
-     */
-    public int getXref() {
-        return this._xref;
-    } //-- int getXref()
 
     /**
      * Method hasXref
      */
     public boolean hasXref() {
-        return this._has_xref;
+        return this._xref == -1;
     } //-- boolean hasXref()
-
-    /**
-     * Sets the value of field 'cvUserParamTypeChoice'.
-     *
-     * @param cvUserParamTypeChoice the value of field
-     * 'cvUserParamTypeChoice'.
-     */
-    public void setCvUserParamTypeChoice(org.psi.ms.model.CvUserParamTypeChoice cvUserParamTypeChoice) {
-        this._cvUserParamTypeChoice = cvUserParamTypeChoice;
-    } //-- void setCvUserParamTypeChoice(org.psi.ms.model.CvUserParamTypeChoice)
-
-    /**
-     * Sets the value of field 'name'. The field 'name' has the
-     * following description: parameter name
-     *
-     * @param name the value of field 'name'.
-     */
-    public void setName(java.lang.String name) {
-        this._name = name;
-    } //-- void setName(java.lang.String)
-
-    /**
-     * Sets the value of field 'xref'. The field 'xref' has the
-     * following description: This is a user-maintaiend ID (if user
-     * desires to control the vocabulary)
-     *
-     * @param xref the value of field 'xref'.
-     */
-    public void setXref(int xref) {
-        this._xref = xref;
-        this._has_xref = true;
-    } //-- void setXref(int)
 
 }

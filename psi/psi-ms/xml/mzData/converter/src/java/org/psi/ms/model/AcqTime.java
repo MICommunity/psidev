@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcqTime.java,v 1.4 2003/08/28 15:17:12 krunte Exp $
+ * $Id: AcqTime.java,v 1.5 2003/10/20 10:03:02 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ import java.util.Hashtable;
 /**
  * Class AcqTime.
  *
- * @version $Revision: 1.4 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
  */
 public class AcqTime implements java.io.Serializable {
 
@@ -28,7 +28,7 @@ public class AcqTime implements java.io.Serializable {
     /**
      * internal content storage
      */
-    private java.util.Date _content;
+    private float _content;
 
     /**
      * Field _units
@@ -55,7 +55,7 @@ public class AcqTime implements java.io.Serializable {
      *
      * @return the value of field 'content'.
      */
-    public java.util.Date getContent() {
+    public float getContent() {
         return this._content;
     } //-- java.util.Date getContent()
 
@@ -74,7 +74,7 @@ public class AcqTime implements java.io.Serializable {
      *
      * @param content the value of field 'content'.
      */
-    public void setContent(java.util.Date content) {
+    public void setContent(float content) {
         this._content = content;
     } //-- void setContent(java.util.Date)
 
@@ -90,7 +90,7 @@ public class AcqTime implements java.io.Serializable {
     /**
      * Class Units.
      *
-     * @version $Revision: 1.4 $ $Date: 2003/08/28 15:17:12 $
+     * @version $Revision: 1.5 $ $Date: 2003/10/20 10:03:02 $
      */
     public static class Units implements java.io.Serializable {
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: MzRange.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: MzRange.java,v 1.4 2003/10/20 10:03:02 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -16,7 +16,7 @@ package org.psi.ms.model;
 /**
  * Range in m/z units of the mass analysis.
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/10/20 10:03:02 $
  */
 public class MzRange implements java.io.Serializable {
 
@@ -28,7 +28,7 @@ public class MzRange implements java.io.Serializable {
     /**
      * Field _start
      */
-    private int _start;
+    private float _start;
 
     /**
      * keeps track of state for field: _start
@@ -38,7 +38,7 @@ public class MzRange implements java.io.Serializable {
     /**
      * Field _stop
      */
-    private int _stop;
+    private float _stop;
 
     /**
      * keeps track of state for field: _stop
@@ -64,7 +64,7 @@ public class MzRange implements java.io.Serializable {
      *
      * @return the value of field 'start'.
      */
-    public int getStart() {
+    public float getStart() {
         return this._start;
     } //-- int getStart()
 
@@ -73,7 +73,7 @@ public class MzRange implements java.io.Serializable {
      *
      * @return the value of field 'stop'.
      */
-    public int getStop() {
+    public float getStop() {
         return this._stop;
     } //-- int getStop()
 
@@ -96,7 +96,7 @@ public class MzRange implements java.io.Serializable {
      *
      * @param start the value of field 'start'.
      */
-    public void setStart(int start) {
+    public void setStart(float start) {
         this._start = start;
         this._has_start = true;
     } //-- void setStart(int)
@@ -106,7 +106,7 @@ public class MzRange implements java.io.Serializable {
      *
      * @param stop the value of field 'stop'.
      */
-    public void setStop(int stop) {
+    public void setStop(float stop) {
         this._stop = stop;
         this._has_stop = true;
     } //-- void setStop(int)
