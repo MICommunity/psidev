@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.7 2003/09/17 15:53:54 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.8 2003/11/10 10:21:13 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,7 +8,7 @@
  */
 package org.psi.ms.test;
 
-import org.psi.ms.converter.DtaSetConverter;
+import org.psi.ms.converter.DtaSetImporter;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.model.MzData;
 import org.psi.ms.xml.MzDataWriter;
@@ -22,9 +22,9 @@ import java.io.IOException;
 public class TestDtaSetConverter {
 
     public static void main(String[] argv) throws IOException, PsiMsConverterException {
-        DtaSetConverter dtaSetConverter = new DtaSetConverter();
+        DtaSetImporter dtaSetConverter = new DtaSetImporter();
         MzData mzData = new MzData();
-        dtaSetConverter = new DtaSetConverter();
+        dtaSetConverter = new DtaSetImporter();
         dtaSetConverter.convertDirectory(argv[0], argv[1], mzData, MzDataWriter.OutputType.XML);
     }
 }

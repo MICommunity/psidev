@@ -2,7 +2,7 @@ package org.psi.ms.swing;
 
 import org.psi.ms.model.MzData;
 import org.psi.ms.helper.PsiMsConverterException;
-import org.psi.ms.converter.DtaSetConverter;
+import org.psi.ms.converter.DtaSetImporter;
 import org.psi.ms.converter.ParseListener;
 import org.psi.ms.xml.MzDataWriter;
 
@@ -19,7 +19,7 @@ public class ParsingBusiness {
 
     public static final String PARSE = "org.psi.ms.swing.parsingbusiness.parse";
 
-    private DtaSetConverter oConverter = new DtaSetConverter();
+    private DtaSetImporter oConverter = new DtaSetImporter();
 
     public ParsingBusiness() {
 

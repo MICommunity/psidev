@@ -1,5 +1,5 @@
 /**
- * $Id: ConverterI.java,v 1.1 2003/11/07 18:04:44 krunte Exp $
+ * $Id: ImporterI.java,v 1.1 2003/11/10 10:21:12 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -40,7 +40,7 @@ import java.util.List;
  *
  * @author Kai Runte
  */
-public interface ConverterI {
+public interface ImporterI {
 
     /**
      * Initializes a Desc(ription) object from the provide source file or directory.
