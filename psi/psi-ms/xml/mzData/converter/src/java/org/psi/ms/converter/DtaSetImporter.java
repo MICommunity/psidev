@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetImporter.java,v 1.2 2003/11/14 16:49:30 krunte Exp $
+ * $Id: DtaSetImporter.java,v 1.3 2003/11/28 15:48:22 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -19,10 +19,7 @@ import org.psi.ms.xml.MzDataWriter;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.SortedSet;
-import java.util.List;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
@@ -51,7 +48,9 @@ public class DtaSetImporter implements ImporterI {
     /**
      * The ParseListener for providing feedback to the (graphical) user interface.
      */
-    ParseListener parseListener = null;
+    private ParseListener parseListener = null;
+
+    private Vector providedData = null;
 
     public DtaSetImporter() {
         dtaReader = new DtaReader();
@@ -59,61 +58,22 @@ public class DtaSetImporter implements ImporterI {
 
     // Todo: swing package relies on this method still.
     public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType, ParseListener listener) throws PsiMsConverterException, IOException {
-        File sourceDir = new File(sourceDirname);
-        File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
-        File[] ztaFiles = sourceDir.listFiles(new SuffixFileFilter(".zta"));
-        if (dtaFiles.length != ztaFiles.length) {
-            throw new PsiMsConverterException("Number of .dta and .zta files differs!");
-        }
-        dtaFileSet = Utils.fileArrayToTreeSet(dtaFiles);
-        ztaFileSet = Utils.fileArrayToTreeSet(ztaFiles);
-        dtaIterator = dtaFileSet.iterator();
-        ztaIterator = ztaFileSet.iterator();
-        //Tell the GUI that we're busy...
-        if (listener != null) {
-            listener.setMessage("Parsing...");
-        }
-
-        org.psi.ms.model.AcquisitionList acquisitionList = mzData.getAcquisitionList();
-
-        while (dtaIterator.hasNext() && ztaIterator.hasNext()) {
-            String dtaFile = (String) dtaIterator.next();
-            String ztaFile = (String) ztaIterator.next();
-            //Tell the GUI that we're busy...
-            if (listener != null) {
-                listener.setMessage("Converting file: " + dtaFile);
-            } else {
-                System.out.println("Converting file: " + dtaFile);
-            }
-            Acquisition acquisition = dtaReader.addAcquisitions(dtaFile);
-            acquisitionList.addAcquisition(acquisition);
-            //Parsing the .dta file...
-            if (listener != null) {
-                listener.fileParsed();
-            }
-            //Tell the GUI that we're busy...
-            if (listener != null) {
-                listener.setMessage("Converting file: " + ztaFile);
-            } else {
-                System.out.println("Converting file: " + ztaFile);
-            }
-            acquisition = dtaReader.addAcquisitions(ztaFile);
-            acquisitionList.addAcquisition(acquisition);
-            //Parsing the .zta file...
-            if (listener != null) {
-                listener.fileParsed();
-            }
-        }
-
-        //Writing the XML
-        if (listener != null) {
-            listener.indeterminiteProcess();
-            listener.setMessage("Writing XML...");
-        }
+        Desc desc = initialize(new File(sourceDirname), listener);
+        String sampleName = desc.getAdmin().getSampleName();
+        mzData.getDesc().getAdmin().setSampleName(sampleName);
 
         MzDataWriter mzDataWriter = new MzDataWriter(new File(outputFilename));
         mzDataWriter.setOutputType(outputType);
-        mzDataWriter.marshall(mzData);
+
+        int acquisitionCount = this.getAcquisitionCount();
+        mzDataWriter.initialize(mzData, acquisitionCount);
+        parseListener.setMax(acquisitionCount);
+        while (this.hasMoreAcquisitions()) {
+            Acquisition acquisition = this.getNextAcquisition();
+            parseListener.increment();
+            mzDataWriter.marshall(acquisition);
+        }
+        mzDataWriter.finish();
     }
 
     /**
@@ -126,15 +86,11 @@ public class DtaSetImporter implements ImporterI {
      */
     public Desc initialize(File source,
                            ParseListener listener) throws PsiMsConverterException, IOException {
+        parseListener = listener;
         Desc desc = new Desc();
         if (source.isDirectory()) {
             File[] dtaFiles = source.listFiles(new SuffixFileFilter(".dta"));
             File[] ztaFiles = source.listFiles(new SuffixFileFilter(".zta"));
-/*
-            if (ztaFiles.length != 0 && dtaFiles.length != ztaFiles.length) {
-                throw new PsiMsConverterException("Number of .dta and .zta files differs!");
-            }
-*/
             dtaFileSet = Utils.fileArrayToTreeSet(dtaFiles);
             ztaFileSet = Utils.fileArrayToTreeSet(ztaFiles);
 
@@ -187,15 +143,18 @@ public class DtaSetImporter implements ImporterI {
     }
 
     /**
-     * Returns a list of class objects (must be classes of the package org.psi.ms.model).
+     * Returns a list of {@link ProvidedDataItem ProvidedDataItem} objects.
      * Tells the (graphical) user interface which pieces of information it does not
      * need to request from the user.
      * @return a list of class objects (must be classes of the package org.psi.ms.model).
-     *
-     * Todo: implement getProvidedData()!
+     * @see ProvidedDataItem
      */
     public List getProvidedData() {
-        return null;
+        if (providedData == null) {
+            providedData = new Vector();
+            providedData.add(ProvidedDataItem.DESC_ADMIN_SAMPLENAME);
+        }
+        return providedData;
     }
 
     /**
@@ -282,14 +241,27 @@ public class DtaSetImporter implements ImporterI {
         // we have to alternate between returning .dta and .zta
         // acquisitions.
         Acquisition acquisition = null;
+        String filepath = null;
         switch (currentFileType) {
             case DtaReader.DTA:
-                acquisition = dtaReader.addAcquisitions((String) dtaIterator.next());
+                filepath = (String) dtaIterator.next();
+                if (parseListener != null) {
+                    parseListener.setMessage("Converting file: " + filepath);
+                } else {
+                    System.out.println("Converting file: " + filepath);
+                }
+                acquisition = dtaReader.addAcquisitions(filepath);
                 if (ztaFileSet.size() != 0)
                     currentFileType = DtaReader.ZTA;
                 break;
             case DtaReader.ZTA:
-                acquisition = dtaReader.addAcquisitions((String) ztaIterator.next());
+                filepath = (String) ztaIterator.next();
+                if (parseListener != null) {
+                    parseListener.setMessage("Converting file: " + filepath);
+                } else {
+                    System.out.println("Converting file: " + filepath);
+                }
+                acquisition = dtaReader.addAcquisitions(filepath);
                 if (dtaFileSet.size() != 0)
                     currentFileType = DtaReader.DTA;
                 break;
@@ -297,4 +269,23 @@ public class DtaSetImporter implements ImporterI {
         return acquisition;
     }
 
+    /**
+     * Returns some information about the importer implementation.
+     * This can be displayed, for example, in a list of available importers.
+     * @return some information about the importer implementation.
+     * Todo: should this text appear in desc/test/dataProcessing/software?
+     */
+    public String getImporterDescription() {
+        return "This importer reads sets of or single .dta or .zta files.";
+    }
+
+    /**
+     * Returns the name of the importer implementation.
+     * This can be displayed, for example, in a list of available importers.
+     * @return some information about the importer implementation.
+     * Todo: should this text appear in desc/test/dataProcessing/software?
+     */
+    public String getImporterName() {
+        return ".dta/.zta importer";
+    }
 }
