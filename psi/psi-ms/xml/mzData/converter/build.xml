@@ -43,6 +43,7 @@
         </delete>
         <ant dir="plugins/dta" target="clean" inheritall="false"/>
         <ant dir="plugins/MascotGeneric" target="clean" inheritall="false"/>
+        <ant dir="plugins/Sashimi" target="clean" inheritall="false"/>
     </target>
 
     <target name="build">
