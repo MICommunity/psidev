@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.10 2003/11/28 14:16:45 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.11 2003/12/03 17:52:31 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,12 +8,13 @@
  */
 package org.psi.ms.test;
 
-import org.psi.ms.converter.DtaSetImporter;
+import org.psi.ms.importers.DtaSetImporter;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.model.MzData;
 import org.psi.ms.model.Desc;
 import org.psi.ms.model.Acquisition;
 import org.psi.ms.xml.MzDataWriter;
+import org.apache.log4j.BasicConfigurator;
 
 import java.io.IOException;
 import java.io.File;
@@ -31,6 +32,7 @@ public class TestDtaSetConverter {
      * @throws PsiMsConverterException in case of a conversion error.
      */
     public static void main(String[] argv) throws IOException, PsiMsConverterException {
+        BasicConfigurator.configure();
         DtaSetImporter dtaSetImporter = new DtaSetImporter();
 
         Desc desc = dtaSetImporter.initialize(new File(argv[0]), null);
