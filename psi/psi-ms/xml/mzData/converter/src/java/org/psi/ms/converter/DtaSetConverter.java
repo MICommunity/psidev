@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.9 2003/09/10 16:53:24 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.10 2003/09/11 15:38:59 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -33,6 +33,7 @@ import java.util.SortedSet;
  * @author krunte
  */
 public class DtaSetConverter {
+
     private int arrayOutputType;
     private DtaReader dtaReader;
 
@@ -47,6 +48,10 @@ public class DtaSetConverter {
     }
 
     public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
+        this.convertDirectory(sourceDirname, outputFilename, mzData, null);
+    }
+
+    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, ParseListener listener) throws PsiMsConverterException, IOException, ValidationException, MarshalException {
         File sourceDir = new File(sourceDirname);
         File[] dtaFiles = sourceDir.listFiles(new SuffixFileFilter(".dta"));
         File[] ztaFiles = sourceDir.listFiles(new SuffixFileFilter(".zta"));
@@ -58,21 +63,38 @@ public class DtaSetConverter {
         Iterator dtaIterator = dtaFileSet.iterator();
         Iterator ztaIterator = ztaFileSet.iterator();
         int acqId = 0;
+        //Tell the GUI that we're busy...
+        if (listener != null) {
+            listener.setMessage("Parsing...");
+        }
+
         while (dtaIterator.hasNext() && ztaIterator.hasNext()) {
             String dtaFile = (String) dtaIterator.next();
             String ztaFile = (String) ztaIterator.next();
             System.out.println("Converting file: " + dtaFile);
             dtaReader.addAcquisitions(dtaFile, mzData, acqId);
             acqId++;
+            //Parsing the .dta file...
+            if (listener != null) {
+                listener.fileParsed();
+            }
             System.out.println("Converting file: " + ztaFile);
             dtaReader.addAcquisitions(ztaFile, mzData, acqId);
             acqId++;
+            //Parsing the .zta file...
+            if (listener != null) {
+                listener.fileParsed();
+            }
         }
 
         FileWriter fileWriter = new FileWriter(outputFilename);
-/*
-        mzData.marshal(fileWriter);
-*/
+
+        //Writing the XML
+        if (listener != null) {
+            listener.indeterminiteProcess();
+            listener.setMessage("Writing XML...");
+        }
+
         Mapping mapping = new Mapping();
         try {
             mapping.loadMapping(new InputSource(DtaReader.class.getResourceAsStream("mzDataXMLMapping.xml")));
