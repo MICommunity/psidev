@@ -24,3 +24,9 @@
 #DEFAULT (echo ""; id; echo %s; date; cat) >> $CVSROOT/CVSROOT/commitlog
 # or
 #DEFAULT (echo ""; id; echo %{sVv}; date; cat) >> $CVSROOT/CVSROOT/commitlog
+#
+#NOTE: Don't put your e-mail address in this file, rather sign up to the specific cvs
+#commit mailing list via the web page http://sf.net/projects/psidev and then via 'mailing lists'
+#
+mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net %s
+DEFAULT $CVSROOT/CVSROOT/log -s -f /dev/null -m gbader@users.sourceforge.net %s
