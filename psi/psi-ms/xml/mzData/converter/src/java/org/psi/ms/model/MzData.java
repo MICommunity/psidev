@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: MzData.java,v 1.5 2003/09/10 14:51:33 krunte Exp $
+ * $Id: MzData.java,v 1.6 2003/09/15 12:46:45 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * There can bemultiple acquisitions, which might be related via a
  * separation, or just in sequence from an automated run.
  *
- * @version $Revision: 1.5 $ $Date: 2003/09/10 14:51:33 $
+ * @version $Revision: 1.6 $ $Date: 2003/09/15 12:46:45 $
  */
 public class MzData implements java.io.Serializable {
 
@@ -88,14 +88,6 @@ public class MzData implements java.io.Serializable {
 
         Test test = new Test();
         desc.setTest(test);
-
-        DataProcessing dataProcessing = new DataProcessing();
-        test.addDataProcessing(dataProcessing);
-
-        Software software = new Software();
-        software.setName("PSI-MS .dta/.zta converter");
-        software.setVersion("1.00");
-        dataProcessing.setSoftware(software);
 
         ProcessingMethod processingMethod = new ProcessingMethod();
         test.setProcessingMethod(processingMethod);
