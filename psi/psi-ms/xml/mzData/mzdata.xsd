@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.7 2003/11/06 16:02:00 krunte Exp $
+ $Id: mzdata.xsd,v 1.8 2003/11/06 17:18:15 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Kai Runte (EBI)
@@ -217,7 +217,7 @@
     </xs:complexType>
     <xs:complexType name="acquisitionType">
         <xs:sequence>
-            <xs:element name="desc" type="acqDescType" maxOccurs="unbounded">
+            <xs:element name="acqDesc" type="acqDescType" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation>There is one acqDesc for each acquisition below.  The ID attribute is keyed to the to acquisition ID.</xs:documentation>
                 </xs:annotation>
