@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: InstrumentAcqSettings.java,v 1.3 2003/08/28 15:17:12 krunte Exp $
+ * $Id: InstrumentAcqSettings.java,v 1.4 2003/09/10 12:31:55 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,8 +18,9 @@ import java.util.Vector;
 /**
  * InstrumentCommonSettings information common to all acquisitions is stored in
  * this section.
+ * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+ * @version $Revision: 1.4 $ $Date: 2003/09/10 12:31:55 $
  */
 public class InstrumentAcqSettings implements Serializable {
     /**
@@ -387,7 +388,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class AcqType.
      *
-     * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+     * @version $Revision: 1.4 $ $Date: 2003/09/10 12:31:55 $
      */
     public static class AcqType implements java.io.Serializable {
 
@@ -569,7 +570,7 @@ public class InstrumentAcqSettings implements Serializable {
     /**
      * Class Polarity.
      *
-     * @version $Revision: 1.3 $ $Date: 2003/08/28 15:17:12 $
+     * @version $Revision: 1.4 $ $Date: 2003/09/10 12:31:55 $
      */
     public static class Polarity implements java.io.Serializable {
 
