@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaSetConverter.java,v 1.9 2003/11/14 16:49:30 krunte Exp $
+ * $Id: TestDtaSetConverter.java,v 1.10 2003/11/28 14:16:45 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -36,16 +36,15 @@ public class TestDtaSetConverter {
         Desc desc = dtaSetImporter.initialize(new File(argv[0]), null);
         MzData mzData = new MzData();
         mzData.setDesc(desc);
-        org.psi.ms.model.AcquisitionList acquisitionList = mzData.getAcquisitionList();
-
-        while (dtaSetImporter.hasMoreAcquisitions()) {
-            Acquisition acquisition = dtaSetImporter.getNextAcquisition();
-            acquisitionList.addAcquisition(acquisition);
-        }
-
         MzDataWriter mzDataWriter = new MzDataWriter(new File(argv[1]));
         mzDataWriter.setOutputType(MzDataWriter.OutputType.BASE64);
-        mzDataWriter.marshall(mzData);
+
+        mzDataWriter.initialize(mzData, dtaSetImporter.getAcquisitionCount());
+        while (dtaSetImporter.hasMoreAcquisitions()) {
+            Acquisition acquisition = dtaSetImporter.getNextAcquisition();
+            mzDataWriter.marshall(acquisition);
+        }
+        mzDataWriter.finish();
     }
 
 }
