@@ -1,0 +1,48 @@
+===============================================
+ Downloading and running Pedro for HUPO PPP v1
+===============================================
+
+Firstly, click the link on the web page and select Save at
+the prompt, or right-click the link and Save the (link) target
+from the pop-up menu.
+
+Having successfully downloaded the file PedroForHUPOPPPv1.exe,
+navigate to where it was saved, and double-click it to install.
+The installer will suggest the root of the C: drive as a default
+location.
+
+To run the software, navigate to C:\PedroForHUPOPPPv1\dist\ and
+look for the file run_pedro.bat. Double-click this file. If you
+did not install to the default location, then navigate to
+C:[\yourpath]\PedroForHUPOPPPv1\dist\ to find the file.
+
+
+==================
+ Additional Notes
+==================
+
+Guidance is available for all fields - simply select Enable
+Context Help from the Help menu on the main menu bar, hover
+the mouse cursor over a field name until the icon changes to a
+question mark in a box, then left-click. Help is also available
+for using the software -- all accessible from the Help menu.
+
+Note that the Pedro software saves and loads files in its own
+internal format (.pdz). To generate XML data files for submission,
+you should use the Export To XML feature available from the File
+menu on the main menu bar. Additionally, if trying to read in an
+XML file, you should use the Import From XML feature, also on the
+File menu.
+
+For convenience, it may be useful to create a shortcut with which
+to run Pedro. To do this, navigate to the file run_pedro.bat, and
+right-click it, select Create Shortcut, then drag the shortcut (or
+cut and paste it) to wherever is convenient (e.g. the desktop).
+Additionally, right-clicking the shortcut and selecting Properties
+affords the opportunity to run the DOS command window minimised,
+while keeping the software's graphical interface visible, by
+selecting Run Minimised.
+
+
+Chris Taylor (chris@bioinf.man.ac.uk), 15th August 2003
+
