@@ -22,7 +22,7 @@ The forum was opened with a brief introduction by Rolf Apweiler who
 	remit is to define and promote standards which will allow free
 	exchange and comparison of proteomics data. It was decided
 	that this would first be addressed in the fields of mass
-	spectroscopy and protein-protein interactions (PPI). This
+	spectrometry and protein-protein interactions (PPI). This
 	inaugural meeting of the Proteomics Standards Initiative has
 	brought together representatives from the data producer,
 	database producer, user and software producer communities who
@@ -45,14 +45,14 @@ The expression array community have gone through a similar realisation that a pu
 
 <P>MIAME is the annotation standard and outlines the minimum information required to unambiguously interpret and potentially reproduce any array based expression experiment. Several key journals have adopted a checklist based on this standard and will require submission to a public repository before publishing any data. MAGE-OM is an XML-based exchange format which has been developed and adopted by the OMG as the standard for microarrays. Data standardization and normalisation was recognised as being a second part of the process, which was not feasible to implement immediately. MAGE-OM has been adopted by manufacturers and will be used to develop data analysis software as well as public repositories and LIMS systems.</P>
 
-<P>The meeting then divided into 2 parallel sessions - Mass spectroscopy and PPI</P>
+<P>The meeting then divided into 2 parallel sessions - Mass spectrometry and PPI</P>
 
 <h3>Summary</h3>
 <B>
-<h4>Mass Spectroscopy</h4>
+<h4>Mass Spectrometry</h4>
 </B>
 <ul>
-<li>A repository of mass spectroscopy data is only useful if it stores
+<li>A repository of mass spectrometry data is only useful if it stores
 	      the data in the context of the workflow of a complete
 	      proteomics experiment.
 <LI>Three workgroups have been established:</LI>
@@ -86,7 +86,7 @@ Higher levels will introduce more complex detail data and will be developed subs
 
 <hr>
 <h3>Detailed reports</h3>
-<h4> Mass Spectroscopy</H4>
+<h4> Mass Spectrometry</H4>
 
 Chair: Rolf Apweiler, Weimin Zhu, EBI
 <P>The meeting could be summarised as a discussion of two questions:</P>
@@ -106,25 +106,34 @@ Chair: Rolf Apweiler, Weimin Zhu, EBI
 
 <OL>
 
-<U><LI>The purpose of new repositories.</U> One purpose was to provide an audit trail for publications, so that the producers of bulk or complex data would be able to fully describe (and be held to account for) methodologies that could not appear in print medium; this would require the co-operation of journals. Another purpose was to provide an implementation to allow the user to explore/mine the data, preferably in biological context.  Important concepts here are &quot;the minimal description of the experiment&quot; and &quot;validation criteria.</LI>
+<U><LI>The purpose of new repositories.</U> One purpose was to provide an audit trail for publications, so that the producers of bulk or complex data would be able to fully describe (and be held to account for) methodologies that could not appear in print medium; this would require the co-operation of journals. Another purpose was to provide an implementation to allow the user to explore/mine the data, preferably in biological context.  Important concepts here are &quot;the minimal description of the experiment&quot; and &quot;validation criteria&quot;.</LI>
 
-<U><LI>How many repositories?</U>  Component-based approach, with different repositories for different types of proteomics experiment,  was considered, but fears were expressed that this would disrupt the audit trail or make biological interpretation of the data impossible.  How to capture the meaningful results of an experiment, (which may be, for example, a conclusion that two proteins interacted) without a wasteful overlap with PPI databases was discussed at intervals throughout the meeting, with many expressing a desire to collaborate with the PPI working group on this issue.</LI></OL>
+	  <li><u>The scope of the standardization effort:</u> 
+<ul>
+	<li>Hardware: environment settings (calibration parameters), generic raw data format(?).<br>
+	<li>Software and data: environment settings (parameters etc.), generic data format, sequence database to be searched against, algorithms for noise reduction and peptide interpretations.<br>
+  	<li>Experiments: types of platforms (such as MS/MS, ion trap) and their required procedures, experiment quality (sample preparations, spectra and statistics criteria for peptide/protein hits), quantification or qualification requirements.<br>
+    	<li>Samples: sample quality, types, and conditions, sample preparation / separation methods.
+</ul>
+
+</li>
+
+<U><LI>How many repositories?</U>  Component-based approach, with different repositories for different types of proteomics experiment,  was considered, but fears were expressed that this would disrupt the audit trail or make biological interpretation of the data impossible.  How to capture the meaningful results of an experiment, (which may be, for example, a conclusion that two proteins interacted) without a wasteful overlap with PPI databases was discussed at intervals throughout the meeting, with many expressing a desire to collaborate with the PPI working group on this issue.</LI>
 
 
-<OL START=3>
-
-<U><LI>Would the users enter all the data?</U> The hope was expressed that if a standard could be produced, LIMS systems might automatically produce compliant output. However, proteomics is often not fully automated and many data points might be missing.</LI></OL>
+<U><LI>Would the users enter all the data?</U> The hope was expressed that if a standard could be produced, LIMS systems might automatically produce compliant output. However, proteomics is often not fully automated and many data points might be missing.</LI>
 
 
-<P>4.  <U>Participation of equipment manufacturers.</U>  The view was expressed that the participation of equipment manufacturers was essential to the ultimate success of any new standard</P>
+<LI><U>Participation of equipment manufacturers.</U>  The view was expressed that the participation of equipment manufacturers was essential to the ultimate success of any new standard</LI>
 <U>
-</U><P>5.  <U>Co-operation with MGED/GOBO.</U>  In areas such as hypotheses description and preliminary sample preparation, substantial opportunities for overlap with other groups involved in standardization were perceived, and enthusiasm expressed for taking these forward.</P>
+</U><LI><U>Co-operation with MGED/GOBO.</U>  In areas such as hypotheses description and preliminary sample preparation, substantial opportunities for overlap with other groups involved in standardization were perceived, and enthusiasm expressed for taking these forward.</LI>
 
-<OL START=6>
 
 <U><LI>Pre-existing mass-spec standards.</U>  Certain pre-existing standards already exist for mass spectrometry, the NET-CODF and the ANOI standards.</LI>
 <U>
-<LI>Error Rates.</U>  There is little public awareness among potential users of the data of problems like estimating error and the statistical complexity in producing the final protein identifications.  We need to raise community awareness of these issues.</LI></OL>
+<LI>Error Rates.</U>  There is little public awareness among potential users of the data of problems like estimating error and the statistical complexity in producing the final protein identifications.  We need to raise community awareness of these issues.</LI>
+
+</OL>
 
 
 <U><P>Initial conclusions</U>:</P></U>
@@ -137,13 +146,79 @@ Chair: Rolf Apweiler, Weimin Zhu, EBI
 <LI>Build an comprehensive model without an a priori commitment to complete implementation</LI></OL>
 
 
-<P>The group then decided to split into smaller working parties to consider more limited aspects of the problem.</P>
+<P>The group then decided to split into smaller working parties to consider more limited aspects of the problem. The following section contains the reports which have been communicated by mail after the meeting.</P>
 
-<U><P>Group 1</U> worked on the description of the mass spectrometry, and the subsequent data analysis, as far as protein identification.  A draft model was presented, including the facility for recursive analysis and refinement of the peak list.</P>
-<U><P>Group 2</U> worked on the consideration of the overall workflow of proteomics experiments in which &quot;mass spectrometry&quot; was one component, up to the point where a sample was ready to be loaded into the spectrometer.  Again, a recursive model was used, whereby a sample could undergo many cycles of preparative steps as far as this point.</P>
-<U><P>Group 3</U> considered likely user demands of any implemented system.  The interests of expert &quot;mass spectrometrists&quot; and biological users were both considered.  A system should support the ability to query with peak lists, and with known sample compositions, against the results of previous experiments; and should also allow users to query across experiments to observe the concomitttant changes in identified species.</P>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b><u>Group 1: MS workgroup <br></u></b>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Coordinator</b>: Steffen Möller.<br>  
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Group focus</b>: modelling the representations of raw data and its interpretation.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Key points</b>:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- MS whole peaklists are captured, which are described by the hardware (vendor, ionisation source and type) used and its settings (configuration file). <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- A spectrum can be a collection of references to a set of other spectra. The former can be a whole MS spectrum, and the latter can be a better defined spectra such as those from MS/MS.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- All the interpreted peptides putatively found to be associated with specific spectrum, by certain software, are captured only once, which are also annotated by respective post-translational modifications. Protein identifications are the another layer of data interpretation, which is referenced to a subset of peptides.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;A UML model reflecting the above key points was generated. There are 3 main components in the model (The following summary has integrated Gregoire’s suggestions. Both UML diagrams will be available to you for details).<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Peaklist: include attributes such as peak detection methods, MS experiment methods, and fragments;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Peptide and protein hits: include attributes of sequences, PTM, external reference databases;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Identification Run: it is a link to associate the above two components, which includes the attributes of peptide/protein identification methods, external reference databases, scoring/ranking criteria.<br><br>
+			
+	&nbsp;&nbsp;&nbsp;&nbsp;<u><b>Group 2: Pre-MS workgroup</u></b><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Coordinator</b>: Kathryn Lilley.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Group focus</b>: determining required upstream components need to be recorded.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>Key points</b>: <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- The recorded information should satisfy:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minimum requirements for publication<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;minimum requirements enabling repeating and comparing data.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- The aim of the experiment/study.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- The sample sources: tissue/cell type, treatment/condition, origin etc.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- Sample preparations: methods to harvest sample, to extract proteins, protein concentration determination, as well as some quality controls, such as checking for proteolysis, reproducibility of protein extraction, contaminants.
+- Sample separation and detections: separation methods, suchas electrophoresis (SDS-PAGE, IEF and FFE) or chromatography (SCX, RP, IMAC, Affinity), and detection methods.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;A flow chart has been produced to describe the relationships of those components. <br>&nbsp;&nbsp;&nbsp;&nbsp;The key points are:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Different separation methods can be chained each other, so that,<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sample should be attached with its separation status, which is supported by defining sample as a recursive component in the model. <br><br>
 
-<P>Finally it was decided that the working groups should continue to research their own areas, communicating with the aid of email and a password-controlled website, with the aim of producing a draft standard ASAP.</P>
+	&nbsp;&nbsp;&nbsp;&nbsp;<u><b>Group 3: Use case workgroup</u></b><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<b>Group coordinator</b>: Pierre-Alain Binz<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<b>Group focus</b>: the questions (wish list) the data repository should be able to answer.<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<b>Key points</b> (Summarize based on Chris Taylor’s report):<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;- Types of users the repository should support: <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experts on proteome bioinformatics, proteome, MS<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General scientists having specific interests, such as specific protein and organism.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data integrator: to/from other data sources.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;- Sample queries(G: general, E: experts, I, data integrator):<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G: Sample condition changes, look for some protin pattern changes (under/over expressed, modified, interacting etc.)<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: From a similar sample, identify a similar protein?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: What happen to protein X in condition Y?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E: What is the known interpretation of spectrum A?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G+E: Is protein X already documented?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G+E: What are the criteria should applied to data as QC?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G+E+I: How the data produced?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G: What experiments contain protein with acc# X?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G+I: Which experiments contain gels having protein with name‘xxx’?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;G+E: Which experiments contains proteins from organism X?<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E+I: Return all proteins within the specified pi, length/mass range.<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;- Query attribute list: <br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Protein name /ID<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sequence<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PTM<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peaklists (PMF and MS/MS)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;- Output attribute list:<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All the query attributes<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Biology environments<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantitation<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Experiemental process<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;External references<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;- Data Quality and Validation <br><br>
+
+
+<b>Future directions:</b><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- Clearly define the scope of the standardization. <br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- Looking for levelled approaches. The level 1 should have a clearly defined model, which is sensible, but feasible to achieve. The guideline could be something as workgroup 2 suggested:<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Minimum requirements for publication;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Minimum requirement for data comparison and data repeat.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;In order to allow the model flexible enough for future modifications, and expanding, the model should be built upon a set of well-defined components.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- User case group should work closer with other 2 groups, to help scoping, validating the model for level 1.<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;- Get more industry leaders, such as hardware and software vendors, involved.<br>
+
+<P>It was decided that the working groups should continue to research their own areas, communicating with the aid of email and a password-controlled website, with the aim of producing a draft standard ASAP.</P>
 
 
 <hr>
@@ -433,7 +508,7 @@ For each feature pair, an interaction description is required.
 
 				</dl>
 <hr>
-<address>Sandra Orchard, Paul Kersey, Henning Hermjakob, <a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a>
+<address>Sandra Orchard, Paul Kersey, Weimin Zhu, Henning Hermjakob, <a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a>
 
 </BODY>
 </HTML>
