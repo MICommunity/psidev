@@ -1,0 +1,22 @@
+<project
+    xmlns:j="jelly:core"
+    xmlns:m="maven"
+    xmlns:u="jelly:util">
+
+    <!-- This goal is executed each time when the goal "xdoc:copy-resources"
+         is executed. It is actually executed before the
+         "xdoc:copy-resources" is processed. -->
+    <preGoal name="xdoc:copy-resources">
+        <!-- Generate the documentation for the SPTr.xsd schema. -->
+        <attainGoal name="schemadoc:schemadoc"/>
+    </preGoal>
+
+    <!-- This goal is executed each time when the goal "sdb-xdoc:copy-resources"
+         is executed. It is actually executed before the
+         "xdoc:copy-resources" is processed. -->
+    <preGoal name="sdb-xdoc:copy-resources">
+        <!-- Generate the documentation for the SPTr.xsd schema. -->
+        <attainGoal name="schemadoc:schemadoc"/>
+    </preGoal>
+
+</project>
