@@ -29,5 +29,5 @@
 #commit mailing list via the web page http://sf.net/projects/psidev and then via 'mailing lists'
 #
 #Sends mail for mi development to mi cvs mailing list
-mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net %s
-DEFAULT $CVSROOT/CVSROOT/log -s -f /dev/null -m gbader@users.sourceforge.net %s
+mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net -m psidev-mi-dev@lists.sourceforge.net %s
+psi-ms $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-cvs@lists.sourceforge.net %s
