@@ -1,5 +1,5 @@
 /**
- * $Id: ParseListener.java,v 1.1 2003/09/11 15:38:59 krunte Exp $
+ * $Id: ParseListener.java,v 1.2 2003/11/28 15:46:50 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: lbower
@@ -19,4 +19,8 @@ public interface ParseListener {
     public void indeterminiteProcess();
 
     public void setMessage(String message);
+
+    void setMax(int piMax);
+
+    void increment();
 }
