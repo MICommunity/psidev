@@ -31,6 +31,6 @@ public class SourceData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE, Boolean.TRUE);
     }
 }

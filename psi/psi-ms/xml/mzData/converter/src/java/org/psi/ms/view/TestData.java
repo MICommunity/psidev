@@ -28,7 +28,7 @@ public class TestData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_DATAPROCESSING_COMMENT, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_DATAPROCESSING_COMMENT, Boolean.TRUE);
         //todo need to get the fields mapped for the vectors
     }
 }

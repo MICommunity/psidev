@@ -31,6 +31,6 @@ public class InstrumentCommonSettingsData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME, Boolean.TRUE);
     }
 }

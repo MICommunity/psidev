@@ -30,8 +30,8 @@ public class AnalyzerData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION, Boolean.TRUE);
     }
 }

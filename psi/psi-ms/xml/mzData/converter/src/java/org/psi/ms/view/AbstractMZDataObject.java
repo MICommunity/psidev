@@ -37,7 +37,7 @@ public abstract class AbstractMZDataObject implements MZDataObject {
         for (int i = 0; i < suppliedFields.size(); i++) {
             ProvidedDataItem item = (ProvidedDataItem) suppliedFields.get(i);
             if (suppliedFieldsMap.containsKey(item)) {
-                suppliedFieldsMap.put(item, new Boolean(false));
+                suppliedFieldsMap.put(item, Boolean.FALSE);
             }
         }
     }

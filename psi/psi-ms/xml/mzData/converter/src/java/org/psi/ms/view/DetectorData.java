@@ -32,6 +32,6 @@ public class DetectorData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE, Boolean.TRUE);
     }
 }

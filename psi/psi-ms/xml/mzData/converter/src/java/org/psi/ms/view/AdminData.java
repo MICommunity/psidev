@@ -31,6 +31,6 @@ public class AdminData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_SAMPLENAME, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_SAMPLENAME, Boolean.TRUE);
     }
 }

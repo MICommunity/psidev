@@ -31,9 +31,9 @@ public class ProcessingMethodData extends AbstractMZDataObject {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_DEISOTOPED, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_PEAKPROCESSING, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_PEAKTHRESHOLD, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_DEISOTOPED, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_TEST_PROCESSINGMETHOD_CHARGEDECONVOLVED, Boolean.TRUE);
     }
 }

@@ -20,8 +20,8 @@ public class AdminContactPersonData extends PersonData {
 
     protected void setFieldInterest() {
         suppliedFieldsMap.clear();
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_NAME, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO, new Boolean(true));
-        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION, new Boolean(true));
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_NAME, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO, Boolean.TRUE);
+        suppliedFieldsMap.put(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION, Boolean.TRUE);
     }
 }
