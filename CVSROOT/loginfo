@@ -30,4 +30,4 @@
 #
 #Sends mail for mi development to mi cvs mailing list
 psi-ms $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-cvs@lists.sourceforge.net %s
-mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net -m psidev-mi-dev@lists.sourceforge.net %s
+psi/mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net -m psidev-mi-dev@lists.sourceforge.net %s
