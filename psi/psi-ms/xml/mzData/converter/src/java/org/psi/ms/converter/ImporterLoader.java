@@ -1,5 +1,5 @@
 /**
- * $Id: ImporterLoader.java,v 1.1 2003/12/03 17:36:25 krunte Exp $
+ * $Id: ImporterLoader.java,v 1.2 2003/12/04 10:47:57 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: Kai Runte
@@ -97,6 +97,8 @@ public class ImporterLoader {
         }
         if (this.path == null) {
             throw new FileNotFoundException("Could not find the plugins directory!");
+        } else if (this.path.isFile()) {
+            throw new FileNotFoundException("Given plugins path is poiting to a file: " + path.getAbsolutePath());
         }
         logger.debug("Plugin path is : " + path.getAbsolutePath());
     }
@@ -134,35 +136,17 @@ public class ImporterLoader {
      * exceptions. This is subject to change for the future.
      * Have a look at the source-code for more details.
      */
-    public void loadImporters() {
+    public void loadImporters() throws FileNotFoundException {
         logger.debug("Loading importers.");
+
+        if (path.isFile()) {
+            throw new FileNotFoundException("Given plugins path is poiting to a file: " + path.getAbsolutePath());
+        }
 
         // Retrieve a list of files in the directory plugins.
         File[] filelist = path.listFiles();
-        // If pluginPath is a file, filelist will be zero. If this is
-        // the case, show an error message and stop loading the
-        // plug-ins!
         if (filelist == null) {
-            int result =
-                    JOptionPane.showConfirmDialog(null,
-                            "Error while reading plug-ins:\n" +
-                    "The plug-in path points to a file!\n" +
-                    "No plug-ins are read. Proceed?",
-                            "SPedit question", JOptionPane.YES_NO_OPTION,
-                            JOptionPane.QUESTION_MESSAGE);
-            switch (result) {
-
-                //Yes is pressed, so continue.
-                case 0:
-                    // exit loadImporters
-                    return;
-
-                    //No is pressed, that means exit the programme.
-                case 1:
-                    // exit the programme
-                    System.exit(-1);
-                    break;
-            }
+            throw new FileNotFoundException("Given plugins path contains no files: " + path.getAbsolutePath());
         }
 
         // Still here? filelist seems to be sane, then.

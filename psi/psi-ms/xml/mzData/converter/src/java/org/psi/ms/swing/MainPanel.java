@@ -98,9 +98,11 @@ public class MainPanel extends JPanel {
         });
     }
 
-    MzData getDataObject() {
+    MzData getDataObject(Desc oDesc, ImporterI importerI) {
+        // the importer implementation defines which data elements
+        // are provided from the file format.
+        //Todo: these need to be considered while filling the Desc object.
         MzData oData = new MzData();
-        Desc oDesc = new Desc();
         oDesc.setAdmin(oAdminPanel.getAdmin());
         oDesc.setInstrument(oSettingsPanel.getSettings());
         oDesc.setTest(oTestPanel.getTest());
@@ -117,7 +119,6 @@ public class MainPanel extends JPanel {
     }
 
     void parseData() {
-        MzData oData = getDataObject();
         String oSourceDir = oDirectoryPanel.getSourceFilePath();
         File oSourceFile = new File(oSourceDir);
         oProgressPanel.setMax(oSourceFile.listFiles().length);
@@ -137,10 +138,9 @@ public class MainPanel extends JPanel {
         if (importerFound) {
             logger.debug("Importer found");
             oParseButton.setEnabled(false);
-            // Todo: the desc object is currently ignored
-            // Todo: this all should actually happen as soon as the file/dir is selected.
             try {
                 Desc desc = importerI.initialize(oSourceFile, oProgressPanel);
+                MzData oData = getDataObject(desc, importerI);
                 oParseThread = new ParseThread(importerI, oDestDir, oData, oType, oProgressPanel, oParseButton);
                 oParseThread.start();
             } catch (PsiMsConverterException e) {
@@ -160,24 +160,37 @@ public class MainPanel extends JPanel {
             importerLoader = new ImporterLoader();
         } catch (FileNotFoundException e) {
             // Todo: here we would need a requester asking for the plugin directory
-            e.printStackTrace();
+            JOptionPane.showConfirmDialog(null,
+                    "Error while reading plug-ins:\n" +
+                    e.getMessage(),
+                    "ImporterLoader error", JOptionPane.OK_OPTION,
+                    JOptionPane.ERROR_MESSAGE);
         }
         if (importerLoader != null) {
-            importerLoader.loadImporters();
-            JFrame oFrame = new JFrame("PSI-MS Converter");
-            final MainPanel oMainPanel = new MainPanel(importerLoader);
-            oFrame.addWindowListener(new WindowAdapter() {
-                public void windowClosing(WindowEvent e) {
-                    super.windowClosed(e);
-                    oMainPanel.persistFieldValues();
-                    System.exit(0);
-                }
-            });
+            try {
+                importerLoader.loadImporters();
+                JFrame oFrame = new JFrame("PSI-MS Converter");
+                final MainPanel oMainPanel = new MainPanel(importerLoader);
+                oFrame.addWindowListener(new WindowAdapter() {
+                    public void windowClosing(WindowEvent e) {
+                        super.windowClosed(e);
+                        oMainPanel.persistFieldValues();
+                        System.exit(0);
+                    }
+                });
 
-            oFrame.getContentPane().add(oMainPanel);
-            oFrame.setSize(800, 520);
-            oFrame.setResizable(false);
-            oFrame.setVisible(true);
+                oFrame.getContentPane().add(oMainPanel);
+                oFrame.setSize(800, 520);
+                oFrame.setResizable(false);
+                oFrame.setVisible(true);
+            } catch (FileNotFoundException e) {
+                // Todo: here we would need a requester asking for the plugin directory
+                JOptionPane.showConfirmDialog(null,
+                        "Error while reading plug-ins:\n" +
+                        e.getMessage(),
+                        "ImporterLoader error", JOptionPane.OK_OPTION,
+                        JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 
