@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SuppDataType.java,v 1.1 2003/08/11 17:30:00 krunte Exp $
+ * $Id: SuppDataType.java,v 1.2 2003/08/20 10:56:05 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -24,7 +24,7 @@ import org.exolab.castor.xml.ValidationException;
 /**
  * Data type for additional data vectors (beyond m/z and intensity)
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:30:00 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/20 10:56:05 $
  */
 public abstract class SuppDataType implements java.io.Serializable {
 
@@ -147,50 +147,50 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- void addURI(int, java.lang.String) 
 
     /**
-     * Method add_float
+     * Method addFloat
      * 
      * @param v_float
      */
-    public void add_float(float v_float)
+    public void addFloat(float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         _floatList.addElement(new Float(v_float));
-    } //-- void add_float(float) 
+    } //-- void addFloat(float)
 
     /**
-     * Method add_float
+     * Method addFloat
      * 
      * @param index
      * @param v_float
      */
-    public void add_float(int index, float v_float)
+    public void addFloat(int index, float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         _floatList.insertElementAt(new Float(v_float), index);
-    } //-- void add_float(int, float) 
+    } //-- void addFloat(int, float)
 
     /**
-     * Method add_int
+     * Method addInt
      * 
      * @param v_int
      */
-    public void add_int(int v_int)
+    public void addInt(int v_int)
         throws java.lang.IndexOutOfBoundsException
     {
         _intList.addElement(new Integer(v_int));
-    } //-- void add_int(int) 
+    } //-- void addInt(int)
 
     /**
-     * Method add_int
+     * Method addInt
      * 
      * @param index
      * @param v_int
      */
-    public void add_int(int index, int v_int)
+    public void addInt(int index, int v_int)
         throws java.lang.IndexOutOfBoundsException
     {
         _intList.insertElementAt(new Integer(v_int), index);
-    } //-- void add_int(int, int) 
+    } //-- void addInt(int, int)
 
     /**
      * Method enumerateString
@@ -217,12 +217,12 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- java.util.Enumeration enumerateURI() 
 
     /**
-     * Method enumerate_float
+     * Method enumerateFloat
      */
     public java.util.Enumeration enumerate_float()
     {
         return _floatList.elements();
-    } //-- java.util.Enumeration enumerate_float() 
+    } //-- java.util.Enumeration enumerateFloat()
 
     /**
      * Method enumerate_int
@@ -344,11 +344,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- int getURICount() 
 
     /**
-     * Method get_float
+     * Method getFloat
      * 
      * @param index
      */
-    public float get_float(int index)
+    public float getFloat(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -357,12 +357,12 @@ public abstract class SuppDataType implements java.io.Serializable {
         }
         
         return ((Float)_floatList.elementAt(index)).floatValue();
-    } //-- float get_float(int) 
+    } //-- float getFloat(int)
 
     /**
-     * Method get_float
+     * Method getFloat
      */
-    public float[] get_float()
+    public float[] getFloat()
     {
         int size = _floatList.size();
         float[] mArray = new float[size];
@@ -370,22 +370,22 @@ public abstract class SuppDataType implements java.io.Serializable {
             mArray[index] = ((Float)_floatList.elementAt(index)).floatValue();
         }
         return mArray;
-    } //-- float[] get_float() 
+    } //-- float[] getFloat()
 
     /**
-     * Method get_floatCount
+     * Method getFloatCount
      */
-    public int get_floatCount()
+    public int getFloatCount()
     {
         return _floatList.size();
-    } //-- int get_floatCount() 
+    } //-- int getFloatCount()
 
     /**
-     * Method get_int
+     * Method getInt
      * 
      * @param index
      */
-    public int get_int(int index)
+    public int getInt(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -394,12 +394,12 @@ public abstract class SuppDataType implements java.io.Serializable {
         }
         
         return ((Integer)_intList.elementAt(index)).intValue();
-    } //-- int get_int(int) 
+    } //-- int getInt(int)
 
     /**
-     * Method get_int
+     * Method getInt
      */
-    public int[] get_int()
+    public int[] getInt()
     {
         int size = _intList.size();
         int[] mArray = new int[size];
@@ -407,15 +407,15 @@ public abstract class SuppDataType implements java.io.Serializable {
             mArray[index] = ((Integer)_intList.elementAt(index)).intValue();
         }
         return mArray;
-    } //-- int[] get_int() 
+    } //-- int[] getInt()
 
     /**
-     * Method get_intCount
+     * Method getIntCount
      */
-    public int get_intCount()
+    public int getIntCount()
     {
         return _intList.size();
-    } //-- int get_intCount() 
+    } //-- int getIntCount()
 
     /**
      * Method isValid
@@ -456,12 +456,12 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- void removeAllURI() 
 
     /**
-     * Method removeAll_float
+     * Method removeAllFloat
      */
     public void removeAll_float()
     {
         _floatList.removeAllElements();
-    } //-- void removeAll_float() 
+    } //-- void removeAllFloat()
 
     /**
      * Method removeAll_int
@@ -508,7 +508,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- java.lang.String removeURI(int) 
 
     /**
-     * Method remove_float
+     * Method removeFloat
      * 
      * @param index
      */
@@ -517,7 +517,7 @@ public abstract class SuppDataType implements java.io.Serializable {
         java.lang.Object obj = _floatList.elementAt(index);
         _floatList.removeElementAt(index);
         return ((Float)obj).floatValue();
-    } //-- float remove_float(int) 
+    } //-- float removeFloat(int)
 
     /**
      * Method remove_int
@@ -622,12 +622,12 @@ public abstract class SuppDataType implements java.io.Serializable {
     } //-- void setURI(java.lang.String) 
 
     /**
-     * Method set_float
+     * Method setFloat
      * 
      * @param index
      * @param v_float
      */
-    public void set_float(int index, float v_float)
+    public void setFloat(int index, float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -635,29 +635,29 @@ public abstract class SuppDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _floatList.setElementAt(new Float(v_float), index);
-    } //-- void set_float(int, float) 
+    } //-- void setFloat(int, float)
 
     /**
-     * Method set_float
+     * Method setFloat
      * 
      * @param _floatArray
      */
-    public void set_float(float[] _floatArray)
+    public void setFloat(float[] _floatArray)
     {
         //-- copy array
         _floatList.removeAllElements();
         for (int i = 0; i < _floatArray.length; i++) {
             _floatList.addElement(new Float(_floatArray[i]));
         }
-    } //-- void set_float(float) 
+    } //-- void setFloat(float)
 
     /**
-     * Method set_int
+     * Method setInt
      * 
      * @param index
      * @param v_int
      */
-    public void set_int(int index, int v_int)
+    public void setInt(int index, int v_int)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -665,21 +665,21 @@ public abstract class SuppDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _intList.setElementAt(new Integer(v_int), index);
-    } //-- void set_int(int, int) 
+    } //-- void setInt(int, int)
 
     /**
-     * Method set_int
+     * Method setInt
      * 
      * @param _intArray
      */
-    public void set_int(int[] _intArray)
+    public void setInt(int[] _intArray)
     {
         //-- copy array
         _intList.removeAllElements();
         for (int i = 0; i < _intArray.length; i++) {
             _intList.addElement(new Integer(_intArray[i]));
         }
-    } //-- void set_int(int) 
+    } //-- void setInt(int)
 
     /**
      * Method validate

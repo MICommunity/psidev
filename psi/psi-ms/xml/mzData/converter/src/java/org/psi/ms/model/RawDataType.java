@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: RawDataType.java,v 1.1 2003/08/11 17:30:00 krunte Exp $
+ * $Id: RawDataType.java,v 1.2 2003/08/20 10:56:05 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -23,7 +23,7 @@ import org.exolab.castor.xml.ValidationException;
 /**
  * Data type for non-binary data (m/z and intensity)
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:30:00 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/20 10:56:05 $
  */
 public abstract class RawDataType implements java.io.Serializable {
 
@@ -53,42 +53,42 @@ public abstract class RawDataType implements java.io.Serializable {
     //-----------/
 
     /**
-     * Method add_float
+     * Method addFloat
      * 
      * @param v_float
      */
-    public void add_float(float v_float)
+    public void addFloat(float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         _floatList.addElement(new Float(v_float));
-    } //-- void add_float(float) 
+    } //-- void addFloat(float)
 
     /**
-     * Method add_float
+     * Method addFloat
      * 
      * @param index
      * @param v_float
      */
-    public void add_float(int index, float v_float)
+    public void addFloat(int index, float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         _floatList.insertElementAt(new Float(v_float), index);
-    } //-- void add_float(int, float) 
+    } //-- void addFloat(int, float)
 
     /**
-     * Method enumerate_float
+     * Method enumerateFloat
      */
-    public java.util.Enumeration enumerate_float()
+    public java.util.Enumeration enumerateFloat()
     {
         return _floatList.elements();
-    } //-- java.util.Enumeration enumerate_float() 
+    } //-- java.util.Enumeration enumerateFloat()
 
     /**
-     * Method get_float
+     * Method getFloat
      * 
      * @param index
      */
-    public float get_float(int index)
+    public float getFloat(int index)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -97,12 +97,12 @@ public abstract class RawDataType implements java.io.Serializable {
         }
         
         return ((Float)_floatList.elementAt(index)).floatValue();
-    } //-- float get_float(int) 
+    } //-- float getFloat(int)
 
     /**
-     * Method get_float
+     * Method getFloat
      */
-    public float[] get_float()
+    public float[] getFloat()
     {
         int size = _floatList.size();
         float[] mArray = new float[size];
@@ -110,15 +110,15 @@ public abstract class RawDataType implements java.io.Serializable {
             mArray[index] = ((Float)_floatList.elementAt(index)).floatValue();
         }
         return mArray;
-    } //-- float[] get_float() 
+    } //-- float[] getFloat()
 
     /**
-     * Method get_floatCount
+     * Method getFloatCount
      */
-    public int get_floatCount()
+    public int getFloatCount()
     {
         return _floatList.size();
-    } //-- int get_floatCount() 
+    } //-- int getFloatCount()
 
     /**
      * Method isValid
@@ -135,32 +135,32 @@ public abstract class RawDataType implements java.io.Serializable {
     } //-- boolean isValid() 
 
     /**
-     * Method removeAll_float
+     * Method removeAllFloat
      */
-    public void removeAll_float()
+    public void removeAllFloat()
     {
         _floatList.removeAllElements();
-    } //-- void removeAll_float() 
+    } //-- void removeAllFloat()
 
     /**
-     * Method remove_float
+     * Method removeFloat
      * 
      * @param index
      */
-    public float remove_float(int index)
+    public float removeFloat(int index)
     {
         java.lang.Object obj = _floatList.elementAt(index);
         _floatList.removeElementAt(index);
         return ((Float)obj).floatValue();
-    } //-- float remove_float(int) 
+    } //-- float removeFloat(int)
 
     /**
-     * Method set_float
+     * Method setFloat
      * 
      * @param index
      * @param v_float
      */
-    public void set_float(int index, float v_float)
+    public void setFloat(int index, float v_float)
         throws java.lang.IndexOutOfBoundsException
     {
         //-- check bounds for index
@@ -168,21 +168,21 @@ public abstract class RawDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _floatList.setElementAt(new Float(v_float), index);
-    } //-- void set_float(int, float) 
+    } //-- void setFloat(int, float)
 
     /**
-     * Method set_float
+     * Method setFloat
      * 
      * @param _floatArray
      */
-    public void set_float(float[] _floatArray)
+    public void setFloat(float[] _floatArray)
     {
         //-- copy array
         _floatList.removeAllElements();
         for (int i = 0; i < _floatArray.length; i++) {
             _floatList.addElement(new Float(_floatArray[i]));
         }
-    } //-- void set_float(float) 
+    } //-- void setFloat(float)
 
     /**
      * Method validate

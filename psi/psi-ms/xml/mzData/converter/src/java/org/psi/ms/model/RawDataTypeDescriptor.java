@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: RawDataTypeDescriptor.java,v 1.1 2003/08/11 17:30:00 krunte Exp $
+ * $Id: RawDataTypeDescriptor.java,v 1.2 2003/08/20 10:56:05 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -19,7 +19,7 @@ import org.exolab.castor.xml.validators.*;
 /**
  * Class RawDataTypeDescriptor.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:30:00 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/20 10:56:05 $
  */
 public class RawDataTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDescriptorImpl {
 
@@ -73,7 +73,7 @@ public class RawDataTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDe
                 throws IllegalStateException
             {
                 RawDataType target = (RawDataType) object;
-                return target.get_float();
+                return target.getFloat();
             }
             public void setValue( java.lang.Object object, java.lang.Object value) 
                 throws IllegalStateException, IllegalArgumentException
@@ -83,7 +83,7 @@ public class RawDataTypeDescriptor extends org.exolab.castor.xml.util.XMLClassDe
                     // ignore null values for non optional primitives
                     if (value == null) return;
                     
-                    target.add_float( ((Float)value).floatValue());
+                    target.addFloat( ((Float)value).floatValue());
                 }
                 catch (java.lang.Exception ex) {
                     throw new IllegalStateException(ex.toString());

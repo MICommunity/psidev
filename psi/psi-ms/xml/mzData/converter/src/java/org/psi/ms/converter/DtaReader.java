@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.2 2003/08/11 17:59:00 krunte Exp $
+ * $Id: DtaReader.java,v 1.3 2003/08/20 10:56:05 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -163,8 +163,8 @@ public class DtaReader {
                 String intensityString = stringTokenizer.nextToken();
                 Float mz = new Float(mzString);
                 Float intensity = new Float(intensityString);
-                mzArray.add_float(mz.floatValue());
-                intenArray.add_float(intensity.floatValue());
+                mzArray.addFloat(mz.floatValue());
+                intenArray.addFloat(intensity.floatValue());
             }
         } catch (IOException e) {
             // EOF
