@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaReader.java,v 1.7 2003/09/10 12:45:52 krunte Exp $
+ * $Id: TestDtaReader.java,v 1.8 2003/09/10 14:51:33 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -14,7 +14,6 @@ import org.exolab.castor.xml.MarshalException;
 import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.ValidationException;
 import org.psi.ms.converter.DtaReader;
-import org.psi.ms.converter.DtaSetConverter;
 import org.psi.ms.model.*;
 import org.xml.sax.InputSource;
 
@@ -31,12 +30,7 @@ public class TestDtaReader {
         MzData mzData = new MzData();
         DtaReader dtaReader = new DtaReader();
 
-        dtaReader.addAcquisitions(argv[0], mzData);
-
-        AcqDescList acqDescList = mzData.getDesc().getAcqDescList();
-        acqDescList.setCount(acqDescList.getAcqDescCount());
-        AcquisitionList acquisionList = mzData.getRaw().getAcquisitionList();
-        acquisionList.setCount(acquisionList.getAcquisitionCount());
+        dtaReader.addAcquisitions(argv[0], mzData, 0);
 
         FileWriter fileWriter = new FileWriter(argv[0] + ".xml");
 /*

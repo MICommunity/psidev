@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.7 2003/09/10 12:45:52 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.8 2003/09/10 14:51:33 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -57,19 +57,17 @@ public class DtaSetConverter {
         SortedSet ztaFileSet = Utils.fileArrayToTreeSet(ztaFiles);
         Iterator dtaIterator = dtaFileSet.iterator();
         Iterator ztaIterator = ztaFileSet.iterator();
+        int acqId = 0;
         while (dtaIterator.hasNext() && ztaIterator.hasNext()) {
             String dtaFile = (String) dtaIterator.next();
             String ztaFile = (String) ztaIterator.next();
             System.out.println("Converting file: " + dtaFile);
-            dtaReader.addAcquisitions(dtaFile, mzData);
+            dtaReader.addAcquisitions(dtaFile, mzData, acqId);
+            acqId++;
             System.out.println("Converting file: " + ztaFile);
-            dtaReader.addAcquisitions(ztaFile, mzData);
+            dtaReader.addAcquisitions(ztaFile, mzData, acqId);
+            acqId++;
         }
-
-        AcqDescList acqDescList = mzData.getDesc().getAcqDescList();
-        acqDescList.setCount(acqDescList.getAcqDescCount());
-        AcquisitionList acquisitionList = mzData.getRaw().getAcquisitionList();
-        acquisitionList.setCount(acquisitionList.getAcquisitionCount());
 
         FileWriter fileWriter = new FileWriter(outputFilename);
 /*
