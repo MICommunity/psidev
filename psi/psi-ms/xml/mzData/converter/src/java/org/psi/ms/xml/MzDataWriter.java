@@ -1,5 +1,5 @@
 /**
- * $Id: MzDataWriter.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: MzDataWriter.java,v 1.6 2003/11/28 15:53:54 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -24,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.zip.GZIPOutputStream;
+import java.util.zip.ZipOutputStream;
 
 /**
  *
@@ -77,6 +78,8 @@ public class MzDataWriter {
         stream = new FileOutputStream(file);
         if (file.getName().endsWith(".gz"))
             stream = new GZIPOutputStream(stream);
+        if (file.getName().endsWith(".zip"))
+            stream = new ZipOutputStream(stream);
         close = true;
     }
 
@@ -112,7 +115,13 @@ public class MzDataWriter {
         xmlSerializer.text(s);
     }
 
-    public void marshall(MzData mzData) throws PsiMsConverterException {
+    /**
+     *
+     * @param mzData
+     * @param acquisitionCount
+     * @throws PsiMsConverterException
+     */
+    public void initialize(MzData mzData, int acquisitionCount) throws PsiMsConverterException {
         try {
             xmlSerializer.setOutput(stream, "UTF-8");
             xmlSerializer.setProperty("http://xmlpull.org/v1/doc/properties.html#serializer-indentation", "  ");
@@ -124,7 +133,24 @@ public class MzDataWriter {
             attribute(null, "version", mzData.getVersion());
             marshall(mzData.getDesc());
             startTag(null, "raw");
-            marshall(mzData.getAcquisitionList());
+            startTag(null, "acquisitionList");
+            attribute(null, "count", Integer.toString(acquisitionCount));
+        } catch (IOException e) {
+            throw new PsiMsConverterException(e);
+        } catch (IllegalArgumentException e) {
+            throw new PsiMsConverterException(e);
+        } catch (IllegalStateException e) {
+            throw new PsiMsConverterException(e);
+        }
+    }
+
+    /**
+     *
+     * @throws PsiMsConverterException
+     */
+    public void finish() throws PsiMsConverterException {
+        try {
+            endTag(null, "acquisitionList");
             endTag(null, "raw");
             endTag(null, "mzData");
             text("\n");
@@ -534,17 +560,7 @@ public class MzDataWriter {
         endTag(null, "supDesc");
     }
 
-    private void marshall(AcquisitionList acquisitionList) throws IOException, PsiMsConverterException {
-        startTag(null, "acquisitionList");
-        int count = acquisitionList.getCount();
-        attribute(null, "count", Integer.toString(count));
-        for (int iii = 0; iii < count; iii++) {
-            marshall(acquisitionList.getAcquisition(iii));
-        }
-        endTag(null, "acquisitionList");
-    }
-
-    private void marshall(Acquisition acquisition) throws IOException, PsiMsConverterException {
+    public void marshall(Acquisition acquisition) throws IOException, PsiMsConverterException {
         startTag(null, "acquisition");
         marshall(acquisition.getAcqDesc());
         boolean hasSupplements = acquisition.hasSupplementList();
@@ -665,7 +681,7 @@ public class MzDataWriter {
     /**
      * Class OutputType.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+     * @version $Revision: 1.6 $ $Date: 2003/11/28 15:53:54 $
      */
     public static class OutputType implements java.io.Serializable {
 
