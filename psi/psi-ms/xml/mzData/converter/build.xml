@@ -54,7 +54,7 @@
             <zipgroupfileset dir="lib" includes="**.jar"/>
             <manifest>
               <attribute name="Built-By" value="${user.name}"/>
-                <attribute name="Main-Class" value="org.psi.ms.converter.DtaSetConverter"/>
+                <attribute name="Main-Class" value="org.psi.ms.swing.MainPanel"/>
             </manifest>
         </jar>
     </target>
