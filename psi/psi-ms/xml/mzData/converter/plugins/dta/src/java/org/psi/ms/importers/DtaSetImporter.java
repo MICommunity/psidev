@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetImporter.java,v 1.1 2003/12/03 17:49:38 krunte Exp $
+ * $Id: DtaSetImporter.java,v 1.2 2003/12/04 18:15:23 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -11,11 +11,9 @@ package org.psi.ms.importers;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.helper.SuffixFileFilter;
 import org.psi.ms.helper.Utils;
-import org.psi.ms.model.MzData;
 import org.psi.ms.model.Desc;
 import org.psi.ms.model.Acquisition;
 import org.psi.ms.model.Admin;
-import org.psi.ms.xml.MzDataWriter;
 import org.psi.ms.importers.DtaReader;
 import org.psi.ms.converter.ImporterI;
 import org.psi.ms.converter.ParseListener;
@@ -58,26 +56,6 @@ public class DtaSetImporter implements ImporterI {
 
     public DtaSetImporter() {
         dtaReader = new DtaReader();
-    }
-
-    // Todo: swing package relies on this method still.
-    public void convertDirectory(String sourceDirname, String outputFilename, MzData mzData, MzDataWriter.OutputType outputType, ParseListener listener) throws PsiMsConverterException, IOException {
-        Desc desc = initialize(new File(sourceDirname), listener);
-        String sampleName = desc.getAdmin().getSampleName();
-        mzData.getDesc().getAdmin().setSampleName(sampleName);
-
-        MzDataWriter mzDataWriter = new MzDataWriter(new File(outputFilename));
-        mzDataWriter.setOutputType(outputType);
-
-        int acquisitionCount = this.getAcquisitionCount();
-        mzDataWriter.initialize(mzData, acquisitionCount);
-        parseListener.setMax(acquisitionCount);
-        while (this.hasMoreAcquisitions()) {
-            Acquisition acquisition = this.getNextAcquisition();
-            parseListener.increment();
-            mzDataWriter.marshall(acquisition);
-        }
-        mzDataWriter.finish();
     }
 
     /**
@@ -186,8 +164,12 @@ public class DtaSetImporter implements ImporterI {
         Pattern pattern = Pattern.compile("(.+)_(\\d+).(\\d+)_(\\d+).(zta|dta)");
         if (file.isDirectory()) {
             File[] files = file.listFiles(new SuffixFileFilter(".dta"));
-            Matcher matcher = pattern.matcher(files[0].getName());
-            return matcher.matches();
+            if (files != null && files.length > 0) {
+                Matcher matcher = pattern.matcher(files[0].getName());
+                return matcher.matches();
+            } else {
+                return false;
+            }
         } else if (file.isFile()) {
             Matcher matcher = pattern.matcher(file.getName());
             return matcher.matches();
