@@ -1,5 +1,5 @@
 /**
- * $Id: ImporterI.java,v 1.1 2003/11/10 10:21:12 krunte Exp $
+ * $Id: ImporterI.java,v 1.2 2003/11/21 15:32:14 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -54,10 +54,11 @@ public interface ImporterI {
                            ParseListener listener) throws PsiMsConverterException, IOException;
 
     /**
-     * Returns a list of class objects (must be classes of the package org.psi.ms.model).
+     * Returns a list of {@link ProvidedDataItem ProvidedDataItem} objects.
      * Tells the (graphical) user interface which pieces of information it does not
      * need to request from the user.
      * @return a list of class objects (must be classes of the package org.psi.ms.model).
+     * @see ProvidedDataItem
      */
     public List getProvidedData();
 
@@ -108,4 +109,11 @@ public interface ImporterI {
      * @return the next available Acquisition or null.
      */
     public Acquisition getNextAcquisition() throws IOException;
+
+    /**
+     * Returns some information about the importer implementation.
+     * This can be displayed, for example, in a list of available importers.
+     * @return some information about the importer implementation.
+     */
+    public String getAboutImporter();
 }
