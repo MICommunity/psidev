@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Test.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: Test.java,v 1.6 2004/01/13 15:14:04 lbower Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
  * Experimental information regarding the test which resulted in
  * this data set.
  *
- * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.6 $ $Date: 2004/01/13 15:14:04 $
  */
 public class Test implements java.io.Serializable {
     /**
@@ -42,7 +42,6 @@ public class Test implements java.io.Serializable {
      * are allowed here.
      */
     private java.util.Vector _testUserParamList;
-
 
     //----------------/
     //- Constructors -/

@@ -3,10 +3,12 @@ package org.psi.ms.swing;
 import org.psi.ms.xml.MzDataWriter;
 
 import javax.swing.*;
+import javax.swing.event.DocumentListener;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.EmptyBorder;
+import java.awt.event.ActionListener;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,12 +36,12 @@ public class DirectoryPanel extends JPanel {
 
         this.add(new ContainedJComponent("Source", oSourceDirPanel));
         this.add(new ContainedJComponent("Output", oDestDirPanel));
-        this.add(new ContainedJComponent("Type",oOutputTypePanel));
+        this.add(new ContainedJComponent("Type", oOutputTypePanel));
     }
 
     private void prepareFields() {
-        oSourceDirPanel = new DirectoryChooserPanel(JFileChooser.FILES_AND_DIRECTORIES);
-        oDestDirPanel = new DirectoryChooserPanel(JFileChooser.FILES_ONLY);
+        oSourceDirPanel = new DirectoryChooserInputPanel();
+        oDestDirPanel = new DirectoryChooserOutputPanel();
         oOutputTypePanel = new OutputTypePanel();
     }
 
@@ -58,5 +60,13 @@ public class DirectoryPanel extends JPanel {
     void setDefaultFieldValues() {
         oSourceDirPanel.setDefaultFieldValues();
         oOutputTypePanel.setDefaultFieldValues();
+    }
+
+    public void addInputFileDocumentListener(DocumentListener e) {
+        oSourceDirPanel.addDocumentListener(e);
+    }
+
+    public void addOutputFileDocumentListener(DocumentListener e) {
+        oDestDirPanel.addDocumentListener(e);
     }
 }

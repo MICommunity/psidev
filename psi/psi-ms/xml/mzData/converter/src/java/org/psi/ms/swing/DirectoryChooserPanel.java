@@ -1,11 +1,14 @@
 package org.psi.ms.swing;
 
 import javax.swing.*;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.DocumentEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.*;
 import java.io.File;
 import java.util.prefs.Preferences;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,30 +17,32 @@ import java.util.prefs.Preferences;
  * Time: 3:11:35 PM
  * To change this template use Options | File Templates.
  */
-public class DirectoryChooserPanel extends JPanel {
+public abstract class DirectoryChooserPanel extends JPanel {
 
-    private Preferences oPrefs = Preferences.userNodeForPackage(this.getClass());
+    protected Preferences oPrefs = Preferences.userNodeForPackage(this.getClass());
+    protected JFileChooser chooser;
 
-    private JTextField oFileField;
-    private JButton oBrowseButton;
-    private int iBrowseType;
+    protected JTextField oFileField;
+    protected JButton oBrowseButton;
 
-    public DirectoryChooserPanel(int piBrowseType) {
-        this.iBrowseType = piBrowseType;
+    protected ArrayList listenerList = new ArrayList();
+
+    public DirectoryChooserPanel() {
         prepareFields();
         layoutPanel();
         getDefaultFieldValues();
     }
 
-    private void layoutPanel() {
+    protected void layoutPanel() {
         this.setLayout(new BorderLayout());
         this.add(oFileField, BorderLayout.CENTER);
         this.add(oBrowseButton, BorderLayout.EAST);
     }
 
-    private void prepareFields() {
+    protected void prepareFields() {
 
         oFileField = new JTextField();
+        chooser = new JFileChooser();
         oBrowseButton = new JButton("Browse...");
         oBrowseButton.setFont(MainPanel.FONT);
         oBrowseButton.addActionListener(new ActionListener() {
@@ -47,63 +52,23 @@ public class DirectoryChooserPanel extends JPanel {
         });
     }
 
-    private void setFileField() {
-        MainPanel.CHOOSER.setFileSelectionMode(iBrowseType);
-
-        File oDirectory = new File("/");
-        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
-            MainPanel.CHOOSER.setCurrentDirectory(new File(oPrefs.get("SourceDir", "/")));
-            MainPanel.CHOOSER.showOpenDialog(this);
-            oDirectory = MainPanel.CHOOSER.getSelectedFile();
-            oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
-            if (oDirectory != null) {
-                oPrefs.put("SourceDir", oDirectory.getPath());
-            }
-        } else if (iBrowseType == JFileChooser.FILES_ONLY) {
-            MainPanel.CHOOSER.setCurrentDirectory(new File(oPrefs.get("DestDir", "/")));
-            MainPanel.CHOOSER.showSaveDialog(this);
-            oDirectory = MainPanel.CHOOSER.getSelectedFile();
-            oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
-            if (oDirectory != null) {
-                oPrefs.put("DestDir", oDirectory.getPath());
-            }
-        }
-
-        System.out.println("the file is " + oDirectory);
-        if (oDirectory != null) {
-            oFileField.setText(oDirectory.getPath());
-        }
-
-    }
+    protected abstract void setFileField();
 
     String getFilePath() {
         return oFileField.getText();
     }
 
-    private void getDefaultFieldValues() {
-        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
-            oFileField.setText(oPrefs.get("SourceDir", "/"));
-            oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
-        } else {
-            oFileField.setText(oPrefs.get("DestDir", "/"));
-            //todo need to get the caret position to appear at the end of the path, this code
-            //does not work for some reason
-            oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
-        }
-        //oSampleNameField.setText(oPrefs.get("SampleName", "Default Sample"));
+    public void addDocumentListener(DocumentListener e) {
+        oFileField.getDocument().addDocumentListener(e);
     }
 
-    void setDefaultFieldValues() {
-        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
-            oPrefs.get("SourceDir", oFileField.getText());
-        } else {
-            oPrefs.get("DestDir", oFileField.getText());
-        }
-    }
+    protected abstract void getDefaultFieldValues();
+
+    protected abstract void setDefaultFieldValues();
 
     public static void main(String[] args) {
         JFrame oFrame = new JFrame();
-        oFrame.getContentPane().add(new DirectoryChooserPanel(JFileChooser.FILES_AND_DIRECTORIES));
+        oFrame.getContentPane().add(new DirectoryChooserInputPanel());
         oFrame.setSize(800, 600);
         oFrame.setVisible(true);
     }

@@ -4,6 +4,11 @@ import org.psi.ms.model.Source;
 import org.psi.ms.model.Analyzer;
 import org.psi.ms.model.Detector;
 import org.psi.ms.model.InstrumentCommonSettings;
+import org.psi.ms.converter.ProvidedDataItem;
+import org.psi.ms.view.InstrumentCommonSettingsData;
+import org.psi.ms.view.SourceData;
+import org.psi.ms.view.AnalyzerData;
+import org.psi.ms.view.DetectorData;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -25,6 +30,12 @@ public class InstrumentSettingsPanel extends JPanel {
 
     Preferences oPrefs = Preferences.userNodeForPackage(this.getClass());
 
+    //these are the data objects we are providing a view on
+    private InstrumentCommonSettingsData instrumentCommonSettingsData;
+    private SourceData sourceData;
+    private AnalyzerData analyzerData;
+    private DetectorData detectorData;
+
     private JComboBox oSourceTypeBox;
     private JComboBox oAnalyzerTypeBox;
     private JComboBox oDetectorTypeBox;
@@ -35,6 +46,8 @@ public class InstrumentSettingsPanel extends JPanel {
     private JTextField oInstrumentNameField;
     private FloatField oResolutionField;
     private FloatField oAccuracyField;
+
+//    private boolean populated = false;
 
     public InstrumentSettingsPanel() {
         prepareFields();
@@ -55,10 +68,10 @@ public class InstrumentSettingsPanel extends JPanel {
         JPanel oSourcePanel = new JPanel();
         oSourcePanel.setLayout(new BoxLayout(oSourcePanel, BoxLayout.Y_AXIS));
         oSourcePanel.setBorder(new CompoundBorder
-                (new TitledBorder(new LineBorder(Color.black,1), "Source"),
+                (new TitledBorder(new LineBorder(Color.black, 1), "Source"),
                         new EmptyBorder(3, 3, 3, 3)));
 
-        oSourcePanel.add(new ContainedJComponent("Type",oSourceTypeBox,5));
+        oSourcePanel.add(new ContainedJComponent("Type", oSourceTypeBox, 5));
 
         JPanel oAnalyzerPanel = new JPanel();
         oAnalyzerPanel.setLayout(new BoxLayout(oAnalyzerPanel, BoxLayout.Y_AXIS));
@@ -66,21 +79,21 @@ public class InstrumentSettingsPanel extends JPanel {
                 (new TitledBorder(new EtchedBorder(), "Analyzer"),
                         new EmptyBorder(3, 3, 3, 3)));
 
-        oAnalyzerPanel.add(new ContainedJComponent("Type",oAnalyzerTypeBox,35));
-        oAnalyzerPanel.add(new ContainedJComponent("Resolution",oResolutionField,5));
-        oAnalyzerPanel.add(new ContainedJComponent("Accuracy",oAccuracyField,13));
+        oAnalyzerPanel.add(new ContainedJComponent("Type", oAnalyzerTypeBox, 35));
+        oAnalyzerPanel.add(new ContainedJComponent("Resolution", oResolutionField, 5));
+        oAnalyzerPanel.add(new ContainedJComponent("Accuracy", oAccuracyField, 13));
 
         oSourcePanel.add(oAnalyzerPanel);
 
         JPanel oDetectorPanel = new JPanel();
         oDetectorPanel.setLayout(new BoxLayout(oDetectorPanel, BoxLayout.Y_AXIS));
         oDetectorPanel.setBorder(new CompoundBorder
-                (new TitledBorder(new LineBorder(Color.black,1), "Detector"),
+                (new TitledBorder(new LineBorder(Color.black, 1), "Detector"),
                         new EmptyBorder(3, 3, 3, 3)));
 
-        oDetectorPanel.add(new ContainedJComponent("Type",oDetectorTypeBox,5));
+        oDetectorPanel.add(new ContainedJComponent("Type", oDetectorTypeBox, 5));
 
-        oInnerPanel.add(new ContainedJComponent("Name",oInstrumentNameField,6));
+        oInnerPanel.add(new ContainedJComponent("Name", oInstrumentNameField, 6));
         oInnerPanel.add(oSourcePanel);
         oInnerPanel.add(oDetectorPanel);
         this.add(oInnerPanel, BorderLayout.NORTH);
@@ -89,20 +102,18 @@ public class InstrumentSettingsPanel extends JPanel {
 
     private void prepareFields() {
 
-        float ofloat = 2221.2345678456F;
-        System.out.println("float is " + ofloat);
+//        float ofloat = 2221.2345678456F;
+//        System.out.println("float is " + ofloat);
 
-        DecimalFormat oFormat = (DecimalFormat)NumberFormat.getNumberInstance();
+        DecimalFormat oFormat = (DecimalFormat) NumberFormat.getNumberInstance();
         oFormat.setGroupingUsed(false);
         //oFormat.applyPattern("########");
         oInstrumentNameField = new JTextField();
-        oInstrumentNameField.setMargin(new Insets(0,2,0,2));
-        //todo this field needs validating for floats
+        oInstrumentNameField.setMargin(new Insets(0, 2, 0, 2));
         oResolutionField = new FloatField();
-        oResolutionField.setMargin(new Insets(0,2,0,2));
-        //todo this field needs validating for floats
+        oResolutionField.setMargin(new Insets(0, 2, 0, 2));
         oAccuracyField = new FloatField();
-        oAccuracyField.setMargin(new Insets(0,2,0,2));
+        oAccuracyField.setMargin(new Insets(0, 2, 0, 2));
 
         Vector oSourceTypes = new Vector();
         Enumeration oEnr = Source.Type.enumerate();
@@ -136,45 +147,138 @@ public class InstrumentSettingsPanel extends JPanel {
 
     }
 
-    private void getDefaultFieldValues() {
-        oInstrumentNameField.setText(oPrefs.get("InstrumentName", "Default name"));
-        oResolutionField.setText(oPrefs.get("Resolution", "-1"));
-        oAccuracyField.setText(oPrefs.get("Accuracy", "-1"));
-        oSourceTypeBox.setSelectedItem(Source.Type.valueOf(oPrefs.get("SourceType","other")));
-        oAnalyzerTypeBox.setSelectedItem(Analyzer.Type.valueOf(oPrefs.get("AnalyzerType","other")));
-        oDetectorTypeBox.setSelectedItem(Detector.Type.valueOf(oPrefs.get("DetectorType","other")));
+    public boolean isPopulated() {
+        if (instrumentCommonSettingsData == null) {
+            return false;
+        }
+        return instrumentCommonSettingsData.isPopulated();
+    }
+
+//    private void setPopulated(boolean populated) {
+//        this.populated = populated;
+//    }
+
+    void setData(InstrumentCommonSettingsData instrumentCommonSettingsData,
+                 SourceData sourceData,
+                 AnalyzerData analyzerData,
+                 DetectorData detectorData) {
+        this.instrumentCommonSettingsData = instrumentCommonSettingsData;
+        this.sourceData = sourceData;
+        this.analyzerData = analyzerData;
+        this.detectorData = detectorData;
+//        this.setPopulated(true);
+    }
+
+    protected void getDefaultFieldValues() {
+        if (isPopulated()) {
+            if (instrumentCommonSettingsData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME)) {
+                oInstrumentNameField.setText(oPrefs.get("InstrumentName", "Default name"));
+            }
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION)) {
+                oResolutionField.setText(oPrefs.get("Resolution", "-2"));
+            }
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY)) {
+                oAccuracyField.setText(oPrefs.get("Accuracy", "-2"));
+            }
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE)) {
+                oAnalyzerTypeBox.setSelectedItem(Analyzer.Type.valueOf(oPrefs.get("AnalyzerType", "other")));
+            }
+            if (sourceData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE)) {
+                oSourceTypeBox.setSelectedItem(Source.Type.valueOf(oPrefs.get("SourceType", "other")));
+            }
+            if (detectorData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE)) {
+                oDetectorTypeBox.setSelectedItem(Detector.Type.valueOf(oPrefs.get("DetectorType", "other")));
+            }
+        }
+    }
+
+    void refreshFieldValues() {
+        if (isPopulated()) {
+            oInstrumentNameField.setText(instrumentCommonSettingsData.getInstrumentCommonSettings().getInstName());
+            oResolutionField.setText(new Float(analyzerData.getAnalyzer().getResolution()).toString());
+            oAccuracyField.setText(new Float(analyzerData.getAnalyzer().getAccuracy()).toString());
+            //todo keep an eye on this and check it works as it should
+            oSourceTypeBox.setSelectedItem(Source.Type.valueOf(sourceData.getSource().getType().toString()));
+            oAnalyzerTypeBox.setSelectedItem(Analyzer.Type.valueOf(analyzerData.getAnalyzer().getType().toString()));
+            oDetectorTypeBox.setSelectedItem(Detector.Type.valueOf(detectorData.getDetector().getType().toString()));
+            //getDefaultFieldValues();//why did I ever put this here?
+        }
+        else {//dataobject empty so clear fields
+            setFieldActivation(false);
+        }
     }
 
     void setDefaultFieldValues() {
         oPrefs.put("InstrumentName", oInstrumentNameField.getText());
         oPrefs.put("Resolution", oResolutionField.getText());
         oPrefs.put("Accuracy", oAccuracyField.getText());
-        oPrefs.put("SourceType",oSourceTypeBox.getSelectedItem().toString());
-        oPrefs.put("AnalyzerType",oAnalyzerTypeBox.getSelectedItem().toString());
-        oPrefs.put("DetectorType",oDetectorTypeBox.getSelectedItem().toString());
+        oPrefs.put("SourceType", oSourceTypeBox.getSelectedItem().toString());
+        oPrefs.put("AnalyzerType", oAnalyzerTypeBox.getSelectedItem().toString());
+        oPrefs.put("DetectorType", oDetectorTypeBox.getSelectedItem().toString());
     }
 
-    InstrumentCommonSettings getSettings() {
-        InstrumentCommonSettings oSettings = new InstrumentCommonSettings();
-        Source oSource = new Source();
-        Analyzer oAnalyzer = new Analyzer();
-        Detector oDetector = new Detector();
+    void setFieldActivation() {
+        setFieldActivation(true);
 
-        oSource.setType(((Source.Type) oSourceTypeBox.getSelectedItem()));
-        oAnalyzer.setType(((Analyzer.Type) oAnalyzerTypeBox.getSelectedItem()));
-        //need to add verifiacion to this field
-        oAnalyzer.setResolution(new Float(oResolutionField.getText()).floatValue());
-        //need to add verifiacion to this field
-        oAnalyzer.setAccuracy(new Float(oAccuracyField.getText()).floatValue());
+        if (isPopulated()) {
+            if (!instrumentCommonSettingsData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME)) {
+                oInstrumentNameField.setEnabled(false);
+            }
 
-        oDetector.setType(((Detector.Type) oDetectorTypeBox.getSelectedItem()));
+            if (!analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION)) {
+                oResolutionField.setEnabled(false);
+            }
+            if (!analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY)) {
+                oAccuracyField.setEnabled(false);
+            }
+            if (!analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE)) {
+                oAnalyzerTypeBox.setEnabled(false);
+            }
 
-        oSettings.setSource(oSource);
-        oSettings.setInstName(oInstrumentNameField.getText());
-        oSettings.setAnalyzer(oAnalyzer);
-        oSettings.setDetector(oDetector);
+            if (!sourceData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE)) {
+                oSourceTypeBox.setEnabled(false);
+            }
 
-        return oSettings;
+            if (!detectorData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE)) {
+                oDetectorTypeBox.setEnabled(false);
+            }
+        }
+    }
+
+    private void setFieldActivation(boolean activate) {
+        oInstrumentNameField.setEnabled(activate);
+        oResolutionField.setEnabled(activate);
+        oAccuracyField.setEnabled(activate);
+        oSourceTypeBox.setEnabled(activate);
+        oAnalyzerTypeBox.setEnabled(activate);
+        oDetectorTypeBox.setEnabled(activate);
+    }
+
+    void setDataValues() {
+
+        if (isPopulated()) {
+            if (instrumentCommonSettingsData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_INSTNAME)) {
+                instrumentCommonSettingsData.getInstrumentCommonSettings().setInstName(oInstrumentNameField.getText());
+            }
+
+            if (sourceData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_SOURCE_SOURCETYPE)) {
+                sourceData.getSource().setType(((Source.Type) oSourceTypeBox.getSelectedItem()));
+            }
+
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ANALYZERTYPE)) {
+                analyzerData.getAnalyzer().setType(((Analyzer.Type) oAnalyzerTypeBox.getSelectedItem()));
+            }
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_RESOLUTION)) {
+                analyzerData.getAnalyzer().setResolution(new Float(oResolutionField.getText()).floatValue());
+            }
+            if (analyzerData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_ANALYZER_ACCURACY)) {
+                analyzerData.getAnalyzer().setAccuracy(new Float(oAccuracyField.getText()).floatValue());
+            }
+
+            if (detectorData.isFieldActive(ProvidedDataItem.DESC_INSTRUMENTCOMMONSETTINGS_DETECTOR_DETECTORTYPE)) {
+                detectorData.getDetector().setType(((Detector.Type) oDetectorTypeBox.getSelectedItem()));
+            }
+        }
     }
 
     public static void main(String[] args) {

@@ -25,26 +25,31 @@ public class FloatField extends JTextField {
         });
     }
 
+
+    /**
+     * Formats the text to the string representation of a float upon loosing focus.
+     */
     public void formatText() {
-        System.out.println("text is " + getText());
         if (getText().compareTo("") != 0) {
             super.setText(Float.valueOf(getText()).toString());
         }
     }
 
     protected Document createDefaultModel() {
-        return new WholeNumberDocument();
+        return new FloatDocument();
     }
 
-    protected class WholeNumberDocument extends PlainDocument {
+    /**
+     * ENSURES THAT THE ENTERED TEXT CAN BE CAST TO A FLOAT, IF NO, WILL BEEP
+     * AND FAIL TO ENTER THE TEXT
+     *
+     */
+    protected class FloatDocument extends PlainDocument {
 
         public void insertString(int offs,
                                  String str,
                                  AttributeSet a)
                 throws BadLocationException {
-
-//            System.out.println("offs " + offs);
-//            System.out.println("length " + this.getLength());
 
             String oCurrentText = this.getText(0, offs);
             oCurrentText += str;
@@ -52,17 +57,15 @@ public class FloatField extends JTextField {
                 oCurrentText += this.getText(offs, this.getLength() - offs);
             }
 
-//            System.out.println("current text is " + oCurrentText);
-
             try {
                 Float oValue = Float.valueOf(oCurrentText);
-                //System.out.println(oValue.floatValue());
                 if (oValue.isInfinite()) {
                     toolkit.beep();
                     System.out.println("no infinite values");
                     return;
                 }
-            } catch (NumberFormatException e) {
+            }
+            catch (NumberFormatException e) {
                 toolkit.beep();
                 System.out.println("number format exception");
                 return;

@@ -1,5 +1,5 @@
 /**
- * $Id: ProvidedDataItem.java,v 1.2 2003/12/09 13:48:30 krunte Exp $
+ * $Id: ProvidedDataItem.java,v 1.3 2004/01/13 15:14:04 lbower Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -11,7 +11,7 @@ package org.psi.ms.converter;
 import java.util.Hashtable;
 
 /**
- * 
+ *
  * @author krunte
  */
 public final class ProvidedDataItem {

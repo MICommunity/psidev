@@ -2,6 +2,10 @@ package org.psi.ms.swing;
 
 import org.psi.ms.model.Admin;
 import org.psi.ms.model.Person;
+import org.psi.ms.converter.ProvidedDataItem;
+import org.psi.ms.view.AdminData;
+import org.psi.ms.view.AdminContactPersonData;
+import org.psi.ms.view.PersonData;
 
 import javax.swing.*;
 import javax.swing.border.CompoundBorder;
@@ -22,6 +26,10 @@ public class AdminPanel extends JPanel {
 
     Preferences oPrefs = Preferences.userNodeForPackage(this.getClass());
 
+    //we are providing a view on these objects
+    private AdminData adminData;
+    private PersonData personData;
+
     private JTextField oSampleNameField;
     private JTextField oContactNameField;
     private JTextField oContactInstitutionField;
@@ -29,10 +37,11 @@ public class AdminPanel extends JPanel {
     private JTextArea oContactInfoField;
     private JScrollPane oContactInfoScroller;
 
+//    private boolean populated = false;
+
     public AdminPanel() {
         prepareFields();
         layoutPanel();
-        getDefaultFieldValues();
     }
 
     private void layoutPanel() {
@@ -44,18 +53,15 @@ public class AdminPanel extends JPanel {
 
         JPanel oInnerPanel = new JPanel();
         oInnerPanel.setLayout(new BoxLayout(oInnerPanel, BoxLayout.Y_AXIS));
-//        oInnerPanel.setBorder(new CompoundBorder
-//                (new TitledBorder(new EtchedBorder(), "Contact"),
-//                        new EmptyBorder(3, 3, 3, 3)));
 
         JPanel oInnerTopPanel = new JPanel();
         oInnerTopPanel.setLayout(new BoxLayout(oInnerTopPanel, BoxLayout.Y_AXIS));
-        //oInnerTopPanel.add(new ContainedJComponent("Sample",oSampleNameField,6), BorderLayout.NORTH);
-        oInnerPanel.add(new ContainedJComponent("Name",oContactNameField,15));
-        oInnerPanel.add(new ContainedJComponent("Institute",oContactInstitutionField,5));
+
+        oInnerPanel.add(new ContainedJComponent("Name", oContactNameField, 15));
+        oInnerPanel.add(new ContainedJComponent("Institute", oContactInstitutionField, 5));
 
         oContactInfoScroller.setBorder
-                (new TitledBorder(new EmptyBorder(0,0,0,0),
+                (new TitledBorder(new EmptyBorder(0, 0, 0, 0),
                         "Address",
                         TitledBorder.DEFAULT_JUSTIFICATION,
                         TitledBorder.DEFAULT_POSITION,
@@ -63,67 +69,137 @@ public class AdminPanel extends JPanel {
         oInnerPanel.add(oContactInfoScroller);
         oInnerTopPanel.add(oInnerPanel);
 
-        //oInnerPanel.add(oInnerTopPanel, BorderLayout.NORTH);
-
-        //this.add(oInnerPanel, BorderLayout.NORTH);
-        this.add(oInnerTopPanel,BorderLayout.NORTH);
+        this.add(oInnerTopPanel, BorderLayout.NORTH);
     }
 
     private void prepareFields() {
         oSampleNameField = new JTextField();
-        oSampleNameField.setMargin(new Insets(0,2,0,2));
+        oSampleNameField.setMargin(new Insets(0, 2, 0, 2));
         oContactNameField = new JTextField();
-        oContactNameField.setMargin(new Insets(0,2,0,2));
+        oContactNameField.setMargin(new Insets(0, 2, 0, 2));
         oContactInstitutionField = new JTextField();
-        oContactInstitutionField.setMargin(new Insets(0,2,0,2));
-        oContactInfoField = new JTextArea(){
-//            public Dimension getPreferredize() {
-//                int iHeight = super.getPreferredSize().height;
-//                //System.out.println("iHeight is " + iHeight);
-//                if(iHeight < 200) {
-//                    iHeight = 200;
-//                }
-//                return new Dimension(super.getPreferredSize().width,100);
-//            }
+        oContactInstitutionField.setMargin(new Insets(0, 2, 0, 2));
+        oContactInfoField = new JTextArea() {
         };
 
-        oContactInfoField.setMargin(new Insets(0,5,0,2));
-        oContactInfoScroller = new JScrollPane(){
+        oContactInfoField.setMargin(new Insets(0, 5, 0, 2));
+        oContactInfoScroller = new JScrollPane() {
             public Dimension getPreferredSize() {
-                return new Dimension(super.getPreferredSize().width,200);
+                return new Dimension(super.getPreferredSize().width, 200);
             }
         };
         oContactInfoScroller.getViewport().add(oContactInfoField);
     }
 
-    private void getDefaultFieldValues() {
-        oSampleNameField.setText(oPrefs.get("SampleName", "Default Sample"));
-        oContactNameField.setText(oPrefs.get("ContactName", "Default Contact"));
-        oContactInstitutionField.setText(oPrefs.get("ContactInstitution", "Default Institute"));
-        oContactInfoField.setText(oPrefs.get("ContactInfo", "Default Info"));
+    public boolean isPopulated() {
+        if (adminData == null) {
+            return false;
+        }
+        return adminData.isPopulated();
+    }
+
+//    private void setPopulated(boolean populated) {
+//        this.populated = populated;
+//    }
+
+    void setData(AdminData adminData, PersonData personData) {
+        this.adminData = adminData;
+        this.personData = personData;
+//        this.setPopulated(true);
+    }
+
+    protected void getDefaultFieldValues() {
+        //checks to see if the fields are already provided by the dataobject, and are un-editable
+        //if the fields are available for editing, checks to see if the value is not set
+        if (isPopulated()) {
+            if (adminData.isFieldActive(ProvidedDataItem.DESC_ADMIN_SAMPLENAME)) {
+                if (adminData.getAdmin().getSampleName() == "") {
+                    oSampleNameField.setText(oPrefs.get("SampleName", "Default Sample"));
+                }
+            }
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_NAME)) {
+                if (personData.getPerson().getName() == "") {
+                    oContactNameField.setText(oPrefs.get("ContactName", "Default Contact"));
+                }
+            }
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION)) {
+                if (personData.getPerson().getInstitution() == "") {
+                    oContactInstitutionField.setText(oPrefs.get("ContactInstitution", "Default Institute"));
+                }
+            }
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO)) {
+                if (personData.getPerson().getContactInfo() == "") {
+                    oContactInfoField.setText(oPrefs.get("ContactInfo", "Default Info"));
+                }
+            }
+        }
+    }
+
+    void refreshFieldValues() {
+        if (isPopulated()) {
+            oSampleNameField.setText(adminData.getAdmin().getSampleName());
+            oContactNameField.setText(personData.getPerson().getName());
+            oContactInstitutionField.setText(personData.getPerson().getInstitution());
+            oContactInfoField.setText(personData.getPerson().getContactInfo());
+            //getDefaultFieldValues();//need to fill up the fields with no values with default vaues
+        }
+        else {//dataobject empty so clear fields
+            setFieldActivation(false);
+        }
     }
 
     void setDefaultFieldValues() {
-        //code using the prefs will go here
         oPrefs.put("SampleName", oSampleNameField.getText());
         oPrefs.put("ContactName", oContactNameField.getText());
         oPrefs.put("ContactInstitution", oContactInstitutionField.getText());
         oPrefs.put("ContactInfo", oContactInfoField.getText());
     }
 
-    Admin getAdmin() {
-        Admin oData = new Admin();
-        Person oContact = new Person();
+    void setFieldActivation() {
 
-        //not setting the name anymore as this is retrieved elsewhere
-        oContact.setName(oContactNameField.getText());
-        oContact.setInstitution(oContactInstitutionField.getText());
-        oContact.setContactInfo(oContactInfoField.getText());
+        if (isPopulated()) {
+            setFieldActivation(true);
 
-        oData.setContact(oContact);
-        oData.setSampleName(oSampleNameField.getText());
+            if (!adminData.isFieldActive(ProvidedDataItem.DESC_ADMIN_SAMPLENAME)) {
+                oSampleNameField.setEnabled(false);
+            }
 
-        return oData;
+            if (!personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_NAME)) {
+                oContactNameField.setEnabled(false);
+            }
+            if (!personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION)) {
+                oContactInstitutionField.setEnabled(false);
+            }
+            if (!personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO)) {
+                oContactInfoField.setEnabled(false);
+            }
+        }
+    }
+
+    private void setFieldActivation(boolean activate) {
+        oSampleNameField.setEnabled(activate);
+        oContactNameField.setEnabled(activate);
+        oContactInstitutionField.setEnabled(activate);
+        oContactInfoField.setEnabled(activate);
+    }
+
+    void setDataValues() {
+
+        if (isPopulated()) {
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_NAME)) {
+                personData.getPerson().setName(oContactNameField.getText());
+            }
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_INSTITUTION)) {
+                personData.getPerson().setInstitution(oContactInstitutionField.getText());
+            }
+            if (personData.isFieldActive(ProvidedDataItem.DESC_ADMIN_PERSON_CONTACTINFO)) {
+                personData.getPerson().setContactInfo(oContactInfoField.getText());
+            }
+
+            if (!adminData.isFieldActive(ProvidedDataItem.DESC_ADMIN_SAMPLENAME)) {
+                adminData.getAdmin().setSampleName(oSampleNameField.getText());
+            }
+        }
     }
 
     public static void main(String[] args) {
