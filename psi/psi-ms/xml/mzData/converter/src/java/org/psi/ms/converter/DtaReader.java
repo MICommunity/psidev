@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.6 2003/08/20 18:12:19 krunte Exp $
+ * $Id: DtaReader.java,v 1.7 2003/08/21 10:04:19 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -125,7 +125,7 @@ public class DtaReader {
         ion.setCharge(peptideCharge.intValue());
         precursor.setIon(ion);
         Activation activation = new Activation();
-        activation.setMethod(ActivationTypeMethodType.OTHER);
+        activation.setMethod(Activation.Method.OTHER);
         precursor.setActivation(activation);
         precursor.setMsLevel(-1);
         precursor.setAcqID(-1);
