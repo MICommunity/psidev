@@ -1,5 +1,5 @@
 /**
- * $Id: TestDtaReader.java,v 1.8 2003/09/10 14:51:33 krunte Exp $
+ * $Id: TestDtaReader.java,v 1.9 2003/09/15 12:56:30 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -8,16 +8,12 @@
  */
 package org.psi.ms.test;
 
-import org.exolab.castor.mapping.Mapping;
-import org.exolab.castor.mapping.MappingException;
-import org.exolab.castor.xml.MarshalException;
-import org.exolab.castor.xml.Marshaller;
-import org.exolab.castor.xml.ValidationException;
 import org.psi.ms.converter.DtaReader;
-import org.psi.ms.model.*;
-import org.xml.sax.InputSource;
+import org.psi.ms.helper.PsiMsConverterException;
+import org.psi.ms.model.MzData;
+import org.psi.ms.xml.MzDataWriter;
 
-import java.io.FileWriter;
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -26,27 +22,14 @@ import java.io.IOException;
  */
 public class TestDtaReader {
 
-    public static void main(String[] argv) throws IOException, ValidationException, MarshalException {
+    public static void main(String[] argv) throws IOException, PsiMsConverterException {
         MzData mzData = new MzData();
         DtaReader dtaReader = new DtaReader();
 
         dtaReader.addAcquisitions(argv[0], mzData, 0);
 
-        FileWriter fileWriter = new FileWriter(argv[0] + ".xml");
-/*
-        mzData.marshal(fileWriter);
-*/
-        Mapping mapping = new Mapping();
-        try {
-            mapping.loadMapping(new InputSource(DtaReader.class.getResourceAsStream("mzDataXMLMapping.xml")));
-            Marshaller marshaller = new Marshaller(fileWriter);
-            marshaller.setMapping(mapping);
-            marshaller.marshal(mzData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (MappingException e) {
-            e.printStackTrace();
-        }
+        MzDataWriter mzDataWriter = new MzDataWriter(new File(argv[0] + ".xml"));
+        mzDataWriter.marshall(mzData);
     }
 
 }
