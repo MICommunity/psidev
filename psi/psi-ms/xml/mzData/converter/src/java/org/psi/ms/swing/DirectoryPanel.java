@@ -38,7 +38,7 @@ public class DirectoryPanel extends JPanel {
     }
 
     private void prepareFields() {
-        oSourceDirPanel = new DirectoryChooserPanel(JFileChooser.DIRECTORIES_ONLY);
+        oSourceDirPanel = new DirectoryChooserPanel(JFileChooser.FILES_AND_DIRECTORIES);
         oDestDirPanel = new DirectoryChooserPanel(JFileChooser.FILES_ONLY);
         oOutputTypePanel = new OutputTypePanel();
     }

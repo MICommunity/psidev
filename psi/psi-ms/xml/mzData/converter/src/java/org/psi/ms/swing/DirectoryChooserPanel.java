@@ -51,7 +51,7 @@ public class DirectoryChooserPanel extends JPanel {
         MainPanel.CHOOSER.setFileSelectionMode(iBrowseType);
 
         File oDirectory = new File("/");
-        if (iBrowseType == JFileChooser.DIRECTORIES_ONLY) {
+        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
             MainPanel.CHOOSER.setCurrentDirectory(new File(oPrefs.get("SourceDir", "/")));
             MainPanel.CHOOSER.showOpenDialog(this);
             oDirectory = MainPanel.CHOOSER.getSelectedFile();
@@ -81,7 +81,7 @@ public class DirectoryChooserPanel extends JPanel {
     }
 
     private void getDefaultFieldValues() {
-        if (iBrowseType == JFileChooser.DIRECTORIES_ONLY) {
+        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
             oFileField.setText(oPrefs.get("SourceDir", "/"));
             oFileField.setCaretPosition(oFileField.getDocument().getLength() - 1);
         } else {
@@ -94,7 +94,7 @@ public class DirectoryChooserPanel extends JPanel {
     }
 
     void setDefaultFieldValues() {
-        if (iBrowseType == JFileChooser.DIRECTORIES_ONLY) {
+        if (iBrowseType == JFileChooser.FILES_AND_DIRECTORIES) {
             oPrefs.get("SourceDir", oFileField.getText());
         } else {
             oPrefs.get("DestDir", oFileField.getText());
@@ -103,7 +103,7 @@ public class DirectoryChooserPanel extends JPanel {
 
     public static void main(String[] args) {
         JFrame oFrame = new JFrame();
-        oFrame.getContentPane().add(new DirectoryChooserPanel(JFileChooser.DIRECTORIES_ONLY));
+        oFrame.getContentPane().add(new DirectoryChooserPanel(JFileChooser.FILES_AND_DIRECTORIES));
         oFrame.setSize(800, 600);
         oFrame.setVisible(true);
     }
