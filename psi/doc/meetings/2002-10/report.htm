@@ -155,7 +155,7 @@ Chair: Rolf Apweiler, Weimin Zhu, EBI
 	&nbsp;&nbsp;&nbsp;&nbsp;- MS whole peaklists are captured, which are described by the hardware (vendor, ionisation source and type) used and its settings (configuration file). <br>
 	&nbsp;&nbsp;&nbsp;&nbsp;- A spectrum can be a collection of references to a set of other spectra. The former can be a whole MS spectrum, and the latter can be a better defined spectra such as those from MS/MS.<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;- All the interpreted peptides putatively found to be associated with specific spectrum, by certain software, are captured only once, which are also annotated by respective post-translational modifications. Protein identifications are the another layer of data interpretation, which is referenced to a subset of peptides.<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;A UML model reflecting the above key points was generated. There are 3 main components in the model (The following summary has integrated Gregoire’s suggestions. Both UML diagrams will be available to you for details).<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;A UML model reflecting the above key points was generated. There are 3 main components in the model (The following summary has integrated Gregoire’s suggestions. Both UML diagrams are available <a href="group1.html">HERE</a> for details).<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Peaklist: include attributes such as peak detection methods, MS experiment methods, and fragments;<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Peptide and protein hits: include attributes of sequences, PTM, external reference databases;<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Identification Run: it is a link to associate the above two components, which includes the attributes of peptide/protein identification methods, external reference databases, scoring/ranking criteria.<br><br>
@@ -171,7 +171,7 @@ Chair: Rolf Apweiler, Weimin Zhu, EBI
 	&nbsp;&nbsp;&nbsp;&nbsp;- The sample sources: tissue/cell type, treatment/condition, origin etc.<br>
 	&nbsp;&nbsp;&nbsp;&nbsp;- Sample preparations: methods to harvest sample, to extract proteins, protein concentration determination, as well as some quality controls, such as checking for proteolysis, reproducibility of protein extraction, contaminants.
 - Sample separation and detections: separation methods, suchas electrophoresis (SDS-PAGE, IEF and FFE) or chromatography (SCX, RP, IMAC, Affinity), and detection methods.<br>
-	&nbsp;&nbsp;&nbsp;&nbsp;A flow chart has been produced to describe the relationships of those components. <br>&nbsp;&nbsp;&nbsp;&nbsp;The key points are:<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;A <a href="group2.html">flow chart </a>has been produced to describe the relationships of those components. <br>&nbsp;&nbsp;&nbsp;&nbsp;The key points are:<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Different separation methods can be chained each other, so that,<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Sample should be attached with its separation status, which is supported by defining sample as a recursive component in the model. <br><br>
 
