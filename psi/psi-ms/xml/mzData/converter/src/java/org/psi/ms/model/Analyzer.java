@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Analyzer.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: Analyzer.java,v 1.6 2003/11/28 15:51:35 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -17,7 +17,7 @@ import java.util.Vector;
 /**
  * Mass analyzer information
  *
- * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.6 $ $Date: 2003/11/28 15:51:35 $
  */
 public class Analyzer implements java.io.Serializable {
     /**
@@ -31,21 +31,21 @@ public class Analyzer implements java.io.Serializable {
      * resolution is used, or if not otherwise specified in the
      * acquisition section.
      */
-    private float _resolution;
+    private float _resolution = -1;
     /**
      * keeps track of state for field: _resolution
      */
-    private boolean _has_resolution;
+    private boolean _has_resolution = false;
     /**
      * Base mass accuracy. This is defined in m/z units. This
      * element hold the full scan accuracy if variable accuracy is
      * used or not otherwise specified in the acquisition section.
      */
-    private float _accuracy;
+    private float _accuracy = -1;
     /**
      * keeps track of state for field: _accuracy
      */
-    private boolean _has_accuracy;
+    private boolean _has_accuracy = false;
     /**
      * This element holds additional data or annotation
      * information. Only controlled name values are allowed here.
@@ -384,7 +384,7 @@ public class Analyzer implements java.io.Serializable {
     /**
      * Class Type.
      *
-     * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+     * @version $Revision: 1.6 $ $Date: 2003/11/28 15:51:35 $
      */
     public static class Type implements java.io.Serializable {
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: MzData.java,v 1.7 2003/11/14 16:49:30 krunte Exp $
+ * $Id: MzData.java,v 1.8 2003/11/28 15:51:35 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -18,7 +18,7 @@ package org.psi.ms.model;
  * There can bemultiple acquisitions, which might be related via a
  * separation, or just in sequence from an automated run.
  *
- * @version $Revision: 1.7 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.8 $ $Date: 2003/11/28 15:51:35 $
  */
 public class MzData implements java.io.Serializable {
 
@@ -56,45 +56,6 @@ public class MzData implements java.io.Serializable {
 
     public MzData() {
         super();
-        setVersion("1.00");
-
-        // For simplicity all these "default" values of MzData are set in the constructor
-        Desc desc = new Desc();
-        setDesc(desc);
-        Admin admin = new Admin();
-        desc.setAdmin(admin);
-
-        // Todo: this information must be provided by the user
-        admin.setSampleName("");
-        Person contact = new Person();
-        contact.setName("Kai Runte");
-        contact.setInstitution("EMBL Outstation - EBI");
-        admin.setContact(contact);
-
-        // Todo: this information must be provided by the user
-        InstrumentCommonSettings instrument = new InstrumentCommonSettings();
-        instrument.setInstName("unknown");
-        Source source = new Source();
-        source.setType(Source.Type.OTHER);
-        instrument.setSource(source);
-        Analyzer analyzer = new Analyzer();
-        analyzer.setType(Analyzer.Type.OTHER);
-        float unknown = -1;
-        analyzer.setResolution(unknown);
-        analyzer.setAccuracy(unknown);
-        instrument.setAnalyzer(analyzer);
-        Detector detector = new Detector();
-        detector.setType(Detector.Type.OTHER);
-        instrument.setDetector(detector);
-        desc.setInstrument(instrument);
-
-        Test test = new Test();
-        desc.setTest(test);
-
-        ProcessingMethod processingMethod = new ProcessingMethod();
-        test.setProcessingMethod(processingMethod);
-
-        processingMethod.setPeakProcessing("?");
     } //-- org.psi.ms.model.MzData()
 
 
@@ -113,6 +74,8 @@ public class MzData implements java.io.Serializable {
      * @return the value of field 'desc'.
      */
     public org.psi.ms.model.Desc getDesc() {
+        if (_desc == null)
+            _desc = new Desc();
         return this._desc;
     } //-- org.psi.ms.model.Desc getDesc()
 

@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: ProcessingMethod.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: ProcessingMethod.java,v 1.6 2003/11/28 15:51:35 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -19,7 +19,7 @@ package org.psi.ms.model;
  * not otherwise specified in the acquisition section.
  * Todo: this data needs to be provided by the user
  *
- * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.6 $ $Date: 2003/11/28 15:51:35 $
  */
 public class ProcessingMethod implements java.io.Serializable {
     /**
@@ -41,15 +41,15 @@ public class ProcessingMethod implements java.io.Serializable {
     /**
      * Field _peakThreshold
      */
-    private float _peakThreshold;
+    private float _peakThreshold = -1;
     /**
      * keeps track of state for field: _peakThreshold
      */
-    private boolean _has_peakThreshold;
+    private boolean _has_peakThreshold = false;
     /**
      * The type of peak processing performed.
      */
-    private String _peakProcessing = "";
+    private String _peakProcessing = "?";
 
 
     //----------------/
