@@ -69,6 +69,7 @@
                 <exclude name="**/${dist}/**"/>
                 <exclude name="**/maven/**"/>
                 <exclude name="**/intellij/**"/>
+                <exclude name="**/converter.zip"/>
             </fileset>
         </zip>
     </target>
