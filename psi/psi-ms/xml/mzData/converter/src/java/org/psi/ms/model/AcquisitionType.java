@@ -1,8 +1,8 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: AcquisitionType.java,v 1.2 2003/08/20 16:44:11 krunte Exp $
+ * $Id: AcquisitionType.java,v 1.3 2003/08/20 17:21:53 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -20,8 +20,8 @@ import org.exolab.castor.xml.ValidationException;
 
 /**
  * Class AcquisitionType.
- * 
- * @version $Revision: 1.2 $ $Date: 2003/08/20 16:44:11 $
+ *
+ * @version $Revision: 1.3 $ $Date: 2003/08/20 17:21:53 $
  */
 public abstract class AcquisitionType implements java.io.Serializable {
 
@@ -143,13 +143,13 @@ public abstract class AcquisitionType implements java.io.Serializable {
 
     /**
      * Returns the value of field 'id'.
-     * 
+     *
      * @return the value of field 'id'.
      */
     public int getId()
     {
         return this._id;
-    } //-- int getId() 
+    } //-- int getId()
 
     /**
      * Method hasId
@@ -157,7 +157,7 @@ public abstract class AcquisitionType implements java.io.Serializable {
     public boolean hasId()
     {
         return this._has_id;
-    } //-- boolean hasId() 
+    } //-- boolean hasId()
 
     /**
      * Method isValid
@@ -171,7 +171,7 @@ public abstract class AcquisitionType implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Sets the value of field 'intenArray'. The field 'intenArray'
@@ -231,14 +231,14 @@ public abstract class AcquisitionType implements java.io.Serializable {
 
     /**
      * Sets the value of field 'id'.
-     * 
+     *
      * @param id the value of field 'id'.
      */
     public void setId(int id)
     {
         this._id = id;
         this._has_id = true;
-    } //-- void setId(int) 
+    } //-- void setId(int)
 
     /**
      * Method validate
@@ -248,6 +248,6 @@ public abstract class AcquisitionType implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }

@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.4 2003/08/20 16:44:11 krunte Exp $
+ * $Id: DtaReader.java,v 1.5 2003/08/20 17:21:53 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -78,10 +78,10 @@ public class DtaReader {
         AcqSettings acqSettings = new AcqSettings();
         acqDesc.setAcqSettings(acqSettings);
         if (fileType == DTA) {
-            acqSettings.setSpecType(AcqSettingsTypeSpecTypeType.DISCRETE);
+            acqSettings.setSpecType(AcqSettingsType.SpecType.DISCRETE);
         }
         if (fileType == ZTA) {
-            acqSettings.setSpecType(AcqSettingsTypeSpecTypeType.CONTINUOUS);
+            acqSettings.setSpecType(AcqSettingsType.SpecType.CONTINUOUS);
         }
 
         // At this stage we don't know yet the range or list of acquisition numbers

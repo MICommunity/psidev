@@ -79,7 +79,7 @@
     <class name="org.psi.ms.model.AcqSettings">
         <description>Default mapping for class org.psi.ms.model.AcqSettings</description>
         <map-to xml="acqSettings"/>
-        <field name="specType" type="org.psi.ms.model.types.AcqSettingsTypeSpecTypeType" required="true">
+        <field name="specType" type="org.psi.ms.model.AcqSettingsType$SpecType" required="true">
             <bind-xml name="specType" node="attribute"/>
         </field>
         <field name="acqSpecification" type="org.psi.ms.model.AcqSpecification" required="true">

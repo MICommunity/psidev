@@ -1,8 +1,8 @@
 /*
- * This class was automatically generated with 
+ * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: SuppDataType.java,v 1.2 2003/08/20 10:56:05 krunte Exp $
+ * $Id: SuppDataType.java,v 1.3 2003/08/20 17:21:53 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -23,8 +23,8 @@ import org.exolab.castor.xml.ValidationException;
 
 /**
  * Data type for additional data vectors (beyond m/z and intensity)
- * 
- * @version $Revision: 1.2 $ $Date: 2003/08/20 10:56:05 $
+ *
+ * @version $Revision: 1.3 $ $Date: 2003/08/20 17:21:53 $
  */
 public abstract class SuppDataType implements java.io.Serializable {
 
@@ -79,18 +79,18 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method addString
-     * 
+     *
      * @param vString
      */
     public void addString(java.lang.String vString)
         throws java.lang.IndexOutOfBoundsException
     {
         _stringList.addElement(vString);
-    } //-- void addString(java.lang.String) 
+    } //-- void addString(java.lang.String)
 
     /**
      * Method addString
-     * 
+     *
      * @param index
      * @param vString
      */
@@ -98,22 +98,22 @@ public abstract class SuppDataType implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _stringList.insertElementAt(vString, index);
-    } //-- void addString(int, java.lang.String) 
+    } //-- void addString(int, java.lang.String)
 
     /**
      * Method addTime
-     * 
+     *
      * @param vTime
      */
     public void addTime(org.exolab.castor.types.Duration vTime)
         throws java.lang.IndexOutOfBoundsException
     {
         _timeList.addElement(vTime);
-    } //-- void addTime(org.exolab.castor.types.Duration) 
+    } //-- void addTime(org.exolab.castor.types.Duration)
 
     /**
      * Method addTime
-     * 
+     *
      * @param index
      * @param vTime
      */
@@ -121,22 +121,22 @@ public abstract class SuppDataType implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _timeList.insertElementAt(vTime, index);
-    } //-- void addTime(int, org.exolab.castor.types.Duration) 
+    } //-- void addTime(int, org.exolab.castor.types.Duration)
 
     /**
      * Method addURI
-     * 
+     *
      * @param vURI
      */
     public void addURI(java.lang.String vURI)
         throws java.lang.IndexOutOfBoundsException
     {
         _URIList.addElement(vURI);
-    } //-- void addURI(java.lang.String) 
+    } //-- void addURI(java.lang.String)
 
     /**
      * Method addURI
-     * 
+     *
      * @param index
      * @param vURI
      */
@@ -144,11 +144,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         throws java.lang.IndexOutOfBoundsException
     {
         _URIList.insertElementAt(vURI, index);
-    } //-- void addURI(int, java.lang.String) 
+    } //-- void addURI(int, java.lang.String)
 
     /**
      * Method addFloat
-     * 
+     *
      * @param v_float
      */
     public void addFloat(float v_float)
@@ -159,7 +159,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method addFloat
-     * 
+     *
      * @param index
      * @param v_float
      */
@@ -171,7 +171,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method addInt
-     * 
+     *
      * @param v_int
      */
     public void addInt(int v_int)
@@ -182,7 +182,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method addInt
-     * 
+     *
      * @param index
      * @param v_int
      */
@@ -198,7 +198,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public java.util.Enumeration enumerateString()
     {
         return _stringList.elements();
-    } //-- java.util.Enumeration enumerateString() 
+    } //-- java.util.Enumeration enumerateString()
 
     /**
      * Method enumerateTime
@@ -206,7 +206,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public java.util.Enumeration enumerateTime()
     {
         return _timeList.elements();
-    } //-- java.util.Enumeration enumerateTime() 
+    } //-- java.util.Enumeration enumerateTime()
 
     /**
      * Method enumerateURI
@@ -214,7 +214,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public java.util.Enumeration enumerateURI()
     {
         return _URIList.elements();
-    } //-- java.util.Enumeration enumerateURI() 
+    } //-- java.util.Enumeration enumerateURI()
 
     /**
      * Method enumerateFloat
@@ -230,11 +230,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     public java.util.Enumeration enumerate_int()
     {
         return _intList.elements();
-    } //-- java.util.Enumeration enumerate_int() 
+    } //-- java.util.Enumeration enumerate_int()
 
     /**
      * Method getString
-     * 
+     *
      * @param index
      */
     public java.lang.String getString(int index)
@@ -244,9 +244,9 @@ public abstract class SuppDataType implements java.io.Serializable {
         if ((index < 0) || (index > _stringList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (String)_stringList.elementAt(index);
-    } //-- java.lang.String getString(int) 
+    } //-- java.lang.String getString(int)
 
     /**
      * Method getString
@@ -259,7 +259,7 @@ public abstract class SuppDataType implements java.io.Serializable {
             mArray[index] = (String)_stringList.elementAt(index);
         }
         return mArray;
-    } //-- java.lang.String[] getString() 
+    } //-- java.lang.String[] getString()
 
     /**
      * Method getStringCount
@@ -267,11 +267,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     public int getStringCount()
     {
         return _stringList.size();
-    } //-- int getStringCount() 
+    } //-- int getStringCount()
 
     /**
      * Method getTime
-     * 
+     *
      * @param index
      */
     public org.exolab.castor.types.Duration getTime(int index)
@@ -281,9 +281,9 @@ public abstract class SuppDataType implements java.io.Serializable {
         if ((index < 0) || (index > _timeList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (org.exolab.castor.types.Duration) _timeList.elementAt(index);
-    } //-- org.exolab.castor.types.Duration getTime(int) 
+    } //-- org.exolab.castor.types.Duration getTime(int)
 
     /**
      * Method getTime
@@ -296,7 +296,7 @@ public abstract class SuppDataType implements java.io.Serializable {
             mArray[index] = (org.exolab.castor.types.Duration) _timeList.elementAt(index);
         }
         return mArray;
-    } //-- org.exolab.castor.types.Duration[] getTime() 
+    } //-- org.exolab.castor.types.Duration[] getTime()
 
     /**
      * Method getTimeCount
@@ -304,11 +304,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     public int getTimeCount()
     {
         return _timeList.size();
-    } //-- int getTimeCount() 
+    } //-- int getTimeCount()
 
     /**
      * Method getURI
-     * 
+     *
      * @param index
      */
     public java.lang.String getURI(int index)
@@ -318,9 +318,9 @@ public abstract class SuppDataType implements java.io.Serializable {
         if ((index < 0) || (index > _URIList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return (String)_URIList.elementAt(index);
-    } //-- java.lang.String getURI(int) 
+    } //-- java.lang.String getURI(int)
 
     /**
      * Method getURI
@@ -333,7 +333,7 @@ public abstract class SuppDataType implements java.io.Serializable {
             mArray[index] = (String)_URIList.elementAt(index);
         }
         return mArray;
-    } //-- java.lang.String[] getURI() 
+    } //-- java.lang.String[] getURI()
 
     /**
      * Method getURICount
@@ -341,11 +341,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     public int getURICount()
     {
         return _URIList.size();
-    } //-- int getURICount() 
+    } //-- int getURICount()
 
     /**
      * Method getFloat
-     * 
+     *
      * @param index
      */
     public float getFloat(int index)
@@ -355,7 +355,7 @@ public abstract class SuppDataType implements java.io.Serializable {
         if ((index < 0) || (index > _floatList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return ((Float)_floatList.elementAt(index)).floatValue();
     } //-- float getFloat(int)
 
@@ -382,7 +382,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method getInt
-     * 
+     *
      * @param index
      */
     public int getInt(int index)
@@ -392,7 +392,7 @@ public abstract class SuppDataType implements java.io.Serializable {
         if ((index < 0) || (index > _intList.size())) {
             throw new IndexOutOfBoundsException();
         }
-        
+
         return ((Integer)_intList.elementAt(index)).intValue();
     } //-- int getInt(int)
 
@@ -429,7 +429,7 @@ public abstract class SuppDataType implements java.io.Serializable {
             return false;
         }
         return true;
-    } //-- boolean isValid() 
+    } //-- boolean isValid()
 
     /**
      * Method removeAllString
@@ -437,7 +437,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public void removeAllString()
     {
         _stringList.removeAllElements();
-    } //-- void removeAllString() 
+    } //-- void removeAllString()
 
     /**
      * Method removeAllTime
@@ -445,7 +445,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public void removeAllTime()
     {
         _timeList.removeAllElements();
-    } //-- void removeAllTime() 
+    } //-- void removeAllTime()
 
     /**
      * Method removeAllURI
@@ -453,7 +453,7 @@ public abstract class SuppDataType implements java.io.Serializable {
     public void removeAllURI()
     {
         _URIList.removeAllElements();
-    } //-- void removeAllURI() 
+    } //-- void removeAllURI()
 
     /**
      * Method removeAllFloat
@@ -469,11 +469,11 @@ public abstract class SuppDataType implements java.io.Serializable {
     public void removeAll_int()
     {
         _intList.removeAllElements();
-    } //-- void removeAll_int() 
+    } //-- void removeAll_int()
 
     /**
      * Method removeString
-     * 
+     *
      * @param index
      */
     public java.lang.String removeString(int index)
@@ -481,11 +481,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         java.lang.Object obj = _stringList.elementAt(index);
         _stringList.removeElementAt(index);
         return (String)obj;
-    } //-- java.lang.String removeString(int) 
+    } //-- java.lang.String removeString(int)
 
     /**
      * Method removeTime
-     * 
+     *
      * @param index
      */
     public org.exolab.castor.types.Duration removeTime(int index)
@@ -493,11 +493,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         java.lang.Object obj = _timeList.elementAt(index);
         _timeList.removeElementAt(index);
         return (org.exolab.castor.types.Duration) obj;
-    } //-- org.exolab.castor.types.Duration removeTime(int) 
+    } //-- org.exolab.castor.types.Duration removeTime(int)
 
     /**
      * Method removeURI
-     * 
+     *
      * @param index
      */
     public java.lang.String removeURI(int index)
@@ -505,11 +505,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         java.lang.Object obj = _URIList.elementAt(index);
         _URIList.removeElementAt(index);
         return (String)obj;
-    } //-- java.lang.String removeURI(int) 
+    } //-- java.lang.String removeURI(int)
 
     /**
      * Method removeFloat
-     * 
+     *
      * @param index
      */
     public float remove_float(int index)
@@ -521,7 +521,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method remove_int
-     * 
+     *
      * @param index
      */
     public int remove_int(int index)
@@ -529,11 +529,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         java.lang.Object obj = _intList.elementAt(index);
         _intList.removeElementAt(index);
         return ((Integer)obj).intValue();
-    } //-- int remove_int(int) 
+    } //-- int remove_int(int)
 
     /**
      * Method setString
-     * 
+     *
      * @param index
      * @param vString
      */
@@ -545,11 +545,11 @@ public abstract class SuppDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _stringList.setElementAt(vString, index);
-    } //-- void setString(int, java.lang.String) 
+    } //-- void setString(int, java.lang.String)
 
     /**
      * Method setString
-     * 
+     *
      * @param stringArray
      */
     public void setString(java.lang.String[] stringArray)
@@ -559,11 +559,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         for (int i = 0; i < stringArray.length; i++) {
             _stringList.addElement(stringArray[i]);
         }
-    } //-- void setString(java.lang.String) 
+    } //-- void setString(java.lang.String)
 
     /**
      * Method setTime
-     * 
+     *
      * @param index
      * @param vTime
      */
@@ -575,11 +575,11 @@ public abstract class SuppDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _timeList.setElementAt(vTime, index);
-    } //-- void setTime(int, org.exolab.castor.types.Duration) 
+    } //-- void setTime(int, org.exolab.castor.types.Duration)
 
     /**
      * Method setTime
-     * 
+     *
      * @param timeArray
      */
     public void setTime(org.exolab.castor.types.Duration[] timeArray)
@@ -589,11 +589,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         for (int i = 0; i < timeArray.length; i++) {
             _timeList.addElement(timeArray[i]);
         }
-    } //-- void setTime(org.exolab.castor.types.Duration) 
+    } //-- void setTime(org.exolab.castor.types.Duration)
 
     /**
      * Method setURI
-     * 
+     *
      * @param index
      * @param vURI
      */
@@ -605,11 +605,11 @@ public abstract class SuppDataType implements java.io.Serializable {
             throw new IndexOutOfBoundsException();
         }
         _URIList.setElementAt(vURI, index);
-    } //-- void setURI(int, java.lang.String) 
+    } //-- void setURI(int, java.lang.String)
 
     /**
      * Method setURI
-     * 
+     *
      * @param URIArray
      */
     public void setURI(java.lang.String[] URIArray)
@@ -619,11 +619,11 @@ public abstract class SuppDataType implements java.io.Serializable {
         for (int i = 0; i < URIArray.length; i++) {
             _URIList.addElement(URIArray[i]);
         }
-    } //-- void setURI(java.lang.String) 
+    } //-- void setURI(java.lang.String)
 
     /**
      * Method setFloat
-     * 
+     *
      * @param index
      * @param v_float
      */
@@ -639,7 +639,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method setFloat
-     * 
+     *
      * @param _floatArray
      */
     public void setFloat(float[] _floatArray)
@@ -653,7 +653,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method setInt
-     * 
+     *
      * @param index
      * @param v_int
      */
@@ -669,7 +669,7 @@ public abstract class SuppDataType implements java.io.Serializable {
 
     /**
      * Method setInt
-     * 
+     *
      * @param _intArray
      */
     public void setInt(int[] _intArray)
@@ -689,6 +689,6 @@ public abstract class SuppDataType implements java.io.Serializable {
     {
         org.exolab.castor.xml.Validator validator = new org.exolab.castor.xml.Validator();
         validator.validate(this);
-    } //-- void validate() 
+    } //-- void validate()
 
 }
