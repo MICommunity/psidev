@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<project name="interfaces" default="build" basedir=".">
+
+    <!-- set global properties for this build -->
+
+    <property name="src" value="${basedir}/src"/>
+    <property name="build" value="${basedir}/build"/>
+    <property name="application" value="../../application"/>
+    <property name="plugins" value="${application}/plugins"/>
+    <property name="doc" value="${basedir}/doc"/>
+    <property name="lib" value="${basedir}/lib"/>
+    <property name="debug" value="on"/>
+    <property name="dist" value="${basedir}/dist"/>
+    <property name="plugin.shortName" value="sashimi-importer"/>
+    <property name="plugin.name" value="PSI MS Sashimi Importer"/>
+
+    <path id="classpath">
+        <pathelement location="${build}"/>
+        <pathelement location="${application}/converter.jar"/>
+    </path>
+
+
+    <target name="clean">
+        <delete dir="${build}"/>
+    </target>
+
+    <target name="build">
+        <mkdir dir="${build}"/>
+        <javac debug="${debug}" srcdir="${src}/java" destdir="${build}" nowarn="true" source="1.4" target="1.4">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <target name="plugin" depends="build">
+        <mkdir dir="${plugins}"/>
+        <jar jarfile="${plugins}/${plugin.shortName}.jar" update="no" index="yes">
+            <fileset dir="${build}"/>
+            <manifest>
+                <attribute name="Built-By" value="${user.name}"/>
+                <section name="org/psi/ms/importers/SashimiImporter.class">
+                    <attribute name="Java-Bean" value="True"/>
+                </section>
+            </manifest>
+        </jar>
+    </target>
+
+</project>
