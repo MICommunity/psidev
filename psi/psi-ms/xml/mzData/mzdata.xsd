@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
- $Id: mzdata.xsd,v 1.5 2003/08/11 16:46:32 krunte Exp $
+ $Id: mzdata.xsd,v 1.6 2003/10/20 09:28:09 krunte Exp $
  Authors:
   Randy K Julian (Eli Lilly)
   Kai Runte (EBI)
@@ -481,8 +481,8 @@
                     <xs:documentation>Range in m/z units of the mass analysis.</xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
-                    <xs:attribute name="start" type="xs:int" use="required"/>
-                    <xs:attribute name="stop" type="xs:int" use="required"/>
+                    <xs:attribute name="start" type="xs:float" use="required"/>
+                    <xs:attribute name="stop" type="xs:float" use="required"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="instParam" type="cvCoreParamType" minOccurs="0" maxOccurs="unbounded">
@@ -574,11 +574,11 @@
                     </xs:attribute>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="instrument" type="instrumentAcqSettingsType"/>
+            <xs:element name="acqInst" type="instrumentAcqSettingsType"/>
             <xs:element name="acqTime" minOccurs="0">
                 <xs:complexType>
                     <xs:simpleContent>
-                        <xs:extension base="xs:dateTime">
+                        <xs:extension base="xs:float">
                             <xs:attribute name="units" use="required">
                                 <xs:simpleType>
                                     <xs:restriction base="xs:string">
@@ -630,7 +630,7 @@
             </xs:element>
         </xs:sequence>
         <xs:attribute name="msLevel" type="xs:int" use="required"/>
-        <xs:attribute name="acqID" type="xs:int" use="required"/>
+        <xs:attribute name="acqID" type="xs:int" use="optional"/>
     </xs:complexType>
     <xs:complexType name="acqDescType">
         <xs:sequence>
@@ -713,8 +713,6 @@
         <xs:attribute name="id" type="xs:int" use="required"/>
     </xs:complexType>
     <xs:complexType name="activationType">
-        <xs:sequence>
-        </xs:sequence>
         <xs:attribute name="method" use="required">
             <xs:annotation>
                 <xs:documentation>Activation method (controlled)</xs:documentation>
@@ -736,8 +734,6 @@
         </xs:attribute>
     </xs:complexType>
     <xs:complexType name="ionType">
-        <xs:sequence>
-        </xs:sequence>
         <xs:attribute name="mz" type="xs:float" use="optional"/>
         <xs:attribute name="charge" type="xs:int" use="optional"/>
         <xs:attribute name="acqID" type="xs:int" use="optional"/>
@@ -815,4 +811,5 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
+    <xs:element name="acqTime" type="xs:float"/>
 </xs:schema>
