@@ -30,3 +30,8 @@
 *.doc -kb
 *.class -kb
 *.exe -kb
+*.zip -kb
+*.gz -kb
+*.jar -kb
+*.war -kb
+*.ear -kb
