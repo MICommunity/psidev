@@ -10,6 +10,8 @@
     <property name="lib" value="${basedir}/lib"/>
     <property name="debug" value="on"/>
     <property name="dist" value="${basedir}/dist"/>
+    <property name="project.shortName" value="converter"/>
+    <property name="project.name" value="PSI MS Converter"/>
 
     <path id="classpath">
         <pathelement location="${build}"/>
@@ -24,7 +26,7 @@
             sourcepath="${src}/java"
             destdir="${doc}/api"
             access="protected"
-            windowtitle="PSI MS Converter classes"
+            windowtitle="${project.name} classes"
             link="http://java.sun.com/j2se/1.4/docs/api/"
             classpathref="classpath">
         </javadoc>
@@ -47,7 +49,7 @@
 
     <target name="application" depends="build">
         <mkdir dir="${application}"/>
-        <jar jarfile="${application}/converter.jar" update="no" index="yes">
+        <jar jarfile="${application}/${project.shortName}.jar" update="no" index="yes">
             <fileset dir="${build}"/>
             <zipgroupfileset dir="lib" includes="commons-codec-1.1.jar"/>
             <zipgroupfileset dir="lib" includes="xpp3-1.1.3.4-RC3.jar"/>
@@ -60,15 +62,15 @@
 
     <target name="dist" depends="doc,application" >
         <mkdir dir="${dist}"/>
-        <zip destfile="${dist}/converter.zip" update="no">
+        <zip destfile="${dist}/${project.shortName}.zip" update="no">
             <fileset dir="..">
-                <include name="converter/**"/>
+                <include name="${project.shortName}/**"/>
                 <exclude name="**/build/**"/>
                 <exclude name="**/CVS"/>
                 <exclude name="**/${dist}/**"/>
                 <exclude name="**/maven/**"/>
                 <exclude name="**/intellij/**"/>
-                <exclude name="**/converter.zip"/>
+                <exclude name="**/${project.shortName}.zip"/>
             </fileset>
         </zip>
     </target>
