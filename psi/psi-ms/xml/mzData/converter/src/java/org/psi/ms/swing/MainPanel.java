@@ -3,6 +3,11 @@ package org.psi.ms.swing;
 import org.psi.ms.model.Desc;
 import org.psi.ms.model.MzData;
 import org.psi.ms.xml.MzDataWriter;
+import org.psi.ms.converter.ImporterLoader;
+import org.psi.ms.converter.ImporterI;
+import org.psi.ms.helper.PsiMsConverterException;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +17,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,6 +28,8 @@ import java.io.File;
  * To change this template use Options | File Templates.
  */
 public class MainPanel extends JPanel {
+
+    private Logger logger = Logger.getLogger(MainPanel.class);
 
     public static final JFileChooser CHOOSER = new JFileChooser();
     public static Font FONT = new Font("Helvetica", Font.PLAIN, 12);
@@ -35,10 +44,12 @@ public class MainPanel extends JPanel {
 
     final private ProgressPanel oProgressPanel = new ProgressPanel();
 
+    private ImporterLoader importerLoader;
 
     private ParsingBusiness oParsingBusiness = new ParsingBusiness();
 
-    public MainPanel() {
+    public MainPanel(ImporterLoader importerLoader) {
+        this.importerLoader = importerLoader;
         prepareFields();
         layoutPanel();
     }
@@ -112,45 +123,81 @@ public class MainPanel extends JPanel {
         oProgressPanel.setMax(oSourceFile.listFiles().length);
         String oDestDir = oDirectoryPanel.getDestinationFilePath();
         MzDataWriter.OutputType oType = oDirectoryPanel.getOutputType();
-        oParseButton.setEnabled(false);
-        oParseThread = new ParseThread(oSourceDir, oDestDir, oData, oType, oProgressPanel, oParseButton);
-        oParseThread.start();
+
+        java.util.List importerList = importerLoader.getImporterList();
+        ImporterI importerI = null;
+        boolean importerFound = false;
+        int importerListSize = importerList.size();
+        logger.debug("Number of importers found: " + importerListSize);
+        for (int iii = 0; !importerFound && iii < importerListSize; iii++) {
+            importerI = (ImporterI) importerList.get(iii);
+            logger.debug(importerI.getImporterName());
+            importerFound = importerI.isSupportedInputFormat(oSourceFile);
+        }
+        if (importerFound) {
+            logger.debug("Importer found");
+            oParseButton.setEnabled(false);
+            // Todo: the desc object is currently ignored
+            // Todo: this all should actually happen as soon as the file/dir is selected.
+            try {
+                Desc desc = importerI.initialize(oSourceFile, oProgressPanel);
+                oParseThread = new ParseThread(importerI, oDestDir, oData, oType, oProgressPanel, oParseButton);
+                oParseThread.start();
+            } catch (PsiMsConverterException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            logger.debug("No importer found");
+        }
     }
 
     public static void main(String[] args) {
-        JFrame oFrame = new JFrame("PSI-MS Converter");
-        final MainPanel oMainPanel = new MainPanel();
-        oFrame.addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                super.windowClosed(e);
-                oMainPanel.persistFieldValues();
-                System.exit(0);
-            }
-        });
+        BasicConfigurator.configure();
+        ImporterLoader importerLoader = null;
+        try {
+            importerLoader = new ImporterLoader();
+        } catch (FileNotFoundException e) {
+            // Todo: here we would need a requester asking for the plugin directory
+            e.printStackTrace();
+        }
+        if (importerLoader != null) {
+            importerLoader.loadImporters();
+            JFrame oFrame = new JFrame("PSI-MS Converter");
+            final MainPanel oMainPanel = new MainPanel(importerLoader);
+            oFrame.addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent e) {
+                    super.windowClosed(e);
+                    oMainPanel.persistFieldValues();
+                    System.exit(0);
+                }
+            });
 
-        oFrame.getContentPane().add(oMainPanel);
-        oFrame.setSize(800, 520);
-        oFrame.setResizable(false);
-        oFrame.setVisible(true);
+            oFrame.getContentPane().add(oMainPanel);
+            oFrame.setSize(800, 520);
+            oFrame.setResizable(false);
+            oFrame.setVisible(true);
+        }
     }
 
     class ParseThread extends Thread {
 
         //todo need to make the thread interruptable...
-        private String oSourceDir;
+        private ImporterI importerI;
         private String oDestDir;
         private MzData oData;
         private ProgressPanel oProgress;
         private JButton oButton;
         private MzDataWriter.OutputType oType;
 
-        public ParseThread(String poSourceDir,
+        public ParseThread(ImporterI importerI,
                            String poDestDir,
                            MzData poData,
                            MzDataWriter.OutputType poType,
                            ProgressPanel poProgress,
                            JButton poButton) {
-            this.oSourceDir = poSourceDir;
+            this.importerI = importerI;
             this.oDestDir = poDestDir;
             this.oData = poData;
             this.oProgress = poProgress;
@@ -159,7 +206,7 @@ public class MainPanel extends JPanel {
         }
 
         public void run() {
-            oParsingBusiness.parseData(this.oSourceDir,
+            oParsingBusiness.parseData(this.importerI,
                     this.oDestDir,
                     this.oData,
                     this.oType,

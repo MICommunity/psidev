@@ -1,12 +1,14 @@
 package org.psi.ms.swing;
 
 import org.psi.ms.model.MzData;
+import org.psi.ms.model.Acquisition;
 import org.psi.ms.helper.PsiMsConverterException;
-import org.psi.ms.converter.DtaSetImporter;
 import org.psi.ms.converter.ParseListener;
+import org.psi.ms.converter.ImporterI;
 import org.psi.ms.xml.MzDataWriter;
 
 import java.io.IOException;
+import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,20 +21,32 @@ public class ParsingBusiness {
 
     public static final String PARSE = "org.psi.ms.swing.parsingbusiness.parse";
 
-    private DtaSetImporter oConverter = new DtaSetImporter();
-
     public ParsingBusiness() {
 
     }
 
-    void parseData(String poSource,
+    void parseData(ImporterI oConverter,
                    String poDest,
                    MzData poData,
                    MzDataWriter.OutputType poType,
                    ParseListener poListener) {
 
         try {
-            oConverter.convertDirectory(poSource, poDest, poData, poType, poListener);
+            MzDataWriter mzDataWriter = new MzDataWriter(new File(poDest));
+            mzDataWriter.setOutputType(poType);
+
+            int acquisitionCount = oConverter.getAcquisitionCount();
+            mzDataWriter.initialize(poData, acquisitionCount);
+            poListener.setMax(acquisitionCount);
+            while (oConverter.hasMoreAcquisitions()) {
+                Acquisition acquisition = oConverter.getNextAcquisition();
+                poListener.increment();
+                mzDataWriter.marshall(acquisition);
+            }
+            mzDataWriter.finish();
+
+
+
         } catch (PsiMsConverterException e) {
             e.printStackTrace();
         } catch (IOException e) {
