@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Chris Taylor (EMBL OUTSTATION THE EBI) -->
+<!-- HUPO BPP Protein ID XML Schema. All names have all but the first word capitalised -->
+<!-- Henning Hermjakob, Chris Taylor (European Bioinformatics Institute, UK) -->
+<!-- David States, Marcin Adamski, Tom Blackwell (University of Michigan, USA) -->
+<!-- Richard Simpson, James Eddes (Ludwig Institute, Australia) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="experimentSet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="experiment">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="experimentAccession" type="xs:string" />
+							<xs:element name="fileCreationDate" type="xs:string" />
+							<xs:element ref="administrative" maxOccurs="unbounded" />
+							<xs:element ref="sampleDescription" minOccurs="0" />
+							<xs:element ref="methods" minOccurs="0" maxOccurs="unbounded" />
+							<xs:element ref="data" minOccurs="0" maxOccurs="unbounded" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="administrative">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anonymisedID" type="xs:string" />
+				<xs:element name="participatingLab" type="xs:string" />
+				<xs:element name="responsiblePerson" type="xs:string" />
+				<xs:element name="contactEmail" type="xs:string" />
+				<xs:element name="mailingAddress" type="xs:string" minOccurs="0" />
+				<xs:element name="referenceURI" type="xs:anyURI" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="sampleDescription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hupoBPPSpecimenName">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="human epilepsy surgery" />
+							<xs:enumeration value="human post mortem (11h)" />
+							<xs:enumeration value="mouse (C57/bl6) embryonic day 14 (E14)" />
+							<xs:enumeration value="mouse (C57/bl6) postnatal day 7 (P7)" />
+							<xs:enumeration value="mouse (C57/bl6) postnatal day 54-56 (P54-56)" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+                                <xs:element name="hupoBPPLotNumber" type="xs:integer" />
+                        </xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="methods">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="protocolTitle" type="xs:string" />
+				<xs:element name="wetExperiment" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="protocolStep" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="protocolStepType">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="depletion" />
+													<xs:enumeration value="cleanup" />
+													<xs:enumeration value="reductionAlkylation" />
+													<xs:enumeration value="proteinDigestion" />
+													<xs:enumeration value="prefractionation" />
+													<xs:enumeration value="separationColumn" />
+													<xs:enumeration value="gel1DElectrophoresis" />
+													<xs:enumeration value="gel2DElectrophoresis" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element ref="protocolStepDescription" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="massSpecMachine" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="manufacturer" type="xs:string" />
+										<xs:element name="model" type="xs:string" />
+										<xs:element name="sourceType" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="ESI" />
+													<xs:enumeration value="MALDI" />
+													<xs:enumeration value="SELDI" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="spectrometerType" type="xs:string" minOccurs="0" />
+										<xs:element name="comments" type="xs:string" minOccurs="0" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="inSilicoAnalysis" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="analysisType" type="xs:string" />
+							<xs:element name="analysisPackage" type="xs:string" />
+							<xs:element name="packageVersion" type="xs:string" />
+							<xs:element name="sourceDatabase" type="xs:string" />
+							<xs:element name="databaseVersion" type="xs:string" />
+							<xs:element name="comments" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="protocolComments" type="xs:string" minOccurs="0" />
+				<xs:element name="references" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="technologyAndResourcesUsed" minOccurs="0" />
+			</xs:sequence>
+			<xs:attribute name="protocolIdentifier" type="xs:ID" use="optional" />
+			<xs:attribute name="associatedDataSets" type="xs:IDREFS" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="protocolStepDescription">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="equipmentManufacturer" type="xs:string" />
+				<xs:element name="equipmentModel" type="xs:string" />
+				<xs:element name="usageDetails" type="xs:string" />
+				<xs:element name="externalDataReference" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="massSpectrometry">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="msCoefficient" type="xs:integer" />
+				<xs:element ref="peakList" />
+				<xs:element name="rawDataReference" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="accession" type="xs:string" />
+							<xs:element name="referenceURI" type="xs:anyURI" />
+							<xs:element name="responsiblePerson" type="xs:string" />
+							<xs:element name="contactEmail" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="comments" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="technologyAndResourcesUsed">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="amountUsed" type="xs:decimal" />
+				<xs:element name="separationTime" type="xs:decimal" />
+				<xs:element name="totalAnalysisTime" type="xs:decimal" />
+				<xs:element name="approxCapital" type="xs:decimal" />
+				<xs:element name="approxOperation" type="xs:decimal" />
+				<xs:element name="approxLabour" type="xs:decimal" />
+				<xs:element name="comments" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="data">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="massSpectrometry" minOccurs="0" maxOccurs="unbounded" />
+				<xs:element ref="identifiedProtein" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="dataSetIdentifier" type="xs:ID" use="optional" />
+			<xs:attribute name="associatedProtocols" type="xs:IDREFS" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="peakList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="peak" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="massToCharge" type="xs:decimal" />
+							<xs:element name="intensity" type="xs:decimal" minOccurs="0" />
+							<xs:element name="chargeState" type="xs:integer" minOccurs="0" />
+							<xs:element ref="daughterPeakList" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="peakListIdentifier" type="xs:ID" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="daughterPeakList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mzPlusMinus" type="xs:decimal" />
+				<xs:element name="daughterPeak" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="massToCharge" type="xs:decimal" />
+							<xs:element name="intensity" type="xs:decimal" minOccurs="0" />
+							<xs:element name="chargeState" type="xs:integer" minOccurs="0" />
+							<xs:element ref="daughterPeakList" minOccurs="0" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="daughterPeakListIdentifier" type="xs:ID" use="optional" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="identifiedProtein">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accessionNumber" type="xs:string" />
+				<xs:element name="sourceDatabase" type="xs:string" />
+				<xs:element name="proteinName" type="xs:string" />
+				<xs:element name="species" type="xs:string" />
+				<xs:element name="modifications" type="xs:string" minOccurs="0" />
+				<xs:element name="peptideSequenceList" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="peptideSequence" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="associatedPeakList" type="xs:IDREFS" use="optional" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="percentSequenceCoverage" type="xs:decimal" minOccurs="0" />
+				<xs:element name="confidence">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="High" />
+							<xs:enumeration value="Low" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="molecularWeight" type="xs:decimal" minOccurs="0" />
+				<xs:element name="pI" type="xs:decimal" minOccurs="0" />
+				<xs:element name="intensity" type="xs:decimal" minOccurs="0" />
+				<xs:element name="spotBandOrFractionReference" type="xs:string" minOccurs="0" />
+				<xs:element name="abundance" type="xs:string" minOccurs="0" />
+				<xs:element name="urlLinkToDetailedData" type="xs:anyURI" minOccurs="0" />
+				<xs:element name="comments" type="xs:string" minOccurs="0" />
+				<xs:element name="marker" type="xs:string" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
