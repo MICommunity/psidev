@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Acquisition.java,v 1.5 2003/11/14 16:49:30 krunte Exp $
+ * $Id: Acquisition.java,v 1.6 2003/12/04 18:20:37 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -20,7 +20,7 @@ package org.psi.ms.model;
  * data types. All arrays used to describe a single acquisition are
  * the same length and the same indexing.
  *
- * @version $Revision: 1.5 $ $Date: 2003/11/14 16:49:30 $
+ * @version $Revision: 1.6 $ $Date: 2003/12/04 18:20:37 $
  */
 public class Acquisition implements java.io.Serializable {
     /**
@@ -71,6 +71,8 @@ public class Acquisition implements java.io.Serializable {
      * @return the value of field 'intenArray'.
      */
     public RawDataType getIntenArray() {
+        if (_intenArray == null)
+            _intenArray = new RawDataType();
         return this._intenArray;
     } //-- org.psi.ms.model.RawDataType getIntenArray()
 
@@ -84,6 +86,8 @@ public class Acquisition implements java.io.Serializable {
      * @return the value of field 'mzArray'.
      */
     public RawDataType getMzArray() {
+        if (_mzArray == null)
+            _mzArray = new RawDataType();
         return this._mzArray;
     } //-- org.psi.ms.model.RawDataType getMzArray()
 
@@ -99,6 +103,8 @@ public class Acquisition implements java.io.Serializable {
      * @return the acquisition's description.
      */
     public AcqDesc getAcqDesc() {
+        if (acqDesc == null)
+            acqDesc = new AcqDesc();
         return acqDesc;
     }
 
