@@ -39,6 +39,7 @@
         <delete quiet="true">
             <fileset dir="${doc}/api" includes="**/*.*"/>
         </delete>
+        <ant dir="plugins/dta" target="clean" inheritall="false"/>
     </target>
 
     <target name="build">
@@ -62,7 +63,11 @@
         </jar>
     </target>
 
-    <target name="dist" depends="doc,application" >
+    <target name="plugins" depends="application">
+        <ant dir="plugins/dta" target="plugin" inheritall="false"/>
+    </target>
+
+    <target name="dist" depends="doc,plugins" >
         <mkdir dir="${dist}"/>
         <zip destfile="${dist}/${project.shortName}.zip" update="no">
             <fileset dir="..">
