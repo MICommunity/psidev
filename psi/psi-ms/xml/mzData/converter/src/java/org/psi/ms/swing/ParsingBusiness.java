@@ -4,8 +4,6 @@ import org.psi.ms.model.MzData;
 import org.psi.ms.helper.PsiMsConverterException;
 import org.psi.ms.converter.DtaSetConverter;
 import org.psi.ms.converter.ParseListener;
-import org.exolab.castor.xml.ValidationException;
-import org.exolab.castor.xml.MarshalException;
 
 import java.io.IOException;
 
