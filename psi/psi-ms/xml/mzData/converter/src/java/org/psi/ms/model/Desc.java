@@ -2,7 +2,7 @@
  * This class was automatically generated with 
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Desc.java,v 1.1 2003/08/11 17:29:59 krunte Exp $
+ * $Id: Desc.java,v 1.2 2003/08/21 10:58:11 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -27,7 +27,7 @@ import org.xml.sax.ContentHandler;
  * description section. This allows the desc section to be read and
  * then used to find specific entries in the raw section.
  * 
- * @version $Revision: 1.1 $ $Date: 2003/08/11 17:29:59 $
+ * @version $Revision: 1.2 $ $Date: 2003/08/21 10:58:11 $
  */
 public class Desc implements java.io.Serializable {
 
@@ -43,10 +43,10 @@ public class Desc implements java.io.Serializable {
     private org.psi.ms.model.Admin _admin;
 
     /**
-     * Instrument information common to all acquisitions is stored
+     * InstrumentCommonSettings information common to all acquisitions is stored
      * in this section.
      */
-    private org.psi.ms.model.Instrument _instrument;
+    private org.psi.ms.model.InstrumentCommonSettings _instrument;
 
     /**
      * Experimental information regarding the test which resulted
@@ -107,16 +107,16 @@ public class Desc implements java.io.Serializable {
 
     /**
      * Returns the value of field 'instrument'. The field
-     * 'instrument' has the following description: Instrument
+     * 'instrument' has the following description: InstrumentCommonSettings
      * information common to all acquisitions is stored in this
      * section.
      * 
      * @return the value of field 'instrument'.
      */
-    public org.psi.ms.model.Instrument getInstrument()
+    public org.psi.ms.model.InstrumentCommonSettings getInstrument()
     {
         return this._instrument;
-    } //-- org.psi.ms.model.Instrument getInstrument() 
+    } //-- org.psi.ms.model.InstrumentCommonSettings getInstrument()
 
     /**
      * Returns the value of field 'supDescList'. The field
@@ -208,15 +208,15 @@ public class Desc implements java.io.Serializable {
 
     /**
      * Sets the value of field 'instrument'. The field 'instrument'
-     * has the following description: Instrument information common
+     * has the following description: InstrumentCommonSettings information common
      * to all acquisitions is stored in this section.
      * 
      * @param instrument the value of field 'instrument'.
      */
-    public void setInstrument(org.psi.ms.model.Instrument instrument)
+    public void setInstrument(org.psi.ms.model.InstrumentCommonSettings instrument)
     {
         this._instrument = instrument;
-    } //-- void setInstrument(org.psi.ms.model.Instrument) 
+    } //-- void setInstrument(org.psi.ms.model.InstrumentCommonSettings)
 
     /**
      * Sets the value of field 'supDescList'. The field

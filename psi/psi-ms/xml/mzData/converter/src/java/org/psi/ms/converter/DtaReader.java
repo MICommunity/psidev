@@ -1,5 +1,5 @@
 /**
- * $Id: DtaReader.java,v 1.7 2003/08/21 10:04:19 krunte Exp $
+ * $Id: DtaReader.java,v 1.8 2003/08/21 10:58:11 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -91,14 +91,14 @@ public class DtaReader {
         range.setEnd(1);
         acqSpecification.setRange(range);
         //Todo: this is user-supplied information?
-        acqSpecification.setMethod(AcqSpecificationMethodType.AVERAGE);
+        acqSpecification.setMethod(AcqSpecification.Method.AVERAGE);
         acqSettings.setAcqSpecification(acqSpecification);
 
-        Instrument2 instrument2 = new Instrument2();
+        InstrumentAcqSettings instrument2 = new InstrumentAcqSettings();
         if (fileType == ZTA) {
-            instrument2.setAcqType(InstrumentAcqSettingsTypeAcqTypeType.ZOOM);
+            instrument2.setAcqType(InstrumentAcqSettings.AcqType.ZOOM);
         } else {
-            instrument2.setAcqType(InstrumentAcqSettingsTypeAcqTypeType.FULL);
+            instrument2.setAcqType(InstrumentAcqSettings.AcqType.FULL);
         }
         instrument2.setMsLevel(-1);
         acqSettings.setInstrument(instrument2);
@@ -210,12 +210,12 @@ public class DtaReader {
         Data mzData = new Data();
         mzData.setContent(mzFloatArray);
         mzData.setLength(size);
-        mzData.setPrecision(DataPrecisionType.VALUE_0);
+        mzData.setPrecision(Data.Precision.THIRTYTWO);
         mzArrayBinary.setData(mzData);
         Data intenData = new Data();
         intenData.setContent(intensityArray);
         intenData.setLength(size);
-        intenData.setPrecision(DataPrecisionType.VALUE_0);
+        intenData.setPrecision(Data.Precision.THIRTYTWO);
         intenArrayBinary.setData(intenData);
 
         return size;

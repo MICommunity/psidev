@@ -2,7 +2,7 @@
  * This class was automatically generated with
  * <a href="http://www.castor.org">Castor 0.9.4.3</a>, using an XML
  * Schema.
- * $Id: Source.java,v 1.2 2003/08/21 10:58:11 krunte Exp $
+ * $Id: InstrumentCommonSettings.java,v 1.1 2003/08/21 10:58:11 krunte Exp $
  */
 
 package org.psi.ms.model;
@@ -15,18 +15,30 @@ import org.exolab.castor.xml.Marshaller;
 import org.exolab.castor.xml.Unmarshaller;
 
 import java.util.Vector;
-import java.util.Hashtable;
 
 /**
- * Invariant ion source information
+ * InstrumentCommonSettings information common to all acquisitions is stored in
+ * this section.
  *
- * @version $Revision: 1.2 $ $Date: 2003/08/21 10:58:11 $
+ * @version $Revision: 1.1 $ $Date: 2003/08/21 10:58:11 $
  */
-public class Source implements java.io.Serializable {
+public class InstrumentCommonSettings implements java.io.Serializable {
     /**
-     * Type of ion source (controlled)
+     * Descriptive name of the instrument
      */
-    private Type _type;
+    private String _instName;
+    /**
+     * Invariant ion source information
+     */
+    private Source _source;
+    /**
+     * Mass analyzer information
+     */
+    private Analyzer _analyzer;
+    /**
+     * Detection information
+     */
+    private Detector _detector;
     /**
      * This element holds additional data or annotation
      * information. Only controlled name values are allowed here.
@@ -44,11 +56,11 @@ public class Source implements java.io.Serializable {
     //- Constructors -/
     //----------------/
 
-    public Source() {
+    public InstrumentCommonSettings() {
         super();
         _instParamList = new Vector();
         _instUserParamList = new Vector();
-    } //-- org.psi.ms.model.Source()
+    } //-- org.psi.ms.model.InstrumentCommonSettings()
 
 
     //-----------/
@@ -94,10 +106,10 @@ public class Source implements java.io.Serializable {
      *
      * @param reader
      */
-    public static org.psi.ms.model.Source unmarshal(java.io.Reader reader)
+    public static org.psi.ms.model.InstrumentCommonSettings unmarshal(java.io.Reader reader)
             throws org.exolab.castor.xml.MarshalException, org.exolab.castor.xml.ValidationException {
-        return (org.psi.ms.model.Source) Unmarshaller.unmarshal(org.psi.ms.model.Source.class, reader);
-    } //-- org.psi.ms.model.Source unmarshal(java.io.Reader)
+        return (org.psi.ms.model.InstrumentCommonSettings) Unmarshaller.unmarshal(org.psi.ms.model.InstrumentCommonSettings.class, reader);
+    } //-- org.psi.ms.model.InstrumentCommonSettings unmarshal(java.io.Reader)
 
     /**
      * Method validate
@@ -163,6 +175,37 @@ public class Source implements java.io.Serializable {
     public java.util.Enumeration enumerateInstUserParam() {
         return _instUserParamList.elements();
     } //-- java.util.Enumeration enumerateInstUserParam()
+
+    /**
+     * Returns the value of field 'analyzer'. The field 'analyzer'
+     * has the following description: Mass analyzer information
+     *
+     * @return the value of field 'analyzer'.
+     */
+    public Analyzer getAnalyzer() {
+        return this._analyzer;
+    } //-- org.psi.ms.model.Analyzer getAnalyzer()
+
+    /**
+     * Returns the value of field 'detector'. The field 'detector'
+     * has the following description: Detection information
+     *
+     * @return the value of field 'detector'.
+     */
+    public Detector getDetector() {
+        return this._detector;
+    } //-- org.psi.ms.model.Detector getDetector()
+
+    /**
+     * Returns the value of field 'instName'. The field 'instName'
+     * has the following description: Descriptive name of the
+     * instrument
+     *
+     * @return the value of field 'instName'.
+     */
+    public String getInstName() {
+        return this._instName;
+    } //-- java.lang.String getInstName()
 
     /**
      * Method getInstParam
@@ -233,14 +276,14 @@ public class Source implements java.io.Serializable {
     } //-- int getInstUserParamCount()
 
     /**
-     * Returns the value of field 'type'. The field 'type' has the
-     * following description: Type of ion source (controlled)
+     * Returns the value of field 'source'. The field 'source' has
+     * the following description: Invariant ion source information
      *
-     * @return the value of field 'type'.
+     * @return the value of field 'source'.
      */
-    public Type getType() {
-        return this._type;
-    } //-- Type getType()
+    public Source getSource() {
+        return this._source;
+    } //-- org.psi.ms.model.Source getSource()
 
     /**
      * Method removeAllInstParam
@@ -277,6 +320,37 @@ public class Source implements java.io.Serializable {
         _instUserParamList.removeElementAt(index);
         return (InstUserParam) obj;
     } //-- org.psi.ms.model.InstUserParam removeInstUserParam(int)
+
+    /**
+     * Sets the value of field 'analyzer'. The field 'analyzer' has
+     * the following description: Mass analyzer information
+     *
+     * @param analyzer the value of field 'analyzer'.
+     */
+    public void setAnalyzer(Analyzer analyzer) {
+        this._analyzer = analyzer;
+    } //-- void setAnalyzer(org.psi.ms.model.Analyzer)
+
+    /**
+     * Sets the value of field 'detector'. The field 'detector' has
+     * the following description: Detection information
+     *
+     * @param detector the value of field 'detector'.
+     */
+    public void setDetector(Detector detector) {
+        this._detector = detector;
+    } //-- void setDetector(org.psi.ms.model.Detector)
+
+    /**
+     * Sets the value of field 'instName'. The field 'instName' has
+     * the following description: Descriptive name of the
+     * instrument
+     *
+     * @param instName the value of field 'instName'.
+     */
+    public void setInstName(String instName) {
+        this._instName = instName;
+    } //-- void setInstName(java.lang.String)
 
     /**
      * Method setInstParam
@@ -335,175 +409,13 @@ public class Source implements java.io.Serializable {
     } //-- void setInstUserParam(org.psi.ms.model.InstUserParam)
 
     /**
-     * Sets the value of field 'type'. The field 'type' has the
-     * following description: Type of ion source (controlled)
+     * Sets the value of field 'source'. The field 'source' has the
+     * following description: Invariant ion source information
      *
-     * @param type the value of field 'type'.
+     * @param source the value of field 'source'.
      */
-    public void setType(Type type) {
-        this._type = type;
-    } //-- void setType(Type)
+    public void setSource(Source source) {
+        this._source = source;
+    } //-- void setSource(org.psi.ms.model.Source)
 
-    /**
-     * Class Type.
-     *
-     * @version $Revision: 1.2 $ $Date: 2003/08/21 10:58:11 $
-     */
-    public static class Type implements java.io.Serializable {
-
-
-          //--------------------------/
-         //- Class/Member Variables -/
-        //--------------------------/
-
-        /**
-         * The ESI type
-         */
-        public static final int ESI_TYPE = 0;
-
-        /**
-         * The instance of the ESI type
-         */
-        public static final Type ESI = new Type(ESI_TYPE, "ESI");
-
-        /**
-         * The uESI type
-         */
-        public static final int UESI_TYPE = 1;
-
-        /**
-         * The instance of the uESI type
-         */
-        public static final Type UESI = new Type(UESI_TYPE, "uESI");
-
-        /**
-         * The nESI type
-         */
-        public static final int NESI_TYPE = 2;
-
-        /**
-         * The instance of the nESI type
-         */
-        public static final Type NESI = new Type(NESI_TYPE, "nESI");
-
-        /**
-         * The MALDI type
-         */
-        public static final int MALDI_TYPE = 3;
-
-        /**
-         * The instance of the MALDI type
-         */
-        public static final Type MALDI = new Type(MALDI_TYPE, "MALDI");
-
-        /**
-         * The APCI type
-         */
-        public static final int APCI_TYPE = 4;
-
-        /**
-         * The instance of the APCI type
-         */
-        public static final Type APCI = new Type(APCI_TYPE, "APCI");
-
-        /**
-         * The other type
-         */
-        public static final int OTHER_TYPE = 5;
-
-        /**
-         * The instance of the other type
-         */
-        public static final Type OTHER = new Type(OTHER_TYPE, "other");
-
-        /**
-         * Field _memberTable
-         */
-        private static java.util.Hashtable _memberTable = init();
-
-        /**
-         * Field type
-         */
-        private int type = -1;
-
-        /**
-         * Field stringValue
-         */
-        private java.lang.String stringValue = null;
-
-
-          //----------------/
-         //- Constructors -/
-        //----------------/
-
-        private Type(int type, java.lang.String value) {
-            super();
-            this.type = type;
-            this.stringValue = value;
-        } //-- Type(int, java.lang.String)
-
-
-          //-----------/
-         //- Methods -/
-        //-----------/
-
-        /**
-         * Method enumerateReturns an enumeration of all possible
-         * instances of Type
-         */
-        public static java.util.Enumeration enumerate()
-        {
-            return _memberTable.elements();
-        } //-- java.util.Enumeration enumerate()
-
-        /**
-         * Method getTypeReturns the type of this Type
-         */
-        public int getType()
-        {
-            return this.type;
-        } //-- int getType()
-
-        /**
-         * Method init
-         */
-        private static java.util.Hashtable init()
-        {
-            Hashtable members = new Hashtable();
-            members.put("ESI", ESI);
-            members.put("uESI", UESI);
-            members.put("nESI", NESI);
-            members.put("MALDI", MALDI);
-            members.put("APCI", APCI);
-            members.put("other", OTHER);
-            return members;
-        } //-- java.util.Hashtable init()
-
-        /**
-         * Method toStringReturns the String representation of this
-         * Type
-         */
-        public java.lang.String toString()
-        {
-            return this.stringValue;
-        } //-- java.lang.String toString()
-
-        /**
-         * Method valueOfReturns a new Type based on the
-         * given String value.
-         *
-         * @param string
-         */
-        public static Type valueOf(java.lang.String string)
-        {
-            java.lang.Object obj = null;
-            if (string != null) obj = _memberTable.get(string);
-            if (obj == null) {
-                String err = "'" + string + "' is not a valid Type";
-                throw new IllegalArgumentException(err);
-            }
-            return (Type) obj;
-        } //-- Type valueOf(java.lang.String)
-
-    }
 }

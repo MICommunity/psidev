@@ -1,5 +1,5 @@
 /**
- * $Id: DtaSetConverter.java,v 1.3 2003/08/20 16:44:11 krunte Exp $
+ * $Id: DtaSetConverter.java,v 1.4 2003/08/21 10:58:11 krunte Exp $
  *
  * Created by IntelliJ IDEA.
  * User: krunte
@@ -109,19 +109,19 @@ public class DtaSetConverter {
         admin.setContact(contact);
 
         // Todo: this information must be provided by the user
-        Instrument instrument = new Instrument();
+        InstrumentCommonSettings instrument = new InstrumentCommonSettings();
         instrument.setInstName("unknown");
         Source source = new Source();
-        source.setType(SourceTypeTypeType.OTHER);
+        source.setType(Source.Type.OTHER);
         instrument.setSource(source);
         Analyzer analyzer = new Analyzer();
-        analyzer.setType(AnalyzerTypeTypeType.OTHER);
+        analyzer.setType(Analyzer.Type.OTHER);
         float unknown = -1;
         analyzer.setResolution(unknown);
         analyzer.setAccuracy(unknown);
         instrument.setAnalyzer(analyzer);
         Detector detector = new Detector();
-        detector.setType(DetectorTypeTypeType.OTHER);
+        detector.setType(Detector.Type.OTHER);
         instrument.setDetector(detector);
         desc.setInstrument(instrument);
 

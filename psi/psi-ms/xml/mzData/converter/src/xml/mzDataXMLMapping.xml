@@ -40,7 +40,7 @@
     <class name="org.psi.ms.model.Activation">
         <description>Default mapping for class org.psi.ms.model.Activation</description>
         <map-to xml="activation"/>
-        <field name="method" type="org.psi.ms.model.types.ActivationTypeMethodType" required="true">
+        <field name="method" type="org.psi.ms.model.Activation$Method" required="true">
             <bind-xml name="method" node="attribute"/>
         </field>
         <field name="energy" type="float">
@@ -50,7 +50,7 @@
     <class name="org.psi.ms.model.Analyzer">
         <description>Default mapping for class org.psi.ms.model.Analyzer</description>
         <map-to xml="analyzer"/>
-        <field name="type" type="org.psi.ms.model.types.AnalyzerTypeTypeType" required="true">
+        <field name="type" type="org.psi.ms.model.Analyzer$Type" required="true">
             <bind-xml name="type" node="attribute"/>
         </field>
         <field name="resolution" type="float" required="true">
@@ -85,7 +85,7 @@
         <field name="acqSpecification" type="org.psi.ms.model.AcqSpecification" required="true">
             <bind-xml name="acqSpecification" node="element"/>
         </field>
-        <field name="instrument" type="org.psi.ms.model.Instrument2" required="true">
+        <field name="instrument" type="org.psi.ms.model.InstrumentAcqSettings" required="true">
             <bind-xml name="instrument" node="element"/>
         </field>
         <field name="acqTime" type="org.psi.ms.model.AcqTime">
@@ -156,7 +156,7 @@
     <class name="org.psi.ms.model.AcqSpecification">
         <description>Default mapping for class org.psi.ms.model.AcqSpecification</description>
         <map-to xml="acqSpecification"/>
-        <field name="method" type="org.psi.ms.model.types.AcqSpecificationMethodType" required="true">
+        <field name="method" type="org.psi.ms.model.AcqSpecification$Method" required="true">
             <bind-xml name="method" node="attribute"/>
         </field>
         <field name="list" type="org.psi.ms.model.List">
@@ -256,7 +256,7 @@
     <class name="org.psi.ms.model.Detector">
         <description>Default mapping for class org.psi.ms.model.Detector</description>
         <map-to xml="detector"/>
-        <field name="type" type="org.psi.ms.model.types.DetectorTypeTypeType" required="true">
+        <field name="type" type="org.psi.ms.model.Detector$Type" required="true">
             <bind-xml name="type" node="attribute"/>
         </field>
         <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
@@ -304,7 +304,7 @@
     <class name="org.psi.ms.model.AcqTime">
         <description>Default mapping for class org.psi.ms.model.AcqTime</description>
         <map-to xml="acqTime"/>
-        <field name="units" type="org.psi.ms.model.types.AcqTimeUnitsType" required="true">
+        <field name="units" type="org.psi.ms.model.AcqTime$Units" required="true">
             <bind-xml name="units" node="attribute"/>
         </field>
         <field name="content" type="java.util.Date">
@@ -360,8 +360,8 @@
             <bind-xml name="type" node="element"/>
         </field>
     </class>
-    <class name="org.psi.ms.model.Instrument">
-        <description>Default mapping for class org.psi.ms.model.Instrument</description>
+    <class name="org.psi.ms.model.InstrumentCommonSettings">
+        <description>Default mapping for class org.psi.ms.model.InstrumentCommonSettings</description>
         <map-to xml="instrument"/>
         <field name="instName" type="java.lang.String" required="true">
             <bind-xml name="instName" node="element"/>
@@ -482,7 +482,7 @@
         <field name="admin" type="org.psi.ms.model.Admin" required="true">
             <bind-xml name="admin" node="element"/>
         </field>
-        <field name="instrument" type="org.psi.ms.model.Instrument" required="true">
+        <field name="instrument" type="org.psi.ms.model.InstrumentCommonSettings" required="true">
             <bind-xml name="instrument" node="element"/>
         </field>
         <field name="test" type="org.psi.ms.model.Test" required="true">
@@ -524,7 +524,7 @@
     <class name="org.psi.ms.model.Source">
         <description>Default mapping for class org.psi.ms.model.Source</description>
         <map-to xml="source"/>
-        <field name="type" type="org.psi.ms.model.types.SourceTypeTypeType" required="true">
+        <field name="type" type="org.psi.ms.model.Source$Type" required="true">
             <bind-xml name="type" node="attribute"/>
         </field>
         <field name="instParam" type="org.psi.ms.model.InstParam" collection="array">
@@ -594,7 +594,7 @@
     <class name="org.psi.ms.model.Data">
         <description>Default mapping for class org.psi.ms.model.Data</description>
         <map-to xml="data"/>
-        <field name="precision" type="org.psi.ms.model.types.DataPrecisionType" required="true">
+        <field name="precision" type="org.psi.ms.model.Data$Precision" required="true">
             <bind-xml name="precision" node="attribute"/>
         </field>
         <field name="length" type="int" required="true">
@@ -690,16 +690,16 @@
             <bind-xml name="-error-if-this-is-used-" node="element"/>
         </field>
     </class>
-    <class name="org.psi.ms.model.Instrument2">
-        <description>Default mapping for class org.psi.ms.model.Instrument2</description>
+    <class name="org.psi.ms.model.InstrumentAcqSettings">
+        <description>Default mapping for class org.psi.ms.model.InstrumentAcqSettings</description>
         <map-to xml="instrument"/>
-        <field name="acqType" type="org.psi.ms.model.types.InstrumentAcqSettingsTypeAcqTypeType" required="true">
+        <field name="acqType" type="org.psi.ms.model.InstrumentAcqSettings$AcqType" required="true">
             <bind-xml name="acqType" node="attribute"/>
         </field>
         <field name="msLevel" type="int" required="true">
             <bind-xml name="msLevel" node="attribute"/>
         </field>
-        <field name="polarity" type="org.psi.ms.model.types.InstrumentAcqSettingsTypePolarityType">
+        <field name="polarity" type="org.psi.ms.model.InstrumentAcqSettings$Polarity">
             <bind-xml name="polarity" node="attribute"/>
         </field>
         <field name="mzRange" type="org.psi.ms.model.MzRange">
