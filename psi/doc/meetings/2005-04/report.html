@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><title>Reports and talks from PSI Spring Meeting '05</title>
+
+<style type="text/css">
+<!--
+.style4 {
+	font-family: "times new roman";
+	font-size: 16px;
+}
+.style5 {color: #660000}
+.style6 {color: #003300}
+.style7 {
+	color: #003300;
+	font-style: italic;
+}
+.style9 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style10 {
+	color: #000066;
+	font-style: italic;
+	font-weight: bold;
+}
+.style12 {color: #000000}
+.style14 {
+	color: #000000;
+	font-weight: bold;
+	font-style: italic;
+}
+-->
+</style></head>
+
+<body>
+<h3 align="center"><span style="font-family: times new roman; font-size: 18px;"><strong><a href="http://psidev.sourceforge.net/" target="_blank"><img src="http://psidev.sf.net/images/psi.gif" align="left" border="0" height="75" width="113"></a><span style="font-family: times new roman; font-size: 18px;"><strong><a href="http://www.hupo.org/" target="_blank"><img src="http://psidev.sf.net/images/hupo.gif" align="right" border="0" height="75" width="113"></a></strong></span></strong></span></h3>
+<p style="margin-bottom: 0pt;" align="center">&nbsp;</p>
+<h3 style="margin-top: 0pt;" align="center"><span style="font-family: times new roman; font-size: 18px;"><strong><a name="the_top"></a>Reports
+      and talks from the HUPO PSI Spring
+      Workshop </strong></span></h3>
+<h3 align="center"><span style="font-family: times new roman; font-size: 18px;"><strong>April 17th-20th, 2005 &#8212;</strong></span>	Siena, Italy</h3>
+
+<h3 style="margin-bottom: 0pt;">&nbsp;</h3>
+<h3 style="margin-top: 0pt;"><span style="font-family: times new roman; font-size: 18px;"><strong>Contents</strong></span></h3>
+<ul>
+  <li><a href="#intro">Meeting reports</a>
+      <ul>
+        <li><a href="#mi">Molecular Interactions</a></li>
+        <li><a href="#ms">Mass Spectrometry</a> (mzData, mzIdent, CV)</li>
+        <li><a href="#ptm">Post-translational Modifications</a></li>
+        <li><a href="#gps">General Proteomics Standards</a> (MIAPE, Gels, <em>etc</em>.)</li>
+        <li><a href="#summary">Summary</a><br>
+        </li>
+      </ul>
+  </li>
+  <li><span style="font-family: times new roman; font-size: 16px;"><a href="#talks">Talk
+              Downloads</a> </span></li>
+</ul>
+<p style="margin-bottom: 0pt;">&nbsp;</p>
+<p style="margin-bottom: 0pt;"><span style="font-family: times new roman; font-size: 18px;"><strong><a name="intro"></a></strong></span></p>
+<p style="margin-bottom: 0pt;"><span style="font-family: times new roman; font-size: 18px;"><strong><span style="font-size: 18px;">Minutes
+          of the Second Annual Proteomics Standards Initiative Spring Workshop<br>
+  Siena, Italy 17-20th April 2005</span></strong></span></p>
+<p><strong><em>Introduction</em></strong></p>
+<p>The Second Annual Spring Workshop of the Proteomics Standards Initiative (PSI)
+  was jointly hosted by the University of Siena and the Italian Human Proteomics
+  Organisation (HUPO). The meeting was opened by Henning Hermjakob (EMBL-EBI),
+  who reviewed the activities to date of HUPO and in particular of the Bioinformatics
+  Committee of which the PSI is the major activity. The Level 2.0 Molecular Interaction
+  standards (PSI-MI) has been published in beta format, and an increasing number
+  of databases are now making their data available in this format. MINT already
+  release their data in both PSI-MI Level 1 and 2(beta), IntAct will do so from
+  May onwards, DIP from June/July and Mpact (MIPS). BIND make their data available
+  in PSI-MI Level 2(beta). Communication between these groups has been so successful
+  that it has lead to the formation of the IMEx (International Molecular Interaction
+  Exchange) consortium which will eventually exchange curated molecular interaction
+  data following the nucleotide database consortium model. The work of the PSI-MI
+  group would now concentrate on refining the current schema to allow more complete
+  data exchange, extend the current controlled vocabularies where needed and
+  look at developing further tools such as an XML validator and a PSI Common
+  Query Interface (PSIQIC).</p>
+<p>Chris Taylor (EMBL-EBI) then outlined the overall concept of the General Proteomics
+  Standard (GPS) which will enable the increased systematic capture of all aspects
+  of proteomics data. The already existing standards for Mass Spectrometry and
+  Molecular Interactions (mzData and mzIdent) will exist as components within
+  this model and other modules are currently in preparation. It is envisaged
+  that the PSI-GPS model will be integrated with the MGED model in areas of overlap,
+  such as sample preparation, to produce the Functional Genomics Experimental
+  Model (FuGE) which will allow of full description of experiments where parallel
+  samples are analysed by both microarray and proteomics techniques. Discussion
+  with the NIH has identified the common representation of PTMs as a need by
+  all proteomics groups, and discussion of this subject was to be an additional
+  track for this meeting. The GPS standards will allow common representation
+  of both methods and data but are not to be quality guidelines, although how
+  data quality could be best represented within these models was to be a subject
+  for discussion. MzData (Version 1.05) is now in a stable release structure
+  and has received strong vendor support, mzIdent should be in a mature form
+  by the HUPO congress in 2005. Work was to begin at this workshop to develop
+  standards for 2D gel electrophoresis.</p>
+<p>The MIAPE documentation is proceeding with a series of technology specific
+  guidelines outlining the detail required to describe a proteomics experiment
+  in sufficient detail to ensure full understanding of the experimental protocols
+  utilised. The Mass Spectrometry document has been through expert review and
+  is approaching release, the Proteoinformatics for Mass Spectrometry documentation
+  is available in draft format. An abstract GPS object model has also been prepared
+  (PSI-OM) and once mature, this will be used to derive an XML data exchange
+  schema. Common ontologies for all aspects of this work are under development,
+  although there is still some debate as to whether these should be fully developed
+  ontologies using formats such as OWL or simpler Controlled Vocabularies (CV)
+  as have already been designed and implemented by the PSI-MI group (Luisa Montecchi-Palazzi,
+  EBI).</p>
+<p><br>
+  The sessions separated into three major tracks; <a href="#gps">GPS</a>, <a href="#mi">Molecular
+  Interactions</a>  and <a href="#ms">Mass Spectrometry</a>.</p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="mi" id="mi"></a></strong></span></p>
+<p><strong><em>Molecular Interactions</em></strong></p>
+<p>  The session was chaired by Henning Hermjakob who summarised the advances made
+    by the group over the last few months. A series of presentations then followed,
+    in which a number of databases outlined both their experience in implementing
+    PSI-MI Level 1.0 (Matthias Oesterheld Mpact (MIPS), Peter Woollard GSK, Arnaud
+    Coel MINT, Samuel Kerriens IntAct) and the conversion from PSI-MI 1.0 to
+    2.0beta. Requirements for changes to the PSI-MI XML format which needed to
+    be decided upon during his meeting were reviewed, requests have been collected
+    all year using the SourceForge site. The aim of the meeting was to bring
+    the PSI-MI Level 2 schema to an appropriate state of maturity for publication
+    and full release (Level 2.5).</p>
+<p>The addition of further CVs allowed an overall simplification of the XML schema,
+  with attributes which were previously separately listed, for example &#8220;Protein
+  Interactor&#8221;, &#8220;DNA Inteactor&#8221; now being described by a single
+  field &#8220;Interactor&#8221; filled from a CV &#8220;Interactor Type&#8221;.
+  Further typing of aliases allows full description of the molecule, whilst extension
+  of the ExperimentalForm&#8221; of the molecule means that the exact state of
+  the molecule used in a specific experiment, for example deletion mutants or
+  tagged molecules, can be identified and linked to that experiment. This also
+  allows the exchange of more complex data sets, such as a modelled interaction
+  which can be directly linked to the experimental evidence from which it was
+  derived. </p>
+<p>The need to be able to fully describe complexes was identified, including
+  the hierarchical build up of the final form from any number of sub-complexes.
+  This requires adding the concept of &#8220;unknown&#8221; participant since
+  the components may only be partially identified e.g. five proteins separated
+  on a gel but only two identified by subsequent Western blot. The ability of
+  an interaction to be used as an interactor &#8220;Complex&#8221; is now recognised
+  which will refer back to either an internal interaction reference or a cross-reference
+  to an eternal database.</p>
+<p>In total, the addition of 9 further CVs was decided upon, and changes to those
+  already existing were agreed upon Curator requests are made upon the SourceForge
+  tracker system and discussed by an editorial board, as agreed at the Spring
+  2003 workshop. The conversion from PSI-MI 1.0 to 2.0beta or 2.5 will require
+  a certain amount of remapping and plans to publish details of this will be
+  published on the SourceForge website.</p>
+<p>  The need for published Minimal Curation Standards was emphasised by the Industry
+    Representatives, who wish to pass these on to third-party vendors of interaction
+    data. A &#8220;Minimal Information for Molecular Interaction experiment (MIMI)&#8221; document
+    will be written by experienced curators from the public domain databases
+    and made publicly available </p>
+<p>  The production of a number of tools to assist in the best usage of the PSI-MI
+    XML interchange format was discussed including update of the exsting PSI-maker
+    which converts of tab delineated flat file into PSI-MI format. Yhia tool
+    could also be adapted to convert between Levels 1 and 2, via a flat file
+    intermediate. XML syntactical and semantical validators will also be written
+    to check the validity of the ML files and that CVs have been employed in
+    the correct places. By taking advantage of certain dependencies between CVs
+    (for example Yeast 2-hybrid experiments must always have a bait and prey
+    in the BiologicalRole) rules can be written to check data quality and consistency. </p>
+<p>Finally the first draft of the PSI-MI Common Query Interface (PSICQIC) was
+  discussed. This is envisaged as a common interface which will be offered by
+  all participating databases in which a few simple queries will be delivered
+  by query language and a valid PSI_MI document returned. Syntax, error messages
+  etc. should be matched to cPath (BioPax) to make understanding easier for users
+  of both services. An initial specification should be produced within the next
+  3 months, with a view to further discussion at the HUPO Munich congress. </p>
+<p>It is planned to have the updated schema (PSI-MI 2.5) ready for implementation
+  and testing by mid-May 2005 with full release by mid-September.</p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="ms" id="ms"></a></strong></span></p>
+<p><strong><em>Mass Spectrometry</em></strong></p>
+<p>The major aims of this workshop session, chaired by Randall Julian (Eli-Lilly)
+  and Weimin Zhu (EBI), were to revise and consolidate the mzData format constructed
+  during the last PSI-MS workshop to work with the supporting controlled vocabularies
+  (CV) and to extend the PSI-MS initiative to the area of molecular identifications
+  using mass spectrometry, mzIdent.</p>
+<p>mzData has now been implemented by a number of vendors, for example the standard
+  is now available in Mascot, Phenyx, X! and Bioworks with Proteios citation
+  currently underway. An annual schema release will give sufficient stability
+  for manufacturers whilst still keeping the standard up to date, additional
+  flexibility will be given by a semi-annual CV release. The next minor mzData
+  release will allow an XML namespace and versioning. </p>
+<p>  The base controlled vocabulary for mzData defines information items which are
+    shared across all experiments and instrument makers All terms include a conserved
+    accession number which is guaranteed to remain constant with the definition
+    until deprecated allowing update of the associated text name without loss
+    of information. The CV has been merged with that of mzXML developed by the
+    ISB and distributed as mzXML.xsd. To ensure the ability to create HUPO submission
+    documents from workflows using such schema, a unified controlled vocabulary
+    was obtained by assigning HUPO accession numbers to all terms included in
+    both the HUPO-PSI schema and the ISB XML schema. When complete, all fixed
+    and variable attributes in mzXML will be mapped to corresponding HUPO-PSI
+    ontology terms and both will be consistent with the IUPAC nomenclature for
+    mass spectrometry. The first version of the mzData CV is currently on SourceForge
+    in spreadsheet format. There will be a further release around August 2005,
+    in OWL format.</p>
+<p>  The mzIdent standard is being designed to capture results from MS search engines
+    and represent the input parameters for analysis algorithms, thus unifying
+    results from different search engines. The requirements for mzIdent include
+    the need to support the identification of both protein and peptides, by accession
+    number or sequence, and must include the ability to describe modifications.
+    Small molecule identification by either CML or SMILES must also be supported.
+    The possibility of splitting the schema into two, to deal with proteins and
+    peptides separately, was discussed but it was finally decided that adopting
+    one schema in which the molecule type was generalized would allow more flexibility.
+    The file format will now include 3 major elements, that are cross-referenced
+    to each other - a molecular descriptor, an analysis results descriptor and
+    an analysis descriptor. </p>
+<p>The molecule descriptor might describe the structural information of a molecule
+  (descriptor, sequence, PTMs, structure), and references to the results. The
+  relationship between molecules, for example peptides as part of proteins will
+  need to be clearly defined, allowing previous results to be used as source
+  evidence. Analysis results might includes scores, spectrum annotation, reference
+  to originating spectra/analysis and to the matched molecule. The analysis descriptor
+  may contain name and version of the search engine and search parameters and
+  can refer to a protocol to define a series of analyses. It also cross-references
+  to the mzData file . A number of use cases for the schema were established,
+  and the need for naming within mzIdent and for the overall structure of the
+  schema to be consistent with that of mzData was emphasised.</p>
+<p>A working group which will concentrate on the further development of MzIdent
+  has been established and will aim to report significant progress at the HUPO
+  congress in Munich.</p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="ptm" id="ptm"></a></strong></span></p>
+<p><strong><em>Post-translational modifications</em></strong></p>
+<p>The identification of post-translational modifications, and an understanding
+  of their functional significance is key to all areas of proteomics. The joint
+  session started with presentations by John Garavelli (EBI) and David Creasy
+  (Matrix Science Ltd.) on the RESID and UniMod databases, respectively. The
+  RESID Database of Protein Modifications is a comprehensive collection of annotations
+  and structures for protein modifications and cross-links including pre-, co-,
+  and post-translational modifications, concentrating on naturally-occurring
+  protein modifications. UniMod is a database of protein modifications for use
+  in mass spectrometry applications and contains values for the mass differences
+  introduced by both natural and artificial modifications.</p>
+<p>The PSI-MI group has already produced a CV of natural modifications, based
+  on the information in RESID. It was recognized that for use in mass spectrometry
+  such a CV would have to include artificial modifications and a CV that includes
+  both aspects will be produced, for use by all modules within the GPS model. </p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="gps" id="gps"></a></strong></span></p>
+<p><strong><em>General Proteomics Standard</em></strong></p>
+<p>The session, chaired by Chris Taylor, started with a review of the current
+  status of the MIAPE documentation. This initiated a debate as to the whether
+  the standards should encompass a &#8220;minimum quality of data&#8221; suitable
+  for publication. It was felt that decisions on data quality should ultimately
+  be made by the journals and that data capture needs to be complete to enable
+  such decisions to be made. However the possibility of a &#8220;MIAPE Light&#8221; which
+  would describe a subset of the data, which would be required for deposition
+  in a repository prior to publication may be further discussed with the proteomics
+  journals.</p>
+<p>Four MIAPE documents are in various stages of completion</p>
+<p>&#8226; The 'Parent' Document<br>
+  &#8226; 
+  Mass Spectrometry (MS)<br>
+&#8226; 
+  MS Informatics (MSI)<br>
+&#8226; 
+  Gel Electrophoresis (GE)</p>
+<p>Following discussion, the GE document was further split into GE and GE Informatics.
+  The version of the MS document which was submitted to the reviewers was circulated
+  and lead to a debate as to whether or not delivery systems should be incorporated
+  into the MS document - MALDI / SELDI are currently integrated into the document
+  but HPLC columns are seen as a separate enough issue to justify an individual
+  document. More specific points included adding a requirement to record the
+  reasonable sensitivity range of the instrument, details of the voltage step-through
+  process for MALDI post-source decay and it was noted that mass accuracy is
+  determined on the day by calibration and this result should be recorded. For
+  some instruments the parameters file may not exist, so there is a need to provide
+  guidance on what to do under these circumstances. Finally, the MS Informatics
+  document was given a preliminary review. The description of experimental controls
+  was clarified and it noted that mzData should be added to the list of peak
+  list formats. Further clarification will be required of the type of spectra
+  that should be included as the raw data may be processed directly. For output,
+  both expected and observed masses of proteins and peptides should be recorded &#8211; this
+  will aid in the identification of PTMs although the lack of a CV for artefactual
+  PTMs was observed as an issue. </p>
+<p>The group then went on to produce detailed design specifications for Gel-ML,
+  the XML format for capture and interchange of GE data which will form another
+  module within the GPS data model. In analogy to the MS data, two formats will
+  be required:<br>
+  Gel-ML to capture the process of running a gel, capturing an image associated
+  with a minimal experimental description<br>
+  GelImAnML (working title) to capture the analysis of an image, to draw in quantitation
+  and also to allow the inclusion of images not related to an actual gel, for
+  example
+  average gels, artificial gels and test images.</p>
+<p>Work on the production of PSI-OM, an abstract model to describe a proteomics
+  experiment, was also advance over the course of the workshop. The model will
+  be implementation independent and will be neither hierarchical nor relational.
+  A standard XML schema derived from the model is currently being written and
+  a reference-only database will follow. Both the object model and XML schema
+  are expected to be mature by the Spring 2006 PSI workshop.</p>
+<p>The writing of ontologies is key to the entire modelling process and the area
+  where &#8220;omics&#8221; technologies converge, in that common methodologies
+  can be described by common vocabularies. All-encompassing ontologies need to
+  be usable, accessible and addressable by users. Finally, details of the FuGE
+  object model were described by Angel Pizarro as an example of one potential
+  schema that could be shared by transcriptomics, proteomics and metabolomics;
+  facilitating the generation of data sets containing heterogeneous data from
+  several omics platforms.</p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="summary" id="summary"></a></strong></span></p>
+<p><strong><em>Summary</em></strong></p>
+<p>Significant progress was made in all areas over the course of the workshop.
+  The PSI-MI standard has already been widely adopted by both data producers
+  and users but the changes made to the schema during these four days have increased
+  the overall simplicity of the model whilst enabling the exchange of more complex
+  data types, such as complexes and modeled interactions. The introduction of
+  new CVs will make it easier to both parse the data and to filter out unwanted
+  datasets. Additional tools will be provided to aid in conversion between the
+  different PSI-MI levels and to improve data quality. The PSI-MS mzData standard
+  is now being prepared for formal publication but has already been implemented
+  by a number of hardware and software manufacturers, with more expected to follow
+  suit in the near future. The specification for mzIdent has now been fully laid
+  out and it is expected that version 1.0 will be released by the end of 2005.
+  All this work, along with that of the newly formed groups looking at the exchange
+  of gel image and analysis data will be brought together under the umbrella
+  of the GPS, which is now working both on producing a working object model and
+  in the production on ontologies which, in many cases will be shared by many
+  applications and have more wider usage than solely the field of proteomics.
+  One obvious example of this is the CV for protein modification which is to
+  be written for usage across all the GPS modules. </p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong><a name="talks" id="talks"></a></strong></span></p>
+<p><span style="font-family: times new roman; font-size: 18px;"><strong>Talk
+      Downloads</strong></span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Sandra Orchard (<a href="mailto:orchard@ebi.ac.uk">orchard@ebi.ac.uk</a>), Chris Taylor
+  (<a href="mailto:christ@ebi.ac.uk">christ@ebi.ac.uk</a>),
+May 26th, 2005</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+
+</body></html>
