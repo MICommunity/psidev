@@ -1,7 +1,0 @@
-Name	Firstname	Affiliation	Email	04	05	06	MI	MS	GPS/MIAPE	PTM	comment
-Hoogland	Christine	Swiss Institute of Bioinformatics	christine.hoogland@isb-sib.ch	x	x	x		x	x	x	
-Binz	Pierre-Alain	SIB	pierre-alain.binz@isb-sib.ch	x	x	x		x	x	x	je me rejouis
-Taylor	Chris	EMBL-EBI	chris.taylor@ebi.ac.uk	x	x	x			x	None
-Vandenbrouck	yves	CEA	yves.vandenbrouck@cea.fr	x	x			x	
-Cho	Sang Yun	EMBL-EBI and YPRC	scho@ebi.ac.uk	x	x	x			x	
-Salwinski	Lukasz	UCLA-DOE Institute for Genomics & Proteomics 	lukasz@mbi.ucla.edu	x	x	x	x			x
