@@ -178,7 +178,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file:///$PROJECT_DIR$/psi-mi.iml" filepath="file:///$PROJECT_DIR$/psi-mi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/psi-mi.iml" filepath="$PROJECT_DIR$/psi-mi.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="false" project-jdk-name="1.4" />
