@@ -1,0 +1,402 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+<title>HUPO Proteomics Standards Initiative</title>
+<script language="JavaScript"  type="text/javascript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<body bgcolor=#FFFFFF link=blue vlink=blue lang=EN-GB>
+<p align=center> <a href="http://psidev.sourceforge.net/"><img border=0 width=113 height=75 src="http://psidev.sourceforge.net/images/psi.gif" align=left alt="Proteomics Standards Initiative"></a> <a href="http://www.hupo.org/"><img border=0 width=113 height=75 src="http://psidev.sourceforge.net/images/hupo.gif" align=right alt="HUPO Human Proteome Organisation"></a>
+<h1 align=center style="margin-bottom: 0;"><br>
+  HUPO<br>
+  Proteomics Standards Initiative</h1>
+<h3 style="margin-top: 0;">  <a name=missionStatement/><br>
+Mission Statement</h3>
+<p>The HUPO Proteomics Standards Initiative (PSI) defines community standards
+  for data representation in proteomics to facilitate data comparision, exchange
+  and verification. The PSI was founded at the HUPO meeting in Washington,
+  April 28-29, 2002 (see <a href="http://www.sciencemag.org/cgi/content/summary/296/5569/827?maxtoshow=&amp;HITS=10&amp;hits=10&amp;RESULTFORMAT=&amp;searchid=1027414274815_1591&amp;stored_search=&amp;FIRSTINDEX=0&amp;volume=296&amp;firstpage=827&amp;fdate=10/1/1995&amp;tdate=7/31/2002"> Science
+  296, 827</a>). </p>
+<h3><br>
+  Contents </h3>
+<ol start=1 type=1>
+  <li><a href="#newsAndFutureEvents">News and future events</a></li>
+  <li><a href="#projectStatusTable">Project status table</a></li>
+  <li><a href="#workGroups">Work groups</a></li>
+  <ol start=1 type=1>
+    <li><a href="#proteinProteinInteraction">Protein-Protein interaction</a> </li>
+    <li><a href="#massSpectrometry">Mass spectrometry</a> </li>
+    <li><a href="#generalProteomics">General proteomics standards</a></li>
+    <li><a href="#proteomicsInformatics">Proteomics informatics</a> </li>
+  </ol>
+  <li><a href="#publications">Publications</a> </li>
+  <li><a href="#previousEvents">Previous events</a> </li>
+  <li><a href="#mailingLists">Mailing lists</a></li>
+</ol>
+<h3><a name=newsAndFutureEvents id=newsAndFutureEvents><br>
+News and future events</a></h3>
+<ul>
+  <li>The next PSI meeting will take place September 25-27, 2006, on the premises of the American Chemical Society in Washington, DC.</li>
+</ul>
+<h3><a name=projectStatusTable id=projectStatusTable><br>
+Project status table</a></h3>
+<p></p>
+<table width="95%" height="371" border="0" cellpadding="3" cellspacing="2" bordercolor="#666666">
+  <tr>
+    <td width="18%" height="31" bgcolor="#FFFF00"><strong><em>&nbsp;Working Group</em></strong></td>
+    <td width="2%">&nbsp;</td>
+    <td width="27%" bgcolor="#FFFF00"><strong><em>&nbsp;Reporting Guidelines
+    (MIAPE)</em></strong></td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="17%" bgcolor="#FFFF00"><strong><em>&nbsp;Data exchange format</em></strong></td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="17%" bgcolor="#FFFF00"><strong><em>&nbsp;Controlled vocabulary</em></strong></td>
+    <td width="5%">&nbsp;</td>
+  </tr>
+  <tr>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>&nbsp;<a href="http://psidev.sourceforge.net/" target="_top">Cross-WG projects</a></strong></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>MIAPE Principles Document</strong></td>
+    <td bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td rowspan="3">&nbsp;</td>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>FuGE (M2)</strong></td>
+    <td rowspan="3" bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td rowspan="3">&nbsp;</td>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>FuGO</strong></td>
+    <td rowspan="3" bgcolor="#3399FF"><div align="center"></div>      <div align="center"></div>            <div align="center"><strong>1</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Study design and sample generation</strong></td>
+    <td bgcolor="#3399FF"><div align="center"><strong>1</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Statistical analysis of data</strong></td>
+    <td bgcolor="#999999"><div align="center"><strong>0</strong></div></td>
+  </tr>
+  <tr>
+    <td rowspan="2" bgcolor="#CCCCFF"><strong>&nbsp;<a href="http://psidev.sourceforge.net/gps/" target="_blank">Gels</a></strong></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Gel electrophoresis</strong></td>
+    <td bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>GelML</strong></td>
+    <td bgcolor="#FF9900"><div align="center"><strong>3</strong></div></td>
+    <td rowspan="2">&nbsp;</td>
+    <td rowspan="2" bgcolor="#CCCCFF"><strong>Gel CV</strong></td>
+    <td rowspan="2" bgcolor="#FF0000"><div align="center"></div>            <div align="center"><strong>2</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Gel image informatics</strong></td>
+    <td bgcolor="#FF0000"><div align="center"><strong>2</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>GIfML</strong></td>
+    <td bgcolor="#FF0000"><div align="center"><strong>2</strong></div></td>
+  </tr>
+  <tr>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>&nbsp;<a href="http://psidev.sourceforge.net/gps/" target="_blank">Separations</a></strong></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Chromatography</strong></td>
+    <td bgcolor="#FF0000"><div align="center"><strong>2</strong></div></td>
+    <td rowspan="3">&nbsp;</td>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>spML</strong></td>
+    <td rowspan="3" bgcolor="#FF0000"><div align="center"></div>      <div align="center"></div>      
+    <div align="center"><strong>2</strong></div></td>
+    <td rowspan="3">&nbsp;</td>
+    <td rowspan="3" bgcolor="#CCCCFF"><strong>SP CV</strong></td>
+    <td rowspan="3" bgcolor="#3399FF"><div align="center"></div>      <div align="center"></div>            <div align="center"><strong>1</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Capillary electrophoresis</strong></td>
+    <td bgcolor="#FF0000"><div align="center"><strong>2</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Separations and sample handling</strong></td>
+    <td bgcolor="#3399FF"><div align="center"><strong>1</strong></div></td>
+  </tr>
+  <tr>
+    <td rowspan="2" bgcolor="#CCCCFF"><strong>&nbsp;<a href="http://psidev.sourceforge.net/ms/" target="_blank">Mass spectrometry</a></strong></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Mass spectrometry</strong></td>
+    <td bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>mzData (v1.05)</strong></td>
+    <td bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td rowspan="2">&nbsp;</td>
+    <td rowspan="2" bgcolor="#CCCCFF"><strong>MS CV</strong></td>
+    <td rowspan="2" bgcolor="#FF0000"><div align="center"></div>      
+    <div align="center"><strong>2</strong></div></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Mass spectrometry informatics</strong></td>
+    <td bgcolor="#33FF00"><div align="center"><strong>4</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>analysisXML</strong></td>
+    <td bgcolor="#FF0000"><div align="center"><strong>2</strong></div></td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCFF"><strong>&nbsp;<a href="http://psidev.sourceforge.net/mi/rel25/" target="_blank">Molecular interactions</a></strong></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>Molecular interactions</strong></td>
+    <td bgcolor="#FF9900"><div align="center"><strong>3</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>MIF</strong></td>
+    <td bgcolor="#CC33CC"><div align="center"><strong>5</strong></div></td>
+    <td>&nbsp;</td>
+    <td bgcolor="#CCCCFF"><strong>PSI-MI (v2.5)</strong></td>
+    <td bgcolor="#CC33CC"><div align="center"><strong>5</strong></div></td>
+  </tr>
+</table>
+<br>
+<table width="824" height="37" border="0" cellpadding="3" cellspacing="2">
+  <tr>
+    <td width="100" bgcolor="#FFFF00"><strong>&nbsp;Color key:</strong></td>
+    <td width="100" bgcolor="#999999"><div align="center"><strong>(0) Nothing</strong></div></td>
+    <td width="100" bgcolor="#3399FF"><div align="center"><strong>(1) Drafting</strong></div></td>
+    <td width="100" bgcolor="#FF0000"><div align="center"><strong>(2) Alpha</strong></div></td>
+    <td width="100" bgcolor="#FF9900"><div align="center"><strong>(3) Beta</strong></div></td>
+    <td width="100" bgcolor="#33FF00"><div align="center"><strong>(4) Release</strong></div></td>
+    <td width="100" bgcolor="#CC33CC"><div align="center"><strong>(5) Published</strong></div></td>
+  </tr>
+</table>
+<h3></h3>
+<h3><a name=workGroups><br>
+  Work groups</a></h3>
+<h4><a name=proteinProteinInteraction id=proteinProteinInteraction>Protein-Protein
+    interaction</a></h4>
+<blockquote>
+  <p>Several well-established public databases for protein-protein interaction data
+    exist, including <a href="http://www.bind.ca/">BIND</a> , <a href="http://dip.doe-mbi.ucla.edu/">DIP</a> , <a href="http://www.ebi.ac.uk/intact">IntAct</a>, <a href="http://cbm.bio.uniroma2.it/mint/">MINT</a>, and <a href="http://mips.gsf.de/genre/proj/mpact/index.html">MIPS</a>. 
+    However, the data were originally provided in many different, incompatible formats. </p>
+  <p>The PSI Molecular Interaction work group develops and maintains a common
+    data standard that allows users to retrieve all relevant data from different
+    sites and perform comparative analysis of different data sets in a consistent format. 
+    The standard comprises an XML format and detailed controlled vocabularies,
+    and allows a detailed representation of a fully curated interaction record. </p>
+  <p>For a detailed documentation of the PSI Molecular Interaction standard,
+    please see <a href="http://psidev.sourceforge.net/mi/rel25/">http://psidev.sourceforge.net/mi/rel25/</a> and
+    the <a href="#pubmed_14755292">Nature Biotechnology paper</a>.&nbsp;</p>
+</blockquote>
+<h4><a name=massSpectrometry id=massSpectrometry>Mass spectrometry</a> </h4>
+<blockquote>
+  <p>Widely accepted public repositories for mass spectrometry based protein
+    identifications do not exist at present and detailed experimental results
+    are usually not available.</p>
+  <p>The PSI Mass Spectrometry work group develops a standard representation
+    of experimental spectra in the context of the experimental setup and the
+    analysed system. Such a format will support publications with detailed experimental
+    results, and will allow data exchange and the comparision of related proteomics
+    experiments beyond the local research team.</p>
+  <p><a href="http://psidev.sourceforge.net/ms/index.html">PSI-MS Format page.</a></p>
+</blockquote>
+<h4><a name=generalProteomics id=generalProteomics>General Proteomics Standards:
+    Formats, minimum reporting requirements and ontologies</a></h4>
+<blockquote style="margin-bottom: 0;">
+  <h4><em>PSI-OM, PSI-ML, MIAPE, PSI-Ont</em></h4>
+  <p>The generation and analysis of proteome data are now widespread. High-throughput
+    approaches are commonplace, and techniques continue to increase in complexity.
+    A standard way to represent proteomics data, and an agreed minimum required
+    level of detail, are both urgently required to facilitate the analysis, dissemination
+    and exchange of proteomics data.</p>
+  <p>Find out more at the <a href="http://psidev.sourceforge.net/gps/index.html">HUPO
+      PSI GPS Homepage</a>&nbsp;</p>
+</blockquote>
+<h4 style="margin-top: 0;"><a name=proteomicsInformatics id=generalProteomics> Proteomics Informatics</a></h4>
+<blockquote>
+  <p><em><strong>Main Deliverable: analysisXML and associated documentation / tools </strong></em></p>
+  <p>The PSI Proteomics Informatics standards group is a recent addition to the working groups of the Proteomics Standards Initiative.&nbsp; Please look at the <a href="proteomics-informatics/home.html">Proteomics Informatics Homepage</a> for more details the activities of the group, including how to get involved.</p>
+  <p><em><strong>Proteomics Informatics Group Charter</strong></em></p>
+  <p><em>The PSI Proteomics Informatics (PSI-PI) standards group consists of academic, government and industry researchers, software developers, publishers and instrument manufacturers.&nbsp; The goals of the group are:</em></p>
+  <p><em>to provide a set of minimal reporting requirements which augment the MIAPE reporting guidelines with respect to analysis of data derived from proteomics experiments; to provide vendor-neutral and standard formats for representing results of analyzing and processing experimental data; to foster adoption of the format by highlighting efforts made by vendors and individuals that utilize the format in their products.</em></p>
+</blockquote>
+<h3><a name=publications id=publications><br>
+  Publications</a> </h3>
+<ul type=disc>
+  <li><a name="pubmed_14755292"></a> Orchard, S., L. Montecchi-Palazzi, et al.
+    (2005). &quot;The use of common ontologies and controlled vocabularies to
+    enable data exchange and deposition for complex proteomic experiments.&quot; <u>Pac
+    Symp Biocomput</u>: 186-96.</li>
+  <li>Orchard, S., H. Hermjakob, et al. (2005). &quot;Further steps towards data
+    standardisation: the Proteomic Standards Initiative HUPO 3(rd) annual congress,
+    Beijing 25-27(th) October, 2004.&quot; <u>Proteomics</u> <b>5</b>(2): 337-9.</li>
+  <li>Orchard, S., H. Hermjakob, et al. (2005). &quot;Second Proteomics Standards
+    Initiative Spring Workshop; Siena, Italy 17-20th April 2005.&quot; <u>Exp
+    Review of Proteomics</u> <b>2</b>(3): 287-289.</li>
+  <li>Hermjakob, H., L. Montecchi-Palazzi, et al. (2004). &quot;The HUPO PSI's
+    molecular interaction format--a community standard for the representation
+    of protein interaction data.&quot; <u>Nat Biotechnol</u> <b>22</b>(2): 177-83. </li>
+  <li>Orchard, S., H. Hermjakob, et al. (2004). &quot;Proteomics and Data Standardisation.&quot; <u>Drug
+      Discovery Today: BIOSILICO</u> <b>2</b>(3): 91-93.</li>
+  <li>Orchard, S., H. Hermjakob, et al. (2004). &quot;Common interchange standards
+    for proteomics data: Public availability of tools and schema.&quot; <u>Proteomics</u> <b>4</b>(2):
+    490-1.</li>
+  <li>Orchard, S., C. F. Taylor, et al. (2004). &quot;Advances in the development
+    of common interchange standards for proteomic data.&quot; <u>Proteomics</u> <b>4</b>(8):
+    2363-5.</li>
+  <li>Orchard, S., W. Zhu, et al. (2003). &quot;Further advances in the development
+    of a data interchange standard for proteomics data.&quot; <u>Proteomics</u> <b>3</b>(10):
+    2065-6.</li>
+  <li>Orchard, S., H. Hermjakob, et al. (2003). &quot;The proteomics standards
+    initiative.&quot; <u>Proteomics</u> <b>3</b>(7): 1374-6.</li>
+  <li>Orchard, S., P. Kersey, et al. (2003). &quot;The HUPO Proteomics Standards
+    Initiative meeting: towards common standards for exchanging proteomics data.&quot; <u>Comparative
+    and Functional Genomics</u> <b>4</b>: 16-19.</li>
+  <li>Orchard, S., P. Kersey, et al. (2003). &quot;Progress in establishing common
+    standards for exchanging proteomics data. The second meeting of the HUPO
+    Proteomics Standards Initiative.&quot; <u>Comparative and Functional Genomics</u> <b>4</b>(2):
+    203-206.</li>
+</ul>
+<h3><a name=previousEvents id=previousEvents/><br>
+  Previous events</h3>
+<ul type=disc>
+  <li> PSI Spring Meeting '06, San Francisco
+    <ul style="margin-top: 0; margin-bottom: 0;">
+      <li><a href="meetings/2006-04/index.html">Original meeting announcement and agenda</a> </li>
+  </ul>
+  <li>PSI Autumn Meeting '05, Geneva,
+    <ul type=circle>
+      <li><a href="http://psidev.sourceforge.net/meetings/2005-09/index.html">Original
+          meeting announcement and agenda</a></li>
+      <li><a href="http://psidev.sf.net/meetings/2005-09/report.html">Meeting
+          report</a></li>
+    </ul>
+  <li>PSI Spring Meeting '05, Siena, <st1:country-region>Italy
+    <ul type=circle>
+      <li><a href="http://psidev.sourceforge.net/meetings/2005-04/index.html">Original
+          meeting announcement and agenda</a>
+      <li><a href="http://psidev.sf.net/meetings/2005-04/report.html">Meeting
+          report</a></li>
+      <li><a href="meetings/2004-10/2004-10-beijing-agenda.html">PSI session</a> (October
+        23-24) at the <a href="http://www.hupo2004.cn/"> HUPO world congress
+        2004</a>, Beijing, October 25-27.</li>
+    </ul>
+  <li>July 2004: PSI-MS mini-workshop, EBI, Cambridgeshire,</li>
+  <li>April 19-21, 2004: PSI spring meeting: Carros, near Nice, Cote d'Azur,
+    France
+    <ul type=circle>
+      <li><a href="http://psidev.sourceforge.net/meetings/2005-04/index.html">Original
+          meeting announcement and agenda</a></li>
+      <li><a href="meetings/2004-04/2004-04-report.html">Meeting report</a> (detailed), <a href="http://www3.interscience.wiley.com/cgi-bin/abstract/109086916/ABSTRACT"> Proteomics
+          paper</a></li>
+    </ul>
+  <li>November 2003: The <a href="http://psidev.sf.net/mi/xml/doc/user">PSI Molecular
+      Interaction standard </a>paper has been accepted for publication in Nature
+      Biotechnology.&nbsp;</li>
+  <li>October 8, 2003 - October 11, 2003: <a href="http://www.hupo2003.com/">HUPO
+      World Congress, Montreal</a></li>
+  <ul type=circle>
+    <li><a href="http://psidev.sourceforge.net/meetings/2003-10/2003-10-montreal.html">Meeting
+        report</a></li>
+  </ul>
+  <li>July 30, 2003: Mass Spectrometry group <a href="http://psidev.sourceforge.net/ms/docs/mid-2003.sum.html">UPDATES</a></li>
+  <li>January 22, 2003 - January 24, 2003: Full PSI meeting in Hinxton, Cambridge, <st1:country-region>UK</st1:country-region> </li>
+  <ul type=circle>
+    <li><a href="http://psidev.sourceforge.net/meetings/2003-01/2003-01-report.html">Report</a> </li>
+    <li><a href="http://psidev.sourceforge.net/meetings/2003-01/program.html">Programme</a> </li>
+  </ul>
+  <li>November 21-24, 2002: PSI Satellite meeting of the First HUPO World Congress<br>
+    The PSI working groups had an informal coordination meeting during the <a href="http://www.hupo.org/new/first_annual_hupo_congress.html"> First
+    HUPO World Congress</a> in Paris and have presented their current status
+    during the congress, see the <a href="http://psidev.sourceforge.net/meetings/2002-11/report.html">report</a>. </li>
+  <li>October 19-20, 2002: PSI meeting in Cambridge, UK<br>
+    An initial PSI meeting was held at the European Bioinformatics Institute,
+      Cambridge, UK.</li>
+  <ul type=circle style="margin-bottom: 0">
+    <li><a href="http://psidev.sourceforge.net/meetings/2002-10/program.html">Programme</a> </li>
+    <li><a href="http://psidev.sourceforge.net/meetings/2002-10/report.htm">Report</a>&nbsp;</li>
+  </ul>
+</ul>
+<h3><a name=mailingLists id=mailingLists><br>
+  Mailing lists</a></h3>
+<ul type=disc>
+  <li>psidev-announce@lists.sourceforge.net<br>
+    General PSI Announcements.<br>
+    You can <a href="mailto:psidev-announce@lists.sourceforge.net">mail psidev-announce@lists.sourceforge.net</a>, <a href="http://sourceforge.net/mailarchive/forum.php?forum_id=12716">browse
+    list archive</a> , or <a href="http://lists.sourceforge.net/lists/listinfo/psidev-announce">subscribe/unsubscribe</a>.</li>
+  <li>psidev-ms-dev@lists.sourceforge.net<br>
+    Private discussion list for mass spectroscopy standard development.<br>
+    You can <a href="mailto:psidev-ms-dev@lists.sourceforge.net">mail psidev-ms-dev@lists.sourceforge.net</a>, <a
+     href="http://sourceforge.net/mailarchive/forum.php?forum_id=12725">browse
+    list archive</a>, or <a
+     href="http://lists.sourceforge.net/lists/listinfo/psidev-ms-dev">subscribe/unsubscribe</a>. </li>
+  <li>psidev-gps-dev@lists.sourceforge.net<br>
+    Private discussion list for general proteomics standards development.<br>
+    You can <a href="mailto:psidev-gps-dev@lists.sourceforge.net">mail psidev-gps-dev@lists.sourceforge.net</a>,
+    or <a
+     href="http://lists.sourceforge.net/lists/listinfo/psidev-gps-dev">subscribe/unsubscribe</a>. </li>
+  <li>psidev-mi-dev@lists.sourceforge.net<br>
+    Public discussion list for development of molecular interaction standard.<br>
+    You can <a href="mailto:psidev-mi-dev@lists.sourceforge.net">mail psidev-mi-dev@lists.sourceforge.net</a>, <a
+     href="http://sourceforge.net/mailarchive/forum.php?forum_id=12726">browse
+    list archive</a>, or <a
+     href="http://lists.sourceforge.net/lists/listinfo/psidev-mi-dev">subscribe/unsubscribe</a>. </li>
+  <li>psidev-vocab@lists.sourceforge.net<br>
+    Private discussion list for development of controlled vocabularies.<br>
+    You can <a href="mailto:psidev-vocab@lists.sourceforge.net">mail psidev-vocab@lists.sourceforge.net</a>,
+    or <a
+     href="http://lists.sourceforge.net/lists/listinfo/psidev-vocab">subscribe/unsubscribe</a>.</li>
+</ul>
+<br>
+<hr>
+<p>Henning Hermjakob, <a href="mailto:hhe@ebi.ac.uk">hhe@ebi.ac.uk</a>, May
+  28, 2006</p>
+<script type="text/javascript">
+<!-- 
+var sc_project=1308952; 
+var sc_invisible=1; 
+var sc_partition=11; 
+var sc_security="9967431d"; 
+var sc_https=1; 
+var sc_remove_link=1; 
+//-->
+</script>
+<script type="text/javascript" src="https://secure.statcounter.com/counter/counter_xhtml.js"></script>
+<noscript>
+<div class="statcounter"> <img class="statcounter" src="https://c12.statcounter.com/counter.php?sc_project=1308952&java=0&security=9967431d&invisible=1" alt="web stats" />  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp; </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp; </p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p style="margin-bottom: 0;">&nbsp;</p>
+</div>
+</noscript>
+</body>
+</html>
+
