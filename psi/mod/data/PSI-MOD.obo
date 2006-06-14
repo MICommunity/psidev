@@ -5961,7 +5961,7 @@ broad_synonym: "carboxyl" []
 related_synonym: "2-amino-1,1,2-ethanetricarboxylic acid" []
 related_synonym: "aspartic acid carboxylation" [UniMod:name]
 related_synonym: "Carboxy" [PSI-MS:proposed name]
-related_synonym: "gamma-carboxylation [misnomer]"
+related_synonym: "gamma-carboxylation [misnomer]" []
 xref_analog: DiffAvg: "44.01"
 xref_analog: DiffFormula: "C 1 H 0 N 0 O 2"
 xref_analog: DiffMono: "43.989829"
