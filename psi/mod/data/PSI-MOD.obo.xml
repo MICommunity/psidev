@@ -2,9 +2,9 @@
 <obo>
   <source>
     <source_type>file</source_type>
-    <source_path>PSI-MOD-beta-011.obo</source_path>
-    <source_md5>f7e3154fda6b9673b8d28c3f612ea0d5</source_md5>
-    <source_mtime>1149864260</source_mtime>
+    <source_path>PSI-MOD.obo</source_path>
+    <source_md5>abd5035e40d62c432afde15e3a48f279</source_md5>
+    <source_mtime>1150296374</source_mtime>
   </source>
   <header>
     <format-version>1.0</format-version>
@@ -1223,6 +1223,16 @@
         <acc>alternate name</acc>
         <dbname>RESID</dbname>
       </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Isoleucyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text></synonym_text>
     </synonym>
     <synonym scope="exact">
       <synonym_text>Ile</synonym_text>
@@ -3225,7 +3235,7 @@
     <def>
       <defstr>a protein modification that effectively converts an L-glutamine residue to 2-pyrrolidone-5-carboxylic acid</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>123</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -3249,6 +3259,7 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>DeltaMass gives a formula C 5 H 5 N 1 O 2 with mass 111.1</comment>
     <synonym scope="related">
       <synonym_text>2-oxopyrrolidine-5-carboxylic acid</synonym_text>
       <dbxref>
@@ -3278,6 +3289,13 @@
       </dbxref>
     </synonym>
     <synonym scope="related">
+      <synonym_text>Pyr</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
       <synonym_text>pyroglutamic acid</synonym_text>
       <dbxref>
         <acc>alternate name</acc>
@@ -3286,6 +3304,20 @@
     </synonym>
     <synonym scope="related">
       <synonym_text>Pyroglutamic Acid formed from Gln</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Pyroglutamyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N-pyrrolidone carboxyl (N terminus)</synonym_text>
       <dbxref>
         <acc>name</acc>
         <dbname>DeltaMass</dbname>
@@ -3367,6 +3399,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-glutamic acid residue to L-gamma-carboxyglutamic acid</defstr>
       <dbxref>
+        <acc>217</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>1807167</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -3403,6 +3439,7 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>DeltaMass has the formula C 6 H 7 N 5 O 1 with mass 173</comment>
     <synonym scope="related">
       <synonym_text>1-carboxyglutamic acid [misnomer]</synonym_text>
       <dbxref>
@@ -3425,6 +3462,13 @@
       </dbxref>
     </synonym>
     <synonym scope="related">
+      <synonym_text>Carboxy Glutamyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
       <synonym_text>gamma-carboxyl</synonym_text>
       <dbxref>
         <acc>name</acc>
@@ -3436,6 +3480,13 @@
       <dbxref>
         <acc>alternate name</acc>
         <dbname>RESID</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Gla</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -4056,6 +4107,10 @@
     <def>
       <defstr>modification from RESID</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>12923550</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -4098,6 +4153,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Phospho Seryl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -4183,6 +4245,10 @@
     <def>
       <defstr>modification from RESID</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>12923550</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -4214,6 +4280,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Phospho Threonyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -4299,6 +4372,10 @@
     <def>
       <defstr>modification from RESID</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>10226369</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -4330,6 +4407,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Phospho Tyrosinyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -6106,6 +6190,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-lysine residue to N6-acetyl-L-lysine</defstr>
       <dbxref>
+        <acc>214</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>11369851</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -6155,6 +6243,13 @@
       <dbxref>
         <acc>alternate name</acc>
         <dbname>RESID</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N-acetyl Lysyl</synonym_text>
+      <dbxref>
+        <acc></acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -7006,6 +7101,10 @@
     <def>
       <defstr>a protein modification that effectively converts an glycine residue to N-methylglycine</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>1593629</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -7014,6 +7113,7 @@
         <dbname>RESID</dbname>
       </dbxref>
     </def>
+    <comment>DeltaMass also has an entry for the free amino acid</comment>
     <synonym scope="related">
       <synonym_text>Methyl</synonym_text>
       <dbxref>
@@ -7026,6 +7126,27 @@
       <dbxref>
         <acc>alternate name</acc>
         <dbname>RESID</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Sar</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Sarcosine</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Sarcosyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -7112,6 +7233,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-methionine residue to N-methyl-L-methionine</defstr>
       <dbxref>
+        <acc>169</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>323502</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -7136,6 +7261,13 @@
       <dbxref>
         <acc>alternate name</acc>
         <dbname>RESID</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Methyl Methionyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -8020,6 +8152,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-glutamic acid residue to L-glutamate 5-methyl ester</defstr>
       <dbxref>
+        <acc>167</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>16888</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -8032,6 +8168,7 @@
         <dbname>RESID</dbname>
       </dbxref>
     </def>
+    <comment>DeltaMass gives the formula C 6 H 9 O 1 N 3 with mass 143</comment>
     <synonym scope="related">
       <synonym_text>5-methyl-L-glutamate</synonym_text>
       <dbxref>
@@ -8058,6 +8195,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>O-methyl Glutamyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -8469,6 +8613,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-lysine residue to N6-methyl-L-lysine</defstr>
       <dbxref>
+        <acc>165</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>3926756</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -8489,6 +8637,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N-methyl Lysyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -11348,6 +11503,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-cysteine residue to S-palmitoyl-L-cysteine</defstr>
       <dbxref>
+        <acc>303</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>1872406</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -11380,6 +11539,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>S-palmityl Cystenyl</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -12035,12 +12201,26 @@
         <acc>AA0114</acc>
         <dbname>RESID</dbname>
       </dbxref>
+      <dbxref>
+        <acc>299</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </def>
     <synonym scope="related">
       <synonym_text>carboxy</synonym_text>
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>carboxyl</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>lysine carboxylation</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -12712,11 +12892,12 @@
         <acc>AA0121</acc>
         <dbname>RESID</dbname>
       </dbxref>
+      <dbxref>
+        <acc>99</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: -1</comment>
-    <synonym scope="related">
-      <synonym_text>2-amino-adipic acid semialdahyde</synonym_text>
-    </synonym>
     <synonym scope="related">
       <synonym_text>Allysine (from Lysine)</synonym_text>
       <dbxref>
@@ -16891,9 +17072,20 @@
         <acc>AA0171</acc>
         <dbname>RESID</dbname>
       </dbxref>
+      <dbxref>
+        <acc>306</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </def>
     <synonym scope="related">
       <synonym_text>2-amino-3-(sulfothio)propanoic acid</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>sulfitolysis</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </synonym>
     <synonym scope="related">
       <synonym_text>Sulfo</synonym_text>
@@ -16994,6 +17186,13 @@
     </synonym>
     <synonym scope="related">
       <synonym_text>Sulphation (of O of Tyrosine)</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Tyrosinyl Sulphate [misnomer]</synonym_text>
       <dbxref>
         <acc>name</acc>
         <dbname>DeltaMass</dbname>
@@ -17603,6 +17802,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-serine residue to dehydroalanine</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>10220322</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -17635,12 +17838,18 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
-    <comment>incidental to RESID:AA0187; incidental to RESID:AA0188</comment>
     <synonym scope="related">
       <synonym_text>Dehydrated</synonym_text>
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Dha</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -17708,6 +17917,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-threonine residue to (Z)-dehydrobutyrine</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>1547888</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -17729,6 +17942,20 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Dehydroamino butyric acid</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Dhb</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="exact">
@@ -22897,7 +23124,7 @@
     <def>
       <defstr>a protein modification that dioxygenates an L-methionine residue to L-methionine sulfone</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>205</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -22917,12 +23144,19 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
-    <comment>From DeltaMass: Average Mass: 32</comment>
+    <comment>DeltaMass gives the formula C 5 H 9 N 3 O 1 S 1 with mass 163</comment>
     <synonym scope="related">
       <synonym_text>Dioxidation</synonym_text>
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>MethionylSulphone</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -27063,9 +27297,27 @@
         <acc>AA0304</acc>
         <dbname>RESID</dbname>
       </dbxref>
+      <dbxref>
+        <acc>38</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>299</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </def>
+    <synonym scope="broad">
+      <synonym_text>carboxyl</synonym_text>
+    </synonym>
     <synonym scope="related">
       <synonym_text>2-amino-1,1,2-ethanetricarboxylic acid</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>aspartic acid carboxylation</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </synonym>
     <synonym scope="related">
       <synonym_text>Carboxy</synonym_text>
@@ -27073,6 +27325,9 @@
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
       </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>gamma-carboxylation [misnomer]</synonym_text>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -27216,6 +27471,10 @@
     <def>
       <defstr>modification from RESID</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>1734967</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -27228,6 +27487,7 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>DeltaMass gives no formula with mass as 454.</comment>
     <synonym scope="related">
       <synonym_text>coenzyme A L-cysteine mixed disulfide</synonym_text>
     </synonym>
@@ -29753,6 +30013,10 @@
     <def>
       <defstr>a protein modification that effectively converts an L-tyrosine residue to N-methyl-L-tyrosine</defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>AA0338</acc>
         <dbname>RESID</dbname>
       </dbxref>
@@ -29766,6 +30030,13 @@
     </synonym>
     <synonym scope="related">
       <synonym_text>N-methyltyrosine</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N-methyl Tyrosinyl [misnomer]</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
     </synonym>
     <synonym scope="exact">
       <synonym_text>NMeTyr</synonym_text>
@@ -35518,7 +35789,6 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00004</is_a>
     <is_a>MOD:00601</is_a>
     <is_a>MOD:00906</is_a>
     <namespace>PSI-MOD</namespace>
@@ -36120,6 +36390,13 @@
     </def>
     <comment>From DeltaMass: Average Mass: 162 Formula:C6 H10 05 Monoisotopic Mass Change:162.053 Average Mass Change:162.143 References:PE Sciex</comment>
     <synonym scope="related">
+      <synonym_text>O-Glycosyl-</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
       <synonym_text>Hex</synonym_text>
       <dbxref>
         <acc>proposed name</acc>
@@ -36176,12 +36453,12 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>T, N, K, W</name>
+      <name>C, K, N, P, T, S, W</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Artifact</name>
+      <name>Natural</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -36933,9 +37210,6 @@
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
       </dbxref>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>Tripalmitate</synonym_text>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -39224,11 +39498,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>360</acc>
+        <acc>100</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>100</acc>
+        <acc>360</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -39288,7 +39562,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00004</is_a>
+    <is_a>MOD:00915</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -39296,6 +39570,14 @@
     <name>proline oxidation to glutamic semialdehyde</name>
     <def>
       <defstr>modification from UniMod Chemical derivative</defstr>
+      <dbxref>
+        <acc>354</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>2563380</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>11120890</acc>
         <dbname>PubMed</dbname>
@@ -39305,11 +39587,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>358</acc>
+        <acc>103</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>103</acc>
+        <acc>358</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -39318,6 +39600,13 @@
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Oxidation of proline to gamma-glutamyl semialdehyde</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
     <synonym scope="related">
@@ -39368,7 +39657,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00004</is_a>
+    <is_a>MOD:00915</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -39377,14 +39666,42 @@
     <def>
       <defstr>modification from UniMod Chemical derivative</defstr>
       <dbxref>
+        <acc>351</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>1680314</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
         <acc>9252331</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>11120890</acc>
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
         <acc>104</acc>
         <dbname>UniMod</dbname>
       </dbxref>
+      <dbxref>
+        <acc>344</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>367</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </def>
+    <comment>From DeltaMass: Average Mass: -27 Monoisotopic Mass Change:-27.06 Average Mass Change:-27.07 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.</comment>
+    <synonym scope="related">
+      <synonym_text>arginine oxidation to gamma-glutamyl semialdehyde</synonym_text>
+      <dbxref>
+        <acc>alternate name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+    </synonym>
     <synonym scope="related">
       <synonym_text>Arg-&gt;GluSA</synonym_text>
       <dbxref>
@@ -39394,6 +39711,16 @@
     </synonym>
     <synonym scope="related">
       <synonym_text>Argglutamicsealde</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>OxArgGlusemal</synonym_text>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Oxidation of arginine (to glutamic acid)</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -39440,7 +39767,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00004</is_a>
+    <is_a>MOD:00902</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -40249,6 +40576,14 @@
     <def>
       <defstr>The two glycine residues left on ubiquitinylated lysine after tryptic digestion.</defstr>
       <dbxref>
+        <acc>11125103</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>12612601</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
         <acc>AA0125</acc>
         <dbname>RESID</dbname>
       </dbxref>
@@ -40259,9 +40594,10 @@
     </def>
     <synonym scope="related">
       <synonym_text>GlyGly</synonym_text>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>GlyGly</synonym_text>
+      <dbxref>
+        <acc>proposed name</acc>
+        <dbname>PSI-MS</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -40614,7 +40950,7 @@
     <id>MOD:00497</id>
     <name>thioacylation of primary amines (N-term and Lys)</name>
     <def>
-      <defstr>modification from UniMod Other</defstr>
+      <defstr>modification from UniMod  [(35)S]dithiobis(succinimidyl propionate) crosslinking</defstr>
       <dbxref>
         <acc>957432</acc>
         <dbname>PubMed</dbname>
@@ -41762,7 +42098,7 @@
     <id>MOD:00512</id>
     <name>Hex3</name>
     <def>
-      <defstr>modification from UniMod N-linked glycosylation, Hex(3)</defstr>
+      <defstr>a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with three hexose sugar groups through glycosidic bonds </defstr>
       <dbxref>
         <acc>AA0151</acc>
         <dbname>RESID</dbname>
@@ -41815,7 +42151,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>N</name>
+      <name>none</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -42218,13 +42554,6 @@
     </def>
     <synonym scope="related">
       <synonym_text>HexNAc(2)dHex(2)</synonym_text>
-      <dbxref>
-        <acc>proposed name</acc>
-        <dbname>PSI-MS</dbname>
-      </dbxref>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>HexNAc(1)dHex(2)</synonym_text>
       <dbxref>
         <acc>proposed name</acc>
         <dbname>PSI-MS</dbname>
@@ -45319,10 +45648,14 @@
     <id>MOD:00564</id>
     <name>Applied Biosystems iTRAQ(TM) multiplexed quantitation chemistry</name>
     <def>
-      <defstr>modification from UniMod Isotopic label. URL:http://docs.appliedbiosystems.com/pebiodocs/04351918.pdf </defstr>
+      <defstr>modification from UniMod Isotopic label.</defstr>
       <dbxref>
         <acc>214</acc>
         <dbname>UniMod</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>http://docs.appliedbiosystems.com/pebiodocs/04351918.pdf</acc>
+        <dbname>URL</dbname>
       </dbxref>
     </def>
     <synonym scope="related">
@@ -45784,11 +46117,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>343</acc>
+        <acc>249</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>249</acc>
+        <acc>343</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -45853,11 +46186,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>353</acc>
+        <acc>250</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>250</acc>
+        <acc>353</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -45923,11 +46256,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>357</acc>
+        <acc>251</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>251</acc>
+        <acc>357</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -45993,11 +46326,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>361</acc>
+        <acc>252</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>252</acc>
+        <acc>361</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -47219,7 +47552,7 @@
   </term>
   <term>
     <id>MOD:00593</id>
-    <name>covalent modification of lysine by cross-linking reagent</name>
+    <name>covalent modification of lysine by omega-maleimido alkanoyl N-hydroxysuccinimido esters</name>
     <def>
       <defstr>modification from UniMod Chemical derivative</defstr>
       <dbxref>
@@ -47227,6 +47560,7 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>J. Prot. Chem. 2, 263-277, 1983</comment>
     <synonym scope="related">
       <synonym_text>SSD</synonym_text>
       <dbxref>
@@ -47610,6 +47944,10 @@
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
+        <acc>:9629898</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
         <acc>280</acc>
         <dbname>UniMod</dbname>
       </dbxref>
@@ -47665,7 +48003,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>, K</name>
+      <name>E, K</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -47675,7 +48013,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>TermSpec</dbname>
-      <name>none</name>
+      <name>N-term</name>
     </xref_analog>
     <is_a>MOD:00004</is_a>
     <namespace>PSI-MOD</namespace>
@@ -47839,7 +48177,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>TermSpec</dbname>
-      <name>none</name>
+      <name>N-term</name>
     </xref_analog>
     <is_a>MOD:00004</is_a>
     <namespace>PSI-MOD</namespace>
@@ -48057,6 +48395,10 @@
     <name>tryptophan oxidation to oxolactone</name>
     <def>
       <defstr>modification from UniMod Chemical derivative</defstr>
+      <dbxref>
+        <acc>:7949339</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>288</acc>
         <dbname>UniMod</dbname>
@@ -48752,7 +49094,7 @@
   </term>
   <term>
     <id>MOD:00618</id>
-    <name>carboxylation</name>
+    <name>tryptophan carboxylation</name>
     <def>
       <defstr>modification from UniMod Chemical derivative</defstr>
       <dbxref>
@@ -48760,6 +49102,7 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>there is no citation for this UniMod entry</comment>
     <synonym scope="related">
       <synonym_text>Carboxy</synonym_text>
       <dbxref>
@@ -49164,74 +49507,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00624</id>
-    <name>sulfitolysis</name>
-    <def>
-      <defstr>modification from UniMod Chemional</defstr>
-      <dbxref>
-        <acc>306</acc>
-        <dbname>UniMod</dbname>
-      </dbxref>
-    </def>
-    <synonym scope="related">
-      <synonym_text>Sulfitolysis</synonym_text>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>Sulfo</synonym_text>
-      <dbxref>
-        <acc>proposed name</acc>
-        <dbname>PSI-MS</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>80.06</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>O 3 S 1</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>79.956815</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>K</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>Artifact</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00004</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00625</id>
     <name>N-methylmaleimide</name>
     <def>
@@ -49309,11 +49584,11 @@
         <dbname>PubMed</dbname>
       </dbxref>
       <dbxref>
-        <acc>478</acc>
+        <acc>315</acc>
         <dbname>UniMod</dbname>
       </dbxref>
       <dbxref>
-        <acc>315</acc>
+        <acc>478</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
@@ -49446,15 +49721,60 @@
   </term>
   <term>
     <id>MOD:00628</id>
-    <name>ubiquitinated lysine</name>
+    <name>Hex2</name>
     <def>
-      <defstr>Residue modification due to a cross-link between a lysine and a glycine from the ubiquitine protein.n</defstr>
+      <defstr>a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with two hexose sugar groups through glycosidic bonds </defstr>
       <dbxref>
-        <acc>11125103</acc>
-        <dbname>PubMed</dbname>
+        <acc>ref</acc>
+        <dbname>PSI-MOD</dbname>
       </dbxref>
     </def>
-    <is_a>MOD:00134</is_a>
+    <synonym scope="related">
+      <synonym_text>Hex3</synonym_text>
+    </synonym>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffAvg</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffFormula</dbname>
+      <name>C 12 H 22 O 11</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffMono</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Formula</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassAvg</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassMono</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Origin</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Source</dbname>
+      <name>Natural</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>TermSpec</dbname>
+      <name>none</name>
+    </xref_analog>
+    <is_a>MOD:00725</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -52010,7 +52330,12 @@
         <dbname>PSI-MOD</dbname>
       </dbxref>
     </synonym>
-    <is_a>MOD:00000</is_a>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Source</dbname>
+      <name>Natural</name>
+    </xref_analog>
+    <is_a>MOD:00764</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -52353,10 +52678,28 @@
     <def>
       <defstr>a protein modification that effectively forms a double bond by removing a molecule of water from a residue </defstr>
       <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
         <acc>ref</acc>
         <dbname>PSI-MOD</dbname>
       </dbxref>
     </def>
+    <synonym scope="related">
+      <synonym_text>Dehydration</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>-H2O</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
     <synonym scope="exact">
       <synonym_text>dHyRes</synonym_text>
       <dbxref>
@@ -52364,6 +52707,51 @@
         <dbname>PSI-MOD</dbname>
       </dbxref>
     </synonym>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffAvg</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffFormula</dbname>
+      <name>H -2 O -1</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffMono</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Formula</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassAvg</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassMono</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Origin</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Source</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>TermSpec</dbname>
+      <name>none</name>
+    </xref_analog>
     <is_a>MOD:00000</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
@@ -53054,7 +53442,7 @@
     <def>
       <defstr>a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a pentose sugar group through a glycosidic bond</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>172</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -53062,9 +53450,16 @@
         <dbname>PSI-MOD</dbname>
       </dbxref>
     </def>
-    <comment>From DeltaMass: Average Mass: 132</comment>
+    <comment>for Pentoses DeltaMass gives mass 132, for Pentosyl DeltaMass gives formula C 6 H 10 N4 with mass 146</comment>
     <synonym scope="related">
       <synonym_text>Pentoses (Ara, Rib, Xyl)</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Pentosyl</synonym_text>
       <dbxref>
         <acc>name</acc>
         <dbname>DeltaMass</dbname>
@@ -54449,15 +54844,60 @@
   </term>
   <term>
     <id>MOD:00761</id>
-    <name>sumoylated lysine</name>
+    <name>Hex1</name>
     <def>
-      <defstr>Residue modification due to a cross-link between a lysine and a glycine from the sumo (Small Ubiquitin-related MOdifier) protein.</defstr>
+      <defstr>a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with one hexose sugar group through a glycosidic bond</defstr>
       <dbxref>
-        <acc>12612601</acc>
-        <dbname>PubMed</dbname>
+        <acc>ref</acc>
+        <dbname>PSI-MOD</dbname>
       </dbxref>
     </def>
-    <is_a>MOD:00134</is_a>
+    <synonym scope="related">
+      <synonym_text>Hex3</synonym_text>
+    </synonym>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffAvg</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffFormula</dbname>
+      <name>C 6 H 10 O 5</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>DiffMono</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Formula</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassAvg</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>MassMono</dbname>
+      <name>none</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Origin</dbname>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Source</dbname>
+      <name>Natural</name>
+    </xref_analog>
+    <xref_analog>
+      <acc></acc>
+      <dbname>TermSpec</dbname>
+      <name>none</name>
+    </xref_analog>
+    <is_a>MOD:00725</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -54594,15 +55034,19 @@
   </term>
   <term>
     <id>MOD:00764</id>
-    <name>neddylated lysine</name>
+    <name>glycoconjugated residue</name>
     <def>
-      <defstr>Residue modification due to a cross-link between a lysine and a glycine from the Nedd8 protein family.</defstr>
+      <defstr>a protein modification that forms an adduct with a carbohydrate-like group either through formation of a glycosidic bond or through glycation formation of a 1-deoxy-2-keto-1-yl bond. </defstr>
       <dbxref>
-        <acc>12612601</acc>
+        <acc>:3743566</acc>
         <dbname>PubMed</dbname>
       </dbxref>
+      <dbxref>
+        <acc>ref</acc>
+        <dbname>PSI-MOD</dbname>
+      </dbxref>
     </def>
-    <is_a>MOD:00134</is_a>
+    <is_a>MOD:00000</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -54611,7 +55055,7 @@
     <def>
       <defstr>a protein modification that effectively converts an L-cysteine residue to S-(L-cysteinyl)-L-cysteine</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>260</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -54636,6 +55080,13 @@
     </synonym>
     <synonym scope="related">
       <synonym_text>Cysteinylation</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>S-cystenyl cystenyl</synonym_text>
       <dbxref>
         <acc>name</acc>
         <dbname>DeltaMass</dbname>
@@ -54700,13 +55151,12 @@
     <id>MOD:00766</id>
     <name>C terminal -K from HC of MAb</name>
     <def>
-      <defstr>modification from UniMod Post-translational - missing ref - </defstr>
+      <defstr>modification from UniMod Post-translational - C-terminal loss of lysine</defstr>
       <dbxref>
         <acc>313</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
-    <comment>not obvious</comment>
     <synonym scope="related">
       <synonym_text>Lys-loss</synonym_text>
       <dbxref>
@@ -54763,43 +55213,64 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00771</id>
-    <name>arginine oxidation to glutamic semialdehyde</name>
+    <id>MOD:00767</id>
+    <name>glycated residue</name>
     <def>
-      <defstr>modification from UniMod</defstr>
+      <defstr>a protein modification that forms an adduct with a carbohydrate-like group through glycation formation of a 1-deoxyketo-1-yl residue adduct. </defstr>
       <dbxref>
-        <acc>11120890</acc>
-        <dbname>PubMed</dbname>
-      </dbxref>
-      <dbxref>
-        <acc>344</acc>
-        <dbname>UniMod</dbname>
+        <acc>ref</acc>
+        <dbname>PSI-MOD</dbname>
       </dbxref>
     </def>
     <synonym scope="related">
-      <synonym_text>Arg-&gt;GluSA</synonym_text>
-      <dbxref>
-        <acc>proposed name</acc>
-        <dbname>PSI-MS</dbname>
-      </dbxref>
+      <synonym_text>Amadori product</synonym_text>
     </synonym>
+    <synonym scope="exact">
+      <synonym_text>glycation</synonym_text>
+    </synonym>
+    <xref_analog>
+      <acc></acc>
+      <dbname>Source</dbname>
+      <name>Artifact</name>
+    </xref_analog>
+    <is_a>MOD:00764</is_a>
+    <namespace>PSI-MOD</namespace>
+  </term>
+  <term>
+    <id>MOD:00768</id>
+    <name>methionine oxidation with neutral loss of 80 Da</name>
+    <def>
+      <defstr>oxidation of methionine to methionine sulfone with neutral loss of CH3SO2H.</defstr>
+      <dbxref>
+        <acc>:9004526</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>ref</acc>
+        <dbname>PSI-MOD</dbname>
+      </dbxref>
+    </def>
     <synonym scope="related">
-      <synonym_text>Argglutamicsealde</synonym_text>
+      <synonym_text>Oxidation+NL</synonym_text>
+      <dbxref>
+        <acc>short name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
-      <name>-43.07</name>
+      <name>15.9994</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>C -1 H -5 N -3 O 1</name>
+      <name>C 1 H 4 O 2 S 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>DiffMono</dbname>
-      <name>-43.053433</name>
+      <name>15.994915</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -54819,19 +55290,18 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>R</name>
+      <name>M</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>TermSpec</dbname>
-      <name>none</name>
     </xref_analog>
-    <is_a>MOD:00004</is_a>
+    <is_a>MOD:00431</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -55439,90 +55909,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00792</id>
-    <name>arginine oxidation to gamma-glutamyl semialdehyde</name>
-    <def>
-      <defstr>modification from UniMod</defstr>
-      <dbxref>
-        <acc>351</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-      <dbxref>
-        <acc>1680314</acc>
-        <dbname>PubMed</dbname>
-      </dbxref>
-      <dbxref>
-        <acc>367</acc>
-        <dbname>UniMod</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: -27 Monoisotopic Mass Change:-27.06 Average Mass Change:-27.07 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.</comment>
-    <synonym scope="related">
-      <synonym_text>Arg-&gt;GluSA</synonym_text>
-      <dbxref>
-        <acc>proposed name</acc>
-        <dbname>PSI-MS</dbname>
-      </dbxref>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>OxArgGlusemal</synonym_text>
-    </synonym>
-    <synonym scope="related">
-      <synonym_text>Oxidation of arginine (to glutamic acid)</synonym_text>
-      <dbxref>
-        <acc>name</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>-43.07</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>C -1 H -5 N -3 O 1</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>-43.053433</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>R</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>Artifact</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00004</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00793</id>
     <name>dehydroalanine (Cys)</name>
     <def>
@@ -55768,7 +56154,7 @@
     <def>
       <defstr>modification from UniMod</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>129</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -55792,7 +56178,21 @@
       <synonym_text>Arg2Orn</synonym_text>
     </synonym>
     <synonym scope="related">
+      <synonym_text>Orn</synonym_text>
+      <dbxref>
+        <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
       <synonym_text>Ornithine (from Arginine)</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Ornithyl</synonym_text>
       <dbxref>
         <acc>name</acc>
         <dbname>DeltaMass</dbname>
@@ -55816,7 +56216,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Formula</dbname>
-      <name>none</name>
+      <name>C 5 H 10 N 2 O 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -56731,6 +57131,10 @@
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
+        <acc>2197977</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
+      <dbxref>
         <acc>10085076</acc>
         <dbname>PubMed</dbname>
       </dbxref>
@@ -56751,7 +57155,14 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
-    <comment>From DeltaMass: Average Mass: -16 Average Mass Change:-16 References:van Poelje and Snell, Ann Rev. Biochem 59, 29 (1990)</comment>
+    <comment>DeltaMass gives mass 70 and difference mass -16 with no formula</comment>
+    <synonym scope="related">
+      <synonym_text>Pyruvate</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
     <synonym scope="related">
       <synonym_text>Pyruvoyl- (Serine)</synonym_text>
       <dbxref>
@@ -59119,7 +59530,7 @@
     <def>
       <defstr>a protein modification that effectively converts L-serine to L-oxoalanine.</defstr>
       <dbxref>
-        <acc>0</acc>
+        <acc>349</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
       <dbxref>
@@ -59161,6 +59572,13 @@
       <synonym_text>FGly</synonym_text>
       <dbxref>
         <acc>abbreviation</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>Formylglycine (from serine)</synonym_text>
+      <dbxref>
+        <acc>name</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
     </synonym>
@@ -59306,7 +59724,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -59374,7 +59792,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -59404,6 +59822,17 @@
     </def>
     <synonym scope="related">
       <synonym_text>-Glu-</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N alpha -(gamma-Glutamyl)-Glu</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -59450,7 +59879,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00008</is_a>
+    <is_a>MOD:00906</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -59458,6 +59887,10 @@
     <name>diglutamyl</name>
     <def>
       <defstr>modification from UniMod</defstr>
+      <dbxref>
+        <acc>0</acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
       <dbxref>
         <acc>12356754</acc>
         <dbname>PubMed</dbname>
@@ -59473,6 +59906,17 @@
     </def>
     <synonym scope="related">
       <synonym_text>-Glu-Glu-</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+    </synonym>
+    <synonym scope="related">
+      <synonym_text>N alpha -(gamma-Glutamyl)-Glu2</synonym_text>
+      <dbxref>
+        <acc></acc>
+        <dbname>DeltaMass</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -59507,7 +59951,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>X</name>
+      <name>E</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -59519,7 +59963,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00008</is_a>
+    <is_a>MOD:00906</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -59547,6 +59991,10 @@
     <comment>From DeltaMass: Average Mass: 388</comment>
     <synonym scope="related">
       <synonym_text>-Glu-Glu-Glu-</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </synonym>
     <synonym scope="related">
       <synonym_text>N alpha -(gamma-Glutamyl)-Glu3</synonym_text>
@@ -59600,7 +60048,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00008</is_a>
+    <is_a>MOD:00906</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -59623,6 +60071,10 @@
     </def>
     <synonym scope="related">
       <synonym_text>-Glu-Glu-Glu-Glu-</synonym_text>
+      <dbxref>
+        <acc>name</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
     </synonym>
     <xref_analog>
       <acc></acc>
@@ -59669,7 +60121,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00008</is_a>
+    <is_a>MOD:00906</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -59749,7 +60201,7 @@
     <id>MOD:00877</id>
     <name>one end of crosslink attached, one end free</name>
     <def>
-      <defstr>modification from UniMod</defstr>
+      <defstr>dimethyl pimelimidate modification from UniMod</defstr>
       <dbxref>
         <acc>455</acc>
         <dbname>UniMod</dbname>
@@ -59812,15 +60264,26 @@
   </term>
   <term>
     <id>MOD:00878</id>
-    <name>both ends of crosslink attached to same peptide</name>
+    <name>imidoester crosslink of both ends of a peptide</name>
     <def>
-      <defstr>modification from UniMod - Mechanism of the reaction of imidoesters with amines</defstr>
+      <defstr>dimethyl pimelimidate modification from UniMod - Mechanism of the reaction of imidoesters with amines</defstr>
+      <dbxref>
+        <acc>:7171546</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>456</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
     <comment>J.Am.Chem.Soc. 84, 3505-3514, 1962</comment>
+    <synonym scope="related">
+      <synonym_text>both ends of crosslink attached to same peptide</synonym_text>
+      <dbxref>
+        <acc>456</acc>
+        <dbname>UniMod</dbname>
+      </dbxref>
+    </synonym>
     <synonym scope="related">
       <synonym_text>DMP</synonym_text>
     </synonym>
@@ -60629,7 +61092,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60693,71 +61156,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-    </xref_analog>
-    <is_a>MOD:00921</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:00924</id>
-    <name>cysteine oxidation to sulfinic acid</name>
-    <def>
-      <defstr>modification from UniMod Post-translational -  - </defstr>
-      <dbxref>
-        <acc>497</acc>
-        <dbname>UniMod</dbname>
-      </dbxref>
-    </def>
-    <synonym scope="related">
-      <synonym_text>Sulfinic_acid</synonym_text>
-      <dbxref>
-        <acc>short name</acc>
-        <dbname>UniMod</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>31.9988</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>O2</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>31.989829</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>C</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60768,9 +61167,9 @@
   </term>
   <term>
     <id>MOD:00925</id>
-    <name>Heptose</name>
+    <name>heptosylation</name>
     <def>
-      <defstr>modification from UniMod O-linked glycosylation -  - </defstr>
+      <defstr>a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a heptose sugar group through a glycosidic bond</defstr>
       <dbxref>
         <acc>490</acc>
         <dbname>UniMod</dbname>
@@ -60783,6 +61182,9 @@
         <dbname>UniMod</dbname>
       </dbxref>
     </synonym>
+    <synonym scope="related">
+      <synonym_text>heptose</synonym_text>
+    </synonym>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -60791,7 +61193,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>Hep</name>
+      <name>C 7 H 12 O 6</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60801,7 +61203,6 @@
     <xref_analog>
       <acc></acc>
       <dbname>Formula</dbname>
-      <name>none</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60816,7 +61217,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>T</name>
+      <name>S, T</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60827,7 +61228,7 @@
       <acc></acc>
       <dbname>TermSpec</dbname>
     </xref_analog>
-    <is_a>MOD:00921</is_a>
+    <is_a>MOD:00725</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -60885,7 +61286,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -60949,7 +61350,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61014,7 +61415,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61026,14 +61427,19 @@
   </term>
   <term>
     <id>MOD:00929</id>
-    <name>Lactosylation</name>
+    <name>lactosylation</name>
     <def>
-      <defstr>modification from UniMod Other glycosylation -  - Lactosylation of bovine Beta-Lactoglobulin</defstr>
+      <defstr>modification from UniMod Other glycosylation  Lactosylation of bovine Beta-Lactoglobulin</defstr>
+      <dbxref>
+        <acc>:9606156</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>512</acc>
         <dbname>UniMod</dbname>
       </dbxref>
     </def>
+    <comment>the term lactosylation used in this way is a misnomer and should correctly be called a lactose glycation</comment>
     <synonym scope="related">
       <synonym_text>Gal-Glu</synonym_text>
       <dbxref>
@@ -61049,7 +61455,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>Hex2</name>
+      <name>C 12 H 22 O 11</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61074,25 +61480,29 @@
     <xref_analog>
       <acc></acc>
       <dbname>Origin</dbname>
-      <name>R</name>
+      <name>K</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
       <dbname>TermSpec</dbname>
     </xref_analog>
-    <is_a>MOD:00921</is_a>
+    <is_a>MOD:00767</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
     <id>MOD:00930</id>
     <name>propyl-NAG</name>
     <def>
-      <defstr>modification from UniMod Other glycosylation -  - </defstr>
+      <defstr>tyrosine adduct with substrate analog inhibitor 1,2-dideoxy-2'-methyl-alpha-D-glucopyranoso-[2,1-d]-Delta2'-thiazoline.</defstr>
+      <dbxref>
+        <acc>:15795231</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>514</acc>
         <dbname>UniMod</dbname>
@@ -61113,7 +61523,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>H14 C9 N O4 S</name>
+      <name>C 9 H 14 N 1 O 4 S 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61143,7 +61553,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61207,7 +61617,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61278,7 +61688,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61342,7 +61752,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61406,7 +61816,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61417,9 +61827,13 @@
   </term>
   <term>
     <id>MOD:00935</id>
-    <name>Oxidation with neutral loss of 64 Da</name>
+    <name>methionine oxidation with neutral loss of 64 Da</name>
     <def>
-      <defstr>modification from UniMod Artefact -  - </defstr>
+      <defstr>oxidation of methionine to methionine sulfoxide with neutral loss of CH3SOH.</defstr>
+      <dbxref>
+        <acc>:9004526</acc>
+        <dbname>PubMed</dbname>
+      </dbxref>
       <dbxref>
         <acc>507</acc>
         <dbname>UniMod</dbname>
@@ -61440,7 +61854,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>O</name>
+      <name>C 1 H 4 O 1 S 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61476,7 +61890,7 @@
       <acc></acc>
       <dbname>TermSpec</dbname>
     </xref_analog>
-    <is_a>MOD:00921</is_a>
+    <is_a>MOD:00431</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
@@ -61534,7 +61948,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61598,7 +62012,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61662,7 +62076,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61673,7 +62087,7 @@
   </term>
   <term>
     <id>MOD:00939</id>
-    <name>Nmethylmaleimidehydrolysis</name>
+    <name>N-methylmaleimide hydrolysis</name>
     <def>
       <defstr>modification from UniMod Chemical derivative -  - </defstr>
       <dbxref>
@@ -61726,7 +62140,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61790,7 +62204,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61855,7 +62269,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61919,7 +62333,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -61983,7 +62397,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -62048,7 +62462,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -62059,7 +62473,7 @@
   </term>
   <term>
     <id>MOD:00945</id>
-    <name>fluorescein-5-thiosemicarbazide</name>
+    <name>fluorescein-5-thiosemicarbazide adduct</name>
     <def>
       <defstr>modification from UniMod Chemical derivative -  - </defstr>
       <dbxref>
@@ -62112,7 +62526,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>Natural</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -62371,65 +62785,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00952</id>
-    <name>Dehydration (-H2O)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: -18</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00953</id>
     <name>O-gamma-Glutamyl- (Crosslink to Serine)</name>
     <def>
@@ -62474,65 +62829,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>E,S</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:00954</id>
-    <name>Serine to Dehydroalanine</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: -18</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>S</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -62666,65 +62962,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00957</id>
-    <name>N-pyrrolidone carboxyl (N terminus)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: -17</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>Q</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00958</id>
     <name>Crosslink between Arg and His sidechains</name>
     <def>
@@ -62828,72 +63065,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>Y,Y,Y,Y</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:00960</id>
-    <name>Formylglycine (from serine)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>349</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: -2 Abbreviation:FGly Monoisotopic Mass Change:-2.016 Average Mass Change:-2.016 References:Claudia Marquordt, Qinghua Fang, Elke Will, Jianhe Peng, Kurt von Figura,and Thomas Dierks (2003) 'Posttranslational Modification of Serine to Formylglycine inBacterial Sulfatases' J. Biol. Chem.  278,  4, 2212-2218 &lt;Br&gt;Thomas Dierks, Bernhard Schmidt,Ljudmila V. Borissenko, Jianhe Peng,Andrea Preusser, Malaiyalam Mariappan,and Kurt von Figura. (2003) 'Multiple Sulfatase Deficiency Is Caused byMutations in the Gene Encoding the HumanC-Formylglycine Generating Enzyme' Cell,113, 435-444 Notes:C-alpha-formylglycine is the catalytic residue of sulfatases.Formylglycine is generated by posttranslational modification of a cysteine (pro- and eukaryotes) or serine (prokaryotes).&lt;br&gt;Modification of serine to FGly -CH2-OH &gt;   -CH=O, net mass change -2. See -18 entry for cysteine.</comment>
-    <synonym scope="related">
-      <synonym_text>FGly</synonym_text>
-      <dbxref>
-        <acc>abbreviation</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>S</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -63565,65 +63736,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00972</id>
-    <name>Oxidation of proline (to gamma-glutamyl semialdehyde)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>354</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 16 Average Mass Change:16 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>P</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00973</id>
     <name>Oxidation of proline (to glutamic acid)</name>
     <def>
@@ -63826,7 +63938,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>none</name>
+      <name>K 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -63856,7 +63968,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>none</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -63885,7 +63997,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>DiffFormula</dbname>
-      <name>none</name>
+      <name>Na 2</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -63915,7 +64027,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Source</dbname>
-      <name>none</name>
+      <name>Artifact</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -64178,7 +64290,7 @@
         <dbname>DeltaMass</dbname>
       </dbxref>
     </def>
-    <comment>From DeltaMass: Average Mass: 64</comment>
+    <comment>From DeltaMass: Average Mass: 64, although metabolically correct, in peptide work it is usually considered as a modified cysteine</comment>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -64346,72 +64458,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00985</id>
-    <name>Dehydroalanine (Dha)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>69</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 69 Abbreviation:Dha Formula:C3H3NO Average Mass Change:69.063 Notes:dehydroalanine can be formed from phosphoserine by beta-elimination</comment>
-    <synonym scope="related">
-      <synonym_text>Dha</synonym_text>
-      <dbxref>
-        <acc>abbreviation</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>S</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00986</id>
     <name>3,5-Dichlorination (of Tyrosine with mixture of 35Cl and 37Cl))</name>
     <def>
@@ -64456,124 +64502,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>Y</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:00987</id>
-    <name>Pyruvate</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 70</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>S</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:00988</id>
-    <name>Sarcosyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 71</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>G</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -65120,65 +65048,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:00998</id>
-    <name>Dehydroamino butyric acid (Dhb)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 83</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>T</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:00999</id>
     <name>Homoseryl lactone</name>
     <def>
@@ -65518,65 +65387,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01006</id>
-    <name>Sarcosine (Sar)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 89</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>G</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -66550,72 +66360,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01023</id>
-    <name>Pyroglutamyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>123</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 111 Abbreviation:Pyr Formula:C5H5NO2 Average Mass Change:111.1</comment>
-    <synonym scope="related">
-      <synonym_text>Pyr</synonym_text>
-      <dbxref>
-        <acc>abbreviation</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>Q</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01024</id>
     <name>Hydroxyprolyl (-Hyp-)</name>
     <def>
@@ -66660,65 +66404,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>P</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01025</id>
-    <name>Isoleucyl (-I-, -Ile-)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 113</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>I</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -66844,72 +66529,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01028</id>
-    <name>Ornithyl (-Orn-)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>129</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 114 Abbreviation:-Orn- Formula:C5H10N2O Monoisotopic Mass Change:114.079 Average Mass Change:114.148</comment>
-    <synonym scope="related">
-      <synonym_text>-Orn-</synonym_text>
-      <dbxref>
-        <acc>abbreviation</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>R</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -67366,7 +66985,7 @@
     <xref_analog>
       <acc></acc>
       <dbname>Formula</dbname>
-      <name>none</name>
+      <name>C 5 H 7 N 3 O 1</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -67382,65 +67001,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01037</id>
-    <name>N alpha -(gamma-Glutamyl)-Glu</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 130</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>E,E</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -67869,124 +67429,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01045</id>
-    <name>N-methyl Lysyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>165</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 142 Formula:C7H14O1N2 Monoisotopic Mass Change:142.11 Average Mass Change:142.2</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>K</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01046</id>
-    <name>O-methyl Glutamyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>167</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 143 Formula:C6H9O1N3 Monoisotopic Mass Change:143.058 Average Mass Change:143.143</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01047</id>
     <name>Hydroxy Lysyl (-Hyl-)</name>
     <def>
@@ -68038,124 +67480,6 @@
       <acc></acc>
       <dbname>Origin</dbname>
       <name>K</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01048</id>
-    <name>Methyl Methionyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>169</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 145 Formula:C6H11O1N1S1 Monoisotopic Mass Change:145.056 Average Mass Change:145.222</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>M</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01049</id>
-    <name>Pentosyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>172</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 146 Formula:C6H10N4 Monoisotopic Mass Change:146.058 Average Mass Change:146.144</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
     </xref_analog>
     <xref_analog>
       <acc></acc>
@@ -69122,65 +68446,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01066</id>
-    <name>O-Glycosyl- (to Serine or Threonine)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 162</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01067</id>
     <name>Linker attached to peptide in Fmoc peptide synthesis</name>
     <def>
@@ -69191,65 +68456,6 @@
       </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 162 Average Mass Change:162 Notes:(from the ABRF discussion list archive) There may be ...  things in the reagent K that would allow cleavage of the peptide to occur at the wrong place...in this case it removes the dimethoxybenzyl group first inactivating that site for cleavage, and it goes after tne next amide bond closer to the resin. Try the TFA/TIS/water/EDT cocktail...TFA = 92%, TIS =3%, and water is at 5%. .. had this issue on longer peptides.. and by increasing the amount of water a little bit... able to elminate this problem.</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01068</id>
-    <name>MethionylSulphone</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>205</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 163 Formula:C5H9O1N3S Monoisotopic Mass Change:163.03 Average Mass Change:163.194</comment>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -69476,65 +68682,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01072</id>
-    <name>Phospho Seryl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 167</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01073</id>
     <name>2-Chlorobenzyloxycarbonyl (ClZ)</name>
     <def>
@@ -69653,65 +68800,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01075</id>
-    <name>N-acetyl Lysyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>214</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 170 Formula:C8H14O2N2 Monoisotopic Mass Change:170.11 Average Mass Change:170.21 Notes:A frequently occurring modification on histones and some transcription factors</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01076</id>
     <name>N-methyl Arginyl</name>
     <def>
@@ -69781,72 +68869,6 @@
       </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 172 Average Mass Change:172 References:[1]. Sieber,P.(1987) Modification of tryptophan residues during acidolysis of4-methoxy-2,3,6-trimethylbenzenesulfonyl groups. Effects of scavengers.Tetrahedron Lett., 28(15),1637-1640. Notes:TFA-cyclic dithioketal by-product is formed when Trp-containing peptideis subjected to prolonged TFA/EDT treatment [1]. &lt;b&gt;See &lt;A HREF=http://www.abrf.org/images/misc/dmass172.gif&gt;structure.&lt;/A&gt;&lt;/b&gt; &lt;p&gt; Additional discussion of this adduct, and how to avoid it, can befound in Methods in Enzymology 289, 67 (1997)</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01078</id>
-    <name>Carboxy Glutamyl (Gla)</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>217</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 173 Abbreviation:-Gla- Formula:C6H7O1N5 Monoisotopic Mass Change:173.032 Average Mass Change:173.126</comment>
-    <synonym scope="related">
-      <synonym_text>-Gla-</synonym_text>
-      <dbxref>
-        <acc>abbreviation</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </synonym>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -70191,65 +69213,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01084</id>
-    <name>N-methyl Tyrosinyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 177</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01085</id>
     <name>a-N-Gluconoylation (His Tagged proteins)</name>
     <def>
@@ -70496,65 +69459,6 @@
       </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 180</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01090</id>
-    <name>Phospho Threonyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 181</comment>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -71202,6 +70106,10 @@
         <acc>0</acc>
         <dbname>DeltaMass</dbname>
       </dbxref>
+      <dbxref>
+        <acc>AA0102</acc>
+        <dbname>RESID</dbname>
+      </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 206</comment>
     <xref_analog>
@@ -71725,65 +70633,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01110</id>
-    <name>S-cystenyl Cystenyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>260</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 222 Formula:C6H10O2N3S2 Monoisotopic Mass Change:222.013 Average Mass Change:222.283</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01111</id>
     <name>Dimethoxybenzhydryl (Mbh)</name>
     <def>
@@ -72020,124 +70869,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01115</id>
-    <name>Tyrosinyl Sulphate</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 243</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01116</id>
-    <name>Phospho Tyrosinyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 243</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01117</id>
     <name>Pbf (pentamethyldihydrobenzofuransulfonyl)</name>
     <def>
@@ -72207,65 +70938,6 @@
       </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 258 Formula:C6H10O6HPO3 Monoisotopic Mass Change:258.01 Average Mass Change:258.12 References:Geoghegan, K. F., H. B. Dixon, et al. (1999). Spontaneous alpha-N-6-phosphogluconoylation of a His tag in Escherichia coli: the cause of extra mass of 258 or 178 Da in fusion proteins. Anal Biochem 267(1): 169-84.</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
-    <id>MOD:01119</id>
-    <name>N alpha -(gamma-Glutamyl)-Glu2</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 259</comment>
     <xref_analog>
       <acc></acc>
       <dbname>DiffAvg</dbname>
@@ -73089,65 +71761,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01133</id>
-    <name>S-palmityl Cystenyl</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>303</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 342 Formula:C19H35O1N2S1 Monoisotopic Mass Change:341.239 Average Mass Change:341.556</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01134</id>
     <name>Fluorescein labelling of peptide N-terminal using NHS ester</name>
     <def>
@@ -73627,65 +72240,6 @@
     <namespace>PSI-MOD</namespace>
   </term>
   <term>
-    <id>MOD:01142</id>
-    <name>S-Coenzyme A</name>
-    <def>
-      <defstr>modification from DeltaMass</defstr>
-      <dbxref>
-        <acc>0</acc>
-        <dbname>DeltaMass</dbname>
-      </dbxref>
-    </def>
-    <comment>From DeltaMass: Average Mass: 454</comment>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffFormula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>DiffMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Formula</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassAvg</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>MassMono</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Origin</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>Source</dbname>
-      <name>none</name>
-    </xref_analog>
-    <xref_analog>
-      <acc></acc>
-      <dbname>TermSpec</dbname>
-      <name>none</name>
-    </xref_analog>
-    <is_a>MOD:00947</is_a>
-    <namespace>PSI-MOD</namespace>
-  </term>
-  <term>
     <id>MOD:01144</id>
     <name>S-(sn-1-Dipalmitoyl-glyceryl)- (on Cysteine)</name>
     <def>
@@ -73693,6 +72247,10 @@
       <dbxref>
         <acc>0</acc>
         <dbname>DeltaMass</dbname>
+      </dbxref>
+      <dbxref>
+        <acc>AA0107</acc>
+        <dbname>RESID</dbname>
       </dbxref>
     </def>
     <comment>From DeltaMass: Average Mass: 524</comment>
@@ -73741,7 +72299,7 @@
       <dbname>TermSpec</dbname>
       <name>none</name>
     </xref_analog>
-    <is_a>MOD:00947</is_a>
+    <is_a>MOD:00905</is_a>
     <namespace>PSI-MOD</namespace>
   </term>
   <term>

@@ -1,10 +1,9 @@
 format-version: 1.0
-date: 07:06:2006 16:44
+date: 09:06:2006 00:26
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.000
 default-namespace: PSI-MOD
-version: $Id: PSI-MOD.obo,v 1.1 2006/06/08 08:11:58 luisa_montecchi Exp $
-remark: [PSI-MOD:ref] is to be replaced by the appropriate PubMed id when available
+remark: [PSI-MOD:ref] is to be replaced by the PubMed id of PSI-MOD paper when available
 
 [Term]
 id: MOD:00000
@@ -264,6 +263,8 @@ id: MOD:00019
 name: L-isoleucine
 def: "a protein modification that inserts or replaces a residue with an L-isoleucine residue" [DeltaMass:0, PubMed:6692818, RESID:AA0010]
 related_synonym: "alpha-amino-beta-methylvaleric acid" [RESID:alternate name]
+related_synonym: "Isoleucyl" [DeltaMass:name]
+related_synonym: "" []
 exact_synonym: "Ile" [PSI-MOD:unique short label]
 exact_synonym: "L-isoleucine" [RESID:name]
 xref_analog: DiffAvg: "0.00"
@@ -282,8 +283,8 @@ id: MOD:00020
 name: L-leucine
 def: "a protein modification that replaces a residue with an L-leucine residue" [DeltaMass:0, PubMed:6692818, RESID:AA0011]
 related_synonym: "alpha-aminoisocaproic acid" [RESID:alternate name]
-exact_synonym: "Leu" [PSI-MOD:unique short label]
 exact_synonym: "L-leucine" [RESID:name]
+exact_synonym: "Leu" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "0.00"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 0"
 xref_analog: DiffMono: "0.000000"
@@ -300,8 +301,8 @@ id: MOD:00021
 name: L-lysine
 def: "a protein modification that replaces a residue with an L-lysine residue" [DeltaMass:0, PubMed:3106962, PubMed:6120171, PubMed:6692818, RESID:AA0012]
 related_synonym: "alpha,epsilon-diaminocaproic acid" [RESID:alternate name]
-exact_synonym: "Lys" [PSI-MOD:unique short label]
 exact_synonym: "L-lysine" [RESID:name]
+exact_synonym: "Lys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "0.00"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 0"
 xref_analog: DiffMono: "0.000000"
@@ -462,9 +463,9 @@ is_a: MOD:00009 ! natural residue
 id: MOD:00030
 name: N-formylated L-methionine
 def: "a protein modification that effectively converts an L-methionine residue to N-formyl-L-methionine" [PubMed:11152118, PubMed:2165784, PubMed:3042771, RESID:AA0021]
-related_synonym: "Formyl" [PSI-MS:proposed name]
 related_synonym: "2-formamido-4-(methylsulfanyl)butanoic acid" [RESID:alternate name]
 related_synonym: "2-formylamino-4-(methylthio)butanoic acid" [RESID:alternate name]
+related_synonym: "Formyl" [PSI-MS:proposed name]
 related_synonym: "N-formylmethionine" [RESID:alternate name]
 exact_synonym: "(S)-2-formylamino-4-(methylsulfanyl)butanoic acid" [RESID:alternate name]
 exact_synonym: "fMet" [RESID:alternate name]
@@ -489,8 +490,8 @@ def: "a protein modification that inserts or replaces a residue with an L-seleno
 related_synonym: "3-selenylalanine" [RESID:alternate name]
 related_synonym: "selenium cysteine" [RESID:alternate name]
 exact_synonym: "(R)-2-amino-3-selanylpropanoic acid" [RESID:alternate name]
-exact_synonym: "Sec" [PSI-MOD:unique short label]
 exact_synonym: "L-selenocysteine" [RESID:name]
+exact_synonym: "Sec" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "0.00"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 0 Se 0"
 xref_analog: DiffMono: "0.000000"
@@ -523,8 +524,8 @@ def: "a protein modification that cross-links two L-cysteine residues to form L-
 comment: cross-link 2; for formation of a disulfide bond between a peptide cysteine and a free cysteine, see MOD:00765.
 related_synonym: "2-amino-3-(2-amino-2-carboxy-ethyl)disulfanyl-propanoic acid [misnomer]" [RESID:alternate name]
 related_synonym: "3,3'-dithiobis(2-aminopropanoic acid)" [RESID:alternate name]
-related_synonym: "3,3'-dithiodialanine" [RESID:alternate name]
 related_synonym: "3,3'-dithiobisalanine" [RESID:alternate name]
+related_synonym: "3,3'-dithiodialanine" [RESID:alternate name]
 related_synonym: "beta,beta'-diamino-beta,beta'-dicarboxydiethyldisulfide" [RESID:alternate name]
 related_synonym: "beta,beta'-dithiodialanine" [RESID:alternate name]
 related_synonym: "bis(alpha-aminopropionic acid)-beta-disulfide" [RESID:alternate name]
@@ -594,12 +595,12 @@ id: MOD:00037
 name: 5-hydroxylated L-lysine
 def: "a protein modification that effectively converts an L-lysine residue to 5-hydroxy-L-lysine" [PubMed:16101297, PubMed:2857489, RESID:AA0028]
 related_synonym: "2,6-diamino-2,3,4,6-tetradeoxyhexonic acid" [RESID:alternate name]
-related_synonym: "Oxidation" [PSI-MS:proposed name]
 related_synonym: "alpha,epsilon-diamino-delta-hydroxycaproic acid" [RESID:alternate name]
 related_synonym: "L-erythro-delta-hydroxylysine" [RESID:alternate name]
+related_synonym: "Oxidation" [PSI-MS:proposed name]
+exact_synonym: "(2S,5R)-2,6-diamino-5-hydroxyhexanoic acid" [RESID:alternate name]
 exact_synonym: "5-hydroxy-L-lysine" [RESID:name]
 exact_synonym: "5HyLys" [PSI-MOD:unique short label]
-exact_synonym: "(2S,5R)-2,6-diamino-5-hydroxyhexanoic acid" [RESID:alternate name]
 xref_analog: DiffAvg: "16.00"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 1"
 xref_analog: DiffMono: "15.994915"
@@ -616,8 +617,8 @@ is_a: MOD:00681 ! hydroxylated lysine
 id: MOD:00038
 name: 3-hydroxylated L-proline
 def: "a protein modification that effectively converts an L-proline residue to 3-hydroxy-L-proline" [PubMed:3734192, PubMed:4343807, RESID:AA0029]
-related_synonym: "gamma-hydroxypyrrolidine-alpha-carboxylic acid" [RESID:alternate name]
 related_synonym: "3-trans-hydroxy-L-proline" [RESID:alternate name]
+related_synonym: "gamma-hydroxypyrrolidine-alpha-carboxylic acid" [RESID:alternate name]
 related_synonym: "L-threo-3-hydroxyproline" [RESID:alternate name]
 related_synonym: "Oxidation" [PSI-MS:proposed name]
 exact_synonym: "(2S,3R)-3-hydroxy-2-pyrrolidinecarboxylic acid" [RESID:alternate name]
@@ -639,10 +640,10 @@ is_a: MOD:00678 ! hydroxylated proline
 id: MOD:00039
 name: 4-hydroxylated L-proline
 def: "a protein modification that effectively converts an L-proline residue to 4-hydroxy-L-proline" [PubMed:11292863, PubMed:3734192, RESID:AA0030]
-related_synonym: "Oxidation" [PSI-MS:proposed name]
 related_synonym: "4-hydroxy-L-proline" [RESID:alternate name]
 related_synonym: "4-trans-hydroxy-L-proline" [RESID:alternate name]
 related_synonym: "L-threo-4-hydroxyproline" [RESID:alternate name]
+related_synonym: "Oxidation" [PSI-MS:proposed name]
 exact_synonym: "(2S,4R)-4-hydroxy-2-pyrrolidinecarboxylic acid" [RESID:alternate name]
 exact_synonym: "4-hydroxy-L-proline" [RESID:name]
 exact_synonym: "4HyPro" [PSI-MOD:unique short label]
@@ -661,14 +662,19 @@ is_a: MOD:00678 ! hydroxylated proline
 [Term]
 id: MOD:00040
 name: 2-pyrrolidone-5-carboxylic acid (Gln)
-def: "a protein modification that effectively converts an L-glutamine residue to 2-pyrrolidone-5-carboxylic acid" [DeltaMass:0, PubMed:10214721, PubMed:1836357, PubMed:3473473, RESID:AA0031, UniMod:28]
+def: "a protein modification that effectively converts an L-glutamine residue to 2-pyrrolidone-5-carboxylic acid" [DeltaMass:123, PubMed:10214721, PubMed:1836357, PubMed:3473473, RESID:AA0031, UniMod:28]
+comment: DeltaMass gives a formula C 5 H 5 N 1 O 2 with mass 111.1
 related_synonym: "2-oxopyrrolidine-5-carboxylic acid" [RESID:alternate name]
 related_synonym: "5-oxoproline" [RESID:alternate name]
 related_synonym: "5-oxopyrrolidine-2-carboxylic acid" [RESID:alternate name]
+related_synonym: "Gln->pyro-Glu" [PSI-MS:proposed name]
+related_synonym: "Pyr" [DeltaMass:abbreviation]
 related_synonym: "pyroglutamic acid" [RESID:alternate name]
 related_synonym: "Pyroglutamic Acid formed from Gln" [DeltaMass:name]
-exact_synonym: "2-pyrrolidone-5-carboxylic acid" [RESID:name]
+related_synonym: "Pyroglutamyl" [DeltaMass:name]
+related_synonym: "N-pyrrolidone carboxyl (N terminus)" [DeltaMass:name]
 exact_synonym: "(S)-5-oxo-2-pyrrolidinecarboxylic acid" [RESID:alternate name]
+exact_synonym: "2-pyrrolidone-5-carboxylic acid" [RESID:name]
 exact_synonym: "PyrGlu(Gln)" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "-17.03"
 xref_analog: DiffFormula: "C 0 H -3 N -1 O 0"
@@ -685,15 +691,18 @@ is_a: MOD:00907 ! modified L-glutamine residue
 [Term]
 id: MOD:00041
 name: gamma-carboxylated L-glutamic acid
-def: "a protein modification that effectively converts an L-glutamic acid residue to L-gamma-carboxyglutamic acid" [PubMed:1807167, PubMed:3263814, PubMed:4528109, PubMed:7457858, PubMed:8135347, PubMed:8868490, PubMed:9188685, RESID:AA0032, UniMod:38]
+def: "a protein modification that effectively converts an L-glutamic acid residue to L-gamma-carboxyglutamic acid" [DeltaMass:217, PubMed:1807167, PubMed:3263814, PubMed:4528109, PubMed:7457858, PubMed:8135347, PubMed:8868490, PubMed:9188685, RESID:AA0032, UniMod:38]
+comment: DeltaMass has the formula C 6 H 7 N 5 O 1 with mass 173
 related_synonym: "1-carboxyglutamic acid [misnomer]" [RESID:alternate name]
 related_synonym: "4-carboxyglutamic acid" [RESID:alternate name]
 related_synonym: "Carboxy" [PSI-MS:proposed name]
+related_synonym: "Carboxy Glutamyl" [DeltaMass:name]
 related_synonym: "gamma-carboxyl" [UniMod:name]
 related_synonym: "gamma-carboxylation" [RESID:alternate name]
+related_synonym: "Gla" [DeltaMass:abbreviation]
+exact_synonym: "(S)-3-amino-1,1,3-propanetricarboxylic acid" [RESID:alternate name]
 exact_synonym: "4CbxGlu" [PSI-MOD:unique short label]
 exact_synonym: "L-gamma-carboxyglutamic acid" [RESID:name]
-exact_synonym: "(S)-3-amino-1,1,3-propanetricarboxylic acid" [RESID:alternate name]
 xref_analog: DiffAvg: "44.01"
 xref_analog: DiffFormula: "C 1 H 0 N 0 O 2"
 xref_analog: DiffMono: "43.989829"
@@ -764,8 +773,8 @@ related_synonym: "NE2-phosphonohistidine" [RESID:alternate name]
 related_synonym: "Phospho" [PSI-MS:proposed name]
 related_synonym: "tau-phosphohistidine" [RESID:alternate name]
 related_synonym: "tele-phosphohistidine" [RESID:alternate name]
-exact_synonym: "1'-phospho-L-histidine" [RESID:name]
 exact_synonym: "(S)-2-amino-3-(1-phosphono-1H-imidazol-4-yl)propanoic acid" [RESID:alternate name]
+exact_synonym: "1'-phospho-L-histidine" [RESID:name]
 exact_synonym: "NtauPhosHis" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "79.98"
 xref_analog: DiffFormula: "C 0 H 1 N 0 O 3 P 1"
@@ -809,15 +818,16 @@ is_a: MOD:00909 ! modified L-histidine residue
 [Term]
 id: MOD:00046
 name: O-phosphorylated L-serine
-def: "modification from RESID" [PubMed:12923550, PubMed:4065410, PubMed:8061611, RESID:AA0037]
+def: "modification from RESID" [DeltaMass:0, PubMed:12923550, PubMed:4065410, PubMed:8061611, RESID:AA0037]
 related_synonym: "2-amino-3-hydroxypropanoic acid 3-phosphate" [RESID:alternate name]
 related_synonym: "O-phosphonoserine" [RESID:alternate name]
 related_synonym: "O3-phosphoserine" [RESID:alternate name]
 related_synonym: "Phospho" [PSI-MS:proposed name]
+related_synonym: "Phospho Seryl" [DeltaMass:name]
 related_synonym: "serine phosphate ester" [RESID:alternate name]
 exact_synonym: "(S)-2-amino-3-(phosphonooxy)propanoic acid" [RESID:alternate name]
-exact_synonym: "OPhosSer" [PSI-MOD:unique short label]
 exact_synonym: "O-phospho-L-serine" [RESID:name]
+exact_synonym: "OPhosSer" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "79.98"
 xref_analog: DiffFormula: "C 0 H 1 N 0 O 3 P 1"
 xref_analog: DiffMono: "79.966330"
@@ -833,10 +843,11 @@ is_a: MOD:00916 ! modified L-serine residue
 [Term]
 id: MOD:00047
 name: O-phosphorylated L-threonine
-def: "modification from RESID" [PubMed:12923550, PubMed:7678926, RESID:AA0038]
+def: "modification from RESID" [DeltaMass:0, PubMed:12923550, PubMed:7678926, RESID:AA0038]
 related_synonym: "2-amino-3-hydroxybutanoic acid 3-phosphate" [RESID:alternate name]
 related_synonym: "O3-phosphothreonine" [RESID:alternate name]
 related_synonym: "Phospho" [PSI-MS:proposed name]
+related_synonym: "Phospho Threonyl" [DeltaMass:name]
 related_synonym: "threonine phosphate ester" [RESID:alternate name]
 exact_synonym: "(2S,3R)-2-amino-3-phosphonooxybutanoic acid" [RESID:alternate name]
 exact_synonym: "O-phospho-L-threonine" [RESID:name]
@@ -856,11 +867,12 @@ is_a: MOD:00917 ! modified L-threonine residue
 [Term]
 id: MOD:00048
 name: O4'-phosphorylated L-tyrosine
-def: "modification from RESID" [PubMed:10226369, PubMed:1725475, RESID:AA0039]
+def: "modification from RESID" [DeltaMass:0, PubMed:10226369, PubMed:1725475, RESID:AA0039]
 related_synonym: "2-amino-3-(4-hydroxyphenyl)propanoic acid 4'-phosphate" [RESID:alternate name]
 related_synonym: "O4-phosphotyrosine" [RESID:alternate name]
-related_synonym: "tyrosine phosphate" [RESID:alternate name]
 related_synonym: "Phospho" [PSI-MS:proposed name]
+related_synonym: "Phospho Tyrosinyl" [DeltaMass:name]
+related_synonym: "tyrosine phosphate" [RESID:alternate name]
 exact_synonym: "(S)-2-amino-3-(4-phosphonooxyphenyl)propanoic acid" [RESID:alternate name]
 exact_synonym: "O4'-phospho-L-tyrosine" [RESID:name]
 exact_synonym: "OPhosTyr" [PSI-MOD:unique short label]
@@ -880,18 +892,18 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00049
 name: 2'-[3-carboxamido-3-(trimethylammonio)propyl]-L-histidine
 def: "a protein modification that effectively converts an L-histidine residue to diphthamide" [DeltaMass:122, PubMed:15316019, PubMed:7430147, RESID:AA0040, UniMod:375]
+related_synonym: "(3-[4-(2-amino-2-carboxy-ethyl)-1H-imidazol-2-yl]-1-carbamoyl-propyl)-trimethylammonium" [RESID:alternate name]
 related_synonym: "2-[(R)-3-carboxamido-3-(trimethylammonio)propyl]-4-((S)-2-amino-2-carboxyethyl)-1H-imidazole" [RESID:alternate name]
 related_synonym: "2-[3-carboxamido-3-(trimethylammonio)propyl]histidine" [RESID:alternate name]
 related_synonym: "2-amino-3-[[2-(3-amino-3-carbamoyl-prop-1-enyl)-1,1,3-trimethyl-2,3-dihydroimidazol-5-yl]]propanoic acid" [RESID:alternate name]
 related_synonym: "2-amino-4-[[5-(2-amino-2-carboxylato-ethyl)-1,1,3-trimethyl-2,3-dihydroimidazol-2-yl]]but-3-enamide" [RESID:alternate name]
-related_synonym: "(3-[4-(2-amino-2-carboxy-ethyl)-1H-imidazol-2-yl]-1-carbamoyl-propyl)-trimethylammonium" [RESID:alternate name]
 related_synonym: "alpha-(aminocarbonyl)-4-(2-amino-2-carboxyethyl)-N,N,N-trimethyl-1H-imidazole-2-propanaminium" [RESID:alternate name]
 related_synonym: "Diphthamide" [PSI-MS:proposed name]
 related_synonym: "diphthamide" [RESID:alternate name]
 related_synonym: "diphthamide (from histidine)" [DeltaMass:name]
-exact_synonym: "Diphth" [PSI-MOD:unique short label]
-exact_synonym: "2'-[3-carboxamido-3-(trimethylammonio)propyl]-L-histidine" [RESID:name]
 exact_synonym: "(2R)-1-amino-4-(4-[(2S)-2-amino-2-carboxyethyl]-1H-imidazol-2-yl)-N,N,N-trimethyl-1-oxobutan-2-aminium" [RESID:alternate name]
+exact_synonym: "2'-[3-carboxamido-3-(trimethylammonio)propyl]-L-histidine" [RESID:name]
+exact_synonym: "Diphth" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "143.21"
 xref_analog: DiffFormula: "C 7 H 15 N 2 O 1"
 xref_analog: DiffMono: "143.118438"
@@ -976,8 +988,8 @@ id: MOD:00053
 name: N-acetylated L-glutamic acid
 def: "a protein modification that effectively converts an L-glutamic acid residue to N-acetyl-L-glutamic acid" [PubMed:6725286, RESID:AA0044]
 related_synonym: "2-(acetylamino)pentanedioic acid" [RESID:alternate name]
-related_synonym: "N-acetylglutamic acid" [RESID:alternate name]
 related_synonym: "Acetyl" [PSI-MS:proposed name]
+related_synonym: "N-acetylglutamic acid" [RESID:alternate name]
 exact_synonym: "(S)-2-(acetamido)pentanedioic acid" [RESID:alternate name]
 exact_synonym: "AcGlu" [PSI-MOD:unique short label]
 exact_synonym: "N-acetyl-L-glutamic acid" [RESID:name]
@@ -1001,8 +1013,8 @@ related_synonym: "2-acetylamino-5-pentanediamic acid" [RESID:alternate name]
 related_synonym: "Acetyl" [PSI-MS:proposed name]
 related_synonym: "N-acetylglutamine" [RESID:alternate name]
 exact_synonym: "(S)-2-acetamido-5-pentanediamic acid" [RESID:alternate name]
-exact_synonym: "N-acetyl-L-glutamine" [RESID:name]
 exact_synonym: "AcGln" [PSI-MOD:unique short label]
+exact_synonym: "N-acetyl-L-glutamine" [RESID:name]
 xref_analog: DiffAvg: "42.04"
 xref_analog: DiffFormula: "C 2 H 2 N 0 O 1"
 xref_analog: DiffMono: "42.010565"
@@ -1045,8 +1057,8 @@ related_synonym: "2-acetylamino-3-methylpentanoic acid" [RESID:alternate name]
 related_synonym: "Acetyl" [PSI-MS:proposed name]
 related_synonym: "acetylisoleucine" [RESID:alternate name]
 exact_synonym: "(2S,3S)-2-acetamido-3-methylpentanoic acid" [RESID:alternate name]
-exact_synonym: "N-acetyl-L-isoleucine" [RESID:name]
 exact_synonym: "AcIle" [PSI-MOD:unique short label]
+exact_synonym: "N-acetyl-L-isoleucine" [RESID:name]
 xref_analog: DiffAvg: "42.04"
 xref_analog: DiffFormula: "C 2 H 2 N 0 O 1"
 xref_analog: DiffMono: "42.010565"
@@ -1113,8 +1125,8 @@ def: "a protein modification that effectively converts an L-proline residue to N
 related_synonym: "Acetyl" [PSI-MS:proposed name]
 related_synonym: "acetylproline" [RESID:alternate name]
 exact_synonym: "(2S)-1-acetyl-2-pyrrolidinecarboxylic acid" [RESID:alternate name]
-exact_synonym: "N-acetyl-L-proline" [RESID:name]
 exact_synonym: "AcPro" [PSI-MOD:unique short label]
+exact_synonym: "N-acetyl-L-proline" [RESID:name]
 xref_analog: DiffAvg: "42.04"
 xref_analog: DiffFormula: "C 2 H 2 N 0 O 1"
 xref_analog: DiffMono: "42.010565"
@@ -1175,9 +1187,9 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00062
 name: N-acetylated L-tyrosine
 def: "a protein modification that effectively converts an L-tyrosine residue to N-acetyl-L-tyrosine" [PubMed:2506074, PubMed:475783, RESID:AA0053]
+related_synonym: "2-acetylamino-3-(4-hydoxyphenyl)propanoic acid" [RESID:alternate name]
 related_synonym: "Acetyl" [PSI-MS:proposed name]
 related_synonym: "N-acetyltyrosine" [RESID:alternate name]
-related_synonym: "2-acetylamino-3-(4-hydoxyphenyl)propanoic acid" [RESID:alternate name]
 exact_synonym: "(S)-2-acetamido-3-(4-hydoxyphenyl)propanoic acid" [RESID:alternate name]
 exact_synonym: "AcTyr" [PSI-MOD:unique short label]
 exact_synonym: "N-acetyl-L-tyrosine" [RESID:name]
@@ -1219,13 +1231,14 @@ is_a: MOD:00920 ! modified L-valine residue
 [Term]
 id: MOD:00064
 name: N6-acetylated L-lysine
-def: "a protein modification that effectively converts an L-lysine residue to N6-acetyl-L-lysine" [PubMed:11369851, PubMed:1680872, PubMed:670159, RESID:AA0055]
+def: "a protein modification that effectively converts an L-lysine residue to N6-acetyl-L-lysine" [DeltaMass:214, PubMed:11369851, PubMed:1680872, PubMed:670159, RESID:AA0055]
 related_synonym: "2-amino-6-acetylaminohexanoic acid" [RESID:alternate name]
-related_synonym: "epsilon-acetyllysine" [RESID:alternate name]
-related_synonym: "N(zeta)-acetyllysine" [RESID:alternate name]
-related_synonym: "N(epsilon)-acetyllysine" [RESID:alternate name]
-related_synonym: "N2-acetyllysine" [RESID:alternate name]
 related_synonym: "Acetyl" [PSI-MS:proposed name]
+related_synonym: "epsilon-acetyllysine" [RESID:alternate name]
+related_synonym: "N(epsilon)-acetyllysine" [RESID:alternate name]
+related_synonym: "N(zeta)-acetyllysine" [RESID:alternate name]
+related_synonym: "N-acetyl Lysyl" [DeltaMass]
+related_synonym: "N2-acetyllysine" [RESID:alternate name]
 exact_synonym: "(S)-2-amino-6-acetamidohexanoic acid" [RESID:alternate name]
 exact_synonym: "N2-acetyl-L-lysine" [RESID:name]
 exact_synonym: "N6AcLys" [PSI-MOD:unique short label]
@@ -1397,9 +1410,13 @@ is_a: MOD:00711 ! protonated-trimethylated residue
 [Term]
 id: MOD:00072
 name: N-methylated glycine
-def: "a protein modification that effectively converts an glycine residue to N-methylglycine" [PubMed:1593629, RESID:AA0063]
+def: "a protein modification that effectively converts an glycine residue to N-methylglycine" [DeltaMass:0, PubMed:1593629, RESID:AA0063]
+comment: DeltaMass also has an entry for the free amino acid
 related_synonym: "Methyl" [PSI-MS:proposed name]
 related_synonym: "methylaminoacetic acid" [RESID:alternate name]
+related_synonym: "Sar" [DeltaMass:name]
+related_synonym: "Sarcosine" [DeltaMass:name]
+related_synonym: "Sarcosyl" [DeltaMass:name]
 exact_synonym: "L-sarcosine" [RESID:alternate name]
 exact_synonym: "methylaminoethanoic acid" [RESID:alternate name]
 exact_synonym: "N-methylglycine" [RESID:name]
@@ -1420,9 +1437,10 @@ is_a: MOD:00714 ! methylated glycine
 [Term]
 id: MOD:00073
 name: N-methylated L-methionine
-def: "a protein modification that effectively converts an L-methionine residue to N-methyl-L-methionine" [PubMed:323502, PubMed:3298225, RESID:AA0064]
+def: "a protein modification that effectively converts an L-methionine residue to N-methyl-L-methionine" [DeltaMass:169, PubMed:323502, PubMed:3298225, RESID:AA0064]
 related_synonym: "Methyl" [PSI-MS:proposed name]
 related_synonym: "N-methylmethionine" [RESID:alternate name]
+related_synonym: "Methyl Methionyl" [DeltaMass:name]
 exact_synonym: "(S)-2-methylamino-4-(methylsulfanyl)butanoic acid" [RESID:alternate name]
 exact_synonym: "N-methyl-L-methionine" [RESID:name]
 exact_synonym: "NMeMet" [PSI-MOD:unique short label]
@@ -1466,11 +1484,12 @@ is_a: MOD:00717 ! methylated L-phenylalanine
 id: MOD:00075
 name: N,N-dimethylated L-proline
 def: "a protein modification that effectively converts an L-proline residue to N,N-dimethyl-L-proline" [PubMed:193025, PubMed:3882426, PubMed:6254758, RESID:AA0066]
+related_synonym: "Delta:H(5)C(2)" [PSI-MS:proposed name]
 related_synonym: "stachydrin" [RESID:alternate name]
+exact_synonym: "(S)-1,1-dimethylpyrrolidinium-2-carboxylic acid" [RESID:alternate name]
 exact_synonym: "(S)-2-carboxy-1,1-dimethylpyrrolidinium" [RESID:alternate name]
 exact_synonym: "N,N-dimethyl-L-proline" [RESID:name]
 exact_synonym: "NMe2Pro" [PSI-MOD:unique short label]
-exact_synonym: "(S)-1,1-dimethylpyrrolidinium-2-carboxylic acid" [RESID:alternate name]
 xref_analog: DiffAvg: "29.06"
 xref_analog: DiffFormula: "C 2 H 5 N 0 O 0"
 xref_analog: DiffMono: "29.039125"
@@ -1488,6 +1507,7 @@ is_a: MOD:00712 ! methylated L-proline
 id: MOD:00076
 name: omega-N,omega-N'-dimethylated L-arginine
 def: "a protein modification that effectively converts an L-arginine residue to N(omega),N'(omega)-dimethyl-L-arginine" [PubMed:2426402, PubMed:5128665, RESID:AA0067]
+related_synonym: "Dimethyl" [PSI-MS:proposed name]
 related_synonym: "Ethyl" [PSI-MS:proposed name]
 related_synonym: "N3,N4-dimethylarginine" [RESID:alternate name]
 related_synonym: "N5-[(methylamino)(methylimino)methyl]ornithine" [RESID:alternate name]
@@ -1514,7 +1534,7 @@ id: MOD:00077
 name: omega-N,omega-N-dimethlyated L-arginine
 def: "a protein modification that effectively converts an L-arginine residue to N(omega),N(omega)-dimethyl-L-arginine" [PubMed:11152131, PubMed:3032834, RESID:AA0068]
 related_synonym: "asymmetric dimethylarginine" [RESID:alternate name]
-related_synonym: "Ethyl" [PSI-MS:proposed name]
+related_synonym: "Dimethyl" [PSI-MS:proposed name]
 related_synonym: "N5-[(dimethylamino)(imino)methyl]ornithine" [RESID:alternate name]
 related_synonym: "NG,NG-dimethylarginine" [RESID:alternate name]
 exact_synonym: "(S)-2-amino-5-([(dimethylamino)(imino)methyl]amino)pentanoic acid" [RESID:alternate name]
@@ -1540,8 +1560,8 @@ def: "a protein modification that effectively converts an L-arginine residue to 
 related_synonym: "Methyl" [PSI-MS:proposed name]
 related_synonym: "NG-methylarginine" [RESID:alternate name]
 exact_synonym: "(S)-2-amino-5-[(imino(methylamino)methyl)amino]pentanoic acid" [RESID:alternate name]
-exact_synonym: "omega-N-methyl-L-arginine" [RESID:name]
 exact_synonym: "NoMeArg" [PSI-MOD:unique short label]
+exact_synonym: "omega-N-methyl-L-arginine" [RESID:name]
 xref_analog: DiffAvg: "14.03"
 xref_analog: DiffFormula: "C 1 H 2 N 0 O 0"
 xref_analog: DiffMono: "14.015650"
@@ -1583,11 +1603,11 @@ is_a: MOD:00673 ! methylated L-asparagine
 id: MOD:00080
 name: N5-methylated L-glutamine
 def: "a protein modification that effectively converts an L-glutamine residue to N5-methyl-L-glutamine" [PubMed:11118225, PubMed:365579, RESID:AA0071]
+related_synonym: "(S)-2-amino-N5-methylpentanediamic acid" [RESID:alternate name]
 related_synonym: "gamma-methylglutamine" [RESID:alternate name]
 related_synonym: "Methyl" [PSI-MS:proposed name]
 related_synonym: "N(delta)-methylglutamine" [RESID:alternate name]
 related_synonym: "N-methylglutamine" [RESID:alternate name]
-related_synonym: "(S)-2-amino-N5-methylpentanediamic acid" [RESID:alternate name]
 exact_synonym: "N5-methyl-L-glutamine" [RESID:name]
 exact_synonym: "N5MeGln" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "14.03"
@@ -1606,11 +1626,13 @@ is_a: MOD:00722 ! monomethylated L-glutamine
 [Term]
 id: MOD:00081
 name: 5-methyl esterified L-glutamic acid
-def: "a protein modification that effectively converts an L-glutamic acid residue to L-glutamate 5-methyl ester" [PubMed:16888, PubMed:6300110, RESID:AA0072]
+def: "a protein modification that effectively converts an L-glutamic acid residue to L-glutamate 5-methyl ester" [DeltaMass:167, PubMed:16888, PubMed:6300110, RESID:AA0072]
+comment: DeltaMass gives the formula C 6 H 9 O 1 N 3 with mass 143
 related_synonym: "5-methyl-L-glutamate" [RESID:alternate name]
 related_synonym: "glutamic acid gamma-methyl ester" [RESID:alternate name]
 related_synonym: "L-glutamate 5-methyl ester" [RESID:alternate name]
 related_synonym: "Methyl" [PSI-MS:proposed name]
+related_synonym: "O-methyl Glutamyl" [DeltaMass:name]
 exact_synonym: "(S)-2-aminopentanedioic acid 5-methyl ester" [RESID:alternate name]
 exact_synonym: "L-glutamic acid 5-methyl ester" [RESID:name]
 exact_synonym: "O5MeGlu" [PSI-MOD:unique short label]
@@ -1676,8 +1698,8 @@ is_a: MOD:00711 ! protonated-trimethylated residue
 id: MOD:00084
 name: N6,N6-dimethylated L-lysine
 def: "a protein modification that effectively converts an L-lysine residue to N6,N6-dimethyl-L-lysine" [PubMed:10550045, PubMed:3100523, PubMed:8453381, RESID:AA0075]
+related_synonym: "Dimethyl" [PSI-MS:proposed name]
 related_synonym: "epsilon-dimethyllysine" [RESID:alternate name]
-related_synonym: "Ethyl" [PSI-MS:proposed name]
 exact_synonym: "N6Me2Lys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "28.05"
 xref_analog: DiffFormula: "C 2 H 4 N 0 O 0"
@@ -1695,9 +1717,10 @@ is_a: MOD:00663 ! methylated L-lysine
 [Term]
 id: MOD:00085
 name: N6-methylated L-lysine
-def: "a protein modification that effectively converts an L-lysine residue to N6-methyl-L-lysine" [PubMed:3926756, RESID:AA0076]
+def: "a protein modification that effectively converts an L-lysine residue to N6-methyl-L-lysine" [DeltaMass:165, PubMed:3926756, RESID:AA0076]
 related_synonym: "epsilon-methyllysine" [RESID:alternate name]
 related_synonym: "Methyl" [PSI-MS:proposed name]
+related_synonym: "N-methyl Lysyl" [DeltaMass:name]
 exact_synonym: "N6-methyl-L-lysine" [RESID:alternate name]
 exact_synonym: "N6MeLys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "14.03"
@@ -2304,9 +2327,10 @@ is_a: MOD:00660 ! methylated L-cysteine
 [Term]
 id: MOD:00115
 name: S-palmitoylated L-cysteine
-def: "a protein modification that effectively converts an L-cysteine residue to S-palmitoyl-L-cysteine" [PubMed:1872406, PubMed:3166978, PubMed:8180229, PubMed:8824274, RESID:AA0106]
+def: "a protein modification that effectively converts an L-cysteine residue to S-palmitoyl-L-cysteine" [DeltaMass:303, PubMed:1872406, PubMed:3166978, PubMed:8180229, PubMed:8824274, RESID:AA0106]
 related_synonym: "2-amino-3-(hexadecanoylthio)propanoic acid" [RESID:alternate name]
 related_synonym: "Palmitoyl" [PSI-MS:proposed name]
+related_synonym: "S-palmityl Cystenyl" [DeltaMass:name]
 exact_synonym: "SPamCys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "238.41"
 xref_analog: DiffFormula: "C 16 H 30 N 0 O 1 S 0"
@@ -2375,7 +2399,7 @@ xref_analog: MassMono: "238.052446"
 xref_analog: Origin: "C, H"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -2394,7 +2418,7 @@ xref_analog: MassMono: "172.030648"
 xref_analog: Origin: "C, S"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -2413,7 +2437,7 @@ xref_analog: MassMono: "172.030648"
 xref_analog: Origin: "C, S"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -2432,7 +2456,7 @@ xref_analog: MassMono: "186.046298"
 xref_analog: Origin: "C, T"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -2453,15 +2477,17 @@ xref_analog: MassMono: "264.056863"
 xref_analog: Origin: "C, Y"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
 [Term]
 id: MOD:00123
 name: N6-carboxy-L-lysine
-def: "modification from RESID" [PubMed:11369851, PubMed:4436319, PubMed:637859, PubMed:7754395, RESID:AA0114]
+def: "modification from RESID" [PubMed:11369851, PubMed:4436319, PubMed:637859, PubMed:7754395, RESID:AA0114, UniMod:299]
 related_synonym: "carboxy" [PSI-MS:proposed name]
+related_synonym: "carboxyl" []
+related_synonym: "lysine carboxylation" [UniMod:name]
 related_synonym: "N6-carbamyllysine [misnomer]" [RESID:alternate name]
 exact_synonym: "N6CbxLys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "44.01"
@@ -2596,7 +2622,6 @@ id: MOD:00130
 name: L-allysine
 def: "modification from RESID" [DeltaMass:0, PubMed:11332453, PubMed:358196, PubMed:5337886, PubMed:5529814, PubMed:9252331, RESID:AA0121, UniMod:99]
 comment: From DeltaMass: Average Mass: -1
-related_synonym: "2-amino-adipic acid semialdahyde" []
 related_synonym: "Allysine (from Lysine)" [DeltaMass:name]
 related_synonym: "Lys->Allysine" [PSI-MS:proposed name]
 related_synonym: "lysaminoadipicsealde" []
@@ -2747,6 +2772,7 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00138
 name: 2-oxobutanoic acid
 def: "modification from RESID" [PubMed:2253617, PubMed:2764678, RESID:AA0129, UniMod:385]
+related_synonym: "Ammonia-loss" [PSI-MS:proposed name]
 related_synonym: "N-oxobutanoic" []
 xref_analog: DiffAvg: "-17.03"
 xref_analog: DiffFormula: "C 0 H -3 N -1 O 0"
@@ -3526,8 +3552,9 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 [Term]
 id: MOD:00180
 name: S-sulfo-L-cysteine
-def: "modification from RESID" [PubMed:643076, RESID:AA0171]
+def: "modification from RESID" [PubMed:643076, RESID:AA0171, UniMod:306]
 related_synonym: "2-amino-3-(sulfothio)propanoic acid" []
+related_synonym: "sulfitolysis" [UniMod:name]
 related_synonym: "Sulfo" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "80.06"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 3 S 1"
@@ -3549,6 +3576,7 @@ comment: From DeltaMass: Average Mass: 80 Average Mass Change:80 References:Loug
 related_synonym: "2-amino-3-(4-hydroxyphenyl)propanoic acid 4'-sulfate" []
 related_synonym: "Sulfo" [PSI-MS:proposed name]
 related_synonym: "Sulphation (of O of Tyrosine)" [DeltaMass:name]
+related_synonym: "Tyrosinyl Sulphate [misnomer]" [DeltaMass:name]
 xref_analog: DiffAvg: "80.06"
 xref_analog: DiffFormula: "C 0 H 0 N 0 O 3 S 1"
 xref_analog: DiffMono: "79.956815"
@@ -3692,8 +3720,9 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 [Term]
 id: MOD:00189
 name: L-serine dehydrated to dehydroalanine
-def: "a protein modification that effectively converts an L-serine residue to dehydroalanine" [PubMed:10220322, PubMed:1547888, PubMed:1815586, PubMed:2914619, PubMed:7947813, PubMed:8239649, RESID:AA0181, UniMod:401]
-comment: incidental to RESID:AA0187; incidental to RESID:AA0188
+def: "a protein modification that effectively converts an L-serine residue to dehydroalanine" [DeltaMass:0, PubMed:10220322, PubMed:1547888, PubMed:1815586, PubMed:2914619, PubMed:7947813, PubMed:8239649, RESID:AA0181, UniMod:401]
+related_synonym: "Dehydrated" [PSI-MS:proposed name]
+related_synonym: "Dha" [DeltaMass:abbreviation]
 exact_synonym: "2,3-didehydroalanine" []
 exact_synonym: "dHAla(Ser)" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "-18.02"
@@ -3711,7 +3740,10 @@ is_a: MOD:00916 ! modified L-serine residue
 [Term]
 id: MOD:00190
 name: L-threonine dehydrated  to (Z)-dehydrobutyrine
-def: "a protein modification that effectively converts an L-threonine residue to (Z)-dehydrobutyrine" [PubMed:1547888, PubMed:3769923, RESID:AA0182, UniMod:399]
+def: "a protein modification that effectively converts an L-threonine residue to (Z)-dehydrobutyrine" [DeltaMass:0, PubMed:1547888, PubMed:3769923, RESID:AA0182, UniMod:399]
+related_synonym: "Dehydrated" [PSI-MS:proposed name]
+related_synonym: "Dehydroamino butyric acid" [DeltaMass:name]
+related_synonym: "Dhb" [DeltaMass:abbreviation]
 exact_synonym: "dHyThr" [PSI-MOD:unique short label]
 broad_synonym: "2,3-didehydrobutyrine" []
 xref_analog: DiffAvg: "-18.02"
@@ -3757,7 +3789,7 @@ xref_analog: DiffMono: "-18.010565"
 xref_analog: Formula: "C 5 H 6 N 2 O 2"
 xref_analog: MassAvg: "126.11"
 xref_analog: MassMono: "126.042927"
-xref_analog: Origin: "G, S"
+xref_analog: Origin: "G,S"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
@@ -3767,18 +3799,17 @@ is_a: MOD:00916 ! modified L-serine residue
 [Term]
 id: MOD:00193
 name: L-3-oxoalanine (Cys)
-def: "modification from RESID" [DeltaMass:350, PubMed:14563551, PubMed:7628016, PubMed:8681943, PubMed:9478923, RESID:AA0185, UniMod:402]
-comment: From DeltaMass: Average Mass: -18 Abbreviation:FGly Monoisotopic Mass Change:-18 Average Mass Change:-18.08 References:Claudia Marquordt, Qinghua Fang, Elke Will, Jianhe Peng, Kurt von Figura,and Thomas Dierks (2003) 'Posttranslational Modification of Serine to Formylglycine inBacterial Sulfatases' J. Biol. Chem.  278,  4, 2212-2218 <Br>Thomas Dierks, Bernhard Schmidt,Ljudmila V. Borissenko, Jianhe Peng,Andrea Preusser, Malaiyalam Mariappan,and Kurt von Figura. (2003) 'Multiple Sulfatase Deficiency Is Caused byMutations in the Gene Encoding the HumanC-Formylglycine Generating Enzyme' Cell,113, 435-444 Notes:C-alpha-formylglycine is the catalytic residue of sulfatases.Formylglycine is generated by posttranslational modification of a cysteine (pro- and eukaryotes) or serine (prokaryotes).<br>Modification of cysteine to FGly -CH2-SH >  -CH=O, net mass change -18. See -2 entry for serine.
+def: "a protein modification that effectively converts L-cysteine to L-oxoalanine." [DeltaMass:350, PubMed:14563551, PubMed:7628016, PubMed:8681943, PubMed:9478923, RESID:AA0185, UniMod:402]
 related_synonym: "2-amino-3-oxopropionic acid" [RESID:alternate name]
 related_synonym: "C(alpha)-formylglycine" [RESID:alternate name]
 related_synonym: "Cys->Oxoalanine" [PSI-MS:proposed name]
 related_synonym: "FGly" [DeltaMass:abbreviation]
 related_synonym: "formylglycine (from cysteine)" [RESID:alternate name]
-related_synonym: "L-aminomalonaldehydic acid" [RESID:alternate name]
 related_synonym: "L-amino-malonic acid semialdehyde" [RESID:alternate name]
+related_synonym: "L-aminomalonaldehydic acid" [RESID:alternate name]
 related_synonym: "L-serinesemialdehyde [misnomer]" [RESID:alternate name]
-exact_synonym: "L-3-oxoalanine" [RESID:name]
 exact_synonym: "(S)-2-amino-3-oxopropanoic acid" [RESID:alternate name]
+exact_synonym: "L-3-oxoalanine" [RESID:name]
 xref_analog: DiffAvg: "-18.08"
 xref_analog: DiffFormula: "C 0 H -2 N 0 O 1 S -1"
 xref_analog: DiffMono: "-17.992806"
@@ -4072,7 +4103,7 @@ xref_analog: MassMono: "143.027909"
 xref_analog: Origin: "C, S"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -4138,7 +4169,6 @@ id: MOD:00213
 name: chondroitin sulfate D-glucuronosyl-D-galactosyl-D-galactosyl-D-xylosyl-L-serine
 def: "modification from RESID" [PubMed:1794445, PubMed:1898736, PubMed:3472204, RESID:AA0208]
 related_synonym: "chondroitin 4-sulfate (chondroitin sulfate A)" []
-related_synonym: "Dehydro" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "-1.01"
 xref_analog: DiffFormula: "C 0 H -1 N 0 O 0"
 xref_analog: DiffMono: "-1.007825"
@@ -4155,7 +4185,6 @@ id: MOD:00214
 name: dermatan 4-sulfate D-glucuronosyl-D-galactosyl-D-galactosyl-D-xylosyl-L-serine
 def: "modification from RESID" [PubMed:2914936, PubMed:3472204, RESID:AA0209]
 related_synonym: "chondroitin sulfate B" []
-related_synonym: "Dehydro" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "-1.01"
 xref_analog: DiffFormula: "C 0 H -1 N 0 O 0"
 xref_analog: DiffMono: "-1.007825"
@@ -4171,7 +4200,6 @@ is_a: MOD:00002 ! O-glycosyl-L-serine
 id: MOD:00215
 name: heparan sulfate D-glucuronosyl-D-galactosyl-D-galactosyl-D-xylosyl-L-serine
 def: "modification from RESID" [PubMed:3472204, RESID:AA0210]
-related_synonym: "Dehydro" [PSI-MS:proposed name]
 related_synonym: "heparin" []
 xref_analog: DiffAvg: "-1.01"
 xref_analog: DiffFormula: "C 0 H -1 N 0 O 0"
@@ -4328,7 +4356,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00223
 name: N6-mureinyl-L-lysine
 def: "modification from RESID" [PubMed:4261992, RESID:AA0218]
-related_synonym: "Dehydro" [PSI-MS:proposed name]
 related_synonym: "N6-[(2R,6S)-2-(N-(N-mureinyl-(R)-alanyl)-(S)-glutamyl)amino-6-amino-6-carboxy-1-oxohex-1-yl]lysine" []
 xref_analog: DiffAvg: "-1.01"
 xref_analog: DiffFormula: "C 0 H -1 N 0 O 0"
@@ -4492,7 +4519,7 @@ is_a: MOD:00905 ! modified L-cysteine residue
 [Term]
 id: MOD:00232
 name: N6-(phospho-5'-adenosine)-L-lysine
-def: "modification from RESID" [PubMed:3882425, PubMed:4944632, DeltaMass:316, RESID:AA0227, UniMod:405]
+def: "modification from RESID" [DeltaMass:316, PubMed:3882425, PubMed:4944632, RESID:AA0227, UniMod:405]
 related_synonym: "5'-adenylic-N6-L-lysine" [RESID:alternate name]
 related_synonym: "AMP Lysyl" [DeltaMass:name]
 related_synonym: "Phosphoadenosine" [PSI-MS:proposed name]
@@ -4868,7 +4895,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00252
 name: keratan sulfate D-glucuronosyl-D-galactosyl-D-galactosyl-D-xylosyl-L-threonine
 def: "modification from RESID" [PubMed:1417734, PubMed:3472204, RESID:AA0247]
-related_synonym: "Dehydro" [PSI-MS:proposed name]
 related_synonym: "keratosulfate" []
 xref_analog: DiffAvg: "-1.01"
 xref_analog: DiffFormula: "C 0 H -1 N 0 O 0"
@@ -4905,7 +4931,6 @@ id: MOD:00254
 name: O4'-(phospho-5'-RNA)-L-tyrosine
 def: "modification from RESID" [PubMed:1702164, PubMed:209034, PubMed:217003, PubMed:6264310, RESID:AA0249]
 related_synonym: "O4'-L-tyrosine 5'-RNA phosphodiester" []
-related_synonym: "Phospho" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "79.98"
 xref_analog: DiffFormula: "C 0 H 1 N 0 O 3 P 1"
 xref_analog: DiffMono: "79.966330"
@@ -4940,9 +4965,10 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 [Term]
 id: MOD:00256
 name: oxidation to L-methionine sulfone
-def: "a protein modification that dioxygenates an L-methionine residue to L-methionine sulfone" [DeltaMass:0, PubMed:7786407, PubMed:7791219, RESID:AA0251, UniMod:32]
-comment: From DeltaMass: Average Mass: 32
+def: "a protein modification that dioxygenates an L-methionine residue to L-methionine sulfone" [DeltaMass:205, PubMed:7786407, PubMed:7791219, RESID:AA0251, UniMod:32]
+comment: DeltaMass gives the formula C 5 H 9 N 3 O 1 S 1 with mass 163
 related_synonym: "Dioxidation" [PSI-MS:proposed name]
+related_synonym: "MethionylSulphone" [DeltaMass:name]
 related_synonym: "Oxidation of Methionine (to Sulphone)" [DeltaMass:name]
 exact_synonym: "L-methionine S,S-dioxide" []
 exact_synonym: "L-methionine sulfone" []
@@ -4991,7 +5017,7 @@ xref_analog: MassMono: "157.043559"
 xref_analog: Origin: "C, T"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -5000,7 +5026,6 @@ id: MOD:00259
 name: O4'-(phospho-5'-DNA)-L-tyrosine
 def: "modification from RESID" [PubMed:1861973, PubMed:2940511, PubMed:3684578, RESID:AA0254]
 related_synonym: "O4'-L-tyrosine 5'-DNA phosphodiester" []
-related_synonym: "Phospho" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "79.98"
 xref_analog: DiffFormula: "C 0 H 1 N 0 O 3 P 1"
 xref_analog: DiffMono: "79.966330"
@@ -5896,6 +5921,7 @@ comment: From DeltaMass: Average Mass: -17 Average Mass Change:-17 References:Cl
 related_synonym: "2-amino-butanimide" []
 related_synonym: "D-succ" []
 related_synonym: "D-succinimide" []
+related_synonym: "Dehydrated" [PSI-MS:proposed name]
 related_synonym: "Succinimide formation from asparagine" [DeltaMass:name]
 xref_analog: DiffAvg: "-18.02"
 xref_analog: DiffFormula: "C 0 H -2 N 0 O -1"
@@ -5914,6 +5940,7 @@ id: MOD:00308
 name: L-glutamimide
 def: "modification from RESID" [RESID:AA0303, UniMod:430]
 related_synonym: "2-aminopentanimide" []
+related_synonym: "Dehydrated" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "-18.02"
 xref_analog: DiffFormula: "C 0 H -2 N 0 O -1"
 xref_analog: DiffMono: "-18.010565"
@@ -5929,9 +5956,12 @@ is_a: MOD:00907 ! modified L-glutamine residue
 [Term]
 id: MOD:00309
 name: L-beta-carboxyaspartic acid
-def: "modification from RESID" [PubMed:6390094, PubMed:7138832, PubMed:7457858, PubMed:8135347, RESID:AA0304]
+def: "modification from RESID" [PubMed:6390094, PubMed:7138832, PubMed:7457858, PubMed:8135347, RESID:AA0304, UniMod:38, UniMod:299]
+broad_synonym: "carboxyl" []
 related_synonym: "2-amino-1,1,2-ethanetricarboxylic acid" []
+related_synonym: "aspartic acid carboxylation" [UniMod:name]
 related_synonym: "Carboxy" [PSI-MS:proposed name]
+related_synonym: "gamma-carboxylation [misnomer]"
 xref_analog: DiffAvg: "44.01"
 xref_analog: DiffFormula: "C 1 H 0 N 0 O 2"
 xref_analog: DiffMono: "43.989829"
@@ -5967,7 +5997,8 @@ is_a: MOD:00658 ! methylated L-arginine
 [Term]
 id: MOD:00311
 name: L-cysteine coenzyme A disulfide
-def: "modification from RESID" [PubMed:1734967, RESID:AA0306, UniMod:281]
+def: "modification from RESID" [DeltaMass:0, PubMed:1734967, RESID:AA0306, UniMod:281]
+comment: DeltaMass gives no formula with mass as 454.
 related_synonym: "coenzyme A L-cysteine mixed disulfide" []
 related_synonym: "CoenzymeA" [PSI-MS:proposed name]
 related_synonym: "CysCoA" []
@@ -6065,7 +6096,7 @@ id: MOD:00316
 name: N4,N4-dimethylated L-asparagine
 def: "a protein modification that effectively converts an L-asparagine residue to N4,N4-dimethyl-L-asparagine" [PubMed:8783012, RESID:AA0311]
 related_synonym: "beta-dimethylasparagine [misnomer]" []
-related_synonym: "Ethyl" [PSI-MS:proposed name]
+related_synonym: "Dimethyl" [PSI-MS:proposed name]
 exact_synonym: "N4Me2Asn" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "28.05"
 xref_analog: DiffFormula: "C 2 H 4 N 0 O 0"
@@ -6113,7 +6144,7 @@ xref_analog: MassMono: "317.047027"
 xref_analog: Origin: "C, W"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00918 ! modified L-tryptophan residue
 
@@ -6132,7 +6163,7 @@ xref_analog: MassMono: "216.020477"
 xref_analog: Origin: "C, D"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -6151,7 +6182,7 @@ xref_analog: MassMono: "230.036128"
 xref_analog: Origin: "C, E"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -6292,7 +6323,6 @@ id: MOD:00328
 name: O4'-(phospho-3'-DNA)-L-tyrosine
 def: "modification from RESID" [PubMed:2211714, RESID:AA0323]
 related_synonym: "O4'-L-tyrosine 3'-DNA phosphodiester" []
-related_synonym: "Phospho" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "79.98"
 xref_analog: DiffFormula: "C 0 H 1 N 0 O 3 P 1"
 xref_analog: DiffMono: "79.966330"
@@ -6429,7 +6459,7 @@ xref_analog: MassMono: "202.041213"
 xref_analog: Origin: "C, T"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -6508,6 +6538,7 @@ id: MOD:00340
 name: S-amidino-L-cysteine
 def: "modification from RESID" [PubMed:9148748, RESID:AA0335, UniMod:440]
 related_synonym: "2-amino-3-amidinothiopropanoic acid" []
+related_synonym: "Amidino" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "42.04"
 xref_analog: DiffFormula: "C 1 H 2 N 2 O 0 S 0"
 xref_analog: DiffMono: "42.021798"
@@ -6564,9 +6595,10 @@ is_a: MOD:00662 ! methylated L-leucine
 [Term]
 id: MOD:00343
 name: N-methylated L-tyrosine
-def: "a protein modification that effectively converts an L-tyrosine residue to N-methyl-L-tyrosine" [RESID:AA0338]
+def: "a protein modification that effectively converts an L-tyrosine residue to N-methyl-L-tyrosine" [DeltaMass:0, RESID:AA0338]
 related_synonym: "Methyl" [PSI-MS:proposed name]
 related_synonym: "N-methyltyrosine" []
+related_synonym: "N-methyl Tyrosinyl [misnomer]" [DeltaMass:name]
 exact_synonym: "NMeTyr" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "14.03"
 xref_analog: DiffFormula: "C 1 H 2 N 0 O 0"
@@ -6617,7 +6649,7 @@ xref_analog: MassMono: "248.061948"
 xref_analog: Origin: "C, F"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
 
@@ -6636,7 +6668,7 @@ xref_analog: MassMono: "248.061948"
 xref_analog: Origin: "C, F"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
 
@@ -6655,7 +6687,7 @@ xref_analog: MassMono: "202.041213"
 xref_analog: Origin: "C, T"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
 
@@ -7669,6 +7701,7 @@ id: MOD:00404
 name: homoserine lactone
 def: "modification from UniMod Chemical derivative" [UniMod:11]
 related_synonym: "Hse_lact" []
+related_synonym: "Met->HseLactone" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "-48.11"
 xref_analog: DiffFormula: "C -1 H -4 S -1"
 xref_analog: DiffMono: "-48.003371"
@@ -7874,6 +7907,7 @@ is_a: MOD:00008 ! common
 id: MOD:00416
 name: phosphorylation with prompt loss of phosphate
 def: "modification from UniMod" [UniMod:23]
+related_synonym: "Dehydrated" [PSI-MS:proposed name]
 related_synonym: "Phospho+PL" []
 xref_analog: DiffAvg: "-18.02"
 xref_analog: DiffFormula: "H -2 O -1"
@@ -7911,6 +7945,7 @@ id: MOD:00418
 name: pyridyl
 def: "modification from UniMod Chemical derivative" [UniMod:25]
 related_synonym: "Pyridyl" []
+related_synonym: "Pyridylacetyl" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "119.12"
 xref_analog: DiffFormula: "C 7 H 5 N 1 O 1"
 xref_analog: DiffMono: "119.037114"
@@ -7928,6 +7963,7 @@ name: S-carbamoylmethylcysteine cyclization (N-terminus)
 def: "modification from UniMod Artefact" [DeltaMass:336, PubMed:12643538, UniMod:26]
 comment: From DeltaMass: Average Mass: -17 Abbreviation:Otc Average Mass Change:-17 References:J. Proteome Res. 1, 181-187  (2002) Notes:A secondary modification affecting peptides with S-carbamoylmethyl-L-cysteine (CamC) at the N-terminus.  These exist in enzymatic digests of proteins that have been S-alkylated with iodoacetamide.  In a reaction that parallels the formation of N-terminal 2-oxopyrrolidine-5-carboxylic acid (also called pyroglutamic acid, 5-oxoproline or 2-pyrrolidone-5-carboxylic acid) from N-terminal glutamine,  cyclization of N-terminal CamC gives an N-terminal residue of (R)-5-oxoperhydro-1,4-thiazine-3-carboxylic acid. Peptides in which this has occurred become more hydrophobic, and lose 17 Da from the N-terminal residue.
 related_synonym: "Otc" [DeltaMass:abbreviation]
+related_synonym: "Pyro-carbamidomethyl" [PSI-MS:proposed name]
 related_synonym: "Pyro-cmC" []
 related_synonym: "S-carbamoylmethylcysteine cyclization (N-terminus)" [DeltaMass:name]
 xref_analog: DiffAvg: "-17.03"
@@ -7960,7 +7996,6 @@ xref_analog: MassMono: "112.039853"
 xref_analog: Origin: "E"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
 is_a: MOD:00601 ! cyclized residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -7993,6 +8028,7 @@ id: MOD:00423
 name: sodium adduct
 def: "modification from UniMod Artefact" [DeltaMass:0, UniMod:30]
 comment: From DeltaMass: Average Mass: 22
+related_synonym: "Cation:Na" [PSI-MS:proposed name]
 related_synonym: "Sodiated" []
 related_synonym: "Sodium" [DeltaMass:name]
 xref_analog: DiffAvg: "21.98"
@@ -8062,8 +8098,8 @@ id: MOD:00429
 name: dimethylated residue
 def: "a protein modification that effectively replaces two hydrogen atoms with two methyl group" [DeltaMass:0, UniMod:36]
 comment: For amino-terminal proline residues, dimethylation can effectively only be accomplished with a protonated imino group. This process accounts only for dimethylation and not protonation. The alternative Me2+Res process accounts for both protonation and dimethylation. From DeltaMass: Average Mass: 28
+related_synonym: "Dimethyl" [PSI-MS:proposed name]
 related_synonym: "dimethylation" []
-related_synonym: "Ethyl" [PSI-MS:proposed name]
 related_synonym: "N,N dimethylation (of Arginine or Lysine)" [DeltaMass:name]
 exact_synonym: "Me2Res" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "28.05"
@@ -8122,6 +8158,7 @@ id: MOD:00434
 name: hexosylated
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a hexose sugar group through a glycosidic bond" [DeltaMass:203, UniMod:41]
 comment: From DeltaMass: Average Mass: 162 Formula:C6 H10 05 Monoisotopic Mass Change:162.053 Average Mass Change:162.143 References:PE Sciex
+related_synonym: "O-Glycosyl-" [DeltaMass:name]
 related_synonym: "Hex" [PSI-MS:proposed name]
 related_synonym: "Hex" []
 related_synonym: "Hexoses (Fru, Gal, Glc, Man)" [DeltaMass:name]
@@ -8132,8 +8169,8 @@ xref_analog: DiffMono: "162.052823"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "T, N, K, W"
-xref_analog: Source: "Artifact"
+xref_analog: Origin: "C, K, N, P, T, S, W"
+xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
 is_a: MOD:00725 ! complex glycosylation
 
@@ -8316,7 +8353,7 @@ is_a: MOD:00902 ! modified L-arginine residue
 id: MOD:00444
 name: N-acyl diglyceride cysteine
 def: "modification from UniMod Post-translational" [RESID:AA0106+AA0107, UniMod:51]
-related_synonym: "Tripalmitate" []
+related_synonym: "Tripalmitate" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "789.30"
 xref_analog: DiffFormula: "C 51 H 96 O 5"
 xref_analog: DiffMono: "788.725776"
@@ -8334,6 +8371,7 @@ id: MOD:00445
 name: guanidination
 def: "modification from UniMod Chemical derivative" [PubMed:11078590, UniMod:52]
 related_synonym: "guanidination" []
+related_synonym: "Guanidinyl" [PSI-MS:proposed name]
 related_synonym: "lysine cyanamide adduct" []
 xref_analog: DiffAvg: "42.04"
 xref_analog: DiffFormula: "C 1 H 2 N 2"
@@ -8428,6 +8466,7 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00451
 name: Propionate labeling reagent light form (N-term &amp; K)
 def: "modification from UniMod Isotopic label" [PubMed:11857757, UniMod:58]
+related_synonym: "Propionyl" [PSI-MS:proposed name]
 related_synonym: "Propionyl_light" []
 xref_analog: DiffAvg: "56.06"
 xref_analog: DiffFormula: "C 3 H 4 O 1"
@@ -8688,23 +8727,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00008 ! common
 
 [Term]
-id: MOD:00466
-name: threonine oxidation to 2-amino-3-oxo-butanoic acid
-def: "modification from UniMod Chemical derivative" [PubMed:9252331, UniMod:86]
-related_synonym: "2-amino-3-oxo-butanoic_acid" []
-related_synonym: "Didehydro" [PSI-MS:proposed name]
-xref_analog: DiffAvg: "-2.02"
-xref_analog: DiffFormula: "H -2"
-xref_analog: DiffMono: "-2.015650"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "T"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00467
 name: iminobiotinylation
 def: "modification from UniMod Chemical derivative" [UniMod:89]
@@ -8881,13 +8903,14 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "P"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
+is_a: MOD:00915 ! modified L-proline residue
 
 [Term]
 id: MOD:00478
 name: proline oxidation to glutamic semialdehyde
-def: "modification from UniMod Chemical derivative" [PubMed:11120890, PubMed:9252331, UniMod:103, UniMod:358]
+def: "modification from UniMod Chemical derivative" [DeltaMass:354, PubMed:2563380, PubMed:11120890, PubMed:9252331, UniMod:103, UniMod:358]
 related_synonym: "Oxidation" [PSI-MS:proposed name]
+related_synonym: "Oxidation of proline to gamma-glutamyl semialdehyde" [DeltaMass:name]
 related_synonym: "Proglutamicsealde" []
 xref_analog: DiffAvg: "16.00"
 xref_analog: DiffFormula: "O 1"
@@ -8898,14 +8921,18 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "P"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
+is_a: MOD:00915 ! modified L-proline residue
 
 [Term]
 id: MOD:00479
 name: arginine oxidation to glutamic semialdehyde
-def: "modification from UniMod Chemical derivative" [PubMed:9252331, UniMod:104]
+def: "modification from UniMod Chemical derivative" [DeltaMass:351,PubMed:1680314,  PubMed:9252331, PubMed:11120890, UniMod:104, UniMod:344, UniMod:367]
+comment: From DeltaMass: Average Mass: -27 Monoisotopic Mass Change:-27.06 Average Mass Change:-27.07 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.
+related_synonym: "arginine oxidation to gamma-glutamyl semialdehyde" [UniMod:alternate name]
 related_synonym: "Arg->GluSA" [PSI-MS:proposed name]
 related_synonym: "Argglutamicsealde" []
+related_synonym: "OxArgGlusemal" []
+related_synonym: "Oxidation of arginine (to glutamic acid)" [DeltaMass:name]
 xref_analog: DiffAvg: "-43.07"
 xref_analog: DiffFormula: "C -1 H -5 N -3 O 1"
 xref_analog: DiffMono: "-43.053433"
@@ -8915,7 +8942,7 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "R"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
+is_a: MOD:00902 ! modified L-arginine residue
 
 [Term]
 id: MOD:00480
@@ -8974,6 +9001,7 @@ is_a: MOD:00913 ! modified L-methionine residue
 id: MOD:00483
 name: N-ethylmaleimide on cysteines
 def: "modification from UniMod Chemical derivative" [UniMod:108]
+related_synonym: "Nethylmaleimide" [PSI-MS:proposed name]
 related_synonym: "NEM" []
 xref_analog: DiffAvg: "125.13"
 xref_analog: DiffFormula: "C 6 H 7 N 1 O 2"
@@ -9103,6 +9131,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00491
 name: thio ether formation - BTP Adduct
 def: "modification from UniMod Chemical derivative" [PubMed:11861642, UniMod:119]
+related_synonym: "IBTP" [PSI-MS:proposed name]
 related_synonym: "IBTP" []
 xref_analog: DiffAvg: "316.38"
 xref_analog: DiffFormula: "C 22 H 21 P 1"
@@ -9118,9 +9147,8 @@ is_a: MOD:00004 ! artifact
 [Term]
 id: MOD:00492
 name: ubiquitinylation residue
-def: "modification from UniMod Pre-translational" [RESID:AA0125, UniMod:121]
+def: "The two glycine residues left on ubiquitinylated lysine after tryptic digestion." [PubMed:11125103, PubMed:12612601, RESID:AA0125, UniMod:121]
 related_synonym: "GlyGly" [PSI-MS:proposed name]
-related_synonym: "GlyGly" []
 xref_analog: DiffAvg: "114.10"
 xref_analog: DiffFormula: "C 4 H 6 N 2 O 2"
 xref_analog: DiffMono: "114.042927"
@@ -9130,7 +9158,7 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
-is_a: MOD:00008 ! common
+is_a: MOD:00134 ! N6-glycyl-L-lysine
 
 [Term]
 id: MOD:00493
@@ -9206,7 +9234,7 @@ is_a: MOD:00004 ! artifact
 [Term]
 id: MOD:00497
 name: thioacylation of primary amines (N-term and Lys)
-def: "modification from UniMod Other" [PubMed:957432, UniMod:126]
+def: "modification from UniMod  [(35)S]dithiobis(succinimidyl propionate) crosslinking" [PubMed:957432, UniMod:126]
 related_synonym: "DSP" []
 related_synonym: "Thioacyl" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "88.13"
@@ -9261,6 +9289,7 @@ id: MOD:00500
 name: monoiodinated residue
 def: "a protein modification that effectively substitutes one iodine atom for one hydrogen atom" [DeltaMass:0, UniMod:129]
 comment: From DeltaMass: Average Mass: 126
+related_synonym: "Iodo" [PSI-MS:proposed name]
 related_synonym: "Iodination (of Histidine[C4] or Tyrosine[C3])" [DeltaMass:name]
 related_synonym: "monoiodination" []
 exact_synonym: "I1Res" [PSI-MOD:unique short label]
@@ -9280,6 +9309,7 @@ id: MOD:00501
 name: diiodinated residue
 def: "a protein modification that effectively substitutes two iodine atoms for two hydrogen atoms" [DeltaMass:0, UniMod:130]
 comment: From DeltaMass: Average Mass: 252
+related_synonym: "Diiodo" [PSI-MS:proposed name]
 related_synonym: "3,5-Diiodination (of Tyrosine)" [DeltaMass:name]
 related_synonym: "diiodination" []
 exact_synonym: "I2Res" [PSI-MOD:unique short label]
@@ -9298,6 +9328,7 @@ is_a: MOD:00755 ! iodinated residue
 id: MOD:00502
 name: triiodinated residue
 def: "a protein modification that effectively substitutes three iodine atoms for three hydrogen atoms" [RESID:AA0177, UniMod:131]
+related_synonym: "Triiodo" [PSI-MS:proposed name]
 related_synonym: "triiodination" []
 exact_synonym: "I3Res" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "377.69"
@@ -9315,6 +9346,7 @@ is_a: MOD:00755 ! iodinated residue
 id: MOD:00503
 name: (cis-delta 5)-tetradecaenoyl
 def: "modification from UniMod Co-translational" [PubMed:1326520, RESID:AA0059, UniMod:134]
+related_synonym: "Myristoleyl" [PSI-MS:proposed name]
 related_synonym: "myristoleylation" []
 related_synonym: "Myristoyl" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "208.34"
@@ -9470,7 +9502,8 @@ is_a: MOD:00725 ! complex glycosylation
 [Term]
 id: MOD:00512
 name: Hex3
-def: "modification from UniMod N-linked glycosylation, Hex(3)" [RESID:AA0151, UniMod:144]
+def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with three hexose sugar groups through glycosidic bonds " [RESID:AA0151, UniMod:144]
+related_synonym: "Hex(3)" [PSI-MS:proposed name]
 related_synonym: "Hex3" []
 xref_analog: DiffAvg: "486.42"
 xref_analog: DiffFormula: "C 18 H 30 O 15"
@@ -9478,7 +9511,7 @@ xref_analog: DiffMono: "486.158470"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "N"
+xref_analog: Origin: "none"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00725 ! complex glycosylation
@@ -9538,6 +9571,7 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00516
 name: Hex1HexNAc2
 def: "modification from UniMod N-linked glycosylation" [RESID:AA0151var, UniMod:148]
+related_synonym: "Hex(1)HexNAc(2)" [PSI-MS:proposed name]
 related_synonym: "Hex1HexNAc2" []
 xref_analog: DiffAvg: "568.53"
 xref_analog: DiffFormula: "C 22 H 36 N 2 O 15"
@@ -9555,6 +9589,7 @@ id: MOD:00517
 name: Hex1HexNAc1NeuAc1
 def: "modification from UniMod N-linked glycosylation" [DeltaMass:0, RESID:AA0151var, UniMod:149]
 comment: From DeltaMass: Average Mass: 657
+related_synonym: "Hex(1)HexNAc(1)NeuAc(1)" [PSI-MS:proposed name]
 related_synonym: "Hex1HexNAc1NeuAc1" []
 related_synonym: "NeuAc-Hex-HexNAc" [DeltaMass:name]
 xref_analog: DiffAvg: "656.59"
@@ -9572,7 +9607,7 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00518
 name: HexNAc2dHex2
 def: "modification from UniMod N-linked glycosylation" [RESID:AA0151var, UniMod:150]
-related_synonym: "HexNAc(1)dHex(2)" [PSI-MS:proposed name]
+related_synonym: "HexNAc(2)dHex(2)" [PSI-MS:proposed name]
 related_synonym: "HexNAc2dHex2" []
 xref_analog: DiffAvg: "495.47"
 xref_analog: DiffFormula: "C 20 H 33 N 1 O 13"
@@ -9589,6 +9624,7 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00519
 name: Hex1HexNAc2Pent1
 def: "modification from UniMod N-linked glycosylation" [RESID:AA0151var, UniMod:151]
+related_synonym: "Hex(1)HexNAc(2)Pent(1)" [PSI-MS:proposed name]
 related_synonym: "Hex1HexNAc2Pent1" []
 xref_analog: DiffAvg: "497.45"
 xref_analog: DiffFormula: "C 19 H 31 N 1 O 14"
@@ -9605,6 +9641,7 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00520
 name: Hex1HexNAc2dHex1
 def: "modification from UniMod N-linked glycosylation" [RESID:AA0151var, UniMod:152]
+related_synonym: "Hex(1)HexNAc(2)dHex(1)" [PSI-MS:proposed name]
 related_synonym: "Hex1HexNAc2dHex1" []
 xref_analog: DiffAvg: "714.67"
 xref_analog: DiffFormula: "C 28 H 46 N 2 O 19"
@@ -9672,6 +9709,7 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00524
 name: Hex1HexNAc2dHex2
 def: "modification from UniMod N-linked glycosylation" [RESID:AA0151var, UniMod:156]
+related_synonym: "Hex(1)HexNAc(2)dHex(2)" [PSI-MS:proposed name]
 related_synonym: "Hex1HexNAc2dHex2" []
 xref_analog: DiffAvg: "657.62"
 xref_analog: DiffFormula: "C 26 H 43 N 1 O 18"
@@ -9723,6 +9761,7 @@ id: MOD:00527
 name: Hex3HexNAc2
 def: "modification from UniMod N-linked glycosylation" [DeltaMass:0, RESID:AA0151var, UniMod:159]
 comment: From DeltaMass: Average Mass: 893
+related_synonym: "Hex(3)HexNAc(2)" [PSI-MS:proposed name]
 related_synonym: "(Hex)3-HexNAc-HexNAc" [DeltaMass:name]
 related_synonym: "Hex3HexNAc2" []
 xref_analog: DiffAvg: "798.80"
@@ -9907,23 +9946,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00010 ! L-alanine
 
 [Term]
-id: MOD:00538
-name: serine reduced to aminobutynate
-def: "modification from UniMod O-linked glycosylation" [UniMod:181]
-comment: not obvious
-related_synonym: "ser_ambut" []
-xref_analog: DiffAvg: "-2.98"
-xref_analog: DiffFormula: "C 1 H 1 O -1"
-xref_analog: DiffMono: "-2.987090"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "S"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00539
 name: threonine reduced to aminobutynate
 def: "modification from UniMod O-linked glycosylation" [UniMod:182]
@@ -9944,6 +9966,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00540
 name: 9xC13 label
 def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:184]
+related_synonym: "Label:13C(9)" [PSI-MS:proposed name]
 related_synonym: "13C9" []
 xref_analog: DiffAvg: "9.03"
 xref_analog: DiffFormula: "(12)C -9 (13)C 9"
@@ -10045,6 +10068,7 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00546
 name: (18)O label at both C-terminal oxygens
 def: "modification from UniMod Isotopic label" [UniMod:193]
+related_synonym: "Label:18O(2)" [PSI-MS:proposed name]
 related_synonym: "double_O18" []
 xref_analog: DiffAvg: "4.01"
 xref_analog: DiffFormula: "(16)O -2 (18)O 2"
@@ -10095,6 +10119,7 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00549
 name: APTA d3
 def: "modification from UniMod Isotopic label" [UniMod:196]
+related_synonym: "QAT:2H(3)" [PSI-MS:proposed name]
 related_synonym: "QATd3" []
 xref_analog: DiffAvg: "174.28"
 xref_analog: DiffFormula: "C 9 (1)H 16 (2)H 3 N 2 O 1"
@@ -10232,6 +10257,7 @@ id: MOD:00557
 name: acrolein addition +56
 def: "modification from UniMod Other" [UniMod:206]
 related_synonym: "Acrolein56" []
+related_synonym: "Delta:H(4)C(3)O(1)" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "56.06"
 xref_analog: DiffFormula: "C 3 H 4 O 1"
 xref_analog: DiffMono: "56.026215"
@@ -10264,6 +10290,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00559
 name: acrolein addition +76
 def: "modification from UniMod Other" [UniMod:208]
+related_synonym: "Delta:H(4)C(6)" [PSI-MS:proposed name]
 related_synonym: "Acrolein76" []
 xref_analog: DiffAvg: "76.10"
 xref_analog: DiffFormula: "C 6 H 4"
@@ -10337,7 +10364,8 @@ is_a: MOD:00693 ! glycosylated residue
 [Term]
 id: MOD:00564
 name: Applied Biosystems iTRAQ(TM) multiplexed quantitation chemistry
-def: "modification from UniMod Isotopic label" [UniMod:214, URL:http\://docs.appliedbiosystems.com/pebiodocs/04351918.pdf]
+def: "modification from UniMod Isotopic label." [UniMod:214, URL:http://docs.appliedbiosystems.com/pebiodocs/04351918.pdf]
+related_synonym: "iTRAQ" [PSI-MS:proposed name]
 related_synonym: "iTRAQ" []
 xref_analog: DiffAvg: "144.11"
 xref_analog: DiffFormula: "(12)C 4 (13)C 3 H 12 (14)N 1 (15)N 1 O 1"
@@ -10372,6 +10400,7 @@ id: MOD:00566
 name: label Cysteine with IGBP reagent
 def: "modification from UniMod Chemical derivative" [UniMod:243]
 comment: "IDBEST tag for quantitation, http://www.targetdiscovery.com/index.php?topic=prod.idbe"
+related_synonym: "IGBP" [PSI-MS:proposed name]
 related_synonym: "Cysteine-Br" []
 related_synonym: "IGBP" []
 xref_analog: DiffAvg: "297.15"
@@ -10420,42 +10449,11 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
 [Term]
-id: MOD:00569
-name: glutamine oxidation to 2-oxo-propanoic acid
-def: "modification from UniMod Chemical derivative" [PubMed:9252331, UniMod:246]
-related_synonym: "OxGln1" []
-xref_analog: DiffAvg: "-58.08"
-xref_analog: DiffFormula: "C -2 H -6 N -2"
-xref_analog: DiffMono: "-58.053098"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "Q"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
-id: MOD:00570
-name: glutamine oxidation to 2-oxo-propanoic acid (ethandioic acid)
-def: "modification from UniMod Chemical derivative" [PubMed:9252331, UniMod:247]
-related_synonym: "OxGln2" []
-xref_analog: DiffAvg: "-56.11"
-xref_analog: DiffFormula: "C -3 H -8 N -2 O 1"
-xref_analog: DiffMono: "-56.073834"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "Q"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00571
 name: 2-pyrrolidone-5-carboxylic acid (Pro)
-def: "a modification that effectively oxygenates C5 of L-proline to form 2-pyrrolidone-5-carboxylic acid, pyroglutamic acid" [PubMed:10717661, PubMed:9252331, RESID:AA0031, UniMod:248, UniMod:359]
+def: "a modification that effectively oxygenates C5 of L-proline to form 2-pyrrolidone-5-carboxylic acid, pyroglutamic acid" [PubMed:10717661, PubMed:9252331, RESID:AA0031, UniMod:359, UniMod:248]
 related_synonym: "5-oxoproline" []
+related_synonym: "Pro->pyro-Glu" [PSI-MS:proposed name]
 related_synonym: "pyroglutamic acid" []
 exact_synonym: "PyrGlu(Pro)" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "13.98"
@@ -10576,7 +10574,7 @@ id: MOD:00578
 name: acetaldehyde +28
 def: "modification from UniMod Other" [UniMod:255]
 related_synonym: "Acetald+28" []
-related_synonym: "Ethyl" [PSI-MS:proposed name]
+related_synonym: "Delta:H(4)C(2)" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "28.05"
 xref_analog: DiffFormula: "C 2 H 4"
 xref_analog: DiffMono: "28.031300"
@@ -10592,6 +10590,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00579
 name: propionaldehyde +40
 def: "modification from UniMod Other" [UniMod:256]
+related_synonym: "Delta:H(4)C(3)" [PSI-MS:proposed name]
 related_synonym: "Propionald+40" []
 xref_analog: DiffAvg: "40.06"
 xref_analog: DiffFormula: "C 3 H 4"
@@ -10659,6 +10658,7 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00583
 name: thiophosphorylation
 def: "modification from UniMod Other" [UniMod:260]
+related_synonym: "Thiophospho" [PSI-MS:proposed name]
 related_synonym: "Thio-phospho" []
 xref_analog: DiffAvg: "96.05"
 xref_analog: DiffFormula: "H 1 O 2 P 1 S 1"
@@ -10826,8 +10826,9 @@ is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00593
-name: covalent modification of lysine by cross-linking reagent
+name: covalent modification of lysine by omega-maleimido alkanoyl N-hydroxysuccinimido esters
 def: "modification from UniMod Chemical derivative" [UniMod:273]
+comment: J. Prot. Chem. 2, 263-277, 1983
 related_synonym: "SSD" [PSI-MS:proposed name]
 related_synonym: "SSD_K" []
 xref_analog: DiffAvg: "253.25"
@@ -10837,22 +10838,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
-id: MOD:00594
-name: hydroxymethyl vinyl ketone
-def: "modification from UniMod Chemical derivative" [UniMod:274]
-related_synonym: "HMVK" []
-xref_analog: DiffAvg: "29.02"
-xref_analog: DiffFormula: "C 1 H 1 O 1"
-xref_analog: DiffMono: "29.002740"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "K, H, C"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
@@ -10937,7 +10922,7 @@ is_a: MOD:00427 ! methylated residue
 [Term]
 id: MOD:00600
 name: ethylation
-def: "modification from UniMod Multiple" [DeltaMass:0, UniMod:280]
+def: "modification from UniMod Multiple" [DeltaMass:0, PubMed::9629898, UniMod:280]
 comment: From DeltaMass: Average Mass: 28
 related_synonym: "Ethyl" [DeltaMass:name]
 related_synonym: "Ethyl" [PSI-MS:proposed name]
@@ -10948,9 +10933,9 @@ xref_analog: DiffMono: "28.031300"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: ", K"
+xref_analog: Origin: "E, K"
 xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
+xref_analog: TermSpec: "N-term"
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -10993,7 +10978,7 @@ xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin:
 xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
+xref_analog: TermSpec: "N-term"
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -11050,8 +11035,9 @@ is_a: MOD:00702 ! isotope tag modified residue
 [Term]
 id: MOD:00607
 name: tryptophan oxidation to oxolactone
-def: "modification from UniMod Chemical derivative" [UniMod:288]
+def: "modification from UniMod Chemical derivative" [PubMed::7949339, UniMod:288]
 related_synonym: "oxolactone" []
+related_synonym: "Trp->Oxolactone" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "13.98"
 xref_analog: DiffFormula: "H -2 O 1"
 xref_analog: DiffMono: "13.979265"
@@ -11067,6 +11053,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00608
 name: biotin polyethyleneoxide amine
 def: "modification from UniMod Chemical derivative" [UniMod:289]
+related_synonym: "Biotin-PEO-Amine " [PSI-MS:proposed name]
 related_synonym: "BiotinPEO-amine" []
 xref_analog: DiffAvg: "356.48"
 xref_analog: DiffFormula: "C 16 H 28 N 4 O 3 S 1"
@@ -11100,6 +11087,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00610
 name: mercury mercaptan
 def: "modification from UniMod Chemical derivative" [UniMod:291]
+related_synonym: "Delta:Hg(1)" [PSI-MS:proposed name]
 related_synonym: "Hg" []
 xref_analog: DiffAvg: "200.59"
 xref_analog: DiffFormula: "Hg 1"
@@ -11116,6 +11104,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00611
 name: cross-link of (iodo)-uracil MP with W,F,Y
 def: "modification from UniMod Chemical derivative" [UniMod:292]
+related_synonym: "IodoU-AMP" [PSI-MS:proposed name]
 related_synonym: "IodoU-AMP" []
 xref_analog: DiffAvg: "322.17"
 xref_analog: DiffFormula: "C 9 H 11 N 2 O 9 P 1"
@@ -11198,22 +11187,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
 [Term]
-id: MOD:00616
-name: guanidination of K followed by 4-sulfophenyl isocyante modification to N-term K
-def: "modification from UniMod Chemical derivative" [PubMed:14689565, UniMod:297]
-related_synonym: "TrypGSPITCK" []
-xref_analog: DiffAvg: "257.29"
-xref_analog: DiffFormula: "C 8 H 7 N 3 O 3 S 2"
-xref_analog: DiffMono: "256.992882"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "K"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00617
 name: deuterated methyl ester
 def: "modification from UniMod Isotopic label" [UniMod:298]
@@ -11232,8 +11205,9 @@ is_a: MOD:00702 ! isotope tag modified residue
 
 [Term]
 id: MOD:00618
-name: carboxylation
+name: tryptophan carboxylation
 def: "modification from UniMod Chemical derivative" [UniMod:299]
+comment: there is no citation for this UniMod entry
 related_synonym: "Carboxy" [PSI-MS:proposed name]
 related_synonym: "carboxyl" []
 xref_analog: DiffAvg: "44.01"
@@ -11334,23 +11308,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
-id: MOD:00624
-name: sulfitolysis
-def: "modification from UniMod Chemional" [UniMod:306]
-related_synonym: "Sulfitolysis" []
-related_synonym: "Sulfo" [PSI-MS:proposed name]
-xref_analog: DiffAvg: "80.06"
-xref_analog: DiffFormula: "O 3 S 1"
-xref_analog: DiffMono: "79.956815"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "K"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00625
 name: N-methylmaleimide
 def: "modification from UniMod Chemical derivative" [UniMod:314]
@@ -11401,6 +11358,22 @@ xref_analog: Origin: "K"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
+
+[Term]
+id: MOD:00628
+name: Hex2
+def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with two hexose sugar groups through glycosidic bonds " [PSI-MOD:ref]
+related_synonym: "Hex3" []
+xref_analog: DiffAvg:
+xref_analog: DiffFormula: "C 12 H 22 O 11"
+xref_analog: DiffMono:
+xref_analog: Formula: "none"
+xref_analog: MassAvg: "none"
+xref_analog: MassMono: "none"
+xref_analog: Origin:
+xref_analog: Source: "Natural"
+xref_analog: TermSpec: "none"
+is_a: MOD:00725 ! complex glycosylation
 
 [Term]
 id: MOD:00629
@@ -11474,6 +11447,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00633
 name: bis-N-I-sulfonerahodamine
 def: "modification from UniMod Chemical derivative" [UniMod:323]
+related_synonym: "Xlink:B10621" [PSI-MS:proposed name]
 related_synonym: "bNis" []
 xref_analog: DiffAvg: "713.56"
 xref_analog: DiffFormula: "C 31 H 30 I 1 N 4 O 6 S 1"
@@ -11507,6 +11481,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00635
 name: 10-fluoroethoxyphosphinyl-N-(biotinamidopentyl)decanamide
 def: "modification from UniMod Chemical derivative" [PubMed:10611275, UniMod:325]
+related_synonym: "FP-Biotin" [PSI-MS:proposed name]
 related_synonym: "FP-Biotin" []
 xref_analog: DiffAvg: "572.74"
 xref_analog: DiffFormula: "C 27 H 49 N 4 O 5 P 1 S 1"
@@ -11592,6 +11567,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00640
 name: 6-N-biotinylaminohexyl isopropyl phosphorofluoridate
 def: "modification from UniMod Chemical derivative" [UniMod:333]
+related_synonym: "Can-FP-biotin" [PSI-MS:proposed name]
 related_synonym: "Can-FP-biotin" []
 xref_analog: DiffAvg: "467.54"
 xref_analog: DiffFormula: "C 19 F 1 H 35 N 3 O 5 P 1 S 1"
@@ -11642,6 +11618,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00643
 name: Michael addition with tritiated methylamine
 def: "modification from UniMod Artefact" [PubMed:11968134, UniMod:337]
+related_synonym: "Methylamine" [PSI-MS:proposed name]
 related_synonym: "MethylamineST" []
 xref_analog: DiffAvg: "13.03"
 xref_analog: DiffFormula: "C 1 (3)H 1 N 1 O -1"
@@ -12078,7 +12055,7 @@ is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00687
-name: thioether crosslinked residues [lanthionine]
+name: thioether crosslinked residues (lanthionine)
 def: "a protein modification that crosslinks two residues with a thioether bond, as in lanthionine" [PSI-MOD:ref]
 is_a: MOD:00033 ! crosslinked residues
 
@@ -12117,7 +12094,8 @@ id: MOD:00693
 name: glycosylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with an carbohydrate-like group through a glycosidic bond" [PSI-MOD:ref]
 exact_synonym: "GlycoRes" [PSI-MOD:unique short label]
-is_a: MOD:00000 ! protein modification
+xref_analog: Source: "Natural"
+is_a: MOD:00764 ! glycoconjugated residue
 
 [Term]
 id: MOD:00694
@@ -12218,8 +12196,19 @@ is_a: MOD:00001 ! alkylated residue
 [Term]
 id: MOD:00704
 name: dehydrated residue
-def: "a protein modification that effectively forms a double bond by removing a molecule of water from a residue " [PSI-MOD:ref]
+def: "a protein modification that effectively forms a double bond by removing a molecule of water from a residue " [DeltaMass:0, PSI-MOD:ref]
+related_synonym: "Dehydration" [DeltaMass:name]
+related_synonym: "-H2O" [DeltaMass:abbreviation]
 exact_synonym: "dHyRes" [PSI-MOD:unique short label]
+xref_analog: DiffAvg: "none"
+xref_analog: DiffFormula: "H -2 O -1"
+xref_analog: DiffMono: "none"
+xref_analog: Formula: "none"
+xref_analog: MassAvg: "none"
+xref_analog: MassMono: "none"
+xref_analog: Origin: "none"
+xref_analog: Source: "none"
+xref_analog: TermSpec: "none"
 is_a: MOD:00000 ! protein modification
 
 [Term]
@@ -12445,9 +12434,10 @@ is_a: MOD:00434 ! hexosylated
 [Term]
 id: MOD:00729
 name: pentosylated
-def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a pentose sugar group through a glycosidic bond" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 132
+def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a pentose sugar group through a glycosidic bond" [DeltaMass:172, PSI-MOD:ref]
+comment: for Pentoses DeltaMass gives mass 132, for Pentosyl DeltaMass gives formula C 6 H 10 N4 with mass 146
 related_synonym: "Pentoses (Ara, Rib, Xyl)" [DeltaMass:name]
+related_synonym: "Pentosyl" [DeltaMass:name]
 exact_synonym: "Pent" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "132.11"
 xref_analog: DiffFormula: "C 5 H 8 O 4"
@@ -12825,6 +12815,22 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
+id: MOD:00761
+name: Hex1
+def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with one hexose sugar group through a glycosidic bond" [PSI-MOD:ref]
+related_synonym: "Hex3" []
+xref_analog: DiffAvg:
+xref_analog: DiffFormula: "C 6 H 10 O 5"
+xref_analog: DiffMono:
+xref_analog: Formula: "none"
+xref_analog: MassAvg: "none"
+xref_analog: MassMono: "none"
+xref_analog: Origin:
+xref_analog: Source: "Natural"
+xref_analog: TermSpec: "none"
+is_a: MOD:00725 ! complex glycosylation
+
+[Term]
 id: MOD:00762
 name: biantennary (-2 galactose)
 def: "modification from UniMod N-linked glycosylation - missing ref" [UniMod:309]
@@ -12859,12 +12865,20 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
+id: MOD:00764
+name: glycoconjugated residue
+def: "a protein modification that forms an adduct with a carbohydrate-like group either through formation of a glycosidic bond or through glycation formation of a 1-deoxy-2-keto-1-yl bond. " [PubMed::3743566, PSI-MOD:ref]
+is_a: MOD:00000 ! protein modification
+
+[Term]
 id: MOD:00765
 name: cysteinylation (disulfide with free L-cysteine)
-def: "a protein modification that effectively converts an L-cysteine residue to S-(L-cysteinyl)-L-cysteine" [DeltaMass:0, RESID:AA0025, UniMod:312]
+def: "a protein modification that effectively converts an L-cysteine residue to S-(L-cysteinyl)-L-cysteine" [DeltaMass:260, RESID:AA0025, UniMod:312]
 comment: This entry is for formation of a disulfide bond between a peptide cysteine and a free cysteine. For the cystine cross-link, see MOD:00234. From DeltaMass: Average Mass: 119
+related_synonym: "Cysteinyl" [PSI-MS:proposed name]
 related_synonym: "cysteinyl" []
 related_synonym: "Cysteinylation" [DeltaMass:name]
+related_synonym: "S-cystenyl cystenyl" [DeltaMass:name]
 exact_synonym: "SCysCys" [PSI-MOD:unique short label]
 xref_analog: DiffAvg: "119.14"
 xref_analog: DiffFormula: "C 3 H 5 N 1 O 2 S 1"
@@ -12880,8 +12894,7 @@ is_a: MOD:00905 ! modified L-cysteine residue
 [Term]
 id: MOD:00766
 name: C terminal -K from HC of MAb
-def: "modification from UniMod Post-translational - missing ref - " [UniMod:313]
-comment: not obvious
+def: "modification from UniMod Post-translational - C-terminal loss of lysine" [UniMod:313]
 related_synonym: "Lys-loss" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "-128.17"
 xref_analog: DiffFormula: "C -6 H -12 N -2 O -1"
@@ -12895,21 +12908,29 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
 [Term]
-id: MOD:00771
-name: arginine oxidation to glutamic semialdehyde
-def: "modification from UniMod" [PubMed:11120890, UniMod:344]
-related_synonym: "Arg->GluSA" [PSI-MS:proposed name]
-related_synonym: "Argglutamicsealde" []
-xref_analog: DiffAvg: "-43.07"
-xref_analog: DiffFormula: "C -1 H -5 N -3 O 1"
-xref_analog: DiffMono: "-43.053433"
+id: MOD:00767
+name: glycated residue
+def: "a protein modification that forms an adduct with a carbohydrate-like group through glycation formation of a 1-deoxyketo-1-yl residue adduct. " [PSI-MOD:ref]
+related_synonym: "Amadori product" []
+exact_synonym: "glycation" []
+xref_analog: Source: "Artifact"
+is_a: MOD:00764 ! glycoconjugated residue
+
+[Term]
+id: MOD:00768
+name: methionine oxidation with neutral loss of 80 Da
+def: "oxidation of methionine to methionine sulfone with neutral loss of CH3SO2H." [PubMed::9004526, PSI-MOD:ref]
+related_synonym: "Oxidation+NL" [UniMod:short name]
+xref_analog: DiffAvg: "15.9994"
+xref_analog: DiffFormula: "C 1 H 4 O 2 S 1"
+xref_analog: DiffMono: "15.994915"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "R"
-xref_analog: Source: "Natural"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
+xref_analog: Origin: "M"
+xref_analog: Source: "Artifact"
+xref_analog: TermSpec:
+is_a: MOD:00431 ! modified residue with a secondary neutral loss
 
 [Term]
 id: MOD:00772
@@ -13057,25 +13078,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
 [Term]
-id: MOD:00792
-name: arginine oxidation to gamma-glutamyl semialdehyde
-def: "modification from UniMod" [DeltaMass:351, PubMed:1680314, UniMod:367]
-comment: From DeltaMass: Average Mass: -27 Monoisotopic Mass Change:-27.06 Average Mass Change:-27.07 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.
-related_synonym: "Arg->GluSA" [PSI-MS:proposed name]
-related_synonym: "OxArgGlusemal" []
-related_synonym: "Oxidation of arginine (to glutamic acid)" [DeltaMass:name]
-xref_analog: DiffAvg: "-43.07"
-xref_analog: DiffFormula: "C -1 H -5 N -3 O 1"
-xref_analog: DiffMono: "-43.053433"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "R"
-xref_analog: Source: "Artifact"
-xref_analog: TermSpec: "none"
-is_a: MOD:00004 ! artifact
-
-[Term]
 id: MOD:00793
 name: dehydroalanine (Cys)
 def: "a protein modification that effectively converts an L-cysteine residue to dehydroalanine" [DeltaMass:8, PubMed:11212008, RESID:AA0181, UniMod:368]
@@ -13133,15 +13135,17 @@ is_a: MOD:00004 ! artifact
 [Term]
 id: MOD:00796
 name: Ornithine from Arginine
-def: "modification from UniMod" [DeltaMass:0, PubMed:15489230, UniMod:372]
+def: "modification from UniMod" [DeltaMass:129, PubMed:15489230, UniMod:372]
 comment: From DeltaMass: Average Mass: -42
 related_synonym: "Arg->Orn" [PSI-MS:proposed name]
 related_synonym: "Arg2Orn" []
+related_synonym: "Orn" [DeltaMass:abbreviation]
 related_synonym: "Ornithine (from Arginine)" [DeltaMass:name]
+related_synonym: "Ornithyl" [DeltaMass:name]
 xref_analog: DiffAvg: "-42.04"
 xref_analog: DiffFormula: "C -1 H -2 N -2"
 xref_analog: DiffMono: "-42.021798"
-xref_analog: Formula: "none"
+xref_analog: Formula: "C 5 H 10 N 2 O 1"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "R"
@@ -13296,7 +13300,7 @@ xref_analog: MassMono: "264.056863"
 xref_analog: Origin: "C, Y"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00687 ! thioether crosslinked residues [lanthionine]
+is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -13371,8 +13375,9 @@ is_a: MOD:00448 ! N-acetylaminoglucosylated residue
 [Term]
 id: MOD:00807
 name: pyruvic acid (Ser)
-def: "modification from RESID" [DeltaMass:23, PubMed:10085076, PubMed:3042771, PubMed:8464063, RESID:AA0127, UniMod:383]
-comment: From DeltaMass: Average Mass: -16 Average Mass Change:-16 References:van Poelje and Snell, Ann Rev. Biochem 59, 29 (1990)
+def: "modification from RESID" [DeltaMass:23, PubMed:2197977, PubMed:10085076, PubMed:3042771, PubMed:8464063, RESID:AA0127, UniMod:383]
+comment: DeltaMass gives mass 70 and difference mass -16 with no formula
+related_synonym: "Pyruvate" [DeltaMass:name]
 related_synonym: "Pyruvoyl- (Serine)" [DeltaMass:name]
 xref_analog: DiffAvg: "-17.03"
 xref_analog: DiffFormula: "C 0 H -3 N -1 O 0"
@@ -13609,7 +13614,7 @@ is_a: MOD:00008 ! common
 [Term]
 id: MOD:00819
 name: L-2-aminobutanoic acid
-def: "a protein modification that effectively converts an L-glutamic acid residue to L-2-aminobutanoic acid" [PubMed:11740505, DeltaMass:0, RESID:AA0409]
+def: "a protein modification that effectively converts an L-glutamic acid residue to L-2-aminobutanoic acid" [DeltaMass:0, PubMed:11740505, RESID:AA0409]
 related_synonym: "Abu" [DeltaMass:0]
 related_synonym: "decarboxylated glutamic acid" []
 related_synonym: "L-2-amino-n-butyric acid" []
@@ -13967,15 +13972,16 @@ is_a: MOD:00002 ! O-glycosyl-L-serine
 [Term]
 id: MOD:00835
 name: L-3-oxoalanine (Ser)
-def: "modification from RESID" [DeltaMass:0, PubMed:14563551, PubMed:7628016, PubMed:8681943, PubMed:9478923, RESID:AA0185]
+def: "a protein modification that effectively converts L-serine to L-oxoalanine." [DeltaMass:349, PubMed:14563551, PubMed:7628016, PubMed:8681943, PubMed:9478923, RESID:AA0185]
 related_synonym: "2-amino-3-oxopropionic acid" [RESID:alternate name]
 related_synonym: "C(alpha)-formylglycine" [RESID:alternate name]
 related_synonym: "FGly" [DeltaMass:abbreviation]
-related_synonym: "L-aminomalonaldehydic acid" [RESID:alternate name]
+related_synonym: "Formylglycine (from serine)" [DeltaMass:name]
 related_synonym: "L-amino-malonic acid semialdehyde" [RESID:alternate name]
+related_synonym: "L-aminomalonaldehydic acid" [RESID:alternate name]
 related_synonym: "L-serinesemialdehyde [misnomer]" [RESID:alternate name]
-exact_synonym: "L-3-oxoalanine" [RESID:name]
 exact_synonym: "(S)-2-amino-3-oxopropanoic acid" [RESID:alternate name]
+exact_synonym: "L-3-oxoalanine" [RESID:name]
 xref_analog: DiffAvg: "-2.02"
 xref_analog: DiffFormula: "C 0 H -2 N 0 O 0"
 xref_analog: DiffMono: "-2.015650"
@@ -13985,12 +13991,14 @@ xref_analog: MassMono: "85.016378"
 xref_analog: Origin: "S"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
+is_a: MOD:00683 ! dehydrogenated residue
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
 id: MOD:00870
 name: phenyl isocyanate adduct
 def: "modification from UniMod" [UniMod:411]
+related_synonym: "Phenylisocyanate" [PSI-MS:proposed name]
 related_synonym: "PIC" []
 xref_analog: DiffAvg: "119.12"
 xref_analog: DiffFormula: "C 7 H 5 N 1 O 1"
@@ -13999,7 +14007,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
@@ -14016,7 +14024,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00004 ! artifact
 
@@ -14024,7 +14032,8 @@ is_a: MOD:00004 ! artifact
 id: MOD:00872
 name: monoglutamyl
 def: "modification from UniMod" [PubMed:12356754, RESID:AA0202, UniMod:450]
-related_synonym: "-Glu-" []
+related_synonym: "-Glu-" [UniMod:name]
+related_synonym: "N alpha -(gamma-Glutamyl)-Glu" [DeltaMass:name]
 xref_analog: DiffAvg: "129.11"
 xref_analog: DiffFormula: "C 5 H 7 N 1 O 3"
 xref_analog: DiffMono: "129.042593"
@@ -14034,30 +14043,31 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "E"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00008 ! common
+is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
 id: MOD:00873
 name: diglutamyl
-def: "modification from UniMod" [PubMed:12356754, RESID:AA0202, UniMod:451]
-related_synonym: "-Glu-Glu-" []
+def: "modification from UniMod" [DeltaMass:0, PubMed:12356754, RESID:AA0202, UniMod:451]
+related_synonym: "-Glu-Glu-" [UniMod:name]
+related_synonym: "N alpha -(gamma-Glutamyl)-Glu2" [DeltaMass]
 xref_analog: DiffAvg: "258.23"
 xref_analog: DiffFormula: "C 10 H 14 N 2 O 6"
 xref_analog: DiffMono: "258.085186"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "X"
+xref_analog: Origin: "E"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00008 ! common
+is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
 id: MOD:00874
 name: triglutamyl
 def: "modification from UniMod" [DeltaMass:0, PubMed:12356754, RESID:AA0202, UniMod:452]
 comment: From DeltaMass: Average Mass: 388
-related_synonym: "-Glu-Glu-Glu-" []
+related_synonym: "-Glu-Glu-Glu-" [UniMod:name]
 related_synonym: "N alpha -(gamma-Glutamyl)-Glu3" [DeltaMass:name]
 xref_analog: DiffAvg: "387.34"
 xref_analog: DiffFormula: "C 15 H 21 N 3 O 9"
@@ -14068,13 +14078,13 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00008 ! common
+is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
 id: MOD:00875
 name: tetraglutamyl
 def: "modification from UniMod" [PubMed:12356754, RESID:AA0202, UniMod:453]
-related_synonym: "-Glu-Glu-Glu-Glu-" []
+related_synonym: "-Glu-Glu-Glu-Glu-" [UniMod:name]
 xref_analog: DiffAvg: "516.46"
 xref_analog: DiffFormula: "C 20 H 28 N 4 O 12"
 xref_analog: DiffMono: "516.170372"
@@ -14084,7 +14094,7 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec: "none"
-is_a: MOD:00008 ! common
+is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
 id: MOD:00876
@@ -14107,7 +14117,7 @@ is_a: MOD:00725 ! complex glycosylation
 [Term]
 id: MOD:00877
 name: one end of crosslink attached, one end free
-def: "modification from UniMod" [UniMod:455, URL:http\://www.piercenet.com/files/0668ss5.pdf]
+def: "dimethyl pimelimidate modification from UniMod" [UniMod:455, URL:http\://www.piercenet.com/files/0668ss5.pdf]
 related_synonym: "DMP-s" []
 xref_analog: DiffAvg: "154.21"
 xref_analog: DiffFormula: "C 8 H 14 N 2 O 1"
@@ -14122,9 +14132,10 @@ is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00878
-name: both ends of crosslink attached to same peptide
-def: "modification from UniMod - Mechanism of the reaction of imidoesters with amines" [UniMod:456]
+name:  imidoester crosslink of both ends of a peptide
+def: "dimethyl pimelimidate modification from UniMod - Mechanism of the reaction of imidoesters with amines" [PubMed::7171546, UniMod:456]
 comment: J.Am.Chem.Soc. 84, 3505-3514, 1962
+related_synonym: "both ends of crosslink attached to same peptide" [UniMod:456]
 related_synonym: "DMP" []
 xref_analog: DiffAvg: "122.17"
 xref_analog: DiffFormula: "C 7 H 10 N 2"
@@ -14157,6 +14168,7 @@ is_a: MOD:00004 ! artifact
 id: MOD:00880
 name: 4-sulfophenyl isothiocyanate (Heavy C13)
 def: "modification from UniMod" [PubMed:15536630, UniMod:464]
+related_synonym: "SPITC:13C(6)" [PSI-MS:proposed name]
 related_synonym: "SPITC_Heavy" []
 xref_analog: DiffAvg: "209.19"
 xref_analog: DiffFormula: "(13)C 6 H 5 N 1 O 3 S 2"
@@ -14363,7 +14375,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14379,41 +14391,26 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
-xref_analog: TermSpec:
-is_a: MOD:00921 ! new
-
-[Term]
-id: MOD:00924
-name: cysteine oxidation to sulfinic acid
-def: "modification from UniMod Post-translational -  - " [UniMod:497]
-related_synonym: "Sulfinic_acid" [UniMod:short name]
-xref_analog: DiffAvg: "31.9988"
-xref_analog: DiffFormula: "O2"
-xref_analog: DiffMono: "31.989829"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
 [Term]
 id: MOD:00925
-name: Heptose
-def: "modification from UniMod O-linked glycosylation -  - " [UniMod:490]
+name: heptosylation
+def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a heptose sugar group through a glycosidic bond" [UniMod:490]
 related_synonym: "Hep" [UniMod:short name]
+related_synonym: "heptose" []
 xref_analog: DiffAvg: "192.1666"
-xref_analog: DiffFormula: "Hep"
+xref_analog: DiffFormula: "C 7 H 12 O 6"
 xref_analog: DiffMono: "192.063388"
-xref_analog: Formula: "none"
+xref_analog: Formula:
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "T"
+xref_analog: Origin: "S, T"
 xref_analog: Source: "Natural"
 xref_analog: TermSpec:
-is_a: MOD:00921 ! new
+is_a: MOD:00725 ! complex glycosylation
 
 [Term]
 id: MOD:00926
@@ -14427,7 +14424,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14443,7 +14440,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "N-term"
 is_a: MOD:00921 ! new
 
@@ -14459,39 +14456,40 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "N-term"
 is_a: MOD:00921 ! new
 
 [Term]
 id: MOD:00929
-name: Lactosylation
-def: "modification from UniMod Other glycosylation -  - Lactosylation of bovine Beta-Lactoglobulin" [UniMod:512]
+name: lactosylation
+def: "modification from UniMod Other glycosylation  Lactosylation of bovine Beta-Lactoglobulin" [PubMed::9606156, UniMod:512]
+comment: the term lactosylation used in this way is a misnomer and should correctly be called a lactose glycation
 related_synonym: "Gal-Glu" [UniMod:short name]
 xref_analog: DiffAvg: "324.2812"
-xref_analog: DiffFormula: "Hex2"
+xref_analog: DiffFormula: "C 12 H 22 O 11"
 xref_analog: DiffMono: "324.105647"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
-xref_analog: Origin: "R"
-xref_analog: Source: "Natural"
+xref_analog: Origin: "K"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
-is_a: MOD:00921 ! new
+is_a: MOD:00767 ! glycated residue
 
 [Term]
 id: MOD:00930
 name: propyl-NAG
-def: "modification from UniMod Other glycosylation -  - " [UniMod:514]
+def: "tyrosine adduct with substrate analog inhibitor 1,2-dideoxy-2'-methyl-alpha-D-glucopyranoso-[2,1-d]-Delta2'-thiazoline." [PubMed::15795231, UniMod:514]
 related_synonym: "propyl-NAG" [UniMod:short name]
 xref_analog: DiffAvg: "232.2768"
-xref_analog: DiffFormula: "H14 C9 N O4 S"
+xref_analog: DiffFormula: "C 9 H 14 N 1 O 4 S 1"
 xref_analog: DiffMono: "232.064354"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "Y"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14507,7 +14505,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "H"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14515,6 +14513,7 @@ is_a: MOD:00921 ! new
 id: MOD:00932
 name: IDBEST tag for quantitation
 def: "modification from UniMod Isotopic label -  - " [UniMod:499]
+related_synonym: "IGBP:13C(2)" [PSI-MS:proposed name]
 related_synonym: "IGBP:13C(2)" [UniMod:short name]
 xref_analog: DiffAvg: "299.1331"
 xref_analog: DiffFormula: "H13 C10 C132 N2 O2 Br"
@@ -14523,7 +14522,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14539,7 +14538,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "R"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14555,17 +14554,17 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "R"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
 [Term]
 id: MOD:00935
-name: Oxidation with neutral loss of 64 Da
-def: "modification from UniMod Artefact -  - " [UniMod:507]
+name: methionine oxidation with neutral loss of 64 Da
+def: "oxidation of methionine to methionine sulfoxide with neutral loss of CH3SOH." [PubMed::9004526, UniMod:507]
 related_synonym: "Oxidation+NL" [UniMod:short name]
 xref_analog: DiffAvg: "15.9994"
-xref_analog: DiffFormula: "O"
+xref_analog: DiffFormula: "C 1 H 4 O 1 S 1"
 xref_analog: DiffMono: "15.994915"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
@@ -14573,7 +14572,7 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "M"
 xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
-is_a: MOD:00921 ! new
+is_a: MOD:00431 ! modified residue with a secondary neutral loss
 
 [Term]
 id: MOD:00936
@@ -14587,7 +14586,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14603,7 +14602,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "R"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14619,13 +14618,13 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
 [Term]
 id: MOD:00939
-name: Nmethylmaleimidehydrolysis
+name: N-methylmaleimide hydrolysis
 def: "modification from UniMod Chemical derivative -  - " [UniMod:500]
 related_synonym: "NMMhyd" [UniMod:short name]
 xref_analog: DiffAvg: "129.1140"
@@ -14635,7 +14634,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14651,7 +14650,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "N-term"
 is_a: MOD:00921 ! new
 
@@ -14667,7 +14666,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "C"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14683,7 +14682,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14699,7 +14698,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "X"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "N-term"
 is_a: MOD:00921 ! new
 
@@ -14715,13 +14714,13 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
 [Term]
 id: MOD:00945
-name: fluorescein-5-thiosemicarbazide
+name: fluorescein-5-thiosemicarbazide adduct
 def: "modification from UniMod Chemical derivative -  - " [UniMod:478]
 related_synonym: "FTC" [UniMod:short name]
 xref_analog: DiffAvg: "421.4259"
@@ -14731,7 +14730,7 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "S"
-xref_analog: Source: "Natural"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec:
 is_a: MOD:00921 ! new
 
@@ -14806,22 +14805,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:00952
-name: Dehydration (-H2O)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -18
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:00953
 name: O-gamma-Glutamyl- (Crosslink to Serine)
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -14833,22 +14816,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "E,S"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:00954
-name: Serine to Dehydroalanine
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -18
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "S"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -14886,22 +14853,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:00957
-name: N-pyrrolidone carboxyl (N terminus)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -17
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "Q"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:00958
 name: Crosslink between Arg and His sidechains
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -14929,23 +14880,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "Y,Y,Y,Y"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:00960
-name: Formylglycine (from serine)
-def: "modification from DeltaMass" [DeltaMass:349]
-comment: From DeltaMass: Average Mass: -2 Abbreviation:FGly Monoisotopic Mass Change:-2.016 Average Mass Change:-2.016 References:Claudia Marquordt, Qinghua Fang, Elke Will, Jianhe Peng, Kurt von Figura,and Thomas Dierks (2003) 'Posttranslational Modification of Serine to Formylglycine inBacterial Sulfatases' J. Biol. Chem.  278,  4, 2212-2218 <Br>Thomas Dierks, Bernhard Schmidt,Ljudmila V. Borissenko, Jianhe Peng,Andrea Preusser, Malaiyalam Mariappan,and Kurt von Figura. (2003) 'Multiple Sulfatase Deficiency Is Caused byMutations in the Gene Encoding the HumanC-Formylglycine Generating Enzyme' Cell,113, 435-444 Notes:C-alpha-formylglycine is the catalytic residue of sulfatases.Formylglycine is generated by posttranslational modification of a cysteine (pro- and eukaryotes) or serine (prokaryotes).<br>Modification of serine to FGly -CH2-OH >   -CH=O, net mass change -2. See -18 entry for cysteine.
-related_synonym: "FGly" [DeltaMass:abbreviation]
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "S"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -15128,22 +15062,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:00972
-name: Oxidation of proline (to gamma-glutamyl semialdehyde)
-def: "modification from DeltaMass" [DeltaMass:354]
-comment: From DeltaMass: Average Mass: 16 Average Mass Change:16 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "P"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:00973
 name: Oxidation of proline (to glutamic acid)
 def: "modification from DeltaMass" [DeltaMass:355]
@@ -15193,17 +15111,18 @@ is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00976
-name: Potassium
+name: Potassium adduct
 def: "modification from DeltaMass" [DeltaMass:0]
 comment: From DeltaMass: Average Mass: 38
+related_synonym: "Cation:K" [PSI-MS:proposed name]
 xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
+xref_analog: DiffFormula: "K 1"
+xref_analog: DiffMono: "37.955883"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
-xref_analog: Source: "none"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
@@ -15213,13 +15132,13 @@ name: disodium
 def: "modification from DeltaMass" [DeltaMass:0]
 comment: From DeltaMass: Average Mass: 44
 xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
+xref_analog: DiffFormula: "Na 2"
 xref_analog: DiffMono: "none"
 xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
-xref_analog: Source: "none"
+xref_analog: Source: "Artifact"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
@@ -15292,7 +15211,7 @@ is_a: MOD:00947 ! DeltaMass
 id: MOD:00982
 name: Selenocysteine (from Serine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 64
+comment: From DeltaMass: Average Mass: 64, although metabolically correct, in peptide work it is usually considered as a modified cysteine
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
@@ -15337,23 +15256,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:00985
-name: Dehydroalanine (Dha)
-def: "modification from DeltaMass" [DeltaMass:69]
-comment: From DeltaMass: Average Mass: 69 Abbreviation:Dha Formula:C3H3NO Average Mass Change:69.063 Notes:dehydroalanine can be formed from phosphoserine by beta-elimination
-related_synonym: "Dha" [DeltaMass:abbreviation]
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "S"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:00986
 name: 3,5-Dichlorination (of Tyrosine with mixture of 35Cl and 37Cl))
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -15365,38 +15267,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "Y"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:00987
-name: Pyruvate
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 70
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "S"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:00988
-name: Sarcosyl
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 71
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "G"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -15546,22 +15416,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:00998
-name: Dehydroamino butyric acid (Dhb)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 83
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "T"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:00999
 name: Homoseryl lactone
 def: "modification from DeltaMass" [DeltaMass:90]
@@ -15653,22 +15507,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01006
-name: Sarcosine (Sar)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 89
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "G"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -15932,23 +15770,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01023
-name: Pyroglutamyl
-def: "modification from DeltaMass" [DeltaMass:123]
-comment: From DeltaMass: Average Mass: 111 Abbreviation:Pyr Formula:C5H5NO2 Average Mass Change:111.1
-related_synonym: "Pyr" [DeltaMass:abbreviation]
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "Q"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01024
 name: Hydroxyprolyl (-Hyp-)
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -15960,22 +15781,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "P"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01025
-name: Isoleucyl (-I-, -Ile-)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 113
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "I"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -16009,23 +15814,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01028
-name: Ornithyl (-Orn-)
-def: "modification from DeltaMass" [DeltaMass:129]
-comment: From DeltaMass: Average Mass: 114 Abbreviation:-Orn- Formula:C5H10N2O Monoisotopic Mass Change:114.079 Average Mass Change:114.148
-related_synonym: "-Orn-" [DeltaMass:abbreviation]
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "R"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -16150,26 +15938,10 @@ comment: From DeltaMass: Average Mass: 129 Formula:C5H7O1N3 Monoisotopic Mass Ch
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
+xref_analog: Formula: "C 5 H 7 N 3 O 1"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01037
-name: N alpha -(gamma-Glutamyl)-Glu
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 130
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "E,E"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -16287,38 +16059,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01045
-name: N-methyl Lysyl
-def: "modification from DeltaMass" [DeltaMass:165]
-comment: From DeltaMass: Average Mass: 142 Formula:C7H14O1N2 Monoisotopic Mass Change:142.11 Average Mass Change:142.2
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "K"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01046
-name: O-methyl Glutamyl
-def: "modification from DeltaMass" [DeltaMass:167]
-comment: From DeltaMass: Average Mass: 143 Formula:C6H9O1N3 Monoisotopic Mass Change:143.058 Average Mass Change:143.143
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01047
 name: Hydroxy Lysyl (-Hyl-)
 def: "modification from DeltaMass" [DeltaMass:168]
@@ -16331,38 +16071,6 @@ xref_analog: Formula: "none"
 xref_analog: MassAvg: "none"
 xref_analog: MassMono: "none"
 xref_analog: Origin: "K"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01048
-name: Methyl Methionyl
-def: "modification from DeltaMass" [DeltaMass:169]
-comment: From DeltaMass: Average Mass: 145 Formula:C6H11O1N1S1 Monoisotopic Mass Change:145.056 Average Mass Change:145.222
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "M"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01049
-name: Pentosyl
-def: "modification from DeltaMass" [DeltaMass:172]
-comment: From DeltaMass: Average Mass: 146 Formula:C6H10N4 Monoisotopic Mass Change:146.058 Average Mass Change:146.144
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
@@ -16625,42 +16333,10 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01066
-name: O-Glycosyl- (to Serine or Threonine)
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 162
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01067
 name: Linker attached to peptide in Fmoc peptide synthesis
 def: "modification from DeltaMass" [DeltaMass:341]
 comment: From DeltaMass: Average Mass: 162 Average Mass Change:162 Notes:(from the ABRF discussion list archive) There may be ...  things in the reagent K that would allow cleavage of the peptide to occur at the wrong place...in this case it removes the dimethoxybenzyl group first inactivating that site for cleavage, and it goes after tne next amide bond closer to the resin. Try the TFA/TIS/water/EDT cocktail...TFA = 92%, TIS =3%, and water is at 5%. .. had this issue on longer peptides.. and by increasing the amount of water a little bit... able to elminate this problem.
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01068
-name: MethionylSulphone
-def: "modification from DeltaMass" [DeltaMass:205]
-comment: From DeltaMass: Average Mass: 163 Formula:C5H9O1N3S Monoisotopic Mass Change:163.03 Average Mass Change:163.194
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
@@ -16721,22 +16397,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01072
-name: Phospho Seryl
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 167
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01073
 name: 2-Chlorobenzyloxycarbonyl (ClZ)
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -16769,22 +16429,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01075
-name: N-acetyl Lysyl
-def: "modification from DeltaMass" [DeltaMass:214]
-comment: From DeltaMass: Average Mass: 170 Formula:C8H14O2N2 Monoisotopic Mass Change:170.11 Average Mass Change:170.21 Notes:A frequently occurring modification on histones and some transcription factors
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01076
 name: N-methyl Arginyl
 def: "modification from DeltaMass" [DeltaMass:215]
@@ -16805,23 +16449,6 @@ id: MOD:01077
 name: Ethanedithiol/TFA cyclic adduct
 def: "modification from DeltaMass" [DeltaMass:216]
 comment: From DeltaMass: Average Mass: 172 Average Mass Change:172 References:[1]. Sieber,P.(1987) Modification of tryptophan residues during acidolysis of4-methoxy-2,3,6-trimethylbenzenesulfonyl groups. Effects of scavengers.Tetrahedron Lett., 28(15),1637-1640. Notes:TFA-cyclic dithioketal by-product is formed when Trp-containing peptideis subjected to prolonged TFA/EDT treatment [1]. <b>See <A HREF=http://www.abrf.org/images/misc/dmass172.gif>structure.</A></b> <p> Additional discussion of this adduct, and how to avoid it, can befound in Methods in Enzymology 289, 67 (1997)
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01078
-name: Carboxy Glutamyl (Gla)
-def: "modification from DeltaMass" [DeltaMass:217]
-comment: From DeltaMass: Average Mass: 173 Abbreviation:-Gla- Formula:C6H7O1N5 Monoisotopic Mass Change:173.032 Average Mass Change:173.126
-related_synonym: "-Gla-" [DeltaMass:abbreviation]
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
@@ -16914,22 +16541,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01084
-name: N-methyl Tyrosinyl
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 177
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01085
 name: a-N-Gluconoylation (His Tagged proteins)
 def: "modification from DeltaMass" [DeltaMass:226]
@@ -16998,22 +16609,6 @@ id: MOD:01089
 name: Xanthyl (Xan)
 def: "modification from DeltaMass" [DeltaMass:0]
 comment: From DeltaMass: Average Mass: 180
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01090
-name: Phospho Threonyl
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 181
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
@@ -17188,7 +16783,7 @@ is_a: MOD:00947 ! DeltaMass
 [Term]
 id: MOD:01101
 name: S-Farnesyl-
-def: "modification from DeltaMass" [DeltaMass:0]
+def: "modification from DeltaMass" [DeltaMass:0, RESID:AA0102]
 comment: From DeltaMass: Average Mass: 206
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
@@ -17330,22 +16925,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01110
-name: S-cystenyl Cystenyl
-def: "modification from DeltaMass" [DeltaMass:260]
-comment: From DeltaMass: Average Mass: 222 Formula:C6H10O2N3S2 Monoisotopic Mass Change:222.013 Average Mass Change:222.283
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01111
 name: Dimethoxybenzhydryl (Mbh)
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -17410,38 +16989,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01115
-name: Tyrosinyl Sulphate
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 243
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01116
-name: Phospho Tyrosinyl
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 243
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01117
 name: Pbf (pentamethyldihydrobenzofuransulfonyl)
 def: "modification from DeltaMass" [DeltaMass:0]
@@ -17462,22 +17009,6 @@ id: MOD:01118
 name: a-N-6-Phosphogluconoylation (His Tagged proteins)
 def: "modification from DeltaMass" [DeltaMass:275]
 comment: From DeltaMass: Average Mass: 258 Formula:C6H10O6HPO3 Monoisotopic Mass Change:258.01 Average Mass Change:258.12 References:Geoghegan, K. F., H. B. Dixon, et al. (1999). Spontaneous alpha-N-6-phosphogluconoylation of a His tag in Escherichia coli: the cause of extra mass of 258 or 178 Da in fusion proteins. Anal Biochem 267(1): 169-84.
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
-id: MOD:01119
-name: N alpha -(gamma-Glutamyl)-Glu2
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 259
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
 xref_analog: DiffMono: "none"
@@ -17699,22 +17230,6 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01133
-name: S-palmityl Cystenyl
-def: "modification from DeltaMass" [DeltaMass:303]
-comment: From DeltaMass: Average Mass: 342 Formula:C19H35O1N2S1 Monoisotopic Mass Change:341.239 Average Mass Change:341.556
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01134
 name: Fluorescein labelling of peptide N-terminal using NHS ester
 def: "modification from DeltaMass" [DeltaMass:306]
@@ -17844,25 +17359,9 @@ xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
-id: MOD:01142
-name: S-Coenzyme A
-def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 454
-xref_analog: DiffAvg: "none"
-xref_analog: DiffFormula: "none"
-xref_analog: DiffMono: "none"
-xref_analog: Formula: "none"
-xref_analog: MassAvg: "none"
-xref_analog: MassMono: "none"
-xref_analog: Origin: "none"
-xref_analog: Source: "none"
-xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
-
-[Term]
 id: MOD:01144
 name: S-(sn-1-Dipalmitoyl-glyceryl)- (on Cysteine)
-def: "modification from DeltaMass" [DeltaMass:0]
+def: "modification from DeltaMass" [DeltaMass:0, RESID:AA0107]
 comment: From DeltaMass: Average Mass: 524
 xref_analog: DiffAvg: "none"
 xref_analog: DiffFormula: "none"
@@ -17873,7 +17372,7 @@ xref_analog: MassMono: "none"
 xref_analog: Origin: "none"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
-is_a: MOD:00947 ! DeltaMass
+is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:01145
@@ -17922,3 +17421,4 @@ xref_analog: Origin: "none"
 xref_analog: Source: "none"
 xref_analog: TermSpec: "none"
 is_a: MOD:00947 ! DeltaMass
+
