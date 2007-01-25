@@ -7,7 +7,7 @@ default-namespace: BS
 [Term]
 id: BS:00000
 name: biosapiens annotation
-def: "catalogue of annotations provided by BioSapiens partners" [ref:ref]
+def: "catalogue of annotations provided by BioSapiens partners" [ref:re]
 
 [Term]
 id: BS:00001
