@@ -1,13 +1,13 @@
 format-version: 1.0
-date: 24:01:2007 15:04
-saved-by: luisa
-auto-generated-by: OBO-Edit 1.000
+date: 02:02:2007 16:41
+saved-by: gabby
+auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
 
 [Term]
 id: BS:00000
 name: biosapiens annotation
-def: "catalogue of annotations provided by BioSapiens partners" [ref:re]
+def: "catalogue of annotations provided by BioSapiens partners" [ref:ref]
 
 [Term]
 id: BS:00001
@@ -41,14 +41,14 @@ is_a: BS:00000 ! biosapiens annotation
 
 [Term]
 id: BS:00007
-name: scop
+name: scop method
 def: "Structural domain classification" [ref:ref]
 comment: Range
 is_a: BS:00001 ! source
 
 [Term]
 id: BS:00008
-name: cath algorythm
+name: cath algorithm
 def: "Structural domain classification" [ref:ref]
 comment: Range
 is_a: BS:00001 ! source
@@ -56,7 +56,7 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00009
 name: pfam
-def: "Pfam protein domain database" [ref:ref]
+def: "Pfam is a large collection of multiple sequence alignments and hidden Markov models covering many common protein domains and families." [ref:ref]
 comment: Range
 is_a: BS:00001 ! source
 
@@ -77,7 +77,7 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00012
 name: domain
-def: "Extent of a domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
+def: "Region which has been shown to recur throughout evolution. " [uniprot:]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
@@ -91,7 +91,7 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00014
 name: topo_dom
-def: "Topological domain" [ref:ref]
+def: "Topological domain" [uniprot:]
 comment: Range
 is_a: BS:00001 ! source
 
@@ -111,7 +111,7 @@ is_a: BS:00001 ! source
 
 [Term]
 id: BS:00017
-name: smart
+name: smart server
 def: "Simple Modular Architecture Research Tool (SMART)" [ref:ref]
 comment: Range
 is_a: BS:00004 ! server
@@ -140,7 +140,7 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00021
 name: tigrfams
-def: "TIGR protein family database (TIGRFAMs)" [ref:ref]
+def: "TIGR protein family database (TIGRFAMs).  Protein families based on Hidden Markov Models or HMMs. " [ref:ref]
 comment: Range
 is_a: BS:00001 ! source
 
@@ -160,7 +160,7 @@ is_a: BS:00001 ! source
 
 [Term]
 id: BS:00025
-name: gtd algorythm
+name: gtd algorithm
 def: "Genomic Threading database. Structural annotations within key completed genomes " [ref:ref]
 comment: Range
 is_a: BS:00001 ! source
@@ -168,70 +168,70 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00026
 name: act_site
-def: "Amino acid(s) involved in the activity of an enzyme." [ref:ref]
+def: "Amino acid(s) involved in the activity of an enzyme." [uniprot:]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00027
 name: metal
-def: "Binding site for a metal ion." [ref:ref]
+def: "Binding site for a metal ion." [uniprot:]
 comment: Discreet
 is_a: BS:00029 ! binding
 
 [Term]
 id: BS:00028
 name: disulfide
-def: "Disulfide bond." [ref:ref]
+def: "Disulfide bond." [uniprot:]
 comment: 2 discreet & joined
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00029
 name: binding
-def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [ref:ref]
+def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [uniprot:]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00030
 name: ca_bind
-def: "Extent of calcium binding region" [ref:ref]
+def: "Extent of calcium binding region" [uniprot:]
 comment: Discreet
 is_a: BS:00029 ! binding
 
 [Term]
 id: BS:00031
 name: lipid
-def: "Covalent binding of lipid moiety" [ref:ref]
+def: "Covalent binding of lipid moiety" [uniprot:]
 comment: Discreet
 is_a: BS:00029 ! binding
 
 [Term]
 id: BS:00032
 name: motif
-def: "Short (up to 20 amino acids) sequence motif of biological interest." [ref:ref]
+def: "Short (up to 20 amino acids) sequence motif of biological interest." [uniprot:]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00033
 name: site
-def: "Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [ref:ref]
+def: "Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [uniprot:]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00034
 name: zn_fing
-def: "Extent of a zinc finger region." [ref:ref]
+def: "Extent of a zinc finger region." [uniprot:]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00035
 name: dna_bind
-def: "Extent of a DNA-binding region." [ref:ref]
+def: "Extent of a DNA-binding region." [uniprot:]
 comment: Range
 is_a: BS:00029 ! binding
 
@@ -245,35 +245,35 @@ is_a: BS:00125 ! sequence variant
 [Term]
 id: BS:00037
 name: np_bind
-def: "Extent of a nucleotide phosphate-binding region (ATP GTP (Potential, FAD (ADP part))." [ref:ref]
+def: "Extent of a nucleotide phosphate-binding region (ATP GTP (Potential, FAD (ADP part))." [uniprot:]
 comment: Range
 is_a: BS:00029 ! binding
 
 [Term]
 id: BS:00039
 name: turn
-def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [ref:ref]
+def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [uniprot:]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00040
 name: helix
-def: "Residues in DSSP calculated Helix" [ref:ref]
+def: "Residues in DSSP calculated Helix" [uniprot:]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00041
 name: coiled
-def: "Residues not calculated to be HELIX, TURN or STRAND" [ref:ref]
+def: "Residues not calculated to be HELIX, TURN or STRAND" [uniprot:]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00042
 name: strand
-def: "Residues in DSSP calculated STRAND" [ref:ref]
+def: "Residues in DSSP calculated STRAND" [uniprot:]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
@@ -289,7 +289,7 @@ id: BS:00046
 name: outside
 def: "Transmembrane protein. Region outside the cell" [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_obsolete: true
 
 [Term]
 id: BS:00047
@@ -329,28 +329,28 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00052
 name: mod_res
-def: "Post-translational modification of a residue." [ref:ref]
+def: "Post-translational modification of a residue." [uniprot:]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00053
 name: transit
-def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [ref:ref]
+def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [uniprot:]
 comment: Range
 is_a: BS:00055 ! signal
 
 [Term]
 id: BS:00054
 name: carbohyd
-def: "Glycosylation site." [ref:ref]
+def: "Glycosylation site." [uniprot:]
 comment: Discreet
 is_a: BS:00052 ! mod_res
 
 [Term]
 id: BS:00055
 name: signal
-def: "Extent of a signal sequence (prepeptide)." [ref:ref]
+def: "Extent of a signal sequence (prepeptide)." [uniprot:]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
@@ -364,44 +364,44 @@ is_a: BS:00052 ! mod_res
 [Term]
 id: BS:00057
 name: n-glycosylation
-def: "N-Glycosylation sites in proteins.  using artifical neural networks." [ref:ref]
+def: "N-Glycosylation sites in proteins.  " [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00183 ! glycosylation
 
 [Term]
 id: BS:00058
 name: o-glycosylation (s)
-def: "Neural network predictions of mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
+def: "mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00183 ! glycosylation
 
 [Term]
 id: BS:00059
 name: o-glycosylation (t)
-def: "Neural network predictions of mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
+def: "mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00183 ! glycosylation
 
 [Term]
 id: BS:00060
 name: phosphorylation (s)
 def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00061
 name: phosphorylation (t)
 def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00062
 name: phosphorylation (y)
 def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00063
@@ -413,7 +413,7 @@ is_a: BS:00052 ! mod_res
 [Term]
 id: BS:00064
 name: acetylation
-def: "N-terminal acetylation in eukaryotic proteins." [ref:ref]
+def: "N-terminal of some residues and side chain of lysine." [uniprot:]
 comment: Discreet
 is_a: BS:00052 ! mod_res
 
@@ -427,48 +427,48 @@ is_a: BS:00055 ! signal
 [Term]
 id: BS:00066
 name: region
-def: "Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [ref:ref]
+def: "Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [uniprot:]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00067
 name: init_met
-def: "Initiator methionine." [ref:ref]
+def: "Initiator methionine." [uniprot:]
 is_a: BS:00129 ! junction
 
 [Term]
 id: BS:00068
 name: compbias
-def: "Extent of a compositionally biased region (Poly-Ser, Glu-rich (acidic).)" [ref:ref]
+def: "Extent of a compositionally biased region (Poly-Ser, Glu-rich (acidic).)" [uniprot:]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00069
 name: conflict
-def: "Different sources report differing sequences. (Missing (in Ref. 2), K -> Q (in Ref. 4, 5 and 10), GSDSE -> RIRLR (in Ref. 2), V -> A (in Ref. 6; AAF71067)" [ref:ref]
+def: "Different sources report differing sequences. " [uniprot:]
 comment: Discreet
 is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00070
 name: repeat
-def: "Extent of an internal sequence repetition." [ref:ref]
+def: "Extent of an internal sequence repetition." [uniprot:]
 comment: Range
 is_a: BS:00124 ! located annotation
 
 [Term]
 id: BS:00071
 name: variant
-def: "Authors report that sequence variants exist." [ref:ref]
+def: "Authors report that sequence variants exist." [uniprot:]
 comment: Discreet
 is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00072
 name: non_ter
-def: "The residue at an extremity of the sequence is not the terminal residue." [ref:ref]
+def: "The residue at an extremity of the sequence is not the terminal residue." [uniprot:]
 comment: Discreet
 is_a: BS:00129 ! junction
 
@@ -477,39 +477,39 @@ id: BS:00073
 name: varsplic
 def: "Description of sequence variants produced by alternative splicing. " [ref:ref]
 comment: Discreet
-is_a: BS:00125 ! sequence variant
+is_a: BS:00179 ! var_seq
 
 [Term]
 id: BS:00075
 name: isoform
 def: "Description of different protein isoforms." [ref:ref]
 comment: Range
-is_a: BS:00125 ! sequence variant
+is_a: BS:00179 ! var_seq
 
 [Term]
 id: BS:00076
 name: peptide
-def: "Extent of released active peptide." [ref:ref]
+def: "Extent of released active peptide." [uniprot:]
 comment: Range
 is_a: BS:00124 ! located annotation
 
 [Term]
 id: BS:00077
 name: propep
-def: "Extent of a propeptide." [ref:ref]
+def: "Extent of a propeptide." [uniprot:]
 comment: Range
 is_a: BS:00129 ! junction
 
 [Term]
 id: BS:00078
-name: uniprot
-def: "UNIPROT" [ref:ref]
+name: uniprot server
+def: "UniProt (Universal Protein Resource) is the world's most comprehensive catalogue of information on proteins. It is a central repository of protein sequence and function created by joining the information contained in UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, and PIR. \n" [ref:ref]
 is_a: BS:00004 ! server
 
 [Term]
 id: BS:00079
 name: interpro
-def: "INTERPRO" [ref:ref]
+def: "InterPro is a database of protein families, domains and functional sites in which identifiable features found in known proteins can be applied to unknown protein sequences." [ref:ref]
 is_a: BS:00004 ! server
 
 [Term]
@@ -527,25 +527,25 @@ is_a: BS:00004 ! server
 [Term]
 id: BS:00082
 name: gtd
-def: "GTD" [ref:ref]
+def: "The Genomic Threading Database (GTD) contains structural annotations of all major proteomes made using the GenTHREADER method. " [ref:ref]
 is_a: BS:00004 ! server
 
 [Term]
 id: BS:00083
 name: csa
-def: "CSA" [ref:ref]
+def: "Catalytic Site Atlas" [ref:ref]
 is_a: BS:00004 ! server
 
 [Term]
 id: BS:00084
 name: cbs_func
-def: "CBS_FUNC" [ref:ref]
-is_a: BS:00001 ! source
+def: "Aggregation server for CBS predictions related to protein function and structure. " [ref:ref]
+is_obsolete: true
 
 [Term]
 id: BS:00085
 name: tmhmm
-def: "TMHMM" [ref:ref]
+def: "CBS: Prediction of transmembrane helices in proteins." [ref:ref]
 is_a: BS:00001 ! source
 
 [Term]
@@ -569,8 +569,8 @@ is_a: BS:00001 ! source
 [Term]
 id: BS:00090
 name: cbs_ptm
-def: "CBS_PTM" [ref:ref]
-is_a: BS:00001 ! source
+def: "Aggregation server for CBS predictions related to post-translational modifications of proteins." [ref:ref]
+is_obsolete: true
 
 [Term]
 id: BS:00091
@@ -588,7 +588,7 @@ is_a: BS:00004 ! server
 id: BS:00094
 name: cbs_sort
 def: "CBS_SORT" [ref:ref]
-is_a: BS:00001 ! source
+is_obsolete: true
 
 [Term]
 id: BS:00095
@@ -612,37 +612,37 @@ is_a: BS:00005 ! evidence code
 [Term]
 id: BS:00098
 name: inferred by curator
-def: "Inferred by Curator" [ref:ref]
+def: "Inferred by Curator" [ECO:0000001]
 exact_synonym: "IC" []
-is_a: BS:00097 ! manually curated
+is_obsolete: true
 
 [Term]
 id: BS:00099
 name: non-traceable author statement
-def: "Non-traceable Author Statement" [ref:ref]
+def: "Non-traceable Author Statement" [ECO:0000034]
 exact_synonym: "NAS" []
-is_a: BS:00097 ! manually curated
+is_obsolete: true
 
 [Term]
 id: BS:00100
 name: inferred from reviewed comput. analysis
-def: "Inferred from Reviewed Comput. Analysis" [ref:ref]
+def: "Inferred from Reviewed Comput. Analysis" [ECO:0000053]
 exact_synonym: "RCA" []
-is_a: BS:00097 ! manually curated
+is_obsolete: true
 
 [Term]
 id: BS:00101
 name: traceable author statement
-def: "Traceable Author Statement" [ref:ref]
+def: "Traceable Author Statement" [ECO:0000033]
 exact_synonym: "TAS" []
-is_a: BS:00097 ! manually curated
+is_obsolete: true
 
 [Term]
 id: BS:00102
 name: inferred from sequence or struct. similarity
-def: "Inferred From Sequence or Struct. Similarity" [ref:ref]
+def: "Inferred From Sequence or Struct. Similarity" [EC:0000041]
 exact_synonym: "ISS" []
-is_a: BS:00097 ! manually curated
+is_obsolete: true
 
 [Term]
 id: BS:00103
@@ -654,37 +654,37 @@ is_a: BS:00005 ! evidence code
 [Term]
 id: BS:00104
 name: inferred from direct assay
-def: "Inferred from Direct Assay" [ref:ref]
+def: "Inferred from Direct Assay" [ECO:0000002]
 exact_synonym: "IDA" []
-is_a: BS:00103 ! experimentally verified
+is_obsolete: true
 
 [Term]
 id: BS:00105
 name: inferred from expression pattern
 def: "Inferred from Expression Pattern" [ref:ref]
 exact_synonym: "IEP" []
-is_a: BS:00103 ! experimentally verified
+is_obsolete: true
 
 [Term]
 id: BS:00106
 name: inferred from genetic interaction
 def: "Inferred from Genetic Interaction" [ref:ref]
 exact_synonym: "IGI" []
-is_a: BS:00103 ! experimentally verified
+is_obsolete: true
 
 [Term]
 id: BS:00107
 name: inferred from mutant phenotype
 def: "Inferred from Mutant Phenotype" [ref:ref]
 exact_synonym: "IMP" []
-is_a: BS:00103 ! experimentally verified
+is_obsolete: true
 
 [Term]
 id: BS:00108
 name: inferred from physical interaction
-def: "Inferred from Physical Interaction" [ref:ref]
+def: "Inferred from Physical Interaction" [ECO:0000021]
 exact_synonym: "IPI" []
-is_a: BS:00103 ! experimentally verified
+is_obsolete: true
 
 [Term]
 id: BS:00109
@@ -697,7 +697,7 @@ id: BS:00110
 name: inferred from electronic annotation
 def: "Inferred from Electronic Annotation" [ECO:0000001]
 exact_synonym: "IEA" []
-is_a: BS:00109 ! computationally predicted
+is_obsolete: true
 
 [Term]
 id: BS:00111
@@ -708,9 +708,9 @@ is_a: BS:00005 ! evidence code
 [Term]
 id: BS:00112
 name: no biological data available
-def: "No biological Data available" [ref:ref]
+def: "No biological Data available" [ECO:0000035]
 exact_synonym: "ND" []
-is_a: BS:00111 ! no assignment possible
+is_obsolete: true
 
 [Term]
 id: BS:00113
@@ -817,7 +817,7 @@ is_a: BS:00124 ! located annotation
 [Term]
 id: BS:00130
 name: functional annotation
-def: "Describes any region with functional importance" [XX:]
+def: "Indicates a region with functional relevance." [XX:]
 is_a: BS:00124 ! located annotation
 
 [Term]
@@ -842,9 +842,15 @@ is_a: BS:00124 ! located annotation
 [Term]
 id: BS:00134
 name: structural domain
-def: "A " [ref:ref]
+def: "Extent of a structural domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
 is_a: BS:00012 ! domain
 is_a: BS:00133 ! structural annotation
+
+[Term]
+id: BS:00135
+name: phosphorylation
+def: "of serine, threonine, tyrosine, aspartate, histidine or cysteine, and, more rarely, of arginine" [uniprot:]
+is_a: BS:00052 ! mod_res
 
 [Term]
 id: BS:00136
@@ -867,7 +873,7 @@ is_a: BS:00127 ! unlocated annotation
 [Term]
 id: BS:00139
 name: chain
-def: "Extent of a polypeptide chain in the mature protein." [ref:ref]
+def: "Extent of a polypeptide chain in the mature protein.\nIn Swiss-Prot, it is present: \n1, For proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the CHAIN covers the whole protein sequence. 2, For processed proteins, it describes the mature part of the protein once preprotein parts such as propeptides and signal sequences have been removed.\nFor TrEMBL, it is present only in those entries where the submitters to the nucleotide sequence databases have provided this information for processed proteins. \n" [uniprot:]
 related_synonym: "peptide" []
 is_a: BS:00124 ! located annotation
 
@@ -893,6 +899,9 @@ is_a: BS:00001 ! source
 id: BS:00143
 name: cbs_total
 def: "CBS_TOTAL" [ref:ref]
+related_synonym: "cbs_func" []
+related_synonym: "cbs_ptm" []
+related_synonym: "cbs_sort" []
 is_a: BS:00004 ! server
 
 [Term]
@@ -910,7 +919,7 @@ is_a: BS:00128 ! membrane structure
 [Term]
 id: BS:00146
 name: s3dm
-def: "?" [ref:ref]
+def: "Small hydrogen bonded motifs, beta turn like. " [ref:ref]
 is_a: BS:00004 ! server
 
 [Term]
@@ -969,8 +978,8 @@ relationship: part_of BS:00113 ! ebi
 
 [Term]
 id: BS:00156
-name: transmembrane
-def: "Extent of a transmembrane region." [ref:ref]
+name: transmem
+def: "Extent of a transmembrane region." [uniprot:]
 is_a: BS:00128 ! membrane structure
 
 [Term]
@@ -978,6 +987,162 @@ id: BS:00157
 name: protein-ligand interaction
 def: "residues which interact with ligand" [ref:ref]
 is_a: BS:00029 ! binding
+
+[Term]
+id: BS:00158
+name: dssp
+def: "Information from DSSP" [ref:ref]
+is_a: BS:00004 ! server
+
+[Term]
+id: BS:00159
+name: mispred
+def: "MisPred provides a list of mispredicted genes/proteins identified from the human and mouse genomes based on a conflict between the subcellular location of the predicted proteins and the absence of the corresponding sequence signals. MisPred also contains a short description of the type of misprediction and an improved prediction. " [ref:ref]
+is_a: BS:00004 ! server
+
+[Term]
+id: BS:00160
+name: vega_Homo_sapiens_core_40_1006_cds
+def: "vega_Homo_sapiens_core_40_1006_cds" [ref:ref]
+is_a: BS:00004 ! server
+
+[Term]
+id: BS:00161
+name: amidation
+def: "generally at the C-terminal of a mature active peptide after oxidative cleavage of last glycine." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00162
+name: blocked
+def: "unidentified N- or C-terminal blocking group." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00163
+name: formylation
+def: "generally of the N-terminal methionine." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00164
+name: gamma-carboxyglutamic acid
+def: "of glutamate." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00165
+name: hydroxylation
+def: "generally of asparagine, aspartate, proline or lysine." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00166
+name: methylation
+def: "generally of N-terminal phenylalanine, side chain of lysine, arginine, histidine, asparagine or glutamate, and C-terminal cysteine." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00167
+name: pyrrolidone carboxylic acid
+def: "N-terminal glutamine which has formed an internal cyclic lactam. This is also called 'pyro-Glu'. Very rarely, pyro-Glu can be produced by modification of a N-terminal glutamate." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00168
+name: sulfation
+def: "of tyrosine, serine or threonine." [UniProt:curation manual]
+is_a: BS:00052 ! mod_res
+
+[Term]
+id: BS:00169
+name: myristate
+def: "myristate group attached through an amide bond to the N-terminal glycine residue of the mature form of a protein or to an internal lysine residue. The myristate can also be attached through a thioester bond to an internal cysteine." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00170
+name: palmitate
+def: "Palmitate group attached through an amide bond to the N-terminal cysteine of the mature form of a protein, or to an internal lysine. The palmitate can also be attached through a thioester bond to an internal cysteine or through an ester bond to a serine or threonine residue." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00171
+name: farnesyl
+def: "Farnesyl group attached through a thioether bond to a cysteine residue." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00172
+name: geranyl-geranyl
+def: "Geranyl-geranyl group attached through a thioether bond to a cysteine residue." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00173
+name: gpi-anchor
+def: "Glycosyl-phosphatidylinositol (GPI) group linked to the alpha-carboxyl group of the C-terminal residue of the mature form of a protein." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00174
+name: diacylglyceride
+def: "Glyceryl group bearing two ester-linked fatty acids attached through a thioether bond to the N-terminal cysteine of the mature form of a prokaryotic lipoprotein." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00175
+name: archaeol
+def: "Archaeol (2,3-di-O-phytanyl-sn-glycerol) lipid group attached through an thioether bond to the N-terminal cysteine of the mature form of a archaeal lipoprotein." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00176
+name: n-octanoate
+def: "n-octanoate group linked through an ester bond to a serine residue." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00177
+name: cholesterol
+def: "Cholesterol group attached through an ester bond to the C-terminal glycine of the mature form of a protein." [UniProt:curation manual]
+is_a: BS:00031 ! lipid
+
+[Term]
+id: BS:00178
+name: crosslnk
+def: "Posttranslationally formed amino acid bonds." [UniProt:curation manual]
+is_a: BS:00130 ! functional annotation
+
+[Term]
+id: BS:00179
+name: var_seq
+def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation manual]
+is_a: BS:00125 ! sequence variant
+
+[Term]
+id: BS:00180
+name: uniprot source
+def: "UniProt (Universal Protein Resource) is the world's most comprehensive catalogue of information on proteins. It is a central repository of protein sequence and function created by joining the information contained in UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, and PIR. \n" [ref:ref]
+is_a: BS:00001 ! source
+
+[Term]
+id: BS:00181
+name: unsure
+def: "Uncertainties in the sequence." [UniProt:curation manual]
+is_a: BS:00125 ! sequence variant
+
+[Term]
+id: BS:00182
+name: non_cons
+def: "Non-consecutive residues." [UniProt:curation manual]
+is_a: BS:00125 ! sequence variant
+
+[Term]
+id: BS:00183
+name: glycosylation
+def: "glycosylation sites" [ref:ref]
+is_a: BS:00052 ! mod_res
 
 [Typedef]
 id: part_of
