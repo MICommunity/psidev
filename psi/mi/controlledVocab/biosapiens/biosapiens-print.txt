@@ -1,66 +1,66 @@
 !saved-by:             luisa
 !date:                 Wed Jan 24 15:04:48 GMT 2007
-!version: $Revision: 1.1 $
+!version: $Revision: 1.2 $
 !type: @OBO_REL:is_a@ OBO_REL:is_a is_a
 !type: @part_of@ part_of part of
 $biosapiens annotation ; BS:00000
 	 is_a: annotation 						BS:00043	"Annotation on the functional or structural features of a  protein, and about its possible sequence variations." [ref:ref]
 		  is_a: located annotation 					BS:00124	"Biological annotation that can be assigned to a specific subsequence of a protein." [ref:ref]
-			   is_a: chain 				BS:00139	"Extent of a polypeptide chain in the mature protein." [ref:ref]
-			   is_a: compbias 				BS:00068	"Extent of a compositionally biased region (Poly-Ser, Glu-rich (acidic).)" [ref:ref]
-			   is_a: functional annotation 				BS:00130	"Describes any region with functional importance" [XX:]
-				    is_a: act_site 			BS:00026	"Amino acid(s) involved in the activity of an enzyme." [ref:ref]
-				    is_a: binding 			BS:00029	"Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [ref:ref]
-					     is_a: ca_bind 		BS:00030	"Extent of calcium binding region" [ref:ref]
-					     is_a: dna_bind 		BS:00035	"Extent of a DNA-binding region." [ref:ref]
-					     is_a: lipid 		BS:00031	"Covalent binding of lipid moiety" [ref:ref]
-					     is_a: metal 		BS:00027	"Binding site for a metal ion." [ref:ref]
-					     is_a: np_bind 		BS:00037	"Extent of a nucleotide phosphate-binding region (ATP GTP (Potential, FAD (ADP part))." [ref:ref]
+			   is_a: chain 				BS:00139	"Extent of a polypeptide chain in the mature protein.\nIn Swiss-Prot, it is present: \n1, For proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the CHAIN covers the whole protein sequence. 2, For processed proteins, it describes the mature part of the protein once preprotein parts such as propeptides and signal sequences have been removed.\nFor TrEMBL, it is present only in those entries where the submitters to the nucleotide sequence databases have provided this information for processed proteins. \n" [uniprot:]
+			   is_a: compbias 				BS:00068	"Extent of a compositionally biased region (Poly-Ser, Glu-rich (acidic).)" [uniprot:]
+			   is_a: functional annotation 				BS:00130	"Indicates a region with functional relevance." [XX:]
+				    is_a: act_site 			BS:00026	"Amino acid(s) involved in the activity of an enzyme." [uniprot:]
+				    is_a: binding 			BS:00029	"Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [uniprot:]
+					     is_a: ca_bind 		BS:00030	"Extent of calcium binding region" [uniprot:]
+					     is_a: dna_bind 		BS:00035	"Extent of a DNA-binding region." [uniprot:]
+					     is_a: lipid 		BS:00031	"Covalent binding of lipid moiety" [uniprot:]
+					     is_a: metal 		BS:00027	"Binding site for a metal ion." [uniprot:]
+					     is_a: np_bind 		BS:00037	"Extent of a nucleotide phosphate-binding region (ATP GTP (Potential, FAD (ADP part))." [uniprot:]
 					     is_a: protein-ligand interaction 		BS:00157	"residues which interact with ligand" [ref:ref]
 					     is_a: protein-protein interaction 		BS:00131	"Residues involved in protein protein interactions" [XX:XX]
 				    is_a: contact to ligand 			BS:00132	"Residues which are in contact with a ligand" [XX:XX]
-				    is_a: disulfide 			BS:00028	"Disulfide bond." [ref:ref]
-				    is_a: domain 			BS:00012	"Extent of a domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
-					     is_a: structural domain 		BS:00134	"A " [ref:ref]
-				    is_a: mod_res 			BS:00052	"Post-translational modification of a residue." [ref:ref]
-					     is_a: acetylation 		BS:00064	"N-terminal acetylation in eukaryotic proteins." [ref:ref]
-					     is_a: carbohyd 		BS:00054	"Glycosylation site." [ref:ref]
+				    is_a: disulfide 			BS:00028	"Disulfide bond." [uniprot:]
+				    is_a: domain 			BS:00012	"Region which has been shown to recur throughout evolution. " [uniprot:]
+					     is_a: structural domain 		BS:00134	"Extent of a structural domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
+				    is_a: mod_res 			BS:00052	"Post-translational modification of a residue." [uniprot:]
+					     is_a: acetylation 		BS:00064	"N-terminal of some residues and side chain of lysine." [uniprot:]
+					     is_a: carbohyd 		BS:00054	"Glycosylation site." [uniprot:]
 					     is_a: crosslink 		BS:00056	"Posttranslationally formed amino acid bonds." [ref:ref]
-					     is_a: n-glycosylation 		BS:00057	"N-Glycosylation sites in proteins.  using artifical neural networks." [ref:ref]
-					     is_a: o-glycosylation (s) 		BS:00058	"Neural network predictions of mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
-					     is_a: o-glycosylation (t) 		BS:00059	"Neural network predictions of mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
+					     is_a: n-glycosylation 		BS:00057	"N-Glycosylation sites in proteins.  " [ref:ref]
+					     is_a: o-glycosylation (s) 		BS:00058	"mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
+					     is_a: o-glycosylation (t) 		BS:00059	"mucin type GalNac O-glycosylation sites in mammalian proteins." [ref:ref]
 					     is_a: phosphorylation (s) 		BS:00060	"Phosphorylation sites in eukaryotic proteins." [ref:ref]
 					     is_a: phosphorylation (t) 		BS:00061	"Phosphorylation sites in eukaryotic proteins." [ref:ref]
 					     is_a: phosphorylation (y) 		BS:00062	"Phosphorylation sites in eukaryotic proteins." [ref:ref]
 					     is_a: propeptide cleavage 		BS:00063	"Argenine/Lysine propeptide cleavage." [ref:ref]
-				    is_a: motif 			BS:00032	"Short (up to 20 amino acids) sequence motif of biological interest." [ref:ref]
-				    is_a: region 			BS:00066	"Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [ref:ref]
-				    is_a: signal 			BS:00055	"Extent of a signal sequence (prepeptide)." [ref:ref]
+				    is_a: motif 			BS:00032	"Short (up to 20 amino acids) sequence motif of biological interest." [uniprot:]
+				    is_a: region 			BS:00066	"Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [uniprot:]
+				    is_a: signal 			BS:00055	"Extent of a signal sequence (prepeptide)." [uniprot:]
 					     is_a: nes-signal 		BS:00065	"Leucine-rich nuclear export signals (NES) in eukaryotic proteins" [ref:ref]
-					     is_a: transit 		BS:00053	"Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [ref:ref]
-				    is_a: site 			BS:00033	"Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [ref:ref]
-				    is_a: zn_fing 			BS:00034	"Extent of a zinc finger region." [ref:ref]
+					     is_a: transit 		BS:00053	"Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [uniprot:]
+				    is_a: site 			BS:00033	"Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [uniprot:]
+				    is_a: zn_fing 			BS:00034	"Extent of a zinc finger region." [uniprot:]
 			   is_a: junction 				BS:00129	"Annotation of a protein terminus position or  beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insuline).  " [ref:ref]
-				    is_a: init_met 			BS:00067	"Initiator methionine." [ref:ref]
-				    is_a: non_ter 			BS:00072	"The residue at an extremity of the sequence is not the terminal residue." [ref:ref]
-				    is_a: propep 			BS:00077	"Extent of a propeptide." [ref:ref]
-			   is_a: peptide 				BS:00076	"Extent of released active peptide." [ref:ref]
-			   is_a: repeat 				BS:00070	"Extent of an internal sequence repetition." [ref:ref]
+				    is_a: init_met 			BS:00067	"Initiator methionine." [uniprot:]
+				    is_a: non_ter 			BS:00072	"The residue at an extremity of the sequence is not the terminal residue." [uniprot:]
+				    is_a: propep 			BS:00077	"Extent of a propeptide." [uniprot:]
+			   is_a: peptide 				BS:00076	"Extent of released active peptide." [uniprot:]
+			   is_a: repeat 				BS:00070	"Extent of an internal sequence repetition." [uniprot:]
 			   is_a: sequence variant 				BS:00125	"sequence variant" [ref:ref]
-				    is_a: conflict 			BS:00069	"Different sources report differing sequences. (Missing (in Ref. 2), K -> Q (in Ref. 4, 5 and 10), GSDSE -> RIRLR (in Ref. 2), V -> A (in Ref. 6; AAF71067)" [ref:ref]
+				    is_a: conflict 			BS:00069	"Different sources report differing sequences. " [uniprot:]
 				    is_a: isoform 			BS:00075	"Description of different protein isoforms." [ref:ref]
 				    is_a: mutagen 			BS:00036	"Site which has been experimentally altered." [ref:ref]
-				    is_a: variant 			BS:00071	"Authors report that sequence variants exist." [ref:ref]
+				    is_a: variant 			BS:00071	"Authors report that sequence variants exist." [uniprot:]
 				    is_a: varsplic 			BS:00073	"Description of sequence variants produced by alternative splicing. " [ref:ref]
 			   is_a: structural annotation 				BS:00133	"annotation defined through their n-ary conformations " [ref:ref]
 				    is_a: secondary structure 			BS:00003	"secondary structure" [ref:ref]
-					     is_a: coiled 		BS:00041	"Residues not calculated to be HELIX, TURN or STRAND" [ref:ref]
-					     is_a: helix 		BS:00040	"Residues in DSSP calculated Helix" [ref:ref]
+					     is_a: coiled 		BS:00041	"Residues not calculated to be HELIX, TURN or STRAND" [uniprot:]
+					     is_a: helix 		BS:00040	"Residues in DSSP calculated Helix" [uniprot:]
 					     is_a: membrane structure 		BS:00128	"membrane structure" [ref:ref]
 						      is_a: inside 	BS:00145	"region of peptide inside the membrane" [ref:ref]
 						      is_a: outside 	BS:00144	"region of peptide outside the membrane" [ref:ref]
-						      is_a: transmembrane 	BS:00156	"Extent of a transmembrane region." [ref:ref]
-					     is_a: strand 		BS:00042	"Residues in DSSP calculated STRAND" [ref:ref]
+						      is_a: transmembrane 	BS:00156	"Extent of a transmembrane region." [uniprot:]
+					     is_a: strand 		BS:00042	"Residues in DSSP calculated STRAND" [uniprot:]
 					     is_a: structural motifs 		BS:00147	"common arrangements of secondary structures" [ref:ref]
 						      is_a: alpha-beta-motif 	BS:00148	"A motif of five consecutive residues and two H-bonds in which: H-bond between CO of residue(i) and NH of residue(i+4) \nH-bond between CO of residue(i) and NH of residue(i+3) \nPhi angles of residues(i+1), (i+2) and (i+3) are negative." [ref:ref]
 						      is_a: asx-motif 	BS:00149	"Residue(i) is Aspartate or Asparagine (Asx) \nside-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) \nmain-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4). " [ref:ref]
@@ -69,8 +69,8 @@ $biosapiens annotation ; BS:00000
 						      is_a: nest-rl 	BS:00152	"A motif of two consecutive residues orientated so that  together they can form a binding site for an anionic group (the egg)." [ref:ref]
 						      is_a: schellmann-loop-6 	BS:00153	"A motif of six consecutive residues (common type) or seven consecutive residues (wide type) that contains two H-bonds. The Schellman Loop is also known as the Paperclip." [ref:ref]
 						      is_a: st-staple 	BS:00154	"This is a common feature in the middle part of alpha-helices. The Ser or Thr side-chain can be regarded as stapling together two adjacent turns of alpha-helix." [ref:ref]
-					     is_a: turn 		BS:00039	"Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [ref:ref]
-				    is_a: structural domain 			BS:00134	"A " [ref:ref]
+					     is_a: turn 		BS:00039	"Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [uniprot:]
+				    is_a: structural domain 			BS:00134	"Extent of a structural domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
 		  is_a: unlocated annotation 					BS:00127	"annotation involving the full protein or not assigned to a specific subsequence of a protein." [ref:ref]
 			   is_a: gene ontology annotation 				BS:00126	"gene ontology term assigned to a protein" [ref:ref]
 			   is_a: reference 				BS:00138	"publication on this sequence " [ref:ref]
@@ -78,19 +78,19 @@ $biosapiens annotation ; BS:00000
 		  is_a: computationally predicted 					BS:00109	"Computationally predicted" [ref:ref]
 			   is_a: inferred from electronic annotation 				BS:00110	"Inferred from Electronic Annotation" [ECO:0000001]
 		  is_a: experimentally verified 					BS:00103	"Experimentally verified" [ref:ref]
-			   is_a: inferred from direct assay 				BS:00104	"Inferred from Direct Assay" [ref:ref]
+			   is_a: inferred from direct assay 				BS:00104	"Inferred from Direct Assay" [ECO:0000002]
 			   is_a: inferred from expression pattern 				BS:00105	"Inferred from Expression Pattern" [ref:ref]
 			   is_a: inferred from genetic interaction 				BS:00106	"Inferred from Genetic Interaction" [ref:ref]
 			   is_a: inferred from mutant phenotype 				BS:00107	"Inferred from Mutant Phenotype" [ref:ref]
-			   is_a: inferred from physical interaction 				BS:00108	"Inferred from Physical Interaction" [ref:ref]
+			   is_a: inferred from physical interaction 				BS:00108	"Inferred from Physical Interaction" [ECO:0000021]
 		  is_a: manually curated 					BS:00097	"Manually curated" [ref:ref]
-			   is_a: inferred by curator 				BS:00098	"Inferred by Curator" [ref:ref]
-			   is_a: inferred from reviewed comput. analysis 				BS:00100	"Inferred from Reviewed Comput. Analysis" [ref:ref]
-			   is_a: inferred from sequence or struct. similarity 				BS:00102	"Inferred From Sequence or Struct. Similarity" [ref:ref]
-			   is_a: non-traceable author statement 				BS:00099	"Non-traceable Author Statement" [ref:ref]
-			   is_a: traceable author statement 				BS:00101	"Traceable Author Statement" [ref:ref]
+			   is_a: inferred by curator 				BS:00098	"Inferred by Curator" [ECO:0000001]
+			   is_a: inferred from reviewed comput. analysis 				BS:00100	"Inferred from Reviewed Comput. Analysis" [ECO:0000053]
+			   is_a: inferred from sequence or struct. similarity 				BS:00102	"Inferred From Sequence or Struct. Similarity" [EC:0000041]
+			   is_a: non-traceable author statement 				BS:00099	"Non-traceable Author Statement" [ECO:0000034]
+			   is_a: traceable author statement 				BS:00101	"Traceable Author Statement" [ECO:0000033]
 		  is_a: no assignment possible 					BS:00111	"No assignment possible" [ref:ref]
-			   is_a: no biological data available 				BS:00112	"No biological Data available" [ref:ref]
+			   is_a: no biological data available 				BS:00112	"No biological Data available" [ECO:0000035]
 	 is_a: institution 						BS:00006	"institution" [ref:ref]
 		  is_a: cbs\, university of denmark 					BS:00119	"CBS, University of Denmark" [ref:ref]
 		  is_a: ebi 					BS:00113	"EBI" [ref:ref]
@@ -108,48 +108,42 @@ $biosapiens annotation ; BS:00000
 	 is_a: server 						BS:00004	"server" [ref:ref]
 		  is_a: cath server 					BS:00080	"CATH" [ref:ref]
 		  is_a: cbs_total 					BS:00143	"CBS_TOTAL" [ref:ref]
-		  is_a: csa 					BS:00083	"CSA" [ref:ref]
+		  is_a: csa 					BS:00083	"Catalytic Site Atlas" [ref:ref]
 		  is_a: dasdb 					BS:00087	"DASDB" [ref:ref]
 		  is_a: funcut 					BS:00081	"FUNCUT" [ref:ref]
-		  is_a: gtd 					BS:00082	"GTD" [ref:ref]
-		  is_a: interpro 					BS:00079	"INTERPRO" [ref:ref]
+		  is_a: gtd 					BS:00082	"The Genomic Threading Database (GTD) contains structural annotations of all major proteomes made using the GenTHREADER method. " [ref:ref]
+		  is_a: interpro 					BS:00079	"InterPro is a database of protein families, domains and functional sites in which identifiable features found in known proteins can be applied to unknown protein sequences." [ref:ref]
 		  is_a: pdbsum_protprot 					BS:00140	"Protein protein contacts from the PDBSUM database." [ref:ref]
 		  is_a: prop 					BS:00092	"PROP" [ref:ref]
-		  is_a: s3dm 					BS:00146	"?" [ref:ref]
+		  is_a: s3dm 					BS:00146	"Small hydrogen bonded motifs, beta turn like. " [ref:ref]
 		  is_a: smart 					BS:00017	"Simple Modular Architecture Research Tool (SMART)" [ref:ref]
 		  is_a: transmem_pred 					BS:00086	"TRANSMEM_PRED" [ref:ref]
-		  is_a: uniprot 					BS:00078	"UNIPROT" [ref:ref]
+		  is_a: uniprot 					BS:00078	"UniProt (Universal Protein Resource) is the world's most comprehensive catalogue of information on proteins. It is a central repository of protein sequence and function created by joining the information contained in UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, and PIR. \n" [ref:ref]
 	 is_a: source 						BS:00001	"Feature source database or algorythm generating it." [ref:ref]
 		  is_a: cath algorythm 					BS:00008	"Structural domain classification" [ref:ref]
-		  is_a: cbs_func 					BS:00084	"CBS_FUNC" [th algorythm 				"Structural domain classification" [ref:ref]	BS:00008
-		  - is_a: cbs_func 				"CBS_FUNC" [ref:ref]	BS:00084
-		  - is_a: cbs_ptm 				"CBS_PTM" [ref:ref]	BS:00090
-		  - is_a: cbs_sort 				"CBS_SORT" [ref:ref]	BS:00094
-		  - is_a: fcdesc\:funcut 				"Automatic annotation of protein function based on family identification. " [ref:ref]	BS:00024
-		  - is_a: gene3d 				"HMMs. Extended predictions for CATH Superfamilies. " [ref:ref]	BS:00015
-		  - is_a: gtd algorythm 				"Genomic Threading database. Structural annotations within key completed genomes " [ref:ref]	BS:00025
-		  - is_a: netacet 				"acetylation site" [ref:ref]	BS:00141
-		  - is_a: netnes 				"NETNES" [ref:ref]	BS:00096
-		  - is_a: netoglyc 				"NETOGLYC" [ref:ref]	BS:00088
-		  - is_a: netphos 				"NETPHOS" [ref:ref]	BS:00091
-		  - is_a: outside 				"Transmembrane protein. Region outside the cell" [ref:ref]	BS:00046
-		  - is_a: panther 				"Protein ANalysis THrough Evolutionary Relationships. Proteins have been classified according to families and subfamilies, molecular functions, biological processes, pathways." [ref:ref]	BS:00016
-		  - is_a: pfam 				"Pfam protein domain database" [ref:ref]	BS:00009
-		  - is_a: pir 				"Protein Information Resource" [ref:ref]	BS:00018
-		  - is_a: pirsf 				"Central to the PIR/UniProt functional annotation of proteins is the PIR-SF (SuperFamily) classification system that provides classification of whole proteins and domains into a network structure to reflect their evolutionary relationships. http://gumc.georgetown.edu/" [ref:ref]	BS:00023
-		  - is_a: prints 				"Protein Fingerprint database (PRINTS)" [ref:ref]	BS:00010
-		  - is_a: prodom 				"ProDom protein domain database" [ref:ref]	BS:00013
-		  - is_a: profile 				"Database of protein families, domains and functional sites. " [ref:ref]	BS:00019
-		  - is_a: prosite 				"A database of protein families and domains." [ref:ref]	BS:00011
-		  - is_a: scop 				"Structural domain classification" [ref:ref]	BS:00007
-		  - is_a: signalp 				"SIGNALP" [ref:ref]	BS:00095
-		  - is_a: smart domain 				"Simple Modular Architecture Research Tool (SMART)" [ref:ref]	BS:00142
-		  - is_a: spep+ensemble_1.0 				"SPEP+ENSEMBLE is a predictor of transmembrane helices in proteins, by Martelli et al." [ref:ref]	BS:00047
-		  - is_a: spep+memsat 				"SPEP+MEMSAT is a predictor of transmembrane helices in proteins, by Jones, D.T., Taylor, W.R. and Thornton, J. M." [ref:ref]	BS:00049
-		  - is_a: spep+prodiv_tmhmm 				"A predictor of transmembrane helices in proteins, by Viklund and Elofsson" [ref:ref]	BS:00048
-		  - is_a: spep+prodiv_tmhmm_0.91 				"SPEP+PRODIV_TMHMM_0.91 is a predictor of transmembrane helices in proteins by Viklund and Elofsson" [ref:ref]	BS:00051
-		  - is_a: spep+tmhmm2.0 				"a predictor of transmembrane helices in proteins, by A. Krogh, B. Larsson, G. von Heijne, and E. L. L. Sonnhammer." [ref:ref]	BS:00050
-		  - is_a: ssf 				"Superfamily" [ref:ref]	BS:00020
-		  - is_a: tigrfams 				"TIGR protein family database (TIGRFAMs)" [ref:ref]	BS:00021
-		  - is_a: tmhmm 				"TMHMM" [ref:ref]	BS:00085
-		  - is_a: topo_dom 				"Topological domain" [ref:ref]	BS:00014
+		  is_a: cbs_func 					BS:00084	"Aggregation server for CBS predictions related to protein function and structure. " [ref:ref]
+		  is_a: cbs_ptm 					BS:00090	"Aggregation server for CBS predictions related to post-translational modifications of proteins." [ref:ref]
+		  is_a: cbs_sort 					BS:00094	"CBS_SORT" [ref:ref]
+		  is_a: fcdesc\:funcut 					BS:00024	"Automatic annotation of protein function based on family identification. " [ref:ref]
+		  is_a: gene3d 					BS:00015	"HMMs. Extended predictions for CATH Superfamilies. " [ref:ref]
+		  is_a: gtd algorythm 					BS:00025	"Genomic Threading database. Structural annotations within key completed genomes " [ref:ref]
+		  is_a: netacet 					BS:00141	"acetylation site" [ref:ref]
+		  is_a: netnes 					BS:00096	"NETNES" [ref:ref]
+		  is_a: netoglyc 					BS:00088	"NETOGLYC" [ref:ref]
+		  is_a: netphos 					BS:00091	"NETPHOS" [ref:ref]
+		  is_a: outside 					BS:00046	"Transmembrane protein. Region outside the cell" [ref:ref]
+		  is_a: panther 					BS:00016	"Protein ANalysis THrough Evolutionary Relationships. Proteins have been classified according to families and subfamilies, molecular functions, biological processes, pathways." [ref:ref]
+		  is_a: pfam 					BS:00009	"Pfam is a large collection of multiple sequence alignments and hidden Markov models covering many common protein domains and families." [ref:ref]
+		  is_a: pir 					BS:00018	"Protein Information Resource" [ref:ref]
+		  is_a: pirsf 					BS:00023	"Central to the PIR/UniProt functional annotation of proteins is the PIR-SF (SuperFamily) classification system that provides classification of whole proteins and domains into a network structure to reflect their evolutionary relationships. http://gumc.georgetown.edu/" [ref:ref]
+		  is_a: prints 					BS:00010	"Protein Fingerprint database (PRINTS)" [ref:ref]
+		  is_a: prodom 					BS:00013	"ProDom protein domain database" [ref:ref]
+		  is_a: profile 					BS:00019	"Database of protein families, domains and functional sites. " [ref:ref]
+		  is_a: prosite 					BS:00011	"A database of protein families and domains." [ref:ref]
+		  is_a: scop 					BS:00007	"Structural domain classification" [ref:ref]
+		  is_a: signalp 					BS:00095	"SIGNALP" [ref:ref]
+		  is_a: smart domain 					BS:00142	"Simple Modular Architecture Research Tool (SMART)" [ref:ref]
+		  is_a: spep+ensemble_1.0 					BS:00047	"SPEP+ENSEMBLE is a predictor of transmembrane helices in proteins, by Martelli et al." [ref:ref]
+		  is_a: spep+memsat 					BS:00049	"SPEP+MEMSAT is a predictor of transmembrane helices in proteins, by Jones, D.T., Taylor, W.R. and Thornton, J. M." [ref:ref]
+		  is_a: spep+prodiv_tmhmm 					BS:00048	"A predictor of transmembrane helices in proteins, by Viklund and Elofsson" [ref:ref]
+		  is_a: spep+prodiv_tmhmm_0.91 					BS:00051	"SPEP+PRODIV_TMHMM_0.91 is a predictor of transmembrane helices in proteins by Viklund and Elofsson" 
