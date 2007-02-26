@@ -1,7 +1,7 @@
 format-version: 1.0
-date: 09:02:2007 16:37
-saved-by: gabby
-auto-generated-by: OBO-Edit 1.002
+date: 26:02:2007 14:59
+saved-by: luisa
+auto-generated-by: OBO-Edit 1.000
 default-namespace: BS
 
 [Term]
@@ -11,8 +11,8 @@ def: "catalogue of annotations provided by BioSapiens partners" [ref:ref]
 
 [Term]
 id: BS:00001
-name: source
-def: "Feature source database or algorythm generating it." [ref:ref]
+name: secondary source
+def: "Information sources displayed through a secondary server." [ref:ref]
 is_a: BS:00000 ! biosapiens annotation
 
 [Term]
@@ -23,8 +23,8 @@ is_a: BS:00133 ! structural annotation
 
 [Term]
 id: BS:00004
-name: server
-def: "server" [ref:ref]
+name: das server
+def: "Servers listed on the BioSapiensDIR web page." [ref:ref]
 is_a: BS:00000 ! biosapiens annotation
 
 [Term]
@@ -41,43 +41,43 @@ is_a: BS:00000 ! biosapiens annotation
 
 [Term]
 id: BS:00007
-name: scop method
+name: scop
 def: "Structural Classification of Proteins " [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00008
 name: cath method
 def: "CATH is a hierarchical classification of protein domain structures, which clusters proteins at four major levels, Class(C), Architecture(A), Topology(T) and Homologous superfamily (H). " [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_obsolete: true
 
 [Term]
 id: BS:00009
 name: pfam
 def: "Pfam is a large collection of multiple sequence alignments and hidden Markov models covering many common protein domains and families." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00010
 name: prints
 def: "Protein Fingerprint database (PRINTS). PRINTS is a compendium of protein fingerprints. A fingerprint is a group of conserved motifs used to characterise a protein family; its diagnostic power is refined by iterative scanning of a SWISS-PROT/TrEMBL composite. " [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00011
 name: prosite
 def: "A database of protein families and domains." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00012
 name: domain
-def: "Region which has been shown to recur throughout evolution. " [uniprot:]
+def: "Region which has been shown to recur throughout evolution. " [UniProt:curation manual]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
@@ -86,12 +86,12 @@ id: BS:00013
 name: prodom
 def: "ProDom is a comprehensive set of protein domain families automatically generated from the SWISS-PROT and TrEMBL sequence databases." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00014
 name: topo_dom
-def: "topology for transmembrane regions of proteins." [uniprot:]
+def: "topology for transmembrane regions of proteins." [UniProt:curation manual]
 comment: Range
 is_obsolete: true
 
@@ -100,49 +100,50 @@ id: BS:00015
 name: gene3d
 def: "Structural and Functional Annotation of Protein Families using HMMs." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00016
 name: panther
 def: "Protein ANalysis THrough Evolutionary Relationships. Proteins have been classified according to families and subfamilies, molecular functions, biological processes, pathways." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00017
 name: smart
 def: "Simple Modular Architecture Research Tool (SMART)" [ref:ref]
 comment: Range
-is_a: BS:00004 ! server
+is_a: BS:00001 ! secondary source
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00018
 name: pir
 def: "Protein Information Resource" [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00019
 name: profile
 def: "Database of protein families, domains and functional sites. " [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00021
 name: tigrfams
 def: "TIGR protein family database (TIGRFAMs).  Protein families based on Hidden Markov Models or HMMs." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00023
 name: pirsf
 def: "Central to the PIR/UniProt functional annotation of proteins is the PIR-SF (SuperFamily) classification system that provides classification of whole proteins and domains into a network structure to reflect their evolutionary relationships. http://gumc.georgetown.edu/" [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00024
@@ -154,72 +155,73 @@ is_obsolete: true
 [Term]
 id: BS:00026
 name: act_site
-def: "Amino acid(s) involved in the activity of an enzyme." [uniprot:]
+def: "Amino acid(s) involved in the activity of an enzyme." [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00027
 name: metal
-def: "Binding site for a metal ion." [uniprot:]
+def: "Binding site for a metal ion." [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00028
 name: disulfide
-def: "Disulfide bond." [uniprot:]
+def: "Disulfide bond." [UniProt:curation manual]
 comment: 2 discreet & joined
-is_a: BS:00130 ! functional annotation
+is_a: BS:00246 ! covalent binding
 
 [Term]
 id: BS:00029
-name: binding
-def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [uniprot:]
+name: non covalent binding
+def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "binding" [uniprot:curation]
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00030
 name: ca_bind
-def: "Extent of calcium binding region" [uniprot:]
+def: "Extent of calcium binding region" [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00029 ! binding
+is_obsolete: true
 
 [Term]
 id: BS:00031
 name: lipid
-def: "Covalent binding of lipid moiety" [uniprot:]
+def: "Covalent binding of lipid moiety" [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00032
 name: motif
-def: "Short (up to 20 amino acids) sequence motif of biological interest." [uniprot:]
+def: "Short (up to 20 amino acids) sequence motif of biological interest." [UniProt:curation manual]
 comment: Range
-is_a: BS:00130 ! functional annotation
+is_a: BS:00066 ! region
 
 [Term]
 id: BS:00033
 name: site
-def: "Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [uniprot:]
+def: "Any interesting single amino-acid site on the sequence, that is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00130 ! functional annotation
+is_a: BS:00066 ! region
 
 [Term]
 id: BS:00034
 name: zn_fing
-def: "Extent of a zinc finger region." [uniprot:]
+def: "Extent of a zinc finger region." [UniProt:curation manual]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00035
 name: dna_bind
-def: "Extent of a DNA-binding region." [uniprot:]
+def: "Extent of a DNA-binding region." [UniProt:curation manual]
 comment: Range
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00036
@@ -231,35 +233,35 @@ is_a: BS:00125 ! sequence variant
 [Term]
 id: BS:00037
 name: np_bind
-def: "Extent of a nucleotide phosphate-binding region (ATP GTP (Potential, FAD (ADP part))." [uniprot:]
+def: "Extent of a nucleotide phosphate-binding region. " [UniProt:curation manual]
 comment: Range
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00039
 name: turn
-def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [uniprot:]
+def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [UniProt:curation manual]
 comment: Range
-is_a: BS:00003 ! secondary structure
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00040
 name: helix
-def: "Residues in DSSP calculated Helix" [uniprot:]
+def: "Residues in DSSP calculated Helix" [UniProt:curation manual]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00041
 name: coiled
-def: "A coiled-coil region, predicted using the COILS program (Lupas)." [uniprot:]
+def: "A coiled-coil region, predicted using the COILS program (Lupas)." [UniProt:curation manual]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00042
 name: strand
-def: "Residues in DSSP calculated STRAND" [uniprot:]
+def: "Residues in DSSP calculated STRAND" [UniProt:curation manual]
 comment: Range
 is_a: BS:00003 ! secondary structure
 
@@ -282,61 +284,61 @@ id: BS:00047
 name: spep+ensemble_1.0
 def: "SPEP+ENSEMBLE is a predictor of transmembrane helices in proteins, by Martelli et al." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00087 ! dasdb
 
 [Term]
 id: BS:00048
 name: spep+prodiv_tmhmm
 def: "A predictor of transmembrane helices in proteins, by Viklund and Elofsson" [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00087 ! dasdb
 
 [Term]
 id: BS:00049
 name: spep+memsat
 def: "SPEP+MEMSAT is a predictor of transmembrane helices in proteins, by Jones, D.T., Taylor, W.R. and Thornton, J. M." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00087 ! dasdb
 
 [Term]
 id: BS:00050
 name: spep+tmhmm2.0
 def: "a predictor of transmembrane helices in proteins, by A. Krogh, B. Larsson, G. von Heijne, and E. L. L. Sonnhammer." [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00087 ! dasdb
 
 [Term]
 id: BS:00051
 name: spep+prodiv_tmhmm_0.91
 def: "SPEP+PRODIV_TMHMM_0.91 is a predictor of transmembrane helices in proteins by Viklund and Elofsson" [ref:ref]
 comment: Range
-is_a: BS:00001 ! source
+is_a: BS:00087 ! dasdb
 
 [Term]
 id: BS:00052
 name: mod_res
-def: "Post-translational modification of a residue." [uniprot:]
+def: "Post-translational modification of a residue." [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00053
 name: transit
-def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [uniprot:]
+def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [UniProt:curation manual]
 comment: Range
 is_a: BS:00055 ! signal
 
 [Term]
 id: BS:00054
 name: carbohyd
-def: "Glycosylation site." [uniprot:]
+def: "Glycosylation site." [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_obsolete: true
 
 [Term]
 id: BS:00055
 name: signal
-def: "Extent of a signal sequence (prepeptide)." [uniprot:]
+def: "Extent of a signal sequence (prepeptide)." [UniProt:curation manual]
 comment: Range
 is_a: BS:00129 ! junction
 
@@ -371,35 +373,35 @@ is_a: BS:00183 ! glycosylation
 [Term]
 id: BS:00060
 name: phosphorylation (s)
-def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
+def: "Phosphorylation of a serine residue in eukaryotic proteins." [ref:ref]
 comment: Discreet
 is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00061
 name: phosphorylation (t)
-def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
+def: "Phosphorylation of a threonine residue in eukaryotic proteins." [ref:ref]
 comment: Discreet
 is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00062
 name: phosphorylation (y)
-def: "Phosphorylation sites in eukaryotic proteins." [ref:ref]
+def: "Phosphorylation of a tyrosine residue in eukaryotic proteins." [ref:ref]
 comment: Discreet
 is_a: BS:00135 ! phosphorylation
 
 [Term]
 id: BS:00063
-name: propeptide cleavage
-def: "Argenine/Lysine propeptide cleavage." [ref:ref]
+name: propeptide cleavage site
+def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
-is_a: BS:00052 ! mod_res
+is_a: BS:00077 ! propep
 
 [Term]
 id: BS:00064
 name: acetylation
-def: "N-terminal of some residues and side chain of lysine." [uniprot:]
+def: "N-terminal of some residues and side chain of lysine." [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00052 ! mod_res
 
@@ -413,162 +415,164 @@ is_a: BS:00055 ! signal
 [Term]
 id: BS:00066
 name: region
-def: "Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [uniprot:]
+def: "Extent of a region of interest in the sequence. (Zymogen activation region, Hydrophobic)" [UniProt:curation manual]
 comment: Range
 is_a: BS:00130 ! functional annotation
 
 [Term]
 id: BS:00067
 name: init_met
-def: "Initiator methionine." [uniprot:]
+def: "Indicates where initiator methionine has been cleaved from the protein." [UniProt:curation manual]
 is_a: BS:00129 ! junction
 
 [Term]
 id: BS:00068
 name: compbias
-def: "Extent of a compositionally biased region (Poly-Ser, Glu-rich (acidic).)" [uniprot:]
+def: "Extent of a compositionally biased region." [UniProt:curation manual]
 comment: Range
 is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00069
 name: conflict
-def: "Different sources report differing sequences. " [uniprot:]
+def: "Different sources report differing sequences. " [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00070
 name: repeat
-def: "Extent of an internal sequence repetition." [uniprot:]
+def: "Extent of an internal sequence repetition." [UniProt:curation manual]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00071
 name: variant
-def: "Authors report that sequence variants exist." [uniprot:]
+def: "Authors report that sequence variants exist." [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00179 ! sequence variants
+is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00072
 name: non_ter
-def: "The residue at an extremity of the sequence is not the terminal residue." [uniprot:]
+def: "The residue at an extremity of the sequence is not the terminal residue." [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00129 ! junction
+is_a: BS:00148 ! indicators of incomplete sequence
 
 [Term]
 id: BS:00073
-name: varsplic
-def: "Description of sequence variants produced by alternative splicing. " [ref:ref]
+name: var_seq
+def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation]
 comment: Discreet
-is_a: BS:00179 ! sequence variants
+narrow_synonym: "varsplic" []
+is_a: BS:00125 ! sequence variant
 
 [Term]
 id: BS:00075
 name: isoform
 def: "Description of different protein isoforms." [ref:ref]
 comment: Range
-is_a: BS:00179 ! sequence variants
+is_a: BS:00149 ! mature protein products
 
 [Term]
 id: BS:00076
 name: peptide
-def: "Extent of released active peptide." [uniprot:]
+def: "Extent of released active peptide." [UniProt:curation manual]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00149 ! mature protein products
 
 [Term]
 id: BS:00077
 name: propep
-def: "Extent of a propeptide." [uniprot:]
+def: "Extent of a propeptide." [UniProt:curation]
 comment: Range
 is_a: BS:00129 ! junction
 
 [Term]
 id: BS:00078
 name: uniprot
-def: "UniProt (Universal Protein Resource) is the world's most comprehensive catalogue of information on proteins. It is a central repository of protein sequence and function created by joining the information contained in UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, and PIR. \n" [ref:ref]
-is_a: BS:00004 ! server
+def: "UniProt (Universal Protein Resource) is the world's most comprehensive catalogue of information on proteins. It is a central repository of protein sequence and function created by joining the information contained in UniProtKB/Swiss-Prot, UniProtKB/TrEMBL, and PIR. " [ref:ref]
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00079
 name: interpro
 def: "InterPro is a database of protein families, domains and functional sites in which identifiable features found in known proteins can be applied to unknown protein sequences." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00080
 name: cath_pdb
 def: "CATH is a hierarchical classification of protein domain structures, which clusters proteins at four major levels, Class(C), Architecture(A), Topology(T) and Homologous superfamily (H). " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00081
 name: funcut
 def: "Automatic annotation of protein function based on family identification. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00082
 name: gtd
 def: "The Genomic Threading Database (GTD) contains structural annotations of all major proteomes made using the GenTHREADER method. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00083
 name: csalit
-def: "Catalytic Site Atlas" [ref:ref]
-is_a: BS:00004 ! server
+def: "Catalytic Site Atlas. Catalytic sites which have been annotated from the literature." [ref:ref]
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00085
 name: tmhmm
 def: "CBS: Prediction of transmembrane helices in proteins." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00086
 name: transmem_pred
 def: "TRANSMEM_PRED" [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00087
 name: dasdb
 def: "Transmembrane prediction. This server has a number of differnt sources (spep*)." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00088
 name: netoglyc
-def: "The NetOglyc server produces neural network predictions of mucin type GalNAc O-glycosylation sites in mammalian proteins.\n" [ref:ref]
-is_a: BS:00004 ! server
+def: "The NetOglyc server produces neural network predictions of mucin type GalNAc O-glycosylation sites in mammalian proteins." [ref:ref]
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00091
 name: netphos
-def: "The NetPhos 2.0 server produces neural network predictions for serine, threonine and tyrosine phosphorylation sites in eukaryotic proteins. \n\n" [ref:ref]
-is_a: BS:00004 ! server
+def: "The NetPhos 2.0 server produces neural network predictions for serine, threonine and tyrosine phosphorylation sites in eukaryotic proteins. " [ref:ref]
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00092
 name: prop
 def: "ProP 1.0 server predicts arginine and lysine propeptide cleavage sites in eukaryotic protein sequences using an ensemble of neural networks. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00095
 name: signalp
 def: "SignalP 3.0 server predicts the presence and location of signal peptide cleavage sites in amino acid sequences from different organisms: Gram-positive prokaryotes, Gram-negative prokaryotes, and eukaryotes. The method incorporates a prediction of cleavage sites and a signal peptide/non-signal peptide prediction based on a combination of several artificial neural networks and hidden Markov models. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00001 ! secondary source
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00096
 name: netnes
-def: "NetNES 1.1 server predicts leucine-rich nuclear export signals (NES) in eukaryotic proteins using a combination of neural networks and hidden Markov models. \n\n" [ref:ref]
-is_a: BS:00004 ! server
+def: "NetNES 1.1 server predicts leucine-rich nuclear export signals (NES) in eukaryotic proteins using a combination of neural networks and hidden Markov models. " [ref:ref]
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00097
@@ -576,20 +580,6 @@ name: manually curated
 def: "Manually curated" [ref:ref]
 exact_synonym: "MC" []
 is_a: BS:00005 ! evidence code
-
-[Term]
-id: BS:00098
-name: inferred by curator
-def: "Inferred by Curator" [ECO:0000001]
-exact_synonym: "IC" []
-is_obsolete: true
-
-[Term]
-id: BS:00099
-name: non-traceable author statement
-def: "Non-traceable Author Statement" [ECO:0000034]
-exact_synonym: "NAS" []
-is_obsolete: true
 
 [Term]
 id: BS:00100
@@ -688,7 +678,7 @@ is_a: BS:00006 ! institution
 
 [Term]
 id: BS:00114
-name: biochem, ucl
+name: biochem ucl
 def: "Biochem, UCL" [ref:ref]
 relationship: part_of BS:00136 ! ucl
 
@@ -700,13 +690,13 @@ is_a: BS:00006 ! institution
 
 [Term]
 id: BS:00116
-name: pdg, madrid
+name: pdg madrid
 def: "PDG, Madrid" [ref:ref]
 is_a: BS:00006 ! institution
 
 [Term]
 id: BS:00117
-name: ucl cs bioninf. unit
+name: ucl cs bioninf unit
 def: "UCL CS Bioninf. Unit" [ref:ref]
 relationship: part_of BS:00136 ! ucl
 
@@ -718,7 +708,7 @@ relationship: part_of BS:00113 ! ebi
 
 [Term]
 id: BS:00119
-name: cbs, university of denmark
+name: cbs university of denmark
 def: "CBS, University of Denmark" [ref:ref]
 is_a: BS:00006 ! institution
 
@@ -742,7 +732,7 @@ relationship: part_of BS:00121 ! stockholm university
 
 [Term]
 id: BS:00124
-name: located annotation
+name: positional annotation
 def: "Biological annotation that can be assigned to a specific subsequence of a protein." [ref:ref]
 comment: Discreet
 is_a: BS:00043 ! annotation
@@ -752,19 +742,19 @@ id: BS:00125
 name: sequence variant
 def: "sequence variant" [ref:ref]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00124 ! positional annotation
 
 [Term]
 id: BS:00126
 name: gene ontology annotation
 def: "gene ontology term assigned to a protein" [ref:ref]
 comment: Range
-is_a: BS:00127 ! unlocated annotation
+is_a: BS:00127 ! nonpositional annotation
 
 [Term]
 id: BS:00127
-name: unlocated annotation
-def: "annotation involving the full protein or not assigned to a specific subsequence of a protein." [ref:ref]
+name: nonpositional annotation
+def: "Annotation which is not assigned to a specific subsequence of a protein." [ref:ref]
 comment: Range
 is_a: BS:00043 ! annotation
 
@@ -780,32 +770,32 @@ id: BS:00129
 name: junction
 def: "Annotation of a protein terminus position or  beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insuline).  " [ref:ref]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00124 ! positional annotation
 
 [Term]
 id: BS:00130
 name: functional annotation
 def: "Indicates a region with functional annotation." [ref:ref]
-is_a: BS:00124 ! located annotation
+is_a: BS:00124 ! positional annotation
 
 [Term]
 id: BS:00131
 name: protein-protein interaction
 def: "Residues involved in protein protein interactions" [ref:ref]
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00132
 name: contact to ligand
 def: "Residues which are in contact with a ligand" [ref:ref]
-is_a: BS:00130 ! functional annotation
+is_obsolete: true
 
 [Term]
 id: BS:00133
 name: structural annotation
 def: "annotation defined through their n-ary conformations " [ref:ref]
 comment: Range
-is_a: BS:00124 ! located annotation
+is_a: BS:00124 ! positional annotation
 
 [Term]
 id: BS:00134
@@ -817,7 +807,7 @@ is_a: BS:00133 ! structural annotation
 [Term]
 id: BS:00135
 name: phosphorylation
-def: "of serine, threonine, tyrosine, aspartate, histidine or cysteine, and, more rarely, of arginine" [uniprot:]
+def: "of serine, threonine, tyrosine, aspartate, histidine or cysteine, and, more rarely, of arginine" [UniProt:curation manual]
 is_a: BS:00052 ! mod_res
 
 [Term]
@@ -836,32 +826,26 @@ is_a: BS:00006 ! institution
 id: BS:00138
 name: reference
 def: "publication on this sequence " [ref:ref]
-is_a: BS:00127 ! unlocated annotation
+is_a: BS:00127 ! nonpositional annotation
 
 [Term]
 id: BS:00139
 name: chain
-def: "Extent of a polypeptide chain in the mature protein.\nIn Swiss-Prot, it is present: \n1, For proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the CHAIN covers the whole protein sequence. 2, For processed proteins, it describes the mature part of the protein once preprotein parts such as propeptides and signal sequences have been removed.\nFor TrEMBL, it is present only in those entries where the submitters to the nucleotide sequence databases have provided this information for processed proteins. \n" [uniprot:]
+def: "Extent of a polypeptide chain in the mature protein.In Swiss-Prot, it is present: 1, For proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the CHAIN covers the whole protein sequence. 2, For processed proteins, it describes the mature part of the protein once preprotein parts such as propeptides and signal sequences have been removed.For TrEMBL, it is present only in those entries where the submitters to the nucleotide sequence databases have provided this information for processed proteins. " [UniProt:curation manual]
 related_synonym: "peptide" []
-is_a: BS:00124 ! located annotation
+is_a: BS:00149 ! mature protein products
 
 [Term]
 id: BS:00140
 name: pdbsum_protprot
 def: "PDBsum is a pictorial database providing an at-a-glance overview of every macromolecular structure deposited in the Protein Data Bank (PDB). Protein protein contacts from the PDBSUM database." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00141
 name: netacet
 def: "This method predicts substrates of N-acetyltransferase A (NatA)." [ref:ref]
-is_a: BS:00004 ! server
-
-[Term]
-id: BS:00142
-name: smart domain
-def: "Simple Modular Architecture Research Tool (SMART)" [ref:ref]
-is_a: BS:00001 ! source
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00143
@@ -870,7 +854,7 @@ def: "CBS_TOTAL" [ref:ref]
 related_synonym: "cbs_func" []
 related_synonym: "cbs_ptm" []
 related_synonym: "cbs_sort" []
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00144
@@ -887,14 +871,56 @@ is_a: BS:00128 ! membrane structure
 [Term]
 id: BS:00146
 name: s3dm
-def: "MSD Motif: Small 3D structure motifs such as the beta-turn, are important protein fragments with many functions. These motifs characterise active-sites, have structural roles in protein folding and protein stability, and play roles in enzyme mechanisms accumulating energy which further can be released to fulfil a biological function.\n" [ref:ref]
-is_a: BS:00004 ! server
+def: "MSD Motif: Small 3D structure motifs such as the beta-turn, are important protein fragments with many functions. These motifs characterise active-sites, have structural roles in protein folding and protein stability, and play roles in enzyme mechanisms accumulating energy which further can be released to fulfil a biological function." [ref:ref]
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00147
 name: structural motifs
 def: "common arrangements of secondary structures" [ref:ref]
 is_a: BS:00003 ! secondary structure
+
+[Term]
+id: BS:00148
+name: indicators of incomplete sequence
+def: "indicators of incomplete sequence" [ref:ref]
+is_a: BS:00124 ! positional annotation
+
+[Term]
+id: BS:00149
+name: mature protein products
+def: "annotations which define the mature protein" [ref:ref]
+is_a: BS:00124 ! positional annotation
+
+[Term]
+id: BS:00150
+name: se_cys
+def: "Describes the occurrence of a selenocysteine in the sequence record." [UniProt:curation]
+is_a: BS:00130 ! functional annotation
+
+[Term]
+id: BS:00151
+name: GenTHREADER
+def: "Predicts the likey fold of a protein sequence using sequence and structure-based methods." [ref:ref]
+is_a: BS:00082 ! gtd
+
+[Term]
+id: BS:00152
+name: mGenTHREADER
+def: "Predicts the likey fold of a protein sequence using sequence and structure-based methods." [ref:ref]
+is_a: BS:00082 ! gtd
+
+[Term]
+id: BS:00153
+name: inferred by curator
+def: "To be used for those cases where an annotation is not supported by any evidence, but can be reasonably inferred by a curator from other GO annotations, for which evidence is available. An example would be when there is evidence (be it direct assay, sequence similarity or even from electronic annotation) that a particular gene product has the function transcription factor activity. There is no evidence whatsoever that this gene product has the cellular location nucleus, but this would be a perfectly reasonable inference for a curator to make (if the curator is annotating a eukaryotic gene product, of course). This inference would be linked to the annotation transcription factor activity in two ways: (i) both annotations would share the same reference, and (ii) the inferred annotation would include one or more from statements pointing to the GO term(s) used by the curator for the inference. Note that the With/From field (see the annotation guide for more information) should always be filled in with a GO ID when using this evidence code. " [GO:evidence]
+is_a: BS:00097 ! manually curated
+
+[Term]
+id: BS:00154
+name: non-traceable author statement
+def: "Database entries that don't cite a paper (e.g. UniProt Knowledgebase records, YPD protein reports) Statements in papers (abstract, introduction, or discussion) that a curator cannot trace to another publication Formerly NA (not available). See TAS, and see the notes on TAS vs NAS. Also, note that author can be interpreted quite loosely for this code; for example, one doesn't have to know which curator entered an untraceable statement that appears on a database record to use this code " [GO:evidence]
+is_a: BS:00097 ! manually curated
 
 [Term]
 id: BS:00155
@@ -905,7 +931,7 @@ relationship: part_of BS:00113 ! ebi
 [Term]
 id: BS:00156
 name: transmem
-def: "Extent of a transmembrane region." [uniprot:]
+def: "Extent of a transmembrane region." [UniProt:curation manual]
 related_synonym: "topo_dom" [uniprot:curation]
 is_a: BS:00128 ! membrane structure
 
@@ -913,25 +939,25 @@ is_a: BS:00128 ! membrane structure
 id: BS:00157
 name: protein-ligand interaction
 def: "residues which interact with ligand" [ref:ref]
-is_a: BS:00029 ! binding
+is_a: BS:00029 ! non covalent binding
 
 [Term]
 id: BS:00158
 name: dssp
 def: "Information from DSSP. a database of secondary structure assignments for all protein entries in the Protein Data Bank. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00159
 name: mispred
 def: "MisPred provides a list of mispredicted genes/proteins identified from the human and mouse genomes based on a conflict between the subcellular location of the predicted proteins and the absence of the corresponding sequence signals. MisPred also contains a short description of the type of misprediction and an improved prediction. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00160
 name: vega_Homo_sapiens_core_40_1006_cds
 def: "vega_Homo_sapiens_core_40_1006_cds" [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00161
@@ -978,7 +1004,7 @@ is_a: BS:00052 ! mod_res
 [Term]
 id: BS:00168
 name: sulfation
-def: "of tyrosine, serine or threonine." [UniProt:curation manual]
+def: "sulfation of a tyrosine, serine or threonine residue." [UniProt:curation manual]
 is_a: BS:00052 ! mod_res
 
 [Term]
@@ -1039,19 +1065,19 @@ is_a: BS:00031 ! lipid
 id: BS:00178
 name: crosslnk
 def: "Posttranslationally formed amino acid bonds." [UniProt:curation manual]
-is_a: BS:00130 ! functional annotation
+is_a: BS:00246 ! covalent binding
 
 [Term]
 id: BS:00179
 name: sequence variants
 def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation manual]
-is_a: BS:00125 ! sequence variant
+is_obsolete: true
 
 [Term]
 id: BS:00180
 name: secretomep
-def: "Prediction of non-classical protein secretion\nThe SecretomeP 2.0 server produces ab initio predictions of non-classical i.e. not signal peptide triggered protein secretion.  " [ref:ref]
-is_a: BS:00004 ! server
+def: "Prediction of non-classical protein secretionThe SecretomeP 2.0 server produces ab initio predictions of non-classical i.e. not signal peptide triggered protein secretion.  " [ref:ref]
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00181
@@ -1063,19 +1089,20 @@ is_a: BS:00125 ! sequence variant
 id: BS:00182
 name: non_cons
 def: "Non-consecutive residues." [UniProt:curation manual]
-is_a: BS:00125 ! sequence variant
+is_a: BS:00148 ! indicators of incomplete sequence
 
 [Term]
 id: BS:00183
 name: glycosylation
 def: "glycosylation sites" [ref:ref]
+related_synonym: "carbohyd" [UniProt:curation]
 is_a: BS:00052 ! mod_res
 
 [Term]
 id: BS:00184
 name: pdbsum_ligand
 def: "PDBsum is a pictorial database providing an at-a-glance overview of every macromolecular structure deposited in the Protein Data Bank (PDB). Protein ligand contacts from the PDBSUM database." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00185
@@ -1087,6 +1114,7 @@ is_a: BS:00027 ! metal
 id: BS:00186
 name: ca contact
 def: "residues involved in contact with calcium" [ref:ref]
+related_synonym: "ca_bind" [uniprot:curation]
 is_a: BS:00027 ! metal
 
 [Term]
@@ -1099,67 +1127,67 @@ is_a: BS:00027 ! metal
 id: BS:00188
 name: superfamily
 def: "A library of profile HMMs that represent all proteins of known structure based on SCOP." [ref:ref]
-is_a: BS:00001 ! source
+is_a: BS:00001 ! secondary source
 
 [Term]
 id: BS:00189
 name: vega_Homo_sapiens_core_40_1006_trans
 def: "vega_Homo_sapiens_core_40_1006_trans" [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00190
 name: vega_Mus_musculus_core_39_0706_trans
 def: "vega_Mus_musculus_core_39_0706_trans" [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00191
 name: vega_Mus_musculus_core_39_0706_cds
 def: "vega_Mus_musculus_core_39_0706_cds" [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00192
 name: csaextended
-def: "Catalytic Site Atlas" [ref:ref]
-is_a: BS:00004 ! server
+def: "Catalytic Site Atlas. Catalytic site residues transferred by homology." [ref:ref]
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00193
 name: cath_sptr
-def: "CATH is a hierarchical classification of protein domain structures, which clusters proteins at four major levels, Class(C), Architecture(A), Topology(T) and Homologous superfamily (H). " [ref:ref]
-is_a: BS:00004 ! server
+def: "CATH is a hierarchical classification of protein domain structures. Related by homology to sequence." [ref:ref]
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00194
 name: everest
 def: "Automatic identification and classification of protein domains." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00004 ! das server
 
 [Term]
 id: BS:00195
 name: protonet
 def: "An automatic heirachical classification of theh protein sequence space. " [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00196
 name: lipop
 def: "Prediction of lipoproteins and signal peptides in Gram negative bacteria." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00197
 name: targetp
 def: "TargetP 1.1 predicts the subcellular location of eukaryotic proteins. The location assignment is based on the predicted presence of any of the N-terminal presequences: chloroplast transit peptide (cTP), mitochondrial targeting peptide (mTP) or secretory pathway signal peptide (SP)." [ref:ref]
-is_a: BS:00004 ! server
+is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00198
 name: nes_signal
 def: "nes_signal" [ref:ref]
-is_a: BS:00004 ! server
+is_obsolete: true
 
 [Term]
 id: BS:00199
@@ -1181,207 +1209,279 @@ is_a: BS:00143 ! cbs_total
 
 [Term]
 id: BS:00202
-name: asx-motif  
+name: asx-motif
 def: "A motif of five consecutive residues and two H-bonds in which: residue(i) is Aspartate or Asparagine (Asx), side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3), main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00203
-name: asx-turn  
+name: asx-turn
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00204
-name: asx-turn-iil 
+name: asx-turn-iil
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00205
-name: asx-turn-iir 
+name: asx-turn-iir
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00206
-name: asx-turn-il 
+name: asx-turn-il
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00207
-name: asx-turn-ir  
+name: asx-turn-ir
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00208
-name: beta-bulge   
+name: beta-bulge
 def: "A motif of three residues within a beta-sheet in which the main chains of two consecutive residues are H-bonded to that of the third, and in which the dihedral angles are as follows: residue (i) (-140 o < fL -20o , -90 o < y L < 40 o) and residue (i+1) (-180 o < f < -25 o or 120 o < f < 180 o)(40 o < y < 180 o or -180 o < y < -120 o)." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00209
-name: beta-bulge-loop 
+name: beta-bulge-loop
 def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+4) (Type 1) or residue(i+5) (Type 2) the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+3) (Type 1) or residue(i+4) (Type 2), type 1 beta-bulge loops have an RL nest at residues i+2 and i+3, type 2 beta-bulge loops have an RL nest at residues i+3 and i+4" [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00210
-name: beta-bulge-loop-5  
+name: beta-bulge-loop-5
 def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+4) (Type 1) or residue(i+5) (Type 2), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+3) (Type 1) or residue(i+4) (Type 2), type 1 beta-bulge loops have an RL nest at residues i+2 and i+3, type 2 beta-bulge loops have an RL nest at residues i+3 and i+4 " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00211
-name: beta-bulge-loop-6 
+name: beta-bulge-loop-6
 def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+4) (Type 1) or residue(i+5) (Type 2), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+3) (Type 1) or residue(i+4) (Type 2), type 1 beta-bulge loops have an RL nest at residues i+2 and i+3, type 2 beta-bulge loops have an RL nest at residues i+3 and i+4 " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00212
-name: beta-turn 
+name: beta-turn
 def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization" [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00213
-name: beta-turn-iil 
+name: beta-turn-iil
 def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00214
-name: beta-turn-iir 
+name: beta-turn-iir
 def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00215
-name: beta-turn-il  
+name: beta-turn-il
 def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00216
-name: beta-turn-ir  
+name: beta-turn-ir
 def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00217
-name: catmat-3 
+name: catmat-3
 def: "A motif of 3 consecutive residues with dihedral angles as follows: (res i: phi -90 bounds -120 to -60); (res i: psi -10  bounds -50  to 30); (res i+1 phi -75 bounds -100 to -50); (res i+1 psi 140 bounds 110  to 170). An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom.  More precisely these two oxygens are the main chain  carbonyl oxygen atoms of residues i-1 and i+1." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00218
-name: catmat-4 
+name: catmat-4
 def: "A motif of 4 consecutive residues with dihedral angles as follows: (res i: phi  -90 bounds -120 to -60); (res i:  psi -10 bounds -50  to 30); (res i+1:  phi -90  bounds -120 to -60); (res i+1: psi  -10 bounds -50  to 30); (res i+2: phi -75 bounds -100 to -5); (res i+2: psi 140 bounds 110  to 170). The extra restriction of the length of the O to O distance is similar, that  it be less than 5 Angstrom.  In this case these two Oxygen atoms are the  main chain carbonyl oxygen atoms of residues i-1 and i+2." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00219
 name: gamma-turn
 def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00220
-name: gamma-turn-classic 
+name: gamma-turn-classic
 def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00221
-name: gamma-turn-inverse 
+name: gamma-turn-inverse
 def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00222
 name: helix-l
 def: "Left handed helix." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00223
 name: nest
 def: "A motif of two consecutive residues with dihedral angles as follows (for the RL form): residue (i) (-140 o < f < -20o , -90 o < y  < 40 o) and residue (i+1) (20o < f < 140 o, -40 o < y < 90 o). In LR nests the phi and psi values for (i) and (i+1) are interchanged. Nest should not have Proline as any residue." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00224
-name: nest-lr   
+name: nest-lr
 def: "A motif of two consecutive residues with dihedral angles as follows (for the RL form): residue (i) (-140 o < f < -20o , -90 o < y  < 40 o) and residue (i+1) (20o < f < 140 o, -40 o < y < 90 o). In LR nests the phi and psi values for (i) and (i+1) are interchanged. Nest should not have Proline as any residue." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00225
-name: nest-rl 
+name: nest-rl
 def: "A motif of two consecutive residues with dihedral angles as follows (for the RL form): residue (i) (-140 o < f < -20o , -90 o < y  < 40 o) and residue (i+1) (20o < f < 140 o, -40 o < y < 90 o). In LR nests the phi and psi values for (i) and (i+1) are interchanged. Nest should not have Proline as any residue." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00226
-name: schellmann-loop  
+name: schellmann-loop
 def: "A motif of six consecutive residues (common type) or seven consecutive residues (wide type) that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) (common type) or residue(i+6) (wide type), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4) (common type) or residue(i+5) (wide type) " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00227
-name: schellmann-loop-6  
+name: schellmann-loop-6
 def: "A motif of six consecutive residues (common type) or seven consecutive residues (wide type) that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) (common type) or residue(i+6) (wide type), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4) (common type) or residue(i+5) (wide type)." [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00228
-name: schellmann-loop-7 
+name: schellmann-loop-7
 def: "A motif of six consecutive residues (common type) or seven consecutive residues (wide type) that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) (common type) or residue(i+6) (wide type), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4) (common type) or residue(i+5) (wide type) " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00229
-name: st-motif 
+name: st-motif
 def: "A motif of five consecutive residues and two hydrogen bonds in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) , the main-chain CO group of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00230
-name: st-staple 
-def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(iû3) or (iû4), Phi angles of residues(iû1), (iû2) and (iû3) are negative. " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+name: st-staple
+def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(i3) or (i4), Phi angles of residues(i1), (i2) and (i3) are negative. " [msd:s3dm]
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00231
 name: st-turn
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00232
-name: st-turn-iil 
+name: st-turn-iil
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00233
-name: st-turn-iir 
+name: st-turn-iir
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00234
-name: st-turn-il 
+name: st-turn-il
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
 
 [Term]
 id: BS:00235
-name: st-turn-ir 
+name: st-turn-ir
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00134 ! structural domain
+is_a: BS:00147 ! structural motifs
+
+[Term]
+id: BS:00236
+name: Inferred from Reviewed Computer Analysis
+def: "Predictions based on large-scale experiments (e.g. genome-wide two-hybrid, genome-wide synthetic interactions) Predictions based on integration of large-scale datasets of several types Text-based computation (e.g. text mining) This code is used for annotations based on a non-sequence-based computational method, where the results have been reviewed by an author or a curator. As noted above, IEA should be used for any computational annotations that are not checked for accuracy by a curator (or by the authors of a paper describing such analysis), and sequence comparisons that have been reviewed use ISS. For microarray results alone, IEP is preferred, but RCA is used when microarray results are combined with results of other types of large-scale experiments. " [GO:evidence]
+is_a: BS:00097 ! manually curated
+
+[Term]
+id: BS:00237
+name: Traceable Author Statement
+def: "Anything in a review article where the original experiments are traceable through that article (material from introductions to non-review papers will sometimes meet this standard; discussion sections should usually be regarded with greater skepticism) Anything found in a text book or dictionary; usually text book material has become common knowledge (e.g. everybody knows that enolase is a glycolytic enzyme). " [GO:evidence]
+is_a: BS:00097 ! manually curated
+
+[Term]
+id: BS:00238
+name: Inferred from Sequence or Structural Similarity
+def: "Sequence similarity (homologue of/most closely related to) Recognized domains Structural similarity Southern blotting Protein features, predicted or observed (e.g. hydrophobicity, sequence composition) This code can be used for any analysis based on sequence alignment, structure comparison, or evaluation of sequence features such as composition. Use this code for BLAST (or other sequence similarity detection method) results that have been reviewed for accuracy by a curator. If the result has not been reviewed, use IEA. ISS can also be used for sequence similarities reported in published papers, if the curator thinks the result is reliable enough. When the gene is a homologue of, can infer fairly detailed function and location (cellular component) but err on the side of low resolution for processes. For recognized domains, attribution to any of the ontologies will probably be at low resolution. For annotations created on or after October 1, 2006, it is mandatory to make an entry in the with column when using this evidence code (i.e. include an identifier for the similar sequence), to help avoid circular similarity-based annotations. The with column can have more than one identifier, separated by pipes. When ISS is used to denote predicted sequence features (such as hydrophobicity, alpha-helices, etc.), the with column can be left blank. " [GO:evidence]
+is_a: BS:00097 ! manually curated
+
+[Term]
+id: BS:00239
+name: Inferred from Direct Assay
+def: "Enzyme assays In vitro reconstitution (e.g. transcription) Immunofluorescence (for cellular component) Cell fractionation (for cellular component) Physical interaction/binding assay (sometimes appropriate for cellular component or molecular function) Important: this code is used to indicate a direct assay for the function, process, or component indicated by the GO term. Curators therefore need to be careful, because an experiment considered as direct assay for a term from one ontology may be a different kind of evidence for the other ontologies. In particular, we thought of more kinds of direct assays for cellular component than for function or process. For example, a fractionation experiment might provide direct assay evidence that a gene product is in the nucleus, but protein interaction evidence for its function or process. Binding assays can provide direct assay evidence for ... binding molecular function terms. " [GO:evidence]
+is_a: BS:00103 ! experimentally verified
+
+[Term]
+id: BS:00240
+name: Inferred from Expression Pattern
+def: "Transcript levels (e.g. Northerns, microarray data) Protein levels (e.g. Western blots) Covers cases where the annotation is inferred from the timing or location of expression of a gene. " [GO:evidence]
+is_a: BS:00103 ! experimentally verified
+
+[Term]
+id: BS:00241
+name: Inferred from Genetic Interaction
+def: "Traditional genetic interactions such as suppressors, synthetic lethals, etc. Functional complementation Rescue experiments Inference about one gene drawn from the phenotype of a mutation in a different gene Includes any combination of alterations in the sequence (mutation) or expression of more than one gene/gene product. This code can therefore cover any of the IMP experiments that are done in a non-wild-type background, though we prefer to use it only when all mutations are documented. When redundant copies of a gene must all be mutated to see an informative phenotype, that's IGI. Some organisms, such as mouse, will have far, far more IGI than IMP annotations. Use IMP for phenotypic similarity, as described below. We have also decided to use this code for situations where a mutation in one gene (gene A) provides information about the function, process, or component of another gene (gene B; i.e. annotate gene B using IGI). Functional complementation above refers to experiments in which a gene from one organism complements a deletion or other mutation in another species. For these annotations, the with column can list the identifiers(s) for the gene(s) that complement(s) or is/are complemented by the gene of interest; the entry in the with column does not have to refer to the same species that is being annotated. " [GO:evidence]
+is_a: BS:00103 ! experimentally verified
+
+[Term]
+id: BS:00242
+name: Inferred from Mutant Phenotype
+def: "Any gene mutation/knockout Overexpression/ectopic expression of wild-type or mutant genes Anti-sense experiments RNAi experiments Specific protein inhibitors Polymorphism or allelic variation Anything that is concluded from looking at variations or changes, such as mutations or abnormal levels of the product(s), of a single gene of interest is IMP (compare IGI). Use this code for experiments that use antibodies or other specific inhibitors of RNA or protein activity, even though no gene may be mutated (the rationale is that IMP is used where an abnormal situation prevails in a cell or organism due to the alteration of the sequence or expression of one gene). In addition to such 'abnormal' situations, IMP may also be used for experiments (e.g. QTL analyses) in which an inference is based on the observed effects of naturally occurring variations in a gene. In other words, 'normal' allelic variation in a population counts as IMP; there does not need to be a specifically designated 'mutant' or 'wild type' allele. IMP also covers phenotypic similarity: a phenotype that is informative because it is similar to that of another independent phenotype (which may have been described earlier or documented more fully) is IMP (not IGI). " [GO:evidence]
+is_a: BS:00103 ! experimentally verified
+
+[Term]
+id: BS:00243
+name: Inferred from Physical Interaction
+def: "2-hybrid interactions Co-purification Co-immunoprecipitation Ion/protein binding experiments Covers physical interactions between the gene product of interest and another molecule (or ion, or complex). For functions such as protein binding or nucleic acid binding, a binding assay is simultaneously IPI and IDA; IDA is preferred because the assay directly detects the binding. We thought that experiments detecting only antibody binding were not suitable as evidence for function or process (note that an effect of an antibody on an activity or process can support a function or process annotation, using the IMP code). " [GO:evidence]
+is_a: BS:00103 ! experimentally verified
+
+[Term]
+id: BS:00244
+name: Inferred from Electronic Annotation
+def: "Annotations based on hits in sequence similarity searches, if they have not been reviewed by curators (curator-reviewed hits would get ISS) Annotations transferred from database records, if not reviewed by curators (curator-reviewed items may use NAS, or the reviewing process may lead to print references for the annotation) Used for annotations that depend directly on computation or automated transfer of annotations from a database. The key feature that distinguishes this evidence code from others is what a curator has done. IEA is used when no curator has checked the annotation to verify its accuracy. The actual method used (BLAST search, SwissProt keyword mapping, etc.) doesn't matter. If the method is match-based (e.g., uses sequence comparisons), a valid database ID must entered in the with column. A with column entry is not mandatory for non-match-based methods. " [GO:evidence]
+is_a: BS:00109 ! computationally predicted
+
+[Term]
+id: BS:00245
+name: No biological Data available
+def: "Used for annotations to unknown molecular function, biological process, or cellular component. Curators at the contributing database found no information supporting an annotation to any term from the ontology in question (molecular function, biological process, or cellular component) as of the date indicated. This reference documents the fact that a database curator has reviewed the literature describing a gene product but found no biologically useful information; it should only be cited for annotations to unknown, i.e. molecular function unknown ; GO:0005554, biological process unknown ; GO:0000004 or cellular component unknown ; GO:0008372. This code is used only for annotations to unknown, and it is the only evidence code recommended for annotations to unknown (except in cases where a cited source explicitly says that something is unknown). It should be accompanied by a reference that explains that curators looked but found no information. The GO reference collection includes a generic reference that can be used with ND; to use it insert GO_REF:0000015 in the reference column of a gene_association file. Note that ND can be used with any one (or two) of the 'unknown' terms, even if there is data available to support annotation to a term from one or both of the other ontologies (e.g. ND can be used with cellular component unknown ; GO:0008372 if the function and process are known but component is not). " [GO:evidence]
+is_a: BS:00111 ! no assignment possible
+
+[Term]
+id: BS:00246
+name: covalent binding
+def: "binding of protein onto itself" [ref:ref]
+is_a: BS:00130 ! functional annotation
+
+[Term]
+id: BS:00247
+name: netnglyc
+def: "NetNGlyc (www.cbs.dtu.dk/ser vices/NetNGlyc) predictions for UniProt." [ref:ref]
+is_a: BS:00143 ! cbs_total
 
 [Typedef]
 id: part_of
