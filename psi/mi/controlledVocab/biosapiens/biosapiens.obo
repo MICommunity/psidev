@@ -2,6 +2,7 @@ format-version: 1.0
 date: 06:03:2007 16:04
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.000
+version: DRAFT
 default-namespace: BS
 
 [Term]
