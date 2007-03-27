@@ -42,7 +42,7 @@ is_a: BS:00246 ! covalent binding site
 [Term]
 id: BS:00029
 name: non covalent binding site
-def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
+def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc..)." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "binding" [uniprot:curation]
 is_a: BS:00033 ! site
