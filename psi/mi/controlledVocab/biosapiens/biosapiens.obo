@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 05:04:2007 16:24
+date: 16:04:2007 16:57
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -13,30 +13,34 @@ is_a: BS:00337 ! structural annotation
 [Term]
 id: BS:00012
 name: domain
-def: "Region which has been shown to recur throughout evolution. " [UniProt:curation manual]
+def: "A structurally/functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein.\nRegion which has been shown to recur throughout evolution. " [ref:ref]
 comment: Range
+narrow_synonym: "np_bind" []
 is_a: BS:00331 ! region annotation
 
 [Term]
 id: BS:00026
-name: act_site
+name: active site residue(s)
 def: "Amino acid(s) involved in the activity of an enzyme." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "act_site" []
 related_synonym: "catalitic residues" []
-is_a: BS:00033 ! site
+is_a: BS:00033 ! region of biological interest
 
 [Term]
 id: BS:00027
-name: metal
+name: metal binding site
 def: "Binding site for a metal ion." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "metal" []
 is_a: BS:00029 ! non covalent binding site
 
 [Term]
 id: BS:00028
-name: disulfide
-def: "Disulfide bond." [UniProt:curation manual]
+name: disulfide bond
+def: "The covalent bond between sulfur atoms that binds two peptide chains or different parts of one peptide chain and is a structural determinant in many protein molecules." [UniProt:curation manual]
 comment: 2 discreet & joined
+related_synonym: "disulfide" []
 is_a: BS:00246 ! covalent binding site
 
 [Term]
@@ -45,7 +49,7 @@ name: non covalent binding site
 def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "binding" [uniprot:curation]
-is_a: BS:00033 ! site
+is_a: BS:00033 ! region of biological interest
 
 [Term]
 id: BS:00031
@@ -59,13 +63,14 @@ id: BS:00032
 name: motif
 def: "Short (up to 20 amino acids) sequence motif of biological interest." [UniProt:curation manual]
 comment: Range
-is_a: BS:00331 ! region annotation
+is_a: BS:00033 ! region of biological interest
 
 [Term]
 id: BS:00033
-name: site
-def: "Any interesting  amino-acids on the sequence.\n\nthat is not defined by another feature key. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
+name: region of biological interest
+def: "Any interesting  amino-acids on the sequence. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "site" []
 is_a: BS:00331 ! region annotation
 
 [Term]
@@ -94,7 +99,7 @@ id: BS:00037
 name: np_bind
 def: "Extent of a nucleotide phosphate-binding region. " [UniProt:curation manual]
 comment: Range
-is_a: BS:00029 ! non covalent binding site
+is_obsolete: true
 
 [Term]
 id: BS:00039
@@ -133,9 +138,10 @@ is_a: BS:00330 ! DRAFT biosapiens protein annotation
 
 [Term]
 id: BS:00052
-name: mod_res
-def: "Post-translational modification of a residue." [UniProt:curation manual]
+name: post-translational modification
+def: "A transformation that occurs in a protein after it has been synthesized, which may regulate, stabilize, crosslink, or introduce new chemical functionalities in the protein." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "mod_res" []
 is_a: BS:00246 ! covalent binding site
 
 [Term]
@@ -199,7 +205,7 @@ id: BS:00063
 name: propeptide cleavage site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
-is_a: BS:00033 ! site
+is_a: BS:00033 ! region of biological interest
 is_a: BS:00077 ! propep
 
 [Term]
@@ -337,7 +343,7 @@ is_a: BS:00127 ! nonpositional annotation
 [Term]
 id: BS:00131
 name: protein-protein interaction
-def: "Residues involved in protein protein interactions" [ref:ref]
+def: "Residues involved in protein-protein interactions" [ref:ref]
 is_a: BS:00029 ! non covalent binding site
 
 [Term]
@@ -356,7 +362,8 @@ is_a: BS:00127 ! nonpositional annotation
 [Term]
 id: BS:00134
 name: structural domain
-def: "Extent of a structural domain, which is defined as a specific combination of secondary structures organized into a characteristic three-dimensional structure or fold." [ref:ref]
+def: "Within a protein, a structural domain (\"domain\") is an element of overall structure that is self-stabilizing and often folds independently of the rest of the protein chain." [ref:ref]
+is_a: BS:00012 ! domain
 is_a: BS:00337 ! structural annotation
 
 [Term]
@@ -419,7 +426,7 @@ is_a: BS:00128 ! membrane structure
 id: BS:00157
 name: protein-ligand interaction
 def: "residues which interact with ligand" [ref:ref]
-is_a: BS:00029 ! non covalent binding site
+is_a: BS:00026 ! active site residue(s)
 
 [Term]
 id: BS:00161
@@ -526,7 +533,7 @@ is_obsolete: true
 [Term]
 id: BS:00178
 name: crosslink
-def: "Posttranslationally formed amino acid bonds." [UniProt:curation manual]
+def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains. " [UniProt:curation manual]
 is_a: BS:00246 ! covalent binding site
 
 [Term]
@@ -550,22 +557,22 @@ is_obsolete: true
 
 [Term]
 id: BS:00185
-name: zn contact
+name: Zn contact
 def: "residues involved in contact with zinc" [ref:ref]
-is_a: BS:00027 ! metal
+is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00186
-name: ca contact
+name: Ca contact
 def: "residues involved in contact with calcium" [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal
+is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00187
-name: mg contact
+name: Mg contact
 def: "residues involved in contact with magnesium" [ref:ref]
-is_a: BS:00027 ! metal
+is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00202
@@ -775,7 +782,7 @@ is_a: BS:00231 ! st-turn
 id: BS:00246
 name: covalent binding site
 def: "covalent binding " [ref:ref]
-is_a: BS:00033 ! site
+is_a: BS:00033 ! region of biological interest
 
 [Term]
 id: BS:00330
@@ -792,7 +799,7 @@ is_a: BS:00124 ! positional annotation
 [Term]
 id: BS:00332
 name: cellular component
-def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GO:0005575 ]
+def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GO:0005575]
 comment: Range
 is_a: BS:00127 ! nonpositional annotation
 
