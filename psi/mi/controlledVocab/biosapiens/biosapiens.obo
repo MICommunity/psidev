@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 18:04:2007 16:12
+date: 18:04:2007 16:26
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -25,7 +25,7 @@ def: "Amino acid(s) involved in the activity of an enzyme." [UniProt:curation ma
 comment: Discreet
 related_synonym: "act_site" []
 related_synonym: "catalitic residues" []
-is_a: BS:00033 ! site of interest
+is_a: BS:00157 ! protein-ligand interaction
 
 [Term]
 id: BS:00027
@@ -470,7 +470,7 @@ is_a: BS:00128 ! membrane structure
 id: BS:00157
 name: protein-ligand interaction
 def: "Residues which interact with a ligand." [ref:ref]
-is_a: BS:00026 ! active site residue(s)
+is_a: BS:00033 ! site of interest
 
 [Term]
 id: BS:00161
