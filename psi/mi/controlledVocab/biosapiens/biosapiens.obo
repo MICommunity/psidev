@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 16:04:2007 16:57
+date: 18:04:2007 16:12
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -25,7 +25,7 @@ def: "Amino acid(s) involved in the activity of an enzyme." [UniProt:curation ma
 comment: Discreet
 related_synonym: "act_site" []
 related_synonym: "catalitic residues" []
-is_a: BS:00033 ! region of biological interest
+is_a: BS:00033 ! site of interest
 
 [Term]
 id: BS:00027
@@ -49,7 +49,7 @@ name: non covalent binding site
 def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "binding" [uniprot:curation]
-is_a: BS:00033 ! region of biological interest
+is_a: BS:00033 ! site of interest
 
 [Term]
 id: BS:00031
@@ -61,13 +61,13 @@ is_obsolete: true
 [Term]
 id: BS:00032
 name: motif
-def: "Short (up to 20 amino acids) sequence motif of biological interest." [UniProt:curation manual]
+def: "Short (up to 20 amino acids) sequence motif of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)" [UniProt:curation manual]
 comment: Range
-is_a: BS:00033 ! region of biological interest
+is_a: BS:00012 ! domain
 
 [Term]
 id: BS:00033
-name: region of biological interest
+name: site of interest
 def: "Any interesting  amino-acids on the sequence. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "site" []
@@ -205,7 +205,7 @@ id: BS:00063
 name: propeptide cleavage site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
-is_a: BS:00033 ! region of biological interest
+is_a: BS:00033 ! site of interest
 is_a: BS:00077 ! propep
 
 [Term]
@@ -231,7 +231,7 @@ is_a: BS:00129 ! junction
 [Term]
 id: BS:00068
 name: compbias
-def: "Extent of a compositionally biased region." [UniProt:curation manual]
+def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, Not used for a run of less than 4 residues. Xaa-rich:  These are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099). " [UniProt:curation manual]
 comment: Range
 is_a: BS:00331 ! region annotation
 
@@ -247,7 +247,7 @@ id: BS:00070
 name: repeat
 def: "Extent of an internal sequence repetition." [UniProt:curation manual]
 comment: Range
-is_a: BS:00331 ! region annotation
+is_a: BS:00012 ! domain
 
 [Term]
 id: BS:00071
@@ -343,7 +343,7 @@ is_a: BS:00127 ! nonpositional annotation
 [Term]
 id: BS:00131
 name: protein-protein interaction
-def: "Residues involved in protein-protein interactions" [ref:ref]
+def: "Residues involved in protein-protein interactions." [ref:ref]
 is_a: BS:00029 ! non covalent binding site
 
 [Term]
@@ -373,6 +373,19 @@ def: "of serine, threonine, tyrosine, aspartate, histidine or cysteine, and, mor
 is_obsolete: true
 
 [Term]
+id: BS:00136
+name: Co contact
+def: "Residues involved in contact with cobalt." [ref:ref]
+is_a: BS:00027 ! metal binding site
+
+[Term]
+id: BS:00137
+name: Fe contact
+def: "Residues involved in contact with iron." [ref:ref]
+related_synonym: "ca_bind" [uniprot:curation]
+is_a: BS:00027 ! metal binding site
+
+[Term]
 id: BS:00138
 name: publication
 def: "publication on this sequence " [ref:ref]
@@ -386,6 +399,30 @@ related_synonym: "peptide" []
 is_a: BS:00149 ! mature protein product
 
 [Term]
+id: BS:00140
+name: Mn contact
+def: "Residues involved in contact with manganese." [ref:ref]
+is_a: BS:00027 ! metal binding site
+
+[Term]
+id: BS:00141
+name: Mo contact
+def: "Residues involved in contact with molybdenum." [ref:ref]
+is_a: BS:00027 ! metal binding site
+
+[Term]
+id: BS:00142
+name: Ni contact
+def: "Residues involved in contact with nickel." [ref:ref]
+is_a: BS:00027 ! metal binding site
+
+[Term]
+id: BS:00143
+name: W contact
+def: "Residues involved in contact with tungsten." [ref:ref]
+is_a: BS:00027 ! metal binding site
+
+[Term]
 id: BS:00144
 name: outside
 def: "region of peptide outside the membrane" [ref:ref]
@@ -396,6 +433,13 @@ id: BS:00145
 name: inside
 def: "region of peptide inside the membrane" [ref:ref]
 is_a: BS:00128 ! membrane structure
+
+[Term]
+id: BS:00146
+name: Cu contact
+def: "Residues involved in contact with copper." [ref:ref]
+related_synonym: "ca_bind" [uniprot:curation]
+is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00147
@@ -425,7 +469,7 @@ is_a: BS:00128 ! membrane structure
 [Term]
 id: BS:00157
 name: protein-ligand interaction
-def: "residues which interact with ligand" [ref:ref]
+def: "Residues which interact with a ligand." [ref:ref]
 is_a: BS:00026 ! active site residue(s)
 
 [Term]
@@ -558,20 +602,20 @@ is_obsolete: true
 [Term]
 id: BS:00185
 name: Zn contact
-def: "residues involved in contact with zinc" [ref:ref]
+def: "Residues involved in contact with zinc." [ref:ref]
 is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00186
 name: Ca contact
-def: "residues involved in contact with calcium" [ref:ref]
+def: "Residues involved in contact with calcium." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
 is_a: BS:00027 ! metal binding site
 
 [Term]
 id: BS:00187
 name: Mg contact
-def: "residues involved in contact with magnesium" [ref:ref]
+def: "Residues involved in contact with magnesium." [ref:ref]
 is_a: BS:00027 ! metal binding site
 
 [Term]
@@ -781,8 +825,8 @@ is_a: BS:00231 ! st-turn
 [Term]
 id: BS:00246
 name: covalent binding site
-def: "covalent binding " [ref:ref]
-is_a: BS:00033 ! region of biological interest
+def: "Binding involvolving a covalent bond. " [ref:ref]
+is_a: BS:00033 ! site of interest
 
 [Term]
 id: BS:00330
@@ -792,7 +836,7 @@ def: "protein annotations classification" [ref:ref]
 [Term]
 id: BS:00331
 name: region annotation
-def: "subsequence of interest in a reference/mature protein sequence" [ref:ref]
+def: "Subsequence of interest in a reference/mature protein sequence." [ref:ref]
 comment: Range
 is_a: BS:00124 ! positional annotation
 
