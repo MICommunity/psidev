@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 18:04:2007 16:26
+date: 19:04:2007 13:22
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -252,7 +252,7 @@ is_a: BS:00012 ! domain
 [Term]
 id: BS:00071
 name: variant
-def: "Authors report that sequence variants exist." [UniProt:curation manual]
+def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars. " [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00336 ! alternative sequence
 
