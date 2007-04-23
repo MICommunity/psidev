@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 19:04:2007 13:22
+date: 23:04:2007 13:30
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -29,7 +29,7 @@ is_a: BS:00157 ! protein-ligand interaction
 
 [Term]
 id: BS:00027
-name: metal binding site
+name: metal binding
 def: "Binding site for a metal ion." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "metal" []
@@ -49,6 +49,7 @@ name: non covalent binding site
 def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "binding" [uniprot:curation]
+related_synonym: "binding site" []
 is_a: BS:00033 ! site of interest
 
 [Term]
@@ -89,22 +90,16 @@ is_obsolete: true
 
 [Term]
 id: BS:00036
-name: mutagen
+name: mutagenesis
 def: "Site which has been experimentally altered." [ref:ref]
 comment: Discreet
-is_a: BS:00336 ! alternative sequence
+related_synonym: "mutagen" []
+is_a: BS:00336 ! sequence variations
 
 [Term]
 id: BS:00037
 name: np_bind
 def: "Extent of a nucleotide phosphate-binding region. " [UniProt:curation manual]
-comment: Range
-is_obsolete: true
-
-[Term]
-id: BS:00039
-name: turn
-def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [UniProt:curation manual]
 comment: Range
 is_obsolete: true
 
@@ -117,16 +112,18 @@ is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00041
-name: coiled
+name: coiled coil
 def: "A coiled-coil region, predicted using the COILS program (Lupas)." [UniProt:curation manual]
 comment: Range
+related_synonym: "coiled" []
 is_a: BS:00003 ! secondary structure
 
 [Term]
 id: BS:00042
-name: strand
+name: beta strand
 def: "Residues in DSSP calculated STRAND" [UniProt:curation manual]
 comment: Range
+related_synonym: "strand" []
 is_a: BS:00003 ! secondary structure
 
 [Term]
@@ -146,16 +143,18 @@ is_a: BS:00246 ! covalent binding site
 
 [Term]
 id: BS:00053
-name: transit
+name: transit peptide
 def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [UniProt:curation manual]
 comment: Range
-is_a: BS:00055 ! signal
+related_synonym: "transit" []
+is_a: BS:00055 ! signal peptide
 
 [Term]
 id: BS:00055
-name: signal
+name: signal peptide
 def: "Extent of a signal sequence (prepeptide)." [UniProt:curation manual]
 comment: Range
+related_synonym: "signal" []
 is_a: BS:00129 ! junction
 
 [Term]
@@ -206,7 +205,7 @@ name: propeptide cleavage site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
 is_a: BS:00033 ! site of interest
-is_a: BS:00077 ! propep
+is_a: BS:00077 ! propeptide
 
 [Term]
 id: BS:00064
@@ -224,15 +223,17 @@ is_obsolete: true
 
 [Term]
 id: BS:00067
-name: init_met
+name: initiator methionine 
 def: "Indicates where initiator methionine has been cleaved from the protein." [UniProt:curation manual]
+related_synonym: "init_met" []
 is_a: BS:00129 ! junction
 
 [Term]
 id: BS:00068
-name: compbias
+name: compositional bias
 def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, Not used for a run of less than 4 residues. Xaa-rich:  These are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099). " [UniProt:curation manual]
 comment: Range
+related_synonym: "compbias" []
 is_a: BS:00331 ! region annotation
 
 [Term]
@@ -251,25 +252,28 @@ is_a: BS:00012 ! domain
 
 [Term]
 id: BS:00071
-name: variant
+name: natural variant
 def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars. " [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00336 ! alternative sequence
+related_synonym: "variant" []
+is_a: BS:00336 ! sequence variations
 
 [Term]
 id: BS:00072
-name: non_ter
+name: non-terminal residue
 def: "The residue at an extremity of the sequence is not the terminal residue." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "non_ter" []
 is_a: BS:00125 ! sequencing information
 
 [Term]
 id: BS:00073
-name: var_seq
+name: alternative sequence
 def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation]
 comment: Discreet
+related_synonym: "var_seq" []
 narrow_synonym: "varsplic" []
-is_a: BS:00336 ! alternative sequence
+is_a: BS:00336 ! sequence variations
 
 [Term]
 id: BS:00075
@@ -287,9 +291,10 @@ is_a: BS:00149 ! mature protein product
 
 [Term]
 id: BS:00077
-name: propep
+name: propeptide
 def: "Extent of a propeptide." [UniProt:curation]
 comment: Range
+related_synonym: "propep" []
 is_a: BS:00129 ! junction
 
 [Term]
@@ -376,14 +381,14 @@ is_obsolete: true
 id: BS:00136
 name: Co contact
 def: "Residues involved in contact with cobalt." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00137
 name: Fe contact
 def: "Residues involved in contact with iron." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00138
@@ -402,25 +407,25 @@ is_a: BS:00149 ! mature protein product
 id: BS:00140
 name: Mn contact
 def: "Residues involved in contact with manganese." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00141
 name: Mo contact
 def: "Residues involved in contact with molybdenum." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00142
 name: Ni contact
 def: "Residues involved in contact with nickel." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00143
 name: W contact
 def: "Residues involved in contact with tungsten." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00144
@@ -439,13 +444,20 @@ id: BS:00146
 name: Cu contact
 def: "Residues involved in contact with copper." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00147
 name: structural motif
 def: "common arrangements of secondary structures" [ref:ref]
 is_a: BS:00003 ! secondary structure
+
+[Term]
+id: BS:00148
+name: turn
+def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [UniProt:curation manual]
+comment: Range
+is_a: BS:00147 ! structural motif
 
 [Term]
 id: BS:00149
@@ -463,7 +475,7 @@ is_obsolete: true
 id: BS:00156
 name: intramembrane
 def: "Extent of a transmembrane region." [UniProt:curation manual]
-related_synonym: "topo_dom" [uniprot:curation]
+related_synonym: "transmem" []
 is_a: BS:00128 ! membrane structure
 
 [Term]
@@ -576,20 +588,23 @@ is_obsolete: true
 
 [Term]
 id: BS:00178
-name: crosslink
+name: cross-link
 def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains. " [UniProt:curation manual]
+related_synonym: "crosslink" []
 is_a: BS:00246 ! covalent binding site
 
 [Term]
 id: BS:00181
-name: unsure
+name: sequence uncertainty
 def: "Uncertainties in the sequence." [UniProt:curation manual]
+related_synonym: "unsure" []
 is_a: BS:00125 ! sequencing information
 
 [Term]
 id: BS:00182
-name: non_cons
+name: non-adjacent residues
 def: "Non-consecutive residues." [UniProt:curation manual]
+related_synonym: "non_cons" []
 is_a: BS:00125 ! sequencing information
 
 [Term]
@@ -603,20 +618,21 @@ is_obsolete: true
 id: BS:00185
 name: Zn contact
 def: "Residues involved in contact with zinc." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00186
 name: Ca contact
 def: "Residues involved in contact with calcium." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal binding site
+related_synonym: "calcium binding" []
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00187
 name: Mg contact
 def: "Residues involved in contact with magnesium." [ref:ref]
-is_a: BS:00027 ! metal binding site
+is_a: BS:00027 ! metal binding
 
 [Term]
 id: BS:00202
@@ -796,7 +812,7 @@ is_a: BS:00147 ! structural motif
 id: BS:00231
 name: st-turn
 def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00147 ! structural motif
+is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00232
@@ -868,7 +884,7 @@ is_a: BS:00132 ! erroneous protein
 
 [Term]
 id: BS:00336
-name: alternative sequence
+name: sequence variations
 def: "alternative sequence" [ref:ref]
 comment: Discreet
 is_a: BS:00124 ! positional annotation
