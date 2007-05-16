@@ -1,22 +1,52 @@
 format-version: 1.0
-date: 23:04:2007 13:30
+date: 15:05:2007 18:02
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
 
 [Term]
 id: BS:00003
-name: secondary structure
-def: "secondary structure" [ref:ref]
-is_a: BS:00337 ! structural annotation
+name: secondary_structure
+def: "Patterns of main chain hydrogen bonding along the peptide chain. " [ref:ref]
+is_a: BS:00337 ! structural_region
+
+[Term]
+id: BS:0000338
+name: structural_motif
+def: "Common arrangements of secondary structures comprising two or more secondary structures." [ref:ref]
+is_a: BS:00003 ! secondary_structure
+
+[Term]
+id: BS:0000339
+name: right handed helix
+def: "Stretches of consecutive amino acid residues. The structure repeats itself every 5.4 angstroms along the helix axis. It has a pitch of 5.4 angstroms with 3.6 amino acid residues per turn. The separation of residues along the helix axis is 5.4/3.6 or 1.5 angstroms (a rise per residue of 1.5 angstroms). Every main chain C=O and N-H group is hydrogen-bonded to a peptide bond 4 residues away (i.e. Oi to Ni+4). The peptide planes are roughly parallel with the helix axis and the dipoles within the helix are aligned, i.e. all C=O groups point in the same direction and all N-H groups point the other way. Side chains point outward from helix axis and are generally oriented towards its amino-terminal end. The mean phi,psi angles for alpha helices found in proteins are -62 degrees and -41 degrees respectively." [ref:ref]
+related_synonym: "helix" []
+is_a: BS:00040 ! alpha_helix
+
+[Term]
+id: BS:0000340
+name: 3_10_helix
+def: "Three residues per turn and ten atoms enclosed in a ring formed by each hydrogen bond (note the hydrogen atom is included in this count). There are main chain hydrogen bonds between residues separated by three residues along the chain (i.e. Oi to Ni+3). It is a less stable structure and side chain packing is less favourable. " [ref:ref]
+comment: Range
+is_a: BS:00003 ! secondary_structure
+
+[Term]
+id: BS:0000341
+name: antiparallel_beta_strand
+def: "antiparallel " [UniProt:curation manual]
+comment: Range
+is_a: BS:00042 ! beta_strand
 
 [Term]
 id: BS:00012
-name: domain
+name: polypeptide_domain
 def: "A structurally/functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein.\nRegion which has been shown to recur throughout evolution. " [ref:ref]
 comment: Range
+related_synonym: "domain" []
+narrow_synonym: "DNA_bind" []
 narrow_synonym: "np_bind" []
-is_a: BS:00331 ! region annotation
+narrow_synonym: "zn_bind" []
+is_a: BS:00331 ! region_annotation
 
 [Term]
 id: BS:00026
@@ -29,28 +59,28 @@ is_a: BS:00157 ! protein-ligand interaction
 
 [Term]
 id: BS:00027
-name: metal binding
+name: metal_binding_site
 def: "Binding site for a metal ion." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "metal" []
-is_a: BS:00029 ! non covalent binding site
+is_a: BS:00029 ! non_covalent_binding_site
 
 [Term]
 id: BS:00028
-name: disulfide bond
+name: disulfide_bond
 def: "The covalent bond between sulfur atoms that binds two peptide chains or different parts of one peptide chain and is a structural determinant in many protein molecules." [UniProt:curation manual]
 comment: 2 discreet & joined
 related_synonym: "disulfide" []
-is_a: BS:00246 ! covalent binding site
+is_a: BS:00246 ! covalent_binding_site
 
 [Term]
 id: BS:00029
-name: non covalent binding site
+name: non_covalent_binding_site
 def: "Binding site for any chemical group (co-enzyme, prosthetic group, etc.)." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "binding" [uniprot:curation]
 related_synonym: "binding site" []
-is_a: BS:00033 ! site of interest
+is_a: BS:00033 ! binding_or_interaction_site
 
 [Term]
 id: BS:00031
@@ -61,18 +91,20 @@ is_obsolete: true
 
 [Term]
 id: BS:00032
-name: motif
-def: "Short (up to 20 amino acids) sequence motif of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)" [UniProt:curation manual]
+name: polypeptide_motif
+def: "Short (up to 20 amino acids) sequence motif of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [UniProt:curation manual]
 comment: Range
-is_a: BS:00012 ! domain
+related_synonym: "motif" []
+narrow_synonym: "zn_fing" []
+is_a: BS:00012 ! polypeptide_domain
 
 [Term]
 id: BS:00033
-name: site of interest
-def: "Any interesting  amino-acids on the sequence. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
+name: binding_or_interaction_site
+def: "Amino acids involved in binding or interactions. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "site" []
-is_a: BS:00331 ! region annotation
+is_a: BS:00331 ! region_annotation
 
 [Term]
 id: BS:00034
@@ -94,7 +126,7 @@ name: mutagenesis
 def: "Site which has been experimentally altered." [ref:ref]
 comment: Discreet
 related_synonym: "mutagen" []
-is_a: BS:00336 ! sequence variations
+is_a: BS:00336 ! sequence_variations
 
 [Term]
 id: BS:00037
@@ -105,57 +137,58 @@ is_obsolete: true
 
 [Term]
 id: BS:00040
-name: helix
-def: "Residues in DSSP calculated Helix" [UniProt:curation manual]
+name: alpha_helix
+def: "Stretches of consecutive amino acid residues." [UniProt:curation manual]
 comment: Range
-is_a: BS:00003 ! secondary structure
+related_synonym: "helix" []
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00041
-name: coiled coil
+name: coiled_coil
 def: "A coiled-coil region, predicted using the COILS program (Lupas)." [UniProt:curation manual]
 comment: Range
 related_synonym: "coiled" []
-is_a: BS:00003 ! secondary structure
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00042
-name: beta strand
+name: beta_strand
 def: "Residues in DSSP calculated STRAND" [UniProt:curation manual]
 comment: Range
 related_synonym: "strand" []
-is_a: BS:00003 ! secondary structure
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00043
 name: annotation
-def: "Annotation on the functional or structural features of a  protein, and about its possible sequence variations." [ref:ref]
+def: "Annotation on the functional or structural features of a  protein and possible sequence variations." [ref:ref]
 comment: Range
 is_a: BS:00330 ! DRAFT biosapiens protein annotation
 
 [Term]
 id: BS:00052
-name: post-translational modification
+name: post_translational_modification
 def: "A transformation that occurs in a protein after it has been synthesized, which may regulate, stabilize, crosslink, or introduce new chemical functionalities in the protein." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "mod_res" []
-is_a: BS:00246 ! covalent binding site
+is_a: BS:00246 ! covalent_binding_site
 
 [Term]
 id: BS:00053
-name: transit peptide
+name: transit_peptide
 def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [UniProt:curation manual]
 comment: Range
 related_synonym: "transit" []
-is_a: BS:00055 ! signal peptide
+is_a: BS:00055 ! signal_peptide
 
 [Term]
 id: BS:00055
-name: signal peptide
+name: signal_peptide
 def: "Extent of a signal sequence (prepeptide)." [UniProt:curation manual]
 comment: Range
 related_synonym: "signal" []
-is_a: BS:00129 ! junction
+is_a: BS:00129 ! immature_peptide_region
 
 [Term]
 id: BS:00057
@@ -201,10 +234,10 @@ is_obsolete: true
 
 [Term]
 id: BS:00063
-name: propeptide cleavage site
+name: propeptide_cleavage_site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
-is_a: BS:00033 ! site of interest
+is_a: BS:00033 ! binding_or_interaction_site
 is_a: BS:00077 ! propeptide
 
 [Term]
@@ -223,71 +256,76 @@ is_obsolete: true
 
 [Term]
 id: BS:00067
-name: initiator methionine 
+name: initiator_methionine
 def: "Indicates where initiator methionine has been cleaved from the protein." [UniProt:curation manual]
 related_synonym: "init_met" []
-is_a: BS:00129 ! junction
+is_a: BS:00129 ! immature_peptide_region
 
 [Term]
 id: BS:00068
-name: compositional bias
-def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, Not used for a run of less than 4 residues. Xaa-rich:  These are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099). " [UniProt:curation manual]
+name: compositionally_biased_region
+def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, not used for a run of less than 4 residues. Xaa-rich,  these are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099). " [UniProt:curation manual]
 comment: Range
 related_synonym: "compbias" []
-is_a: BS:00331 ! region annotation
+exact_synonym: "compositional bias" []
+is_a: BS:00331 ! region_annotation
 
 [Term]
 id: BS:00069
 name: conflict
 def: "Different sources report differing sequences. " [UniProt:curation manual]
 comment: Discreet
-is_a: BS:00125 ! sequencing information
+is_a: BS:00125 ! sequencing_information
 
 [Term]
 id: BS:00070
-name: repeat
+name: polypeptide_repeat
 def: "Extent of an internal sequence repetition." [UniProt:curation manual]
 comment: Range
-is_a: BS:00012 ! domain
+exact_synonym: "repeat" []
+is_a: BS:00012 ! polypeptide_domain
 
 [Term]
 id: BS:00071
-name: natural variant
+name: natural_variant
 def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars. " [UniProt:curation manual]
 comment: Discreet
 related_synonym: "variant" []
-is_a: BS:00336 ! sequence variations
+is_a: BS:00336 ! sequence_variations
 
 [Term]
 id: BS:00072
-name: non-terminal residue
+name: non_terminal_residue
 def: "The residue at an extremity of the sequence is not the terminal residue." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "non_ter" []
-is_a: BS:00125 ! sequencing information
+is_a: BS:00125 ! sequencing_information
 
 [Term]
 id: BS:00073
-name: alternative sequence
+name: alternative_sequence
 def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation]
 comment: Discreet
 related_synonym: "var_seq" []
+narrow_synonym: "isoform" []
 narrow_synonym: "varsplic" []
-is_a: BS:00336 ! sequence variations
+is_a: BS:00149 ! mature_protein_product
+is_a: BS:00336 ! sequence_variations
 
 [Term]
 id: BS:00075
 name: isoform
 def: "Description of a single isoform." [ref:ref]
 comment: Range
-is_a: BS:00149 ! mature protein product
+is_obsolete: true
 
 [Term]
 id: BS:00076
-name: peptide
-def: "Extent of released active peptide." [UniProt:curation manual]
+name: active_peptide
+def: "Proteins which are biologically active, released from a precursor molecule and which include things like hormones, neuropeptides, antimicrobial peptides, etc. Peptides are typically short (<40 amino acids) in length.\n" [UniProt:curation manual]
 comment: Range
-is_a: BS:00149 ! mature protein product
+exact_synonym: "peptide" []
+is_a: BS:00149 ! mature_protein_product
 
 [Term]
 id: BS:00077
@@ -295,81 +333,82 @@ name: propeptide
 def: "Extent of a propeptide." [UniProt:curation]
 comment: Range
 related_synonym: "propep" []
-is_a: BS:00129 ! junction
+is_a: BS:00129 ! immature_peptide_region
 
 [Term]
 id: BS:00124
-name: positional annotation
+name: positional_annotation
 def: "Biological annotation that can be assigned to a specific subsequence of a protein." [ref:ref]
 comment: Discreet
 is_a: BS:00043 ! annotation
 
 [Term]
 id: BS:00125
-name: sequencing information
-def: "incompatibility in the sequence due to some experimental problem" [ref:ref]
+name: sequencing_information
+def: "Incompatibility in the sequence due to some experimental problem." [ref:ref]
 comment: Range
-is_a: BS:00124 ! positional annotation
+is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00126
-name: biological process
+name: biological_process
 def: "Those processes specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GO:0008150]
 comment: Range
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00127
-name: nonpositional annotation
+name: nonpositional_annotation
 def: "Annotation which is not assigned to a specific subsequence of a protein." [ref:ref]
 comment: Range
 is_a: BS:00043 ! annotation
 
 [Term]
 id: BS:00128
-name: membrane structure
-def: "membrane structure" [ref:ref]
+name: membrane_structure
+def: "Arrangement of the polypeptide with respect to the lipid bilayer." [ref:ref]
 comment: Range
-is_a: BS:00337 ! structural annotation
+is_a: BS:00337 ! structural_region
 
 [Term]
 id: BS:00129
-name: junction
+name: immature_peptide_region
 def: "Annotation of a protein terminus position or  beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insulin).  " [ref:ref]
 comment: Range
-is_a: BS:00124 ! positional annotation
+is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00130
-name: functional annotation
+name: functional_annotation
 def: "Indicates a region with functional annotation." [ref:ref]
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00131
 name: protein-protein interaction
 def: "Residues involved in protein-protein interactions." [ref:ref]
-is_a: BS:00029 ! non covalent binding site
+is_a: BS:00029 ! non_covalent_binding_site
 
 [Term]
 id: BS:00132
-name: erroneous protein
+name: erroneous_protein
 def: "Protein suspected to be non-viable or chimeric. " [ref:ref]
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00133
-name: molecular function
+name: molecular_function
 def: "Elemental activities, such as catalysis or binding, describing the actions of a gene product at the molecular level. A given gene product may exhibit one or more molecular functions." [GO:0003674]
 comment: Range
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00134
-name: structural domain
-def: "Within a protein, a structural domain (\"domain\") is an element of overall structure that is self-stabilizing and often folds independently of the rest of the protein chain." [ref:ref]
-is_a: BS:00012 ! domain
-is_a: BS:00337 ! structural annotation
+name: polypeptide_structural_domain
+def: "Within a protein, a structural domain is an element of overall structure that is self-stabilizing and folds independently of the rest of the protein chain." [PMID:7020376]
+exact_synonym: "structural domain" []
+is_a: BS:00012 ! polypeptide_domain
+is_a: BS:00337 ! structural_region
 
 [Term]
 id: BS:00135
@@ -379,91 +418,93 @@ is_obsolete: true
 
 [Term]
 id: BS:00136
-name: Co contact
+name: Co_contact_site
 def: "Residues involved in contact with cobalt." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00137
-name: Fe contact
+name: Fe_contact_site
 def: "Residues involved in contact with iron." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00138
 name: publication
 def: "publication on this sequence " [ref:ref]
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00139
 name: chain
-def: "Extent of a polypeptide chain in the mature protein.In Swiss-Prot, it is present: 1, For proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the CHAIN covers the whole protein sequence. 2, For processed proteins, it describes the mature part of the protein once preprotein parts such as propeptides and signal sequences have been removed.For TrEMBL, it is present only in those entries where the submitters to the nucleotide sequence databases have provided this information for processed proteins. " [UniProt:curation manual]
+def: "Extent of a polypeptide chain in the mature protein. The annotation describes firstly, for proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the chain covers the whole protein sequence or secondly, for processed proteins, it describes the mature part of the protein once preprotein parts have been removed." [UniProt:curation manual]
 related_synonym: "peptide" []
-is_a: BS:00149 ! mature protein product
+is_a: BS:00149 ! mature_protein_product
 
 [Term]
 id: BS:00140
-name: Mn contact
+name: Mn_contact_site
 def: "Residues involved in contact with manganese." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00141
-name: Mo contact
+name: Mo_contact_site
 def: "Residues involved in contact with molybdenum." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00142
-name: Ni contact
+name: Ni_contact_site
 def: "Residues involved in contact with nickel." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00143
-name: W contact
+name: W_contact_site
 def: "Residues involved in contact with tungsten." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00144
-name: outside
-def: "region of peptide outside the membrane" [ref:ref]
-is_a: BS:00128 ! membrane structure
+name: non_cytoplasm_location
+def: "Region of peptide not in the cytoplasm. N.B. This could be inside an organelle within the cell. " [ref:ref]
+related_synonym: "outside" []
+relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
 id: BS:00145
-name: inside
-def: "region of peptide inside the membrane" [ref:ref]
-is_a: BS:00128 ! membrane structure
+name: cytoplasm_location
+def: "Region of the peptide in the cytoplasm." [ref:ref]
+related_synonym: "inside" []
+relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
 id: BS:00146
-name: Cu contact
+name: Cu_contact_site
 def: "Residues involved in contact with copper." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00147
-name: structural motif
-def: "common arrangements of secondary structures" [ref:ref]
-is_a: BS:00003 ! secondary structure
+name: helix_turn_helix
+def: "Helix turn helix motif" [ref:ref]
+is_a: BS:0000338 ! structural_motif
 
 [Term]
 id: BS:00148
 name: turn
 def: "Residues in DSSP calculated H-bonded 3-turn, 4-turn or 5-turn" [UniProt:curation manual]
 comment: Range
-is_a: BS:00147 ! structural motif
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00149
-name: mature protein product
-def: "annotations which define the mature protein" [ref:ref]
-is_a: BS:00124 ! positional annotation
+name: mature_protein_product
+def: "Annotations which define the mature protein." [ref:ref]
+is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00150
@@ -472,17 +513,24 @@ def: "Describes the occurrence of a selenocysteine in the sequence record." [Uni
 is_obsolete: true
 
 [Term]
+id: BS:00151
+name: parallel_beta_strand
+def: "parallel " [UniProt:curation manual]
+comment: Range
+is_a: BS:00042 ! beta_strand
+
+[Term]
 id: BS:00156
 name: intramembrane
-def: "Extent of a transmembrane region." [UniProt:curation manual]
+def: "Extent of the region traversing the lipid bilayer." [UniProt:curation manual]
 related_synonym: "transmem" []
-is_a: BS:00128 ! membrane structure
+relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
 id: BS:00157
 name: protein-ligand interaction
 def: "Residues which interact with a ligand." [ref:ref]
-is_a: BS:00033 ! site of interest
+is_a: BS:00033 ! binding_or_interaction_site
 
 [Term]
 id: BS:00161
@@ -588,24 +636,24 @@ is_obsolete: true
 
 [Term]
 id: BS:00178
-name: cross-link
+name: cross_link
 def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains. " [UniProt:curation manual]
 related_synonym: "crosslink" []
-is_a: BS:00246 ! covalent binding site
+is_a: BS:00246 ! covalent_binding_site
 
 [Term]
 id: BS:00181
-name: sequence uncertainty
+name: sequence_uncertainty
 def: "Uncertainties in the sequence." [UniProt:curation manual]
 related_synonym: "unsure" []
-is_a: BS:00125 ! sequencing information
+is_a: BS:00125 ! sequencing_information
 
 [Term]
 id: BS:00182
-name: non-adjacent residues
+name: non_adjacent_residues
 def: "Non-consecutive residues." [UniProt:curation manual]
 related_synonym: "non_cons" []
-is_a: BS:00125 ! sequencing information
+is_a: BS:00125 ! sequencing_information
 
 [Term]
 id: BS:00183
@@ -616,233 +664,248 @@ is_obsolete: true
 
 [Term]
 id: BS:00185
-name: Zn contact
+name: Zn_contact_site
 def: "Residues involved in contact with zinc." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00186
-name: Ca contact
+name: Ca_contact_site
 def: "Residues involved in contact with calcium." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
 related_synonym: "calcium binding" []
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00187
-name: Mg contact
+name: Mg_contact_site
 def: "Residues involved in contact with magnesium." [ref:ref]
-is_a: BS:00027 ! metal binding
+is_a: BS:00027 ! metal_binding_site
 
 [Term]
 id: BS:00202
-name: asx-motif
-def: "A motif of five consecutive residues and two H-bonds in which: residue(i) is Aspartate or Asparagine (Asx), side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3), main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: asx_motif
+def: "A motif of five consecutive residues and two H-bonds in which: residue(i) is Aspartate or Asparagine (Asx), side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3), main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [http:www.ebi.ac.uk/msd_srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00203
-name: asx-turn
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: asx_turn
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00204
-name: asx-turn-iil
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00203 ! asx-turn
+name: asx_turn_left_handed_type_two
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "asx_turn_iil" []
+is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00205
-name: asx-turn-iir
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00203 ! asx-turn
+name: asx_turn_right_handed_type_two
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "asx_turn_iir" []
+is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00206
-name: asx-turn-il
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00203 ! asx-turn
+name: asx_turn_left_handed_type_one
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+related_synonym: "asx_turn_il" []
+is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00207
-name: asx-turn-ir
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00203 ! asx-turn
+name: asx_turn_type_right_handed_type_one
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "asx_turn_ir" []
+is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00208
-name: beta-bulge
-def: "A motif of three residues within a beta-sheet in which the main chains of two consecutive residues are H-bonded to that of the third, and in which the dihedral angles are as follows: residue (i) (-140 o < fL -20o , -90 o < y L < 40 o) and residue (i+1) (-180 o < f < -25 o or 120 o < f < 180 o)(40 o < y < 180 o or -180 o < y < -120 o)." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: beta_bulge
+def: "A motif of three residues within a beta-sheet in which the main chains of two consecutive residues are H-bonded to that of the third, and in which the dihedral angles are as follows: residue (i) (-140 o < fL -20o , -90 o < y L < 40 o) and residue (i+1) (-180 o < f < -25 o or 120 o < f < 180 o)(40 o < y < 180 o or -180 o < y < -120 o)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00209
-name: beta-bulge-loop
-def: "A motif of three residues within a beta-sheet consisting of two H-bonds." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: beta_bulge_loop
+def: "A motif of three residues within a beta-sheet consisting of two H-bonds." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00210
-name: beta-bulge-loop-5
-def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+4), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+3), type 1 beta-bulge loops have an RL nest at residues i+2 and i+3." [msd:s3dm]
-is_a: BS:00209 ! beta-bulge-loop
+name: beta_bulge_loop_five
+def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+4), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+3), type 1 beta-bulge loops have an RL nest at residues i+2 and i+3." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00209 ! beta_bulge_loop
 
 [Term]
 id: BS:00211
-name: beta-bulge-loop-6
-def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+5), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+4),  type 2 beta-bulge loops have an RL nest at residues i+3 and i+4 " [msd:s3dm]
-is_a: BS:00209 ! beta-bulge-loop
+name: beta_bulge_loop_six
+def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+5), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+4),  type 2 beta-bulge loops have an RL nest at residues i+3 and i+4 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00209 ! beta_bulge_loop
 
 [Term]
 id: BS:00212
-name: beta-turn
-def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization" [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: beta_turn
+def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00213
-name: beta-turn-iil
-def: "Left handed type II: A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [msd:s3dm]
-is_a: BS:00212 ! beta-turn
+name: beta_turn_left_handed_type_two
+def: "Left handed type II: A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "beta_turn_iil" []
+is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00214
-name: beta-turn-iir
-def: "Right handed type II:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [msd:s3dm]
-is_a: BS:00212 ! beta-turn
+name: beta_turn_right_handed_type_two
+def: "Right handed type II:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "beta_turn_iir" []
+is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00215
-name: beta-turn-il
-def: "Left handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth.It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [msd:s3dm]
-is_a: BS:00212 ! beta-turn
+name: beta_turn_left_handed_type_one
+def: "Left handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth.It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "beta_turn_il" []
+is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00216
-name: beta-turn-ir
-def: "Right handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [msd:s3dm]
-is_a: BS:00212 ! beta-turn
+name: beta_turn_right_handed_type_one
+def: "Right handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles which are listed on http://www.ebi.ac.uk/msd-srv/msdmotif/." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "beta_turn_ir" []
+is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00217
 name: catmat-3
-def: "A motif of 3 consecutive residues with dihedral angles as follows: (res i: phi -90 bounds -120 to -60); (res i: psi -10  bounds -50  to 30); (res i+1 phi -75 bounds -100 to -50); (res i+1 psi 140 bounds 110  to 170). An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom.  More precisely these two oxygens are the main chain  carbonyl oxygen atoms of residues i-1 and i+1." [msd:s3dm]
+def: "A motif of 3 consecutive residues with dihedral angles as follows: (res i: phi -90 bounds -120 to -60); (res i: psi -10  bounds -50  to 30); (res i+1 phi -75 bounds -100 to -50); (res i+1 psi 140 bounds 110  to 170). An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom.  More precisely these two oxygens are the main chain  carbonyl oxygen atoms of residues i-1 and i+1." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_obsolete: true
 
 [Term]
 id: BS:00218
 name: catmat-4
-def: "A motif of 4 consecutive residues with dihedral angles as follows: (res i: phi  -90 bounds -120 to -60); (res i:  psi -10 bounds -50  to 30); (res i+1:  phi -90  bounds -120 to -60); (res i+1: psi  -10 bounds -50  to 30); (res i+2: phi -75 bounds -100 to -5); (res i+2: psi 140 bounds 110  to 170). The extra restriction of the length of the O to O distance is similar, that  it be less than 5 Angstrom.  In this case these two Oxygen atoms are the  main chain carbonyl oxygen atoms of residues i-1 and i+2." [msd:s3dm]
+def: "A motif of 4 consecutive residues with dihedral angles as follows: (res i: phi  -90 bounds -120 to -60); (res i:  psi -10 bounds -50  to 30); (res i+1:  phi -90  bounds -120 to -60); (res i+1: psi  -10 bounds -50  to 30); (res i+2: phi -75 bounds -100 to -5); (res i+2: psi 140 bounds 110  to 170). The extra restriction of the length of the O to O distance is similar, that  it be less than 5 Angstrom.  In this case these two Oxygen atoms are the  main chain carbonyl oxygen atoms of residues i-1 and i+2." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_obsolete: true
 
 [Term]
 id: BS:00219
-name: gamma-turn
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: gamma_turn
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00220
-name: gamma-turn-classic
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=75.0 - psi(i+1)=-64.0 " [msd:s3dm]
-is_a: BS:00219 ! gamma-turn
+name: gamma_turn_classic
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=75.0 - psi(i+1)=-64.0 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00219 ! gamma_turn
 
 [Term]
 id: BS:00221
-name: gamma-turn-inverse
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=-79.0 - psi(i+1)=69.0 " [msd:s3dm]
-is_a: BS:00219 ! gamma-turn
+name: gamma_turn_inverse
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=-79.0 - psi(i+1)=69.0 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00219 ! gamma_turn
 
 [Term]
 id: BS:00222
-name: helix-l
-def: "Left handed helix." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: left handed helix
+def: "left handed helix" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+related_synonym: "helix-l" []
+is_a: BS:00040 ! alpha_helix
 
 [Term]
 id: BS:00223
 name: nest
-def: "A motif of two consecutive residues with dihedral angles. Nest should not have Proline as any residue." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+def: "A motif of two consecutive residues with dihedral angles. Nest should not have Proline as any residue." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00224
-name: nest-lr
-def: "A motif of two consecutive residues with dihedral angles as listed on http://www.ebi.ac.uk/msd-srv/msdmotif/.  Nest should not have Proline as any residue." [msd:s3dm]
+name: nest_left_right
+def: "A motif of two consecutive residues with dihedral angles as listed on http://www.ebi.ac.uk/msd-srv/msdmotif/.  Nest should not have Proline as any residue." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "nest_lr" []
 is_a: BS:00223 ! nest
 
 [Term]
 id: BS:00225
-name: nest-rl
-def: "Right left form: a motif of two consecutive residues with dihedral angles as listed on http://www.ebi.ac.uk/msd-srv/msdmotif/.  Nest should not have Proline as any residue." [msd:s3dm]
+name: nest_right_left
+def: "Right left form: a motif of two consecutive residues with dihedral angles as listed on http://www.ebi.ac.uk/msd-srv/msdmotif/.  Nest should not have Proline as any residue." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "nest_rl" []
 is_a: BS:00223 ! nest
 
 [Term]
 id: BS:00226
-name: schellmann-loop
-def: "A motif of six or seven consecutive residues  that contains two H-bonds." [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: schellmann_loop
+def: "A motif of six or seven consecutive residues  that contains two H-bonds." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00227
-name: schellmann-loop-6
-def: "Common Type: A motif of six consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4)." [msd:s3dm]
-is_a: BS:00226 ! schellmann-loop
+name: schellmann_loop_six
+def: "Common Type: A motif of six consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00226 ! schellmann_loop
 
 [Term]
 id: BS:00228
-name: schellmann-loop-7
-def: "Wild type: A motif of  seven consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+6), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+5)." [msd:s3dm]
-is_a: BS:00226 ! schellmann-loop
+name: schellmann_loop_seven
+def: "Wild type: A motif of  seven consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+6), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+5)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00226 ! schellmann_loop
 
 [Term]
 id: BS:00229
-name: st-motif
-def: "A motif of five consecutive residues and two hydrogen bonds in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) , the main-chain CO group of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4). " [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: st_motif
+def: "A motif of five consecutive residues and two hydrogen bonds in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) , the main-chain CO group of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00230
-name: st-staple
-def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(i3) or (i4), Phi angles of residues(i1), (i2) and (i3) are negative. " [msd:s3dm]
-is_a: BS:00147 ! structural motif
+name: st_staple
+def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(i3) or (i4), Phi angles of residues(i1), (i2) and (i3) are negative. " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00231
-name: st-turn
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [msd:s3dm]
+name: st_turn
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00232
-name: st-turn-iil
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00231 ! st-turn
+name: st_turn_left_handed_type_two
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "st_turn_iil" []
+is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00233
-name: st-turn-iir
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00231 ! st-turn
+name: st_turn_right_handed_type_two
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type II: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "st_turn_iir" []
+is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00234
-name: st-turn-il
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00231 ! st-turn
+name: st_turn_left_handed_type_one
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Left handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "st_turn_il" []
+is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00235
-name: st-turn-ir
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [msd:s3dm]
-is_a: BS:00231 ! st-turn
+name: st_turn_right_handed_type_one
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). Right handed type I: See http://www.ebi.ac.uk/msd-srv/msdmotif/ for dihedral angles." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+exact_synonym: "st_turn_ir" []
+is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00246
-name: covalent binding site
+name: covalent_binding_site
 def: "Binding involvolving a covalent bond. " [ref:ref]
-is_a: BS:00033 ! site of interest
+is_a: BS:00033 ! binding_or_interaction_site
 
 [Term]
 id: BS:00330
@@ -851,50 +914,50 @@ def: "protein annotations classification" [ref:ref]
 
 [Term]
 id: BS:00331
-name: region annotation
-def: "Subsequence of interest in a reference/mature protein sequence." [ref:ref]
+name: region_annotation
+def: "Continuous sequence of interest in a reference/mature protein sequence." [ref:ref]
 comment: Range
-is_a: BS:00124 ! positional annotation
+is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00332
-name: cellular component
+name: cellular_component
 def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GO:0005575]
 comment: Range
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00333
-name: family annotation
+name: family_annotation
 def: "family" [ref:ref]
 comment: Range
-is_a: BS:00127 ! nonpositional annotation
+is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
 id: BS:00334
-name: mispredicted protein
+name: mispredicted_protein
 def: "Hypothetical protein predicted to be mislocalized, misfolded or chimeric, reflecting errors in computational gene prediction." [ref:ref]
-is_a: BS:00132 ! erroneous protein
+is_a: BS:00132 ! erroneous_protein
 
 [Term]
 id: BS:00335
-name: abnormal protein
+name: abnormal_protein
 def: "cDNA-supported hypothetical protein predicted to be mislocalized, misfolded or chimeric." [ref:ref]
-is_a: BS:00132 ! erroneous protein
+is_a: BS:00132 ! erroneous_protein
 
 [Term]
 id: BS:00336
-name: sequence variations
+name: sequence_variations
 def: "alternative sequence" [ref:ref]
 comment: Discreet
-is_a: BS:00124 ! positional annotation
+is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00337
-name: structural annotation
+name: structural_region
 def: "Annotation defined through their n-ary conformations " [ref:ref]
 comment: Range
-is_a: BS:00331 ! region annotation
+is_a: BS:00331 ! region_annotation
 
 [Typedef]
 id: part_of
