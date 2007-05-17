@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 15:05:2007 18:02
+date: 17:05:2007 11:01
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -238,7 +238,7 @@ name: propeptide_cleavage_site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
 is_a: BS:00033 ! binding_or_interaction_site
-is_a: BS:00077 ! propeptide
+is_a: BS:00149 ! mature_protein_product
 
 [Term]
 id: BS:00064
