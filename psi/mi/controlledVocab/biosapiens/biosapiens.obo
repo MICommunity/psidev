@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 23:05:2007 11:30
+date: 29:05:2007 10:40
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.002
 default-namespace: BS
@@ -814,7 +814,7 @@ is_obsolete: true
 [Term]
 id: BS:00219
 name: gamma_turn
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees (Rose et al., 1985, Milner-White et al, 1988)" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees. " [http:www.ebi.ac.uk/msd-srv/msdmotif/, PMID:2865874, PMID:3225851]
 is_a: BS:00148 ! turn
 
 [Term]
