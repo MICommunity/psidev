@@ -1,13 +1,13 @@
 format-version: 1.0
-date: 29:05:2007 10:40
+date: 11:06:2007 15:46
 saved-by: gabby
-auto-generated-by: OBO-Edit 1.002
+auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
 
 [Term]
 id: BS:00003
 name: secondary_structure
-def: "Patterns of main chain hydrogen bonding along the peptide chain. " [ref:ref]
+def: "Patterns of main chain hydrogen bonding along the peptide chain." [ref:ref]
 exact_synonym: "2nary structure" []
 is_a: BS:00337 ! structural_region
 
@@ -27,7 +27,7 @@ is_a: BS:00152 ! helix
 [Term]
 id: BS:0000340
 name: three_ten_helix
-def: "The 3-10 helix has 3 residues per turn with a a translation of 2.0 angstroms (=0.2 nm) along the helical axis. The N-H group of an amino acid forms a hydrogen bond with the C=O group of the amino acid three residues earlier, " [ref:ref]
+def: "The 3-10 helix has 3 residues per turn with a a translation of 2.0 angstroms (=0.2 nm) along the helical axis. The N-H group of an amino acid forms a hydrogen bond with the C=O group of the amino acid three residues earlier." [ref:ref]
 comment: Range
 exact_synonym: "3-10 helix" []
 is_a: BS:0000339 ! right handed helix
@@ -35,14 +35,14 @@ is_a: BS:0000339 ! right handed helix
 [Term]
 id: BS:0000341
 name: antiparallel_beta_strand
-def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (one running N-terminal to C-terminal and one running C-terminal to N-terminal). Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i) and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they form two mutual backbone hydrogen bonds to each other's flanking peptide groups; this is known as a close pair of hydrogen bonds.  The peptide backbone dihedral angles (phi, psi) are about (-140 degrees, 135 degrees) in antiparallel sheets. \n" [UniProt:curation manual]
+def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (one running N-terminal to C-terminal and one running C-terminal to N-terminal). Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i) and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they form two mutual backbone hydrogen bonds to each other's flanking peptide groups; this is known as a close pair of hydrogen bonds.  The peptide backbone dihedral angles (phi, psi) are about (-140 degrees, 135 degrees) in antiparallel sheets." [UniProt:curation manual]
 comment: Range
 is_a: BS:00042 ! beta_strand
 
 [Term]
 id: BS:00012
 name: polypeptide_domain
-def: "A structurally/functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein.\nRegion which has been shown to recur throughout evolution. " [ref:ref]
+def: "A structurally/functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [ref:ref]
 comment: Range
 related_synonym: "domain" []
 narrow_synonym: "DNA_bind" []
@@ -140,7 +140,7 @@ is_obsolete: true
 [Term]
 id: BS:00040
 name: alpha_helix
-def: "The helix has 3.6 residues per turn which corersponds to  a translation of 1.5 angstroms (= 0.15 nm) along the helical axis. Every backbone N-H group donates a hydrogen bond to the backbone C=O group of the amino acid four residues earlier. \n" [ref:ref]
+def: "The helix has 3.6 residues per turn which corersponds to  a translation of 1.5 angstroms (= 0.15 nm) along the helical axis. Every backbone N-H group donates a hydrogen bond to the backbone C=O group of the amino acid four residues earlier." [ref:ref]
 comment: Range
 related_synonym: "helix" []
 exact_synonym: "a-helix" []
@@ -157,7 +157,7 @@ is_a: BS:0000338 ! structural_motif
 [Term]
 id: BS:00042
 name: beta_strand
-def: " A beta strand describes a single length of polypeptide chain that forms part of a beta sheet.  A single continuous stretch of amino acids adopting an extended conformation of hydrogen bonds between the N-O and the C=O of another part of the peptide.\nThis forms a secondary protein structure in which two or more extended polypeptide regions are hydrogen-bonded to one another in a planar array." [UniProt:curation manual]
+def: "A beta strand describes a single length of polypeptide chain that forms part of a beta sheet.  A single continuous stretch of amino acids adopting an extended conformation of hydrogen bonds between the N-O and the C=O of another part of the peptide. This forms a secondary protein structure in which two or more extended polypeptide regions are hydrogen-bonded to one another in a planar array." [UniProt:curation manual]
 comment: Range
 related_synonym: "strand" []
 is_a: BS:00003 ! secondary_structure
@@ -165,7 +165,7 @@ is_a: BS:00003 ! secondary_structure
 [Term]
 id: BS:00043
 name: annotation
-def: "Annotation on the functional or structural features of a  protein and possible sequence variations." [ref:ref]
+def: "Annotation on the functional or structural features of a protein and possible sequence variations." [ref:ref]
 comment: Range
 is_a: BS:00330 ! DRAFT biosapiens protein annotation
 
@@ -267,7 +267,7 @@ is_a: BS:00129 ! immature_peptide_region
 [Term]
 id: BS:00068
 name: compositionally_biased_region
-def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, not used for a run of less than 4 residues. Xaa-rich,  these are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099). " [UniProt:curation manual]
+def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, not used for a run of less than 4 residues. Xaa-rich, these are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099)." [UniProt:curation manual]
 comment: Range
 related_synonym: "compbias" []
 exact_synonym: "compositional bias" []
@@ -276,7 +276,7 @@ is_a: BS:00331 ! region_annotation
 [Term]
 id: BS:00069
 name: conflict
-def: "Different sources report differing sequences. " [UniProt:curation manual]
+def: "Different sources report differing sequences." [UniProt:curation manual]
 comment: Discreet
 is_a: BS:00125 ! sequencing_information
 
@@ -291,7 +291,7 @@ is_a: BS:00012 ! polypeptide_domain
 [Term]
 id: BS:00071
 name: natural_variant
-def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars. " [UniProt:curation manual]
+def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "variant" []
 is_a: BS:00336 ! sequence_variations
@@ -325,7 +325,7 @@ is_obsolete: true
 [Term]
 id: BS:00076
 name: active_peptide
-def: "Proteins which are biologically active, released from a precursor molecule and which include things like hormones, neuropeptides, antimicrobial peptides, etc. Peptides are typically short (<40 amino acids) in length.\n" [UniProt:curation manual]
+def: "Proteins which are biologically active, released from a precursor molecule and which include things like hormones, neuropeptides, antimicrobial peptides, etc. Peptides are typically short (<40 amino acids) in length." [UniProt:curation manual]
 comment: Range
 exact_synonym: "peptide" []
 is_a: BS:00149 ! mature_protein_product
@@ -333,7 +333,7 @@ is_a: BS:00149 ! mature_protein_product
 [Term]
 id: BS:00077
 name: propeptide
-def: "Extent of a propeptide." [UniProt:curation]
+def: "Describes part of a peptide chain which is cleaved off during the formation of the mature protein." [UniProt:curation]
 comment: Range
 related_synonym: "propep" []
 is_a: BS:00129 ! immature_peptide_region
@@ -376,7 +376,7 @@ is_a: BS:00337 ! structural_region
 [Term]
 id: BS:00129
 name: immature_peptide_region
-def: "Annotation of a protein terminus position or  beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insulin).  " [ref:ref]
+def: "Annotation of a protein terminus position or beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insulin)." [ref:ref]
 comment: Range
 is_a: BS:00124 ! positional_annotation
 
@@ -395,7 +395,7 @@ is_a: BS:00029 ! non_covalent_binding_site
 [Term]
 id: BS:00132
 name: erroneous_protein
-def: "Protein suspected to be non-viable or chimeric. " [ref:ref]
+def: "Protein suspected to be non-viable or chimeric." [ref:ref]
 is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
@@ -435,7 +435,7 @@ is_a: BS:00027 ! metal_binding_site
 [Term]
 id: BS:00138
 name: publication
-def: "publication on this sequence " [ref:ref]
+def: "Lists the details of a publication on this sequence." [ref:ref]
 is_a: BS:00127 ! nonpositional_annotation
 
 [Term]
@@ -472,7 +472,7 @@ is_a: BS:00027 ! metal_binding_site
 [Term]
 id: BS:00144
 name: non_cytoplasm_location
-def: "Region of peptide not in the cytoplasm. N.B. This could be inside an organelle within the cell. " [ref:ref]
+def: "Region of peptide not in the cytoplasm. N.B. This could be inside an organelle within the cell." [ref:ref]
 related_synonym: "outside" []
 relationship: part_of BS:00128 ! membrane_structure
 
@@ -493,7 +493,7 @@ is_a: BS:00027 ! metal_binding_site
 [Term]
 id: BS:00147
 name: helix_turn_helix
-def: "A motif comprising two helices separated by a turn. " [ref:ref]
+def: "A motif comprising two helices separated by a turn." [ref:ref]
 related_synonym: "DNA binding motif" []
 exact_synonym: "HTH" []
 is_a: BS:0000338 ! structural_motif
@@ -501,7 +501,7 @@ is_a: BS:0000338 ! structural_motif
 [Term]
 id: BS:00148
 name: turn
-def: "A reversal in the direction of the backbone of a protein that is stabilized by hydrogen bond between backbone NH and CO groups, involving no more than 4 amino acid residues. " [ref:ref]
+def: "A reversal in the direction of the backbone of a protein that is stabilized by hydrogen bond between backbone NH and CO groups, involving no more than 4 amino acid residues." [ref:ref]
 comment: Range
 is_a: BS:00003 ! secondary_structure
 
@@ -520,14 +520,14 @@ is_obsolete: true
 [Term]
 id: BS:00151
 name: parallel_beta_strand
-def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (both running N-terminal to C-terminal).  This orientation is slightly less stable because it introduces nonplanarity in the inter-strand hydrogen bonding pattern. Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i)and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they do not hydrogen bond to each other; rather, one residue forms hydrogen bonds to the residues that flank the other (but not vice versa). For example, residue i may form hydrogen bonds to residues j - 1 and j + 1; this is known as a wide pair of hydrogen bonds. By contrast, residue j may hydrogen-bond to different residues altogether, or to none at all. The dihedral angles (phi, psi) are about (-120 degrees, 115 degrees) in parallel sheets. \n" [UniProt:curation manual]
+def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (both running N-terminal to C-terminal). This orientation is slightly less stable because it introduces nonplanarity in the inter-strand hydrogen bonding pattern. Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i)and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they do not hydrogen bond to each other; rather, one residue forms hydrogen bonds to the residues that flank the other (but not vice versa). For example, residue i may form hydrogen bonds to residues j - 1 and j + 1; this is known as a wide pair of hydrogen bonds. By contrast, residue j may hydrogen-bond to different residues altogether, or to none at all. The dihedral angles (phi, psi) are about (-120 degrees, 115 degrees) in parallel sheets." [UniProt:curation manual]
 comment: Range
 is_a: BS:00042 ! beta_strand
 
 [Term]
 id: BS:00152
 name: helix
-def: "The peptide backbone forms a coiled conformation. " [ref:ref]
+def: "The peptide backbone forms a coiled conformation." [ref:ref]
 comment: Range
 is_a: BS:00003 ! secondary_structure
 
@@ -656,21 +656,21 @@ is_obsolete: true
 [Term]
 id: BS:00178
 name: cross_link
-def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains. " [UniProt:curation manual]
+def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains." [UniProt:curation manual]
 related_synonym: "crosslink" []
 is_a: BS:00246 ! covalent_binding_site
 
 [Term]
 id: BS:00181
 name: sequence_uncertainty
-def: "Uncertainties in the sequence." [UniProt:curation manual]
+def: "Describes the positions in a sequence where the authors are unsure about the sequence assignment." [UniProt:curation manual]
 related_synonym: "unsure" []
 is_a: BS:00125 ! sequencing_information
 
 [Term]
 id: BS:00182
 name: non_adjacent_residues
-def: "Non-consecutive residues." [UniProt:curation manual]
+def: "Indicates that two consecutive residues in a fragment sequence are not consecutive in the full-length protein and that there are a number of unsequenced residues between them. " [UniProt:curation manual]
 related_synonym: "non_cons" []
 is_a: BS:00125 ! sequencing_information
 
@@ -704,53 +704,53 @@ is_a: BS:00027 ! metal_binding_site
 [Term]
 id: BS:00202
 name: asx_motif
-def: "A motif of five consecutive residues and two H-bonds in which: residue(i) is Aspartate or Asparagine (Asx), side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3), main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [http:www.ebi.ac.uk/msd_srv/msdmotif/]
+def: "A motif of five consecutive residues and two H-bonds in which: Residue(i) is Aspartate or Asparagine (Asx), side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3), main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [http:www.ebi.ac.uk/msd_srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00203
 name: asx_turn
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Aspartate or Asparagine (Asx), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00204
 name: asx_turn_left_handed_type_two
-def: "Left handed type II (dihedral angles):- \nresidue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, +80 degrees < psi +120 degrees < +180 degrees\nresidue(i+1):  +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Left handed type II (dihedral angles):- Residue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, +80 degrees < psi +120 degrees < +180 degrees. Residue(i+1):  +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "asx_turn_iil" []
 is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00205
 name: asx_turn_right_handed_type_two
-def: "Right handed type II (dihedral angles):- \nresidue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, +80 degrees < psi +120 degrees < +180 degrees\nresidue(i+1):  +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Right handed type II (dihedral angles):- Residue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, +80 degrees < psi +120 degrees < +180 degrees. Residue(i+1):  +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "asx_turn_iir" []
 is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00206
 name: asx_turn_left_handed_type_one
-def: "Left handed type I (dihedral angles):- \nresidue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, -90 degrees < psi +120 degrees < +40 degrees\nresidue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Left handed type I (dihedral angles):- Residue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, -90 degrees < psi +120 degrees < +40 degrees. Residue(i+1): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 related_synonym: "asx_turn_il" []
 is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00207
 name: asx_turn_type_right_handed_type_one
-def: "Right handed type I (dihedral angles):- \nresidue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, -90 degrees < psi +120 degrees < +40 degrees\nresidue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Right handed type I (dihedral angles):- Residue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, -90 degrees < psi +120 degrees < +40 degrees. Residue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "asx_turn_ir" []
 is_a: BS:00203 ! asx_turn
 
 [Term]
 id: BS:00208
 name: beta_bulge
-def: "A motif of three residues within a beta-sheet in which the main chains of two consecutive residues are H-bonded to that of the third, and in which the dihedral angles are as follows: \nresidue(i): -140 degrees < phi(l) -20 degrees , -90 degrees < psi(l) < 40 degrees\nresidue (i+1): -180 degrees < phi < -25 degrees or +120 degrees < phi < +180 degrees, +40 degrees < psi < +180 degrees or -180 degrees < psi < -120 degrees" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of three residues within a beta-sheet in which the main chains of two consecutive residues are H-bonded to that of the third, and in which the dihedral angles are as follows: Residue(i): -140 degrees < phi(l) -20 degrees , -90 degrees < psi(l) < 40 degrees. Residue (i+1): -180 degrees < phi < -25 degrees or +120 degrees < phi < +180 degrees, +40 degrees < psi < +180 degrees or -180 degrees < psi < -120 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00209
 name: beta_bulge_loop
-def: "A motif of three residues within a beta-sheet consisting of two H-bonds. Beta Bulge Loops often occur at the loop ends of beta-hairpins.\n\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of three residues within a beta-sheet consisting of two H-bonds. Beta bulge loops often occur at the loop ends of beta-hairpins." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
@@ -762,40 +762,40 @@ is_a: BS:00209 ! beta_bulge_loop
 [Term]
 id: BS:00211
 name: beta_bulge_loop_six
-def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+5), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+4), these loops have an RL nest at residues i+3 and i+4 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of three residues within a beta-sheet consisting of two H-bonds in which: the main-chain NH of residue(i) is H-bonded to the main-chain CO of residue(i+5), the main-chain CO of residue i is H-bonded to the main-chain NH of residue(i+4), these loops have an RL nest at residues i+3 and i+4." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00209 ! beta_bulge_loop
 
 [Term]
 id: BS:00212
 name: beta_turn
-def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles of the second and third residues, which are the basis for sub-categorization." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00213
 name: beta_turn_left_handed_type_two
-def: "Left handed type II: A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles:\nresidue(i+1):  -140 degrees < phi < -20 degrees, +80 degrees < psi < +180 degrees.\nresidue(i+2): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Left handed type II: A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles: Residue(i+1):  -140 degrees < phi < -20 degrees, +80 degrees < psi < +180 degrees. Residue(i+2): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "beta_turn_iil" []
 is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00214
 name: beta_turn_right_handed_type_two
-def: "Right handed type II:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles:\nresidue(i+1):  -140 degrees < phi < -20 degrees, +80 degrees < psi < +180 degrees.\nresidue(i+2): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Right handed type II:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the dihedral angles: Residue(i+1):  -140 degrees < phi < -20 degrees, +80 degrees < psi < +180 degrees. Residue(i+2): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "beta_turn_iir" []
 is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00215
 name: beta_turn_left_handed_type_one
-def: "Left handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth.It is characterized by the dihedral angles:\nresidue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees.\nresidue(i+2): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Left handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth.It is characterized by the dihedral angles:- Residue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees. Residue(i+2): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "beta_turn_il" []
 is_a: BS:00212 ! beta_turn
 
 [Term]
 id: BS:00216
 name: beta_turn_right_handed_type_one
-def: "Right handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the  dihedral angles:\nresidue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees.\nresidue(i+2): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Right handed type I:A motif of four consecutive residues that may contain one H-bond, which, if present, is between the main-chain CO of the first residue and the main-chain NH of the fourth. It is characterized by the  dihedral angles: Residue(i+1):  -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees. Residue(i+2): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "beta_turn_ir" []
 is_a: BS:00212 ! beta_turn
 
@@ -814,19 +814,19 @@ is_obsolete: true
 [Term]
 id: BS:00219
 name: gamma_turn
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees. " [http:www.ebi.ac.uk/msd-srv/msdmotif/, PMID:2865874, PMID:3225851]
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/, PMID:2865874, PMID:3225851]
 is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00220
 name: gamma_turn_classic
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=75.0 - psi(i+1)=-64.0 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=75.0 - psi(i+1)=-64.0." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00219 ! gamma_turn
 
 [Term]
 id: BS:00221
 name: gamma_turn_inverse
-def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=-79.0 - psi(i+1)=69.0 " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Gamma turns, defined for 3 residues i, i+1, i+2 if a hydrogen bond exists between residues i and i+2 and the phi and psi angles of residue i+1 fall within 40 degrees: phi(i+1)=-79.0 - psi(i+1)=69.0." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00219 ! gamma_turn
 
 [Term]
@@ -839,91 +839,91 @@ is_a: BS:00152 ! helix
 [Term]
 id: BS:00223
 name: nest
-def: "A motif of two consecutive residues with dihedral angles. Nest should not have Proline as any residue. Nests frequently occur as parts of other motifs such as Schellman loops.\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of two consecutive residues with dihedral angles. Nest should not have Proline as any residue. Nests frequently occur as parts of other motifs such as Schellman loops." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00224
 name: nest_left_right
-def: "A motif of two consecutive residues with dihedral angles:\nresidue(i): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees\nresidue(i+1): -140 degrees < phi < -20 degrees,  -90 degrees < psi < +40 degrees\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of two consecutive residues with dihedral angles: Residue(i): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees. Residue(i+1): -140 degrees < phi < -20 degrees,  -90 degrees < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "nest_lr" []
 is_a: BS:00223 ! nest
 
 [Term]
 id: BS:00225
 name: nest_right_left
-def: "A motif of two consecutive residues with dihedral angles:\nresidue(i): -140 degrees < phi < -20 degrees,  -90 degrees < psi < +40 degrees\nresidue(i+1): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of two consecutive residues with dihedral angles: Residue(i): -140 degrees < phi < -20 degrees,  -90 degrees < psi < +40 degrees. Residue(i+1): +20 degrees < phi < +140 degrees, -40 degrees < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "nest_rl" []
 is_a: BS:00223 ! nest
 
 [Term]
 id: BS:00226
 name: schellmann_loop
-def: "A motif of six or seven consecutive residues  that contains two H-bonds." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of six or seven consecutive residues that contains two H-bonds." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00227
 name: schellmann_loop_six
-def: "Common Type: A motif of six consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Common Type: A motif of six consecutive residues that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+5) the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+4)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00226 ! schellmann_loop
 
 [Term]
 id: BS:00228
 name: schellmann_loop_seven
-def: "Wild type: A motif of  seven consecutive residues  that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+6), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+5)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "Wild type: A motif of seven consecutive residues that contains two H-bonds in which: the main-chain CO of residue(i) is H-bonded to the main-chain NH of residue(i+6), the main-chain CO of residue(i+1) is H-bonded to the main-chain NH of residue(i+5)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00226 ! schellmann_loop
 
 [Term]
 id: BS:00229
 name: st_motif
-def: "A motif of five consecutive residues and two hydrogen bonds in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) , the main-chain CO group of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of five consecutive residues and two hydrogen bonds in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2) or (i+3) , the main-chain CO group of residue(i) is H-bonded to the main-chain NH of residue(i+3) or (i+4)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00230
 name: st_staple
-def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(i3) or (i4), Phi angles of residues(i1), (i2) and (i3) are negative. " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of four or five consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain OH of residue(i) is H-bonded to the main-chain CO of residue(i3) or (i4), Phi angles of residues(i1), (i2) and (i3) are negative." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00231
 name: st_turn
-def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2). " [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A motif of three consecutive residues and one H-bond in which: residue(i) is Serine (S) or Threonine (T), the side-chain O of residue(i) is H-bonded to the main-chain NH of residue(i+2)." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 is_a: BS:00148 ! turn
 
 [Term]
 id: BS:00232
 name: st_turn_left_handed_type_two
-def: "The peptide twists in an anticlockwise, left handed manner. The dihedral angles for this turn are: \nresidue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, +80 degrees psi +120 degrees < +180 degrees\nresidue(i+1): +20 degrees < phi < +140 degrees, -40 < psi < +90 degrees\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "The peptide twists in an anticlockwise, left handed manner. The dihedral angles for this turn are: Residue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, +80 degrees psi +120 degrees < +180 degrees, residue(i+1): +20 degrees < phi < +140 degrees, -40 < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "st_turn_iil" []
 is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00233
 name: st_turn_right_handed_type_two
-def: "The peptide twists in an clockwise, right handed manner. The dihedral angles for this turn are: \nresidue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, +80 degrees psi +120 degrees < +180 degrees\nresidue(i+1): +20 degrees < phi < +140 degrees, -40 < psi < +90 degrees" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "The peptide twists in an clockwise, right handed manner. The dihedral angles for this turn are: Residue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, +80 degrees psi +120 degrees < +180 degrees, residue(i+1): +20 degrees < phi < +140 degrees, -40 < psi < +90 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "st_turn_iir" []
 is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00234
 name: st_turn_left_handed_type_one
-def: "The peptide twists in an anticlockwise, left handed manner. The dihedral angles for this turn are: \nresidue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, -90 degrees psi +120 degrees < +40 degrees\nresidue(i+1): -140 degrees < phi < -20 degrees, -90 < psi < +40 degrees\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "The peptide twists in an anticlockwise, left handed manner. The dihedral angles for this turn are: Residue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, -90 degrees psi +120 degrees < +40 degrees, residue(i+1): -140 degrees < phi < -20 degrees, -90 < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "st_turn_il" []
 is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00235
 name: st_turn_right_handed_type_one
-def: "The peptide twists in an clockwise, right handed manner. The dihedral angles for this turn are: \nresidue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, -90 degrees psi +120 degrees < +40 degrees\nresidue(i+1): -140 degrees < phi < -20 degrees, -90 < psi < +40 degrees\n" [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "The peptide twists in an clockwise, right handed manner. The dihedral angles for this turn are: Residue(i): -140 degrees < chi(1) -120 degrees < -20 degrees, -90 degrees psi +120 degrees < +40 degrees, residue(i+1): -140 degrees < phi < -20 degrees, -90 < psi < +40 degrees." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 exact_synonym: "st_turn_ir" []
 is_a: BS:00231 ! st_turn
 
 [Term]
 id: BS:00246
 name: covalent_binding_site
-def: "Binding involvolving a covalent bond. " [ref:ref]
+def: "Binding involving a covalent bond." [ref:ref]
 is_a: BS:00033 ! binding_or_interaction_site
 
 [Term]
@@ -967,14 +967,14 @@ is_a: BS:00132 ! erroneous_protein
 [Term]
 id: BS:00336
 name: sequence_variations
-def: "alternative sequence" [ref:ref]
+def: "Alternative sequence due to naturally occuring events such as polymorphisms and altermatve splicing or expeimental methods such as site directed mutagenesis." [ref:ref]
 comment: Discreet
 is_a: BS:00124 ! positional_annotation
 
 [Term]
 id: BS:00337
 name: structural_region
-def: "Annotation defined through their n-ary conformations " [ref:ref]
+def: "Annotation defined through their n-ary conformations." [ref:ref]
 comment: Range
 is_a: BS:00331 ! region_annotation
 
