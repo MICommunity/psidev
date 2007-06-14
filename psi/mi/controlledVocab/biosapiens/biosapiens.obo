@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 11:06:2007 15:46
+date: 13:06:2007 16:54
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
@@ -52,17 +52,18 @@ is_a: BS:00331 ! region_annotation
 
 [Term]
 id: BS:00026
-name: active site residue(s)
-def: "Amino acid(s) involved in the activity of an enzyme." [UniProt:curation manual]
+name: active site residue
+def: "Amino acid involved in the activity of an enzyme." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "act_site" []
 related_synonym: "catalitic residues" []
+broad_synonym: "site" []
 is_a: BS:00157 ! protein-ligand interaction
 
 [Term]
 id: BS:00027
-name: metal_binding_site
-def: "Binding site for a metal ion." [UniProt:curation manual]
+name: metal_binding
+def: "Residue is part of a binding site for a metal ion." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "metal" []
 is_a: BS:00029 ! non_covalent_binding_site
@@ -72,7 +73,11 @@ id: BS:00028
 name: disulfide_bond
 def: "The covalent bond between sulfur atoms that binds two peptide chains or different parts of one peptide chain and is a structural determinant in many protein molecules." [UniProt:curation manual]
 comment: 2 discreet & joined
+related_synonym: "disulfid" []
 related_synonym: "disulfide" []
+related_synonym: "disulfide bond" []
+related_synonym: "disulphide bond" []
+exact_synonym: "disulphide" []
 is_a: BS:00246 ! covalent_binding_site
 
 [Term]
@@ -175,6 +180,7 @@ name: post_translational_modification
 def: "A transformation that occurs in a protein after it has been synthesized, which may regulate, stabilize, crosslink, or introduce new chemical functionalities in the protein." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "mod_res" []
+exact_synonym: "modified residue" []
 is_a: BS:00246 ! covalent_binding_site
 
 [Term]
@@ -241,7 +247,7 @@ name: propeptide_cleavage_site
 def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
 comment: Discreet
 is_a: BS:00033 ! binding_or_interaction_site
-is_a: BS:00149 ! mature_protein_product
+is_a: BS:00077 ! propeptide
 
 [Term]
 id: BS:00064
@@ -269,15 +275,17 @@ id: BS:00068
 name: compositionally_biased_region
 def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, not used for a run of less than 4 residues. Xaa-rich, these are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099)." [UniProt:curation manual]
 comment: Range
-related_synonym: "compbias" []
+exact_synonym: "compbias" []
 exact_synonym: "compositional bias" []
+exact_synonym: "compositionally biased" []
 is_a: BS:00331 ! region_annotation
 
 [Term]
 id: BS:00069
-name: conflict
+name: sequence_conflict
 def: "Different sources report differing sequences." [UniProt:curation manual]
 comment: Discreet
+exact_synonym: "conflict" []
 is_a: BS:00125 ! sequencing_information
 
 [Term]
@@ -293,6 +301,7 @@ id: BS:00071
 name: natural_variant
 def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars." [UniProt:curation manual]
 comment: Discreet
+related_synonym: "sequence variation" []
 related_synonym: "variant" []
 is_a: BS:00336 ! sequence_variations
 
@@ -301,7 +310,9 @@ id: BS:00072
 name: non_terminal_residue
 def: "The residue at an extremity of the sequence is not the terminal residue." [UniProt:curation manual]
 comment: Discreet
-related_synonym: "non_ter" []
+related_synonym: "<new synonym>" []
+exact_synonym: "non terminal" []
+exact_synonym: "non_ter" []
 is_a: BS:00125 ! sequencing_information
 
 [Term]
@@ -309,6 +320,7 @@ id: BS:00073
 name: alternative_sequence
 def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [UniProt:curation]
 comment: Discreet
+related_synonym: "sequence variation" []
 related_synonym: "var_seq" []
 narrow_synonym: "isoform" []
 narrow_synonym: "varsplic" []
@@ -422,15 +434,15 @@ is_obsolete: true
 [Term]
 id: BS:00136
 name: Co_contact_site
-def: "Residues involved in contact with cobalt." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with cobalt." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00137
 name: Fe_contact_site
-def: "Residues involved in contact with iron." [ref:ref]
+def: "Residue involved in contact with iron." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal_binding_site
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00138
@@ -448,26 +460,26 @@ is_a: BS:00149 ! mature_protein_product
 [Term]
 id: BS:00140
 name: Mn_contact_site
-def: "Residues involved in contact with manganese." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with manganese." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00141
 name: Mo_contact_site
-def: "Residues involved in contact with molybdenum." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with molybdenum." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00142
 name: Ni_contact_site
-def: "Residues involved in contact with nickel." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with nickel." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00143
 name: W_contact_site
-def: "Residues involved in contact with tungsten." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with tungsten." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00144
@@ -486,9 +498,9 @@ relationship: part_of BS:00128 ! membrane_structure
 [Term]
 id: BS:00146
 name: Cu_contact_site
-def: "Residues involved in contact with copper." [ref:ref]
+def: "Residue involved in contact with copper." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
-is_a: BS:00027 ! metal_binding_site
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00147
@@ -543,6 +555,7 @@ id: BS:00156
 name: intramembrane
 def: "Extent of the region traversing the lipid bilayer." [UniProt:curation manual]
 related_synonym: "transmem" []
+exact_synonym: "transmembrane" []
 relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
@@ -670,8 +683,9 @@ is_a: BS:00125 ! sequencing_information
 [Term]
 id: BS:00182
 name: non_adjacent_residues
-def: "Indicates that two consecutive residues in a fragment sequence are not consecutive in the full-length protein and that there are a number of unsequenced residues between them. " [UniProt:curation manual]
-related_synonym: "non_cons" []
+def: "Indicates that two consecutive residues in a fragment sequence are not consecutive in the full-length protein and that there are a number of unsequenced residues between them." [UniProt:curation manual]
+exact_synonym: "non consecutive" []
+exact_synonym: "non_cons" []
 is_a: BS:00125 ! sequencing_information
 
 [Term]
@@ -684,22 +698,22 @@ is_obsolete: true
 [Term]
 id: BS:00185
 name: Zn_contact_site
-def: "Residues involved in contact with zinc." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with zinc." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00186
 name: Ca_contact_site
-def: "Residues involved in contact with calcium." [ref:ref]
+def: "Residue involved in contact with calcium." [ref:ref]
 related_synonym: "ca_bind" [uniprot:curation]
 related_synonym: "calcium binding" []
-is_a: BS:00027 ! metal_binding_site
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00187
 name: Mg_contact_site
-def: "Residues involved in contact with magnesium." [ref:ref]
-is_a: BS:00027 ! metal_binding_site
+def: "Residue involved in contact with magnesium." [ref:ref]
+is_a: BS:00027 ! metal_binding
 
 [Term]
 id: BS:00202
@@ -936,6 +950,7 @@ id: BS:00331
 name: region_annotation
 def: "Continuous sequence of interest in a reference/mature protein sequence." [ref:ref]
 comment: Range
+exact_synonym: "region" []
 is_a: BS:00124 ! positional_annotation
 
 [Term]
