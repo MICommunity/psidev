@@ -7,7 +7,7 @@
 			<cvParam cvLabel="MS" accession="MS:1000582" name="SIM spectrum" value=""/>
 		</fileContent>
 		<sourceFileList count="1">
-			<sourceFile id="1" sourceFileName="tiny1.RAW" sourceFileLocation="file://F:/data/Exp01" sourceFileType="RAW 2.0">
+			<sourceFile id="1" sourceFileName="tiny1.RAW" sourceFileLocation="file://F:/data/Exp01" sourceFileType="Xcalibur RAW file">
 				<fileChecksum type="Sha1">71be39fb2700ab2f3c8b2234b91274968b6899b1</fileChecksum>
 			</sourceFile>
 		</sourceFileList>
@@ -22,19 +22,14 @@
 	</cvList>
 	<referenceableParamGroupList count="2">
 		<referenceableParamGroup id="CommonMS1SpectrumParams">
-			<cvParam cvLabel="MS" accession="MS:1000036" name="ScanMode" value="MassScan"/>
-			<cvParam cvLabel="MS" accession="MS:1000037" name="Polarity" value="positive"/>
-			<cvParam cvLabel="MS" accession="MS:1000035" name="PeakProcessing" value="continuous"/>
-			<cvParam cvLabel="MS" accession="MS:9999900" name="ScanType" value="Full"/>
-			<cvParam cvLabel="MS" accession="MS:9999901" name="msLevel" value="1"/>
-			<cvParam cvLabel="MS" accession="MS:9999902" name="mzRangeStart" value="400.000000"/>
-			<cvParam cvLabel="MS" accession="MS:9999903" name="mzRangeStop" value="1800.000000"/>
+			<cvParam cvLabel="MS" accession="MS:1000130" name="Positive Scan" value=""/>
+			<cvParam cvLabel="MS" accession="MS:1000127" name="Centroid Mass Spectrum" value=""/>
+			<cvParam cvLabel="MS" accession="MS:1000498" name="Full Scan" value=""/>
 		</referenceableParamGroup>
 		<referenceableParamGroup id="CommonMS2SpectrumParams">
-			<cvParam cvLabel="MS" accession="MS:1000037" name="Polarity" value="positive"/>
-			<cvParam cvLabel="MS" accession="MS:1000035" name="PeakProcessing" value="continuous"/>
-			<cvParam cvLabel="MS" accession="MS:9999900" name="ScanType" value="Full"/>
-			<cvParam cvLabel="MS" accession="MS:9999901" name="msLevel" value="2"/>
+			<cvParam cvLabel="MS" accession="MS:1000130" name="Positive Scan" value=""/>
+			<cvParam cvLabel="MS" accession="MS:1000127" name="Centroid Mass Spectrum" value=""/>
+			<cvParam cvLabel="MS" accession="MS:1000498" name="Full Scan" value=""/>
 		</referenceableParamGroup>
 	</referenceableParamGroupList>
 	<sampleList count="1">
@@ -50,7 +45,7 @@
 					<cvParam cvLabel="MS" accession="MS:1000008" name="Nanoelectrospray" value=""/>
 				</source>
 				<analyzer order="2">
-					<cvParam cvLabel="MS" accession="MS:1000264" name="Ion Trap" value=""/>
+					<cvParam cvLabel="MS" accession="MS:1000084" name="Quadrupole Ion Trap" value=""/>
 				</analyzer>
 				<detector order="3">
 					<cvParam cvLabel="MS" accession="MS:1000253" name="Electron Multiplier" value=""/>
@@ -92,7 +87,7 @@
 			<spectrumList count="2">
 				<spectrum id="S19" scanNumber="19" spectrumType="MSn" msLevel="1">
 					<spectrumDescription>
-						<cvParam cvLabel="MS" accession="MS:1000016" name="Scan Time" value="5.890500" unitAccession="MS:1000038" unitName="Minutes"/>
+						<cvParam cvLabel="MS" accession="MS:1000016" name="Scan Time" value="5.890500" unitAccession="MS:1000038" unitName="minute"/>
 						<cvParam cvLabel="MS" accession="MS:1000528" name="Lowest Mz Value" value="400.39"/>
 						<cvParam cvLabel="MS" accession="MS:1000527" name="Highest Mz Value" value="1795.56"/>
 						<cvParam cvLabel="MS" accession="MS:1000504" name="Base Peak Mz" value="445.347"/>
@@ -100,8 +95,6 @@
 						<cvParam cvLabel="MS" accession="MS:1000285" name="Total Ion Current" value="1.66755e+007"/>
 						<scan instrumentRef="LCQ Deca">
 							<paramGroupRef ref="CommonMS1SpectrumParams"/>
-							<cvParam cvLabel="MS" accession="MS:1000130" name="Positive Scan" value=""/>
-							<cvParam cvLabel="MS" accession="MS:1000127" name="Centroid Mass Spectrum" value=""/>
 							<cvParam cvLabel="MS" accession="MS:1000512" name="Filter String" value="+ c NSI Full ms [ 400.00-1800.00]"/>
 							<selectionWindowList count="1">
 								<selectionWindow>
@@ -122,7 +115,7 @@
 				</spectrum>
 				<spectrum id="S20" scanNumber="20" spectrumType="MSn" msLevel="2">
 					<spectrumDescription>
-						<cvParam cvLabel="MS" accession="MS:1000016" name="Scan Time" value="5.990500" unitAccession="MS:1000038" unitName="Minutes"/>
+						<cvParam cvLabel="MS" accession="MS:1000016" name="Scan Time" value="5.990500" unitAccession="MS:1000038" unitName="minute"/>
 						<cvParam cvLabel="MS" accession="MS:1000528" name="Lowest Mz Value" value="320.39"/>
 						<cvParam cvLabel="MS" accession="MS:1000527" name="Highest Mz Value" value="1003.56"/>
 						<cvParam cvLabel="MS" accession="MS:1000504" name="Base Peak Mz" value="456.347"/>
@@ -136,14 +129,12 @@
 								</ionSelection>
 								<activation>
 									<cvParam cvLabel="MS" accession="MS:1000133" name="Collision-Induced Dissociation" value=""/>
-									<cvParam cvLabel="MS" accession="MS:1000045" name="CollisionEnergy" value="35.00" unitAccession="MS:1000137" unitName="Electron Volts"/>
+									<cvParam cvLabel="MS" accession="MS:1000045" name="CollisionEnergy" value="35.00" unitAccession="MS:1000137" unitName="Electron Volt"/>
 								</activation>
 							</precursor>
 						</precursorList>
 						<scan instrumentRef="LCQ Deca">
 							<paramGroupRef ref="CommonMS2SpectrumParams"/>
-							<cvParam cvLabel="MS" accession="MS:1000130" name="Positive Scan" value=""/>
-							<cvParam cvLabel="MS" accession="MS:1000127" name="Centroid Mass Spectrum" value=""/>
 							<cvParam cvLabel="MS" accession="MS:1000512" name="Filter String" value="+ c d Full ms2  445.35@cid35.00 [ 110.00-905.00]"/>
 							<selectionWindowList count="1">
 								<selectionWindow>
