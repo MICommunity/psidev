@@ -2,20 +2,7 @@ format-version: 1.0
 date: 29:06:2007 10:49
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.100
-default-namespace: PSI-MI
-remark: $Id: protein-binder.obo,v 1.1 2007/06/29 10:05:17 luisa_montecchi Exp $
-remark: Notes:
-remark: Each of the top level terms in this file is the root term of an independent controlled vocabulary
-remark: mapping an element of the PSI Molecular Interaction XML schema.
-remark: To facilitate handling, they all have been merged in this file, though they
-remark: are essentially independent CVs describing different aspects of molecular interactions.
-remark: The PSI MI schema defines short labels for controlled vocabulary terms.
-remark: Where possible, short labels are reported as exact synonyms of a term in this file,
-remark: The last accession number used in this file is stored in a separate file,
-remark: psi-mi.lastac.
-remark: It MUST be updated when this file is updated.
-remark: This file is published by the PSI MI working group see http://psidev.sourceforge.net/
-remark: Author Luisa Montecchi Palazzi luisa@ebi.ac.uk
+default-namespace: PB
 
 [Term]
 id: MI:0001
