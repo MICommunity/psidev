@@ -44,7 +44,7 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="sourceFileList" type="dx:SourceFileListType" minOccurs="0"/>
-			<xs:element name="contact" type="dx:Contact" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="contact" type="dx:ContactType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="SourceFileListType">
@@ -98,7 +98,7 @@
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
-	<xs:complexType name="Contact">
+	<xs:complexType name="ContactType">
 		<xs:annotation>
 			<xs:documentation>Audit information concerning the means by which the originator/owner of this mzML file can be identified, and contacted if necessary.</xs:documentation>
 		</xs:annotation>
@@ -116,7 +116,7 @@
 			<xs:element name="URI" type="xs:anyURI" minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
-	<xs:complexType name="CV">
+	<xs:complexType name="CVType">
 		<xs:annotation>
 			<xs:documentation>Information about an ontology/CV source and a short 'lookup' tag to refer to.</xs:documentation>
 		</xs:annotation>
@@ -146,7 +146,7 @@
 			<xs:documentation>List and descriptions of CV</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="cv" type="dx:CV" maxOccurs="unbounded"/>
+			<xs:element name="cv" type="dx:CVType" maxOccurs="unbounded"/>
 		</xs:sequence>
 		<xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
 			<xs:annotation>
@@ -266,20 +266,23 @@
 		</xs:sequence>
 		<xs:attribute name="count" type="xs:nonNegativeInteger" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="ComponentType" abstract="true">
+	<xs:complexType name="ComponentType">
 		<xs:complexContent>
 			<xs:extension base="dx:ParamGroupType">
 				<xs:attribute name="order" type="xs:int" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="component" type="dx:ComponentType" abstract="true"/>
 	<xs:complexType name="ComponentListType">
 		<xs:annotation>
 			<xs:documentation>List with the different components used in the mass spectrometer.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence>
-			<xs:element ref="dx:component" minOccurs="3" maxOccurs="unbounded"/>
+		<xs:sequence minOccurs="3" maxOccurs="unbounded">
+			<xs:choice>
+				<xs:element name="source" type="dx:ComponentType"/>
+				<xs:element name="analyzer" type="dx:ComponentType"/>
+				<xs:element name="detector" type="dx:ComponentType"/>
+			</xs:choice>
 		</xs:sequence>
 		<xs:attribute name="count" type="xs:nonNegativeInteger" use="required"/>
 	</xs:complexType>
@@ -297,36 +300,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="source" substitutionGroup="dx:component">
-		<xs:annotation>
-			<xs:documentation>Invariant ion source (e.g. MALDI) information, as a run of name-value pairs.</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="dx:ComponentType"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="analyzer" substitutionGroup="dx:component">
-		<xs:annotation>
-			<xs:documentation>A single component of the mass analyzer (e.g. quadrupole, collision cell), decribed with a run of name-value pairs.</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="dx:ComponentType"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="detector" substitutionGroup="dx:component">
-		<xs:annotation>
-			<xs:documentation>Ion detector information, as a run of name-value pairs.</xs:documentation>
-		</xs:annotation>
-		<xs:complexType>
-			<xs:complexContent>
-				<xs:extension base="dx:ComponentType"/>
-			</xs:complexContent>
-		</xs:complexType>
-	</xs:element>
 	<xs:complexType name="InstrumentSoftwareRefType">
 		<xs:attribute name="ref" type="xs:anyURI" use="required"/>
 	</xs:complexType>
