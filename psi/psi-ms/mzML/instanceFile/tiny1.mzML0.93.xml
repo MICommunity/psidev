@@ -4,7 +4,6 @@
 	<fileDescription>
 		<fileContent>
 			<cvParam cvLabel="MS" accession="MS:1000580" name="MSn spectrum" value=""/>
-			<cvParam cvLabel="MS" accession="MS:1000582" name="SIM spectrum" value=""/>
 		</fileContent>
 		<sourceFileList count="1">
 			<sourceFile id="1" sourceFileName="tiny1.RAW" sourceFileLocation="file://F:/data/Exp01" sourceFileType="Xcalibur RAW file">
@@ -17,7 +16,7 @@
 			<URI>http://www.higglesworth.edu/</URI>
 		</contact>
 	</fileDescription>
-	<cvList count="2">
+	<cvList count="1">
 		<cv cvLabel="MS" fullName="Proteomics Standards Initiative Mass Spectrometry Ontology" version="2.0.2" URI="http://psidev.sourceforge.net/ms/xml/mzdata/psi-ms.2.0.2.obo"/>
 	</cvList>
 	<referenceableParamGroupList count="2">
