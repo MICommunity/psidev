@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 13:06:2007 16:54
+date: 11:07:2007 16:08
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
@@ -7,7 +7,8 @@ default-namespace: BS
 [Term]
 id: BS:00003
 name: secondary_structure
-def: "Patterns of main chain hydrogen bonding along the peptide chain." [ref:ref]
+def: "A region of peptide with secondary structure has hydrogen bonding along the peptide chain that causes a defined conformation of the chain." [ref:ref]
+related_synonym: "secondary structure region" []
 exact_synonym: "2nary structure" []
 is_a: BS:00337 ! structural_region
 
@@ -15,12 +16,12 @@ is_a: BS:00337 ! structural_region
 id: BS:0000338
 name: structural_motif
 def: "Motif is a three-dimensional structural element within the chain, which appears also in a variety of other molecules. Unlike a domain, a motif does not need to form a stable globular unit." [ref:ref]
-is_a: BS:00003 ! secondary_structure
+is_a: BS:00337 ! structural_region
 
 [Term]
 id: BS:0000339
 name: right handed helix
-def: "The coiled conformation turns in an clockwise, right handed screw." [ref:ref]
+def: "A right handed helix is a region of peptide where the coiled conformation turns in a clockwise, right handed screw." [ref:ref]
 related_synonym: "helix" []
 is_a: BS:00152 ! helix
 
@@ -42,7 +43,7 @@ is_a: BS:00042 ! beta_strand
 [Term]
 id: BS:00012
 name: polypeptide_domain
-def: "A structurally/functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [ref:ref]
+def: "A structurally or functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [ref:ref]
 comment: Range
 related_synonym: "domain" []
 narrow_synonym: "DNA_bind" []
@@ -99,7 +100,7 @@ is_obsolete: true
 [Term]
 id: BS:00032
 name: polypeptide_motif
-def: "Short (up to 20 amino acids) sequence motif of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [UniProt:curation manual]
+def: "A sequence motif is a short  (up to 20 amino acids) region of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [UniProt:curation manual]
 comment: Range
 related_synonym: "motif" []
 narrow_synonym: "zn_fing" []
@@ -186,15 +187,15 @@ is_a: BS:00246 ! covalent_binding_site
 [Term]
 id: BS:00053
 name: transit_peptide
-def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody)." [UniProt:curation manual]
+def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody). The transit peptide is an N-terminal region of a peptide used to direct it to an organelle." [UniProt:curation manual]
 comment: Range
 related_synonym: "transit" []
-is_a: BS:00055 ! signal_peptide
+is_a: BS:00055 ! transit_peptide
 
 [Term]
 id: BS:00055
-name: signal_peptide
-def: "Extent of a signal sequence (prepeptide)." [UniProt:curation manual]
+name: transit_peptide
+def: "The signal_peptide is a short region of the peptide that directs post translationsional transport of a protein." [UniProt:curation manual]
 comment: Range
 related_synonym: "signal" []
 is_a: BS:00129 ! immature_peptide_region
@@ -244,9 +245,8 @@ is_obsolete: true
 [Term]
 id: BS:00063
 name: propeptide_cleavage_site
-def: "Arginine/Lysine propeptide cleavage sites." [ref:ref]
+def: "The propeptide_cleavage_site is the arginine/lysine boundary on a propeptide where cleavage occurs." [ref:ref]
 comment: Discreet
-is_a: BS:00033 ! binding_or_interaction_site
 is_a: BS:00077 ! propeptide
 
 [Term]
@@ -266,7 +266,7 @@ is_obsolete: true
 [Term]
 id: BS:00067
 name: initiator_methionine
-def: "Indicates where initiator methionine has been cleaved from the protein." [UniProt:curation manual]
+def: "The initiator_methionine is the junction in the peptide sequence where the initiator methioine is cleaved." [UniProt:curation manual]
 related_synonym: "init_met" []
 is_a: BS:00129 ! immature_peptide_region
 
@@ -291,7 +291,7 @@ is_a: BS:00125 ! sequencing_information
 [Term]
 id: BS:00070
 name: polypeptide_repeat
-def: "Extent of an internal sequence repetition." [UniProt:curation manual]
+def: "A polypeptide_repeat is a single copy of an internal sequence repetition." [UniProt:curation manual]
 comment: Range
 exact_synonym: "repeat" []
 is_a: BS:00012 ! polypeptide_domain
@@ -337,7 +337,7 @@ is_obsolete: true
 [Term]
 id: BS:00076
 name: active_peptide
-def: "Proteins which are biologically active, released from a precursor molecule and which include things like hormones, neuropeptides, antimicrobial peptides, etc. Peptides are typically short (<40 amino acids) in length." [UniProt:curation manual]
+def: "Active peptodes are proteins which are biologically active, released from a precursor molecule. Hormones, neuropeptides, antimicrobial peptides, are active peptides. They are typically short (<40 amino acids) in length." [UniProt:curation manual]
 comment: Range
 exact_synonym: "peptide" []
 is_a: BS:00149 ! mature_protein_product
@@ -388,7 +388,7 @@ is_a: BS:00337 ! structural_region
 [Term]
 id: BS:00129
 name: immature_peptide_region
-def: "Annotation of a protein terminus position or beyond in the cases of immature polypeptides undergoing cleavages during the mature protein folding process (e.g. viral polyprotein, insulin)." [ref:ref]
+def: "An immature_peptide_region is the a region of peptide sequence that is cleaved during maturation." [ref:ref]
 comment: Range
 is_a: BS:00124 ! positional_annotation
 
@@ -420,7 +420,7 @@ is_a: BS:00127 ! nonpositional_annotation
 [Term]
 id: BS:00134
 name: polypeptide_structural_domain
-def: "Within a protein, a structural domain is an element of overall structure that is self-stabilizing and folds independently of the rest of the protein chain." [PMID:7020376]
+def: "A polypeptide domain is a structural domain  that is self-stabilizing and folds independently of the rest of the protein chain." [PMID:7020376]
 exact_synonym: "structural domain" []
 is_a: BS:00012 ! polypeptide_domain
 is_a: BS:00337 ! structural_region
@@ -520,7 +520,7 @@ is_a: BS:00003 ! secondary_structure
 [Term]
 id: BS:00149
 name: mature_protein_product
-def: "Annotations which define the mature protein." [ref:ref]
+def: "The mature protein product the region of peptide sequence that remains after processing." [ref:ref]
 is_a: BS:00124 ! positional_annotation
 
 [Term]
@@ -539,7 +539,7 @@ is_a: BS:00042 ! beta_strand
 [Term]
 id: BS:00152
 name: helix
-def: "The peptide backbone forms a coiled conformation." [ref:ref]
+def: "A helix is a secondary_structure conformation where the  peptide backbone forms a coil." [ref:ref]
 comment: Range
 is_a: BS:00003 ! secondary_structure
 
@@ -846,7 +846,7 @@ is_a: BS:00219 ! gamma_turn
 [Term]
 id: BS:00222
 name: left handed helix
-def: "The coiled conformation turns in an anticlockwise, left handed screw." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
+def: "A left handed helix is a region of peptide where the coiled conformation turns in an anticlockwise, left handed screw." [http:www.ebi.ac.uk/msd-srv/msdmotif/]
 related_synonym: "helix-l" []
 is_a: BS:00152 ! helix
 
