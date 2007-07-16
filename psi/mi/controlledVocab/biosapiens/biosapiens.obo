@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 11:07:2007 16:08
+date: 16:07:2007 16:50
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
@@ -46,10 +46,11 @@ name: polypeptide_domain
 def: "A structurally or functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [ref:ref]
 comment: Range
 related_synonym: "domain" []
+narrow_synonym: "ca_bind" []
 narrow_synonym: "DNA_bind" []
 narrow_synonym: "np_bind" []
-narrow_synonym: "zn_bind" []
-is_a: BS:00331 ! region_annotation
+narrow_synonym: "zn_fing" []
+is_a: BS:00331 ! region_or_site_annotation
 
 [Term]
 id: BS:00026
@@ -103,7 +104,6 @@ name: polypeptide_motif
 def: "A sequence motif is a short  (up to 20 amino acids) region of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [UniProt:curation manual]
 comment: Range
 related_synonym: "motif" []
-narrow_synonym: "zn_fing" []
 is_a: BS:00012 ! polypeptide_domain
 
 [Term]
@@ -112,7 +112,7 @@ name: binding_or_interaction_site
 def: "Amino acids involved in binding or interactions. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [UniProt:curation manual]
 comment: Discreet
 related_synonym: "site" []
-is_a: BS:00331 ! region_annotation
+is_a: BS:00331 ! region_or_site_annotation
 
 [Term]
 id: BS:00034
@@ -273,12 +273,12 @@ is_a: BS:00129 ! immature_peptide_region
 [Term]
 id: BS:00068
 name: compositionally_biased_region
-def: "Extent of a compositionally biased region. There are 2 types of compositionally biased regions: Poly-Xaa, not used for a run of less than 4 residues. Xaa-rich, these are added based on PROSITE profiles which detect sequences regions enriched in a particular amino acids. There is a profile for each amino acid (PS50310- PS50328 & PS50099)." [UniProt:curation manual]
+def: "Extent of a compositionally biased region. Used for homopolymeric stretches of residues and also for regions which are rich in a particular amino acid. Not used for a run of less than 4 residues." [UniProt:curation manual]
 comment: Range
 exact_synonym: "compbias" []
 exact_synonym: "compositional bias" []
 exact_synonym: "compositionally biased" []
-is_a: BS:00331 ! region_annotation
+is_a: BS:00331 ! region_or_site_annotation
 
 [Term]
 id: BS:00069
@@ -455,7 +455,7 @@ id: BS:00139
 name: chain
 def: "Extent of a polypeptide chain in the mature protein. The annotation describes firstly, for proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the chain covers the whole protein sequence or secondly, for processed proteins, it describes the mature part of the protein once preprotein parts have been removed." [UniProt:curation manual]
 related_synonym: "peptide" []
-is_a: BS:00149 ! mature_protein_product
+is_obsolete: true
 
 [Term]
 id: BS:00140
@@ -486,14 +486,14 @@ id: BS:00144
 name: non_cytoplasm_location
 def: "Region of peptide not in the cytoplasm. N.B. This could be inside an organelle within the cell." [ref:ref]
 related_synonym: "outside" []
-relationship: part_of BS:00128 ! membrane_structure
+relationship: part_of BS:00154 ! extramembrane
 
 [Term]
 id: BS:00145
 name: cytoplasm_location
 def: "Region of the peptide in the cytoplasm." [ref:ref]
 related_synonym: "inside" []
-relationship: part_of BS:00128 ! membrane_structure
+relationship: part_of BS:00154 ! extramembrane
 
 [Term]
 id: BS:00146
@@ -520,7 +520,8 @@ is_a: BS:00003 ! secondary_structure
 [Term]
 id: BS:00149
 name: mature_protein_product
-def: "The mature protein product the region of peptide sequence that remains after processing." [ref:ref]
+def: "Extent of a polypeptide chain in the mature protein." [ref:ref]
+exact_synonym: "chain" []
 is_a: BS:00124 ! positional_annotation
 
 [Term]
@@ -549,6 +550,14 @@ name: pi_helix
 def: "The pi helix has 4.1 residues per turn and a translation of 1.15  (=0.115 nm) along the helical axis. The N-H group of an amino acid forms a hydrogen bond with the C=O group of the amino acid five residues earlier." [ref:ref]
 comment: Range
 is_a: BS:0000339 ! right handed helix
+
+[Term]
+id: BS:00154
+name: extramembrane
+def: "Extent of the region not transversing the lipid bilayer." [ref:ref]
+comment: Range
+exact_synonym: "topo_dom" []
+relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
 id: BS:00156
@@ -669,7 +678,7 @@ is_obsolete: true
 [Term]
 id: BS:00178
 name: cross_link
-def: "Linking chains of the peptide by means of inserting molecular links or bonds between points along the chains." [UniProt:curation manual]
+def: "Posttranslationally formed amino acid bonds." [UniProt:curation manual]
 related_synonym: "crosslink" []
 is_a: BS:00246 ! covalent_binding_site
 
@@ -705,8 +714,6 @@ is_a: BS:00027 ! metal_binding
 id: BS:00186
 name: Ca_contact_site
 def: "Residue involved in contact with calcium." [ref:ref]
-related_synonym: "ca_bind" [uniprot:curation]
-related_synonym: "calcium binding" []
 is_a: BS:00027 ! metal_binding
 
 [Term]
@@ -947,10 +954,11 @@ def: "protein annotations classification" [ref:ref]
 
 [Term]
 id: BS:00331
-name: region_annotation
-def: "Continuous sequence of interest in a reference/mature protein sequence." [ref:ref]
+name: region_or_site_annotation
+def: "Continuous sequence or single residue of interest in a reference/mature protein sequence." [ref:ref]
 comment: Range
 exact_synonym: "region" []
+narrow_synonym: "site" []
 is_a: BS:00124 ! positional_annotation
 
 [Term]
@@ -991,7 +999,7 @@ id: BS:00337
 name: structural_region
 def: "Annotation defined through their n-ary conformations." [ref:ref]
 comment: Range
-is_a: BS:00331 ! region_annotation
+is_a: BS:00331 ! region_or_site_annotation
 
 [Typedef]
 id: part_of
