@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 12:07:2007 07:59
+date: 18:07:2007 20:31
 saved-by: David
 auto-generated-by: OBO-Edit 1.000
 default-namespace: PB
@@ -21,7 +21,7 @@ id: PB:0001
 name: experimental method
 def: "Method to generate of characterize a binder." [PMID:14755292]
 exact_synonym: "interaction detect" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0002
@@ -36,7 +36,7 @@ id: PB:0003
 name: feature detection method
 def: "Method to determine the features of the proteins involved in the interaction." [PMID:14755292]
 exact_synonym: "feature detection" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0004
@@ -567,7 +567,7 @@ is_a: PB:0054 ! fluorescence-activated cell sorting
 id: PB:0116
 name: feature type
 def: "Property of a subsequence that may interfere with the binding of a molecule." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0117
@@ -1412,7 +1412,7 @@ is_a: PB:0179 ! other modification
 id: PB:0190
 name: interaction type
 def: "Connection between molecule." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0192
@@ -1782,7 +1782,7 @@ id: PB:0300
 name: alias type
 def: "Descriptor of type of nomenclature used to describe interactor." [PMID:14755292]
 related_synonym: "CvAliasType" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0301
@@ -1868,7 +1868,7 @@ id: PB:0313
 name: interactor type
 def: "Molecular species involved in the interaction." [PMID:14755292]
 related_synonym: "participant type" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0314
@@ -2009,7 +2009,7 @@ def: "Describes sequence positions resolution of a given participant feature. In
 related_synonym: "CvFuzzyType" []
 related_synonym: "endStatus" []
 related_synonym: "startStatus" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0334
@@ -2100,7 +2100,7 @@ id: PB:0346
 name: experimental preparation
 def: "Set of terms to describe the participant experimental treatment and status. This term group in fact 4 orthologues short controlled vocabularies delivery method, expression level, molecular source, and sample process. Each participant can then be annotated with a maximum of 4 terms selected from each short list." [PMID:14755292]
 exact_synonym: "experimental prep" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0348
@@ -2140,7 +2140,7 @@ def: "Qualifier to describe the type of information a cross-reference is pointin
 related_synonym: "CvXrefQualifier" []
 related_synonym: "refType" []
 exact_synonym: "xref type" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0354
@@ -2577,7 +2577,7 @@ is_a: PB:0117 ! binding site
 id: PB:0444
 name: database citation
 def: "Database citation list names of databases commonly used to cross reference interaction data." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0445
@@ -2965,7 +2965,7 @@ is_a: PB:0444 ! database citation
 id: PB:0495
 name: experimental role
 def: "Role played by the participant within the experiment." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0505
@@ -3497,7 +3497,7 @@ id: PB:0590
 name: attribute name
 def: "Collection of topic describing the free text stored as an attribute value." [PMID:14755292]
 related_synonym: "CvTopic" []
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0591
@@ -3704,7 +3704,7 @@ is_a: PB:0668 ! feature attribute name
 id: PB:0640
 name: parameter type
 def: "Parameter for enzymatic or binding kinetic studies." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0641
@@ -3752,7 +3752,7 @@ is_a: PB:0640 ! parameter type
 id: PB:0647
 name: parameter unit
 def: "Controlled vocabulary for kinetic constant units. See also http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=UO" [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:0648
@@ -4833,7 +4833,7 @@ relationship: part_of PB:0346 ! experimental preparation
 
 [Term]
 id: PB:1004
-name: DRAFT PROTEOME BINDER CV
+name: DRAFT PROTEIN BINDER CV
 def: "part of the detection protocol?" [PMID:14755292]
 
 [Term]
@@ -5554,7 +5554,7 @@ is_a: PB:0590 ! attribute name
 id: PB:1125
 name: material type
 def: "experiment materials" [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:1126
@@ -6649,7 +6649,7 @@ is_a: PB:1316 ! experimental scope
 id: PB:1316
 name: experimental scope
 def: "This is the scope/purpose of the experiment." [PMID:14755292]
-relationship: part_of PB:1004 ! DRAFT PROTEOME BINDER CV
+relationship: part_of PB:1004 ! DRAFT PROTEIN BINDER CV
 
 [Term]
 id: PB:1317
