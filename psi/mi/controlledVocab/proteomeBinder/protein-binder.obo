@@ -1,8 +1,20 @@
 format-version: 1.0
-date: 29:06:2007 12:12
-saved-by: luisa
-auto-generated-by: OBO-Edit 1.100
+date: 12:07:2007 07:59
+saved-by: David
+auto-generated-by: OBO-Edit 1.000
 default-namespace: PB
+
+[Term]
+id: MI:1000
+name: cDNA library cloning vector reference
+def: "????" [PMID:14755292]
+is_a: PB:1237 ! material reference
+
+[Term]
+id: MI:1001
+name: data normalization protocol method
+def: "????" [PMID:14755292]
+is_a: PB:0665 ! experiment attibute name
 
 [Term]
 id: PB:0001
@@ -1695,7 +1707,7 @@ is_a: PB:0353 ! cross-reference type
 id: PB:0244
 name: reactome complex
 def: "Collection of functional complexes within Reactome - a knowledgebase of biological processes.\nhttp://www.reactome.org/" [PMID:14755292]
-xref_analog: id-validation-regexp: REACT_[0-9\]\{1\,4}\\.[0-9\]\{1\,3}|[0-9\]+
+xref_analog: id-validation-regexp: REACT_[0-9\]\{1,4}\\.[0-9\]\{1,3}|[0-9\]+
 xref_analog: search-url: "http://www.reactome.org/cgi-bin/eventbrowser?ID=${ac}"
 is_a: PB:0467 ! reactome
 
@@ -1703,7 +1715,7 @@ is_a: PB:0467 ! reactome
 id: PB:0245
 name: reactome protein
 def: "Collection of protein within the Reactome database - a knowledgebase of biological processes.\nhttp://www.reactome.org/" [PMID:14755292]
-xref_analog: id-validation-regexp:\"REACT_[0-9\]\{1\,4}\\.[0-9\]\{1\,3}|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]-[0-9\]+|[A-Z\]\{3}[0-9\]\{5}|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]-PRO_[0-9\]\{10}\"
+xref_analog: id-validation-regexp:\"REACT_[0-9\]\{1,4}\\.[0-9\]\{1,3}|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]-[0-9\]+|[A-Z\]\{3}[0-9\]\{5}|[OPQ\][0-9\][A-Z0-9\]\{3}[0-9\]-PRO_[0-9\]\{10}\"
 xref_analog: search-url: "http://www.reactome.org/cgi-bin/search?SUBMIT=1&QUERY_CLASS=DatabaseIdentifier&QUERY=SWALL:${ac}"
 is_a: PB:0467 ! reactome
 
@@ -1736,7 +1748,7 @@ is_a: PB:0473 ! participant database
 id: PB:0249
 name: huge
 def: "A Database of Human Unidentified Gene-Encoded Large Proteins Analyzed by Kazusa Human cDNA Project.\nhttp://www.kazusa.or.jp/huge/" [PMID:14755292]
-xref_analog: id-validation-regexp:\"KIAA[0-9\]\{4}[A-Z\]\{0\,1}\"
+xref_analog: id-validation-regexp:\"KIAA[0-9\]\{4}[A-Z\]\{0,1}\"
 xref_analog: search-url: "http://www.kazusa.or.jp/huge/gfpage/${ac}"
 is_a: PB:0683 ! sequence database
 
@@ -2845,7 +2857,7 @@ name: entrez gene/locuslink
 def: "LocusLink provides a single query interface to curated sequence and descriptive information about genetic loci.\nhttp://www.ncbi.nlm.nih.gov/LocusLink/" [PMID:14755292]
 related_synonym: "Entrez gene/locuslink" []
 exact_synonym: "entrezgene/locuslink" []
-xref_analog: id-validation-regexp:\"[0-9\]+|[A-Z\]\{1\,2}_[0-9\]+|[A-Z\]\{1\,2}_[A-Z\]\{1\,4}[0-9\]+\"
+xref_analog: id-validation-regexp:\"[0-9\]+|[A-Z\]\{1,2}_[0-9\]+|[A-Z\]\{1,2}_[A-Z\]\{1,4}[0-9\]+\"
 is_a: PB:0683 ! sequence database
 
 [Term]
@@ -5017,7 +5029,7 @@ is_a: PB:0640 ! parameter type
 id: PB:1036
 name: molecular interactions CV term for protein state
 def: "This is the aggregation, folding and native/denatured state of a protein.\n\n\nFor this cross-reference type the db attribute is a term from the \"protein state\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1037
@@ -5152,7 +5164,7 @@ is_a: PB:1172 ! protocol
 id: PB:1059
 name: cDNA expression/cloning vector property
 def: "????" [PMID:14755292]
-is_a: PB:1124 ! material property?biomaterial
+is_a: PB:1124 ! biomaterial property
 
 [Term]
 id: PB:1060
@@ -5170,13 +5182,13 @@ is_a: PB:1199 ! detection protocol
 id: PB:1062
 name: molecular interactions CV term for experimental scope
 def: "This is the scope/purpose of the experiment.\n\n\nFor this cross-reference type the db attribute is a term from the \"experimental scope\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1063
 name: molecular interactions CV term for material type CV
 def: "???\n\n\nFor this cross-reference type the db attribute is a term from the \"material type\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1064
@@ -5188,7 +5200,7 @@ is_a: PB:0326 ! protein
 id: PB:1065
 name: molecular interactions CV term for cDNA expression failure reason
 def: "The reason to why a specific cDNA could not be expressed to a protein.\n\nFor this cross-reference type the db attribute is a term from the \"cDNA expression failure reason\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1066
@@ -5204,7 +5216,7 @@ is_a: PB:1014 ! protein state
 
 [Term]
 id: PB:1068
-name: cv/ontology term reference --Luisa check
+name: cv/ontology term reference
 def: "These cross-reference types are not database references. They are links to CV subtypes that do not have a dedicated schema element." [PMID:14755292]
 is_a: PB:0353 ! cross-reference type
 
@@ -5212,7 +5224,7 @@ is_a: PB:0353 ! cross-reference type
 id: PB:1069
 name: molecular interactions CV term for purity level
 def: "???\n\nFor this cross-reference type the db attribute is a term from the \"purity level/sample form\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1070
@@ -5224,7 +5236,7 @@ is_a: PB:1083 ! in vitro expression system property
 id: PB:1071
 name: biosapiens annotations term for secondary structure
 def: "???\n\nFor this cross-reference type the db attribute is a child term of \"secondary structure\" in the external CV \"Biosapien annotations\".  The id attribute is the identifier of this term in the MI CV  (BS:00003)." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1072
@@ -5298,7 +5310,7 @@ is_a: PB:1261 ! methods for generating a modification
 id: PB:1083
 name: in vitro expression system property
 def: "????" [PMID:14755292]
-is_a: PB:1124 ! material property?biomaterial
+is_a: PB:1124 ! biomaterial property
 
 [Term]
 id: PB:1084
@@ -5317,7 +5329,7 @@ is_a: PB:0666 ! participant attribute name
 id: PB:1088
 name: cDNA insert reference
 def: "A reference for a sequence inserted into an expression/cloning vector." [PMID:14755292]
-is_a: PB:1237 ! material reference  --DG or SO def
+is_a: PB:1237 ! material reference
 
 [Term]
 id: PB:1089
@@ -5419,7 +5431,7 @@ is_a: PB:1248 ! engineered repeat
 
 [Term]
 id: PB:1104
-name: intended target protein
+name: intended target
 def: "The intended target protein for a binding molecule, e.g. antibody." [PMID:14755292]
 is_a: PB:1287 ! target
 
@@ -5534,7 +5546,7 @@ is_a: PB:1174 ! cDNA clone library property
 
 [Term]
 id: PB:1124
-name: material property?biomaterial
+name: biomaterial property
 def: "????" [PMID:14755292]
 is_a: PB:0590 ! attribute name
 
@@ -5555,7 +5567,7 @@ id: PB:1127
 name: specificity assessment
 def: "Determination of the ability of molecule A to uniquely bind to molecule B" [PMID:14755292]
 related_synonym: "selectivity_assessment" []
-is_a: PB:1132 ! binding properties assessment
+is_obsolete: true
 
 [Term]
 id: PB:1128
@@ -5640,7 +5652,7 @@ is_a: PB:1178 ! library property
 id: PB:1142
 name: microarray property
 def: "????" [PMID:14755292]
-is_a: PB:1124 ! material property?biomaterial
+is_a: PB:1124 ! biomaterial property
 
 [Term]
 id: PB:1143
@@ -5660,7 +5672,7 @@ name: solid phase
 def: "????" [PMID:14755292]
 related_synonym: "matrix" []
 related_synonym: "support" []
-is_a: PB:1124 ! material property?biomaterial
+is_a: PB:1124 ! biomaterial property
 
 [Term]
 id: PB:1147
@@ -5844,7 +5856,7 @@ is_a: PB:1112 ! cDNA sequence
 id: PB:1178
 name: library property
 def: "????" [PMID:14755292]
-is_a: PB:1124 ! material property?biomaterial
+is_a: PB:1124 ! biomaterial property
 
 [Term]
 id: PB:1179
@@ -5934,7 +5946,7 @@ is_a: PB:1035 ! amino acid percentage
 id: PB:1195
 name: molecular interactions CV term for normalization method
 def: "This is the method used to normalize data.\n\nFor this cross-reference type the db attribute is a term from the \"interaction detection method\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_obsolete: true
 
 [Term]
 id: PB:1196
@@ -6132,7 +6144,7 @@ is_a: PB:1206 ! sample purity state
 id: PB:1232
 name: binder reference --DG check
 def: "????Is this really needed? If the binder is always an interactor this xref term is not needed." [PMID:14755292]
-is_a: PB:1237 ! material reference  --DG or SO def
+is_obsolete: true
 
 [Term]
 id: PB:1233
@@ -6144,23 +6156,23 @@ is_a: PB:0353 ! cross-reference type
 id: PB:1234
 name: in vitro expression system reference
 def: "????" [PMID:14755292]
-is_a: PB:1237 ! material reference  --DG or SO def
+is_a: PB:1237 ! material reference
 
 [Term]
 id: PB:1235
 name: cDNA cloning vector reference
 def: "????" [PMID:14755292]
-is_a: PB:1237 ! material reference  --DG or SO def
+is_a: PB:1237 ! material reference
 
 [Term]
 id: PB:1236
 name: microarray reference
 def: "????" [PMID:14755292]
-is_a: PB:1237 ! material reference  --DG or SO def
+is_a: PB:1237 ! material reference
 
 [Term]
 id: PB:1237
-name: material reference  --DG or SO def
+name: material reference
 def: "Reference to a commercial web site or a database." [PMID:14755292]
 is_a: PB:0353 ! cross-reference type
 
@@ -6206,7 +6218,7 @@ is_a: PB:1154 ! immunoglobulin subfragment
 id: PB:1243
 name: molecular interactions CV term for signal measurement method
 def: "This is the detection method used to measure a quantiative or qualitative signal e.g. a flouroscence method. This is not the \"interaction detection method\".\n\n\nFor this cross-reference type the db attribute is a term from the \"signal measurement\" CV subtype and the id attribute is the identifier of this term in the MI CV." [PMID:14755292]
-is_a: PB:1068 ! cv/ontology term reference --Luisa check
+is_a: PB:1068 ! cv/ontology term reference
 
 [Term]
 id: PB:1244
@@ -6335,17 +6347,17 @@ is_a: PB:0666 ! participant attribute name
 [Term]
 id: PB:1265
 name: chemical modification
-is_a: PB:1266 ! modification
+is_obsolete: true
 
 [Term]
 id: PB:1266
 name: modification
-is_a: PB:1317 ! generation
+is_obsolete: true
 
 [Term]
 id: PB:1268
 name: enzymatic modification
-is_a: PB:1266 ! modification
+is_obsolete: true
 
 [Term]
 id: PB:1269
