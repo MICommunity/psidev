@@ -45,7 +45,8 @@
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="fileContentType" type="xs:string"/>
-				<xs:element name="fileChecksum" type="FileChecksum"/>
+				<xs:element name="fileChecksum" type="xs:string">
+				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
