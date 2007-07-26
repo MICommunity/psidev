@@ -183,7 +183,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="dx:ParamGroupType">
-				<xs:attribute name="id" type="xs:anyURI" use="required"/>
+				<xs:attribute name="id" type="xs:string" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -252,7 +252,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="dx:ParamGroupType">
-				<xs:attribute name="id" type="xs:anyURI" use="required"/>
+				<xs:attribute name="id" type="xs:string" use="required"/>
 				<xs:attribute name="name" type="xs:string" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -296,7 +296,7 @@
 					<xs:element name="componentList" type="dx:ComponentListType"/>
 					<xs:element name="instrumentSoftwareRef" type="dx:InstrumentSoftwareRefType" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="id" type="xs:anyURI" use="required"/>
+				<xs:attribute name="id" type="xs:string" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -322,7 +322,7 @@
 									</xs:complexType>
 								</xs:element>
 							</xs:sequence>
-							<xs:attribute name="id" type="xs:anyURI" use="required"/>
+							<xs:attribute name="id" type="xs:string" use="required"/>
 						</xs:extension>
 					</xs:complexContent>
 				</xs:complexType>
@@ -366,7 +366,7 @@
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:anyURI" use="required"/>
+		<xs:attribute name="id" type="xs:string" use="required"/>
 		<xs:attribute name="softwareRef" type="xs:anyURI" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="RunListType">
@@ -400,8 +400,8 @@
 						</xs:annotation>
 					</xs:element>
 				</xs:sequence>
-				<xs:attribute name="id" type="xs:anyURI" use="required"/>
-				<xs:attribute name="instrumentRef" type="xs:anyURI" use="required"/>
+				<xs:attribute name="id" type="xs:string" use="required"/>
+				<xs:attribute name="instrumentRef" type="xs:string" use="required"/>
 				<xs:attribute name="sampleRef" type="xs:anyURI" use="optional"/>
 				<xs:attribute name="timeStamp" type="xs:dateTime" use="optional"/>
 			</xs:extension>
@@ -428,7 +428,7 @@
 			<xs:element name="spectrumDescription" type="dx:SpectrumDescriptionType"/>
 			<xs:element name="binaryDataArray" type="dx:BinaryDataArrayType" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
-		<xs:attribute name="id" type="xs:anyURI" use="required"/>
+		<xs:attribute name="id" type="xs:string" use="required"/>
 		<xs:attribute name="scanNumber" type="xs:int" use="required"/>
 		<xs:attribute name="dataProcessingRef" type="xs:anyURI" use="optional"/>
 		<xs:attribute name="sourceFileRef" type="xs:anyURI" use="optional"/>
@@ -544,7 +544,7 @@
 		</xs:annotation>
 		<xs:complexContent>
 			<xs:extension base="dx:ParamGroupType">
-				<xs:attribute name="instrumentRef" type="xs:anyURI" use="required"/>
+				<xs:attribute name="instrumentRef" type="xs:string" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -559,7 +559,7 @@
 					<!-- data type limited -->
 				</xs:sequence>
 				<xs:attribute name="arrayLength" type="xs:nonNegativeInteger" use="required"/>
-				<xs:attribute name="dataProcessingRef" type="xs:anyURI" use="optional"/>
+				<xs:attribute name="dataProcessingRef" type="xs:string" use="optional"/>
 				<xs:attribute name="dataType" type="xs:string" use="required"/>
 				<xs:attribute name="compressionType" type="xs:string" use="required"/>
 				<xs:attribute name="encodedLength" type="xs:nonNegativeInteger" use="required"/>
