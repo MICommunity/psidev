@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 16:07:2007 16:50
+date: 01:08:2007 17:01
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
@@ -185,14 +185,6 @@ exact_synonym: "modified residue" []
 is_a: BS:00246 ! covalent_binding_site
 
 [Term]
-id: BS:00053
-name: transit_peptide
-def: "Extent of a transit peptide (mitochondrion, chloroplast, thylakoid, cyanelle or microbody). The transit peptide is an N-terminal region of a peptide used to direct it to an organelle." [UniProt:curation manual]
-comment: Range
-related_synonym: "transit" []
-is_a: BS:00055 ! transit_peptide
-
-[Term]
 id: BS:00055
 name: transit_peptide
 def: "The signal_peptide is a short region of the peptide that directs post translationsional transport of a protein." [UniProt:curation manual]
@@ -324,7 +316,7 @@ related_synonym: "sequence variation" []
 related_synonym: "var_seq" []
 narrow_synonym: "isoform" []
 narrow_synonym: "varsplic" []
-is_a: BS:00149 ! mature_protein_product
+is_a: BS:00149 ! mature_protein_region
 is_a: BS:00336 ! sequence_variations
 
 [Term]
@@ -337,10 +329,10 @@ is_obsolete: true
 [Term]
 id: BS:00076
 name: active_peptide
-def: "Active peptodes are proteins which are biologically active, released from a precursor molecule. Hormones, neuropeptides, antimicrobial peptides, are active peptides. They are typically short (<40 amino acids) in length." [UniProt:curation manual]
+def: "Active peptides are proteins which are biologically active, released from a precursor molecule. Hormones, neuropeptides, antimicrobial peptides, are active peptides. They are typically short (<40 amino acids) in length." [UniProt:curation manual]
 comment: Range
 exact_synonym: "peptide" []
-is_a: BS:00149 ! mature_protein_product
+is_a: BS:00149 ! mature_protein_region
 
 [Term]
 id: BS:00077
@@ -519,7 +511,7 @@ is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00149
-name: mature_protein_product
+name: mature_protein_region
 def: "Extent of a polypeptide chain in the mature protein." [ref:ref]
 exact_synonym: "chain" []
 is_a: BS:00124 ! positional_annotation
@@ -955,7 +947,7 @@ def: "protein annotations classification" [ref:ref]
 [Term]
 id: BS:00331
 name: region_or_site_annotation
-def: "Continuous sequence or single residue of interest in a reference/mature protein sequence." [ref:ref]
+def: "Continuous sequence or single residue in a reference/mature protein sequence." [ref:ref]
 comment: Range
 exact_synonym: "region" []
 narrow_synonym: "site" []
