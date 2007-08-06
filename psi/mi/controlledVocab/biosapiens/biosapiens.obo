@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 01:08:2007 17:01
+date: 06:08:2007 16:48
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: BS
@@ -130,10 +130,11 @@ is_obsolete: true
 
 [Term]
 id: BS:00036
-name: mutagenesis
-def: "Site which has been experimentally altered." [ref:ref]
+name: mutated_site
+def: "Site which has been experimentally altered." [Uniprot:curation manual]
 comment: Discreet
 related_synonym: "mutagen" []
+related_synonym: "mutagenisis" []
 is_a: BS:00336 ! sequence_variations
 
 [Term]
@@ -170,10 +171,10 @@ is_a: BS:00003 ! secondary_structure
 
 [Term]
 id: BS:00043
-name: annotation
-def: "Annotation on the functional or structural features of a protein and possible sequence variations." [ref:ref]
+name: feature
+def: "Functional or structural regions of a protein." [ref:ref]
 comment: Range
-is_a: BS:00330 ! DRAFT biosapiens protein annotation
+is_a: BS:00330 ! DRAFT biosapiens protein feature ontology
 
 [Term]
 id: BS:00052
@@ -187,7 +188,7 @@ is_a: BS:00246 ! covalent_binding_site
 [Term]
 id: BS:00055
 name: transit_peptide
-def: "The signal_peptide is a short region of the peptide that directs post translationsional transport of a protein." [UniProt:curation manual]
+def: "The transit_peptide is a short region at the N-terminal of the peptide that directs the protein to an organelle (chloroplast,  mitochonrion,  microbody or cyanelle)." [UniProt:curation manual]
 comment: Range
 related_synonym: "signal" []
 is_a: BS:00129 ! immature_peptide_region
@@ -257,9 +258,10 @@ is_obsolete: true
 
 [Term]
 id: BS:00067
-name: initiator_methionine
-def: "The initiator_methionine is the junction in the peptide sequence where the initiator methioine is cleaved." [UniProt:curation manual]
+name: cleaved_initiator_methionine
+def: "Indicates when the initator methionine has been cleaved from the mature sequence." [UniProt:curation manual]
 related_synonym: "init_met" []
+exact_synonym: "initator methioninie" []
 is_a: BS:00129 ! immature_peptide_region
 
 [Term]
@@ -344,31 +346,31 @@ is_a: BS:00129 ! immature_peptide_region
 
 [Term]
 id: BS:00124
-name: positional_annotation
+name: positional
 def: "Biological annotation that can be assigned to a specific subsequence of a protein." [ref:ref]
 comment: Discreet
-is_a: BS:00043 ! annotation
+is_a: BS:00043 ! feature
 
 [Term]
 id: BS:00125
 name: sequencing_information
 def: "Incompatibility in the sequence due to some experimental problem." [ref:ref]
 comment: Range
-is_a: BS:00124 ! positional_annotation
+is_a: BS:00124 ! positional
 
 [Term]
 id: BS:00126
 name: biological_process
 def: "Those processes specifically pertinent to the functioning of integrated living units: cells, tissues, organs, and organisms. A process is a collection of molecular events with a defined beginning and end." [GO:0008150]
 comment: Range
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00127
-name: nonpositional_annotation
+name: nonpositional
 def: "Annotation which is not assigned to a specific subsequence of a protein." [ref:ref]
 comment: Range
-is_a: BS:00043 ! annotation
+is_a: BS:00043 ! feature
 
 [Term]
 id: BS:00128
@@ -382,13 +384,13 @@ id: BS:00129
 name: immature_peptide_region
 def: "An immature_peptide_region is the a region of peptide sequence that is cleaved during maturation." [ref:ref]
 comment: Range
-is_a: BS:00124 ! positional_annotation
+is_a: BS:00124 ! positional
 
 [Term]
 id: BS:00130
 name: functional_annotation
 def: "Indicates a region with functional annotation." [ref:ref]
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00131
@@ -400,14 +402,14 @@ is_a: BS:00029 ! non_covalent_binding_site
 id: BS:00132
 name: erroneous_protein
 def: "Protein suspected to be non-viable or chimeric." [ref:ref]
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00133
 name: molecular_function
 def: "Elemental activities, such as catalysis or binding, describing the actions of a gene product at the molecular level. A given gene product may exhibit one or more molecular functions." [GO:0003674]
 comment: Range
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00134
@@ -440,7 +442,7 @@ is_a: BS:00027 ! metal_binding
 id: BS:00138
 name: publication
 def: "Lists the details of a publication on this sequence." [ref:ref]
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00139
@@ -514,7 +516,7 @@ id: BS:00149
 name: mature_protein_region
 def: "Extent of a polypeptide chain in the mature protein." [ref:ref]
 exact_synonym: "chain" []
-is_a: BS:00124 ! positional_annotation
+is_a: BS:00124 ! positional
 
 [Term]
 id: BS:00150
@@ -546,17 +548,21 @@ is_a: BS:0000339 ! right handed helix
 [Term]
 id: BS:00154
 name: extramembrane
-def: "Extent of the region not transversing the lipid bilayer." [ref:ref]
+def: "Extent of the region not transversing the lipid bilayer." [Uniprot:curation manual]
 comment: Range
 exact_synonym: "topo_dom" []
 relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
+id: BS:00155
+name: membrane_loop
+def: "Extent of region which enters the membrane bilayer but emerges on the same side which it entered." [ref:ref]
+relationship: part_of BS:00156 ! intramembrane
+
+[Term]
 id: BS:00156
 name: intramembrane
-def: "Extent of the region traversing the lipid bilayer." [UniProt:curation manual]
-related_synonym: "transmem" []
-exact_synonym: "transmembrane" []
+def: "Extent of the region present in the lipid bilayer." [ref:ref]
 relationship: part_of BS:00128 ! membrane_structure
 
 [Term]
@@ -564,6 +570,21 @@ id: BS:00157
 name: protein-ligand interaction
 def: "Residues which interact with a ligand." [ref:ref]
 is_a: BS:00033 ! binding_or_interaction_site
+
+[Term]
+id: BS:00158
+name: transmembrane
+def: "Extent of region transversing the lipid bilayer." [UniProt:curation manual]
+related_synonym: "transmem" []
+relationship: part_of BS:00156 ! intramembrane
+
+[Term]
+id: BS:00159
+name: signal_peptide
+def: "The signal_peptide is a short region of the peptide located at the N-terminal that directs the protein to be secreted or part of membrane components." [UniProt:curation manual]
+comment: Range
+related_synonym: "signal" []
+is_a: BS:00129 ! immature_peptide_region
 
 [Term]
 id: BS:00161
@@ -941,8 +962,8 @@ is_a: BS:00033 ! binding_or_interaction_site
 
 [Term]
 id: BS:00330
-name: DRAFT biosapiens protein annotation
-def: "protein annotations classification" [ref:ref]
+name: DRAFT biosapiens protein feature ontology
+def: "Protein features classification." [ref:ref]
 
 [Term]
 id: BS:00331
@@ -951,21 +972,21 @@ def: "Continuous sequence or single residue in a reference/mature protein sequen
 comment: Range
 exact_synonym: "region" []
 narrow_synonym: "site" []
-is_a: BS:00124 ! positional_annotation
+is_a: BS:00124 ! positional
 
 [Term]
 id: BS:00332
 name: cellular_component
 def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GO:0005575]
 comment: Range
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00333
 name: family_annotation
 def: "family" [ref:ref]
 comment: Range
-is_a: BS:00127 ! nonpositional_annotation
+is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00334
@@ -984,12 +1005,12 @@ id: BS:00336
 name: sequence_variations
 def: "Alternative sequence due to naturally occuring events such as polymorphisms and altermatve splicing or expeimental methods such as site directed mutagenesis." [ref:ref]
 comment: Discreet
-is_a: BS:00124 ! positional_annotation
+is_a: BS:00124 ! positional
 
 [Term]
 id: BS:00337
 name: structural_region
-def: "Annotation defined through their n-ary conformations." [ref:ref]
+def: "Backbone conformation of the polypeptide." [ref:ref]
 comment: Range
 is_a: BS:00331 ! region_or_site_annotation
 
