@@ -767,31 +767,31 @@ is_a: MS:1000031 ! model  by vendor
 
 [Term]
 id: MS:1000122
-name: bruker daltonics
+name: Bruker Daltonics
 def: "Bruker Daltonics" [PSI:MS]
 is_a: MS:1000031 ! model  by vendor
 
 [Term]
 id: MS:1000123
-name: ion spec
+name: IonSpec
 def: "IonSpec corporation" [PSI:MS]
 is_a: MS:1000489 ! varian
 
 [Term]
 id: MS:1000124
-name: shimadzu
+name: Shimadzu
 def: "Shimadzu corporation" [PSI:MS]
 is_a: MS:1000031 ! model  by vendor
 
 [Term]
 id: MS:1000125
-name: thermo finnigan
+name: Thermo Finnigan
 def: "ThermoFinnigan from Thermo Electron Corporation" [PSI:MS]
-is_a: MS:1000483 ! thermo fisher scientific
+is_a: MS:1000483 ! Thermo Fisher Scientific
 
 [Term]
 id: MS:1000126
-name: waters
+name: Waters
 def: "Waters Corporation" [PSI:MS]
 is_a: MS:1000031 ! model  by vendor
 
@@ -965,19 +965,19 @@ is_a: MS:1000122 ! bruker daltonics
 id: MS:1000153
 name: DELTA plusAdvantage
 def: "ThermoFinnigan DELTAplusAdvantage MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000154
 name: DELTAplusXP
 def: "ThermoFinnigan DELTAplusXP MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000155
 name: ELEMENT2
 def: "ThermoFinnigan ELEMENT2 MS" [PSI:MS]
-is_a: MS:1000492 ! thermo electron
+is_a: MS:1000492 ! Thermo Electron
 
 [Term]
 id: MS:1000156
@@ -1049,19 +1049,19 @@ is_a: MS:1000126 ! waters
 id: MS:1000167
 name: LCQ Advantage
 def: "ThermoFinnigan LCQ Advantage MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000168
 name: LCQ Classic
 def: "ThermoFinnigan LCQ Classic MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000169
 name: LCQ Deca XP Plus
 def: "ThermoFinnigan LCQ Deca XP Plus MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000170
@@ -1121,7 +1121,7 @@ is_a: MS:1000122 ! bruker daltonics
 id: MS:1000179
 name: neptune
 def: "ThermoFinnigan NEPTUNE MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000180
@@ -1157,7 +1157,7 @@ is_a: MS:1000126 ! waters
 id: MS:1000185
 name: PolarisQ
 def: "ThermoFinnigan PolarisQ MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000186
@@ -1205,7 +1205,7 @@ is_a: MS:1000126 ! waters
 id: MS:1000193
 name: Surveyor MSQ
 def: "ThermoFinnigan Surveyor MSQ MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000194
@@ -1223,25 +1223,25 @@ is_a: MS:1000121 ! ABI / SCIEX
 id: MS:1000196
 name: TEMPUS TOF
 def: "ThermoFinnigan TEMPUS TOF MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000197
 name: TRACE DSQ
 def: "ThermoFinnigan TRACE DSQ MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000198
 name: TRITON
 def: "ThermoFinnigan TRITON MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000199
-name: TSQ QUANTUM
-def: "ThermoFinnigan TSQ QUANTUM MS" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+name: TSQ Quantum
+def: "ThermoFinnigan TSQ Quantum MS" [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000200
@@ -2818,25 +2818,25 @@ is_a: MS:1000008 ! ionization type
 id: MS:1000447
 name: LTQ
 def: "Finnigan LTQ MS" [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000448
 name: LTQ FT
 def: "Finnigan LTQ FT MS" [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000449
 name: LTQ Orbitrap
 def: "Finnigan LTQ Orbitrap MS" [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000450
 name: LXQ
 def: "Finnigan LXQ MS" [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000451
@@ -3034,7 +3034,7 @@ relationship: part_of MS:1000458 ! source description
 
 [Term]
 id: MS:1000483
-name: thermo fisher scientific
+name: Thermo Fisher Scientific
 def: "Thermo Fisher Scientific. Also known as Thermo Finnigan corporation." [PSI:MS]
 related_synonym: "Thermo Scientific" []
 is_a: MS:1000031 ! model  by vendor
@@ -3090,25 +3090,25 @@ is_a: MS:1000031 ! model  by vendor
 
 [Term]
 id: MS:1000492
-name: thermo electron
+name: Thermo Electron
 def: "Thermo Electron rom Thermo Electron Corporation" [PSI:MS]
-is_a: MS:1000483 ! thermo fisher scientific
+is_a: MS:1000483 ! Thermo Fisher scientific
 
 [Term]
 id: MS:1000493
 name: Finnigan MAT
 def: "Finnigan MAT" [PSI:MS]
-relationship: part_of MS:1000483 ! thermo fisher scientific
+relationship: part_of MS:1000483 ! Thermo Fisher scientific
 
 [Term]
 id: MS:1000494
-name: thermo scientific
+name: Thermo Scientific
 def: "Thermo Scientific" [PSI:MS]
-is_a: MS:1000483 ! thermo fisher scientific
+is_a: MS:1000483 ! Thermo Fisher scientific
 
 [Term]
 id: MS:1000495
-name: applied biosystems
+name: Applied Biosystems
 def: "Applied Biosystems" [PSI:MS]
 exact_synonym: "ABI" []
 relationship: part_of MS:1000121 ! ABI / SCIEX
@@ -3328,7 +3328,7 @@ relationship: part_of MS:0000000 ! MZ controlled vocabularies
 
 [Term]
 id: MS:1000532
-name: xcalibur
+name: Xcalibur
 def: "Thermo Finnigan software for data acquisition and analysis." [PSI:MS]
 is_a: MS:1000531 ! software
 
@@ -3454,31 +3454,31 @@ is_a: MS:1000482 ! source attribute
 id: MS:1000554
 name: LCQ Deca
 def: "ThermoFinnigan LCQ Deca." [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000555
 name: LTQ Orbitrap Discovery
 def: "LTQ Orbitrap Discovery." [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000556
 name: LTQ Orbitrap XL
 def: "LTQ Orbitrap XL." [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000557
 name: LTQ FT Ultra
 def: "LTQ FT Ultra." [PSI:MS]
-is_a: MS:1000494 ! thermo scientific
+is_a: MS:1000494 ! Thermo Scientific
 
 [Term]
 id: MS:1000558
 name: GC Quantum
 def: "GC Quantum." [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000559
@@ -3508,7 +3508,7 @@ is_a: MS:1000560 ! source file type
 
 [Term]
 id: MS:1000563
-name: xcalibur RAW file
+name: Xcalibur RAW file
 def: "Thermo Finnigan raw file format." [PSI:MS]
 is_a: MS:1000560 ! source file type
 
@@ -3602,7 +3602,7 @@ relationship: part_of MS:0000000 ! MZ controlled vocabularies
 id: MS:1000578
 name: LCQ Fleet
 def: "LCQ Fleet" [PSI:MS]
-is_a: MS:1000125 ! thermo finnigan
+is_a: MS:1000125 ! Thermo Finnigan
 
 [Term]
 id: MS:1000579
