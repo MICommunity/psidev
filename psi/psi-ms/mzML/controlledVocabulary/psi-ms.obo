@@ -3662,8 +3662,8 @@ is_a: MS:1000585 ! contact person attribute
 
 [Term]
 id: MS:1000587
-name: contact adress
-def: "Postal adress of a contact person." [PSI:MS]
+name: contact address
+def: "Postal address of a contact person." [PSI:MS]
 is_a: MS:1000585 ! contact person attribute
 
 [Term]
