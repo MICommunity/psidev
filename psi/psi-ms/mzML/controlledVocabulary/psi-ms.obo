@@ -3647,6 +3647,43 @@ name: mzML file
 def: "Proteomics Standards Inititative mzML file format." [PSI:MS]
 is_a: MS:1000560 ! source file type
 
+[Term]
+id: MS:1000585
+name: contact person attribute
+def: "Details about a person to contact in case of concern or dicussion about the MZ.ml file." [PSI:MS]
+relationship: part_of MS:1000577 ! file description
+relationship: part_of MS:1000547 ! object attribute
+
+[Term]
+id: MS:1000586
+name: contact name
+def: "Name of a contact person." [PSI:MS]
+is_a: MS:1000585 ! contact person attribute
+
+[Term]
+id: MS:1000587
+name: contact adress
+def: "Postal adress of a contact person." [PSI:MS]
+is_a: MS:1000585 ! contact person attribute
+
+[Term]
+id: MS:1000588
+name: contact URL
+def: "Uniform Resource Locator related to the contact person." [PSI:MS]
+is_a: MS:1000585 ! contact person attribute
+
+[Term]
+id: MS:1000589
+name: contact email
+def: "Email adress of the contact person." [PSI:MS]
+is_a: MS:1000585 ! contact person attribute
+
+[Term]
+id: MS:1000590
+name: contact organization
+def: "Home institution of the contact person." [PSI:MS]
+is_a: MS:1000585 ! contact person attribute
+
 [Typedef]
 id: part_of
 name: part_of
