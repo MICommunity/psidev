@@ -1,6 +1,6 @@
 format-version: 1.0
-date: 13:08:2007 15:50
-saved-by: Pete
+date: 01:10:2007 23:46
+saved-by: deutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 
@@ -219,9 +219,10 @@ is_a: MS:1000543 ! data processing action
 
 [Term]
 id: MS:1000035
-name: peak processing
-def: "Spectral peak processing conducted on the acquired data." [PSI:MS]
-relationship: part_of MS:1000452 ! data processing description
+name: peak picking
+def: "Spectral peak processing conducted on the acquired data to convert profile data to centroided data." [PSI:MS]
+exact_synonym: "peak processing" []
+is_a: MS:1000543 ! data processing action
 
 [Term]
 id: MS:1000036
@@ -800,7 +801,7 @@ id: MS:1000127
 name: centroid mass spectrum
 def: "Processing of profile data to produce spectra that contains discrete peaks of zero width. Often used to reduce the size of dataset." [PSI:MS]
 exact_synonym: "Discrete Mass Spectrum" []
-is_a: MS:1000035 ! peak processing
+is_a: MS:1000525 ! spectrum representation
 
 [Term]
 id: MS:1000128
@@ -808,7 +809,7 @@ name: profile mass spectrum
 def: "A profile mass spectrum is created when data is recorded with ion current (counts per second) on one axis and mass/charge ratio on another axis." [PSI:MS]
 exact_synonym: "continuous mass spectrum" []
 exact_synonym: "Continuum Mass Spectrum" []
-is_a: MS:1000035 ! peak processing
+is_a: MS:1000525 ! spectrum representation
 
 [Term]
 id: MS:1000129
@@ -893,13 +894,13 @@ is_a: MS:1000121 ! ABI / SCIEX
 id: MS:1000141
 name: APEX IV
 def: "Bruker Daltonics APEX IV MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000142
 name: APEX-Q
 def: "Bruker Daltonics APEX-Q MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000143
@@ -935,31 +936,31 @@ is_a: MS:1000121 ! ABI / SCIEX
 id: MS:1000148
 name: autoFlex II
 def: "Bruker Daltonics autoFlex II MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000149
 name: autoFlex TOF/TOF
 def: "Bruker Daltonics autoFlex TOF/TOF MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000150
 name: Auto Spec Ultima NT
 def: "Waters AutoSpec Ultima NT MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000151
 name: Bio TOF II
 def: "Bruker Daltonics BioTOF II MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000152
 name: Bio TOF Q
 def: "Bruker Daltonics BioTOF Q MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000153
@@ -983,67 +984,67 @@ is_a: MS:1000492 ! Thermo Electron
 id: MS:1000156
 name: esquire4000
 def: "Bruker Daltonics esquire4000 MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000157
 name: esquire6000
 def: "Bruker Daltonics esquire6000 MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000158
 name: explorer
 def: "IonSpec Explorer MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000159
 name: GCT
 def: "Waters GCT MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000160
 name: HCT
 def: "Bruker Daltonics HCT MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000161
 name: HCT Plus
 def: "Bruker Daltonics HCTPlus MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000162
 name: HiRes ESI
 def: "IonSpec HiResESI MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000163
 name: HiRes MALDI
 def: "IonSpec HiResMALDI MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000164
 name: IsoPrime
 def: "Waters IsoPrime MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000165
 name: IsoProbe
 def: "Waters IsoProbe MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000166
 name: IsoProbe T
 def: "Waters IsoProbe T MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000167
@@ -1067,13 +1068,13 @@ is_a: MS:1000125 ! Thermo Finnigan
 id: MS:1000170
 name: M@LDI L
 def: "Waters M@LDI L MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000171
 name: M@LDI LR
 def: "Waters M@LDI LR MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000172
@@ -1109,13 +1110,13 @@ is_a: MS:1000493 ! Finnigan MAT
 id: MS:1000177
 name: microFlex
 def: "Bruker Daltonics microFlex MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000178
 name: microTOFLC
 def: "Bruker Daltonics microTOFLC MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000179
@@ -1127,31 +1128,31 @@ is_a: MS:1000125 ! Thermo Finnigan
 id: MS:1000180
 name: NG-5400
 def: "Waters NG-5400 MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000181
 name: OMEGA
 def: "IonSpec OMEGA MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000182
 name: OMEGA-2001
 def: "IonSpec OMEGA-2001 MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000183
 name: OmniFlex
 def: "Bruker Daltonics OminFlex MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000184
 name: Platform ICP
 def: "Waters Platform ICP MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000185
@@ -1175,13 +1176,13 @@ is_a: MS:1000121 ! ABI / SCIEX
 id: MS:1000188
 name: q-tof micro
 def: "Waters Q-Tof micro MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000189
 name: q-tof ultima
 def: "Waters Q-Tof Ultima MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000190
@@ -1193,13 +1194,13 @@ is_a: MS:1000121 ! ABI / SCIEX
 id: MS:1000191
 name: quattro micro
 def: "Waters Quattro micro MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000192
 name: Quattro UItima
 def: "Waters Quattro Uitima MS" [PSI:MS]
-is_a: MS:1000126 ! waters
+is_a: MS:1000126 ! Waters
 
 [Term]
 id: MS:1000193
@@ -1247,19 +1248,19 @@ is_a: MS:1000125 ! Thermo Finnigan
 id: MS:1000200
 name: ultima
 def: "IonSpec Ultima MS" [PSI:MS]
-is_a: MS:1000123 ! ion spec
+is_a: MS:1000123 ! IonSpec
 
 [Term]
 id: MS:1000201
 name: ultraFlex
 def: "Bruker Daltonics ultraFlex MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000202
 name: ultraFlex TOF/TOF
 def: "Bruker Daltonics ultraFlex TOF/TOF MS" [PSI:MS]
-is_a: MS:1000122 ! bruker daltonics
+is_a: MS:1000122 ! Bruker Daltonics
 
 [Term]
 id: MS:1000203
@@ -3092,19 +3093,19 @@ is_a: MS:1000031 ! model  by vendor
 id: MS:1000492
 name: Thermo Electron
 def: "Thermo Electron rom Thermo Electron Corporation" [PSI:MS]
-is_a: MS:1000483 ! Thermo Fisher scientific
+is_a: MS:1000483 ! Thermo Fisher Scientific
 
 [Term]
 id: MS:1000493
 name: Finnigan MAT
 def: "Finnigan MAT" [PSI:MS]
-relationship: part_of MS:1000483 ! Thermo Fisher scientific
+relationship: part_of MS:1000483 ! Thermo Fisher Scientific
 
 [Term]
 id: MS:1000494
 name: Thermo Scientific
 def: "Thermo Scientific" [PSI:MS]
-is_a: MS:1000483 ! Thermo Fisher scientific
+is_a: MS:1000483 ! Thermo Fisher Scientific
 
 [Term]
 id: MS:1000495
@@ -3297,6 +3298,18 @@ def: "Describes the data content on the file." [PSI:MS]
 relationship: part_of MS:1000577 ! file description
 
 [Term]
+id: MS:1000525
+name: spectrum representation
+def: "Way in which the spectrum is represented, either with regularly spaced data points or with a list of centroided peaks." [PSI:MS]
+relationship: part_of MS:1000442 ! spectrum
+
+[Term]
+id: MS:1000526
+name: MassLynx raw format
+def: "Waters MassLynx raw file format, which is actually a directory/folder containing several files for each msrun." [PSI:MS]
+is_a: MS:1000560 ! source file type
+
+[Term]
 id: MS:1000527
 name: highest m/z value
 def: "Highest m/z value observed in the mass spectum." [PSI:MS]
@@ -3364,6 +3377,12 @@ def: "Applied Biosystems software for data acquisition and analysis." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
+id: MS:1000538
+name: Wolf
+def: "A software for converting Waters RAW directory format to mzXML or mzML. ReAdW was originally developed at the Institute for Systems Biology." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
 id: MS:1000539
 name: voyager biospectrometry workstation system
 def: "Applied Biosystems MALDI-TOF data acquisition and analysis system." [PSI:MS]
@@ -3378,13 +3397,13 @@ is_a: MS:1000531 ! software
 [Term]
 id: MS:1000541
 name: ReAdW
-def: "A software for converting Thermo Finnigan RAW file format to mzXML." [PSI:MS]
+def: "A software program for converting Thermo Finnigan RAW file format to mzXML or mzML. ReAdW was originally developed at the Institute for Systems Biology. Its whimsical interleaved spelling and capitalization is pronounced \"readraw\"." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000542
 name: MzStar
-def: "A software for converting Applied Biosystems wiff file format to mzXML format." [PSI:MS]
+def: "A software program for converting Applied Biosystems wiff file format to mzXML format. MzStar was originally developed at the Institute for Systems Biology. It was later obsoleted by the mzWiff program." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
@@ -3451,6 +3470,12 @@ exact_synonym: "DLI" []
 is_a: MS:1000482 ! source attribute
 
 [Term]
+id: MS:1000553
+name: Trapper
+def: "A software program for converting Agilent MassHunt format to mzXML or mzML. ReAdW was originally developed at the Institute for Systems Biology." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
 id: MS:1000554
 name: LCQ Deca
 def: "ThermoFinnigan LCQ Deca." [PSI:MS]
@@ -3509,7 +3534,7 @@ is_a: MS:1000560 ! source file type
 [Term]
 id: MS:1000563
 name: Xcalibur RAW file
-def: "Thermo Finnigan raw file format." [PSI:MS]
+def: "Thermo Finnigan RAW file format." [PSI:MS]
 is_a: MS:1000560 ! source file type
 
 [Term]
@@ -3651,8 +3676,8 @@ is_a: MS:1000560 ! source file type
 id: MS:1000585
 name: contact person attribute
 def: "Details about a person to contact in case of concern or dicussion about the MZ.ml file." [PSI:MS]
-relationship: part_of MS:1000577 ! file description
 relationship: part_of MS:1000547 ! object attribute
+relationship: part_of MS:1000577 ! file description
 
 [Term]
 id: MS:1000586
@@ -3683,6 +3708,12 @@ id: MS:1000590
 name: contact organization
 def: "Home institution of the contact person." [PSI:MS]
 is_a: MS:1000585 ! contact person attribute
+
+[Term]
+id: MS:1000591
+name: MzWiff
+def: "A software program for converting Applied Biosystems wiff file format to the mzXML or mzML format. MzWiff is currently maintained at the Institute for Systems Biology. It replaces the slower mzStar program." [PSI:MS]
+is_a: MS:1000531 ! software
 
 [Typedef]
 id: part_of
