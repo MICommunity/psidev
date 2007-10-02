@@ -89,7 +89,7 @@
 			<processingMethod order="1">
 				<cvParam cvLabel="MS" accession="MS:1000033" name="deisotoping" value="false"/>
 				<cvParam cvLabel="MS" accession="MS:1000034" name="charge deconvolution" value="false"/>
-				<cvParam cvLabel="MS" accession="MS:1000035" name="peak centroiding" value="true"/>
+				<cvParam cvLabel="MS" accession="MS:1000035" name="peak picking" value="true"/>
 			</processingMethod>
 		</dataProcessing>
 		<dataProcessing id="ReAdW Conversion" softwareRef="ReAdW">
