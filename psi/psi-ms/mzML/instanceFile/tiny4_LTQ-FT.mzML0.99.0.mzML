@@ -24,12 +24,10 @@
 	<referenceableParamGroupList count="2">
 		<referenceableParamGroup id="CommonMS1SpectrumParams">
 			<cvParam cvLabel="MS" accession="MS:1000130" name="positive scan" value=""/>
-			<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 			<cvParam cvLabel="MS" accession="MS:1000498" name="full scan" value=""/>
 		</referenceableParamGroup>
 		<referenceableParamGroup id="CommonMS2SpectrumParams">
 			<cvParam cvLabel="MS" accession="MS:1000130" name="positive scan" value=""/>
-			<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 			<cvParam cvLabel="MS" accession="MS:1000498" name="full scan" value=""/>
 		</referenceableParamGroup>
 	</referenceableParamGroupList>
@@ -106,7 +104,7 @@
 			<spectrum id="S19" scanNumber="19" msLevel="1">
 				<cvParam cvLabel="MS" accession="MS:1000580" name="MSn spectrum" value=""/>
 				<spectrumDescription>
-					<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.890500" unitAccession="MS:1000038" unitName="minute"/>
+					<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 					<cvParam cvLabel="MS" accession="MS:1000528" name="lowest m/z value" value="400.39"/>
 					<cvParam cvLabel="MS" accession="MS:1000527" name="highest m/z value" value="1795.56"/>
 					<cvParam cvLabel="MS" accession="MS:1000504" name="base peak m/z" value="445.347"/>
@@ -114,6 +112,7 @@
 					<cvParam cvLabel="MS" accession="MS:1000285" name="total ion current" value="1.66755e+007"/>
 					<scan instrumentRef="LCQ Deca">
 						<paramGroupRef ref="CommonMS1SpectrumParams"/>
+						<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.890500" unitAccession="MS:1000038" unitName="minute"/>
 						<cvParam cvLabel="MS" accession="MS:1000512" name="filter string" value="+ c NSI Full ms [ 400.00-1800.00]"/>
 						<selectionWindowList count="1">
 							<selectionWindow>
@@ -139,7 +138,8 @@
 			<spectrum id="S20" scanNumber="20" msLevel="2">
 				<cvParam cvLabel="MS" accession="MS:1000580" name="MSn spectrum" value=""/>
 				<spectrumDescription>
-					<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.990500" unitAccession="MS:1000038" unitName="minute"/>
+					<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
+
 					<cvParam cvLabel="MS" accession="MS:1000528" name="lowest m/z value" value="320.39"/>
 					<cvParam cvLabel="MS" accession="MS:1000527" name="highest m/z value" value="1003.56"/>
 					<cvParam cvLabel="MS" accession="MS:1000504" name="base peak m/z" value="456.347"/>
@@ -159,6 +159,7 @@
 					</precursorList>
 					<scan instrumentRef="LTQ">
 						<paramGroupRef ref="CommonMS2SpectrumParams"/>
+						<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.990500" unitAccession="MS:1000038" unitName="minute"/>
 						<cvParam cvLabel="MS" accession="MS:1000512" name="filter string" value="+ c d Full ms2  445.35@cid35.00 [ 110.00-905.00]"/>
 						<selectionWindowList count="1">
 							<selectionWindow>

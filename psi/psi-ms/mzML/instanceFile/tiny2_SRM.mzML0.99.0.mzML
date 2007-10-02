@@ -25,11 +25,9 @@
 	<referenceableParamGroupList count="2">
 		<referenceableParamGroup id="CommonSRMScanParams">
 			<cvParam cvLabel="MS" accession="MS:1000130" name="positive scan" value=""/>
-			<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 		</referenceableParamGroup>
-		<referenceableParamGroup id="CommonMS2SpectrumParams">
+		<referenceableParamGroup id="CommonMS2ScanParams">
 			<cvParam cvLabel="MS" accession="MS:1000130" name="positive scan" value=""/>
-			<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 			<cvParam cvLabel="MS" accession="MS:1000498" name="full scan" value=""/>
 		</referenceableParamGroup>
 	</referenceableParamGroupList>
@@ -93,6 +91,7 @@
 			<spectrum id="S101" scanNumber="101" msLevel="2">
 				<cvParam cvLabel="MS" accession="MS:1000583" name="SRM spectrum" value=""/>
 				<spectrumDescription>
+					<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 					<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.890500" unitAccession="MS:1000038" unitName="minute"/>
 					<precursorList count="1">
 						<precursor>
@@ -138,7 +137,7 @@
 			<spectrum id="S102" scanNumber="102" msLevel="2">
 				<cvParam cvLabel="MS" accession="MS:1000580" name="MSn spectrum" value=""/>
 				<spectrumDescription>
-					<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.990500" unitAccession="MS:1000038" unitName="minute"/>
+					<cvParam cvLabel="MS" accession="MS:1000127" name="centroid mass spectrum" value=""/>
 					<precursorList count="1">
 						<precursor spectrumRef="101">
 							<ionSelection>
@@ -152,7 +151,8 @@
 						</precursor>
 					</precursorList>
 					<scan instrumentRef="TSQ Quantum Ultra">
-						<paramGroupRef ref="CommonMS2SpectrumParams"/>
+						<paramGroupRef ref="CommonMS2ScanParams"/>
+						<cvParam cvLabel="MS" accession="MS:1000016" name="scan time" value="5.990500" unitAccession="MS:1000038" unitName="minute"/>
 						<cvParam cvLabel="MS" accession="MS:1000512" name="filter string" value="+ c d Full ms2  445.35@cid35.00 [ 110.00-905.00]"/>
 						<selectionWindowList count="1">
 							<selectionWindow>
