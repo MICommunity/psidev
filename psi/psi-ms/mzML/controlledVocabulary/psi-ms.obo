@@ -1,19 +1,26 @@
 format-version: 1.0
-date: 01:10:2007 23:46
-saved-by: deutsch
-auto-generated-by: OBO-Edit 1.101
+date: 08:11:2007 16:42
+saved-by: luisa
+auto-generated-by: OBO-Edit 1.100
 default-namespace: PSI-MS
+remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
+
+[Term]
+id: GO:1000591
+name: CLONE OF mass resolution
+def: "The maximum m/z value at which two peaks can be resolved, according to one of the standard measures." [PSI:MS]
+is_obsolete: true
 
 [Term]
 id: MS:0000000
-name: MZ controlled vocabularies
-def: "MZ controlled vocabularies." [PSI:MS]
+name: Mass Spectrometry Controlled Vocabulary
+def: "Mass Spectrometry Controlled Vocabulary." [PSI:MS]
 
 [Term]
 id: MS:1000001
 name: sample number
 def: "A reference number relevant to the sample under study." [PSI:MS]
-relationship: part_of MS:1000548 ! sample attribute
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000002
@@ -31,31 +38,31 @@ relationship: part_of MS:1000479 ! purgatory
 id: MS:1000004
 name: sample mass
 def: "Total mass of sample used." [PSI:MS]
-relationship: part_of MS:1000548 ! sample attribute
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000005
 name: sample volume
 def: "Total volume of solution used." [PSI:MS]
-relationship: part_of MS:1000548 ! sample attribute
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000006
 name: sample concentration
 def: "Concentration of sample in picomol/ul, femtomol/ul or attomol/ul solution used." [PSI:MS]
-relationship: part_of MS:1000548 ! sample attribute
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000007
 name: inlet type
-def: "The nature of the sample inlet" [PSI:MS]
-relationship: part_of MS:1000458 ! source description
+def: "The nature of the sample inlet." [PSI:MS]
+relationship: part_of MS:1000458 ! source
 
 [Term]
 id: MS:1000008
 name: ionization type
 def: "The method by which gas phase ions are generated from the sample." [PSI:MS]
-relationship: part_of MS:1000458 ! source description
+relationship: part_of MS:1000458 ! source
 
 [Term]
 id: MS:1000009
@@ -77,21 +84,21 @@ is_a: MS:1000503 ! scan attribute
 
 [Term]
 id: MS:1000012
-name: resolution method
+name: resolution measurement method
 def: "Which of the available standard measures is used to define whether two peaks are separate." [PSI:MS]
-relationship: part_of MS:1000451 ! analyzer description
+is_a: MS:1000596 ! measurement method
 
 [Term]
 id: MS:1000013
-name: resolution type ?
-def: "Specify the nature of resolution for the mass analyzer.  Resolution is usually either constant with respect to m/z or proportional to m/z." [PSI:MS]
+name: resolution type
+def: "Specify the nature of resolution for the mass analyzer. Resolution is usually either constant with respect to m/z or proportional to m/z." [PSI:MS]
 relationship: part_of MS:1000479 ! purgatory
 
 [Term]
 id: MS:1000014
 name: accuracy
 def: "Accuracy is the degree of conformity of a measured mass to its actual value." [PSI:MS]
-relationship: part_of MS:1000480 ! analyzer attribute
+is_a: MS:1000480 ! mass analyzer attribute
 
 [Term]
 id: MS:1000015
@@ -107,40 +114,40 @@ is_a: MS:1000503 ! scan attribute
 
 [Term]
 id: MS:1000017
-name: Scan Function ??
-def: "Describes the type of mass analysis being performed.  Two primary modes are: typical acquisition over a range of masses (Mass Scan), and Selected Ion Detection.  The primary difference is that Selected Ion Detection produces a single value for the signal at the selected mass rather than producing a mass spectrum." [PSI:MS]
+name: Scan Function
+def: "Describes the type of mass analysis being performed. Two primary modes are: typical acquisition over a range of masses (Mass Scan), and Selected Ion Detection. The primary difference is that Selected Ion Detection produces a single value for the signal at the selected mass rather than producing a mass spectrum." [PSI:MS]
 relationship: part_of MS:1000479 ! purgatory
 
 [Term]
 id: MS:1000018
 name: scan direction
 def: "Direction in terms of m/z of the scan for scanning analyzers (low to high, or high to low)." [PSI:MS]
-relationship: part_of MS:1000441 ! scan description
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000019
 name: scan law
-def: "Describes the function in control of the m/z scan (for scanning instruments).  Commonly the scan function is linear, but in principle any function can be used." [PSI:MS]
-relationship: part_of MS:1000441 ! scan description
+def: "Describes the function in control of the m/z scan (for scanning instruments). Commonly the scan function is linear, but in principle any function can be used." [PSI:MS]
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000020
 name: scanning method
 def: "Describes the acquisition data type produced by a tandem mass spectrometry experiment." [PSI:MS]
 related_synonym: "Tandem Scanning Method" []
-relationship: part_of MS:1000441 ! scan description
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000021
 name: reflectron state
 def: "Status of the reflectron, turned on or off." [PSI:MS]
-relationship: part_of MS:1000480 ! analyzer attribute
+is_a: MS:1000480 ! mass analyzer attribute
 
 [Term]
 id: MS:1000022
 name: TOF Total Path Length
 def: "The length of the field free drift space in a time of flight mass spectrometer." [PSI:MS]
-relationship: part_of MS:1000480 ! analyzer attribute
+is_a: MS:1000480 ! mass analyzer attribute
 
 [Term]
 id: MS:1000023
@@ -152,7 +159,7 @@ is_a: MS:1000503 ! scan attribute
 id: MS:1000024
 name: final MS exponent
 def: "Final MS level achieved when performing PFF with the ion trap (e.g. MS E10)." [PSI:MS]
-relationship: part_of MS:1000480 ! analyzer attribute
+is_a: MS:1000480 ! mass analyzer attribute
 
 [Term]
 id: MS:1000025
@@ -160,32 +167,32 @@ name: magnetic field strength
 def: "A property of space that produces a force on a charged particle equal to qv x B where q is the particle charge and v its velocity." [PSI:MS]
 related_synonym: "Magnetic Field" []
 exact_synonym: "B" []
-relationship: part_of MS:1000480 ! analyzer attribute
+is_a: MS:1000480 ! mass analyzer attribute
 
 [Term]
 id: MS:1000026
-name: detector
+name: detector type
 def: "Type of detector used in the mass spectrometer." [PSI:MS]
-relationship: part_of MS:1000453 ! detector description
+relationship: part_of MS:1000453 ! detector
 
 [Term]
 id: MS:1000027
 name: detector acquisition mode
 def: "Method by which detector signal is acquired by the data system." [PSI:MS]
-relationship: part_of MS:1000453 ! detector description
+relationship: part_of MS:1000453 ! detector
 
 [Term]
 id: MS:1000028
 name: detector resolution
 def: "The resolving power of the detector to detect the smallest difference between two ions so that the valley between them is a specified fraction of the peak height." [PSI:MS]
-relationship: part_of MS:1000481 ! detector attribute
+is_a: MS:1000481 ! detector attribute
 
 [Term]
 id: MS:1000029
 name: sampling frequency
 def: "The rate of signal sampling (measurement) with respect to time." [PSI:MS]
 narrow_synonym: "ADC Sampling Frequency" []
-relationship: part_of MS:1000481 ! detector attribute
+is_a: MS:1000481 ! detector attribute
 
 [Term]
 id: MS:1000030
@@ -195,15 +202,15 @@ is_obsolete: true
 
 [Term]
 id: MS:1000031
-name: model  by vendor
-def: "Instrument's model name (everything but the vendor's name) ---Free text ?" [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
+name: instrument model
+def: "Instrument model name not including the vendor's name." [PSI:MS]
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000032
 name: customization
 def: "Free text description of a single customization made to the instrument; for several modifications, use several entries." [PSI:MS]
-relationship: part_of MS:1000496 ! instrument attribute
+is_a: MS:1000496 ! instrument attribute
 
 [Term]
 id: MS:1000033
@@ -254,19 +261,19 @@ name: m/z
 def: "Three-character symbol m/z is used to denote the dimensionless quantity formed by dividing the mass of an ion in unified atomic mass units by its charge number (regardless of sign). The symbol is written in italicized lower case letters with no spaces. Note 1: The term mass-to-charge-ratio is deprecated. Mass-to-charge-ratio has been used for the abscissa of a mass spectrum, although the quantity measured is not the quotient of the ion's mass to its electric charge. The three-character symbol m/z is recommended for the dimensionless quantity that is the independent variable in a mass spectrum Note 2: The proposed unit thomson (Th) is deprecated." [PSI:MS]
 related_synonym: "thomson" []
 exact_synonym: "Mass To Charge Ratio" []
-relationship: part_of MS:1000455 ! ion selection attribute
+is_a: MS:1000455 ! ion selection attribute
 
 [Term]
 id: MS:1000041
 name: charge state
 def: "The charge state of the ion, single or multiple and positive or negatively charged." [PSI:MS]
-relationship: part_of MS:1000455 ! ion selection attribute
+is_a: MS:1000455 ! ion selection attribute
 
 [Term]
 id: MS:1000042
 name: intensity
 def: "Intensity of ions as measured by the height or area of a peak in a mass spectrum." [PSI:MS]
-relationship: part_of MS:1000455 ! ion selection attribute
+is_a: MS:1000455 ! ion selection attribute
 
 [Term]
 id: MS:1000043
@@ -279,13 +286,13 @@ id: MS:1000044
 name: dissociation method
 def: "Fragmentation method used for dissociation or fragmentation." [PSI:MS]
 related_synonym: "Activation Method" []
-relationship: part_of MS:1000456 ! precursor activation description
+relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000045
 name: collision energy
-def: "Energy for an ion experiencing collision with a stationary gas particle resulting in dissociation of the ion. Projectile ions" [PSI:MS]
-relationship: part_of MS:1000510 ! precursor activation attribute
+def: "Energy for an ion experiencing collision with a stationary gas particle resulting in dissociation of the ion." [PSI:MS]
+is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000046
@@ -333,7 +340,7 @@ is_a: MS:1000003 ! sample state
 id: MS:1000053
 name: sample batch
 def: "Sample batch lot identifier." [PSI:MS]
-relationship: part_of MS:1000548 ! sample attribute
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000054
@@ -437,21 +444,21 @@ id: MS:1000070
 name: atmospheric pressure chemical ionization
 def: "Chemical ionization that takes place at atmospheric pressure as opposed to the reduced pressure is normally used for chemical ionization." [PSI:MS]
 exact_synonym: "APCI" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000240 ! atmospheric pressure ionization
 
 [Term]
 id: MS:1000071
 name: chemical ionization
-def: "The formation of a new ion by the reaction of a neutral species with an ion. The process may involve transfer of an electron, a proton or other charged species between the reactants. When a positive ion results from chemical ionization the term may be used without qualification. When a negative ion results the term negative ion chemical ionization should be used. Note that this term is not synonymous with chemi-ionization.." [PSI:MS]
+def: "The formation of a new ion by the reaction of a neutral species with an ion. The process may involve transfer of an electron, a proton or other charged species between the reactants. When a positive ion results from chemical ionization the term may be used without qualification. When a negative ion results the term negative ion chemical ionization should be used. Note that this term is not synonymous with chemi-ionization." [PSI:MS]
 exact_synonym: "CI" []
 is_a: MS:1000008 ! ionization type
 
 [Term]
 id: MS:1000072
-name: Electronic Ionization OBSOLETE
-def: "The ionization of an atom or molecule by electrons that are typically accelerated to energies between 50 and 150 eV. Usually 70 eV electrons are used to produce positive ions. The term 'electron impact' is not recommended." [PSI:MS]
+name: Electronic Ionization
+def: "The ionization of an atom or molecule by electrons that are typically accelerated to energies between 50 and 150 eV. Usually 70 eV electrons are used to produce positive ions. The term 'electron impact' is not recommended.\nOBSOLETE because redundant \nreplaced by MS:1000389 electron ionization" [PSI:MS]
 exact_synonym: "EI" []
-is_a: MS:1000008 ! ionization type
+is_obsolete: true
 
 [Term]
 id: MS:1000073
@@ -472,7 +479,7 @@ id: MS:1000075
 name: matrix-assisted laser desorption ionization
 def: "The formation of gas-phase ions from molecules that are present in a solid or solvent matrix that is irradiated with a pulsed laser. See also laser desorption/ionization." [PSI:MS]
 exact_synonym: "MALDI" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000247 ! desorption ionization
 
 [Term]
 id: MS:1000076
@@ -497,19 +504,19 @@ id: MS:1000079
 name: fourier transform ion cyclotron resonance mass spectrometer
 def: "A mass spectrometer based on the principle of ion cyclotron resonance in which an ion in a magnetic field moves in a circular orbit at a frequency characteristic of its m/z value. Ions are coherently excited to a larger radius orbit using a pulse of radio frequency energy and their image charge is detected on receiver plates as a time domain signal. Fourier transformation of the time domain signal results in a frequency domain signal which is converted to a mass spectrum based in the inverse relationship between frequency and m/z." [PSI:MS]
 exact_synonym: "FT_ICR" []
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000080
 name: magnetic sector
 def: "A device that produces a magnetic field perpendicular to a charged particle beam that deflects the beam to an extent that is proportional to the particle momentum per unit charge. For a monoenergetic beam, the deflection is proportional to m/z." [PSI:MS]
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000081
 name: quadrupole
 def: "A mass spectrometer that consists of four parallel rods whose centers form the corners of a square and whose opposing poles are connected. The voltage applied to the rods is a superposition of a static potential and a sinusoidal radio frequency potential. The motion of an ion in the x and y dimensions is described by the Matthieu equation whose solutions show that ions in a particular m/z range can be transmitted along the z axis." [PSI:MS]
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000082
@@ -531,50 +538,50 @@ id: MS:1000084
 name: time-of-flight
 def: "Instrument that separates ions by m/z in a field-free region after acceleration to a fixed acceleration energy." [PSI:MS]
 exact_synonym: "TOF" []
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000085
 name: baseline
 def: "An attribute of resolution when recording the detector response in absence of the analyte." [PSI:MS]
-is_a: MS:1000012 ! resolution method
+is_a: MS:1000012 ! resolution measurement method
 
 [Term]
 id: MS:1000086
 name: full width at half-maximum
 def: "A measure of resolution represented as width of the peak at half peak height." [PSI:MS]
 exact_synonym: "FWHM" []
-is_a: MS:1000012 ! resolution method
+is_a: MS:1000012 ! resolution measurement method
 
 [Term]
 id: MS:1000087
 name: ten percent valley
 def: "An attribute of resolution when the ratio between adjacent signals is 10% of the signal height." [PSI:MS]
-is_a: MS:1000012 ! resolution method
+is_a: MS:1000012 ! resolution measurement method
 
 [Term]
 id: MS:1000088
 name: constant
 def: "When resolution is constant with respect to m/z." [PSI:MS]
-is_a: MS:1000013 ! resolution type ?
+is_a: MS:1000013 ! resolution type
 
 [Term]
 id: MS:1000089
 name: proportional
 def: "When resolution is proportional with respect to m/z." [PSI:MS]
-is_a: MS:1000013 ! resolution type ?
+is_a: MS:1000013 ! resolution type
 
 [Term]
 id: MS:1000090
 name: mass scan
 def: "A variation of instrument where a selected mass is scanned." [PSI:MS]
-is_a: MS:1000017 ! Scan Function ??
+is_a: MS:1000017 ! Scan Function
 
 [Term]
 id: MS:1000091
 name: selected ion detection
 def: "Please see Single Ion Monitoring." [PSI:MS]
-is_a: MS:1000017 ! Scan Function ??
+is_a: MS:1000017 ! Scan Function
 
 [Term]
 id: MS:1000092
@@ -657,13 +664,13 @@ is_obsolete: true
 
 [Term]
 id: MS:1000105
-name: off
+name: reflectron off
 def: "Reflectron is off." [PSI:MS]
 is_a: MS:1000021 ! reflectron state
 
 [Term]
 id: MS:1000106
-name: on
+name: reflectron on
 def: "Reflectron is on." [PSI:MS]
 is_a: MS:1000021 ! reflectron state
 
@@ -672,7 +679,7 @@ id: MS:1000107
 name: channeltron
 def: "A horn-shaped continuous dynode particle multiplier. The ion strikes the inner surface of the device and induces the production of secondary electrons that in turn impinge on the inner surfaces to produce more secondary electrons. This avalanche effect produces an increase in signal in the final measured current pulse." [PSI:MS]
 exact_synonym: "Channeltron Detector" []
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000108
@@ -692,7 +699,7 @@ id: MS:1000110
 name: daly detector
 def: "Detector consisting of a conversion dynode, scintillator and photomultiplier. The metal knob at high potential emits secondary electrons when ions impinge on the surface. The secondary electrons are accelerated onto the scintillator that produces light that is then detected by the photomultiplier detector." [PSI:MS]
 exact_synonym: "Daly" []
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000111
@@ -705,7 +712,7 @@ is_a: MS:1000253 ! electron multiplier
 id: MS:1000112
 name: faraday cup
 def: "A conducting cup or chamber that intercepts a charged particle beam and is electrically connected to a current measuring device." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000113
@@ -719,20 +726,20 @@ name: microchannel plate detector
 def: "A thin plate that contains a closely spaced array of channels that each act as a continuous dynode particle multiplier. A charged particle, fast neutral particle, or photon striking the plate causes a cascade of secondary electrons that ultimately exits the opposite side of the plate." [PSI:MS]
 exact_synonym: "Microchannel Plate Detector" []
 exact_synonym: "multichannel plate" []
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000115
 name: multi-collector
 def: "A detector system commonly used in inductively coupled plasma mass spectrometers." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000116
 name: photomultiplier
 def: "A detector for conversion of the ion/electron signal into photon(s) which are then amplified and detected." [PSI:MS]
 exact_synonym: "PMT" []
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000117
@@ -762,39 +769,39 @@ is_a: MS:1000027 ! detector acquisition mode
 
 [Term]
 id: MS:1000121
-name: ABI / SCIEX
-def: "Applied Biosystems/MDS SCIEX Joint Venture" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: ABI / SCIEX instrument model
+def: "Applied Biosystems/MDS SCIEX joint venture model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000122
-name: Bruker Daltonics
-def: "Bruker Daltonics" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Bruker Daltonics instrument model
+def: "Bruker Daltonics instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000123
-name: IonSpec
-def: "IonSpec corporation" [PSI:MS]
-is_a: MS:1000489 ! varian
+name: IonSpec instrument model
+def: "IonSpec corporation instrument model." [PSI:MS]
+is_a: MS:1000489 ! Varian instrument model
 
 [Term]
 id: MS:1000124
-name: Shimadzu
-def: "Shimadzu corporation" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Shimadzu instrument model
+def: "Shimadzu corporation instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000125
-name: Thermo Finnigan
-def: "ThermoFinnigan from Thermo Electron Corporation" [PSI:MS]
-is_a: MS:1000483 ! Thermo Fisher Scientific
+name: Thermo Finnigan instrument model
+def: "ThermoFinnigan from Thermo Electron Corporation instrument model." [PSI:MS]
+is_a: MS:1000483 ! Thermo Fisher Scientific instrument model
 
 [Term]
 id: MS:1000126
-name: Waters
-def: "Waters Corporation" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Waters instrument model
+def: "Waters Corporation instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000127
@@ -874,405 +881,405 @@ is_a: MS:1000046 ! energy unit
 
 [Term]
 id: MS:1000138
-name: percent
-def: "TODO: Add definition." [PSI:MS]
+name: percent collision energy
+def: "Collision energy required to fragment an ion represented as a percent value." [PSI:MS]
 is_a: MS:1000046 ! energy unit
 
 [Term]
 id: MS:1000139
 name: 4000 Q TRAP
-def: "Applied Biosystems/MDS SCIEX Q 4000 TRAP MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX Q 4000 TRAP MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000140
 name: 4700 Proteomic Analyzer
-def: "Applied Biosystems/MDS SCIEX 4700 Proteomic Analyzer MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX 4700 Proteomic Analyzer MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000141
 name: APEX IV
-def: "Bruker Daltonics APEX IV MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics APEX IV MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000142
 name: APEX-Q
-def: "Bruker Daltonics APEX-Q MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics APEX-Q MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000143
 name: API 150EX
-def: "Applied Biosystems/MDS SCIEX API 150EX MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX API 150EX MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000144
 name: API 150EX Prep
-def: "Applied Biosystems/MDS SCIEX API 150EX Prep MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX API 150EX Prep MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000145
 name: API 2000
-def: "Applied Biosystems/MDS SCIEX API 2000 MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX API 2000 MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000146
 name: API 3000
-def: "Applied Biosystems/MDS SCIEX API 3000 MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX API 3000 MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000147
 name: API 4000
-def: "Applied Biosystems/MDS SCIEX API 4000 MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX API 4000 MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000148
 name: autoFlex II
-def: "Bruker Daltonics autoFlex II MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics autoFlex II MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000149
 name: autoFlex TOF/TOF
-def: "Bruker Daltonics autoFlex TOF/TOF MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics autoFlex TOF/TOF MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000150
 name: Auto Spec Ultima NT
-def: "Waters AutoSpec Ultima NT MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters AutoSpec Ultima NT MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000151
 name: Bio TOF II
-def: "Bruker Daltonics BioTOF II MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics BioTOF II MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000152
 name: Bio TOF Q
-def: "Bruker Daltonics BioTOF Q MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics BioTOF Q MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000153
 name: DELTA plusAdvantage
-def: "ThermoFinnigan DELTAplusAdvantage MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan DELTA plusAdvantage MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000154
 name: DELTAplusXP
-def: "ThermoFinnigan DELTAplusXP MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan DELTAplusXP MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000155
 name: ELEMENT2
-def: "ThermoFinnigan ELEMENT2 MS" [PSI:MS]
-is_a: MS:1000492 ! Thermo Electron
+def: "ThermoFinnigan ELEMENT2 MS." [PSI:MS]
+is_a: MS:1000492 ! Thermo Electron instrument model
 
 [Term]
 id: MS:1000156
 name: esquire4000
-def: "Bruker Daltonics esquire4000 MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics esquire4000 MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000157
 name: esquire6000
-def: "Bruker Daltonics esquire6000 MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics esquire6000 MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000158
 name: explorer
-def: "IonSpec Explorer MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec Explorer MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000159
 name: GCT
-def: "Waters GCT MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters GCT MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000160
 name: HCT
-def: "Bruker Daltonics HCT MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics HCT MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000161
 name: HCT Plus
-def: "Bruker Daltonics HCTPlus MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics HCTPlus MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000162
 name: HiRes ESI
-def: "IonSpec HiResESI MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec HiResESI MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000163
 name: HiRes MALDI
-def: "IonSpec HiResMALDI MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec HiResMALDI MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000164
 name: IsoPrime
-def: "Waters IsoPrime MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters IsoPrime MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000165
 name: IsoProbe
-def: "Waters IsoProbe MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters IsoProbe MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000166
 name: IsoProbe T
-def: "Waters IsoProbe T MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters IsoProbe T MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000167
 name: LCQ Advantage
-def: "ThermoFinnigan LCQ Advantage MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan LCQ Advantage MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000168
 name: LCQ Classic
-def: "ThermoFinnigan LCQ Classic MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan LCQ Classic MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000169
 name: LCQ Deca XP Plus
-def: "ThermoFinnigan LCQ Deca XP Plus MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan LCQ Deca XP Plus MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000170
 name: M@LDI L
-def: "Waters M@LDI L MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters MALDI L MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000171
 name: M@LDI LR
-def: "Waters M@LDI LR MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters MALDI LR MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000172
 name: MAT253
-def: "ThermoFinnigan MAT253 MS" [PSI:MS]
-is_a: MS:1000493 ! Finnigan MAT
+def: "ThermoFinnigan MAT253 MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
 
 [Term]
 id: MS:1000173
 name: MAT900XP
-def: "ThermoFinnigan MAT900XP MS" [PSI:MS]
-is_a: MS:1000493 ! Finnigan MAT
+def: "ThermoFinnigan MAT900XP MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
 
 [Term]
 id: MS:1000174
 name: MAT900XP Trap
-def: "ThermoFinnigan MAT900XP Trap MS" [PSI:MS]
-is_a: MS:1000493 ! Finnigan MAT
+def: "ThermoFinnigan MAT900XP Trap MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
 
 [Term]
 id: MS:1000175
 name: MAT95XP
-def: "ThermoFinnigan MAT95XP MS" [PSI:MS]
-is_a: MS:1000493 ! Finnigan MAT
+def: "ThermoFinnigan MAT95XP MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
 
 [Term]
 id: MS:1000176
 name: MAT95XP Trap
-def: "ThermoFinnigan MAT95XP Trap MS" [PSI:MS]
-is_a: MS:1000493 ! Finnigan MAT
+def: "ThermoFinnigan MAT95XP Trap MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
 
 [Term]
 id: MS:1000177
 name: microFlex
-def: "Bruker Daltonics microFlex MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics microFlex MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000178
 name: microTOFLC
-def: "Bruker Daltonics microTOFLC MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics microTOFLC MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000179
 name: neptune
-def: "ThermoFinnigan NEPTUNE MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan NEPTUNE MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000180
 name: NG-5400
-def: "Waters NG-5400 MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters NG-5400 MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000181
 name: OMEGA
-def: "IonSpec OMEGA MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec OMEGA MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000182
 name: OMEGA-2001
-def: "IonSpec OMEGA-2001 MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec OMEGA-2001 MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000183
 name: OmniFlex
-def: "Bruker Daltonics OminFlex MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics OminFlex MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000184
 name: Platform ICP
-def: "Waters Platform ICP MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters Platform ICP MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000185
 name: PolarisQ
-def: "ThermoFinnigan PolarisQ MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan PolarisQ MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000186
 name: proteomics solution 1
-def: "Applied Biosystems/MDS SCIEX Proteomics Solution 1 MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX Proteomics Solution 1 MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000187
 name: Q TRAP
-def: "Applied Biosystems/MDS SCIEX Q TRAP MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX Q TRAP MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000188
 name: q-tof micro
-def: "Waters Q-Tof micro MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters Q-Tof micro MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000189
 name: q-tof ultima
-def: "Waters Q-Tof Ultima MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters Q-Tof Ultima MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000190
 name: QSTAR
-def: "Applied Biosystems/MDS SCIEX QSTAR MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX QSTAR MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000191
 name: quattro micro
-def: "Waters Quattro micro MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters Quattro micro MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000192
 name: Quattro UItima
-def: "Waters Quattro Uitima MS" [PSI:MS]
-is_a: MS:1000126 ! Waters
+def: "Waters Quattro Uitima MS." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 [Term]
 id: MS:1000193
 name: Surveyor MSQ
-def: "ThermoFinnigan Surveyor MSQ MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan Surveyor MSQ MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000194
 name: SymBiot I
-def: "Applied Biosystems/MDS SCIEX SymBiot I MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX SymBiot I MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000195
 name: SymBiot XVI
-def: "Applied Biosystems/MDS SCIEX SymBiot XVI MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX SymBiot XVI MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000196
 name: TEMPUS TOF
-def: "ThermoFinnigan TEMPUS TOF MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan TEMPUS TOF MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000197
 name: TRACE DSQ
-def: "ThermoFinnigan TRACE DSQ MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan TRACE DSQ MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000198
 name: TRITON
-def: "ThermoFinnigan TRITON MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan TRITON MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000199
 name: TSQ Quantum
-def: "ThermoFinnigan TSQ Quantum MS" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "ThermoFinnigan TSQ Quantum MS." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000200
 name: ultima
-def: "IonSpec Ultima MS" [PSI:MS]
-is_a: MS:1000123 ! IonSpec
+def: "IonSpec Ultima MS." [PSI:MS]
+is_a: MS:1000123 ! IonSpec instrument model
 
 [Term]
 id: MS:1000201
 name: ultraFlex
-def: "Bruker Daltonics ultraFlex MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics ultraFlex MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000202
 name: ultraFlex TOF/TOF
-def: "Bruker Daltonics ultraFlex TOF/TOF MS" [PSI:MS]
-is_a: MS:1000122 ! Bruker Daltonics
+def: "Bruker Daltonics ultraFlex TOF/TOF MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1000203
 name: Voyager-DE PRO
-def: "Applied Biosystems/MDS SCIEX Voyager-DE PRO MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX Voyager-DE PRO MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000204
 name: Voyager-DE STR
-def: "Applied Biosystems/MDS SCIEX Voyager-DE STR MS" [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX
+def: "Applied Biosystems/MDS SCIEX Voyager-DE STR MS." [PSI:MS]
+is_a: MS:1000121 ! ABI / SCIEX instrument model
 
 [Term]
 id: MS:1000205
@@ -1387,8 +1394,8 @@ is_a: MS:1000268 ! mass spectrometry
 [Term]
 id: MS:1000221
 name: magnetic deflection
-def: "The deflection of charged particles in a magnetic field due to a force equal to qv  B where q is the particle charge, v its velocity and B the magnetic field. Magnetic deflection of an ion beam is used for m/z separation in a magnetic sector mass spectrometer." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+def: "The deflection of charged particles in a magnetic field due to a force equal to qv B where q is the particle charge, v its velocity and B the magnetic field. Magnetic deflection of an ion beam is used for m/z separation in a magnetic sector mass spectrometer." [PSI:MS]
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000222
@@ -1426,7 +1433,7 @@ id: MS:1000227
 name: multiphoton ionization
 def: "Photoionization of an atom or molecule in which in two or more photons are absorbed." [PSI:MS]
 exact_synonym: "MPI" []
-relationship: part_of MS:1000008 ! ionization type
+is_a: MS:1000008 ! ionization type
 
 [Term]
 id: MS:1000228
@@ -1468,7 +1475,7 @@ is_a: MS:1000507 ! ion attribute
 [Term]
 id: MS:1000234
 name: mass resolving power
-def: "In a mass spectrum, the observed mass divided by the difference between two masses that can be separated: m/?m. The method by which ?m was obtained and the mass at which the measurement was made should be reported." [PSI:MS]
+def: "In a mass spectrum, the observed mass divided by the difference between two masses that can be separated. The method by which delta m was obtained and the mass at which the measurement was made should be reported." [PSI:MS]
 is_a: MS:1000444 ! m/z Separation Method
 
 [Term]
@@ -1481,7 +1488,7 @@ relationship: part_of MS:1000461 ! additional description
 id: MS:1000236
 name: transmission
 def: "The ratio of the number of ions leaving a region of a mass spectrometer to the number entering that region." [PSI:MS]
-relationship: part_of MS:1000496 ! instrument attribute
+is_a: MS:1000496 ! instrument attribute
 
 [Term]
 id: MS:1000237
@@ -1502,7 +1509,7 @@ id: MS:1000239
 name: atmospheric pressure matrix-assisted laser desorption ionization
 def: "Matrix-assisted laser desorption ionization in which the sample target is at atmospheric pressure and the ions formed by the pulsed laser are sampled through a small aperture into the mass spectrometer." [PSI:MS]
 exact_synonym: "AP MALDI" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000240 ! atmospheric pressure ionization
 
 [Term]
 id: MS:1000240
@@ -1513,10 +1520,10 @@ is_a: MS:1000008 ! ionization type
 
 [Term]
 id: MS:1000241
-name: Atmostpheric Pressure Photoionization- OBSOLETE
-def: "Atmospheric pressure chemical ionization in which the reactant ions are generated by photo-ionization." [PSI:MS]
+name: Atmostpheric Pressure Photoionization
+def: "Atmospheric pressure chemical ionization in which the reactant ions are generated by photo-ionization.\nOBSOLETE because redundant\nreplace by MS:1000382 atmospheric pressure photoionization" [PSI:MS]
 exact_synonym: "APPI" []
-is_a: MS:1000008 ! ionization type
+is_obsolete: true
 
 [Term]
 id: MS:1000242
@@ -1545,15 +1552,15 @@ id: MS:1000245
 name: charge stripping
 def: "The reaction of a positive ion with an atom or molecule that results in the removal of one or more electrons from the ion." [PSI:MS]
 exact_synonym: "CS" []
-relationship: part_of MS:1000456 ! precursor activation description
+relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000246
 name: delayed extraction
 def: "The application of the accelerating voltage pulse after a time delay in desorption ionization from a surface. The extraction delay can produce energy focusing in a time-of-flight mass spectrometer." [PSI:MS]
 exact_synonym: "DE" []
-is_a: MS:1000462 ! ion optics
-relationship: part_of MS:1000456 ! precursor activation description
+is_a: MS:1000597 ! ion optics type
+relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000247
@@ -1603,14 +1610,14 @@ id: MS:1000253
 name: electron multiplier
 def: "A device to amplify the current of a beam or packet of charged particles or photons by incidence upon the surface of an electrode to produce secondary electrons. The secondary electrons are then accelerated to other electrodes or parts of a continuous electrode to produce further secondary electrons." [PSI:MS]
 exact_synonym: "EM" []
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000254
 name: electrostatic energy analyzer
 def: "A device consisting of conducting parallel plates, concentric cylinders or concentric spheres that separates charged particles according to their kinetic energy by means of an electric field that is constant in time." [PSI:MS]
 exact_synonym: "ESA" []
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000255
@@ -1631,7 +1638,7 @@ id: MS:1000257
 name: field desorption
 def: "The formation of gas-phase ions from a material deposited on a solid surface in the presence of a high electric field. Because this process may encompass ionization by field ionization or other mechanisms, it is not recommended as a synonym for field desorption ionization." [PSI:MS]
 exact_synonym: "FD" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000247 ! desorption ionization
 
 [Term]
 id: MS:1000258
@@ -1664,7 +1671,7 @@ is_a: MS:1000293 ! mass spectrometer
 [Term]
 id: MS:1000262
 name: infrared multiphoton dissociation
-def: "Multiphoton ionization ionization where the reactant ion dissociates as a result of the absorption of multiple infrared photons." [PSI:MS]
+def: "Multiphoton ionization where the reactant ion dissociates as a result of the absorption of multiple infrared photons." [PSI:MS]
 exact_synonym: "IRMPD" []
 is_a: MS:1000044 ! dissociation method
 
@@ -1680,7 +1687,7 @@ id: MS:1000264
 name: ion trap
 def: "A device for spatially confining ions using electric and magnetic fields alone or in combination." [PSI:MS]
 exact_synonym: "IT" []
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000265
@@ -1691,10 +1698,12 @@ is_a: MS:1000437 ! ion reaction
 
 [Term]
 id: MS:1000266
-name: Laser Desorption MERGE
-def: "The formation of gas-phase neutral species by the interaction of a pulsed laser with a solid or liquid material." [PSI:MS]
+name: Laser Desorption
+alt_id: MS:1000394
+def: "The formation of ions through the interaction of a laser with a material or with gas-phase ions or molecules.\nOBSOLETE as redudant, replace by laser desorption ionization MS:1000393" [PSI:MS]
+exact_synonym: "Laser Ionization MERGE" []
 exact_synonym: "LD" []
-is_a: MS:1000008 ! ionization type
+is_obsolete: true
 
 [Term]
 id: MS:1000267
@@ -1757,7 +1766,7 @@ id: MS:1000275
 name: collision quadrupole
 def: "A transmission quadrupole to which an oscillating potential is applied so as to focus a beam of ions through a collision gas with no m/z separation." [PSI:MS]
 exact_synonym: "q" []
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000276
@@ -1778,28 +1787,28 @@ id: MS:1000278
 name: surface enhanced laser desorption ionization
 def: "The formation of ionized species in the gas phase from analytes deposited on a particular surface substrate which is irradiated with a laser beam of which wavelength is absorbed by the surface. See also desorption/ionization on silicon and laser desorption/ionization." [PSI:MS]
 exact_synonym: "SELDI" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000406 ! surface ionization
 
 [Term]
 id: MS:1000279
 name: surface enhanced neat desorption
 def: "Matrix-assisted laser desorption ionization in which the matrix is covalently linked to the target surface." [PSI:MS]
 exact_synonym: "SEND" []
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000406 ! surface ionization
 
 [Term]
 id: MS:1000280
 name: suface ionization
-def: "The ionization of a neutral species when it interacts with a solid surface with an appropriate work function and temperature." [PSI:MS]
+def: "The ionization of a neutral species when it interacts with a solid surface with an appropriate work function and temperature.\nOBSOLETE as redudant replace by  MS:1000406 surface ionization" [PSI:MS]
 exact_synonym: "SI" []
-is_a: MS:1000008 ! ionization type
+is_obsolete: true
 
 [Term]
 id: MS:1000281
 name: selected ion flow tube
 def: "A device in which m/z selected ions are entrained in an inert carrier gas and undergo ion-molecule reactions." [PSI:MS]
 exact_synonym: "SIFT" []
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000282
@@ -1810,17 +1819,17 @@ is_a: MS:1000044 ! dissociation method
 
 [Term]
 id: MS:1000283
-name: Spark Source Mass Spectrometry OBSOLETE
-def: "Mass spectrometry using spark ionization." [PSI:MS]
+name: Spark Source Mass Spectrometry
+def: "Mass spectrometry using spark ionization.\nOBSOLETE because redundant, replace by spark ionization MS:1000404." [PSI:MS]
 exact_synonym: "SSMS" []
-is_a: MS:1000008 ! ionization type
+is_obsolete: true
 
 [Term]
 id: MS:1000284
 name: stored waveform inverse fourier transform
 def: "A technique to create excitation waveforms for ions in FT-ICR mass spectrometer or Paul ion trap. An excitation waveform in the time-domain is generated by taking the inverse Fourier transform of an appropriate frequency-domain programmed excitation spectrum, in which the resonance frequencies of ions to be excited are included. This technique may be used for selection of precursor ions in MS/MS experiments." [PSI:MS]
 exact_synonym: "SWIFT" []
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000285
@@ -1834,7 +1843,7 @@ id: MS:1000286
 name: time lag focusing
 def: "Energy focusing in a time-of-flight mass spectrometer that is accomplished by introducing a time delay between the formation of the ions and the application of the accelerating voltage pulse." [PSI:MS]
 exact_synonym: "TLF" []
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000287
@@ -1847,7 +1856,7 @@ is_a: MS:1000293 ! mass spectrometer
 id: MS:1000288
 name: cyclotron
 def: "A device that uses an oscillating electric field and magnetic field to accelerate charged particles." [PSI:MS]
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000289
@@ -1899,8 +1908,9 @@ is_a: MS:1000479 ! purgatory
 
 [Term]
 id: MS:1000297
-name: paul ion trap syn quadrupole ion  trap
+name: paul ion trap
 def: "A device that permits the trapping of ions by means of an alternating current voltage. The ejection of ions with a m/z less than a prescribed value and retention of those with higher mass depends on the application of radio frequency voltages between a ring electrode and two end-cap electrodes to confine the ions in a circular path. The choice of these voltages determines the m/z below which ions are ejected." [PSI:MS]
+related_synonym: "quadrupole ion trap" []
 is_a: MS:1000479 ! purgatory
 
 [Term]
@@ -1919,7 +1929,7 @@ is_a: MS:1000479 ! purgatory
 id: MS:1000300
 name: reflectron
 def: "A time-of-flight mass spectrometer that uses a static electric field to reverse the direction of travel of the ions entering it. A reflectron improves mass resolution by assuring that ions of the same m/z but different kinetic energy arrive at the detector at the same time." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000301
@@ -1943,7 +1953,7 @@ is_a: MS:1000293 ! mass spectrometer
 id: MS:1000304
 name: accelerating voltage
 def: "The electrical potential used to impart kinetic energy to ions in a mass spectrometer." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000305
@@ -1961,7 +1971,7 @@ is_a: MS:1000293 ! mass spectrometer
 id: MS:1000307
 name: einzel lens
 def: "Three element charged particle lens in which the first and third elements are held at the same voltage. Such a lens produces focusing without changing the translational energy of the particle." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000308
@@ -1973,19 +1983,19 @@ is_a: MS:1000487 ! ion optics attribute
 id: MS:1000309
 name: first stability region
 def: "The region of a Mathieu stability diagram closest to the origin. Ions within this region can traverse the full length of a transmission quadrupole." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000310
 name: fringing field
 def: "The electric or magnetic field that extends from the edge of a sector, lens or other ion optics element." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000311
 name: kinetic energy analyzer
 def: "A device for measuring the kinetic energy of charged particles using a retarding field, time-of-flight, or the extent of deflection in an electric or magnetic field." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000312
@@ -2039,7 +2049,7 @@ is_a: MS:1000487 ! ion optics attribute
 id: MS:1000320
 name: static field
 def: "An electric or magnetic field that does not change in time." [PSI:MS]
-is_a: MS:1000462 ! ion optics
+is_a: MS:1000597 ! ion optics type
 
 [Term]
 id: MS:1000321
@@ -2084,9 +2094,9 @@ is_a: MS:1000294 ! mass spectrum
 
 [Term]
 id: MS:1000327
-name: consecutive reaction monitoring ?
-def: "A type of MS/MS experiments with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored.\n\nCRM is present in File content type and Scanning method. So delete from here?" [PSI:MS]
-is_a: MS:1000445 ! sequential m/z separation method ?
+name: consecutive reaction monitoring
+def: "A type of MS/MS experiments with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored.\nOBSOLETE as redundant replace by  consecutive reaction monitoring MS:1000244." [PSI:MS]
+is_obsolete: true
 
 [Term]
 id: MS:1000328
@@ -2103,13 +2113,13 @@ is_a: MS:1000479 ! purgatory
 [Term]
 id: MS:1000330
 name: linked scan at constant b/e
-def: "A linked scan at constant B/E may be performed on a sector mass spectrometer that incorporates at least one magnetic sector plus one electric sector. The magnetic field B and the electric field field E are scanned simultaneously while the accelerating voltage V is held constant, so as to maintain the ratio of the two fields constant. This linked scan may record a product ion spectrum of dissociation or other reactions occurring in a field free region preceding the two sectors." [PSI:MS]
+def: "A linked scan at constant B/E may be performed on a sector mass spectrometer that incorporates at least one magnetic sector plus one electric sector. The magnetic field B and the electric field E are scanned simultaneously while the accelerating voltage V is held constant, so as to maintain the ratio of the two fields constant. This linked scan may record a product ion spectrum of dissociation or other reactions occurring in a field free region preceding the two sectors." [PSI:MS]
 is_a: MS:1000329 ! linked scan
 
 [Term]
 id: MS:1000331
 name: Linked Scan at Constant E2/V
-def: "A linked scan performed on a sector instrument that incorporates at least one electric sector plus one magnetic sector. The electric sector field, E, and the accelerating voltage, V, are scanned simultaneously, so as to maintain the ratio E2/V at a constant value. This linked scan recordss a product ion spectrum of dissociation or other reactions occurring in a field free region (FFR) preceding the two sectors. The term" [PSI:MS]
+def: "A linked scan performed on a sector instrument that incorporates at least one electric sector plus one magnetic sector. The electric sector field, E, and the accelerating voltage, V, are scanned simultaneously, so as to maintain the ratio E2/V at a constant value. This linked scan recordss a product ion spectrum of dissociation or other reactions occurring in a field free region (FFR) preceding the two sectors." [PSI:MS]
 is_a: MS:1000329 ! linked scan
 
 [Term]
@@ -2121,7 +2131,7 @@ is_a: MS:1000329 ! linked scan
 [Term]
 id: MS:1000333
 name: Linked Scan at Constant B[1-(E/E0)]^1/2 / E
-def: "A linked scan performed on a sector instrument that incorporates at least one electric sector plus one magnetic sector placed in either order. The accelerating voltage is fixed while scanning the magnetic field, B, and electric field, E, simultaneously, so as to maintain the quantity B[1-(E/E0)]1/2/E at a constant value. This linked scan records a constant neutral mass loss (or gain) spectrum of dissociation or other reactions occurring in a field free region preceding the two sectors. E0 is the electric field required to transmit the singly charged analog of the desired neutral fragment. The term B[1-(E/E0)]1/2/E linked scan" [PSI:MS]
+def: "A linked scan performed on a sector instrument that incorporates at least one electric sector plus one magnetic sector placed in either order. The accelerating voltage is fixed while scanning the magnetic field, B, and electric field, E, simultaneously, so as to maintain the quantity B[1-(E/E0)]1/2/E at a constant value. This linked scan records a constant neutral mass loss (or gain) spectrum of dissociation or other reactions occurring in a field free region preceding the two sectors. E0 is the electric field required to transmit the singly charged analog of the desired neutral fragment. The term B[1-(E/E0)]1/2/E linked scan." [PSI:MS]
 is_a: MS:1000329 ! linked scan
 
 [Term]
@@ -2139,7 +2149,7 @@ is_a: MS:1000445 ! sequential m/z separation method ?
 [Term]
 id: MS:1000336
 name: neutral loss
-def: "The the loss of an uncharged species during a rearrangement process." [PSI:MS]
+def: "The loss of an uncharged species during a rearrangement process." [PSI:MS]
 is_a: MS:1000445 ! sequential m/z separation method ?
 
 [Term]
@@ -2159,7 +2169,7 @@ is_a: MS:1000479 ! purgatory
 [Term]
 id: MS:1000339
 name: nth generation product ion spectrum
-def: "The mass spectrum recorded from any  mass spectrometer in which the appropriate scan function can be set to record the appropriate generation product ion or ions of m/z selected precursor ions." [PSI:MS]
+def: "The mass spectrum recorded from any mass spectrometer in which the appropriate scan function can be set to record the appropriate generation product ion or ions of m/z selected precursor ions." [PSI:MS]
 is_a: MS:1000343 ! product ion spectrum
 
 [Term]
@@ -2193,8 +2203,7 @@ is_a: MS:1000294 ! mass spectrum
 [Term]
 id: MS:1000344
 name: progeny ion
-def: "A charged product of a series of consecutive reactions that includes product ions, 1st\ngeneration product ions, 2nd generation product ions, etc. Given the sequential fragmentation scheme: M1+ -> M2+ -> M3+ -> M4+ -> M5+.  M4 + is the precursor ion of M5+, a 1st generation product ion of M3+, a 2nd generation product ion of M2+ and a 3rd\ngeneration product ion of M1+." [PSI:MS]
-related_synonym: "<new synonym>" []
+def: "A charged product of a series of consecutive reactions that includes product ions, 1st\ngeneration product ions, 2nd generation product ions, etc. Given the sequential fragmentation scheme: M1+ -> M2+ -> M3+ -> M4+ -> M5+. M4+ is the precursor ion of M5+, a 1st generation product ion of M3+, a 2nd generation product ion of M2+ and a 3rd generation product ion of M1+." [PSI:MS]
 exact_synonym: "Progeny Fragment Ion" []
 is_a: MS:1000508 ! ion chemical type
 
@@ -2202,43 +2211,43 @@ is_a: MS:1000508 ! ion chemical type
 id: MS:1000345
 name: array detector
 def: "Detector comprising several ion collection elements, arranged in a line or grid where each element is an individual detector." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000346
 name: conversion dynode
 def: "A surface that is held at high potential such that ions striking the surface produce electrons that are subsequently detected." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000347
 name: dynode
 def: "One of a series of electrodes in a photomultiplier tube. Such an arrangement is able to amplify the current emitted by the photocathode." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000348
 name: focal plane collector
 def: "A detector for spatially disperse ion beams in which all ions simultaneously impinge on the\ndetector plane." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000349
 name: ion-to-photon detector
 def: "A detector in which ions strike a conversion dynode to produce electrons that in turn strike a phosphor and the resulting photons are detected by a photomultiplier." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000350
 name: point collector
 def: "A detector in which the ion beam is focused onto a point and the individual ions arrive sequentially." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000351
 name: postacceleration detector
 def: "A detector in which the charged particles are accelerated to a high velocity and impinge on a conversion dynode, emitting secondary electrons. The electrons are accelerated onto a phosphor screen, which emits photons that are in turn detected using a photomultiplier or other photon detector." [PSI:MS]
-is_a: MS:1000026 ! detector
+is_a: MS:1000026 ! detector type
 
 [Term]
 id: MS:1000352
@@ -2322,12 +2331,12 @@ is_obsolete: true
 id: MS:1000365
 name: ion
 def: "An atomic or molecular species having a net positive or negative electric charge." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000366
 name: Isotopologue ion
-def: "An ion that differs only in the isotopic composition of one or more of its constituent atoms. For example CH4+. and CH3D+. or 10BF3 and 11BF3. The term isotopologue is a contraction of isotopic homologue." [PSI:MS]
+def: "An ion that differs only in the isotopic composition of one or more of its constituent atoms. For example CH4+ and CH3D+ or 10BF3 and 11BF3. The term isotopologue is a contraction of isotopic homologue." [PSI:MS]
 is_a: MS:1000508 ! ion chemical type
 
 [Term]
@@ -2363,7 +2372,7 @@ is_a: MS:1000508 ! ion chemical type
 [Term]
 id: MS:1000372
 name: onium ion
-def: "A positively charged hypervalent ion of the nonmetallic elements. Examples are the methonium ion CH5+, the hydrogenonium ion H3+ and and the hydronium ion H3O+. Other examples are the carbonium, oxonium, sulfonium, nitronium, diazonium, phosphonium, and halonium ions. Onium ions are not limited to monopositive ions; multiply-charged onium ions exist such as the gitonic (proximal) oxonium dication H4O2+ and the distonic oxonium dication H2O+-CH2-CH2-OH2+." [PSI:MS]
+def: "A positively charged hypervalent ion of the nonmetallic elements. Examples are the methonium ion CH5+, the hydrogenonium ion H3+ and the hydronium ion H3O+. Other examples are the carbonium, oxonium, sulfonium, nitronium, diazonium, phosphonium, and halonium ions. Onium ions are not limited to monopositive ions; multiply-charged onium ions exist such as the gitonic (proximal) oxonium dication H4O2+ and the distonic oxonium dication H2O+-CH2-CH2-OH2+." [PSI:MS]
 is_a: MS:1000508 ! ion chemical type
 
 [Term]
@@ -2424,7 +2433,7 @@ is_a: MS:1000008 ! ionization type
 id: MS:1000382
 name: atmospheric pressure photoionization
 def: "Atmospheric pressure chemical ionization in which the reactant ions are generated by photo-ionization." [PSI:MS]
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000240 ! atmospheric pressure ionization
 
 [Term]
 id: MS:1000383
@@ -2490,13 +2499,7 @@ is_a: MS:1000482 ! source attribute
 id: MS:1000393
 name: laser desorption ionization
 def: "The formation of gas-phase ions by the interaction of a pulsed laser with a solid or liquid material." [PSI:MS]
-is_a: MS:1000008 ! ionization type
-
-[Term]
-id: MS:1000394
-name: Laser Ionization MERGE
-def: "The formation of ions through the interaction of a laser with a material or with gas-phase ions or molecules." [PSI:MS]
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000247 ! desorption ionization
 
 [Term]
 id: MS:1000395
@@ -2514,13 +2517,13 @@ is_a: MS:1000007 ! inlet type
 id: MS:1000397
 name: microelectrospray
 def: "Electrospray ionization at a solvent flow rate less than 1 ?L/min." [PSI:MS]
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000073 ! electrospray ionization
 
 [Term]
 id: MS:1000398
 name: nanoelectrospray
 def: "Electrospray ionization at a flow rate less than 100 nL/min. Nanoelectrospray is synonymous with nanospray. See also electrospray ionization and microelectrospray." [PSI:MS]
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000073 ! electrospray ionization
 
 [Term]
 id: MS:1000399
@@ -2562,7 +2565,7 @@ is_a: MS:1000008 ! ionization type
 id: MS:1000405
 name: surface-assisted laser desorption ionization
 def: "The formation of gas-phase ions from molecules that are deposited on a particular surface substrate that is irradiated with a pulsed laser. See also matrix-assisted laser desorption ionization." [PSI:MS]
-is_a: MS:1000008 ! ionization type
+is_a: MS:1000247 ! desorption ionization
 
 [Term]
 id: MS:1000406
@@ -2604,7 +2607,7 @@ is_a: MS:1000437 ! ion reaction
 id: MS:1000412
 name: buffer gas
 def: "An inert gas used for collisional deactivation of internally excited ions." [PSI:MS]
-relationship: part_of MS:1000510 ! precursor activation attribute
+is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000413
@@ -2646,7 +2649,7 @@ is_a: MS:1000437 ! ion reaction
 id: MS:1000419
 name: collision gas
 def: "An inert gas used for collisional excitation. The term target gas is not recommended." [PSI:MS]
-relationship: part_of MS:1000510 ! precursor activation attribute
+is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000420
@@ -2780,21 +2783,21 @@ is_a: MS:1000437 ! ion reaction
 
 [Term]
 id: MS:1000441
-name: scan description
-def: "TODO: Add definition." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+name: scan
+def: "Function or process of the mass spectrometer where it records a spectrum." [PSI:MS]
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000442
 name: spectrum
-def: "TODO: Add definition." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+def: "A mass spectrum is an intensity vs m/z (mass-to-charge ratio) plot representing a chemical analysis." [PSI:MS]
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000443
-name: mass analyzer
+name: mass analyzer type
 def: "Mass analyzer separates the ions according to their mass-to-charge ratio." [PSI:MS]
-relationship: part_of MS:1000451 ! analyzer description
+relationship: part_of MS:1000451 ! mass analyzer
 
 [Term]
 id: MS:1000444
@@ -2818,44 +2821,44 @@ is_a: MS:1000008 ! ionization type
 [Term]
 id: MS:1000447
 name: LTQ
-def: "Finnigan LTQ MS" [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+def: "Finnigan LTQ MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000448
 name: LTQ FT
-def: "Finnigan LTQ FT MS" [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+def: "Finnigan LTQ FT MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000449
 name: LTQ Orbitrap
-def: "Finnigan LTQ Orbitrap MS" [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+def: "Finnigan LTQ Orbitrap MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000450
 name: LXQ
-def: "Finnigan LXQ MS" [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+def: "Finnigan LXQ MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000451
-name: analyzer description
+name: mass analyzer
 def: "Terms used to describe the Analyzer." [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000452
-name: data processing description
+name: data transformation
 def: "Terms used to describe types of data processing." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000453
-name: detector description
+name: detector
 def: "Terms describing the detector." [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000454
@@ -2867,26 +2870,26 @@ relationship: part_of MS:1000479 ! purgatory
 id: MS:1000455
 name: ion selection attribute
 def: "Ion selection properties that are associated with a value." [PSI:MS]
+is_a: MS:1000547 ! object attribute
 relationship: part_of MS:1000442 ! spectrum
-relationship: part_of MS:1000547 ! object attribute
 
 [Term]
 id: MS:1000456
-name: precursor activation description
+name: precursor activation
 def: "Terms to describe the precursor activation." [PSI:MS]
 relationship: part_of MS:1000442 ! spectrum
 
 [Term]
 id: MS:1000457
-name: sample description
+name: sample
 def: "Terms to describe the sample." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000458
-name: source description
+name: source
 def: "Terms to describe the source." [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000459
@@ -2898,7 +2901,7 @@ relationship: part_of MS:1000479 ! purgatory
 id: MS:1000460
 name: unit
 def: "Terms to describe units." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000461
@@ -2910,13 +2913,13 @@ relationship: part_of MS:1000479 ! purgatory
 id: MS:1000462
 name: ion optics
 def: "Device used in the construction of a spectrometer to focus, contain or otherwise manipulate ions." [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000463
-name: instrument description
+name: instrument
 def: "Description of the instrument or the mass spectrometer." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000464
@@ -2928,7 +2931,7 @@ is_a: MS:1000460 ! unit
 id: MS:1000465
 name: scan polarity
 def: "An acquisition mode to which specifies weather polarity is negative, positive or alternating." [PSI:MS]
-relationship: part_of MS:1000441 ! scan description
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000466
@@ -2940,186 +2943,185 @@ is_obsolete: true
 id: MS:1000467
 name: 1200 series LC/MSD SL
 def: "The 1200 Series LC/MSD SL ion trap belongs to the Agilent LC/MSD ion trap family. It provides fast polarity switching and multisignal data\nacquisition capabilities in a single run while also providing 5 stages of automated data dependent MS/MS and 11 stages of manual MS/MS." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000468
 name: 6110 Quadrupole LC/MS
 def: "The 6110 Quadrupole LC/MS system is a Agilent liquid chromatography\ninstrument combined with an entry level single quadrupole mass spectrometer from the 6100 Series of Agilent quadrupole mass spectrometers. 6110 Quadrupole mass spectrometer has m/z range of 10-1500 and 2500 u/s scan speed. It proves useful for wide range of SIM quantitative applications." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000469
 name: 6120 Quadrupole LC/MS
-def: "The 6120 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a single quadrupole mass spectrometer from \nthe 6100 Series of Agilent mass spectrometers. 6120 quadrupole mass\nspectrometer has m/z range of 10-1500, 2500 u/s scan speed and utilizes multiple signal acquisition." [PSI:MS]
-is_a: MS:1000490 ! agilent
+def: "The 6120 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a single quadrupole mass spectrometer from the 6100 Series of Agilent mass spectrometers. 6120 quadrupole mass spectrometer has m/z range of 10-1500, 2500 u/s scan speed and utilizes multiple signal acquisition." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000470
 name: 6130 Quadrupole LC/MS
 def: "The 6130 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a single quadrupole mass spectrometer from the 6100 series of Agilent mass spectrometers. The 6130 quadrupole mass spectrometer has m/z range of 2-3000, 2500 u/s scan speed in standard mode and 5250 u/s speed in fast-scan mode. It also uses multiple signal acquisition." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000471
 name: 6140 Quadrupole LC/MS
 def: "The 6140 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a single quadrupole mass spectrometer from the 6100 Series of Agilent quadrupole mass spectrometers. 6140 Quadrupole mass spectrometer has m/z range of 10-1350, 2500 u/s scan speed in standard mode and 10000 u/s speed in fast-scan mode. It also uses multiple signal acquisition." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000472
 name: 6210 Time-of-Flight LC/MS
-def: "The 6210 Time-of-Flight LC/MS is a Agilent liquid chromatography instrument combined with a Agilent time of flight mass spectrometer. This time of flight mass spectrometer has a m/z range of 50-12000, mass accuracy of less than 2 ppm and resolution greater than 13,000 at m/z 2722. It has multiple ion sources and can be used with multimode ion sources. " [PSI:MS]
-is_a: MS:1000490 ! agilent
+def: "The 6210 Time-of-Flight LC/MS is a Agilent liquid chromatography instrument combined with a Agilent time of flight mass spectrometer. This time of flight mass spectrometer has a m/z range of 50-12000, mass accuracy of less than 2 ppm and resolution greater than 13,000 at m/z 2722. It has multiple ion sources and can be used with multimode ion sources." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000473
 name: 6310 Ion Trap LC/MS
-def: "The 6310 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.35 resolution and mass range of 200-4000 with resolution of 3-4.  The scan speed varies from 1650-27000 for the respective mass ranges. " [PSI:MS]
-is_a: MS:1000490 ! agilent
+def: "The 6310 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.35 resolution and mass range of 200-4000 with resolution of 3-4. The scan speed varies from 1650-27000 for the respective mass ranges." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000474
 name: 6320 Ion Trap LC/MS
-def: "The 6320 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.25 resolution and mass range of 200-4000 with resolution of less than 3. The scan speed varies from 1650-27000 for the respective mass ranges. " [PSI:MS]
-is_a: MS:1000490 ! agilent
+def: "The 6320 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.25 resolution and mass range of 200-4000 with resolution of less than 3. The scan speed varies from 1650-27000 for the respective mass ranges." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000475
 name: 6330 Ion Trap LC/MS
 def: "The 6330 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.25 resolution and mass range of 200-4000 with resolution of less than 3. The scan speed varies from 1650-27000 for the respective mass ranges." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000476
 name: 6340 Ion Trap LC/MS
-def: "The 6340 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.25 resolution and mass range of 200-4000 with resolution of less than 3. The scan speed varies from 1650-27000 for the respective mass ranges. " [PSI:MS]
-is_a: MS:1000490 ! agilent
+def: "The 6340 Ion Trap LC/MS is a Agilent liquid chromatography instrument combined with a 6300 series Agilent ion trap. It has a mass range of 50-2200 between 0.6 to 0.25 resolution and mass range of 200-4000 with resolution of less than 3. The scan speed varies from 1650-27000 for the respective mass ranges." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000477
 name: 6410 Triple Quadrupole LC/MS
 def: "The 6410 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a Agilent triple quadrupole mass spectrometer. Mass range of the mass spectrometer is 15-1650 m/z, resolution is at three settings of 0.7 u (unit), 1.2 u (wide) and 2.5 u (widest). The mass accuracy for 6410 mass spectrometer is 0.1 across the mass range. The collision cell is a hexapole with linear acceleration." [PSI:MS]
 exact_synonym: "6410 Triple Quad LC/MS" []
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000478
 name: 1200 series LC/MSD VL
 def: "The LC/MSD VL ion trap is part of the family of Agilent ion trap mass\nspectrometers. It has ESI, APCI and APPI ion sources and is a useful ion\ntrap when the amount of sample is not the limiting factor." [PSI:MS]
-is_a: MS:1000490 ! agilent
+is_a: MS:1000490 ! Agilent instrument model
 
 [Term]
 id: MS:1000479
 name: purgatory
-def: "Terms that will likely become obsolete unless there are wails of dissent" [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+def: "Terms that will likely become obsolete unless there are wails of dissent." [PSI:MS]
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000480
-name: analyzer attribute
+name: mass analyzer attribute
 def: "Analyzer properties that are associated with a value." [PSI:MS]
-is_a: MS:1000451 ! analyzer description
+relationship: part_of MS:1000451 ! mass analyzer
 
 [Term]
 id: MS:1000481
 name: detector attribute
 def: "Detector attribute recognized as a value." [PSI:MS]
-relationship: part_of MS:1000453 ! detector description
+relationship: part_of MS:1000453 ! detector
 
 [Term]
 id: MS:1000482
 name: source attribute
 def: "Property of a source device that need a value." [PSI:MS]
-relationship: part_of MS:1000458 ! source description
+relationship: part_of MS:1000458 ! source
 
 [Term]
 id: MS:1000483
-name: Thermo Fisher Scientific
-def: "Thermo Fisher Scientific. Also known as Thermo Finnigan corporation." [PSI:MS]
+name: Thermo Fisher Scientific instrument model
+def: "Thermo Fisher Scientific instrument model. The company has gone through several names including Thermo Finnigan, Thermo Scientific." [PSI:MS]
 related_synonym: "Thermo Scientific" []
-is_a: MS:1000031 ! model  by vendor
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000484
 name: orbitrap
 def: "An ion trapping device that consists of an outer barrel-like electrode and a coaxial inner spindle-like electrode that form an electrostatic field with quadro-logarithmic potential distribution. The frequency of harmonic oscillations of the orbitally trapped ions along the axis of the electrostatic field is independent of the ion velocity and is inversely proportional to the square root of m/z so that the trap can be used as a mass analyzer." [PSI:MS]
-is_a: MS:1000443 ! mass analyzer
+is_a: MS:1000443 ! mass analyzer type
 
 [Term]
 id: MS:1000485
 name: nanospray inlet
-def: "N" [PSI:MS]
+def: "Nanospray Inlet." [PSI:MS]
 is_a: MS:1000057 ! electrospray inlet
 
 [Term]
 id: MS:1000486
 name: source potential
-def: "in volt" [PSI:MS]
+def: "Potential difference at the MS source in volts." [PSI:MS]
 is_a: MS:1000482 ! source attribute
 
 [Term]
 id: MS:1000487
 name: ion optics attribute
-def: "todo." [PSI:MS]
-exact_synonym: "q" []
+def: "Ion optics involves components that help focus ion streams in mass spectrometry." [PSI:MS]
 is_a: MS:1000462 ! ion optics
 
 [Term]
 id: MS:1000488
-name: hitachi
-def: "Hitachi" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Hitachi instrument model
+def: "Hitachi instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000489
-name: varian
-def: "Varian" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Varian instrument model
+def: "Varian instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000490
-name: agilent
-def: "Agilent" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Agilent instrument model
+def: "Agilent instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000491
-name: dionex
-def: "Dionex" [PSI:MS]
-is_a: MS:1000031 ! model  by vendor
+name: Dionex instrument model
+def: "Dionex instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000492
-name: Thermo Electron
-def: "Thermo Electron rom Thermo Electron Corporation" [PSI:MS]
-is_a: MS:1000483 ! Thermo Fisher Scientific
+name: Thermo Electron instrument model
+def: "Thermo Electron Corporation instrument model." [PSI:MS]
+is_a: MS:1000483 ! Thermo Fisher Scientific instrument model
 
 [Term]
 id: MS:1000493
-name: Finnigan MAT
-def: "Finnigan MAT" [PSI:MS]
-relationship: part_of MS:1000483 ! Thermo Fisher Scientific
+name: Finnigan MAT instrument model
+def: "Finnigan MAT instrument model." [PSI:MS]
+is_a: MS:1000483 ! Thermo Fisher Scientific instrument model
 
 [Term]
 id: MS:1000494
-name: Thermo Scientific
-def: "Thermo Scientific" [PSI:MS]
-is_a: MS:1000483 ! Thermo Fisher Scientific
+name: Thermo Scientific instrument model
+def: "Thermo Scientific instrument model." [PSI:MS]
+is_a: MS:1000483 ! Thermo Fisher Scientific instrument model
 
 [Term]
 id: MS:1000495
-name: Applied Biosystems
-def: "Applied Biosystems" [PSI:MS]
+name: Applied Biosystems instrument model
+def: "Applied Biosystems instrument model." [PSI:MS]
 exact_synonym: "ABI" []
-relationship: part_of MS:1000121 ! ABI / SCIEX
+is_a: MS:1000031 ! instrument model
 
 [Term]
 id: MS:1000496
 name: instrument attribute
 def: "Instrument properties that are associated with a value." [PSI:MS]
-relationship: part_of MS:1000463 ! instrument description
-relationship: part_of MS:1000547 ! object attribute
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000463 ! instrument
 
 [Term]
 id: MS:1000497
@@ -3137,9 +3139,8 @@ is_a: MS:1000020 ! scanning method
 id: MS:1000499
 name: spectrum attribute
 def: "Spectrum properties that are associated with a value." [PSI:MS]
-exact_synonym: "BP" []
+is_a: MS:1000547 ! object attribute
 relationship: part_of MS:1000442 ! spectrum
-relationship: part_of MS:1000547 ! object attribute
 
 [Term]
 id: MS:1000500
@@ -3166,14 +3167,13 @@ is_a: MS:1000549 ! selection window attribute
 id: MS:1000503
 name: scan attribute
 def: "Scan properties that are associated with a value." [PSI:MS]
-relationship: part_of MS:1000441 ! scan description
-relationship: part_of MS:1000547 ! object attribute
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000504
 name: base peak m/z
 def: "M/z value of the greatest peak in the mass spectrum." [PSI:MS]
-exact_synonym: "BP" []
 is_a: MS:1000499 ! spectrum attribute
 
 [Term]
@@ -3204,19 +3204,19 @@ relationship: part_of MS:1000365 ! ion
 id: MS:1000509
 name: activation energy
 def: "Activation Energy." [PSI:MS]
-relationship: part_of MS:1000510 ! precursor activation attribute
+is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000510
 name: precursor activation attribute
 def: "Precursor Activation Attribute." [PSI:MS]
-relationship: part_of MS:1000456 ! precursor activation description
+relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000511
-name: ms Level
+name: ms level
 def: "Stages of ms achieved in a multi stage mass spectrometry experiment." [PSI:MS]
-comment: The attribute  'ms level' should be encoded in the homonymous XML attribute of the element 'dx:Spectrum', and not using the CvParam element.
+comment: The attribute 'ms level' should be encoded in the homonymous XML attribute of the element 'dx:Spectrum', and not using the CvParam element.
 is_a: MS:1000503 ! scan attribute
 
 [Term]
@@ -3251,20 +3251,20 @@ is_a: MS:1000513 ! binary data array
 
 [Term]
 id: MS:1000517
-name: singal to noise array
+name: signal to noise array
 def: "Singal to Noise Array." [PSI:MS]
 is_a: MS:1000513 ! binary data array
 
 [Term]
 id: MS:1000518
 name: binary data type
-def: "Binary Data type.16-bit integer , 32-bit integer ,32-bit float\n64-bit integer 64-bit float" [PSI:MS]
+def: "Binary Data type. 16-bit integer, 32-bit integer, 32-bit float\n64-bit integer 64-bit float." [PSI:MS]
 relationship: part_of MS:1000442 ! spectrum
 
 [Term]
 id: MS:1000519
 name: 32-bit integer
-def: "Signed  32-bit integer." [PSI:MS]
+def: "Signed 32-bit integer." [PSI:MS]
 is_a: MS:1000518 ! binary data type
 
 [Term]
@@ -3276,26 +3276,26 @@ is_a: MS:1000518 ! binary data type
 [Term]
 id: MS:1000521
 name: 32-bit float
-def: "Signed  32-bit float. IEEE-754" [PSI:MS]
+def: "Signed 32-bit float. IEEE-754." [PSI:MS]
 is_a: MS:1000518 ! binary data type
 
 [Term]
 id: MS:1000522
 name: 64-bit integer
-def: "Signed  64-bit integer." [PSI:MS]
+def: "Signed 64-bit integer." [PSI:MS]
 is_a: MS:1000518 ! binary data type
 
 [Term]
 id: MS:1000523
 name: 64-bit float
-def: "Signed  64-bit float. IEEE-754" [PSI:MS]
+def: "Signed 64-bit float. IEEE-754." [PSI:MS]
 is_a: MS:1000518 ! binary data type
 
 [Term]
 id: MS:1000524
-name: file content
+name: data file content
 def: "Describes the data content on the file." [PSI:MS]
-relationship: part_of MS:1000577 ! file description
+relationship: part_of MS:1000577 ! data file
 
 [Term]
 id: MS:1000525
@@ -3306,7 +3306,7 @@ relationship: part_of MS:1000442 ! spectrum
 [Term]
 id: MS:1000526
 name: MassLynx raw format
-def: "Waters MassLynx raw file format, which is actually a directory/folder containing several files for each msrun." [PSI:MS]
+def: "MassLynx raw file format, which is actually a directory/folder containing several files for each ms run." [PSI:MS]
 is_a: MS:1000560 ! source file type
 
 [Term]
@@ -3325,19 +3325,19 @@ is_a: MS:1000499 ! spectrum attribute
 id: MS:1000529
 name: instrument serial number
 def: "Serial Number of the instrument." [PSI:MS]
-relationship: part_of MS:1000496 ! instrument attribute
+is_a: MS:1000496 ! instrument attribute
 
 [Term]
 id: MS:1000530
 name: file format conversion
 def: "Conversion of one file format to another." [PSI:MS]
-relationship: part_of MS:1000452 ! data processing description
+is_a: MS:1000452 ! data transformation
 
 [Term]
 id: MS:1000531
 name: software
 def: "Software related to the recording or transformation of spectra." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000532
@@ -3347,14 +3347,14 @@ is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000533
-name: bioworks
+name: Bioworks
 def: "Thermo Finnigan software for data analysis of peptides and proteins." [PSI:MS]
 related_synonym: "Bioworks Browser" []
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000534
-name: masslynx
+name: Masslynx
 def: "Miromass software for data acquisition and analysis." [PSI:MS]
 is_a: MS:1000531 ! software
 
@@ -3379,12 +3379,12 @@ is_a: MS:1000531 ! software
 [Term]
 id: MS:1000538
 name: Wolf
-def: "A software for converting Waters RAW directory format to mzXML or mzML. ReAdW was originally developed at the Institute for Systems Biology." [PSI:MS]
+def: "A software for converting Waters raw directory format to mzXML or mzML. Wolf was originally developed at the Institute for Systems Biology." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000539
-name: voyager biospectrometry workstation system
+name: Voyager Biospectrometry Workstation System
 def: "Applied Biosystems MALDI-TOF data acquisition and analysis system." [PSI:MS]
 is_a: MS:1000531 ! software
 
@@ -3403,14 +3403,14 @@ is_a: MS:1000531 ! software
 [Term]
 id: MS:1000542
 name: MzStar
-def: "A software program for converting Applied Biosystems wiff file format to mzXML format. MzStar was originally developed at the Institute for Systems Biology. It was later obsoleted by the mzWiff program." [PSI:MS]
+def: "A software program for converting Applied Biosystems wiff file format to mzXML format. MzStar was originally developed at the Institute for Systems Biology. It is now obsoleted by the MzWiff program." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000543
 name: data processing action
 def: "Data processing attribute used to describe the type of data processing performed on the data file." [PSI:MS]
-relationship: part_of MS:1000452 ! data processing description
+is_a: MS:1000452 ! data transformation
 
 [Term]
 id: MS:1000544
@@ -3434,21 +3434,21 @@ is_a: MS:1000530 ! file format conversion
 id: MS:1000547
 name: object attribute
 def: "Object Attribute." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000548
 name: sample attribute
 def: "Sample properties that are associated with a value." [PSI:MS]
-relationship: part_of MS:1000457 ! sample description
-relationship: part_of MS:1000547 ! object attribute
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000457 ! sample
 
 [Term]
 id: MS:1000549
 name: selection window attribute
 def: "Selection window properties that are associated with a value." [PSI:MS]
-relationship: part_of MS:1000441 ! scan description
-relationship: part_of MS:1000547 ! object attribute
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000441 ! scan
 
 [Term]
 id: MS:1000550
@@ -3458,7 +3458,7 @@ is_a: MS:1000460 ! unit
 
 [Term]
 id: MS:1000551
-name: analyst
+name: Analyst
 def: "Applied Biosystems software for data acquisition and analysis." [PSI:MS]
 is_a: MS:1000531 ! software
 
@@ -3466,64 +3466,61 @@ is_a: MS:1000531 ! software
 id: MS:1000552
 name: maldi spot identifier
 def: "Maldi Spot Identifier." [PSI:MS]
-exact_synonym: "DLI" []
 is_a: MS:1000482 ! source attribute
 
 [Term]
 id: MS:1000553
 name: Trapper
-def: "A software program for converting Agilent MassHunt format to mzXML or mzML. ReAdW was originally developed at the Institute for Systems Biology." [PSI:MS]
+def: "A software program for converting Agilent MassHunter format to mzXML or mzML. Trapper was originally developed at the Institute for Systems Biology." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000554
 name: LCQ Deca
 def: "ThermoFinnigan LCQ Deca." [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000555
 name: LTQ Orbitrap Discovery
 def: "LTQ Orbitrap Discovery." [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000556
 name: LTQ Orbitrap XL
 def: "LTQ Orbitrap XL." [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000557
 name: LTQ FT Ultra
 def: "LTQ FT Ultra." [PSI:MS]
-is_a: MS:1000494 ! Thermo Scientific
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000558
 name: GC Quantum
 def: "GC Quantum." [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000559
 name: spectrum type
-def: "Spectrum Type." [PSI:MS]
-comment: The children of the attribute  'spectrum type' should be encoded in the homonymous XML attribute of the element 'dx:Spectrum', and not using the CvParam element.
+def: "Spectrum type." [PSI:MS]
 relationship: part_of MS:1000442 ! spectrum
 
 [Term]
 id: MS:1000560
 name: source file type
 def: "The format of the file being used. This could be a instrument or vendor specific proprietary file format or a converted open file format." [PSI:MS]
-comment: The children terms of 'source file type' should be encoded in the homonymous XML attribute of the element 'dx:SourceFile', and not using the CvParam element.
-relationship: part_of MS:1000577 ! file description
+relationship: part_of MS:1000577 ! data file
 
 [Term]
 id: MS:1000561
-name: file checksum type
+name: data file checksum type
 def: "Checksum is a form of redundancy check, a simple way to protect the integrity of data by detecting errors in data." [PSI:MS]
-relationship: part_of MS:1000577 ! file description
+relationship: part_of MS:1000577 ! data file
 
 [Term]
 id: MS:1000562
@@ -3565,19 +3562,18 @@ is_a: MS:1000560 ! source file type
 id: MS:1000568
 name: MD5
 def: "MD5 (Message-Digest algorithm 5) is a cryptographic hash function with a 128-bit hash value used to check the integrity of files." [PSI:MS]
-is_a: MS:1000561 ! file checksum type
+is_a: MS:1000561 ! data file checksum type
 
 [Term]
 id: MS:1000569
 name: SHA-1
 def: "SHA-1 (Secure Hash Algorithm-1) is a cryptographic hash function designed by the National Security Agency (NSA) and published by the NIST as a U. S. government standard. It is also used to verify file integrity." [PSI:MS]
-is_a: MS:1000561 ! file checksum type
+is_a: MS:1000561 ! data file checksum type
 
 [Term]
 id: MS:1000570
 name: spectra combination
 def: "Method used to combine the mass spectra." [PSI:MS]
-comment: The children of the attribute 'spectra combination' should be encoded in the homonymous XML attribute of the element 'dx:acquisitionList', and not using the CvParam element.
 relationship: part_of MS:1000442 ! spectrum
 
 [Term]
@@ -3590,7 +3586,6 @@ is_a: MS:1000570 ! spectra combination
 id: MS:1000572
 name: binary data compression type
 def: "Compression Type." [PSI:MS]
-comment: The children of the attribute 'binary data compression type' should be encoded in the homonymous XML attribute of the element 'dx:binaryDataArray', and not using the CvParam element.
 relationship: part_of MS:1000442 ! spectrum
 
 [Term]
@@ -3619,22 +3614,22 @@ is_a: MS:1000572 ! binary data compression type
 
 [Term]
 id: MS:1000577
-name: file description
+name: data file
 def: "Describes the type of file and its content." [PSI:MS]
-relationship: part_of MS:0000000 ! MZ controlled vocabularies
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
 
 [Term]
 id: MS:1000578
 name: LCQ Fleet
-def: "LCQ Fleet" [PSI:MS]
-is_a: MS:1000125 ! Thermo Finnigan
+def: "LCQ Fleet." [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000579
 name: MS1 spectrum
 def: "MS1 refers to single-stage MS/MS experiments designed to record the first stage of the product ion spectra." [PSI:MS]
 exact_synonym: "Single-Stage Mass Spectrometry" []
-is_a: MS:1000524 ! file content
+is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
 [Term]
@@ -3642,28 +3637,28 @@ id: MS:1000580
 name: MSn spectrum
 def: "MSn refers to multi-stage MS/MS experiments designed to record product ion spectra where n is the number of product ion stages (progeny ions). For ion traps, sequential MS/MS experiments can be undertaken where n > 2 whereas for a simple triple quadrupole system n= 2." [PSI:MS]
 exact_synonym: "Multiple-Stage Mass Spectrometry" []
-is_a: MS:1000524 ! file content
+is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
 [Term]
 id: MS:1000581
 name: CRM spectrum
 def: "Spectrum generated from MSn experiment with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored." [PSI:MS]
-is_a: MS:1000524 ! file content
+is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
 [Term]
 id: MS:1000582
 name: SIM spectrum
 def: "Spectrum obtained with the operation of a mass spectrometer in which the abundances of several ions of specific m/z values are recorded rather than the entire mass spectrum." [PSI:MS]
-is_a: MS:1000524 ! file content
+is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
 [Term]
 id: MS:1000583
 name: SRM spectrum
 def: "Spectrum obtained when data is acquired from specific product ions corresponding to m/z selected precursor ions recorded via two or more stages of mass spectrometry. Selected reaction monitoring can be preformed as tandem mass spectrometry in time or\ntandem mass spectrometry in space." [PSI:MS]
-is_a: MS:1000524 ! file content
+is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
 [Term]
@@ -3675,9 +3670,9 @@ is_a: MS:1000560 ! source file type
 [Term]
 id: MS:1000585
 name: contact person attribute
-def: "Details about a person to contact in case of concern or dicussion about the MZ.ml file." [PSI:MS]
-relationship: part_of MS:1000547 ! object attribute
-relationship: part_of MS:1000577 ! file description
+def: "Details about a person to contact in case of concern or dicussion about the file." [PSI:MS]
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000577 ! data file
 
 [Term]
 id: MS:1000586
@@ -3713,6 +3708,74 @@ is_a: MS:1000585 ! contact person attribute
 id: MS:1000591
 name: MzWiff
 def: "A software program for converting Applied Biosystems wiff file format to the mzXML or mzML format. MzWiff is currently maintained at the Institute for Systems Biology. It replaces the slower mzStar program." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000592
+name: smoothing
+def: "Application of Lowess smoothing or filters to preserve high frequency components of a peak while reducing the noise." [PSI:MS]
+exact_synonym: "peak processing" []
+is_a: MS:1000543 ! data processing action
+
+[Term]
+id: MS:1000593
+name: baseline reduction
+def: "A process of removal of varying intensities generated due to variable energy absorption before further processing can take place. Baseline reduction facilitates meaningful comparision between intensities of m/z values." [PSI:MS]
+exact_synonym: "peak processing" []
+is_a: MS:1000543 ! data processing action
+
+[Term]
+id: MS:1000594
+name: low intensity data point removal
+def: "The removal of very low intensity data points that are likely to be spurious noise rather than real signal." [PSI:MS]
+is_a: MS:1000543 ! data processing action
+
+[Term]
+id: MS:1000595
+name: time array
+def: "Array of increasing time points." [PSI:MS]
+is_a: MS:1000513 ! binary data array
+
+[Term]
+id: MS:1000596
+name: measurement method
+def: "An attribute of resolution when recording the detector response in absence of the analyte." [PSI:MS]
+relationship: part_of MS:0000000 ! Mass Spectrometry Controlled Vocabulary
+
+[Term]
+id: MS:1000597
+name: ion optics type
+def: "The electrical potential used to impart kinetic energy to ions in a mass spectrometer." [PSI:MS]
+is_a: MS:1000462 ! ion optics
+
+[Term]
+id: MS:1000598
+name: electron transfer dissociation
+def: "A process to fragment ions in a mass spectrometer by inducing fragmentation of cations (e.g. peptides or proteins) by transferring electrons to them." [PSI:MS]
+exact_synonym: "ETD" []
+is_a: MS:1000044 ! dissociation method
+is_a: MS:1000437 ! ion reaction
+
+[Term]
+id: MS:1000599
+name: pulsed q dissociation
+def: "A process that involves precursor ion activation at high Q, a time delay to allow the precursor to fragment, then a rapid pulse to low Q where all fragment ions are trapped. The product ions can then be scanned out of the ion trap and detected." [PSI:MS]
+exact_synonym: "PQD" []
+is_a: MS:1000044 ! dissociation method
+is_a: MS:1000437 ! ion reaction
+
+[Term]
+id: MS:1000600
+name: Proteios
+def: "Database application and analysis platform for proteomics." [PSI:MS, source:www.proteios.org]
+related_synonym: "Bioworks Browser" []
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000601
+name: ProteinLynx Global Server
+def: "Waters software for data analysis." [PSI:MS]
+related_synonym: "Bioworks Browser" []
 is_a: MS:1000531 ! software
 
 [Typedef]
