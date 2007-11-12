@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- test mapping file by luisa -->
+<CvMappingRules  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://psidev.svn.sourceforge.net/svnroot/psidev/psi/tools/cv-rule-reader/trunk/src/main/resources/CvRules.xsd"  >
+
+    <!-- start of file description -->
+    <CvMappingRule elementPath="/mzML/fileDescription/fileContent/cvParam/@accession" requirementLevel="MUST" >
+        <CvTerm termAccession="MS:1000524" useTermName="false" useTerm="false" termName="data file content" isRepeatable="true" allowChildren="true" cvIdentifier="MS" />
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/fileDescription/contact/cvParam/@accession" requirementLevel="MUST" >
+        <CvTerm termAccession="MS:1000585" useTermName="false" useTerm="false" termName="contact person attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS" />
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/fileDescription/sourceFileList/sourceFile/cvParam/@accession" requirementLevel="MUST" >
+        <CvTerm termAccession="MS:1000560" useTermName="false" useTerm="false" termName="source file type" isRepeatable="true" allowChildren="true" cvIdentifier="MS" />
+        <CvTerm termAccession="MS:1000561" useTermName="false" useTerm="false" termName="data file checksum type" isRepeatable="true" allowChildren="true" cvIdentifier="MS" />
+    </CvMappingRule>
+    <!-- end of file description -->
+
+
+    <!-- start of sample -->
+    <CvMappingRule elementPath="/mzML/sampleList/sample/cvParam/@accession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000548" useTerm="false" termName="sample attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS" ></CvTerm>
+        <CvTerm termAccession="PATO:0001241" useTerm="false" termName="quality of an object" isRepeatable="true" allowChildren="true" cvIdentifier="PATO"></CvTerm>
+        <CvTerm termAccession="GO:0005575" useTerm="false" termName="cellular_component" isRepeatable="true" allowChildren="true" cvIdentifier="GO"></CvTerm>
+        <CvTerm termAccession="BTO:0000000" useTerm="false" termName="brenda source tissue ontology" isRepeatable="true" allowChildren="true" cvIdentifier="BTO"/>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/sampleList/sample/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- end of sample -->
+
+    <!-- start of instrument  -->
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/cvParam/@accession" requirementLevel="MUST">
+	    <CvTerm termAccession="MS:1000031" useTerm="false" termName="instrument model" isRepeatable="false" scope="/mzML/instrumentList/instrument" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000496" useTerm="false" termName="instrument attribute" isRepeatable="false" scope="/mzML/instrumentList/instrument" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000462" useTerm="false" termName="ion optics" isRepeatable="false" scope="/mzML/instrumentList/instrument" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- source -->
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/source/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000007" useTerm="false" termName="inlet type" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000008" useTerm="false" termName="ionization type" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000482" useTerm="false" termName="source attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/source/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- analyzer  -->
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/analyzer/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000443" useTerm="false" termName="data file checksum type" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000480" useTerm="false" termName="analyzer attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000012" useTerm="false" termName="resolution measurement method" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/analyzer/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- detector -->
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/detector/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000026" useTerm="false" termName="detector type" isRepeatable="false" scope="/mzML/instrumentList/instrument/componentList/detector" allowChildren="true" cvIdentifier="MS"></CvTerm> 
+        <CvTerm termAccession="MS:1000027" useTerm="false" termName="detector acquisition mode" isRepeatable="false" scope="/mzML/instrumentList/instrument/componentList/detector" allowChildren="true" cvIdentifier="MS"></CvTerm> 
+        <CvTerm termAccession="MS:1000481" useTerm="false" termName="detector attribute" isRepeatable="false" scope="/mzML/instrumentList/instrument/componentList/detector" allowChildren="true" cvIdentifier="MS"></CvTerm> 
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/instrumentList/instrument/componentList/detector/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- end of instrument -->
+
+    <!-- software-->
+    <CvMappingRule elementPath="/mzML/softwareList/software/softwareParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000531" useTerm="false" termName="software" isRepeatable="false" scope="/mzML/softwareList/software" allowChildren="true" cvIdentifier="MS"></CvTerm> 
+    </CvMappingRule>
+    <!-- end of software-->
+
+    <!-- start of  data processing -->
+    <CvMappingRule elementPath="/mzML/dataProcessingList/dataProcessing/processingMethod/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000543" useTerm="false" termName="data processing action" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000530" useTerm="false" termName="file format conversion" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <!-- end of  data processing -->
+
+    <!-- start of run-->
+
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000559" useTermName="false" useTerm="false" termName="spectrum type" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/cvParam/@accession" requirementLevel="MUST">
+	    <CvTerm termAccession="MS:1000499" useTerm="false" termName="spectrum attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+	    <CvTerm termAccession="MS:1000525" useTerm="false" termName="spectrum representation" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/spectrumDescription" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/acquisitionList/acquisition/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000570" useTerm="false" termName="spectra combination" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/precursorList/precursor/ionSelection/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000455" useTerm="false" termName="ion selection attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>    
+        <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/precursorList/precursor/ionSelection/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/precursorList/precursor/activation/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000456" useTerm="false" termName="precursor activation" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/scan/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000503" useTerm="false" termName="scan attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000018" useTerm="false" termName="scan direction" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/spectrumDescription/scan" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000019" useTerm="false" termName="scan law" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/spectrumDescription/scan" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000465" useTerm="false" termName="scan polarity" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/spectrumDescription/scan" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000020" useTerm="false" termName="scanning method" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/spectrumDescription/scan" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/scan/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/scan/selectionWindowList/selectionWindow/cvParam/@accession" requirementLevel="MUST">
+        <CvTerm termAccession="MS:1000549" useTerm="false" termName="selection window attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/scan/selectionWindowList/selectionWindow/cvParam/@unitAccession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/binaryDataArray/cvParam/@accession" requirementLevel="MUST">
+	<CvTerm termAccession="MS:1000513" useTerm="false" termName="binary data array" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/binaryDataArray" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000518" useTerm="false" termName="binary data type" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/binaryDataArray" allowChildren="true" cvIdentifier="MS"></CvTerm>
+        <CvTerm termAccession="MS:1000572" useTerm="false" termName="binary data compression type" isRepeatable="false" scope="/mzML/run/spectrumList/spectrum/binaryDataArray" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+
+<!-- end of run-->
+ </CvMappingRules>
+
