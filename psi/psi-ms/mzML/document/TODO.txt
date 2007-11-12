@@ -26,10 +26,10 @@ Software implementations
 - Catalog and advertise all (pre-release) implementations of mzML format
 
 
-Release schedule
+Desired Release schedule
 ----------------
-October 1 Submission to PSI Document Process
-October 6 HUPO
-November 1 Start of 60 day public review
-January 1 Release of mzML 1.0.0
+ October  1  Submission to PSI Document Process
+ October 30  Internal PSI review complete and feedback returned
+November 10  Start of 60 day public review
+ January 15  Release of mzML 1.0.0
 
