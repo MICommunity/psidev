@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<indexedmzML xmlns="http://psi.hupo.org/schema_revision/mzML_0.99.0"
+<indexedmzML xmlns="http://psi.hupo.org/schema_revision/mzML_0.99.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://psi.hupo.org/schema_revision/mzML_0.99.0 mzML0.99.0_idx.xsd" >
-  <mzML xmlns="http://psi.hupo.org/schema_revision/mzML_0.99.0"
+  xsi:schemaLocation="http://psi.hupo.org/schema_revision/mzML_0.99.1 mzML0.99.1_idx.xsd" >
+  <mzML xmlns="http://psi.hupo.org/schema_revision/mzML_0.99.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://psi.hupo.org/schema_revision/mzML_0.99.0 mzML0.93.xsd"
+    xsi:schemaLocation="http://psi.hupo.org/schema_revision/mzML_0.99.1 mzML0.99.1.xsd"
     accession=""
     id="1min.raw"
-    version="0.99.0" >
+    version="0.99.1" >
     <cvList count="1" >
       <cv cvLabel="MS"
         fullName="Proteomics Standards Initiative Mass Spectrometry Ontology"
@@ -98,7 +98,7 @@
       instrumentRef="LCQ Deca"
       sampleRef="1"
       startTimeStamp="2007-07-24T15:00:18" >
-      <sourceFileRefList>
+      <sourceFileRefList count="1">
         <sourceFileRef ref="1" />
       </sourceFileRefList>
       <spectrumList count="39" >
