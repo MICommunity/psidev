@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 29:11:2007 17:34
+date: 03:12:2007 13:17
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -1347,7 +1347,6 @@ id: SO:0100001
 name: biochemical_region
 def: "A region that is involved in a biochemical function." [EBIBS:GAR]
 comment: Range.
-synonym: "<new synonym>" RELATED []
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
@@ -1355,7 +1354,6 @@ id: SO:0100002
 name: molecular_contact_region
 def: "A region that is involved a contact with another molecule." [EBIBS:GAR]
 comment: Range.
-synonym: "<new synonym>" RELATED []
 is_a: SO:0100001 ! biochemical_region
 
 [Term]
