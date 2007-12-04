@@ -93,9 +93,13 @@
         <CvTerm termAccession="MS:1000460" useTerm="false" termName="unit" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
     </CvMappingRule>
     
-    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/acquisitionList/acquisition/cvParam/@accession" requirementLevel="MUST">
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/acquisitionList/cvParam/@accession" requirementLevel="MUST">
         <CvTerm termAccession="MS:1000570" useTerm="false" termName="spectra combination" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
     </CvMappingRule>
+    <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/acquisitionList/acquisition/cvParam/@accession" requirementLevel="MAY">
+        <CvTerm termAccession="MS:1000503" useTerm="false" termName="scan attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
+    </CvMappingRule>
+
     
     <CvMappingRule elementPath="/mzML/run/spectrumList/spectrum/spectrumDescription/precursorList/precursor/ionSelection/cvParam/@accession" requirementLevel="MUST">
         <CvTerm termAccession="MS:1000455" useTerm="false" termName="ion selection attribute" isRepeatable="true" allowChildren="true" cvIdentifier="MS"></CvTerm>
