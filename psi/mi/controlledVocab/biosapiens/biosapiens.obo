@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 03:12:2007 14:43
+date: 23:01:2008 10:58
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -1127,7 +1127,7 @@ is_a: SO:0000912 ! asx_turn
 
 [Term]
 id: SO:0001132
-name: asx_turn_type_right_handed_type_one
+name: asx_turn_right_handed_type_one
 alt_id: BS:00207
 def: "Right handed type I (dihedral angles):- Residue(i): -140 degrees < chi (1) -120 degrees < -20 degrees, -90 degrees < psi +120 degrees < +40 degrees. Residue(i+1): -140 degrees < phi < -20 degrees, -90 degrees < psi < +40 degrees." [EBIBS:GAM, http://www.ebi.ac.uk/msd-srv/msdmotif/]
 synonym: "asx_turn_ir" EXACT []
@@ -1355,6 +1355,47 @@ name: molecular_contact_region
 def: "A region that is involved a contact with another molecule." [EBIBS:GAR]
 comment: Range.
 is_a: SO:0100001 ! biochemical_region
+
+[Term]
+id: SO:0100003
+name: intrinsically_unstructured_region
+def: "A region of polypeptide chain with high conformational flexibility." [EBIBS:GAR]
+synonym: "disordered region" EXACT []
+is_a: SO:0001070 ! structural_region
+
+[Term]
+id: SO:0100004
+name: catmat_left_handed_three
+def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+synonym: "catmat-3l" EXACT []
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100005
+name: catmat_left_handed_four
+def: "A motif of 4 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i psi -10 bounds -50 to 30, res i+1: phi -90 bounds -120 to -60, res i+1: psi -10 bounds -50 to 30, res i+2: phi -75 bounds -100 to -50, res i+2: psi 140 bounds 110 to 170.  The extra restriction of the length of the O to O distance is similar, that it be less than 5 Angstrom. In this case these two Oxygen atoms are the main chain carbonyl oxygen atoms of residues i-1 and i+2." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+synonym: "catmat-4l" EXACT []
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100006
+name: catmat_right_handed_three
+def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+synonym: "catmat-3r" EXACT []
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100008
+name: alpha_beta_motif
+def: "A motif of five consecutive residues and two H-bonds in which: H-bond between CO of residue(i) and NH of residue(i+4), H-bond between CO of residue(i) and NH of residue(i+3),Phi angles of residues(i+1), (i+2) and (i+3) are negative." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100009
+name: lipoprotein_signal_peptide
+def: "A signal for both membrane translocation and lipid attachment in prokaryotes." [EBIBS:GAR]
+synonym: "Prokaryotic membrane lipoprotein lipid attachment site" EXACT []
+is_a: SO:0001063 ! immature_peptide_region
 
 [Term]
 id: MOD:00000
