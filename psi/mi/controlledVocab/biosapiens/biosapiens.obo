@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 23:01:2008 10:58
+date: 31:01:2008 16:07
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -1366,22 +1366,29 @@ is_a: SO:0001070 ! structural_region
 [Term]
 id: SO:0100004
 name: catmat_left_handed_three
-def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
 synonym: "catmat-3l" EXACT []
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
 id: SO:0100005
 name: catmat_left_handed_four
-def: "A motif of 4 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i psi -10 bounds -50 to 30, res i+1: phi -90 bounds -120 to -60, res i+1: psi -10 bounds -50 to 30, res i+2: phi -75 bounds -100 to -50, res i+2: psi 140 bounds 110 to 170.  The extra restriction of the length of the O to O distance is similar, that it be less than 5 Angstrom. In this case these two Oxygen atoms are the main chain carbonyl oxygen atoms of residues i-1 and i+2." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+def: "A motif of 4 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i psi -10 bounds -50 to 30, res i+1: phi -90 bounds -120 to -60, res i+1: psi -10 bounds -50 to 30, res i+2: phi -75 bounds -100 to -50, res i+2: psi 140 bounds 110 to 170.  The extra restriction of the length of the O to O distance is similar, that it be less than 5 Angstrom. In this case these two Oxygen atoms are the main chain carbonyl oxygen atoms of residues i-1 and i+2." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
 synonym: "catmat-4l" EXACT []
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
 id: SO:0100006
 name: catmat_right_handed_three
-def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [http://www.ebi.ac.uk/msd_srv/msdmotif/]
+def: "A motif of 3 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -75 bounds -100 to -50, res i+1: psi 140 bounds 110 to 170. An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom. More precisely these two oxygens are the main chain carbonyl oxygen atoms of residues i-1 and i+1." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
 synonym: "catmat-3r" EXACT []
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100007
+name: catmat_right_handed_four
+def: "A motif of 4 consecutive residues with dihedral angles as follows: res i: phi -90 bounds -120 to -60, res i: psi -10 bounds -50 to 30, res i+1: phi -90 bounds -120 to -60, res i+1: psi -10 bounds -50 to 30, res i+2: phi -75 bounds -100 to -50, res i+2: psi 140 bounds 110 to 170. The extra restriction of the length of the O to O distance is similar, that it be less than 5 Angstrom. In this case these two Oxygen atoms are the main chain carbonyl oxygen atoms of residues i-1 and i+2." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
+synonym: "catmat-4r" EXACT []
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
@@ -1396,6 +1403,13 @@ name: lipoprotein_signal_peptide
 def: "A signal for both membrane translocation and lipid attachment in prokaryotes." [EBIBS:GAR]
 synonym: "Prokaryotic membrane lipoprotein lipid attachment site" EXACT []
 is_a: SO:0001063 ! immature_peptide_region
+
+[Term]
+id: SO:0100010
+name: no_output
+def: "An experimental region wherean analysis has been run and not produced any annotation." [EBIBS:GAR]
+isa: SO:0000703
+is_a: BS:00129
 
 [Term]
 id: MOD:00000
