@@ -1,7 +1,7 @@
 format-version: 1.0
-date: 08:11:2007 16:42
-saved-by: luisa
-auto-generated-by: OBO-Edit 1.100
+date: 19:02:2008 00:48
+saved-by: deutsch
+auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
 
@@ -228,7 +228,6 @@ is_a: MS:1000543 ! data processing action
 id: MS:1000035
 name: peak picking
 def: "Spectral peak processing conducted on the acquired data to convert profile data to centroided data." [PSI:MS]
-exact_synonym: "peak processing" []
 is_a: MS:1000543 ! data processing action
 
 [Term]
@@ -724,7 +723,6 @@ is_a: MS:1000348 ! focal plane collector
 id: MS:1000114
 name: microchannel plate detector
 def: "A thin plate that contains a closely spaced array of channels that each act as a continuous dynode particle multiplier. A charged particle, fast neutral particle, or photon striking the plate causes a cascade of secondary electrons that ultimately exits the opposite side of the plate." [PSI:MS]
-exact_synonym: "Microchannel Plate Detector" []
 exact_synonym: "multichannel plate" []
 is_a: MS:1000026 ! detector type
 
@@ -3636,7 +3634,7 @@ is_a: MS:1000559 ! spectrum type
 id: MS:1000580
 name: MSn spectrum
 def: "MSn refers to multi-stage MS/MS experiments designed to record product ion spectra where n is the number of product ion stages (progeny ions). For ion traps, sequential MS/MS experiments can be undertaken where n > 2 whereas for a simple triple quadrupole system n= 2." [PSI:MS]
-exact_synonym: "Multiple-Stage Mass Spectrometry" []
+exact_synonym: "multiple-stage mass spectrometry spectrum" []
 is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 
@@ -3714,14 +3712,12 @@ is_a: MS:1000531 ! software
 id: MS:1000592
 name: smoothing
 def: "Application of Lowess smoothing or filters to preserve high frequency components of a peak while reducing the noise." [PSI:MS]
-exact_synonym: "peak processing" []
 is_a: MS:1000543 ! data processing action
 
 [Term]
 id: MS:1000593
 name: baseline reduction
 def: "A process of removal of varying intensities generated due to variable energy absorption before further processing can take place. Baseline reduction facilitates meaningful comparision between intensities of m/z values." [PSI:MS]
-exact_synonym: "peak processing" []
 is_a: MS:1000543 ! data processing action
 
 [Term]
@@ -3768,15 +3764,91 @@ is_a: MS:1000437 ! ion reaction
 id: MS:1000600
 name: Proteios
 def: "Database application and analysis platform for proteomics." [PSI:MS, source:www.proteios.org]
-related_synonym: "Bioworks Browser" []
 is_a: MS:1000531 ! software
 
 [Term]
 id: MS:1000601
 name: ProteinLynx Global Server
 def: "Waters software for data analysis." [PSI:MS]
-related_synonym: "Bioworks Browser" []
 is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000602
+name: Shimadzu Biotech instrument model
+def: "Shimadzu Biotech instrument model." [PSI:MS]
+is_a: MS:1000124 ! Shimadzu instrument model
+
+[Term]
+id: MS:1000603
+name: Shimadzu Scientific Instruments instrument model
+def: "Shimadzu Scientific Instruments instrument model." [PSI:MS]
+is_a: MS:1000124 ! Shimadzu instrument model
+
+[Term]
+id: MS:1000604
+name: LCMS-IT-TOF
+def: "Shimadzu Scientific Instruments LCMS-IT-TOF MS." [PSI:MS]
+is_a: MS:1000603 ! Shimadzu Scientific Instruments instrument model
+
+[Term]
+id: MS:1000605
+name: LCMS-2010EV
+def: "Shimadzu Scientific Instruments LCMS-2010EV MS." [PSI:MS]
+is_a: MS:1000603 ! Shimadzu Scientific Instruments instrument model
+
+[Term]
+id: MS:1000606
+name: LCMS-2010A
+def: "Shimadzu Scientific Instruments LCMS-2010A MS." [PSI:MS]
+is_a: MS:1000603 ! Shimadzu Scientific Instruments instrument model
+
+[Term]
+id: MS:1000607
+name: AXIMA CFR MALDI-TOF
+def: "Shimadzu Biotech AXIMA CFR MALDI-TOF MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000608
+name: AXIMA-QIT
+def: "Shimadzu Biotech AXIMA-QIT MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000609
+name: AXIMA-CFR plus
+def: "Shimadzu Biotech AXIMA-CFR plus MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000610
+name: AXIMA Performance MALDI-TOF/TOF
+def: "Shimadzu Biotech AXIMA Performance MALDI-TOF/TOF MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000611
+name: AXIMA Confidence MALDI-TOF
+def: "Shimadzu Biotech AXIMA Confidence MALDI-TOF (curved field reflectron) MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000612
+name: AXIMA Assurance Linear MALDI-TOF
+def: "Shimadzu Biotech AXIMA Assurance Linear MALDI-TOF MS." [PSI:MS]
+is_a: MS:1000602 ! Shimadzu Biotech instrument model
+
+[Term]
+id: MS:1000613
+name: dta file
+def: "Peak list file format that should be better defined FIXME." [PSI:MS]
+is_a: MS:1000560 ! source file type
+
+[Term]
+id: MS:1000614
+name: ProteinLynx Global Server mass spectrum XML file
+def: "Peak list file format used by ProteinLynx Global Server." [PSI:MS]
+is_a: MS:1000560 ! source file type
 
 [Typedef]
 id: part_of
