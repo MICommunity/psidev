@@ -1,6 +1,6 @@
 format-version: 1.0
-date: 19:02:2008 00:48
-saved-by: deutsch
+date: 21:02:2008 10:10
+saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
@@ -3849,6 +3849,13 @@ id: MS:1000614
 name: ProteinLynx Global Server mass spectrum XML file
 def: "Peak list file format used by ProteinLynx Global Server." [PSI:MS]
 is_a: MS:1000560 ! source file type
+
+[Term]
+id: MS:1000615
+name: ProteoWizard
+def: "ProteoWizard software for data analysis. Currently developed and maintained by Darren Kessner at Parag Mallick's lab SFCAP at Cedars-Sinai." [PSI:MS]
+exact_synonym: "pwiz" []
+is_a: MS:1000531 ! software
 
 [Typedef]
 id: part_of
