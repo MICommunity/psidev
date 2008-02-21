@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 21:02:2008 10:10
+date: 21:02:2008 10:40
 saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
@@ -3856,6 +3856,13 @@ name: ProteoWizard
 def: "ProteoWizard software for data analysis. Currently developed and maintained by Darren Kessner at Parag Mallick's lab SFCAP at Cedars-Sinai." [PSI:MS]
 exact_synonym: "pwiz" []
 is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000616
+name: preset scan configuration
+def: "A user-defined scan configuration that specifies the instrumental settings in which a spectrum is acquired. An instrument may cycle through a list of preset scan configurations to acquire data. This is a more generic term for the Thermo \"scan event\", which is defined in the Thermo Xcalibur glossary as: a mass spectrometer scan that is defined by choosing the necessary scan parameter settings. Multiple scan events can be defined for each segment of time." [PSI:MS]
+comment: The attribute 'ms level' should be encoded in the homonymous XML attribute of the element 'dx:Spectrum', and not using the CvParam element.
+is_a: MS:1000503 ! scan attribute
 
 [Typedef]
 id: part_of
