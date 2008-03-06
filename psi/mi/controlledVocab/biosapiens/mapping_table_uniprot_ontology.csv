@@ -1,0 +1,43 @@
+"UniProt 
+Feature Keys","UniProt KB
+Long Name",Ontology term,ID,"Evidence Code from 
+the ECO",Evidence Code Term,,
+DOMAIN,Domain,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
+NP_BIND,Nucleotide binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
+DNA_BIND,DNA binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
+CA_BIND,Calcium binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
+ZN_FING,Zinc finger ,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
+SIGNAL,Signal peptide,signal_peptide,SO:0000418,ECO:0000001,inferred by curator,,
+CHAIN,Chain ,mature_protein_region,SO:0000419,ECO:0000001,inferred by curator,,
+INIT_MET,Initiator methionine ,cleaved_initiator_methionine,SO:0000691,ECO:0000001,inferred by curator,,
+TRANSIT,Transit peptide,transit_peptide,SO:0000725,ECO:0000001,inferred by curator,,
+SITE,Site ,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator,,
+REGION,Region,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator,,
+PROPEP,Propeptide ,propeptide,SO:0001062,ECO:0000001,inferred by curator,,
+PEPTIDE,Peptide,active_peptide,SO:0001064,ECO:0000001,inferred by curator,,
+COMPBIAS,Compositional bias ,compositionally_biased_region,SO:0001066,ECO:0000001,inferred by curator,,
+MOTIF,Motif ,polypeptide_motif,SO:0001067,ECO:0000001,inferred by curator,,
+REPEAT,Repeat,polypeptide_repeat,SO:0001068,ECO:0000001,inferred by curator,,
+TOPO_DOM,Topological domain,extramembrane,SO:0001072,ECO:0000001,inferred by curator,,
+TRANSMEM,Transmembrane,transmembrane,SO:0001077,ECO:0000001,inferred by curator,,
+COILED,Coiled coil,coiled_coil,SO:0001080,ECO:0000001,inferred by curator,,
+NON_CONS,Non-adjacent residues,non_adjacent_residue,SO:0001083,ECO:0000001,inferred by curator,,
+NON_TER,Non-terminal residue,non_terminal_residue,SO:0001084,ECO:0000001,inferred by curator,,
+CONFLICT,Sequence conflict,sequence_conflict,SO:0001085,ECO:0000001,inferred by curator,,
+UNSURE,Sequence uncertainty,sequence_uncertainty,SO:0001086,ECO:0000001,inferred by curator,,
+CROSSLNK,Cross-link,crosslinked residues,MOD:00033,ECO:0000001,inferred by curator,,
+DISULFID,Disulfide bond,disulfide crosslinked residues,MOD:00689,ECO:0000001,inferred by curator,,
+MOD_RES,Modified residue,post_translational_modification,SO:0001089,ECO:0000001,inferred by curator,,
+BINDING,Binding site,non_covalent_binding_site,SO:0001091,ECO:0000001,inferred by curator,,
+METAL,Metal binding,metal_binding,SO:0001092,ECO:0000001,inferred by curator,,
+ACT_SITE,Active site ,catalytic_residue,SO:0001104,ECO:0000001,inferred by curator,,
+STRAND,Beta Strand ,beta_strand,SO:0001111,ECO:0000001,inferred by curator,,
+HELIX,Helix,alpha_helix,SO:0001117,ECO:0000001,inferred by curator,,
+TURN,Turn,turn,SO:0001128,ECO:0000001,inferred by curator
+VARIANT,Natural variant,natural_variant_site,SO:0001147,ECO:0000001,inferred by curator
+MUTAGEN,Mutagenesis,mutated_variant_site,SO:0001148,ECO:0000001,inferred by curator
+VAR_SEQ,Alternative sequence ,alternative_sequence_site,SO:0001149,ECO:0000001,inferred by curator
+CARBOHYD,Glycosylation,glycosylated residue,MOD:00693,ECO:0000001,inferred by curator
+SE_CYS,Selenocysteine,L-selenocysteine ,MOD:00031,ECO:0000001,inferred by curator
+LIPID,Lipidation,lipoconjugated residue,MOD:01155,ECO:0000001,inferred by curator
+,,,,,
