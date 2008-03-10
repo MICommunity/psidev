@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 06:03:2008 11:40
+date: 10:03:2008 16:17
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -9,21 +9,18 @@ remark: This protein feature ontology is a combination of terms from the Sequenc
 id: BS:00043
 name: feature
 def: "Functional or structural regions of a protein." [EBIBS:GAR]
-comment: Range
 is_a: BS:00330 ! biosapiens protein feature ontology
 
 [Term]
 id: BS:00126
 name: GO_term_annotation
 def: "An annotation that uses a GO term to describe the function of a protein." [EBIBS:GAR]
-comment: Range
 is_a: BS:00130 ! functional_annotation
 
 [Term]
 id: BS:00127
 name: nonpositional
 def: "Annotation which is not assigned to a specific subsequence of a protein. Type of annotation which can be associated with a database record." [EBIBS:GAR]
-comment: Range
 is_a: BS:00043 ! feature
 
 [Term]
@@ -54,7 +51,6 @@ is_a: BS:00127 ! nonpositional
 id: BS:00160
 name: EC_annotation
 def: "An annotation that uses a EC term to describe the function of a protein." [EBIBS:GAR]
-comment: Range
 is_a: BS:00130 ! functional_annotation
 
 [Term]
@@ -66,7 +62,6 @@ def: "Protein features classification." [EBIBS:GAR]
 id: BS:00333
 name: family_annotation
 def: "Annotations which indicate the family to which the protein belongs." [EBIBS:GAR]
-comment: Range
 is_a: BS:00127 ! nonpositional
 
 [Term]
@@ -82,51 +77,41 @@ def: "cDNA-supported hypothetical protein predicted to be mislocalized, misfolde
 is_a: BS:00132 ! erroneous_protein
 
 [Term]
-id: SO:0000409
-name: binding_site
-def: "A region on the surface of a molecule that may interact with another molecule. When applied to polypeptides: Amino acids involved in binding or interactions. It can also apply to an amino acid bond which is represented by the positions of the two flanking amino acids." [EBIBS:GAR, SO:ke]
-comment: Discrete.
-is_a: BS:00129
-
-[Term]
 id: SO:0000417
 name: polypeptide_domain
+comment: 5
 def: "A structurally or functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [EBIBS:GAR, http://www.molbiol.bbsrc.ac.uk/new_protein/domains.html]
-comment: Range. Old definition from before biosapiens: A region of a single polypeptide chain that folds into an independent unit and exhibits biological activity. A polypeptide chain may have multiple domains.
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0000418
 name: signal_peptide
 def: "The signal_peptide is a short region of the peptide located at the N-terminus that directs the protein to be secreted or part of membrane components." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
-comment: Old def before biosapiens:The sequence for an N-terminal domain of a secreted protein; this domain is involved in attaching nascent polypeptide to the membrane leader sequence.
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
 id: SO:0000419
 name: mature_protein_region
 def: "The extent of a polypeptide chain in the mature protein." [EBIBS:GAR, http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
-comment: This term mature peptide, merged with the biosapiens term mature protein region and took that to be the new name. Old def: The coding sequence for the mature or final peptide or protein product following post-translational modification.
-is_a: SO:0000839 ! polypeptide_region
+is_a: SO:0001063 ! immature_peptide_region
 
 [Term]
 id: SO:0000691
 name: cleaved_initiator_methionine
 def: "Indicates when the initator methionine has been cleaved from the mature sequence." [EBIBS:GAR]
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
 id: SO:0000725
 name: transit_peptide
 def: "The transit_peptide is a short region at the N-terminus of the peptide that directs the protein to an organelle (chloroplast, mitochondrion, microbody or cyanelle)." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
-comment: Added to bring SO inline with the embl ddbj genbank feature table. Old definition before biosapiens: The coding sequence for an N-terminal domain of a nuclear-encoded organellar protein. This domain is involved in post translational import of the protein into the organelle.
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
 id: SO:0000839
 name: polypeptide_region
+comment: 1
 def: "Biological sequence region that can be assigned to a specific subsequence of a protein." [SO:GAR, SO:ke]
-comment: Added to allow the polypeptide regions to have is_a paths back to the root.
 is_a: BS:00129
 
 [Term]
@@ -139,50 +124,45 @@ is_a: SO:0001128 ! turn
 id: SO:0001061
 name: propeptide_cleavage_site
 def: "The propeptide_cleavage_site is the arginine/lysine boundary on a propeptide where cleavage occurs." [EBIBS:GAR]
-comment: Discrete.
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 relationship: part_of SO:0001062 ! propeptide
 
 [Term]
 id: SO:0001062
 name: propeptide
 def: "Describes part of a peptide chain which is cleaved off during the formation of the mature protein." [EBIBS:GAR]
-comment: Range.
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
 id: SO:0001063
 name: immature_peptide_region
-def: "An immature_peptide_region is the a region of peptide sequence that is cleaved during maturation." [EBIBS:GAR]
-comment: Range.
+comment: 3
+def: "An immature_peptide_region is the extent of the peptide after it has been translated and before any processing occurs." [EBIBS:GAR]
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0001064
 name: active_peptide
 def: "Active peptides are proteins which are biologically active, released from a precursor molecule. Hormones, neuropeptides, antimicrobial peptides, are active peptides. They are typically short (<40 amino acids) in length." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0000419 ! mature_protein_region
 
 [Term]
 id: SO:0001066
 name: compositionally_biased_region
+comment: 6
 def: "Extent of a compositionally biased region. Used for homopolymeric stretches of residues and also for regions which are rich in a particular amino acid. Not used for a run of less than 4 residues." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0001067
 name: polypeptide_motif
 def: "A sequence motif is a short (up to 20 amino acids) region of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0000417 ! polypeptide_domain
 
 [Term]
 id: SO:0001068
 name: polypeptide_repeat
 def: "A polypeptide_repeat is a single copy of an internal sequence repetition." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0000417 ! polypeptide_domain
 
 [Term]
@@ -195,22 +175,20 @@ is_a: SO:0001070 ! structural_region
 [Term]
 id: SO:0001070
 name: structural_region
+comment: 4
 def: "Backbone conformation of the polypeptide." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0001071
 name: membrane_structure
 def: "Arrangement of the polypeptide with respect to the lipid bilayer." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001070 ! structural_region
 
 [Term]
 id: SO:0001072
 name: extramembrane_region
 def: "Extent of the region not transversing the lipid bilayer." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001070 ! structural_region
 relationship: part_of SO:0001071 ! membrane_structure
 
@@ -249,7 +227,6 @@ is_a: SO:0001075 ! intramembrane_region
 id: SO:0001078
 name: polypeptide_secondary_structure
 def: "A region of peptide with secondary structure has hydrogen bonding along the peptide chain that causes a defined conformation of the chain." [EBIBS:GAR]
-comment: Biosapien term was secondary_structure.
 is_a: SO:0001070 ! structural_region
 
 [Term]
@@ -262,7 +239,6 @@ is_a: SO:0001070 ! structural_region
 id: SO:0001080
 name: coiled_coil
 def: "A coiled coil is a structural motif in proteins, in which alpha-helices are coiled together like the strands of a rope." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0001079 ! polypeptide_structural_motif
 
 [Term]
@@ -274,8 +250,8 @@ is_a: SO:0001079 ! polypeptide_structural_motif
 [Term]
 id: SO:0001082
 name: polypeptide_sequencing_information
+comment: 8
 def: "Incompatibility in the sequence due to some experimental problem." [EBIBS:GAR]
-comment: Range.
 is_a: BS:00129
 
 [Term]
@@ -288,14 +264,12 @@ is_a: SO:0001082 ! polypeptide_sequencing_information
 id: SO:0001084
 name: non_terminal_residue
 def: "The residue at an extremity of the sequence is not the terminal residue." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
 id: SO:0001085
 name: sequence_conflict
 def: "Different sources report differing sequences." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
@@ -308,22 +282,18 @@ is_a: SO:0001082 ! polypeptide_sequencing_information
 id: SO:0001089
 name: post_translationally_modified_region
 def: "A region where a transformation occurs in a protein after it has been synthesized. This which may regulate, stabilize, crosslink or introduce new chemical functionalities in the protein." [EBIBS:GAM, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0100001 ! biochemical_region
 
 [Term]
 id: SO:0001092
 name: metal_contact
 def: "Residue is part of a binding site for a metal ion." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
-is_a: SO:0000409 ! binding_site
 is_a: SO:0100002 ! molecular_contact_region
 
 [Term]
 id: SO:0001093
 name: protein_protein_contact
 def: "Residues involved in protein-protein interactions." [EBIBS:GAR, UniProt:Curation_manual]
-is_a: SO:0000409 ! binding_site
 is_a: SO:0100002 ! molecular_contact_region
 
 [Term]
@@ -390,14 +360,12 @@ is_a: SO:0001092 ! metal_contact
 id: SO:0001104
 name: catalytic_residue
 def: "Amino acid involved in the activity of an enzyme." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0100001 ! biochemical_region
 
 [Term]
 id: SO:0001105
 name: protein_ligand_contact
 def: "Residues which interact with a ligand." [EBIBS:GAR]
-is_a: SO:0000409 ! binding_site
 is_a: SO:0100002 ! molecular_contact_region
 
 [Term]
@@ -434,28 +402,24 @@ is_a: SO:0001108 ! beta_bulge_loop
 id: SO:0001111
 name: beta_strand
 def: "A beta strand describes a single length of polypeptide chain that forms part of a beta sheet. A single continuous stretch of amino acids adopting an extended conformation of hydrogen bonds between the N-O and the C=O of another part of the peptide. This forms a secondary protein structure in which two or more extended polypeptide regions are hydrogen-bonded to one another in a planar array." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
 id: SO:0001112
 name: antiparallel_beta_strand
 def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (one running N-terminal to C-terminal and one running C-terminal to N-terminal). Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i) and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they form two mutual backbone hydrogen bonds to each other's flanking peptide groups; this is known as a close pair of hydrogen bonds. The peptide backbone dihedral angles (phi, psi) are about (-140 degrees, 135 degrees) in antiparallel sheets." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0001111 ! beta_strand
 
 [Term]
 id: SO:0001113
 name: parallel_beta_strand
 def: "A peptide region which hydrogen bonded to another region of peptide running in the oposite direction (both running N-terminal to C-terminal). This orientation is slightly less stable because it introduces nonplanarity in the inter-strand hydrogen bonding pattern. Hydrogen bonding occurs between every other C=O from one strand to every other N-H on the adjacent strand. In this case, if two atoms C-alpha (i)and C-alpha (j) are adjacent in two hydrogen-bonded beta strands, then they do not hydrogen bond to each other; rather, one residue forms hydrogen bonds to the residues that flank the other (but not vice versa). For example, residue i may form hydrogen bonds to residues j - 1 and j + 1; this is known as a wide pair of hydrogen bonds. By contrast, residue j may hydrogen-bond to different residues altogether, or to none at all. The dihedral angles (phi, psi) are about (-120 degrees, 115 degrees) in parallel sheets." [EBIBS:GAR, UniProt:curation_manual]
-comment: Range.
 is_a: SO:0001111 ! beta_strand
 
 [Term]
 id: SO:0001114
 name: helix
 def: "A helix is a secondary_structure conformation where the peptide backbone forms a coil." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
@@ -474,21 +438,18 @@ is_a: SO:0001114 ! helix
 id: SO:0001117
 name: alpha_helix
 def: "The helix has 3.6 residues per turn which corersponds to a translation of 1.5 angstroms (= 0.15 nm) along the helical axis. Every backbone N-H group donates a hydrogen bond to the backbone C=O group of the amino acid four residues earlier." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001116 ! right_handed_helix
 
 [Term]
 id: SO:0001118
 name: pi_helix
 def: "The pi helix has 4.1 residues per turn and a translation of 1.15  (=0.115 nm) along the helical axis. The N-H group of an amino acid forms a hydrogen bond with the C=O group of the amino acid five residues earlier." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001116 ! right_handed_helix
 
 [Term]
 id: SO:0001119
 name: three_ten_helix
 def: "The 3-10 helix has 3 residues per turn with a translation of 2.0 angstroms (=0.2 nm) along the helical axis. The N-H group of an amino acid forms a hydrogen bond with the C=O group of the amino acid three residues earlier." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001116 ! right_handed_helix
 
 [Term]
@@ -543,7 +504,6 @@ is_a: SO:0001078 ! polypeptide_secondary_structure
 id: SO:0001128
 name: turn
 def: "A reversal in the direction of the backbone of a protein that is stabilized by hydrogen bond between backbone NH and CO groups, involving no more than 4 amino acid residues." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
@@ -651,29 +611,26 @@ is_a: SO:0001141 ! st_turn
 [Term]
 id: SO:0001146
 name: polypeptide_variation_site
+comment: 7
 def: "A site of sequence variation (alteration). Alternative sequence due to naturally occuring events such as polymorphisms and altermatve splicing or experimental methods such as site directed mutagenesis." [EBIBS:GAR, SO:ke]
-comment: For example, was a substitution natural or mutated as part of an experiment? This term is added to merge the biosapiens term sequence_variations.
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0001147
 name: natural_variant_site
 def: "Describes the natural sequence variants due to polymorphisms, disease-associated mutations, RNA editing and variations between strains, isolates or cultivars." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0001146 ! polypeptide_variation_site
 
 [Term]
 id: SO:0001148
 name: mutated_variant_site
 def: "Site which has been experimentally altered." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0001146 ! polypeptide_variation_site
 
 [Term]
 id: SO:0001149
 name: alternate_sequence_site
 def: "Description of sequence variants produced by alternative splicing, alternative promoter usage, alternative initiation and ribosomal frameshifting." [EBIBS:GAR, UniProt:curation_manual]
-comment: Discrete.
 is_a: SO:0001146 ! polypeptide_variation_site
 
 [Term]
@@ -709,15 +666,14 @@ is_a: SO:0001133 ! beta_turn
 [Term]
 id: SO:0100001
 name: biochemical_region
+comment: 2
 def: "A region that is involved in a biochemical function." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: SO:0100002
 name: molecular_contact_region
 def: "A region that is involved a contact with another molecule." [EBIBS:GAR]
-comment: Range.
 is_a: SO:0100001 ! biochemical_region
 
 [Term]
@@ -760,14 +716,21 @@ is_a: SO:0001078 ! polypeptide_secondary_structure
 id: SO:0100009
 name: lipoprotein_signal_peptide
 def: "A signal for both membrane translocation and lipid attachment in prokaryotes." [EBIBS:GAR]
-is_a: SO:0001063 ! immature_peptide_region
+is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
 id: SO:0100010
-name: no_output
+name: no_output:
+comment: 9
 def: "An experimental region wherean analysis has been run and not produced any annotation." [EBIBS:GAR]
 isa: SO:0000703
 is_a: BS:00129
+
+[Term]
+id: SO:0100011
+name: cleaved_peptide_region
+def: "The cleaved_peptide_regon is the a region of peptide sequence that is cleaved during maturation." [EBIBS:GAR]
+is_a: SO:0001063 ! immature_peptide_region
 
 [Term]
 id: MOD:00000
@@ -859,7 +822,6 @@ is_a: MOD:00009 ! natural residue
 id: MOD:00014
 name: L-cysteine
 def: "a protein modification that inserts or replaces a residue with an L-cysteine residue" [DeltaMass:0, PubMed:1310545, PubMed:15790858, PubMed:3447159, PubMed:6692818, PubMed:7338899, RESID:AA0005]
-comment: From DeltaMass: Average Mass: 121
 is_a: MOD:00009 ! natural residue
 
 [Term]
@@ -878,7 +840,6 @@ is_a: MOD:00009 ! natural residue
 id: MOD:00017
 name: glycine
 def: "a protein modification that inserts or replaces a residue with a glycine residue" [DeltaMass:0, PubMed:1310545, PubMed:6692818, RESID:AA0008]
-comment: From DeltaMass: Average Mass: 75
 is_a: MOD:00009 ! natural residue
 
 [Term]
@@ -909,7 +870,6 @@ is_a: MOD:00009 ! natural residue
 id: MOD:00022
 name: L-methionine
 def: "a protein modification that inserts or replaces a residue with an L-methionine residue" [DeltaMass:0, PubMed:6411710, PubMed:6692818, RESID:AA0013]
-comment: From DeltaMass: Average Mass: 149
 is_a: MOD:00009 ! natural residue
 
 [Term]
@@ -978,14 +938,12 @@ is_a: MOD:00000 ! protein modification
 id: MOD:00033
 name: crosslinked residues
 def: "a protein modification that crosslinks two or more residues with covalent bonds" [PSI-MOD:ref]
-comment: The covalent bond is formed directly between sidechain atoms. If non-aminoacid atoms are involved in connecting two or more peptide chain residues peptide chain, the connection is classified as a multivalent binding site.
 is_a: MOD:00000 ! protein modification
 
 [Term]
 id: MOD:00034
 name: L-cystine (cross-link)
 def: "a protein modification that cross-links two L-cysteine residues to form L-cystine" [DeltaMass:0, PubMed:1988019, PubMed:2001356, PubMed:2076469, PubMed:3083866, PubMed:366603, PubMed:7918467, PubMed:8344916, RESID:AA0025]
-comment: cross-link 2; for formation of a disulfide bond between a peptide cysteine and a free cysteine, see MOD:00765.
 is_a: MOD:00689 ! disulfide crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1028,7 +986,6 @@ is_a: MOD:00678 ! hydroxylated proline
 id: MOD:00040
 name: 2-pyrrolidone-5-carboxylic acid (Gln)
 def: "a protein modification that effectively converts an L-glutamine residue to 2-pyrrolidone-5-carboxylic acid" [DeltaMass:123, PubMed:10214721, PubMed:1836357, PubMed:3473473, RESID:AA0031, UniMod:28]
-comment: DeltaMass gives a formula C 5 H 5 N 1 O 2 with mass 111.1
 is_a: MOD:00601 ! cyclized residue
 is_a: MOD:00907 ! modified L-glutamine residue
 
@@ -1036,7 +993,6 @@ is_a: MOD:00907 ! modified L-glutamine residue
 id: MOD:00041
 name: gamma-carboxylated L-glutamic acid
 def: "a protein modification that effectively converts an L-glutamic acid residue to L-gamma-carboxyglutamic acid" [DeltaMass:217, PubMed:1807167, PubMed:3263814, PubMed:4528109, PubMed:7457858, PubMed:8135347, PubMed:8868490, PubMed:9188685, RESID:AA0032, UniMod:38]
-comment: DeltaMass has the formula C 6 H 7 N 5 O 1 with mass 173
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
@@ -1112,7 +1068,6 @@ is_a: MOD:00904 ! modified L-aspartic acid residue
 id: MOD:00052
 name: N-acetylated cysteine
 def: "a protein modification that effectively converts an L-cysteine residue to N-acetyl-L-cysteine" [PubMed:1500421, PubMed:6725286, RESID:AA0043]
-comment: incidental to RESID:AA0223
 is_a: MOD:00408 ! N-acetylated residue
 is_a: MOD:00646 ! acetylated L-cysteine
 
@@ -1229,7 +1184,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00069
 name: N-palmitoylated L-cysteine
 def: "a protein modification that effectively converts an L-cysteine residue to N-palmitoyl-L-cysteine" [PubMed:10896212, PubMed:4575979, PubMed:9056182, PubMed:9593755, RESID:AA0060, UniMod:441]
-comment: incidental to RESID:AA0107 incidental to RESID:AA0309
 is_a: MOD:00651 ! N-palmitoylated residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1253,7 +1207,6 @@ is_a: MOD:00711 ! protonated-trimethylated residue
 id: MOD:00072
 name: N-methylated glycine
 def: "a protein modification that effectively converts an glycine residue to N-methylglycine" [DeltaMass:0, PubMed:1593629, RESID:AA0063]
-comment: DeltaMass also has an entry for the free amino acid
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00602 ! N-methylated residue
 is_a: MOD:00714 ! methylated glycine
@@ -1326,7 +1279,6 @@ is_a: MOD:00722 ! monomethylated L-glutamine
 id: MOD:00081
 name: 5-methyl esterified L-glutamic acid
 def: "a protein modification that effectively converts an L-glutamic acid residue to L-glutamate 5-methyl ester" [DeltaMass:167, PubMed:16888, PubMed:6300110, RESID:AA0072]
-comment: DeltaMass gives the formula C 6 H 9 O 1 N 3 with mass 143
 is_a: MOD:00407 ! residue methyl ester
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00713 ! methylated L-glutamic acid
@@ -1343,7 +1295,6 @@ is_a: MOD:00724 ! N-methylated L-histidine
 id: MOD:00083
 name: N6,N6,N6-trimethylated L-lysine
 def: "a protein modification that effectively converts an L-lysine residue to N6,N6,N6-trimethyl-L-lysine" [DeltaMass:0, PubMed:12590383, PubMed:3145979, PubMed:4304194, PubMed:6778808, PubMed:7093227, PubMed:8453381, RESID:AA0074]
-comment: DeltaMass calculates the mass difference from protonated lysine rather than neutral lysine
 is_a: MOD:00602 ! N-methylated residue
 is_a: MOD:00663 ! methylated L-lysine
 is_a: MOD:00711 ! protonated-trimethylated residue
@@ -1556,7 +1507,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00113
 name: S-geranylgeranyl-L-cysteine
 def: "a protein modification that effectively converts an L-cysteine residue to S-geranylgeranyl-L-cysteine" [DeltaMass:0, PubMed:1483450, RESID:AA0104]
-comment: DeltaMass calculates the mass with two double bonds rather than four
 is_a: MOD:00441 ! geranylgeranylated residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1564,7 +1514,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00114
 name: methyl esterified L-cysteine
 def: "a protein modification that effectively converts an L-cysteine residue to L-cysteine methyl ester" [PubMed:1872463, RESID:AA0105]
-comment: secondary to RESID:AA0102; secondary to RESID:AA0103; secondary to RESID:AA0104
 is_a: MOD:00407 ! residue methyl ester
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00660 ! methylated L-cysteine
@@ -1580,14 +1529,12 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00116
 name: S-diacylglycerol-L-cysteine
 def: "modification from RESID" [PubMed:10896212, PubMed:4575979, PubMed:9056182, RESID:AA0107, UniMod:377]
-comment: incidental to RESID:AA0060
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00117
 name: S-(L-isoglutamyl)-L-cysteine
 def: "modification from RESID" [DeltaMass:0, PubMed:6838833, RESID:AA0108]
-comment: cross-link 2; DeltaMass calculates the mass difference from glutamic acid rather than glutamine
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00907 ! modified L-glutamine residue
@@ -1596,7 +1543,6 @@ is_a: MOD:00907 ! modified L-glutamine residue
 id: MOD:00118
 name: 2'-(S-L-cysteinyl)-L-histidine
 def: "modification from RESID" [DeltaMass:0, PubMed:6210696, RESID:AA0109]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -1605,7 +1551,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00119
 name: L-lanthionine
 def: "modification from RESID" [DeltaMass:7, RESID:AA0110]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -1614,7 +1559,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00120
 name: meso-lanthionine
 def: "modification from RESID" [PubMed:15023056, PubMed:3769923, RESID:AA0111]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -1623,7 +1567,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00121
 name: 3-methyl-L-lanthionine
 def: "modification from RESID" [PubMed:3769923, RESID:AA0112]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
@@ -1632,7 +1575,6 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00122
 name: 3'-(S-L-cysteinyl)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:15917234, PubMed:2002850, RESID:AA0113]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -1653,28 +1595,24 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00125
 name: N6-(4-amino-2-hydroxybutyl)-L-lysine
 def: "modification from RESID" [DeltaMass:0, PubMed:6806267, PubMed:8108861, RESID:AA0116, UniMod:379]
-comment: From DeltaMass: Average Mass: 87
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00126
 name: N6-biotinyl-L-lysine
 def: "modification from RESID" [DeltaMass:305, PubMed:16109483, PubMed:3178228, PubMed:7948875, PubMed:8747466, RESID:AA0117, UniMod:3]
-comment: From DeltaMass: Average Mass: 354 Formula:C16H26O4N3S1 Monoisotopic Mass Change:354.172 Average Mass Change:354.471 References:PE Sciex
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00127
 name: N6-lipoyl-L-lysine
 def: "modification from RESID" [DeltaMass:0, PubMed:3421911, PubMed:3522581, PubMed:7719855, RESID:AA0118, UniMod:42]
-comment: From DeltaMass: Average Mass: 188
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00128
 name: N6-pyridoxal phosphate-L-lysine
 def: "modification from RESID" [DeltaMass:0, PubMed:1544460, RESID:AA0119, UniMod:46]
-comment: From DeltaMass: Average Mass: 231
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
@@ -1687,21 +1625,18 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00130
 name: L-allysine
 def: "modification from RESID" [DeltaMass:0, PubMed:11332453, PubMed:358196, PubMed:5337886, PubMed:5529814, RESID:AA0121, UniMod:99]
-comment: From DeltaMass: Average Mass: -1
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00131
 name: L-2-aminoadipic acid
 def: "modification from RESID" [DeltaMass:353, PubMed:336041, PubMed:358196, PubMed:7419498, RESID:AA0122, UniMod:381]
-comment: From DeltaMass: Average Mass: 15 Monoisotopic Mass Change:14.97 Average Mass Change:15 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001. Notes:Expected reaction following oxidation of lysine to aminoadipic semialdehyde. Not proven experimentally but deduced by reference to the similar known reaction of oxidation of Arg to Glu via the semialdehyde.
 is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00132
 name: L-lysinoalanine
 def: "modification from RESID" [DeltaMass:0, PubMed:2544544, RESID:AA0123]
-comment: cross-link 2 From DeltaMass: Average Mass: -34
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00912 ! modified L-lysine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -1710,7 +1645,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00133
 name: N6-(L-isoglutamyl)-L-lysine crosslink
 def: "A protein modification that crosslinks the N6-amino of a peptidyl lysine with the 5-carboxyl of a peptidyl glutamic acid." [DeltaMass:0, PubMed:2461365, PubMed:5637041, PubMed:5656070, PubMed:8598899, RESID:AA0124]
-comment: cross-link 2 From DeltaMass: Average Mass: -17
 is_a: MOD:00688 ! isopeptide crosslinked residues
 is_a: MOD:00907 ! modified L-glutamine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -1719,7 +1653,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00134
 name: N6-glycyl-L-lysine crosslink
 def: "A protein modification that crosslinks the N6-amino of a peptidyl lysine with the carboxyl of a peptidyl glycine." [RESID:AA0125]
-comment: cross-link 2
 is_a: MOD:00688 ! isopeptide crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -1728,7 +1661,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00135
 name: N-(L-isoaspartyl)-glycine crosslink
 def: "A protein modification that crosslinks the amino of a glycyl peptide with the 4-carboxyl of a peptidyl aspartic acid." [PubMed:1826288, RESID:AA0126]
-comment: cross-link 2
 is_a: MOD:00688 ! isopeptide crosslinked residues
 is_a: MOD:00903 ! modified L-asparagine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -1761,7 +1693,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00140
 name: S-phycocyanobilin-L-cysteine
 def: "modification from RESID" [DeltaMass:0, PubMed:16644722, PubMed:3838747, PubMed:7918400, RESID:AA0131]
-comment: From DeltaMass: Average Mass: 587
 is_a: MOD:00700 ! tetrapyrrole modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1783,7 +1714,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00143
 name: heme-bis-L-cysteine
 def: "modification from RESID" [PubMed:5545094, PubMed:8827449, RESID:AA0134]
-comment: cross-link 2
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1791,7 +1721,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00144
 name: heme-L-cysteine
 def: "modification from RESID" [DeltaMass:0, PubMed:170910, PubMed:192772, PubMed:2536325, PubMed:9535866, RESID:AA0135]
-comment: From DeltaMass: Average Mass: 617
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1799,7 +1728,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00145
 name: tetrakis-L-cysteinyl iron
 def: "modification from RESID" [PubMed:1303768, PubMed:2244884, RESID:AA0136]
-comment: cross-link 4
 is_a: MOD:00738 ! iron containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1807,7 +1735,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00146
 name: tetrakis-L-cysteinyl diiron disulfide
 def: "modification from RESID" [PubMed:2123937, PubMed:6801028, PubMed:7763242, PubMed:8688437, RESID:AA0137]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1815,7 +1742,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00147
 name: hexakis-L-cysteinyl triiron trisulfide
 def: "modification from RESID" [PubMed:3379067, PubMed:3932661, PubMed:7354058, RESID:AA0138]
-comment: cross-link 6
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1823,7 +1749,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00148
 name: tris-L-cysteinyl triiron tetrasulfide
 def: "modification from RESID" [PubMed:10555576, PubMed:2056535, PubMed:3422475, PubMed:6848518, PubMed:7819255, PubMed:9063899, RESID:AA0139]
-comment: cross-link 3
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1831,7 +1756,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00149
 name: tetrakis-L-cysteinyl tetrairon tetrasulfide
 def: "modification from RESID" [PubMed:3351918, PubMed:7803404, PubMed:7819196, PubMed:932007, RESID:AA0140]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -1839,7 +1763,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00150
 name: L-cysteinyl-L-histidino-homocitryl molybdenum heptairon nonasulfide
 def: "modification from RESID" [PubMed:10525412, PubMed:12215645, PubMed:12733878, PubMed:1529354, PubMed:8027059, RESID:AA0141]
-comment: cross-link 2; incidental to RESID:AA0300
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00743 ! molybdenum containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -1870,7 +1793,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00154
 name: O4'-(8alpha-FAD)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:7391034, RESID:AA0145, UniMod:50]
-comment: From DeltaMass: Average Mass: 783
 is_a: MOD:00697 ! flavin modified residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -1878,7 +1800,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00155
 name: 3'-hydroxylation of L-tyrosine to L-3',4'-dihydroxyphenylalanine
 def: "a protein modification that effectively converts an L-tyrosine residue to L-3',4'-dihydroxyphenylalanine" [DeltaMass:0, PubMed:1610822, PubMed:1903612, PubMed:3734192, RESID:AA0146]
-comment: incidental to RESID:AA0368 From DeltaMass: Average Mass: 16
 is_a: MOD:00425 ! monohydroxylated residue
 is_a: MOD:00707 ! hydroxylated tyrosine
 
@@ -1893,7 +1814,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00157
 name: oxidation to L-tryptophyl quinone
 def: "a protein modification that effectively converts an L-tryptophan residue to a L-tryptophan quinone" [DeltaMass:0, PubMed:2028257, RESID:AA0148, UniMod:392]
-comment: incidental to RESID:AA0149; incidental to RESID:AA0313 From DeltaMass: Average Mass: 30
 is_a: MOD:00679 ! carbon oxygenated residue
 is_a: MOD:00918 ! modified L-tryptophan residue
 
@@ -1901,7 +1821,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00158
 name: 4'-(L-tryptophan)-L-tryptophyl quinone
 def: "modification from RESID" [DeltaMass:0, PubMed:2028257, RESID:AA0149]
-comment: cross-link 2; secondary to RESID:AA0148 From DeltaMass: Average Mass: 28
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00918 ! modified L-tryptophan residue
 
@@ -1909,7 +1828,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00159
 name: O3-phosphopantetheine-L-serine
 def: "modification from RESID" [DeltaMass:0, PubMed:10320345, PubMed:10997907, PubMed:12057197, PubMed:12869567, PubMed:4568609, RESID:AA0150, UniMod:49]
-comment: UniMod has DiffFormula C 11 H 20 N 2 O 6 P 1 S 1 From DeltaMass: Average Mass: 339
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
@@ -1931,7 +1849,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00162
 name: O5-glucosylgalactosyl-L-hydroxylysine
 def: "modification from RESID" [PubMed:15149698, PubMed:4288358, PubMed:4319110, RESID:AA0153, UniMod:393]
-comment: secondary to RESID:AA0028
 is_a: MOD:00396 ! O-glycosylated residue
 is_a: MOD:00476 ! galactosylated residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -2024,14 +1941,12 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00176
 name: O-(phosphoribosyl dephospho-coenzyme A)-L-serine
 def: "modification from RESID" [PubMed:10924139, PubMed:11052675, PubMed:179809, PubMed:180526, PubMed:368065, RESID:AA0167, UniMod:395]
-comment: pRibodePcoA
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
 id: MOD:00177
 name: omega-N-(ADP-ribosyl)-L-arginine
 def: "modification from RESID" [DeltaMass:0, PubMed:209022, PubMed:3090031, PubMed:3923473, PubMed:6582062, RESID:AA0168, UniMod:213]
-comment: From DeltaMass: Average Mass: 541
 is_a: MOD:00752 ! adenosine diphosphoribosyl modified residue
 is_a: MOD:00902 ! modified L-arginine residue
 
@@ -2039,7 +1954,6 @@ is_a: MOD:00902 ! modified L-arginine residue
 id: MOD:00178
 name: S-(ADP-ribosyl)-L-cysteine
 def: "modification from RESID" [DeltaMass:0, PubMed:3863818, RESID:AA0169]
-comment: From DeltaMass: Average Mass: 541
 is_a: MOD:00752 ! adenosine diphosphoribosyl modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2047,7 +1961,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00179
 name: L-glutamyl 5-glycerylphosphorylethanolamine
 def: "modification from RESID" [PubMed:2511205, PubMed:2569467, PubMed:9252331, PubMed:9662537, RESID:AA0170, UniMod:396]
-comment: glycerylPE
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
@@ -2061,7 +1974,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00181
 name: O4'-sulfo-L-tyrosine
 def: "modification from RESID" [DeltaMass:88, PubMed:10226369, PubMed:2303439, PubMed:3778455, PubMed:3801003, RESID:AA0172]
-comment: From DeltaMass: Average Mass: 80 Average Mass Change:80 References:Loughnan, M., Bond, T., Atkins, A., Cuevas, J., Adams, D.J., Broxton, N.B.,Livett, B.G., Down, J.G., Jones, A., Alewood, P.F. and Lewis, R.J. (1998)alpha-Conotoxin EpI, a Novel Sufated Peptide from Conus episcopatus ThatSelectively Targets Neuronal Nicotinic Acteylcholine Receptors. J. Biol.Chem. 273 (25), 15667-15674.
 is_a: MOD:00695 ! sulfated residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -2076,7 +1988,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00183
 name: L-2'-bromophenylalanine
 def: "modification from RESID" [DeltaMass:83, PubMed:2059627, PubMed:2076468, RESID:AA0174]
-comment: From DeltaMass: Average Mass: 78 Average Mass Change:78 References:Yoshino,K et.al. Biochemistry Vol. 30 pg 6203-9 (1991) Identifidation of a novel amino acid, o-bromo-L-phenylananine, in egg-associated peptides that activate spermatozoa
 is_a: MOD:00754 ! brominated residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
 
@@ -2098,7 +2009,6 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00186
 name: 3',3'',5'-triiodo-L-thyronine
 def: "modification from RESID" [DeltaMass:0, RESID:AA0177, UniMod:397]
-comment: From DeltaMass: Average Mass: 470
 is_a: MOD:00502 ! triiodinated residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -2136,14 +2046,12 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00191
 name: (Z)-2,3-didehydrogenated tyrosine
 def: "a protein modification that effectively converts L-tyrosine to (Z)-2,3-didehydrotyrosine" [PubMed:1347277, PubMed:9631087, RESID:AA0183]
-comment: incidental to RESID:AA0184; incidental to RESID:AA0187; incidental to RESID:AA0188; incidental to RESID:AA0189; incidental to RESID:AA0378; incidental to RESID:AA0379; incidental to RESID:AA0380; incidental to RESID:AA0381
 is_a: MOD:00706 ! dehydrogenated tyrosine
 
 [Term]
 id: MOD:00192
 name: L-serine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:1347277, PubMed:9631087, RESID:AA0184]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2164,7 +2072,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00195
 name: L-alanine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:10220322, RESID:AA0187]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0181; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00901 ! modified L-alanine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -2173,7 +2080,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00196
 name: L-cysteine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:1537807, RESID:AA0188]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0181; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -2182,7 +2088,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00197
 name: 2-imino-glutamine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:11050230, PubMed:11209050, RESID:AA0189]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00907 ! modified L-glutamine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -2259,7 +2164,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00208
 name: O4'-(phospho-5'-adenosine)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:5543675, RESID:AA0203, UniMod:405]
-comment: From DeltaMass: Average Mass: 329
 is_a: MOD:00701 ! nucleotide or nucleic acid modified residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -2267,7 +2171,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00209
 name: S-(2-aminovinyl)-D-cysteine
 def: "modification from RESID" [PubMed:3181159, PubMed:3769923, RESID:AA0204]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2276,14 +2179,12 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00210
 name: oxidation to L-cysteine sulfenic acid
 def: "a protein modification that effectively monooxygenates an L-cysteine residue to L-cysteine sulfenic acid" [DeltaMass:41, PubMed:10964927, PubMed:2501303, PubMed:8756456, PubMed:9214307, PubMed:9586994, PubMed:9587003, RESID:AA0205]
-comment: From DeltaMass: Average Mass: 16 Average Mass Change:16 Notes:Green et al. in J. B. C. 270, 18209-18211 (1995) quote Kim and Raines in Eur. J. Biochem. 224, 109-114 (1994). Kim and Raines using ESI-MS and sulfhydryl group titration found that bovine seminal ribonuclease contains a single oxidized sulfhydryl group, which cannot participate in a disulfide bond. This form of cysteine is called sulfenic acid (-SOH).
 is_a: MOD:00708 ! sulfur oxygenated L-cysteine
 
 [Term]
 id: MOD:00211
 name: S-glycyl-L-cysteine
 def: "modification from RESID" [PubMed:3306404, RESID:AA0206]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -2323,7 +2224,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00217
 name: O4-arabinosyl-L-hydroxyproline
 def: "modification from RESID" [DeltaMass:0, PubMed:666730, PubMed:7852316, RESID:AA0212, UniMod:408]
-comment: secondary to RESID:AA0030 From DeltaMass: Average Mass: 147
 is_a: MOD:00396 ! O-glycosylated residue
 is_a: MOD:00915 ! modified L-proline residue
 
@@ -2338,7 +2238,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00219
 name: L-citrulline
 def: "modification from RESID" [DeltaMass:0, PubMed:2466844, RESID:AA0214, UniMod:33]
-comment: From DeltaMass: Average Mass: 157
 is_a: MOD:00902 ! modified L-arginine residue
 
 [Term]
@@ -2352,7 +2251,6 @@ is_a: MOD:00682 ! hydroxylated arginine
 id: MOD:00221
 name: N-(L-isoaspartyl)-L-cysteine
 def: "modification from RESID" [PubMed:8286361, RESID:AA0216]
-comment: cross-link 2
 is_a: MOD:00903 ! modified L-asparagine residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2387,7 +2285,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00226
 name: 1'-(8alpha-FAD)-L-histidine
 def: "modification from RESID" [DeltaMass:0, PubMed:10585424, PubMed:1396672, PubMed:4339951, PubMed:9261083, RESID:AA0221, UniMod:50]
-comment: From DeltaMass: Average Mass: 784
 is_a: MOD:00697 ! flavin modified residue
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -2402,21 +2299,18 @@ is_a: MOD:00902 ! modified L-arginine residue
 id: MOD:00228
 name: S-diphytanylglycerol diether-L-cysteine
 def: "modification from RESID" [PubMed:7797461, PubMed:8195126, RESID:AA0223, UniMod:410]
-comment: incidental to RESID:AA0043
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00229
 name: alpha-1-microglobulin-Ig alpha complex chromophore
 def: "modification from RESID" [PubMed:11058759, PubMed:11877257, PubMed:7506257, PubMed:7535251, RESID:AA0224]
-comment: cross-link 2
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00230
 name: bis-L-cysteinyl bis-L-histidino diiron disulfide
 def: "modification from RESID" [PubMed:2765515, PubMed:9651245, RESID:AA0225]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -2425,7 +2319,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00231
 name: hexakis-L-cysteinyl hexairon hexasulfide
 def: "modification from RESID" [PubMed:1311311, PubMed:1318833, RESID:AA0226]
-comment: cross-link 6
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2440,7 +2333,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00233
 name: N6-(phospho-5'-guanosine)-L-lysine
 def: "modification from RESID" [DeltaMass:304, PubMed:6092377, PubMed:6264433, RESID:AA0228, UniMod:413]
-comment: From DeltaMass: Average Mass: 345 Formula:C10H12O5N7P1 Monoisotopic Mass Change:345.047 Average Mass Change:345.209 References:PE Sciex
 is_a: MOD:00701 ! nucleotide or nucleic acid modified residue
 is_a: MOD:00912 ! modified L-lysine residue
 
@@ -2448,7 +2340,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00234
 name: L-cysteine glutathione disulfide
 def: "a protein modification that effectively converts an L-cysteine residue to S-glutathionyl-L-cysteine" [DeltaMass:0, PubMed:3083866, PubMed:8344916, RESID:AA0229, UniMod:55]
-comment: From DeltaMass: Average Mass: 305
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -2468,14 +2359,12 @@ is_a: MOD:00903 ! modified L-asparagine residue
 id: MOD:00237
 name: L-beta-methylthioaspartic acid
 def: "modification from RESID" [DeltaMass:61, PubMed:15473684, PubMed:8844851, RESID:AA0232, UniMod:39]
-comment: From DeltaMass: Average Mass: 46 Average Mass Change:46 References:Beta-Methyl-aspartic acid: Identification of a novel posttranslational modification in ribosomal protein S12 from Escherichia coli Jeffrey A. Kowalak and Kenneth A. Walsh, Protein Science (1996) 5: 1625-1632
 is_a: MOD:00904 ! modified L-aspartic acid residue
 
 [Term]
 id: MOD:00238
 name: 5'-(N6-L-lysine)-L-topaquinone
 def: "modification from RESID" [PubMed:8688089, RESID:AA0233]
-comment: cross-link 2; secondary to RESID:AA0147
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00912 ! modified L-lysine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -2512,7 +2401,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00243
 name: L-cysteine oxazolecarboxylic acid
 def: "modification from RESID" [PubMed:8183941, PubMed:8895467, RESID:AA0238]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2521,7 +2409,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00244
 name: L-cysteine oxazolinecarboxylic acid
 def: "modification from RESID" [PubMed:1880060, RESID:AA0239]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2530,7 +2417,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00245
 name: glycine oxazolecarboxylic acid
 def: "modification from RESID" [PubMed:8183941, PubMed:8895467, RESID:AA0240]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2539,7 +2425,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00246
 name: glycine thiazolecarboxylic acid
 def: "modification from RESID" [PubMed:8183941, PubMed:8895467, RESID:AA0241]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -2548,7 +2433,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00247
 name: L-serine thiazolecarboxylic acid
 def: "modification from RESID" [PubMed:8183941, PubMed:8895467, RESID:AA0242]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2557,7 +2441,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00248
 name: L-phenylalanine thiazolecarboxylic acid
 def: "modification from RESID" [PubMed:1880060, RESID:AA0243]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
@@ -2566,7 +2449,6 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00249
 name: L-cysteine thiazolecarboxylic acid
 def: "modification from RESID" [PubMed:1880060, RESID:AA0244]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2574,7 +2456,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00250
 name: L-lysine thiazolecarboxylic acid
 def: "modification from RESID" [PubMed:1880060, RESID:AA0245]
-comment: cross-link 1
 is_a: MOD:00690 ! oxazole/thiazole ring crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -2596,7 +2477,6 @@ is_a: MOD:00005 ! O-glycosyl-L-threonine
 id: MOD:00253
 name: L-selenocysteinyl molybdenum bis(molybdopterin guanine dinucleotide)
 def: "modification from RESID" [PubMed:14235557, PubMed:2211698, PubMed:8052647, PubMed:9036855, RESID:AA0248, UniMod:415]
-comment: secondary to RESID:AA0022
 is_a: MOD:00744 ! molybdenum pterin containing modification
 is_a: MOD:00745 ! selenium containing residue
 
@@ -2611,7 +2491,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00255
 name: 3-(3'-L-histidyl)-L-tyrosine
 def: "modification from RESID" [PubMed:9144772, RESID:AA0250]
-comment: cross-link 2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00909 ! modified L-histidine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -2620,7 +2499,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00256
 name: oxidation to L-methionine sulfone
 def: "a protein modification that dioxygenates an L-methionine residue to L-methionine sulfone" [DeltaMass:205, PubMed:7786407, PubMed:7791219, RESID:AA0251, UniMod:32]
-comment: DeltaMass gives the formula C 5 H 9 N 3 O 1 S 1 with mass 163
 is_a: MOD:00709 ! sulfur oxygenated L-methionine
 
 [Term]
@@ -2633,7 +2511,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00258
 name: S-(2-aminovinyl)-3-methyl-D-cysteine
 def: "modification from RESID" [PubMed:9119018, RESID:AA0253]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
@@ -2656,7 +2533,6 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00261
 name: O4'-(phospho-5'-uridine)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:11467524, PubMed:2885322, RESID:AA0256, UniMod:417]
-comment: From DeltaMass: Average Mass: 306
 is_a: MOD:00701 ! nucleotide or nucleic acid modified residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -2664,7 +2540,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00262
 name: N-(L-glutamyl)-L-tyrosine
 def: "modification from RESID" [PubMed:6387372, PubMed:8093886, RESID:AA0257]
-comment: cross-link 1
 is_a: MOD:00906 ! modified L-glutamic acid residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -2679,7 +2554,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00264
 name: phycoerythrobilin-bis-L-cysteine
 def: "modification from RESID" [PubMed:3838747, RESID:AA0259]
-comment: cross-link 2
 is_a: MOD:00700 ! tetrapyrrole modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2687,7 +2561,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00265
 name: phycourobilin-bis-L-cysteine
 def: "modification from RESID" [PubMed:3208761, PubMed:3838665, PubMed:8876649, RESID:AA0260]
-comment: cross-link 2
 is_a: MOD:00700 ! tetrapyrrole modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -2695,21 +2568,18 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00266
 name: N-L-glutamyl-poly-L-glutamic acid
 def: "modification from RESID" [PubMed:2570347, PubMed:328274, RESID:AA0261]
-comment: cross-link 1
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
 id: MOD:00267
 name: oxidation to L-cysteine sulfinic acid
 def: "a protein modification that effectively dioxygenates an L-cysteine residue to L-cysteine sulfinic acid" [PubMed:9586994, RESID:AA0262, UniMod:497]
-comment: "Hyun Ae Woo, et. al., Science 300 (5619), 653-656"
 is_a: MOD:00708 ! sulfur oxygenated L-cysteine
 
 [Term]
 id: MOD:00268
 name: 3',5'-dihydroxylation of L-tyrosine to L-3',4',5'-trihydroxyphenylalanine
 def: "a protein modification that effectively converts an L-tyrosine residue to L-3',4',5'-trihydroxyphenylalanine" [DeltaMass:0, PubMed:12771378, PubMed:8554314, PubMed:9434739, RESID:AA0263, UniMod:418]
-comment: From DeltaMass: Average Mass: 32
 is_a: MOD:00428 ! dihydroxylated residue
 is_a: MOD:00707 ! hydroxylated tyrosine
 
@@ -2730,7 +2600,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00271
 name: heme P460-bis-L-cysteine-L-tyrosine
 def: "modification from RESID" [PubMed:8325841, PubMed:9095195, RESID:AA0266]
-comment: cross-link 3
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -2746,7 +2615,6 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00273
 name: tris-L-cysteinyl L-cysteine persulfido bis-L-glutamato L-histidino tetrairon disulfide trioxide
 def: "modification from RESID" [PubMed:12764602, RESID:AA0268]
-comment: cross-link 7; secondary to RESID:AA0269
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
@@ -2762,7 +2630,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00275
 name: 3'-(1'-L-histidyl)-L-tyrosine
 def: "modification from RESID" [PubMed:10338009, RESID:AA0270]
-comment: cross-link 2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00909 ! modified L-histidine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -2771,7 +2638,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00276
 name: heme P460-bis-L-cysteine-L-lysine
 def: "modification from RESID" [PubMed:12709052, PubMed:9237682, RESID:AA0271]
-comment: cross-link 3
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -2828,7 +2694,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00284
 name: dihydroxyheme-L-aspartate ester-L-glutamate ester
 def: "modification from RESID" [PubMed:10447690, RESID:AA0279]
-comment: cross-link 2
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
@@ -2837,7 +2702,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00285
 name: dihydroxyheme-L-aspartate ester-L-glutamate ester-L-methionine sulfonium
 def: "modification from RESID" [PubMed:10447690, PubMed:10480885, PubMed:1320128, PubMed:7840679, RESID:AA0280]
-comment: cross-link 3
 is_a: MOD:00699 ! porphyrin modified residue
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
@@ -2854,7 +2718,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00287
 name: 3,4-dihydroxylated L-proline
 def: "a protein modification that effectively converts an L-proline residue to trans-2,3-cis-3,4-dihydroxy-L-proline" [DeltaMass:0, RESID:AA0282, UniMod:425]
-comment: From DeltaMass: Average Mass: 32
 is_a: MOD:00428 ! dihydroxylated residue
 is_a: MOD:00678 ! hydroxylated proline
 
@@ -2862,7 +2725,6 @@ is_a: MOD:00678 ! hydroxylated proline
 id: MOD:00288
 name: pyrroloquinoline quinone
 def: "modification from RESID" [PubMed:1310505, PubMed:7665488, RESID:AA0283]
-comment: cross-link 2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00906 ! modified L-glutamic acid residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -2871,7 +2733,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00289
 name: tris-L-cysteinyl L-N1'-histidino tetrairon tetrasulfide
 def: "modification from RESID" [PubMed:9836629, RESID:AA0284]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -2880,7 +2741,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00290
 name: tris-L-cysteinyl L-N3'-histidino tetrairon tetrasulfide
 def: "modification from RESID" [PubMed:7854413, RESID:AA0285]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -2889,7 +2749,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00291
 name: tris-L-cysteinyl L-aspartato tetrairon tetrasulfide
 def: "modification from RESID" [PubMed:7819255, PubMed:9283079, RESID:AA0286]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -2904,7 +2763,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00293
 name: tris-L-cysteinyl L-serinyl tetrairon tetrasulfide
 def: "modification from RESID" [RESID:AA0288]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -2913,7 +2771,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00294
 name: bis-L-cysteinyl L-N3'-histidino L-serinyl tetrairon tetrasulfide
 def: "modification from RESID" [RESID:AA0289]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -2936,7 +2793,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00297
 name: tris-L-cysteinyl L-cysteine persulfido bis-L-glutamato L-histidino nickel triiron disulfide trioxide
 def: "modification from RESID" [RESID:AA0292]
-comment: cross-link 7; secondary to RESID:AA0269
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00741 ! nickel containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -2947,7 +2803,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00298
 name: tris-L-cysteinyl L-cysteine persulfido L-glutamato L-histidino L-serinyl nickel triiron disulfide trioxide
 def: "modification from RESID" [PubMed:2550436, RESID:AA0293]
-comment: cross-link 7; secondary to RESID:AA0269
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00741 ! nickel containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -2959,7 +2814,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00299
 name: N6-(L-isoaspartyl)-L-lysine crosslink
 def: "A protein modification that crosslinks the N6-amino of a peptidyl lysine with the 4-carboxyl of a peptidyl aspartic acid." [DeltaMass:0, PubMed:11000116, PubMed:6503713, RESID:AA0294]
-comment: cross-link 2 From DeltaMass: Average Mass: -17
 is_a: MOD:00688 ! isopeptide crosslinked residues
 is_a: MOD:00903 ! modified L-asparagine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -2968,7 +2822,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00300
 name: L-glutamyl-5-poly(ADP-ribose)
 def: "modification from RESID" [DeltaMass:0, PubMed:11246023, PubMed:8533153, RESID:AA0295]
-comment: From DeltaMass: Average Mass: 541
 is_a: MOD:00752 ! adenosine diphosphoribosyl modified residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -2976,7 +2829,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00301
 name: O-(N-acetylglucosamine-1-phosphoryl)-L-serine
 def: "modification from RESID" [DeltaMass:0, PubMed:6438439, PubMed:6993483, PubMed:8631906, RESID:AA0296, UniMod:428]
-comment: From DeltaMass: Average Mass: 266
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
@@ -2989,7 +2841,6 @@ is_a: MOD:00916 ! modified L-serine residue
 id: MOD:00303
 name: heptakis-L-histidino tetracopper mu4-sulfide hydroxide
 def: "modification from RESID" [PubMed:11024061, PubMed:11041839, RESID:AA0298]
-comment: cross-link 7
 is_a: MOD:00742 ! copper containing modification
 is_a: MOD:00909 ! modified L-histidine residue
 
@@ -2997,7 +2848,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00304
 name: methyl esterified L-leucine
 def: "a protein modification that effectively converts an L-leucine residue to L-leucine methyl ester" [PubMed:10191253, PubMed:8206937, RESID:AA0299]
-comment: incidental to RESID:AA0039
 is_a: MOD:00407 ! residue methyl ester
 is_a: MOD:00599 ! monomethylated residue
 is_a: MOD:00662 ! methylated L-leucine
@@ -3006,7 +2856,6 @@ is_a: MOD:00662 ! methylated L-leucine
 id: MOD:00305
 name: hexakis-L-cysteinyl L-serinyl octairon heptasulfide
 def: "modification from RESID" [PubMed:10525412, PubMed:12215645, PubMed:9063865, RESID:AA0300]
-comment: cross-link 7; incidental to RESID:AA0141
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -3021,7 +2870,6 @@ is_a: MOD:00009 ! natural residue
 id: MOD:00307
 name: L-aspartimide
 def: "modification from RESID" [DeltaMass:18, PubMed:12771378, PubMed:2378679, PubMed:7662664, PubMed:7988548, PubMed:9309583, RESID:AA0302, UniMod:317, UniMod:430]
-comment: From DeltaMass: Average Mass: -17 Average Mass Change:-17 References:Clarke, S., Lability of Aspargine and Aspartic Acid Residues in Protein and Peptides, in: Stability of Protein Pharmaceuticals : Chemical and Physical Paths of Protein Degradation, Part A (T.J. Ahern and M.C. Manning, eds.), 1992,Plenum Press, New York, pp.1-29Xie, M.; Vander Velde, D.; Morton, M.; Borchardt, R.T.; Schowen,R.L.: pH-Induced Change in the Rate-Determining Step for the Hydrolysis of the Asp/Asn-Derived Cyclic-Imide Intermediate in Protein Degradation. (1996) J. Am. Chem. Soc. 118: 8955-8956.
 is_a: MOD:00601 ! cyclized residue
 is_a: MOD:00903 ! modified L-asparagine residue
 
@@ -3050,7 +2898,6 @@ is_a: MOD:00658 ! methylated L-arginine
 id: MOD:00311
 name: L-cysteine coenzyme A disulfide
 def: "modification from RESID" [DeltaMass:0, PubMed:1734967, RESID:AA0306, UniMod:281]
-comment: DeltaMass gives no formula with mass as 454.
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -3071,14 +2918,12 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00314
 name: glycine cholesterol ester
 def: "modification from RESID" [PubMed:11111088, PubMed:8824192, PubMed:9252331, RESID:AA0309, UniMod:432]
-comment: incidental to RESID:AA0060
 is_a: MOD:00908 ! modified glycine residue
 
 [Term]
 id: MOD:00315
 name: pentakis-L-cysteinyl L-histidino nickel tetrairon pentasulfide
 def: "modification from RESID" [PubMed:11509720, PubMed:2550436, RESID:AA0310]
-comment: cross-link 6
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00741 ! nickel containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -3102,7 +2947,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00318
 name: 4'-(S-L-cysteinyl)-L-tryptophyl quinone
 def: "modification from RESID" [PubMed:11555656, PubMed:11717396, RESID:AA0313]
-comment: cross-link 2; secondary to RESID:AA0148
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00918 ! modified L-tryptophan residue
@@ -3111,7 +2955,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00319
 name: 3-(S-L-cysteinyl)-L-aspartic acid
 def: "modification from RESID" [PubMed:11555656, PubMed:11717396, RESID:AA0314]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -3120,7 +2963,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00320
 name: 4-(S-L-cysteinyl)-L-glutamic acid
 def: "modification from RESID" [PubMed:11555656, PubMed:11717396, RESID:AA0315]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
@@ -3198,7 +3040,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00331
 name: tetrakis-L-cysteinyl triiron tetrasulfide
 def: "modification from RESID" [PubMed:11592901, PubMed:11941493, PubMed:2511202, PubMed:6094558, RESID:AA0326]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -3228,7 +3069,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00335
 name: 3-methyl-L-lanthionine sulfoxide
 def: "modification from RESID" [PubMed:7737178, PubMed:9219543, RESID:AA0330]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
@@ -3237,7 +3077,6 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00336
 name: tris-L-cysteinyl L-aspartato diiron disulfide
 def: "modification from RESID" [PubMed:1312028, PubMed:7947772, RESID:AA0331]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -3258,7 +3097,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00339
 name: L-cysteinyl hydrogenase diiron subcluster
 def: "modification from RESID" [PubMed:10694885, PubMed:9836629, RESID:AA0334, UniMod:439]
-comment: incidental to RESID:AA0140
 is_a: MOD:00738 ! iron containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -3296,7 +3134,6 @@ is_a: MOD:00718 ! methylated L-tyrosine
 id: MOD:00344
 name: N-palmitoylated glycine
 def: "a protein modification that effectively converts a glycine residue to N-palmitoylglycine" [PubMed:12574119, RESID:AA0339, UniMod:441]
-comment: incidental to RESID:AA0060
 is_a: MOD:00651 ! N-palmitoylated residue
 is_a: MOD:00908 ! modified glycine residue
 
@@ -3304,7 +3141,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00345
 name: 2-(S-L-cysteinyl)-L-phenylalanine
 def: "modification from RESID" [PubMed:12696888, PubMed:3936839, RESID:AA0340]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
@@ -3313,7 +3149,6 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00346
 name: 2-(S-L-cysteinyl)-D-phenylalanine
 def: "modification from RESID" [PubMed:12696888, PubMed:3936839, RESID:AA0341]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
@@ -3322,7 +3157,6 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00347
 name: 2-(S-L-cysteinyl)-D-allo-threonine
 def: "modification from RESID" [PubMed:12696888, PubMed:3936839, RESID:AA0342]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
@@ -3337,7 +3171,6 @@ is_a: MOD:00901 ! modified L-alanine residue
 id: MOD:00349
 name: 4-amino-3-isothiazolidinone-L-serine
 def: "modification from RESID" [PubMed:12802338, PubMed:12802339, RESID:AA0344]
-comment: cross-link 1
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00916 ! modified L-serine residue
 
@@ -3363,7 +3196,6 @@ is_a: MOD:00907 ! modified L-glutamine residue
 id: MOD:00353
 name: S-[5'-(L-tryptoph-6'-yl)-L-tyrosin-3'-yl]-L-methionin-S-ium
 def: "modification from RESID" [PubMed:12172540, PubMed:16285713, RESID:AA0348]
-comment: cross-link 3
 is_a: MOD:00913 ! modified L-methionine residue
 is_a: MOD:00918 ! modified L-tryptophan residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -3422,7 +3254,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00361
 name: tris-L-cysteinyl S-adenosylmethion-N,O-diyl tetrairon tetrasulfide
 def: "modification from RESID" [PubMed:11222759, PubMed:14704425, RESID:AA0356]
-comment: cross-link 3
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -3430,7 +3261,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00362
 name: tris-L-cysteinyl L-arginyl diiron disulfide
 def: "modification from RESID" [PubMed:14704425, RESID:AA0357]
-comment: cross-link 4
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00902 ! modified L-arginine residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -3439,7 +3269,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00363
 name: L-cysteinyl-L-selenocysteine
 def: "modification from RESID" [PubMed:12911312, RESID:AA0358]
-comment: cross-link 2; secondary to RESID:AA0022; cross-link 2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -3447,7 +3276,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00364
 name: 5-hydroxylated N6,N6,N6-trimethylated L-lysine
 def: "modification from RESID" [PubMed:11349130, PubMed:14661085, RESID:AA0359, UniMod:445]
-comment: incidental to RESID:AA0278; secondary to RESID:AA0028; secondary to RESID:AA0074
 is_a: MOD:00602 ! N-methylated residue
 is_a: MOD:00663 ! methylated L-lysine
 
@@ -3455,7 +3283,6 @@ is_a: MOD:00663 ! methylated L-lysine
 id: MOD:00365
 name: N-(L-isoglutamyl)-glycine crosslink
 def: "A protein modification that crosslinks the amino of a glycyl peptide with the 5-carboxyl of a peptidyl glutamic acid." [PubMed:14531691, RESID:AA0360]
-comment: cross-link 2
 is_a: MOD:00688 ! isopeptide crosslinked residues
 is_a: MOD:00906 ! modified L-glutamic acid residue
 is_a: MOD:00908 ! modified glycine residue
@@ -3484,7 +3311,6 @@ is_a: MOD:00913 ! modified L-methionine residue
 id: MOD:00369
 name: O-acetylated L-serine
 def: "a protein modification that effectively converts an L-serine residue to O-acetyl-L-serine" [PubMed:16731519, PubMed:489587, PubMed:7309355, RESID:AA0364]
-comment: incidental to RESID:AA0051
 is_a: MOD:00644 ! O-acetylated residue
 is_a: MOD:00647 ! acetylated L-serine
 
@@ -3492,14 +3318,12 @@ is_a: MOD:00647 ! acetylated L-serine
 id: MOD:00370
 name: (E)-2,3-didehydrogenated tyrosine
 def: "a protein modification that effectively converts L-tyrosine to (E)-2,3-didehydrotyrosine" [PubMed:12623015, RESID:AA0365]
-comment: incidental to RESID:AA0184; incidental to RESID:AA0187; incidental to RESID:AA0188; incidental to RESID:AA0189; incidental to RESID:AA0378; incidental to RESID:AA0379; incidental to RESID:AA0380; incidental to RESID:AA0381
 is_a: MOD:00706 ! dehydrogenated tyrosine
 
 [Term]
 id: MOD:00371
 name: bis-L-aspartato tris-L-glutamato L-histidino calcium tetramanganese tetroxide
 def: "modification from RESID" [PubMed:14764885, RESID:AA0366]
-comment: cross-link 6
 is_a: MOD:00740 ! manganese containing modification
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
@@ -3509,7 +3333,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00372
 name: 3'-(3'-L-tyrosinyl)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:14249161, PubMed:637884, PubMed:8702710, PubMed:8937563, RESID:AA0367]
-comment: cross-link 2 From DeltaMass: Average Mass: -2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -3517,7 +3340,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00373
 name: 3'-(O4'-L-tyrosinyl)-L-tyrosine
 def: "modification from RESID" [DeltaMass:0, PubMed:12719529, PubMed:7115340, PubMed:8702710, RESID:AA0368]
-comment: cross-link 2; secondary to RESID:AA0146 From DeltaMass: Average Mass: -2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -3572,7 +3394,6 @@ is_a: MOD:00904 ! modified L-aspartic acid residue
 id: MOD:00381
 name: L-selenocysteinyl tungsten bis(molybdopterin guanine dinucleotide)
 def: "modification from RESID" [PubMed:11372198, PubMed:12220497, RESID:AA0376]
-comment: secondary to RESID:AA0022
 is_a: MOD:00745 ! selenium containing residue
 is_a: MOD:00746 ! tungsten containing modification
 is_a: MOD:00748 ! pterin modified residue
@@ -3582,7 +3403,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00382
 name: 3-(2-methylthio)ethyl-6-(4-hydroxybenzylidene)-5-iminopiperazin-2-one
 def: "modification from RESID" [PubMed:10852900, PubMed:11259412, PubMed:15491166, RESID:AA0377]
-comment: carboxamidine; cross-link 1
 is_a: MOD:00913 ! modified L-methionine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
 
@@ -3590,7 +3410,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00383
 name: 2-imino-glutamic acid 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:11682051, RESID:AA0378]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00906 ! modified L-glutamic acid residue
 is_a: MOD:00908 ! modified glycine residue
@@ -3599,7 +3418,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00384
 name: 2-imino-methionine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:10852900, PubMed:12185250, PubMed:12909624, PubMed:15542608, RESID:AA0379]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00913 ! modified L-methionine residue
@@ -3608,7 +3426,6 @@ is_a: MOD:00913 ! modified L-methionine residue
 id: MOD:00385
 name: L-asparagine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:10504696, RESID:AA0380]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00903 ! modified L-asparagine residue
 is_a: MOD:00908 ! modified glycine residue
@@ -3617,7 +3434,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00386
 name: L-lysine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:10504696, RESID:AA0381]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -3626,7 +3442,6 @@ is_a: MOD:00912 ! modified L-lysine residue
 id: MOD:00387
 name: 2-tetrahydropyridinyl-5-imidazolinone glycine
 def: "modification from RESID" [PubMed:10504696, PubMed:15628861, RESID:AA0382]
-comment: carboxamidine; cross-link 1; incidental to RESID:AA0183; incidental to RESID:AA0365
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00908 ! modified glycine residue
 is_a: MOD:00912 ! modified L-lysine residue
@@ -3675,7 +3490,6 @@ is_a: MOD:00427 ! methylated residue
 id: MOD:00394
 name: acetylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with an acetyl group" [DeltaMass:0, UniMod:1]
-comment: Amino hydrogens are replaced to produce amides; hydroxyl hydrogens are replaced to produce esters; and hydrosulfanyl (thiol) hydrogens are replaced to produce sulfanyl esters (thiol esters). From DeltaMass: Average Mass: 42
 is_a: MOD:00649 ! acylated residue
 
 [Term]
@@ -3700,21 +3514,18 @@ is_a: MOD:00004 ! artifact
 id: MOD:00398
 name: carbamylation
 def: "modification from UniMod" [DeltaMass:56, UniMod:5]
-comment: From DeltaMass: Average Mass: 43 Formula:-NH2    to    -NHCONH2 Monoisotopic Mass Change:43.006 Average Mass Change:43.025 Notes:Generally the result of the reaction of cyanate (from sources such as old or impure urea) with primary amines. Cyanylated lysine is no longer a substrate for trypsin.
 is_a: MOD:00008 ! common
 
 [Term]
 id: MOD:00399
 name: iodoacetic acid derivative
 def: "modification from UniMod Chemical derivative" [DeltaMass:64, UniMod:6]
-comment: From DeltaMass: Average Mass: 58 Abbreviation:CmC Average Mass Change:58 Notes:Cysteine reacts with iodoacetic acid to produce carboxymethyl cysteine.
 is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00400
 name: deamidated residue
 def: "a protein modification that effectively replaces a carboxamido group with a carboxyl group" [DeltaMass:32, UniMod:7]
-comment: From DeltaMass: Average Mass: 1 Monoisotopic Mass Change:0.984 Average Mass Change:0.985 References:Vish Katta
 is_a: MOD:00000 ! protein modification
 
 [Term]
@@ -3733,7 +3544,6 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00403
 name: homoserine
 def: "modification from UniMod Chemical derivative" [DeltaMass:0, UniMod:10]
-comment: From DeltaMass: Average Mass: -30
 is_a: MOD:00004 ! artifact
 is_a: MOD:00913 ! modified L-methionine residue
 
@@ -3821,7 +3631,6 @@ is_a: MOD:00432 ! modified residue with secondary neutral loss of phosphate
 id: MOD:00417
 name: acrylamide adduct
 def: "modification from UniMod Artefact" [DeltaMass:72, UniMod:24]
-comment: From DeltaMass: Average Mass: 71 Abbreviation:PAM-Cys Formula:C3H5ON Monoisotopic Mass Change:71.037 Average Mass Change:71.078 References:Anal. Biochem. Vol 216 No. 1 p131 Notes:Residual acrylamide in SDS gels can label free cysteines to produce propionamido-Cys (also known as PAM-Cys)
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -3834,7 +3643,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00419
 name: S-carbamoylmethylcysteine cyclization (N-terminus)
 def: "modification from UniMod Artefact" [DeltaMass:336, PubMed:12643538, UniMod:26]
-comment: From DeltaMass: Average Mass: -17 Abbreviation:Otc Average Mass Change:-17 References:J. Proteome Res. 1, 181-187  (2002) Notes:A secondary modification affecting peptides with S-carbamoylmethyl-L-cysteine (CamC) at the N-terminus.  These exist in enzymatic digests of proteins that have been S-alkylated with iodoacetamide.  In a reaction that parallels the formation of N-terminal 2-oxopyrrolidine-5-carboxylic acid (also called pyroglutamic acid, 5-oxoproline or 2-pyrrolidone-5-carboxylic acid) from N-terminal glutamine,  cyclization of N-terminal CamC gives an N-terminal residue of (R)-5-oxoperhydro-1,4-thiazine-3-carboxylic acid. Peptides in which this has occurred become more hydrophobic, and lose 17 Da from the N-terminal residue.
 is_a: MOD:00004 ! artifact
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -3842,7 +3650,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00420
 name: 2-pyrrolidone-5-carboxylic acid (Glu)
 def: "a protein modification that effectively converts an L-glutamic acid residue to 2-pyrrolidone-5-carboxylic acid" [DeltaMass:16, PubMed:10214721, PubMed:1836357, PubMed:3473473, RESID:AA0031, UniMod:27]
-comment: From DeltaMass: Average Mass: -18 Average Mass Change:-18.01 References:The conversion of glutamic acid to pyroglutamic was reported for the beta-amiloid protein.Miller et.al. Arch. Biochem. Biophy. (1993) 301, 41-52.
 is_a: MOD:00601 ! cyclized residue
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
@@ -3862,14 +3669,12 @@ is_a: MOD:00004 ! artifact
 id: MOD:00423
 name: sodium adduct
 def: "modification from UniMod Artefact" [DeltaMass:0, UniMod:30]
-comment: From DeltaMass: Average Mass: 22
 is_a: MOD:00747 ! sodium containing modification
 
 [Term]
 id: MOD:00424
 name: S-pyridylethylation
 def: "modification from UniMod Chemical derivative" [DeltaMass:253, UniMod:31]
-comment: From DeltaMass: Average Mass: 208 Abbreviation:-PECys- Formula:C10H12O2N1S1 Monoisotopic Mass Change:208.067 Average Mass Change:208.286 References:PE Sciex
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -3888,7 +3693,6 @@ is_a: MOD:00693 ! glycosylated residue
 id: MOD:00427
 name: methylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a methyl group" [DeltaMass:36, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 14 Average Mass Change:14 References:Methylation of Asparagine (found in phycobiliproteins) Klotz and Glazer (1987) J. Biol. Chem. 262; 17350-17355
 is_a: MOD:00001 ! alkylated residue
 
 [Term]
@@ -3901,14 +3705,12 @@ is_a: MOD:00677 ! hydroxylated residue
 id: MOD:00429
 name: dimethylated residue
 def: "a protein modification that effectively replaces two hydrogen atoms with two methyl group" [DeltaMass:0, UniMod:36]
-comment: For amino-terminal proline residues, dimethylation can effectively only be accomplished with a protonated imino group. This process accounts only for dimethylation and not protonation. The alternative Me2+Res process accounts for both protonation and dimethylation. From DeltaMass: Average Mass: 28
 is_a: MOD:00427 ! methylated residue
 
 [Term]
 id: MOD:00430
 name: trimethylated residue
 def: "a protein modification that effectively replaces three hydrogen atoms with three methyl group" [PubMed:12590383, PubMed:3145979, PubMed:4304194, PubMed:6778808, PubMed:7093227, PubMed:8453381, RESID:AA0074, UniMod:37]
-comment: For amino acids residues, trimethylation can effectively only be accomplished with a protonated primary amino group. This process accounts only for trimethylation and not protonation. The alternative Me3+Res process accounts for both protonation and trimethylation.
 is_a: MOD:00427 ! methylated residue
 
 [Term]
@@ -3933,7 +3735,6 @@ is_a: MOD:00693 ! glycosylated residue
 id: MOD:00434
 name: hexosylated
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a hexose sugar group through a glycosidic bond" [DeltaMass:203, UniMod:41]
-comment: From DeltaMass: Average Mass: 162 Formula:C6 H10 05 Monoisotopic Mass Change:162.053 Average Mass Change:162.143 References:PE Sciex
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -3953,14 +3754,12 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00437
 name: farnesylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a farnesyl group" [DeltaMass:0, UniMod:44]
-comment: From DeltaMass: Average Mass: 204
 is_a: MOD:00703 ! isoprenylated residue
 
 [Term]
 id: MOD:00438
 name: myristoylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a myristoyl group" [DeltaMass:0, UniMod:45]
-comment: From DeltaMass: Average Mass: 210
 is_a: MOD:00649 ! acylated residue
 
 [Term]
@@ -3974,14 +3773,12 @@ is_a: MOD:01151 ! phosphorylated residue with secondary neutral loss of phosphat
 id: MOD:00440
 name: palmitoylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a palmitoyl group" [DeltaMass:0, UniMod:47]
-comment: From DeltaMass: Average Mass: 238
 is_a: MOD:00649 ! acylated residue
 
 [Term]
 id: MOD:00441
 name: geranylgeranylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a geranylgeranyl group" [DeltaMass:0, UniMod:48]
-comment: From DeltaMass: Average Mass: 272
 is_a: MOD:00703 ! isoprenylated residue
 
 [Term]
@@ -4022,7 +3819,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00447
 name: N-glucuronylation
 def: "modification from UniMod Post-translational" [DeltaMass:0, PubMed:7398618, RESID:AA0058, UniMod:54]
-comment: From DeltaMass: Average Mass: 176
 is_a: MOD:00008 ! common
 
 [Term]
@@ -4101,14 +3897,12 @@ is_a: MOD:00004 ! artifact
 id: MOD:00460
 name: oxidation to L-cysteic acid (L-cysteine sulfonic acid)
 def: "a protein modification that effectively trioxygenates an L-cysteine residue to L-cysteine sulfonic acid" [DeltaMass:334, PubMed:9252331, UniMod:345, UniMod:71]
-comment: From DeltaMass: Average Mass: 48 Abbreviation:Cya Average Mass Change:48 Notes:Treatment of cysteine by strongly oxidising reagents such as performic acid results in the complete oxidation of the sulphur atom. Such treatment is often carried out prior to amino acid analysis as the resulting cysteic acid is then resistant to acid degradation during the hydrolysis procedure.
 is_a: MOD:00708 ! sulfur oxygenated L-cysteine
 
 [Term]
 id: MOD:00461
 name: oxidation to nitro
 def: "modification from UniMod Chemical derivative" [DeltaMass:0, PubMed:8839040, PubMed:9252331, UniMod:354, UniMod:75]
-comment: misdescribed From DeltaMass: Average Mass: 45
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4127,14 +3921,12 @@ is_a: MOD:00004 ! artifact
 id: MOD:00464
 name: tryptophan oxidation to formylkynurenin
 def: "modification from UniMod Chemical derivative" [DeltaMass:356, PubMed:12686488, PubMed:9252331, UniMod:347, UniMod:78]
-comment: From DeltaMass: Average Mass: 32 Formula:O2 Monoisotopic Mass Change:31.99 Average Mass Change:32 References:Willy V. Bienvenut, Catherine D?on, Carla Pasquarello, Jennifer M. Campbell, Jean-Charles Sanchez, Marvin L. Vestal, Denis F. HochstrasserMatrix-assisted laser desorption/ionization-tandemmass spectrometry with high resolution andsensitivity for identification and characterizationof proteins.  Proteomics 2002, 2, 868876 Notes:A doubleoxidation of tryptophan for which the N-formylkynurenine (+32)structure can be proposed. Many minor peaks accompanying the main peakmight also beattributed to other oxidation products of the tryptophan such as kynurenine (+4),an unknown by-product found in all oxidized tryptophan patterns (+13),hydroxytryptophan (+16), 3-hydroxykynurenine (+20) andhydroxy-N-formylkynurenine (+48). See proposed <A HREF=http://www.abrf.org/images/misc/dmass32.jpg>structures.</A>
 is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00465
 name: phenylalanine oxidation to dihydroxyphenylalanine
 def: "modification from UniMod Chemical derivative" [PubMed:1610822, PubMed:1903612, PubMed:3734192, RESID:AA0146, UniMod:346, UniMod:79]
-comment: probably incorrect origin, merge with MOD:00155
 is_a: MOD:00008 ! common
 
 [Term]
@@ -4189,7 +3981,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00475
 name: tyrosine oxidation to 2-aminotyrosine
 def: "modification from UniMod Chemical derivative" [PubMed:8839040, PubMed:9252331, UniMod:342, UniMod:98]
-comment: misdescribed
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4202,7 +3993,6 @@ is_a: MOD:00693 ! glycosylated residue
 id: MOD:00477
 name: proline oxidation to pyrrolidinone
 def: "modification from UniMod Chemical derivative" [PubMed:9252331, UniMod:100, UniMod:360]
-comment: oxidative decarboxylation
 is_a: MOD:00915 ! modified L-proline residue
 
 [Term]
@@ -4215,7 +4005,6 @@ is_a: MOD:00915 ! modified L-proline residue
 id: MOD:00479
 name: arginine oxidation to glutamic semialdehyde
 def: "modification from UniMod Chemical derivative" [DeltaMass:351, PubMed:11120890, PubMed:1680314, PubMed:9252331, UniMod:104, UniMod:344, UniMod:367]
-comment: From DeltaMass: Average Mass: -27 Monoisotopic Mass Change:-27.06 Average Mass Change:-27.07 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.
 is_a: MOD:00902 ! modified L-arginine residue
 
 [Term]
@@ -4234,7 +4023,6 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00482
 name: N-formyl-L-methionine
 def: "a protein modification that inserts or replaces a residue with an N-formyl-L-methionine residue" [PubMed:11152118, PubMed:2165784, PubMed:3042771, RESID:AA0021, UniMod:107]
-comment: This entry is for addition of N-formyl-L-methionine. For formation of N-formyl-L-methionine from L-methionine, see PSI-MOD:00030.
 is_a: MOD:00409 ! N-formylated residue
 is_a: MOD:00913 ! modified L-methionine residue
 
@@ -4302,7 +4090,6 @@ is_a: MOD:00134 ! N6-glycyl-L-lysine crosslink
 id: MOD:00493
 name: formylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a formyl group" [DeltaMass:0, UniMod:122]
-comment: From DeltaMass: Average Mass: 28
 is_a: MOD:00649 ! acylated residue
 
 [Term]
@@ -4333,7 +4120,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00498
 name: fluorophenylalanine replacement of phenylalanine
 def: "modification from UniMod Non-standard residue" [DeltaMass:181, UniMod:127]
-comment: From DeltaMass: Average Mass: 149 Formula:C9H8O1N1Fl1 Average Mass Change:149 References:PE Sciex
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4346,14 +4132,12 @@ is_a: MOD:00004 ! artifact
 id: MOD:00500
 name: monoiodinated residue
 def: "a protein modification that effectively substitutes one iodine atom for one hydrogen atom" [DeltaMass:0, UniMod:129]
-comment: From DeltaMass: Average Mass: 126
 is_a: MOD:00755 ! iodinated residue
 
 [Term]
 id: MOD:00501
 name: diiodinated residue
 def: "a protein modification that effectively substitutes two iodine atoms for two hydrogen atoms" [DeltaMass:0, UniMod:130]
-comment: From DeltaMass: Average Mass: 252
 is_a: MOD:00755 ! iodinated residue
 
 [Term]
@@ -4378,7 +4162,6 @@ is_a: MOD:00008 ! common
 id: MOD:00505
 name: labeling reagent light form (N-term &amp; K)
 def: "modification from UniMod Isotopic label" [DeltaMass:0, UniMod:136]
-comment: From DeltaMass: Average Mass: 104
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4391,7 +4174,6 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00507
 name: 5-dimethylaminonaphthalene-1-sulfonyl
 def: "modification from UniMod Chemical derivative, dansyl chloride derivative" [CAS:605-65-2, DeltaMass:0, UniMod:139]
-comment: From DeltaMass: Average Mass: 233
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4452,7 +4234,6 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00517
 name: Hex1HexNAc1NeuAc1
 def: "modification from UniMod N-linked glycosylation" [DeltaMass:0, RESID:AA0151var, UniMod:149]
-comment: From DeltaMass: Average Mass: 657
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -4513,7 +4294,6 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00527
 name: Hex3HexNAc2
 def: "modification from UniMod N-linked glycosylation" [DeltaMass:0, RESID:AA0151var, UniMod:159]
-comment: From DeltaMass: Average Mass: 893
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -4665,7 +4445,6 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00553
 name: EDT
 def: "modification from UniMod Chemical derivative" [DeltaMass:0, UniMod:200]
-comment: From DeltaMass: Average Mass: 93
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4744,7 +4523,6 @@ is_a: MOD:00008 ! common
 id: MOD:00566
 name: label Cysteine with IGBP reagent
 def: "modification from UniMod Chemical derivative" [UniMod:243]
-comment: "IDBEST tag for quantitation, http://www.targetdiscovery.com/index.php?topic=prod.idbe"
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4776,21 +4554,18 @@ is_a: MOD:00004 ! artifact
 id: MOD:00573
 name: oxidized lysine biotinylated with biotin hydrazide
 def: "modification from UniMod Chemical derivative" [PubMed:15174056, UniMod:250, UniMod:353]
-comment: "http://www.piercenet.com/Proteomics/browse.cfm?fldID=84EBE112-F871-4CA5-807F-47327153CFCB"
 is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00574
 name: oxidized proline biotinylated with biotin hydrazide
 def: "modification from UniMod Chemical derivative" [PubMed:15174056, UniMod:251, UniMod:357]
-comment: "http://www.piercenet.com/Proteomics/browse.cfm?fldID=84EBE112-F871-4CA5-807F-47327153CFCB"
 is_a: MOD:00004 ! artifact
 
 [Term]
 id: MOD:00575
 name: oxidized threonine biotinylated with biotin hydrazide
 def: "modification from UniMod Chemical derivative" [PubMed:15174056, UniMod:252, UniMod:361]
-comment: "http://www.piercenet.com/Proteomics/browse.cfm?fldID=84EBE112-F871-4CA5-807F-47327153CFCB"
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4899,7 +4674,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00593
 name: covalent modification of lysine by omega-maleimido alkanoyl N-hydroxysuccinimido esters
 def: "modification from UniMod Chemical derivative" [UniMod:273]
-comment: J. Prot. Chem. 2, 263-277, 1983
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4912,7 +4686,6 @@ is_a: MOD:00693 ! glycosylated residue
 id: MOD:00596
 name: aminoethylbenzenesulfonylation
 def: "modification from UniMod Artefact" [DeltaMass:235, PubMed:8597590, UniMod:276]
-comment: From DeltaMass: Average Mass: 183 Average Mass Change:183 References:We have found that AEBSF modifies many proteins by covalent attachment, preferentially on Tyr, and to a lesser extent on Lys, His, and the amino- terminus. These modifications were identified by electrospray MS of the proteins (adds 183 Da per AEBS-group) and by peptide mapping and MS/MS. All the proteins we examined were modified after 24 hrs. at 4 C with 1 mM AEBSF in TRIS, pH 8.0. The reaction is 10-20x slower at pH 7; however AEBSF is quite stable in aqueous solution and the extent of to which the protein is modified continues to increase for several days. We have seen the addition of 10 or more AEBS-groups to proteins after prolonged storage. We found no equivalent modification from PMSF, probably because it degrades so quickly. We no longer use AEBSF,and urge caution to those who do.To address the problem, Boehringer Mannheim (now Roche Molecular Biochemicals) introduced Pefabloc PLUS which includes an additional component to compete for these side reactions. In our limited experience with Pefabloc PLUS, it reduces the +183 modifications, but does not always eliminate them. As a result, we prefer PMSF, despite its own set of drawbacks. We have never found PMSF-induced modification of proteins (except trypsin), probably due to its short half-life in aqeous solution.
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -4937,7 +4710,6 @@ is_a: MOD:00427 ! methylated residue
 id: MOD:00600
 name: ethylation
 def: "modification from UniMod Multiple" [DeltaMass:0, PubMed:\:9629898, UniMod:280]
-comment: From DeltaMass: Average Mass: 28
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -5040,7 +4812,6 @@ is_a: MOD:00702 ! isotope tag modified residue
 id: MOD:00618
 name: tryptophan carboxylation
 def: "modification from UniMod Chemical derivative" [UniMod:299]
-comment: there is no citation for this UniMod entry
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -5065,7 +4836,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00622
 name: cysteine mercaptoethanol
 def: "modification from UniMod Chemical derivative" [DeltaMass:80, UniMod:303]
-comment: From DeltaMass: Average Mass: 76 Average Mass Change:76 References:Protein Science 1994 3:428-434
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -5084,7 +4854,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00626
 name: fluorescein-5-thiosemicarbazide
 def: "modification from UniMod Chemical derivative" [PubMed:2883911, UniMod:315, UniMod:478]
-comment: "Ahn, B., Rhee, S.G., and Stadtmann, E. R. 1987 Anal. Biochem."
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -5397,7 +5166,6 @@ is_a: MOD:00903 ! modified L-asparagine residue
 id: MOD:00674
 name: amidated residue
 def: "a protein modification that effectively replaces a carboxyl group with a carboxamido group" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: -1
 is_a: MOD:00000 ! protein modification
 
 [Term]
@@ -5416,14 +5184,12 @@ is_a: MOD:00675 ! oxidized residue
 id: MOD:00677
 name: hydroxylated residue
 def: "a protein modification that effectively replaces a hydrogen atom with a hydroxyl group" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 16
 is_a: MOD:00676 ! oxygenated residue
 
 [Term]
 id: MOD:00678
 name: hydroxylated proline
 def: "a protein modification that effectively converts an L-proline residue to a hydroxylated L-proline" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 131
 is_a: MOD:00677 ! hydroxylated residue
 is_a: MOD:00915 ! modified L-proline residue
 
@@ -5463,7 +5229,6 @@ is_a: MOD:00675 ! oxidized residue
 id: MOD:00684
 name: deamidated L-asparagine
 def: "a protein modification that effectively converts an L-asparagine residue to L-aspartic acid" [PubMed:1097438, PubMed:339692, PubMed:4399050, PubMed:5764436, PubMed:6692818, PubMed:8089117, PubMed:9521123, PubMed:9582379, RESID:AA0004]
-comment: incidental to RESID:AA0059
 is_a: MOD:00400 ! deamidated residue
 
 [Term]
@@ -5531,14 +5296,12 @@ is_a: MOD:00000 ! protein modification
 id: MOD:00695
 name: sulfated residue
 def: "a protein modification that effectively substitutes a sulfonyl group for the hydrogen atom of a hydroxyl or sulfanyl group" [DeltaMass:0, PubMed:14752058, UniMod:40]
-comment: From DeltaMass: Average Mass: 80
 is_a: MOD:00000 ! protein modification
 
 [Term]
 id: MOD:00696
 name: phosphorylated residue
 def: "a protein modification that effectively substitutes a phosphoryl group for a hydrogen atom" [DeltaMass:0, UniMod:21]
-comment: From DeltaMass: Average Mass: 80
 is_a: MOD:00000 ! protein modification
 
 [Term]
@@ -5627,14 +5390,12 @@ is_a: MOD:00913 ! modified L-methionine residue
 id: MOD:00710
 name: protonated-dimethylated residue
 def: "a protein modification that effectively adds a proton and replaces two hydrogen atoms with two methyl groups" [PSI-MOD:ref]
-comment: For N-terminal proline residues, dimethylation can effectively only be accomplished with a protonated imino group. This process accounts for both protonation and dimethylation. The alternative Me2Res process accounts only for dimethylation and not protonation.
 is_a: MOD:00427 ! methylated residue
 
 [Term]
 id: MOD:00711
 name: protonated-trimethylated residue
 def: "a protein modification that effectively adds a proton and replaces three hydrogen atoms with three methyl group" [PSI-MOD:ref]
-comment: For amino acids residues, trimethylation can effectively only be accomplished with a protonated primary amino group. This process accounts for both protonation and trimethylation. The alternative Me3Res process accounts only for trimethylation and not protonation.
 is_a: MOD:00427 ! methylated residue
 
 [Term]
@@ -5690,7 +5451,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00719
 name: oxidation to L-methionine sulfoxide
 def: "a protein modification that oxygenates an L-methionine residue to L-methionine sulfoxide" [DeltaMass:177, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 147 Formula:C5H9O1N2S Monoisotopic Mass Change:147.035 Average Mass Change:147.195 References:PE Sciex
 is_a: MOD:00709 ! sulfur oxygenated L-methionine
 
 [Term]
@@ -5754,7 +5514,6 @@ is_a: MOD:00434 ! hexosylated
 id: MOD:00729
 name: pentosylated
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a pentose sugar group through a glycosidic bond" [DeltaMass:172, PSI-MOD:ref]
-comment: for Pentoses DeltaMass gives mass 132, for Pentosyl DeltaMass gives formula C 6 H 10 N4 with mass 146
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -5785,7 +5544,6 @@ is_a: MOD:00436 ! N-acetylhexosaminylated
 id: MOD:00734
 name: N-acetylgalactosaminylation
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with an N-acetylgalactosamine  group through a glycosidic bond" [DeltaMass:247, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 203 Formula:C8H13O5N1 Monoisotopic Mass Change:203.079 Average Mass Change:203.196 References:PE Sciex
 is_a: MOD:00436 ! N-acetylhexosaminylated
 
 [Term]
@@ -5798,14 +5556,12 @@ is_a: MOD:00725 ! complex glycosylation
 id: MOD:00736
 name: deoxyhexosylated
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with a deoxyhexose group through a glycosidic bond" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 146
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
 id: MOD:00737
 name: N-acetylneuraminylated
 def: "a protein modification that effectively replaces a hydrogen atom of an amino acid residue or of a modifying group with an N-acetylneuraminic acid (sialic acid) group through a glycosidic bond" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 291
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -5897,7 +5653,6 @@ is_a: MOD:00701 ! nucleotide or nucleic acid modified residue
 id: MOD:00752
 name: adenosine diphosphoribosyl modified residue
 def: "a protein modification" [DeltaMass:0, PSI-MOD:ref]
-comment: From DeltaMass: Average Mass: 541
 is_a: MOD:00701 ! nucleotide or nucleic acid modified residue
 
 [Term]
@@ -5929,14 +5684,12 @@ is_a: MOD:00664 ! stereoisomerized residue
 id: MOD:00757
 name: O4-galactosyl-L-hydroxyproline
 def: "modification from RESID" [RESID:AA0389]
-comment: secondary to RESID:AA0030
 is_a: MOD:00915 ! modified L-proline residue
 
 [Term]
 id: MOD:00758
 name: O4-(N-acetylamino)glucosyl-L-hydroxyproline
 def: "modification from RESID" [PubMed:15238247, PubMed:9660787, RESID:AA0390]
-comment: secondary to RESID:AA0030
 is_a: MOD:00915 ! modified L-proline residue
 
 [Term]
@@ -5979,7 +5732,6 @@ is_a: MOD:00000 ! protein modification
 id: MOD:00765
 name: cysteinylation (disulfide with free L-cysteine)
 def: "a protein modification that effectively converts an L-cysteine residue to S-(L-cysteinyl)-L-cysteine" [DeltaMass:260, PubMed:1988019, PubMed:2001356, PubMed:2076469, PubMed:3083866, PubMed:366603, PubMed:7918467, PubMed:8344916, RESID:AA0025, UniMod:312]
-comment: This entry is for formation of a disulfide bond between a peptide cysteine and a free cysteine. For the cystine cross-link, see MOD:00234. From DeltaMass: Average Mass: 119
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
@@ -6022,7 +5774,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00779
 name: lysine oxidation to aminoadipic semialdehyde
 def: "modification from UniMod" [DeltaMass:352, PubMed:11332453, PubMed:358196, PubMed:5337886, PubMed:5529814, RESID:AA0121, UniMod:352]
-comment: From DeltaMass: Average Mass: -1 Average Mass Change:-1 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Requena JR, Chao CC, Levine RL, and Stadtman ER: Glutamic and aminoadipic semialdehydes are the main carbonyl products of metal-catalyzed oxidation of proteins.  Proceedings of the National Academy of Sciences USA 98: 69-74 2001.
 is_a: MOD:00008 ! common
 
 [Term]
@@ -6059,14 +5810,12 @@ is_a: MOD:00004 ! artifact
 id: MOD:00793
 name: dehydroalanine (Cys)
 def: "a protein modification that effectively converts an L-cysteine residue to dehydroalanine" [DeltaMass:8, PubMed:10220322, PubMed:1547888, PubMed:1815586, PubMed:2914619, PubMed:7947813, PubMed:8239649, RESID:AA0181, UniMod:368]
-comment: From DeltaMass: Average Mass: -34 Average Mass Change:-34 Notes:In an attempt to clarfiy the difference between the modification of cysteine to lanthionine and cysteine to dehydroalanine, the following contributions from the ABRF email forum are presented:Structurally speaking lanthionine is like cystine but lacks one S atom. I imagine one can think of it as a condensation of cysteine and dehydroalanine but I do not know how it is made biologically. Dehydroalanine could be derived from either serine or cysteine. If I recall Biochem 101 correctly lanthionine was first found in wool.-Lowell Ericsson (ERICSSONLH@U.WASHINGTON.EDU)As far as I know, the structure of lanthionine is two Ala's joined by a single sulphur with the loss of two hydrogens from the methyl group of the Ala.Stephen Bayne (sbay@novo.dk)Regarding the structure of lanthionine and dehydroalanine: dehydroalanine is formed by the loss of one sulfur atom and two hydrogen atoms from ONE cysteine residue. lanthionine is formed from TWO cysteines, is a thioether, and contains one sulfur atom less than the amino acid cystine.Dan McCormick (MCCORMICK@rcf.mayo.edu)
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00794
 name: pyrrolidone from proline
 def: "modification from UniMod" [PubMed:9252331, UniMod:369]
-comment: decarboxylation, C-term
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -6079,7 +5828,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00796
 name: Ornithine from Arginine
 def: "modification from UniMod" [DeltaMass:129, PubMed:15489230, UniMod:372]
-comment: From DeltaMass: Average Mass: -42
 is_a: MOD:00902 ! modified L-arginine residue
 
 [Term]
@@ -6106,7 +5854,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00800
 name: L-cysteinyl-L-histidino-homocitryl vanadium heptairon nonasulfide
 def: "a protein modification that effectively converts an L-cysteine residue and an L-histidine residue to L-cysteinyl-L-histidino-homocitryl vanadium heptairon nonasulfide" [PubMed:2345152, RESID:AA0393]
-comment: cross-link 2; incidental to RESID:AA0300
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00772 ! vanadium containing modification
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -6116,7 +5863,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00801
 name: L-cysteinyl-L-histidino-homocitryl octairon nonasulfide
 def: "a protein modification that effectively converts an L-cysteine residue and an L-histidine residue to L-cysteinyl-L-histidino-homocitryl octairon nonasulfide" [PubMed:8392330, RESID:AA0394]
-comment: cross-link 2; incidental to RESID:AA0300
 is_a: MOD:00739 ! iron-sulfur cluster modification
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00909 ! modified L-histidine residue
@@ -6132,7 +5878,6 @@ is_a: MOD:00909 ! modified L-histidine residue
 id: MOD:00803
 name: 3-(S-L-cysteinyl)-L-tyrosine
 def: "a protein modification that effectively cross-links L-cysteine and L-histidine residues to form 3-(S-L-cysteinyl)-L-tyrosine" [PubMed:15342250, RESID:AA0396]
-comment: cross-link 2
 is_a: MOD:00687 ! thioether crosslinked residues (lanthionine)
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -6162,7 +5907,6 @@ is_a: MOD:00448 ! N-acetylaminoglucosylated residue
 id: MOD:00807
 name: pyruvic acid (Ser)
 def: "modification from RESID" [DeltaMass:23, PubMed:10085076, PubMed:3042771, PubMed:8464063, RESID:AA0127, UniMod:383]
-comment: DeltaMass gives mass 70 and difference mass -16 with no formula
 is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
@@ -6221,7 +5965,6 @@ is_a: MOD:00008 ! common
 id: MOD:00816
 name: S-stearoyl-L-cysteine
 def: "a protein modification that effectively converts an L-cysteine residue to S-stearoyl-L-cysteine" [DeltaMass:0, PubMed:2371783, PubMed:3143715, PubMed:8761467, RESID:AA0407]
-comment: From DeltaMass: Average Mass: 266
 is_a: MOD:00672 ! S-acylated residue
 is_a: MOD:00905 ! modified L-cysteine residue
 
@@ -6249,7 +5992,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00820
 name: 2-imino-alanine 5-imidazolinone glycine
 def: "modification from RESID" [PubMed:16627946, RESID:AA0410]
-comment: carboxamidine; cross-link 1
 is_a: MOD:00691 ! 5-imidazolinone ring crosslinked residues
 is_a: MOD:00904 ! modified L-aspartic acid residue
 is_a: MOD:00908 ! modified glycine residue
@@ -6258,7 +6000,6 @@ is_a: MOD:00908 ! modified glycine residue
 id: MOD:00821
 name: S-(L-alanyl)-L-cysteine
 def: "modification from RESID" [PubMed:11807079, RESID:AA0411]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00901 ! modified L-alanine residue
 is_a: MOD:00905 ! modified L-cysteine residue
@@ -6267,7 +6008,6 @@ is_a: MOD:00905 ! modified L-cysteine residue
 id: MOD:00822
 name: S-(L-leucyl)-L-cysteine
 def: "modification from RESID" [PubMed:12591958, RESID:AA0412]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00911 ! modified L-leucine residue
@@ -6276,7 +6016,6 @@ is_a: MOD:00911 ! modified L-leucine residue
 id: MOD:00823
 name: S-(L-methionyl)-L-cysteine
 def: "modification from RESID" [PubMed:12146974, RESID:AA0413]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00913 ! modified L-methionine residue
@@ -6285,14 +6024,12 @@ is_a: MOD:00913 ! modified L-methionine residue
 id: MOD:00824
 name: dehydroalanine (Tyr)
 def: "a protein modification that effectively converts an L-tyrosine residue to dehydroalanine" [PubMed:10220322, PubMed:1547888, PubMed:1815586, PubMed:2914619, PubMed:6838602, PubMed:7947813, PubMed:8239649, RESID:AA0181, UniMod:400]
-comment: incidental to RESID:AA0178
 is_a: MOD:00919 ! modified L-tyrosine residue
 
 [Term]
 id: MOD:00825
 name: S-(L-phenylalanyl)-L-cysteine
 def: "modification from RESID" [PubMed:12591958, RESID:AA0414]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
@@ -6301,7 +6038,6 @@ is_a: MOD:00914 ! modified L-phenylalanine residue
 id: MOD:00826
 name: S-(L-threonyl)-L-cysteine
 def: "modification from RESID" [PubMed:15268951, RESID:AA0415]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00917 ! modified L-threonine residue
@@ -6310,7 +6046,6 @@ is_a: MOD:00917 ! modified L-threonine residue
 id: MOD:00827
 name: S-(L-tyrosyl)-L-cysteine
 def: "modification from RESID" [PubMed:11807079, RESID:AA0416]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00919 ! modified L-tyrosine residue
@@ -6319,7 +6054,6 @@ is_a: MOD:00919 ! modified L-tyrosine residue
 id: MOD:00828
 name: S-(L-tryptophanyl)-L-cysteine
 def: "modification from RESID" [PubMed:16030216, RESID:AA0417]
-comment: cross-link 2
 is_a: MOD:00395 ! thioester crosslinked residues
 is_a: MOD:00905 ! modified L-cysteine residue
 is_a: MOD:00918 ! modified L-tryptophan residue
@@ -6328,7 +6062,6 @@ is_a: MOD:00918 ! modified L-tryptophan residue
 id: MOD:00829
 name: O-(L-phenylalanyl)-L-serine
 def: "modification from RESID" [PubMed:12591958, RESID:AA0418]
-comment: cross-link 2
 is_a: MOD:00692 ! uncategorized crosslink
 is_a: MOD:00914 ! modified L-phenylalanine residue
 is_a: MOD:00916 ! modified L-serine residue
@@ -6402,7 +6135,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00874
 name: triglutamyl
 def: "modification from UniMod" [DeltaMass:0, PubMed:10747868, PubMed:1680872, RESID:AA0202, UniMod:452]
-comment: From DeltaMass: Average Mass: 388
 is_a: MOD:00906 ! modified L-glutamic acid residue
 
 [Term]
@@ -6415,7 +6147,6 @@ is_a: MOD:00906 ! modified L-glutamic acid residue
 id: MOD:00876
 name: hexosaminylated
 def: "modification from UniMod N-linked glycosylation" [DeltaMass:0, PubMed:7744761, UniMod:454]
-comment: From DeltaMass: Average Mass: 161
 is_a: MOD:00725 ! complex glycosylation
 
 [Term]
@@ -6428,7 +6159,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00878
 name: imidoester crosslink of both ends of a peptide
 def: "dimethyl pimelimidate modification from UniMod - Mechanism of the reaction of imidoesters with amines" [PubMed:\:7171546, UniMod:456]
-comment: J.Am.Chem.Soc. 84, 3505-3514, 1962
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -6453,7 +6183,6 @@ is_a: MOD:00004 ! artifact
 id: MOD:00882
 name: aminoethylcysteine
 def: "modification from UniMod" [DeltaMass:171, PubMed:12923550, UniMod:472]
-comment: From DeltaMass: Average Mass: 146 Abbreviation:-AECys_ Formula:C5H10O2N1S1 Monoisotopic Mass Change:146.051 Average Mass Change:146.214 References:PE Sciex
 is_a: MOD:00004 ! artifact
 
 [Term]
@@ -6622,7 +6351,6 @@ is_a: MOD:00921 ! new
 id: MOD:00929
 name: lactosylation
 def: "modification from UniMod Other glycosylation  Lactosylation of bovine Beta-Lactoglobulin" [PubMed:9606156, UniMod:512]
-comment: the term lactosylation used in this way is a misnomer and should correctly be called a lactose glycation
 is_a: MOD:00767 ! glycated residue
 
 [Term]
@@ -6731,1169 +6459,1002 @@ is_a: MOD:00032 ! uncategorized protein modification
 id: MOD:00948
 name: 5' dephospho
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -79
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00949
 name: Desmosine (from Lysine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -58
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00950
 name: decomposed carboxymethylated Methionine
 def: "modification from DeltaMass" [DeltaMass:3]
-comment: From DeltaMass: Average Mass: -48 Average Mass Change:-48 References:Anal. Biochem. Vol 216 No.1 p141
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00951
 name: decarboxylation of gamma carboxy Glutamate
 def: "modification from DeltaMass" [DeltaMass:58]
-comment: From DeltaMass: Average Mass: -44 Formula:CO2 Average Mass Change:-44 References:Nakamura T, Yu Z, Fainzilber M, Burlingame AL.Protein Sci (1996) 5, 524-530Mass spectrometric-based revision of the structure of a cysteine-rich peptide toxin with gamma-carboxyglutamic acid, TxVIIA, from the sea snail, Conus textile. Notes:The elimination of CO2 will regenerate glutamate as if there was nomodification.  However,  peaks appearing with an interval of 44 isquite characteristic. It would be noteworthy to remind thatloss of 44 from a gamma-carboxyglutamate-containing peptide may be observed not only as a result of spontaneous decarboxylation but also as an artifact under some ionization conditions such as negative ion mode MALDI.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00953
 name: O-gamma-Glutamyl- (Crosslink to Serine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -18
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00955
 name: Alaninohistidine (Serine crosslinked to theta or pi carbon of Histidine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -18
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00956
 name: Misincorporation of Norleucine for Methionine
 def: "modification from DeltaMass" [DeltaMass:10]
-comment: From DeltaMass: Average Mass: -18 Average Mass Change:-18 Notes:It has the same mass as leucine or isoleucine and can be charged on the methionyl t- RNA. This often happens in minimal media-prepared fermentations that are not supplemented with enough free methionine. It gives a mass change of -18 and can often be confused with dehydration.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00958
 name: Crosslink between Arg and His sidechains
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -5
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00959
 name: 3,3',5,5'-TerTyr (Crosslink)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: -4
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00961
 name: Cysteine x2, reduction of Cystine (Cys-Cys)
 def: "modification from DeltaMass" [DeltaMass:333]
-comment: From DeltaMass: Average Mass: 2 Abbreviation:Cys Average Mass Change:2 Notes:Treatment of cystine (cys-cys) by reducing agents such as dithiothreitol (DTT) or triscarboxyethylphosphine (TCEP) results in cleavage of the disulphide bond and  reduction of the sulphur atom of each molecule to create cysteine
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00962
 name: Reduction of indole double bond of Trp
 def: "modification from DeltaMass" [DeltaMass:343]
-comment: From DeltaMass: Average Mass: 2 Formula:2H Average Mass Change:2 References:1. Pearson,D.A., Blanchette,M., Baker,M.L. and Guindon,C.A. (1989) Trialkylsilanes as scavengers for the trifluoroacetic acid deblocking ofprotecting groups in peptide synthesis. Tetrahedron Lett.,30(21),2739-2742 Notes:Reduction of indole double bond of Trp which occurs whentriethylsilane (TES) is used as a scavenger and Trp is incorporatedwithout protection of indole nitrogen [1]. <br>This side reaction is likelyto be accompanied by oxidation of indoline ring with formation ofintensively colored peptide by-products.Triisopropylsilane (TIPS) does not give this side reaction. <b>See <A HREF=http://www.abrf.org/images/misc/dmass2.gif>structure.</A></b>
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00963
 name: Oxidation of Trp to kynurenine
 def: "modification from DeltaMass" [DeltaMass:357]
-comment: From DeltaMass: Average Mass: 4 Monoisotopic Mass Change:3.995 Average Mass Change:3.989 References:Ruoppolo M, Amoresano A, Pucci P, Pascarella S, Polticelli F, Trovato M,Menegatti E, Ascenzi P.Characterization of five new low-molecular-mass trypsin inhibitors fromwhite mustard (Sinapis alba L.) seed.Eur J Biochem. 2000 267:6486-92. Notes:See  <A HREF=http://www.abrf.org/images/misc/dmass32.jpg>structure.</A>
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00964
 name: Lysine epsilon amino to imine
 def: "modification from DeltaMass" [DeltaMass:34]
-comment: From DeltaMass: Average Mass: 12 Average Mass Change:12 References:Mathews, W. Rodney; Runge, Thomas A.; Haroldsen, Peter E.; Gaskell,Simon J.   (1989)  Characterization of impurities in a synthetic renin substrate peptide by fast-atom bombardment mass spectrometry and hybrid tandem mass spectrometry.  Rapid Commun. Mass Spectrom. 3(9), 314-19 Notes:Fast-atom bombardment mass spectrometry of a synthetic reninsubstrate decapeptide (Pro-His-Pro-Phe-His-Leu-Val-Ile-His-D-Lys)indicated the presence of several side products, including acomponent 12 Da higher in mass. Low-energy collisionally activated***decompn*** . analyses were performed using a hybrid tandeminstrument and demonstrated that the heavier side product had twocomponents, in which the structural modification was either at theN- or the C-terminus. Addnl. analyses of the N-acetyl deriv.indicated that for each component the structural modificationblocked a site of N-acetylation. It is suggested that the formationof these side products is attributable to the generation offormaldehyde, during removal of the histidine protecting group(benzyloxymethyl), which reacts with the N-terminus of the peptideto give an imidazolidinone structure or with the D- ***lysine***.epsilon.-amine group to yield an ***imine*** . While theprecise genesis of the side-products remains speculative, it isclear that the combined strategy of derivatization and tandem massspectrometry has allowed structural conclusions concerningindividual components of an isobaric mixt.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00965
 name: Cysteine (N-term) formaldehyde adduct (Cys to Thioproline conversion)
 def: "modification from DeltaMass" [DeltaMass:342]
-comment: From DeltaMass: Average Mass: 12 Average Mass Change:12 References:Mitchell,M.A., Runge,T.A., Mathews,W.R., Ichhpurani,A.K., Harn,N.K.,Dobrowolski,P.J. and Eckenrrrode,F.M. Problems associated with use ofthe benzylozymethyl protecting group for histidines. Formaldehydeadducts formed during cleavage by hydrogen fluoride. Int.J.Pept.ProteinRes.1990, 36(4),350-355. Gesquiere,J.-C., Diesis,E. and Tartar,A. Conversion of N-terminalcysteine to thiazolidine carboxylic acid during hydrogen fluoridedeprotection of peptides containing pi-N-Bom protected histidine.J.Chem.Soc.Chem.Commun.1990,(20),1402-1403. Kumagaye,K.Y., Inui,T., Nakajima,K., Kimura,T. and Sakakibara,S.Suppression of a side reaction associated with Nim-benzyloxymethyl groupduring synthesis of peptides containing cysteinyl residue at theN-terminus. Pept.Res.1991, 4(2),84-87. Colombo,R., Colombo,F. and Jones,J.H. Acid-labile histidineside-chain protection. The N(pi)-t-butoxymethyl group.J.Chem.Soc.Chem.Commun.1984, (5),292-293. Notes:Conversion of N-term Cys to thiazolidine during HF deprotection ofHis(Bom)-containing peptides [1-3].  <b>See <A HREF=http://www.abrf.org/images/misc/dmass12b.gif>structure;</A></b> modification in <FONTCOLOR=#ff0000> red </FONT>. This modification cannot be excludedduring final deprotection/cleavage in Fmoc-chemistry in cases whenHis(Bum) was employed [4].
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00966
 name: Formaldehyde adduct of Trp
 def: "modification from DeltaMass" [DeltaMass:339]
-comment: From DeltaMass: Average Mass: 12 Average Mass Change:12 References:Lippke, K. P., W. G. Schunack, W. Wenning, W. E. Mueller. 1983..beta.-Carbolines as benzodiazepine receptor ligands. 1. Synthesis andbenzodiazepine receptor interaction of esters of.beta.-carboline-3-carboxylic acid. J. Med. Chem.26: 499-503  Cain, M., R. W. Weber, F. Guzman, J. M. Cook, S. A. Barker, K. C.Rice, J. N. Crawley, S. M. Paul, P. Skolnick. 1982. .beta.-Carbolines:synthesis and neurochemical and pharmacological actions on brainbenzodiazepine receptors.J. Med. Chem. 25: 1081-91 Notes:+12 Da modification corresponds to formaldehyde adduct of Trphaving beta-carboline structure (methylene bridge links carbon-2 ofindole ring and alfa-N. <b>See <A HREF=http://www.abrf.org/images/misc/dmass12a.gif>structure;</A></b> modification in <FONTCOLOR=#ff0000> red </FONT>.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00967
 name: Syndesine (from Lysine)
 def: "modification from DeltaMass" [DeltaMass:35]
-comment: From DeltaMass: Average Mass: 13 Average Mass Change:13 References:TITLECrosslink in bone collagen in Paget's disease.AUTHOR(S)Misra-DPSOURCE (BIBLIOGRAPHIC CITATION)J-Clin-Pathol.1975 Apr; 28(4): 305-8.INTERNATIONAL STANDARD SERIAL NUMBER0021-9746LANGUAGE OF ARTICLEENGLISHABSTRACTThe crosslink in bone collagen was analysed in specimens of bone obtained atnecropsy from cases of Paget's disease and compared with normal bone collagenof the same age. The specimens were stored at -20 degrees C before analysis.The predominant crosslink in a normal bone collagen washydroxylysinohydroxynorleucine (di OH-LNL) (F1), which was designatedsyndesine in the past; another fraction, hydroxylysinorleucine (HLNL) (F2),musch less prominent than di OH-LNL, was also noted in a normal bone collagen.Both fractions were reduced in bone tissue of advancing age. The peakcorresponding to HLNL was considerably increased in Paget's disease. Thisabnormality was constantly seen in specimens of bone from cases of Paget'sdisease, but the significance of the finging could not be assessed from thepresent investigation. Calcitonin has been shown to produce complete remissionin Paget's disease and the crosslink pattern was found to be normal inspecimens examined froma calcitonin-treated patient. This shows thatcalcitonin has some effect on the metabolism of collagen and a normalcrosslink in such a situation lends support to this idea.MEDLINE ACCESSION NUMBER75151974
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00968
 name: CM-Cys vs PAM-Cys
 def: "modification from DeltaMass" [DeltaMass:347]
-comment: From DeltaMass: Average Mass: 13 Formula:C2H2O2 vs C3H5ON Monoisotopic Mass Change:13.03 Average Mass Change:13.05 Notes:Residual acrylamide in SDS gels can partly label cysteine residues in proteins (propionamido-Cys, PAM-Cys, deltamass +71Da; see entry). Subsequent alkylation of  protein bands with iodoacetic acid <I>e.g. in preparation for proteomic analysis,</I> will convert remaining free cysteines into carboxymethyl-Cys (CM-Cys, deltamass +58Da; see entry).  Peptide mass fingerprinting may therefore potentially reveal the same cysteine-containing peptide in two forms, differing in mass by 13Da. The relative ratios of the peaks will depend on the initial degree of  labelling with acrylamide.  <BR><BR>Use of high quality, deionised acrylamide in the SDS gel will minimise modification of cysteine through this route. Where it remains a problem, deliberate alkylation using acrylamide instead of iodoacetamide will ensure chemical homogeneity of the final product.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00969
 name: CAM-Cys vs PAM-Cys
 def: "modification from DeltaMass" [DeltaMass:346]
-comment: From DeltaMass: Average Mass: 14 Formula:CH<sub>2</sub> Monoisotopic Mass Change:14.016 Average Mass Change:14.027 Notes:Residual acrylamide in SDS gels can partly label cysteine residues in proteins (propionamido-Cys, PAM-Cys, deltamass +71Da; see entry). Subsequent alkylation of  protein bands with iodoacetamide <I>e.g. in preparation for proteomic analysis,</I> will convert remaining free cysteines into carboxamidomethyl-Cys (CAM-Cys, deltamass +57Da; see entry).  Peptide mass fingerprinting may therefore potentially reveal the same cysteine-containing peptide in two forms, differing in mass by 14Da. The relative ratios of the peaks will depend on the initial degree of  labelling with acrylamide.  <BR><BR>Use of high quality, deionised acrylamide in the SDS gel will minimise modification of cysteine through this route. Where it remains a problem, deliberate alkylation using acrylamide instead of iodoacetamide will ensure chemical homogeneity of the final product.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00970
 name: delta-Hydroxy-allysine (from Lysine)
 def: "modification from DeltaMass" [DeltaMass:37]
-comment: From DeltaMass: Average Mass: 15 Average Mass Change:15 Notes:In going from Lys to hydroxy-allysine, two separate reactions are involved:1. the oxidative deamination converting Lys to allysine (-CH2NH2 being converted to -CHO) with a net mass change of -1;2.conversion of allysine to delta-hydroxy-allysine (-CH2-CHO being converted to -CH(OH)-CHO) with a mass change of +16. The net change from Lys to hydroxyallysine thus is +15.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00971
 name: Oxohistidine (from histidine)
 def: "modification from DeltaMass" [DeltaMass:38]
-comment: From DeltaMass: Average Mass: 16 Average Mass Change:16 References:Lewisch, S. A. & Levine, R. L. (1995) Anal. Biochem. 231, 440-446. Determination of 2-oxo-histidine by amino acid analysis Notes:Rod LevineNIHBldg 3, Room 106 MSC 0320Bethesda, MD 20892-0320email: rlevine@nih.govvoice: 1 (301) 496-2310fax: 1 (301) 496-0599
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00973
 name: Oxidation of proline (to glutamic acid)
 def: "modification from DeltaMass" [DeltaMass:355]
-comment: From DeltaMass: Average Mass: 32 Monoisotopic Mass Change:31.99 Average Mass Change:32 References:Amici A, Levine, RL, Tsai, L, and Stadtman, ER:  Conversion of amino acid residues in proteins and amino acid homopolymers to carbonyl derivatives by metal-catalyzed oxidation reactions.  Journal of Biological Chemistry 264: 3341-3346 1989.Rod Levine (unpublished)
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00974
 name: 3-Chlorination (of Tyrosine with 35Cl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 34
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00975
 name: 3-Chlorination (of Tyrosine with 37Cl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 36
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00976
 name: Potassium adduct
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 38
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00977
 name: disodium
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 44
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00978
 name: Piperidine adduct to C-terminal Cys
 def: "modification from DeltaMass" [DeltaMass:345]
-comment: From DeltaMass: Average Mass: 51 Average Mass Change:51 References:Lukszo, Patterson, Albericio, and Kates, Letters in Peptide Science 3, 157-166(1996) Notes:The side reaction can be very significant,and the level to which it occurs depends on how the C-terminal Cys is anchored and what the side-chain protecting group is.  The mechanism involves piperidine-mediated beta-elimination of sulfur (with the protecting group on), followed by addition of piperidine across the C-terminaldehydroalanine.  Since this last-mentioned step creates a chiral center, a mixture of diastereomers is formed which in special cases can be separatedby HPLC.<BR><BR>Another problem with C-terminal Cys  is racemization; some references in the review article by Andreu, Albericio, Sole, Munson, Ferrer, and Barany in Pennington-Dunn Peptide Synthesis and Purification Protocols, vol 35, 1994, pp. 91-169.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00979
 name: t-butyl ester(OtBu) and t-butyl (tBu)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 56
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00980
 name: Carboxamidomethyl (on Cysteine)
 def: "modification from DeltaMass" [DeltaMass:337]
-comment: From DeltaMass: Average Mass: 57 Abbreviation:CamCys Formula:C2H3NO Monoisotopic Mass Change:57.021 Average Mass Change:57.051 Notes:Cysteine reacts with iodoacetamide to produce carboxamidomethyl cysteine. Alternative names are often used, such as amidocarboxymethylcysteine and carbamoylmethylcysteine
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00981
 name: sodium + potassium
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 60
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00982
 name: Selenocysteine (from Serine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 64, although metabolically correct, in peptide work it is usually considered as a modified cysteine
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00983
 name: Asp transamidation with piperidine
 def: "modification from DeltaMass" [DeltaMass:67]
-comment: From DeltaMass: Average Mass: 67 Average Mass Change:67 References:http://www.abrf.org/archives/hmail/0008/0007.html Notes:1.) Get rid of the DBU
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00984
 name: 3,5-Dichlorination (of Tyrosine with 35Cl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 68
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00986
 name: 3,5-Dichlorination (of Tyrosine with mixture of 35Cl and 37Cl))
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 70
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00989
 name: Acetamidomethyl (Acm)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 71
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00990
 name: 3,5-Dichlorination (of Tyrosine with 37Cl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 72
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00991
 name: S-(sn-1-Glyceryl) (on Cysteine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 74
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00992
 name: Glycerol Ester (on Glutamic acid side chain)
 def: "modification from DeltaMass" [DeltaMass:78]
-comment: From DeltaMass: Average Mass: 74 Average Mass Change:74 References:Anal. Biochem. 1993 Vol 208 No. 2 382-386
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00993
 name: Phenyl ester (OPh) (on acidic)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 76
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00994
 name: 3-Bromination (of Tyrosine with 79Br)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 78
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00995
 name: L-o-bromination of Phe with 81Br
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 80
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00996
 name: 3-Bromination (of Tyrosine with 81Br)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 80
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00997
 name: Cyclohexyl ester (OcHex)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 82
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:00999
 name: Homoseryl lactone
 def: "modification from DeltaMass" [DeltaMass:90]
-comment: From DeltaMass: Average Mass: 83 Formula:C4H5O1N1 Monoisotopic Mass Change:83.037 Average Mass Change:83.09
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01001
 name: 2-Aminoisobutyric acid (Aib)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 85
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01002
 name: Gamma Aminobutyryl
 def: "modification from DeltaMass" [DeltaMass:92]
-comment: From DeltaMass: Average Mass: 85 Formula:C4H7O1N1 Monoisotopic Mass Change:85.053 Average Mass Change:85.106
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01003
 name: t-butyloxymethyl (Bum)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 86
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01004
 name: Diaminopropionyl
 def: "modification from DeltaMass" [DeltaMass:95]
-comment: From DeltaMass: Average Mass: 86 Formula:C3H6O2N1 Monoisotopic Mass Change:86.048 Average Mass Change:86.094
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01005
 name: t-butylsulfenyl (StBu)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 88
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01007
 name: Anisyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 90
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01008
 name: Benzyl (Bzl) and benzly ester (OBzl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 90
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01009
 name: Dehydroprolyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 95
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01010
 name: Trifluoroacetyl (TFA)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 96
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01011
 name: N-hydroxysuccinimide (ONSu, OSu)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 97
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01012
 name: Cysteic acid x2, oxidation of cystine
 def: "modification from DeltaMass" [DeltaMass:335]
-comment: From DeltaMass: Average Mass: 98 Abbreviation:Cya Average Mass Change:98 Notes:Treatment of cystine by strongly oxidising reagents such as performic acid results in the breakage of the disulphide bond and complete oxidation of the sulphur atoms on each molecule. Such treatment is often carried out prior to amino acid analysis as the resulting cysteic acid is then resistant to acid degradation during the hydrolysis procedure.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01013
 name: Tetramethylguanidinium termination by-product on amine
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 98
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01014
 name: Phosphate/sulphate adduct of proteins
 def: "modification from DeltaMass" [DeltaMass:358]
-comment: From DeltaMass: Average Mass: 98 Formula:H3PO4 or H2SO4 Monoisotopic Mass Change:97.97 Average Mass Change:98 Notes:Proteins may pick up non-covalent salt adducts during purification. Phosphate and sulphate salts are commonly used and may be observed as +98amu adducts (or multiples thereof) forming ion pairs with basic residues. <br>Monoisotopic masses H<sub>2</sub>SO<sub>4</sub> 97.967, H<sub>3</sub>PO<sub>4</sub> 97.977
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01015
 name: Isovalyl (-I-,-Iva-)
 def: "modification from DeltaMass" [DeltaMass:110]
-comment: From DeltaMass: Average Mass: 99 Formula:C5H9NO Average Mass Change:99.133
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01016
 name: t-Butyloxycarbonyl (tBoc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 100
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01017
 name: Homoseryl (-Hse-)
 def: "modification from DeltaMass" [DeltaMass:113]
-comment: From DeltaMass: Average Mass: 101 Abbreviation:-Hse- Formula:C4H7O2N Monoisotopic Mass Change:101.048 Average Mass Change:101.105
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01018
 name: 4-Methylbenzyl (Meb)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 104
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01019
 name: HMP (hydroxymethylphenyl) linker
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 106
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01020
 name: Thioanisyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 106
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01021
 name: Thiocresyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 106
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01022
 name: 2-Piperidinecarboxylic acid (Pip)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 111
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01024
 name: Hydroxyprolyl (-Hyp-)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 113
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01026
 name: Norleucyl (-Nle-)
 def: "modification from DeltaMass" [DeltaMass:126]
-comment: From DeltaMass: Average Mass: 113 Abbreviation:-Nle- Formula:C6H11O1N1 Monoisotopic Mass Change:113.084 Average Mass Change:113.16
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01027
 name: t-amyloxycarbonyl (Aoc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 114
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01029
 name: Succinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 117
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01030
 name: Hydroxybenzotriazole ester (HOBt)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 117
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01031
 name: Dimethylbenzyl (diMeBzl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 118
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01032
 name: Benzyloxymethyl (Bom)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 120
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01033
 name: p-methoxybenzyl (Mob, Mbzl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 120
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01034
 name: 4-Nitrophenyl, p-Nitrophenyl (ONp)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 121
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01035
 name: Chlorobenzyl (ClBzl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 125
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01036
 name: O-Methyl Aspartamyl
 def: "modification from DeltaMass" [DeltaMass:148]
-comment: From DeltaMass: Average Mass: 129 Formula:C5H7O1N3 Monoisotopic Mass Change:129.042 Average Mass Change:129.116
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01038
 name: Norleucine (Nle)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 131
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01039
 name: Hydroxy Aspartamyl
 def: "modification from DeltaMass" [DeltaMass:152]
-comment: From DeltaMass: Average Mass: 131 Formula:C4H5O1N4 Monoisotopic Mass Change:131.022 Average Mass Change:131.088
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01040
 name: bb-dimethyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:154]
-comment: From DeltaMass: Average Mass: 131 Formula:C5H9O1N1S1 Monoisotopic Mass Change:131.04 Average Mass Change:131.195
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01041
 name: Benzyloxycarbonyl (Z)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 134
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01042
 name: Adamantyl (Ada)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 134
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01043
 name: p-Nitrobenzyl ester (ONb)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 135
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01044
 name: N-methyl Glutamyl
 def: "modification from DeltaMass" [DeltaMass:166]
-comment: From DeltaMass: Average Mass: 142 Formula:C6H10O2N2 Monoisotopic Mass Change:142.074 Average Mass Change:142.158
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01047
 name: Hydroxy Lysyl (-Hyl-)
 def: "modification from DeltaMass" [DeltaMass:168]
-comment: From DeltaMass: Average Mass: 144 Abbreviation:-Hyl- Formula:C6H12N2O2 Monoisotopic Mass Change:144.09 Average Mass Change:144.174
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01050
 name: Pyridyl Alanyl
 def: "modification from DeltaMass" [DeltaMass:180]
-comment: From DeltaMass: Average Mass: 148 Formula:C8H8O2N1 Monoisotopic Mass Change:148.064 Average Mass Change:148.165
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01051
 name: 2-Nitrobenzoyl (NBz)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 149
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01052
 name: Dimethoxybenzyl Trp
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 150
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01053
 name: 2-Nitrophenylsulphenyl (Nps)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 153
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01054
 name: 4-Toluenesulphonyl (Tosyl, Tos)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 154
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01055
 name: 3-nitro-2-pyridinesulfenyl (Npys)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 154
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01056
 name: 3,5-Dibromination (of Tyrosine with 79Br)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 156
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01057
 name: 3,5-Dibromination (of Tyrosine with mixture of 79Br and 81Br)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 158
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01058
 name: Dichlorobenzyl (Dcb)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 159
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01059
 name: 3,5-Dibromination (of Tyrosine with 81Br)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 160
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01060
 name: Carboxyamidomethyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:196]
-comment: From DeltaMass: Average Mass: 160 Formula:C5H8O2N2S1 Monoisotopic Mass Change:160.031 Average Mass Change:160.194
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01061
 name: Carboxymethyl cysteine (Cmc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 161
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01062
 name: Carboxymethyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:197]
-comment: From DeltaMass: Average Mass: 161 Abbreviation:-Cmc- Formula:C5H7O1N3S1 Monoisotopic Mass Change:161.015 Average Mass Change:161.179
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01063
 name: Methylphenylalanyl
 def: "modification from DeltaMass" [DeltaMass:198]
-comment: From DeltaMass: Average Mass: 161 Formula:C10H11O1N1 Monoisotopic Mass Change:161.084 Average Mass Change:161.205
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01064
 name: Inositol
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 162
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01065
 name: N-Glucosyl (N terminus or N epsilon of Lysine) (Aminoketose)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 162
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01067
 name: Linker attached to peptide in Fmoc peptide synthesis
 def: "modification from DeltaMass" [DeltaMass:341]
-comment: From DeltaMass: Average Mass: 162 Average Mass Change:162 Notes:(from the ABRF discussion list archive) There may be ...  things in the reagent K that would allow cleavage of the peptide to occur at the wrong place...in this case it removes the dimethoxybenzyl group first inactivating that site for cleavage, and it goes after tne next amide bond closer to the resin. Try the TFA/TIS/water/EDT cocktail...TFA = 92%, TIS =3%, and water is at 5%. .. had this issue on longer peptides.. and by increasing the amount of water a little bit... able to elminate this problem.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01069
 name: 2,4 -dinitrophenyl (Dnp)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 166
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01070
 name: Pentaflourophenyl (Pfp)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 166
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01071
 name: Diphenylmethyl (Dpm)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 166
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01073
 name: 2-Chlorobenzyloxycarbonyl (ClZ)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 169
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01074
 name: Napthyl acetyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 169
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01076
 name: N-methyl Arginyl
 def: "modification from DeltaMass" [DeltaMass:215]
-comment: From DeltaMass: Average Mass: 170 Formula:C7H14O4N1 Monoisotopic Mass Change:170.117 Average Mass Change:170.215
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01077
 name: Ethanedithiol/TFA cyclic adduct
 def: "modification from DeltaMass" [DeltaMass:216]
-comment: From DeltaMass: Average Mass: 172 Average Mass Change:172 References:[1]. Sieber,P.(1987) Modification of tryptophan residues during acidolysis of4-methoxy-2,3,6-trimethylbenzenesulfonyl groups. Effects of scavengers.Tetrahedron Lett., 28(15),1637-1640. Notes:TFA-cyclic dithioketal by-product is formed when Trp-containing peptideis subjected to prolonged TFA/EDT treatment [1]. <b>See <A HREF=http://www.abrf.org/images/misc/dmass172.gif>structure.</A></b> <p> Additional discussion of this adduct, and how to avoid it, can befound in Methods in Enzymology 289, 67 (1997)
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01079
 name: Acetamidomethyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:218]
-comment: From DeltaMass: Average Mass: 174 Formula:C6H10O2N2S1 Monoisotopic Mass Change:174.046 Average Mass Change:174.221
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01080
 name: Acrylamidyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:219]
-comment: From DeltaMass: Average Mass: 174 Formula:C6H10O2N2S1 Monoisotopic Mass Change:174.046 Average Mass Change:174.221
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01081
 name: delta-Glycosyloxy- (of Lysine) or beta-Glycosyloxy- (of Phenylalanine or Tyrosine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 177
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01082
 name: 4-Glycosyloxy- (hexosyl,C6) (of Proline)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 177
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01083
 name: Benzyl Seryl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 177
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01085
 name: a-N-Gluconoylation (His Tagged proteins)
 def: "modification from DeltaMass" [DeltaMass:226]
-comment: From DeltaMass: Average Mass: 178 Formula:C6H10O6 Monoisotopic Mass Change:178.05 Average Mass Change:178.14 References:Geoghegan, K. F., H. B. Dixon, et al. (1999). Spontaneous alpha-N-6-phosphogluconoylation of a His tag in Escherichia coli: the cause of extra mass of 258 or 178 Da in fusion proteins. Anal Biochem 267(1): 169-84.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01086
 name: p-Nitrobenzyloxycarbonyl (4Nz)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 179
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01087
 name: 2,4,5-Trichlorophenyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 179
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01088
 name: 2,4,6-trimethyloxybenzyl (Tmob)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 180
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01089
 name: Xanthyl (Xan)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 180
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01091
 name: Chlorophenylalanyl
 def: "modification from DeltaMass" [DeltaMass:233]
-comment: From DeltaMass: Average Mass: 182 Formula:C9H8O1N1Cl1 Monoisotopic Mass Change:181.029 Average Mass Change:181.623
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01092
 name: Mesitylene-2-sulfonyl (Mts)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 182
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01093
 name: Isopropyl Lysyl
 def: "modification from DeltaMass" [DeltaMass:236]
-comment: From DeltaMass: Average Mass: 184 Formula:C9H16O2N2 Monoisotopic Mass Change:184.12 Average Mass Change:184.24
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01094
 name: Carboxymethyl Lysyl
 def: "modification from DeltaMass" [DeltaMass:237]
-comment: From DeltaMass: Average Mass: 186 Formula:C8H14O2N3 Monoisotopic Mass Change:186.1 Average Mass Change:186.211
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01095
 name: Matrix alpha cyano MH+
 def: "modification from DeltaMass" [DeltaMass:240]
-comment: From DeltaMass: Average Mass: 190 Formula:C10H8O1N3 Monoisotopic Mass Change:190.05 Average Mass Change:190.18
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01096
 name: Benzyl Threonyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 191
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01097
 name: Benzyl Cystenyl
 def: "modification from DeltaMass" [DeltaMass:242]
-comment: From DeltaMass: Average Mass: 193 Formula:C10H11O1N1S1 Monoisotopic Mass Change:193.056 Average Mass Change:193.267
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01098
 name: Napthyl Alanyl
 def: "modification from DeltaMass" [DeltaMass:243]
-comment: From DeltaMass: Average Mass: 197 Formula:C13H11O1N1 Monoisotopic Mass Change:197.084 Average Mass Change:197.238
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01099
 name: Succinyl Aspartamyl
 def: "modification from DeltaMass" [DeltaMass:244]
-comment: From DeltaMass: Average Mass: 198 Formula:C8H8O1N5 Monoisotopic Mass Change:198.04 Average Mass Change:198.156
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01100
 name: HMP (hydroxymethylphenyl)/TFA adduct
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 201
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01101
 name: S-Farnesyl-
 def: "modification from DeltaMass" [DeltaMass:0, PubMed:1409665, PubMed:1872463, RESID:AA0102]
-comment: From DeltaMass: Average Mass: 206
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01102
 name: Myristoylation-4H (2 double bonds)
 def: "modification from DeltaMass" [DeltaMass:348]
-comment: From DeltaMass: Average Mass: 206 Formula:C14 H22 O1 Monoisotopic Mass Change:206.167 Average Mass Change:206.324 References:Neubert TA, Johnson RS, Hurley JB, Walsh KA (1992). The rod transducin alpha subunit amino terminus is heterogeneously fatty acylated. J Biol Chem. 267(26):18274-7. Notes:Modification of protein N-Terminus with (cis,cis-delta 5, delta 8)-tetradecadienoyl  group ( myristoylation with 2 double bonds)
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01103
 name: Myristoleylation (myristoyl with one double bond)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 208
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01104
 name: 4-Methoxy-2,3,6-trimethylbenzenesulfonyl (Mtr)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 212
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01105
 name: 2-Bromobenzyloxycarbonyl (BrZ)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 213
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01106
 name: Formyl Tryptophanyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 214
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01107
 name: Benzyl Glutamyl
 def: "modification from DeltaMass" [DeltaMass:258]
-comment: From DeltaMass: Average Mass: 219 Formula:C12H13O1N3 Monoisotopic Mass Change:219.241 Average Mass Change:219.09
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01108
 name: Anisole Adducted Glutamyl
 def: "modification from DeltaMass" [DeltaMass:259]
-comment: From DeltaMass: Average Mass: 219 Formula:C12H13O1N3 Monoisotopic Mass Change:219.241 Average Mass Change:219.09
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01109
 name: 9-Fluorenylmethyloxycarbonyl (Fmoc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 222
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01111
 name: Dimethoxybenzhydryl (Mbh)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 226
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01112
 name: Nicotinyl Lysyl
 def: "modification from DeltaMass" [DeltaMass:266]
-comment: From DeltaMass: Average Mass: 233 Formula:C12H15O3N2 Monoisotopic Mass Change:233.116 Average Mass Change:233.271
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01113
 name: 2-(p-biphenyl)isopropyl-oxycarbonyl (Bpoc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 238
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01114
 name: Triphenylmethyl (Trityl, Trt)
 def: "modification from DeltaMass" [DeltaMass:270]
-comment: From DeltaMass: Average Mass: 242 Average Mass Change:242.3 Notes:blocking group used in peptide synthesis for C,H,Q,N
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01117
 name: Pbf (pentamethyldihydrobenzofuransulfonyl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 252
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01118
 name: a-N-6-Phosphogluconoylation (His Tagged proteins)
 def: "modification from DeltaMass" [DeltaMass:275]
-comment: From DeltaMass: Average Mass: 258 Formula:C6H10O6HPO3 Monoisotopic Mass Change:258.01 Average Mass Change:258.12 References:Geoghegan, K. F., H. B. Dixon, et al. (1999). Spontaneous alpha-N-6-phosphogluconoylation of a His tag in Escherichia coli: the cause of extra mass of 258 or 178 Da in fusion proteins. Anal Biochem 267(1): 169-84.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01120
 name: Pmc (2,2,5,7,8- Pentamethylchroman-6-sulphonyl)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 266
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01121
 name: Monomethoxytrityl
 def: "modification from DeltaMass" [DeltaMass:280]
-comment: From DeltaMass: Average Mass: 272 Abbreviation:Mmt Average Mass Change:272
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01122
 name: 5'phos dCytidinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 289
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01123
 name: iodo Tyrosinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 289
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01124
 name: Aldohexosyl Lysyl
 def: "modification from DeltaMass" [DeltaMass:285]
-comment: From DeltaMass: Average Mass: 290 Formula:C12H22O2N6 Monoisotopic Mass Change:290.148 Average Mass Change:290.317
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01125
 name: 5'phos dThymidinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 304
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01126
 name: 5'phos Cytidinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 305
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01127
 name: 5'phos Uridinyl
 def: "modification from DeltaMass" [DeltaMass:292]
-comment: From DeltaMass: Average Mass: 306 Formula:C9H11O2N8P1 Monoisotopic Mass Change:306.025 Average Mass Change:306.17
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01128
 name: N-glycolneuraminic acid (NeuGc)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 307
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01129
 name: 5'phos dAdenosyl
 def: "modification from DeltaMass" [DeltaMass:295]
-comment: From DeltaMass: Average Mass: 313 Formula:C10H12O5N5P1 Monoisotopic Mass Change:313.058 Average Mass Change:313.211
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01130
 name: SucPhencarb Lysyl
 def: "modification from DeltaMass" [DeltaMass:297]
-comment: From DeltaMass: Average Mass: 327 Formula:C17H17O3N4 Monoisotopic Mass Change:327.122 Average Mass Change:327.342
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01131
 name: 5'phos dGuanosyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 329
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01132
 name: 5'phos Adenosinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 329
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01134
 name: Fluorescein labelling of peptide N-terminal using NHS ester
 def: "modification from DeltaMass" [DeltaMass:306]
-comment: From DeltaMass: Average Mass: 359 Formula:C21H11O6 Monoisotopic Mass Change:359.055 Average Mass Change:359.315 Notes:Using the DHB matrix at low pH the carboxyl group and one of theoxygens on the flurorescein molecule are protinated so the delta mass is 2Da higher than most text book illustrations would indicate. SeeBioconjugate Techniques by Greg Hermanson, Academic Press, page 305,figure 204.Text books of course just show the coupling reaction at neutralor basic pH.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01135
 name: Hex-HexNAc
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 365
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01136
 name: Dioctyl Phthalate
 def: "modification from DeltaMass" [DeltaMass:309]
-comment: From DeltaMass: Average Mass: 391 Average Mass Change:391 Notes:A common plasticizer, and, unfortunaltely, a common contaminate. A sodium adducissing in mod
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01137
 name: PMC Lysyl
 def: "modification from DeltaMass" [DeltaMass:310]
-comment: From DeltaMass: Average Mass:  Formula:C20H30O2N4S1 Monoisotopic Mass Change:394.192 Average Mass Change:394.534
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01138
 name: Aedans Cystenyl
 def: "modification from DeltaMass" [DeltaMass:311]
-comment: From DeltaMass: Average Mass:  Abbreviation:Aedans-Cys Formula:C17H19O3N5S2 Monoisotopic Mass Change:409.077 Average Mass Change:409.482
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01139
 name: Dioctyl Phthalate Sodium Adduct
 def: "modification from DeltaMass" [DeltaMass:312]
-comment: From DeltaMass: Average Mass:  Average Mass Change:413 Notes:A common plasticizer, and, unfortunaltely, a common contaminate. A sodium adduct is often associated with this peak at 413.
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01140
 name: di-iodo Tyrosinyl
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 415
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01141
 name: PMC Arginyl
 def: "modification from DeltaMass" [DeltaMass:314]
-comment: From DeltaMass: Average Mass:  Formula:C20H30O4N4S1 Monoisotopic Mass Change:422.199 Average Mass Change:422.547
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01144
 name: S-(sn-1-Dipalmitoyl-glyceryl)- (on Cysteine)
 def: "modification from DeltaMass" [DeltaMass:0, PubMed:10896212, PubMed:4575979, PubMed:9056182, RESID:AA0107]
-comment: From DeltaMass: Average Mass: 524
 is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:01145
 name: N theta -(ADP-ribosyl) diphthamide (of Histidine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 648
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01146
 name: S-(6-Flavin [FAD])- (on Cysteine)
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 784
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
 id: MOD:01147
 name: (Hex)3-HexNAc-(dHex)HexNAc
 def: "modification from DeltaMass" [DeltaMass:0]
-comment: From DeltaMass: Average Mass: 1,039
 is_a: MOD:00947 ! DeltaMass
 
 [Term]
