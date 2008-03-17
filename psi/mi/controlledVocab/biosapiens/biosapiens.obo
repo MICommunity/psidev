@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 10:03:2008 16:17
+date: 17:03:2008 10:40
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -1404,6 +1404,22 @@ name: cleaved_peptide_region
 def: "The cleaved_peptide_regon is the a region of peptide sequence that is cleaved during maturation." [EBIBS:GAR]
 comment: Range.
 is_a: SO:0001063 ! immature_peptide_region
+
+[Term]
+id: SO:0100012
+name: coil
+def: "Irregular, unstructured regions of a protein's backbone, as distinct from the regular region (namely alpha helix and beta strand - characterised by specific patterns of main-chain hydrogen bonds)." [EBIBS:GAR]
+synonym: "random coil" EXACT []
+is_a: SO:0001078 ! polypeptide_secondary_structure
+
+[Term]
+id: SO:0100013
+name: hydrophobic_region
+def: "Hydrophobic regions are regions with a low affinity for water." [EBIBS:GAR]
+comment: Range.
+synonym: "hydropathic" EXACT []
+synonym: "hydrophobicity" EXACT []
+is_a: SO:0000839 ! polypeptide_region
 
 [Term]
 id: MOD:00000
