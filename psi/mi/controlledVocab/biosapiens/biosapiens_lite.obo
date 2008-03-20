@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 17:03:2008 10:40
+date: 20:03:2008 11:07
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -743,6 +743,27 @@ id: SO:0100013
 name: hydrophobic_region
 def: "Hydrophobic regions are regions with a low affinity for water." [EBIBS:GAR]
 is_a: SO:0000839 ! polypeptide_region
+
+[Term]
+id: SO:0100014
+name: n_terminal_region
+def: "The amino-terminal positively-charged region of the signal peptide (aprox 1-5 aa)." [EBIBS:GAR]
+is_a: SO:0100011 ! cleaved_peptide_region
+relationship: part_of SO:0000418 ! signal_peptide
+
+[Term]
+id: SO:0100015
+name: c_terminal_region
+def: "The more polar, carboxy-terminal region of the signal peptide (approx 3-7 aa)." [EBIBS:GAR]
+is_a: SO:0100011 ! cleaved_peptide_region
+relationship: part_of SO:0000418 ! signal_peptide
+
+[Term]
+id: SO:0100016
+name: central_hydrophobic_region
+def: "The central, hydrophobic region of the signal peptide (aprox 7-15 aa)." [EBIBS:GAR]
+is_a: SO:0100011 ! cleaved_peptide_region
+relationship: part_of SO:0000418 ! signal_peptide
 
 [Term]
 id: MOD:00000
