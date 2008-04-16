@@ -1,15 +1,15 @@
 format-version: 1.0
-date: 07:04:2008 20:09
+date: 16:04:2008 15:53
 saved-by: David
 auto-generated-by: OBO-Edit 1.101
-default-namespace: MI
+default-namespace: PAR
 
 [Term]
 id: PAR:0001
 name: interaction detection method
 def: "Method to generate of characterize a binder." [pubmed:14755292 "primary-reference"]
 exact_synonym: "interaction detect" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0002
@@ -17,14 +17,14 @@ name: participant identification method
 def: "Method to determine the proteins involved in the interaction." [pubmed:14755292 "primary-reference"]
 related_synonym: "participant detection" []
 exact_synonym: "participant ident" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0003
 name: feature detection method
 def: "Method to determine the features of the proteins involved in the interaction." [pubmed:14755292 "primary-reference"]
 exact_synonym: "feature detection" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0004
@@ -527,7 +527,7 @@ is_a: PAR:0054 ! fluorescence-activated cell sorting
 id: PAR:0116
 name: feature type
 def: "Property of a subsequence that may interfere with the binding of a molecule." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0117
@@ -1381,7 +1381,7 @@ is_a: PAR:0179 ! other modification
 id: PAR:0190
 name: interaction type
 def: "Connection between molecule." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0192
@@ -1729,7 +1729,7 @@ id: PAR:0300
 name: alias type
 def: "Descriptor of type of nomenclature used to describe interactor." [pubmed:14755292 "primary-reference"]
 related_synonym: "CvAliasType" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0301
@@ -1783,7 +1783,7 @@ id: PAR:0313
 name: interactor type
 def: "Molecular species involved in the interaction." [pubmed:14755292 "primary-reference"]
 related_synonym: "participant type" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0314
@@ -1905,7 +1905,7 @@ def: "Describes sequence positions resolution of a given participant feature. In
 related_synonym: "CvFuzzyType" []
 related_synonym: "endStatus" []
 related_synonym: "startStatus" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0334
@@ -1984,7 +1984,7 @@ id: PAR:0346
 name: experimental preparation
 def: "Set of terms to describe the participant experimental treatment and status. This term group in fact 4 orthologues short controlled vocabularies delivery method, expression level, molecular source, and sample process. Each participant can then be annotated with a maximum of 4 terms selected from each short list." [pubmed:14755292 "primary-reference"]
 exact_synonym: "experimental prep" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0350
@@ -2012,7 +2012,7 @@ def: "Qualifier to describe the type of information a cross-reference is pointin
 related_synonym: "CvXrefQualifier" []
 related_synonym: "refType" []
 exact_synonym: "xref type" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0354
@@ -2435,7 +2435,7 @@ is_a: PAR:0117 ! binding site
 id: PAR:0444
 name: database citation
 def: "Database citation list names of databases commonly used to cross reference interaction data." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0445
@@ -2863,7 +2863,7 @@ is_a: PAR:0444 ! database citation
 id: PAR:0495
 name: experimental role
 def: "Role played by the participant within the experiment." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0496
@@ -2893,7 +2893,7 @@ is_a: PAR:0500 ! biological role
 id: PAR:0500
 name: biological role
 def: "Description of molecules polarity on a directional interaction." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0505
@@ -3403,7 +3403,7 @@ id: PAR:0590
 name: attribute name
 def: "Collection of topic describing the free text stored as an attribute value." [pubmed:14755292 "primary-reference"]
 related_synonym: "CvTopic" []
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0592
@@ -3589,7 +3589,7 @@ is_a: PAR:0668 ! feature attribute name
 id: PAR:0640
 name: parameter type
 def: "Parameter for enzymatic or binding kinetic studies." [pubmed:14755292 "primary-reference"]
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0641
@@ -3638,7 +3638,7 @@ id: PAR:0647
 name: parameter unit
 def: "Controlled vocabulary for kinetic constant units. See als" [pubmed:14755292 "primary-reference"]
 xref_analog: url:http\://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=UO "ANNOTATION"
-relationship: part_of PAR:1004 ! PROTEIN BINDER CV
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:0648
@@ -4556,7 +4556,7 @@ is_a: PAR:0252 ! biological feature
 
 [Term]
 id: PAR:1004
-name: PROTEIN BINDER CV
+name: PROTEIN AFFINITY REAGENT CV
 def: "This is the draft protein binder CV" [pubmed:14755292 "primary-reference"]
 exact_synonym: "psi-pb" []
 
