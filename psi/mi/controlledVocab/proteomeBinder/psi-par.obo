@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 16:04:2008 15:53
+date: 25:04:2008 18:36
 saved-by: David
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PAR
@@ -4557,8 +4557,8 @@ is_a: PAR:0252 ! biological feature
 [Term]
 id: PAR:1004
 name: PROTEIN AFFINITY REAGENT CV
-def: "This is the draft protein binder CV" [pubmed:14755292 "primary-reference"]
-exact_synonym: "psi-pb" []
+def: "This is the draft protein affinity reagent CV" [pubmed:14755292 "primary-reference"]
+exact_synonym: "psi-par" []
 
 [Term]
 id: PAR:1005
@@ -4694,7 +4694,7 @@ is_a: PAR:1178 ! molecule library attribute
 id: PAR:1037
 name: insert position
 def: "The position of insert of a specific gene into the expression vector." [pubmed:14755292 "primary-reference"]
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1038
@@ -4805,7 +4805,7 @@ is_a: PAR:0665 ! experiment attibute name
 
 [Term]
 id: PAR:1056
-name: cDNA cloning
+name: cDNA expression
 def: "The process in which the inheritable information in a gene, such as the DNA sequence, is made into a functional gene product, such as protein or RNA." [pubmed:14755292 "primary-reference"]
 related_synonym: "cdna cloning" []
 is_a: PAR:1328 ! molecule production method
@@ -4825,7 +4825,7 @@ is_a: PAR:0001 ! interaction detection method
 
 [Term]
 id: PAR:1059
-name: cDNA cloning material attribute
+name: cDNA expression material attribute
 def: "Attribute name of annotation associated to an expression vector." [pubmed:14755292 "primary-reference"]
 exact_synonym: "cDNA vector attribute" []
 is_a: PAR:1124 ! experimental material attribute
@@ -4897,7 +4897,7 @@ name: in vitro expression system
 def: "Name, reference or description of an in vitro expression system. In vitro expression encompasses two general strategies. The first is to use isolated RNA synthesized in vivo or in vitro as a template for the translation reaction (e.g., using Promegas Rabbit Reticulocyte Lysate(a,b,c) (Cat.no L4151) or Wheat Germ Extract (Cat.no L4380) Systems). The second is to use a coupled transcription/translation system in which DNA is used as a template (e.g., Promegas TNT (a,b,c,d,e) and E. coli S30 Extract(a,b) Systems). This DNA may be either a gene cloned into a plasmid vector (cDNA) or a PCR(f)-generated template." [pubmed:14755292 "primary-reference"]
 exact_synonym: "expr. system name" []
 xref_analog: url:http\://www.promega.com/guides/ive_guide/ivex_gde.pdf "ANNOTATION"
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1071
@@ -4973,7 +4973,7 @@ id: PAR:1084
 name: expression vector map
 def: "Reference, e.g. an URL, to an expression vector map. An expression vector map is a schematic drawing of the layout of the expression vector and its components such as promoter and enzyme restriction sites." [pubmed:14755292 "primary-reference"]
 exact_synonym: "cDNA vector map url" []
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1085
@@ -5000,7 +5000,7 @@ name: expression vector sequence
 def: "The primary sequence of an expression vector." [pubmed:14755292 "primary-reference"]
 related_synonym: "cdna cloning vector sequence" []
 exact_synonym: "cDNA vector sequence" []
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1090
@@ -5440,7 +5440,7 @@ is_a: PAR:0002 ! participant identification method
 id: PAR:1177
 name: expression construct sequence
 def: "The primary sequence of a cDNA construct." [pubmed:14755292 "primary-reference"]
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1178
@@ -5516,7 +5516,7 @@ id: PAR:1207
 name: expression vector
 def: "Name, reference or description of a expression vector. An expression vector is generally a plasmid and is introduced into a target cell, which cellular transcription and translation machinery is used for the expression of a specific gene." [pubmed:14755292 "primary-reference"]
 related_synonym: "cdna cloning vector" []
-is_a: PAR:1059 ! cDNA cloning material attribute
+is_a: PAR:1059 ! cDNA expression material attribute
 
 [Term]
 id: PAR:1218
@@ -5676,7 +5676,7 @@ is_a: PAR:1316 ! experimental scope
 id: PAR:1316
 name: experimental scope
 def: "The scope or purpose of an experiment." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0190 ! interaction type
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Term]
 id: PAR:1317
@@ -5717,7 +5717,7 @@ is_a: PAR:0447 ! feature database
 id: PAR:1328
 name: molecule production method
 def: "IMM	ANN	SYNT	animal immunization" [pubmed:123456789 "primary-reference"]
-is_a: PAR:0001 ! interaction detection method
+relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Typedef]
 id: part_of
