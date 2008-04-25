@@ -59,10 +59,13 @@
 				</xs:element>
 				<xs:element name="indexListOffset" type="xs:long" nillable="1">
 					<xs:annotation>
-						<xs:documentation>offset of the index element (if 0 no index present)</xs:documentation>
+						<xs:documentation>File pointer offset (in bytes) of the 'indexList' element.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="fileChecksum" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>SHA-1 checksum from beginning of file to end of 'fileChecksum' open tag.</xs:documentation>
+					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
 		</xs:complexType>
