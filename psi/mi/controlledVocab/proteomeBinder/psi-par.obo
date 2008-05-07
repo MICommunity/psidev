@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 25:04:2008 18:36
+date: 07:05:2008 19:51
 saved-by: David
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PAR
@@ -4580,8 +4580,9 @@ is_a: PAR:1139 ! folding state
 
 [Term]
 id: PAR:1008
-name: hybridoma interactor
-def: "Hybridomas are cells that have been engineered to It proliferate and produce a continuous supply of a specific monoclonal antibody. They are produced in the laboratory from the fusion of an antibody-producing lymphocyte and a nonantibody-producing cancer cell, usually a myeloma or lymphoma." [pubmed:14755292 "primary-reference"]
+name: antibody-producing hybridoma
+def: "Antibody-producing hybridomas are cells that have been engineered to It proliferate and produce a continuous supply of a specific monoclonal antibody. They are produced in the laboratory from the fusion of an antibody-producing lymphocyte and a nonantibody-producing cancer cell, usually a myeloma or lymphoma." [pubmed:14755292 "primary-reference"]
+exact_synonym: "Ab-produci hybridoma" []
 is_a: PAR:0313 ! interactor type
 
 [Term]
@@ -5086,7 +5087,7 @@ relationship: part_of PAR:1106 ! antibody production method
 [Term]
 id: PAR:1106
 name: antibody production method
-def: "IMM	KW2	PROD	antibody production	antibody production	GO:0002377" [pubmed:123456789 "primary-reference"]
+def: "An experimental method used to produce an antibody." [pubmed:123456789 "primary-reference"]
 is_a: PAR:1328 ! molecule production method
 
 [Term]
@@ -5155,6 +5156,14 @@ def: "Solubility refers to the ability for a given substance to dissolve in a so
 is_a: PAR:0640 ! parameter type
 
 [Term]
+id: PAR:1117
+name: protein affinity reagent
+def: "A molecule designed to bind to a protein target." [pubmed:14755292 "primary-reference"]
+related_synonym: "par" []
+exact_synonym: "affinity reagent" []
+is_a: PAR:0495 ! experimental role
+
+[Term]
 id: PAR:1118
 name: experimental control
 def: "A molecule being used as an experimental control plays the role of eliminating alternate explanations of experimental results. In a controlled experiment, two virtually identical experiments are conducted. In one of them, the molecule being tested for effect, e.g a candidate drug is used and in the other experiment this is compared to the effect of an alternative substance e.g. placebo." [pubmed:14755292 "primary-reference"]
@@ -5165,6 +5174,12 @@ id: PAR:1119
 name: negative control
 def: "A negative control is known or predicted to give a negative result e.g. molecule A does not bind to molecule B. In a quantitative assay the negative control is often used to define the base-line result, or \"background\", obtained when a test does not produce a measurable positive result. This is subtracted from the test sample results." [pubmed:14755292 "primary-reference"]
 is_a: PAR:1118 ! experimental control
+
+[Term]
+id: PAR:1120
+name: protein target
+def: "A protein that is bound by a protein affinity reagent." [pubmed:14755292 "primary-reference"]
+is_a: PAR:0495 ! experimental role
 
 [Term]
 id: PAR:1123
@@ -5474,9 +5489,10 @@ is_a: PAR:0495 ! experimental role
 
 [Term]
 id: PAR:1186
-name: secondary antibody
+name: secondary protein affinity reagent
 def: "A secondary antibody is an antibody that binds to primary antibodies or antibody fragments. They are typically labeled with probes that make them useful for detection, purification or cell sorting applications. Secondary antibodies may be polyclonal or monoclonal, and are available with specificity for whole Ig molecules or antibody fragments such as the Fc or Fab regions. Specific secondary antibodies are usually chosen to work in specific laboratory applications. They are selected according to the source of the primary antibody, the class of the primary antibody (e.g., IgG or IgM), and the kind of label which is preferred." [pubmed:14755292 "primary-reference"]
 related_synonym: "detection antibody" []
+exact_synonym: "secondary PAR" []
 is_a: PAR:1184 ! secondary reagent
 
 [Term]
@@ -5594,7 +5610,7 @@ is_a: PAR:0666 ! participant attribute name
 
 [Term]
 id: PAR:1264
-name: stability statement
+name: stability info
 def: "A statement about the stability of the molecule under certain conditions, including for example pH, temperature and detergent. The stability corresponds to the quality of being free from change or variation over time or not taking part readily in chemical change." [pubmed:14755292 "primary-reference"]
 is_a: PAR:0666 ! participant attribute name
 
@@ -5606,8 +5622,8 @@ is_a: PAR:0640 ! parameter type
 
 [Term]
 id: PAR:1278
-name: solubility statement
-def: "A statement about the stability of the molecule under certain conditions, including for example pH, temperature and detergent." [pubmed:14755292 "primary-reference"]
+name: solubility info
+def: "A statement about the solubility of the molecule under certain conditions, including for example pH, temperature and detergent." [pubmed:14755292 "primary-reference"]
 is_a: PAR:0666 ! participant attribute name
 
 [Term]
@@ -5638,7 +5654,7 @@ is_a: PAR:0678 ! antibody array
 
 [Term]
 id: PAR:1296
-name: actual binding site
+name: exact binding site
 def: "The subsequence of a protein that is involved the binding of another molecule. The binding site can be linear or conformational i.e. structurally proximal residues that might be discontinous in the primary sequence." [pubmed:14755292 "primary-reference"]
 related_synonym: "epitope" []
 related_synonym: "paratope" []
@@ -5716,7 +5732,7 @@ is_a: PAR:0447 ! feature database
 [Term]
 id: PAR:1328
 name: molecule production method
-def: "IMM	ANN	SYNT	animal immunization" [pubmed:123456789 "primary-reference"]
+def: "This is an experimental method that is used to produce a molecule." [pubmed:123456789 "primary-reference"]
 relationship: part_of PAR:1004 ! PROTEIN AFFINITY REAGENT CV
 
 [Typedef]
