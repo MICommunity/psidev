@@ -1,6 +1,6 @@
 format-version: 1.2
-date: 07:05:2008 00:26
-saved-by: deutsch
+date: 12:05:2008 09:58
+saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 remark: version: x.y.z
@@ -3968,6 +3968,12 @@ id: MS:1000632
 name: Q-Tof Premier
 def: "Waters Q-Tof Premier MS." [PSI:MS]
 is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1000633
+name: possible charge state
+def: "A possible charge state of the ion in a situation where the charge of an ion is known to be one of several possible values rather than a completely unknown value or determined to be a specific charge with reasonable certainty." [PSI:MS]
+is_a: MS:1000455 ! ion selection attribute
 
 [Typedef]
 id: part_of
