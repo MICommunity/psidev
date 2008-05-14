@@ -3975,6 +3975,108 @@ name: possible charge state
 def: "A possible charge state of the ion in a situation where the charge of an ion is known to be one of several possible values rather than a completely unknown value or determined to be a specific charge with reasonable certainty." [PSI:MS]
 is_a: MS:1000455 ! ion selection attribute
 
+[Term]
+id: MS:10634
+name: DSQ
+def: "ThermoFinnigan DSQ GC-MS"  [PSI:MS]
+is_a: MS:1000125 ! Thermo Finnigan instrument model
+
+[Term]
+id: MS:10635
+name: ITQ 700
+def: "Thermo Scientific ITQ 700 GC-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10636
+name: ITQ 900
+def: "Thermo Scientific ITQ 900 GC-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10637
+name: ITQ 1100
+def: "Thermo Scientific ITQ 1100 GC-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10638
+name: LTQ XL ETD
+def: "Thermo Scientific LTQ XL MS with ETD"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10639
+name: LTQ Orbitrap XL ETD
+def: "Thermo Scientific LTQ Orbitrap XL MS with ETD"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10640
+name: DFS
+def: "Thermo Scientific DFS HR GC-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10641
+name: DSQ II
+def: "Thermo Scientific DSQ II GC-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10642
+name: MALDI LTQ XL
+def: "Thermo Scientific MALDI LTQ XL MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10643
+name: MALDI LTQ Orbitrap
+def: "Thermo Scientific MALDI LTQ Orbitrap MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10644
+name: TSQ Quantum Access
+def: "Thermo Scientific TSQ Quantum Access MS."  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10645
+name: Element XR
+def: "Thermo Scientific Element XR HR-ICP-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10646
+name: Element 2
+def: "Thermo Scientific Element 2 HR-ICP-MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10647
+name: Element GD
+def: "Thermo Scientific Element GD Glow Discharge MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10648
+name: GC IsoLink
+def: "Thermo Scientific GC IsoLink Isotope Ratio MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10649
+name: Exactive
+def: "Thermo Scientific Exactive MS"  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:10650
+name: Proteomics Discoverer
+def: "Thermo Scientific software for data analysis of peptides and proteins."  [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
 [Typedef]
 id: part_of
 name: part_of
