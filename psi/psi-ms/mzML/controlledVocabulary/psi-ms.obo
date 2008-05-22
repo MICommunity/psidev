@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:05:2008 15:45
+date: 22:05:2008 15:53
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
@@ -888,9 +888,9 @@ is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000140
-name: 4700 Proteomic Analyzer
-def: "Applied Biosystems/MDS SCIEX 4700 Proteomic Analyzer MS." [PSI:MS]
-is_a: MS:1000121 ! AB SCIEX instrument model
+name: 4700 Proteomics Analyzer
+def: "Applied Biosystems/MDS SCIEX 4700 Proteomics Analyzer MS." [PSI:MS]
+is_a: MS:1000495 ! Applied Biosystems instrument model
 
 [Term]
 id: MS:1000141
@@ -1268,13 +1268,13 @@ is_a: MS:1000122 ! Bruker Daltonics instrument model
 id: MS:1000203
 name: Voyager-DE PRO
 def: "Applied Biosystems/MDS SCIEX Voyager-DE PRO MS." [PSI:MS]
-is_a: MS:1000121 ! AB SCIEX instrument model
+is_a: MS:1000495 ! Applied Biosystems instrument model
 
 [Term]
 id: MS:1000204
 name: Voyager-DE STR
 def: "Applied Biosystems/MDS SCIEX Voyager-DE STR MS." [PSI:MS]
-is_a: MS:1000121 ! AB SCIEX instrument model
+is_a: MS:1000495 ! Applied Biosystems instrument model
 
 [Term]
 id: MS:1000205
@@ -4220,3 +4220,4 @@ is_a: MS:1000531 ! software
 id: part_of
 name: part_of
 is_transitive: true
+
