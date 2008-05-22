@@ -1,6 +1,6 @@
 format-version: 1.2
-date: 12:05:2008 09:58
-saved-by: edeutsch
+date: 22:05:2008 15:45
+saved-by: luisa
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 remark: version: x.y.z
@@ -763,8 +763,9 @@ is_a: MS:1000027 ! detector acquisition mode
 
 [Term]
 id: MS:1000121
-name: ABI / SCIEX instrument model
-def: "Applied Biosystems/MDS SCIEX joint venture model." [PSI:MS]
+name: AB SCIEX instrument model
+def: "The brand of instruments from the joint venture between Applied Biosystems and MDS Analytical Technologies (formerly MDS SCIEX). Previously branded as \"Applied Biosystems|MDS SCIEX\"" [PSI:MS]
+synonym: "Applied Biosystems|MDS SCIEX" RELATED []
 is_a: MS:1000031 ! instrument model
 
 [Term]
@@ -883,13 +884,13 @@ is_a: MS:1000046 ! energy unit
 id: MS:1000139
 name: 4000 Q TRAP
 def: "Applied Biosystems/MDS SCIEX Q 4000 TRAP MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000140
 name: 4700 Proteomic Analyzer
 def: "Applied Biosystems/MDS SCIEX 4700 Proteomic Analyzer MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000141
@@ -907,31 +908,31 @@ is_a: MS:1000122 ! Bruker Daltonics instrument model
 id: MS:1000143
 name: API 150EX
 def: "Applied Biosystems/MDS SCIEX API 150EX MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000144
 name: API 150EX Prep
 def: "Applied Biosystems/MDS SCIEX API 150EX Prep MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000145
 name: API 2000
 def: "Applied Biosystems/MDS SCIEX API 2000 MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000146
 name: API 3000
 def: "Applied Biosystems/MDS SCIEX API 3000 MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000147
 name: API 4000
 def: "Applied Biosystems/MDS SCIEX API 4000 MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000148
@@ -1165,13 +1166,13 @@ is_a: MS:1000125 ! Thermo Finnigan instrument model
 id: MS:1000186
 name: proteomics solution 1
 def: "Applied Biosystems/MDS SCIEX Proteomics Solution 1 MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000187
 name: Q TRAP
 def: "Applied Biosystems/MDS SCIEX Q TRAP MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000188
@@ -1189,7 +1190,7 @@ is_a: MS:1000126 ! Waters instrument model
 id: MS:1000190
 name: QSTAR
 def: "Applied Biosystems/MDS SCIEX QSTAR MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000191
@@ -1213,13 +1214,13 @@ is_a: MS:1000125 ! Thermo Finnigan instrument model
 id: MS:1000194
 name: SymBiot I
 def: "Applied Biosystems/MDS SCIEX SymBiot I MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000195
 name: SymBiot XVI
 def: "Applied Biosystems/MDS SCIEX SymBiot XVI MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000196
@@ -1267,13 +1268,13 @@ is_a: MS:1000122 ! Bruker Daltonics instrument model
 id: MS:1000203
 name: Voyager-DE PRO
 def: "Applied Biosystems/MDS SCIEX Voyager-DE PRO MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000204
 name: Voyager-DE STR
 def: "Applied Biosystems/MDS SCIEX Voyager-DE STR MS." [PSI:MS]
-is_a: MS:1000121 ! ABI / SCIEX instrument model
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000205
@@ -3457,7 +3458,7 @@ is_a: MS:1000460 ! unit
 [Term]
 id: MS:1000551
 name: Analyst
-def: "Applied Biosystems software for data acquisition and analysis." [PSI:MS]
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX software for data acquisition." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
@@ -3978,103 +3979,241 @@ is_a: MS:1000455 ! ion selection attribute
 [Term]
 id: MS:1000634
 name: DSQ
-def: "ThermoFinnigan DSQ GC-MS"  [PSI:MS]
+def: "ThermoFinnigan DSQ GC-MS" [PSI:MS]
 is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000635
 name: ITQ 700
-def: "Thermo Scientific ITQ 700 GC-MS"  [PSI:MS]
+def: "Thermo Scientific ITQ 700 GC-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000636
 name: ITQ 900
-def: "Thermo Scientific ITQ 900 GC-MS"  [PSI:MS]
+def: "Thermo Scientific ITQ 900 GC-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000637
 name: ITQ 1100
-def: "Thermo Scientific ITQ 1100 GC-MS"  [PSI:MS]
+def: "Thermo Scientific ITQ 1100 GC-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000638
 name: LTQ XL ETD
-def: "Thermo Scientific LTQ XL MS with ETD"  [PSI:MS]
+def: "Thermo Scientific LTQ XL MS with ETD" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000639
 name: LTQ Orbitrap XL ETD
-def: "Thermo Scientific LTQ Orbitrap XL MS with ETD"  [PSI:MS]
+def: "Thermo Scientific LTQ Orbitrap XL MS with ETD" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000640
 name: DFS
-def: "Thermo Scientific DFS HR GC-MS"  [PSI:MS]
+def: "Thermo Scientific DFS HR GC-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000641
 name: DSQ II
-def: "Thermo Scientific DSQ II GC-MS"  [PSI:MS]
+def: "Thermo Scientific DSQ II GC-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000642
 name: MALDI LTQ XL
-def: "Thermo Scientific MALDI LTQ XL MS"  [PSI:MS]
+def: "Thermo Scientific MALDI LTQ XL MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000643
 name: MALDI LTQ Orbitrap
-def: "Thermo Scientific MALDI LTQ Orbitrap MS"  [PSI:MS]
+def: "Thermo Scientific MALDI LTQ Orbitrap MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000644
 name: TSQ Quantum Access
-def: "Thermo Scientific TSQ Quantum Access MS."  [PSI:MS]
+def: "Thermo Scientific TSQ Quantum Access MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000645
 name: Element XR
-def: "Thermo Scientific Element XR HR-ICP-MS"  [PSI:MS]
+def: "Thermo Scientific Element XR HR-ICP-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000646
 name: Element 2
-def: "Thermo Scientific Element 2 HR-ICP-MS"  [PSI:MS]
+def: "Thermo Scientific Element 2 HR-ICP-MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000647
 name: Element GD
-def: "Thermo Scientific Element GD Glow Discharge MS"  [PSI:MS]
+def: "Thermo Scientific Element GD Glow Discharge MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000648
 name: GC IsoLink
-def: "Thermo Scientific GC IsoLink Isotope Ratio MS"  [PSI:MS]
+def: "Thermo Scientific GC IsoLink Isotope Ratio MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000649
 name: Exactive
-def: "Thermo Scientific Exactive MS"  [PSI:MS]
+def: "Thermo Scientific Exactive MS" [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000650
 name: Proteomics Discoverer
-def: "Thermo Scientific software for data analysis of peptides and proteins."  [PSI:MS]
+def: "Thermo Scientific software for data analysis of peptides and proteins." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000651
+name: 3200 QTRAP
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX QTRAP 3200" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000652
+name: 4800 Plus MALDI TOF-TOF Analyzer
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX 4800 Plus MALDI TOF-TOF Analyzer" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000653
+name: API 3200
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX API 3200 MS." [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000654
+name: API 5000
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX API 5000 MS." [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000655
+name: QSTAR Elite
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX QSTAR Elite" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000656
+name: QSTAR Pulsar
+def: "Applied Biosystems|MDS SCIEX QSTAR Pulsar" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000657
+name: QSTAR XL
+def: "Applied Biosystems|MDS SCIEX QSTAR XL" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000658
+name: 4800 Proteomics Analyzer
+def: "Applied Biosystems|MDS SCIEX 4800 Proteomics Analyzer" [PSI:MS]
+is_a: MS:1000495 ! Applied Biosystems instrument model
+
+[Term]
+id: MS:1000659
+name: 4000 Series Explorer Software
+def: "AB SCIEX or Applied Biosystems software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000661
+name: GPS Explorer
+def: "AB SCIEX or Applied Biosystems software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000662
+name: LightSight Software
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX software metabolite identification" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000663
+name: ProteinPilot Software
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX software for protein ID and quant" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000664
+name: TissueView Software
+def: "Applied Biosystems|MDS SCIEX software for tissue imaging" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000665
+name: MarkerView Software
+def: "Applied Biosystems|MDS SCIEX software for metabolomics and biomarker profiling" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000666
+name: MRMPilot Software
+def: "Applied Biosystems|MDS SCIEX software for MRM assay development" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000667
+name: BioAnalyst
+def: "Applied Biosystems|MDS SCIEX software for bio-related data exploration" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000668
+name: Pro ID
+def: "Applied Biosystems|MDS SCIEX software for protein identification" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000669
+name: Pro ICAT
+def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by ICAT" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000670
+name: Pro Quant
+def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by iTRAQ" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000671
+name: Pro BLAST
+def: "Applied Biosystems|MDS SCIEX software for MS-BLAST identification" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000672
+name: Cliquid
+def: "AB SCIEX or Applied Biosystems software" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000673
+name: MIDAS Workflow Designer
+def: "Applied Biosystems|MDS SCIEX software for MRM assay development" [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000674
+name: MultiQuant
+def: "Applied Biosystems|MDS SCIEX software for MRM-based quantitation" [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Typedef]
