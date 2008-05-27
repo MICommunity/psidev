@@ -4,6 +4,7 @@ saved-by: luisa
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
 remark: version: x.y.z
+import: unit.obo
 
 [Term]
 id: MS:0000000
@@ -103,8 +104,10 @@ is_a: MS:1000503 ! scan attribute
 [Term]
 id: MS:1000016
 name: scan time
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 def: "The time taken for an acquisition by scanning analyzers." [PSI:MS]
 is_a: MS:1000503 ! scan attribute
+relationship: has_units UO:0000003 ! time unit
 
 [Term]
 id: MS:1000017
@@ -4220,4 +4223,10 @@ is_a: MS:1000531 ! software
 id: part_of
 name: part_of
 is_transitive: true
+
+[Typedef]
+id: has_units 
+name: has_units 
+is_transitive: false
+
 
