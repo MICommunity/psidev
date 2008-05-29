@@ -1,43 +1,76 @@
-"UniProt 
+Term Type,"UniProt 
 Feature Keys","UniProt KB
 Long Name",Ontology term,ID,"Evidence Code from 
-the ECO",Evidence Code Term,,
-DOMAIN,Domain,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
-NP_BIND,Nucleotide binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
-DNA_BIND,DNA binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
-CA_BIND,Calcium binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
-ZN_FING,Zinc finger ,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator,,
-SIGNAL,Signal peptide,signal_peptide,SO:0000418,ECO:0000001,inferred by curator,,
-CHAIN,Chain ,mature_protein_region,SO:0000419,ECO:0000001,inferred by curator,,
-INIT_MET,Initiator methionine ,cleaved_initiator_methionine,SO:0000691,ECO:0000001,inferred by curator,,
-TRANSIT,Transit peptide,transit_peptide,SO:0000725,ECO:0000001,inferred by curator,,
-SITE,Site ,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator,,
-REGION,Region,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator,,
-PROPEP,Propeptide ,propeptide,SO:0001062,ECO:0000001,inferred by curator,,
-PEPTIDE,Peptide,active_peptide,SO:0001064,ECO:0000001,inferred by curator,,
-COMPBIAS,Compositional bias ,compositionally_biased_region,SO:0001066,ECO:0000001,inferred by curator,,
-MOTIF,Motif ,polypeptide_motif,SO:0001067,ECO:0000001,inferred by curator,,
-REPEAT,Repeat,polypeptide_repeat,SO:0001068,ECO:0000001,inferred by curator,,
-TOPO_DOM,Topological domain,extramembrane,SO:0001072,ECO:0000001,inferred by curator,,
-TRANSMEM,Transmembrane,transmembrane,SO:0001077,ECO:0000001,inferred by curator,,
-COILED,Coiled coil,coiled_coil,SO:0001080,ECO:0000001,inferred by curator,,
-NON_CONS,Non-adjacent residues,non_adjacent_residue,SO:0001083,ECO:0000001,inferred by curator,,
-NON_TER,Non-terminal residue,non_terminal_residue,SO:0001084,ECO:0000001,inferred by curator,,
-CONFLICT,Sequence conflict,sequence_conflict,SO:0001085,ECO:0000001,inferred by curator,,
-UNSURE,Sequence uncertainty,sequence_uncertainty,SO:0001086,ECO:0000001,inferred by curator,,
-CROSSLNK,Cross-link,crosslinked residues,MOD:00033,ECO:0000001,inferred by curator,,
-DISULFID,Disulfide bond,disulfide crosslinked residues,MOD:00689,ECO:0000001,inferred by curator,,
-MOD_RES,Modified residue,post_translational_modification,SO:0001089,ECO:0000001,inferred by curator,,
-BINDING,Binding site,non_covalent_binding_site,SO:0001091,ECO:0000001,inferred by curator,,
-METAL,Metal binding,metal_binding,SO:0001092,ECO:0000001,inferred by curator,,
-ACT_SITE,Active site ,catalytic_residue,SO:0001104,ECO:0000001,inferred by curator,,
-STRAND,Beta Strand ,beta_strand,SO:0001111,ECO:0000001,inferred by curator,,
-HELIX,Helix,alpha_helix,SO:0001117,ECO:0000001,inferred by curator,,
-TURN,Turn,turn,SO:0001128,ECO:0000001,inferred by curator
-VARIANT,Natural variant,natural_variant_site,SO:0001147,ECO:0000001,inferred by curator
-MUTAGEN,Mutagenesis,mutated_variant_site,SO:0001148,ECO:0000001,inferred by curator
-VAR_SEQ,Alternative sequence ,alternative_sequence_site,SO:0001149,ECO:0000001,inferred by curator
-CARBOHYD,Glycosylation,glycosylated residue,MOD:00693,ECO:0000001,inferred by curator
-SE_CYS,Selenocysteine,L-selenocysteine ,MOD:00031,ECO:0000001,inferred by curator
-LIPID,Lipidation,lipoconjugated residue,MOD:01155,ECO:0000001,inferred by curator
-,,,,,
+the ECO",Evidence Code Term
+Feature Type,SE_CYS,Selenocysteine,L-selenocysteine ,MOD:00031,ECO:0000001,inferred by curator
+Feature Type,CROSSLNK,Cross-link,crosslinked residues,MOD:00033,ECO:0000001,inferred by curator
+Feature Type,DISULFID,Disulfide bond,disulfide crosslinked residues,MOD:00689,ECO:0000001,inferred by curator
+Feature Type,CARBOHYD,Glycosylation,glycosylated residue,MOD:00693,ECO:0000001,inferred by curator
+Feature Type,LIPID,Lipidation,lipoconjugated residue,MOD:01155,ECO:0000001,inferred by curator
+Feature Type,DOMAIN,Domain,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
+Feature Type,NP_BIND,Nucleotide binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
+Feature Type,DNA_BIND,DNA binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
+Feature Type,CA_BIND,Calcium binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
+Feature Type,ZN_FING,Zinc finger ,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
+Feature Type,SIGNAL,Signal peptide,signal_peptide,SO:0000418,ECO:0000001,inferred by curator
+Feature Type,CHAIN,Chain ,mature_protein_region,SO:0000419,ECO:0000001,inferred by curator
+Feature Type,INIT_MET,Initiator methionine ,cleaved_initiator_methionine,SO:0000691,ECO:0000001,inferred by curator
+Feature Type,TRANSIT,Transit peptide,transit_peptide,SO:0000725,ECO:0000001,inferred by curator
+Feature Type,SITE,Site ,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator
+Feature Type,REGION,Region,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator
+Feature Type,PROPEP,Propeptide ,propeptide,SO:0001062,ECO:0000001,inferred by curator
+Feature Type,PEPTIDE,Peptide,active_peptide,SO:0001064,ECO:0000001,inferred by curator
+Feature Type,COMPBIAS,Compositional bias ,compositionally_biased_region,SO:0001066,ECO:0000001,inferred by curator
+Feature Type,MOTIF,Motif ,polypeptide_motif,SO:0001067,ECO:0000001,inferred by curator
+Feature Type,REPEAT,Repeat,polypeptide_repeat,SO:0001068,ECO:0000001,inferred by curator
+Feature Type,TOPO_DOM,Topological domain,extramembrane,SO:0001072,ECO:0000001,inferred by curator
+Feature Type,TRANSMEM,Transmembrane,transmembrane,SO:0001077,ECO:0000001,inferred by curator
+Feature Type,COILED,Coiled coil,coiled_coil,SO:0001080,ECO:0000001,inferred by curator
+Feature Type,NON_CONS,Non-adjacent residues,non_adjacent_residue,SO:0001083,ECO:0000001,inferred by curator
+Feature Type,NON_TER,Non-terminal residue,non_terminal_residue,SO:0001084,ECO:0000001,inferred by curator
+Feature Type,CONFLICT,Sequence conflict,sequence_conflict,SO:0001085,ECO:0000001,inferred by curator
+Feature Type,UNSURE,Sequence uncertainty,sequence_uncertainty,SO:0001086,ECO:0000001,inferred by curator
+Feature Type,MOD_RES,Modified residue,post_translational_modification,SO:0001089,ECO:0000001,inferred by curator
+Feature Type,METAL,Metal binding,metal_contact,SO:0001092,ECO:0000001,inferred by curator
+Feature Type,ACT_SITE,Active site ,catalytic_residue,SO:0001104,ECO:0000001,inferred by curator
+Feature Type,STRAND,Beta Strand ,beta_strand,SO:0001111,ECO:0000001,inferred by curator
+Feature Type,HELIX,Helix,alpha_helix,SO:0001117,ECO:0000001,inferred by curator
+Feature Type,TURN,Turn,turn,SO:0001128,ECO:0000001,inferred by curator
+Feature Type,VARIANT,Natural variant,natural_variant_site,SO:0001147,ECO:0000001,inferred by curator
+Feature Type,MUTAGEN,Mutagenesis,mutated_variant_site,SO:0001148,ECO:0000001,inferred by curator
+Feature Type,VAR_SEQ,Alternative sequence ,alternative_sequence_site,SO:0001149,ECO:0000001,inferred by curator
+Feature Type,BINDING,Binding site,binding_motif,SO:0100018,ECO:0000001,inferred by curator
+CC Topic,SUBUNIT ,n/a,subunit_information,BS:01001,ECO:0000001,inferred by curator
+CC Topic,ENZYME REGULATION ,n/a,enzyme_regulation,BS:01005,ECO:0000001,inferred by curator
+CC Topic,CATALYTIC ACTIVITY ,n/a,catalytic_activity,BS:01006,ECO:0000001,inferred by curator
+CC Topic,PATHWAY ,n/a,pathway,BS:01007,ECO:0000001,inferred by curator
+CC Topic,COFACTOR ,n/a,cofactor,BS:01008,ECO:0000001,inferred by curator
+CC Topic,ALTERNATIVE PRODUCTS ,n/a,alternative_products,BS:01010,ECO:0000001,inferred by curator
+CC Topic,POLYMORPHISM ,n/a,polymorphism,BS:01012,ECO:0000001,inferred by curator
+CC Topic,RNA EDITING ,n/a,RNA_editing,BS:01013,ECO:0000001,inferred by curator
+CC Topic,SIMILARITY ,n/a,similarity,BS:01014,ECO:0000001,inferred by curator
+CC Topic,ALLERGEN  ,n/a,allergen,BS:01016,ECO:0000001,inferred by curator
+CC Topic,PHARMACEUTICAL ,n/a,pharmaceutical,BS:01017,ECO:0000001,inferred by curator
+CC Topic,TOXIC DOSE ,n/a,toxic_dose,BS:01018,ECO:0000001,inferred by curator
+CC Topic,SEQUENCE CAUTION ,n/a,sequence_caution,BS:01020,ECO:0000001,inferred by curator
+CC Topic,INDUCTION ,n/a,induction,BS:01022,ECO:0000001,inferred by curator
+CC Topic,BIOPHYSICOCHEMICAL PROPERTIES ,n/a,biophysiochemical_properties,BS:01023,ECO:0000001,inferred by curator
+CC Topic,BIOTECHNOLOGY ,n/a,biotechnological_use,BS:01024,ECO:0000001,inferred by curator
+CC Topic,MISCELLANEOUS ,n/a,miscellaneous,BS:01026,ECO:0000001,inferred by curator
+CC Topic,WEB RESOURCE ,n/a,web_resource,BS:01027,ECO:0000001,inferred by curator
+CC Topic,CAUTION ,n/a,annotation_warnings,BS:01028,ECO:0000001,inferred by curator
+CC Topic,INTERACTION ,n/a,protein_protein_interactions,BS:01029,ECO:0000001,inferred by curator
+CC Topic,FUNCTION ,n/a,functional_annotation,BS:01030,ECO:0000001,inferred by curator
+CC Topic,TISSUE SPECIFICITY ,n/a,tissue_specificity,BS:01031,ECO:0000001,inferred by curator
+CC Topic,SUBCELLULAR LOCATION ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
+CC Topic,MASS SPECTROMETRY ,n/a,mass_spectrometry,BS:01039,ECO:0000001,inferred by curator
+CC Topic+keyword,DOMAIN ,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
+CC Topic+keyword,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
+CC Topic+keyword,DISEASE ,n/a,disease,BS:01019,ECO:0000001,inferred by curator
+CC Topic+keyword,DEVELOPMENTAL STAGE ,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
+Keyword,Coding sequence diversity ,n/a,alternative_products,BS:01010,ECO:0000001,inferred by curator
+Keyword,Biological process ,n/a,biological_process,BS:01021,ECO:0000001,inferred by curator
+Keyword,Cellular component ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
+Keyword,Ligand,n/a,ligand_information,BS:01035,ECO:0000001,inferred by curator
+Keyword,Molecular function ,n/a,molecular_function,BS:01036,ECO:0000001,inferred by curator
+Keyword,Technical term,n/a,technical_term,BS:01037,ECO:0000001,inferred by curator

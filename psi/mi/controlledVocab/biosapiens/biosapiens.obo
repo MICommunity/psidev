@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 25:04:2008 16:14
+date: 29:05:2008 14:22
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -36,116 +36,29 @@ remark: Synonym type - The synonyms that are unique for a PSI-MOD entry are EXAC
 
 remark: **********************************************************************************
 
-[Term]
-id: BS:00031
-name: lipid
-def: "Covalent binding of lipid moiety" [EBIBS:GAR, UniProt:curation manual]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00034
-name: zn_fing
-def: "Extent of a zinc finger region." [EBIBS:GAR, UniProt:curation manual]
-comment: Range
-is_obsolete: true
-
-[Term]
-id: BS:00035
-name: dna_bind
-def: "Extent of a DNA-binding region." [EBIBS:GAR, UniProt:curation manual]
-comment: Range
-is_obsolete: true
-
-[Term]
-id: BS:00037
-name: np_bind
-def: "Extent of a nucleotide phosphate-binding region. " [EBIBS:GAR, UniProt:curation manual]
-comment: Range
-is_obsolete: true
+format-version: 1.2
+date: 29:05:2008 14:01
+saved-by: gabby
+auto-generated-by: OBO-Edit 1.101
+default-namespace: biosapiens
+remark: BioSapiens PFO non-positional terms.
 
 [Term]
 id: BS:00043
 name: feature
 def: "Functional or structural regions of a protein." [EBIBS:GAR]
-comment: Range
 is_a: BS:00330 ! biosapiens protein feature ontology
-
-[Term]
-id: BS:00057
-name: n-glycosylation
-def: "N-Glycosylation sites in proteins.  " [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00058
-name: o-glycosylation (s)
-def: "mucin type GalNac O-glycosylation sites in mammalian proteins." [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00059
-name: o-glycosylation (t)
-def: "mucin type GalNac O-glycosylation sites in mammalian proteins." [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00060
-name: phosphorylation (s)
-def: "Phosphorylation of a serine residue in eukaryotic proteins." [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00061
-name: phosphorylation (t)
-def: "Phosphorylation of a threonine residue in eukaryotic proteins." [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00062
-name: phosphorylation (y)
-def: "Phosphorylation of a tyrosine residue in eukaryotic proteins." [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00064
-name: acetylation
-def: "N-terminal of some residues and side chain of lysine." [EBIBS:GAR, UniProt:curation manual]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00065
-name: nes-signal
-def: "Leucine-rich nuclear export signals (NES) in eukaryotic proteins" [EBIBS:GAR]
-comment: Discreet
-is_obsolete: true
-
-[Term]
-id: BS:00075
-name: isoform
-def: "Description of a single isoform." [EBIBS:GAR]
-comment: Range
-is_obsolete: true
 
 [Term]
 id: BS:00126
 name: GO_term_annotation
 def: "An annotation that uses a GO term to describe the function of a protein." [EBIBS:GAR]
-comment: Range
-is_a: BS:00130 ! functional_annotation
+is_a: BS:01030 ! functional_annotation
 
 [Term]
 id: BS:00127
 name: nonpositional
 def: "Annotation which is not assigned to a specific subsequence of a protein. Type of annotation which can be associated with a database record." [EBIBS:GAR]
-comment: Range
 is_a: BS:00043 ! feature
 
 [Term]
@@ -154,11 +67,6 @@ name: positional
 def: "Biological annotation that can be assigned to a specific subsequence of a protein." [EBI:GAR]
 is_a: BS:00043 ! feature
 
-[Term]
-id: BS:00130
-name: functional_annotation
-def: "Descriptions of the functional activity of the whole protein chain." [EBIBS:GAR]
-is_a: BS:00127 ! nonpositional
 
 [Term]
 id: BS:00132
@@ -167,226 +75,16 @@ def: "Protein suspected to be non-viable or chimeric." [EBIBS:GAR]
 is_a: BS:00127 ! nonpositional
 
 [Term]
-id: BS:00133
-name: molecular_function
-def: "Elemental activities, such as catalysis or binding, describing the actions of a gene product at the molecular level. A given gene product may exhibit one or more molecular functions." [GO:0003674]
-comment: Range
-is_obsolete: true
-
-[Term]
-id: BS:00135
-name: phosphorylation
-def: "of serine, threonine, tyrosine, aspartate, histidine or cysteine, and, more rarely, of arginine" [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00136
-name: Co_contact_site
-def: "Residue involved in contact with cobalt." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00137
-name: Fe_contact_site
-def: "Residue involved in contact with iron." [EBIBS:GAR]
-synonym: "ca_bind" RELATED [uniprot:curation]
-is_obsolete: true
-
-[Term]
 id: BS:00138
 name: publication
 def: "Lists the details of a publication on this sequence." [EBIBS:GAR]
-is_a: BS:00127 ! nonpositional
-
-[Term]
-id: BS:00139
-name: chain
-def: "Extent of a polypeptide chain in the mature protein. The annotation describes firstly, for proteins that are not processed (those for which the mature protein sequence corresponds to the translated cDNA sequence) the chain covers the whole protein sequence or secondly, for processed proteins, it describes the mature part of the protein once preprotein parts have been removed." [EBIBS:GAR, UniProt:curation manual]
-synonym: "peptide" RELATED []
-is_obsolete: true
-
-[Term]
-id: BS:00140
-name: Mn_contact_site
-def: "Residue involved in contact with manganese." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00141
-name: Mo_contact_site
-def: "Residue involved in contact with molybdenum." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00142
-name: Ni_contact_site
-def: "Residue involved in contact with nickel." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00143
-name: W_contact_site
-def: "Residue involved in contact with tungsten." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00146
-name: Cu_contact_site
-def: "Residue involved in contact with copper." [EBIBS:GAR]
-synonym: "ca_bind" RELATED [uniprot:curation]
-is_obsolete: true
-
-[Term]
-id: BS:00150
-name: se_cys
-def: "Describes the occurrence of a selenocysteine in the sequence record." [UniProt:curation]
-is_obsolete: true
+is_a: BS:01038 ! external_sources_of_information
 
 [Term]
 id: BS:00160
 name: EC_annotation
 def: "An annotation that uses a EC term to describe the function of a protein." [EBIBS:GAR]
-comment: Range
-is_a: BS:00130 ! functional_annotation
-
-[Term]
-id: BS:00161
-name: amidation
-def: "generally at the C-terminal of a mature active peptide after oxidative cleavage of last glycine." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00162
-name: blocked
-def: "unidentified N- or C-terminal blocking group." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00163
-name: formylation
-def: "generally of the N-terminal methionine." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00164
-name: gamma-carboxyglutamic acid
-def: "of glutamate." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00165
-name: hydroxylation
-def: "generally of asparagine, aspartate, proline or lysine." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00166
-name: methylation
-def: "generally of N-terminal phenylalanine, side chain of lysine, arginine, histidine, asparagine or glutamate, and C-terminal cysteine." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00167
-name: pyrrolidone carboxylic acid
-def: "N-terminal glutamine which has formed an internal cyclic lactam. This is also called 'pyro-Glu'. Very rarely, pyro-Glu can be produced by modification of a N-terminal glutamate." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00168
-name: sulfation
-def: "sulfation of a tyrosine, serine or threonine residue." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00169
-name: myristate
-def: "myristate group attached through an amide bond to the N-terminal glycine residue of the mature form of a protein or to an internal lysine residue. The myristate can also be attached through a thioester bond to an internal cysteine." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00170
-name: palmitate
-def: "Palmitate group attached through an amide bond to the N-terminal cysteine of the mature form of a protein, or to an internal lysine. The palmitate can also be attached through a thioester bond to an internal cysteine or through an ester bond to a serine or threonine residue." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00171
-name: farnesyl
-def: "Farnesyl group attached through a thioether bond to a cysteine residue." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00172
-name: geranyl-geranyl
-def: "Geranyl-geranyl group attached through a thioether bond to a cysteine residue." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00173
-name: gpi-anchor
-def: "Glycosyl-phosphatidylinositol (GPI) group linked to the alpha-carboxyl group of the C-terminal residue of the mature form of a protein." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00174
-name: diacylglyceride
-def: "Glyceryl group bearing two ester-linked fatty acids attached through a thioether bond to the N-terminal cysteine of the mature form of a prokaryotic lipoprotein." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00175
-name: archaeol
-def: "Archaeol (2,3-di-O-phytanyl-sn-glycerol) lipid group attached through an thioether bond to the N-terminal cysteine of the mature form of a archaeal lipoprotein." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00176
-name: n-octanoate
-def: "n-octanoate group linked through an ester bond to a serine residue." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00177
-name: cholesterol
-def: "Cholesterol group attached through an ester bond to the C-terminal glycine of the mature form of a protein." [EBIBS:GAR, UniProt:curation manual]
-is_obsolete: true
-
-[Term]
-id: BS:00183
-name: glycosylation
-def: "glycosylation sites" [EBIBS:GAR]
-synonym: "carbohyd" RELATED [UniProt:curation]
-is_obsolete: true
-
-[Term]
-id: BS:00185
-name: Zn_contact_site
-def: "Residue involved in contact with zinc." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00186
-name: Ca_contact_site
-def: "Residue involved in contact with calcium." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00187
-name: Mg_contact_site
-def: "Residue involved in contact with magnesium." [EBIBS:GAR]
-is_obsolete: true
-
-[Term]
-id: BS:00217
-name: catmat-3
-def: "A motif of 3 consecutive residues with dihedral angles as follows: (res i: phi -90 bounds -120 to -60); (res i: psi -10  bounds -50  to 30); (res i+1 phi -75 bounds -100 to -50); (res i+1 psi 140 bounds 110  to 170). An extra restriction of the length of the O to O distance would be useful, that it be less than 5 Angstrom.  More precisely these two oxygens are the main chain  carbonyl oxygen atoms of residues i-1 and i+1." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
-is_obsolete: true
-
-[Term]
-id: BS:00218
-name: catmat-4
-def: "A motif of 4 consecutive residues with dihedral angles as follows: (res i: phi  -90 bounds -120 to -60); (res i:  psi -10 bounds -50  to 30); (res i+1:  phi -90  bounds -120 to -60); (res i+1: psi  -10 bounds -50  to 30); (res i+2: phi -75 bounds -100 to -5); (res i+2: psi 140 bounds 110  to 170). The extra restriction of the length of the O to O distance is similar, that  it be less than 5 Angstrom.  In this case these two Oxygen atoms are the  main chain carbonyl oxygen atoms of residues i-1 and i+2." [EBIBS:GAR, http://www.ebi.ac.uk/msd_srv/msdmotif/]
-is_obsolete: true
+is_a: BS:01006 ! catalytic_activity
 
 [Term]
 id: BS:00330
@@ -394,17 +92,9 @@ name: biosapiens protein feature ontology
 def: "Protein features classification." [EBIBS:GAR]
 
 [Term]
-id: BS:00332
-name: cellular_component
-def: "The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together." [GO:0005575]
-comment: Range
-is_obsolete: true
-
-[Term]
 id: BS:00333
 name: family_annotation
 def: "Annotations which indicate the family to which the protein belongs." [EBIBS:GAR]
-comment: Range
 is_a: BS:00127 ! nonpositional
 
 [Term]
@@ -416,8 +106,269 @@ is_a: BS:00132 ! erroneous_protein
 [Term]
 id: BS:00335
 name: abnormal_protein
-def: "cDNA-supported hypothetical protein predicted to be mislocalized, misfolded or chimeric." [EBIBS:GAR]
+def: "Annotations inclucing cDNA-supported hypothetical protein predicted to be mislocalized, misfolded or chimeric." [EBIBS:GAR]
 is_a: BS:00132 ! erroneous_protein
+
+[Term]
+id: BS:01001
+name: subunit_information
+def: "Description of the quaternary structure of a protein and any kind of interactions with other proteins or protein complexes; except for receptor-ligand interactions." [EBIBS:GAR]
+synonym: "subunit" EXACT [uniprot:cc_topic]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01002
+name: structural_information
+def: "Description of the tertiary and quaternary configuration that makes up the final functional form of the protein." [EBIBS:GAR, uniprot:curation_manual]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01004
+name: domain_information
+def: "Text description of the domain structure of a protein." [EBIBS:GAR]
+synonym: "domain" EXACT [uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01005
+name: enzyme_regulation
+def: "Description of an enzyme regulatory mechanism." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01006
+name: catalytic_activity
+def: "Description of the reaction(s) catalyzed by an enzyme." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01007
+name: pathway
+def: "Description of the metabolic pathway(s) with which a protein is associated." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01008
+name: cofactor
+def: "Description of any non-protein substance required by an enzyme for its catalytic activity." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01009
+name: post_translational_modification_information
+def: "Description of any chemical alternation of a polypeptide (proteolytic cleavage, amino acid modifications including crosslinks)." [EBIBS:GAR]
+synonym: "PTM" RELATED [uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01010
+name: alternative_products
+def: "Description of the existence of related protein sequence(s) produced by polymorphisms, RNA-editing, alternative splicing (by alternative promoter usage, ribosomal frameshifting or by the use of alternative initiation codons)." [EBIBS:GAR, uniprot:cc_topic]
+synonym: "coding_sequence_diversity" NARROW [uniprot:keyword_category]
+is_a: BS:01011 ! sequence_variation
+
+[Term]
+id: BS:01011
+name: sequence_variation
+def: "Description in the differences in sequence between different products." [EBIBS:GAR, uniprot:curation_manual]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01012
+name: polymorphism
+def: "Provides information about polymorphic variants including descriptions of known alleles, blood group systems and repeat polymorphisms." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01010 ! alternative_products
+
+[Term]
+id: BS:01013
+name: RNA_editing
+def: "Description of any type of RNA editing that leads to one or more amino acid changes." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01011 ! sequence_variation
+
+[Term]
+id: BS:01014
+name: similarity
+def: "Description of the similaritie(s) (sequence or structural) of a protein with other proteins." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00333 ! family_annotation
+
+[Term]
+id: BS:01015
+name: physical_properties
+def: "Descriptions in relation to the overall physical properties of the protein." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01016
+name: allergen
+def: "Used for proteins that cause an allergic reaction in mammals. Describes in which organism the allergic reaction occurs and may also describe other information such as symptoms of the allergic reaction." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01017
+name: pharmaceutical
+def: "Description of the use of a protein as a pharmaceutical drug." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01018
+name: toxic_dose
+def: "Description of the lethal dose (LD), paralytic dose (PD) or effective dose of a protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01019
+name: disease
+def: "Description of the disease(s) associated with a deficiency of a protein." [EBIBS:GAR, uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01020
+name: sequence_caution
+def: "Description of protein sequence reports that differ from the sequence such as frameshifts, erroneous gene model predictions, etc." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00132 ! erroneous_protein
+
+[Term]
+id: BS:01021
+name: biological_process
+def: "A biological process is series of events accomplished by one or more ordered assemblies of molecular functions. Examples of broad biological process terms are cellular physiological process or signal transduction. Examples of more specific terms are pyrimidine metabolic process or alpha-glucoside transport. It can be difficult to distinguish between a biological process and a molecular function, but the general rule is that a process must have more than one distinct steps." [EBIBS:GAR, GO:0008150, uniprot:keyword_category]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01022
+name: induction
+def: "Description of the compound(s) or condition(s) that regulate gene expression." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01023
+name: biophysiochemical_properties
+def: "Description of the information relevant to biophysical and physicochemical data and information on pH dependence, temperature dependence, kinetic parameters, redox potentials, and maximal absorption." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01015 ! physical_properties
+
+[Term]
+id: BS:01024
+name: biotechnological_use
+def: "Description of the use of a protein in a biotechnological process. Some examples of biotechnological processes include use in the food industry as a food sweetener or food preservative, use in the brewing industry as a fermentation aid, and in agriculture in the ripening process or to confer insect resistance." [EBIBS:GAR]
+synonym: "biotechnology" EXACT [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01025
+name: developmental_stage
+def: "Description of the developmentally-specific expression of mRNA or protein." [EBIBS:GAR, uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01026
+name: miscellaneous
+def: "Any comment which does not belong to any of the other defined topics." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01027
+name: web_resource
+def: "Description of a cross-reference to a network database/resource for a specific protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01038 ! external_sources_of_information
+
+[Term]
+id: BS:01028
+name: annotation_warnings
+def: "Warning about possible errors and/or grounds for confusion." [EBIBS:GAR]
+synonym: "caution" EXACT [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01029
+name: protein_protein_interactions
+def: "Conveys information relevant to binary protein-protein interaction." [EBIBS:GAR]
+synonym: "interaction" EXACT [uniprot:cc_topic]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01030
+name: functional_annotation
+def: "Terms describing functional aspects of the protein." [EBIBS:GAR]
+synonym: "function" RELATED [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01031
+name: tissue_specificity
+def: "Description of the tissue-specific expression of mRNA or protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01032
+name: mRNA_protein_expression
+def: "Annotations which indicate mRNA or protein expression including in which tissues and at which developmental stages an mRNA or protein is expressed and what conditions or factors induce the expression of an mRNA or protein." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01033
+name: cellular_component
+def: "A cellular component is just that, a component of a cell, but with the proviso that it is part of some larger object; this may be an anatomical structure (e.g. rough endoplasmic reticulum or nucleus) or a gene product group (e.g. ribosome, proteasome or a protein dimer). See the documentation on the cellular component ontology for more details." [EBIBS:GAR, GO:0005575, uniprot:keyword_category]
+synonym: "subcellular_location " EXACT [uniprot:cc_topic]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01035
+name: ligand_information
+def: "Keywords assigned to proteins because they bind, are associated with, or whose activity is dependent on some molecule." [EBIBS:GAR]
+synonym: "ligand" RELATED [uniprot:keyword_category]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01036
+name: molecular_function
+def: "Molecular function describes activities, such as catalytic or binding activities, that occur at the molecular level. GO molecular function terms represent activities rather than the entities (molecules or complexes) that perform the actions, and do not specify where or when, or in what context, the action takes place. Molecular functions generally correspond to activities that can be performed by individual gene products, but some activities are performed by assembled complexes of gene products. Examples of broad functional terms are catalytic activity, transporter activity, or binding; examples of narrower functional terms are adenylate cyclase activity or Toll receptor binding." [EBIBS:GAR, GO:0003674, uniprot:keyword_category]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01037
+name: technical_term
+def: "Descriptions assigned to proteins according to 'technical' reasons." [EBIBS:GAR, uniprot:keyword_category]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01038
+name: external_sources_of_information
+def: "Links to external information resources." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01039
+name: mass_spectrometry
+def: "Reports the exact molecular weight of a protein or part of a protein as determined by mass spectrometric methods." [EBIBS:GAR, uniprot:cc_topic]
+synonym: "molecular weight" EXACT []
+is_a: BS:01015 ! physical_properties
+
+[Typedef]
+id: contains
+name: contains
+comment: The inverse relationship to "part of".
+is_transitive: true
+
+[Typedef]
+id: derives_from
+name: derives from
+is_transitive: true
+
+[Typedef]
+id: part_of
+name: part of
+is_transitive: true
+
+format-version: 1.2
+date: 05:29:2008 14:22
+saved-by: gabby
+auto-generated-by: OBO-Edit 1.101
+subsetdef: biosapiens "biosapiens protein feature ontology"
+subsetdef: SOFA "SO feature annotation"
+default-namespace: sequence
+remark: autogenerated-by\:   DAG-Edit version 1.417\nsaved-by\:       eilbeck\ndate\:         Tue May 11 15\:18\:44 PDT 2004\nversion\: $Revision\: 1.45 $
 
 [Term]
 id: SO:0000417
@@ -425,12 +376,11 @@ name: polypeptide_domain
 alt_id: BS:00012
 def: "A structurally or functionally defined protein region. In proteins with multiple domains, the combination of the domains determines the function of the protein. Region which has been shown to recur throughout evolution." [EBIBS:GAR, http://www.molbiol.bbsrc.ac.uk/new_protein/domains.html]
 comment: Range. Old definition from before biosapiens: A region of a single polypeptide chain that folds into an independent unit and exhibits biological activity. A polypeptide chain may have multiple domains.
-synonym: "ca_bind" NARROW []
-synonym: "DNA_bind" NARROW []
-synonym: "domain" RELATED []
-synonym: "np_bind" NARROW []
-synonym: "polypeptide_domain" EXACT []
-synonym: "zn_fing" NARROW []
+synonym: "ca_bind" NARROW [uniprot:feature_type]
+synonym: "DNA_bind" NARROW [uniprot:feature_type]
+synonym: "domain" EXACT [uniprot:feature_type]
+synonym: "np_bind" NARROW [uniprot:feature_type]
+synonym: "zn_fing" NARROW [uniprot:feature_type]
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
@@ -439,7 +389,7 @@ name: signal_peptide
 alt_id: BS:00159
 def: "The signal_peptide is a short region of the peptide located at the N-terminus that directs the protein to be secreted or part of membrane components." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
 comment: Old def before biosapiens:The sequence for an N-terminal domain of a secreted protein; this domain is involved in attaching nascent polypeptide to the membrane leader sequence.
-synonym: "signal" RELATED []
+synonym: "signal" EXACT [uniprot:feature_type]
 synonym: "signal peptide coding sequence" EXACT []
 synonym: "signal_peptide" EXACT []
 is_a: SO:0100011 ! cleaved_peptide_region
@@ -450,7 +400,7 @@ name: mature_protein_region
 alt_id: BS:00149
 def: "The extent of a polypeptide chain in the mature protein." [EBIBS:GAR, http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
 comment: This term mature peptide, merged with the biosapiens term mature protein region and took that to be the new name. Old def: The coding sequence for the mature or final peptide or protein product following post-translational modification.
-synonym: "chain" EXACT []
+synonym: "chain" EXACT [uniprot:feature_type]
 synonym: "mature peptide" RELATED []
 synonym: "mature_protein_region" EXACT []
 is_a: SO:0001063 ! immature_peptide_region
@@ -460,8 +410,7 @@ id: SO:0000691
 name: cleaved_initiator_methionine
 alt_id: BS:00067
 def: "Indicates when the initator methionine has been cleaved from the mature sequence." [EBIBS:GAR]
-synonym: "cleaved_initiator_methionine" EXACT []
-synonym: "init_met" RELATED []
+synonym: "init_met" EXACT [uniprot:feature_type]
 synonym: "initator methionine" EXACT []
 is_a: SO:0100011 ! cleaved_peptide_region
 
@@ -472,7 +421,7 @@ alt_id: BS:00055
 def: "The transit_peptide is a short region at the N-terminus of the peptide that directs the protein to an organelle (chloroplast, mitochondrion, microbody or cyanelle)." [http://www.ebi.ac.uk/embl/Documentation/FT_definitions/feature_table.html]
 comment: Added to bring SO inline with the embl ddbj genbank feature table. Old definition before biosapiens: The coding sequence for an N-terminal domain of a nuclear-encoded organellar protein. This domain is involved in post translational import of the protein into the organelle.
 synonym: "signal" RELATED []
-synonym: "transit_peptide" EXACT []
+synonym: "transit" EXACT [uniprot:feature_type]
 is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
@@ -482,9 +431,11 @@ alt_id: BS:00124
 alt_id: BS:00331
 def: "Biological sequence region that can be assigned to a specific subsequence of a polypeptide." [SO:GAR, SO:ke]
 comment: Added to allow the polypeptide regions to have is_a paths back to the root.
-synonym: "positional" EXACT []
-synonym: "positional polypeptide feature" EXACT []
-synonym: "region or site annotation" EXACT []
+synonym: "positional" RELATED []
+synonym: "positional polypeptide feature" RELATED []
+synonym: "region" NARROW [uniprot:feature_type]
+synonym: "region or site annotation" RELATED []
+synonym: "site" NARROW [uniprot:feature_type]
 is_a: BS:00129
 
 [Term]
@@ -511,8 +462,7 @@ name: propeptide
 alt_id: BS:00077
 def: "Describes part of a peptide chain which is cleaved off during the formation of the mature protein." [EBIBS:GAR]
 comment: Range.
-synonym: "propep" RELATED []
-synonym: "propeptide" EXACT []
+synonym: "propep" EXACT [uniprot:feature_type]
 is_a: SO:0100011 ! cleaved_peptide_region
 
 [Term]
@@ -530,8 +480,7 @@ name: active_peptide
 alt_id: BS:00076
 def: "Active peptides are proteins which are biologically active, released from a precursor molecule. Hormones, neuropeptides, antimicrobial peptides, are active peptides. They are typically short (<40 amino acids) in length." [EBIBS:GAR, UniProt:curation_manual]
 comment: Range.
-synonym: "active_peptide" EXACT []
-synonym: "peptide" EXACT []
+synonym: "peptide" EXACT [uniprot:feature_type]
 is_a: SO:0000419 ! mature_protein_region
 
 [Term]
@@ -540,10 +489,9 @@ name: compositionally_biased_region
 alt_id: BS:00068
 def: "Extent of a compositionally biased region. Used for homopolymeric stretches of residues and also for regions which are rich in a particular amino acid. Not used for a run of less than 4 residues." [EBIBS:GAR, UniProt:curation_manual]
 comment: Range.
-synonym: "compbias" EXACT []
+synonym: "compbias" EXACT [uniprot:feature_type]
 synonym: "compositional bias" EXACT []
 synonym: "compositionally biased" EXACT []
-synonym: "compositionally_biased_region" EXACT []
 is_a: SO:0000839 ! polypeptide_region
 
 [Term]
@@ -552,8 +500,7 @@ name: polypeptide_motif
 alt_id: BS:00032
 def: "A sequence motif is a short (up to 20 amino acids) region of biological interest. Such motifs, although they are too short to constitute functional domains, share sequence similarities and are conserved in different proteins. They display a common function (protein-binding, subcellular location etc.)." [EBIBS:GAR, UniProt:curation_manual]
 comment: Range.
-synonym: "motif" RELATED []
-synonym: "polypeptide_motif" EXACT []
+synonym: "motif" EXACT [uniprot:feature_type]
 is_a: SO:0000417 ! polypeptide_domain
 
 [Term]
@@ -562,8 +509,7 @@ name: polypeptide_repeat
 alt_id: BS:00070
 def: "A polypeptide_repeat is a single copy of an internal sequence repetition." [EBIBS:GAR]
 comment: Range.
-synonym: "polypeptide_repeat" EXACT []
-synonym: "repeat" RELATED []
+synonym: "repeat" EXACT [uniprot:feature_type]
 is_a: SO:0000417 ! polypeptide_domain
 
 [Term]
@@ -601,7 +547,7 @@ alt_id: BS:00154
 def: "Extent of the region not transversing the lipid bilayer." [EBIBS:GAR]
 comment: Range.
 synonym: "extramembrane" EXACT []
-synonym: "topo_dom" EXACT []
+synonym: "topo_dom" EXACT [uniprot:feature_type]
 is_a: SO:0001070 ! structural_region
 relationship: part_of SO:0001071 ! membrane_structure
 
@@ -645,8 +591,8 @@ id: SO:0001077
 name: transmembrane_region
 alt_id: BS:00158
 def: "Extent of region transversing the lipid bilayer." [EBIBS:GAR, UniProt:curator_manual]
-synonym: "transmem" RELATED []
-synonym: "transmembrane" RELATED []
+synonym: "transmem" EXACT [uniprot:feature_type]
+synonym: "transmembrane" EXACT []
 is_a: SO:0001075 ! intramembrane_region
 
 [Term]
@@ -675,8 +621,7 @@ name: coiled_coil
 alt_id: BS:00041
 def: "A coiled coil is a structural motif in proteins, in which alpha-helices are coiled together like the strands of a rope." [EBIBS:GAR, UniProt:curation_manual]
 comment: Range.
-synonym: "coiled" RELATED []
-synonym: "coiled_coil" EXACT []
+synonym: "coiled" EXACT [uniprot:feature_type]
 is_a: SO:0001079 ! polypeptide_structural_motif
 
 [Term]
@@ -704,8 +649,7 @@ name: non_adjacent_residues
 alt_id: BS:00182
 def: "Indicates that two consecutive residues in a fragment sequence are not consecutive in the full-length protein and that there are a number of unsequenced residues between them." [EBIBS:GAR, UniProt:curation_manual]
 synonym: "non consecutive" EXACT []
-synonym: "non_adjacent_residues" EXACT []
-synonym: "non_cons" EXACT []
+synonym: "non_cons" EXACT [uniprot:feature_type]
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
@@ -715,8 +659,7 @@ alt_id: BS:00072
 def: "The residue at an extremity of the sequence is not the terminal residue." [EBIBS:GAR, UniProt:curation_manual]
 comment: Discrete.
 synonym: "non terminal" EXACT []
-synonym: "non_ter" EXACT []
-synonym: "non_terminal_residue" EXACT []
+synonym: "non_ter" EXACT [uniprot:feature_type]
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
@@ -725,8 +668,7 @@ name: sequence_conflict
 alt_id: BS:00069
 def: "Different sources report differing sequences." [EBIBS:GAR, UniProt:curation_manual]
 comment: Discrete.
-synonym: "conflict" EXACT []
-synonym: "sequence_conflict" EXACT []
+synonym: "conflict" EXACT [uniprot:feature_type]
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
@@ -734,8 +676,7 @@ id: SO:0001086
 name: sequence_uncertainty
 alt_id: BS:00181
 def: "Describes the positions in a sequence where the authors are unsure about the sequence assignment." [EBIBS:GAR, UniProt:curation_manual]
-synonym: "sequence_uncertainty" EXACT []
-synonym: "unsure" RELATED []
+synonym: "unsure" EXACT [uniprot:feature_type]
 is_a: SO:0001082 ! polypeptide_sequencing_information
 
 [Term]
@@ -767,7 +708,7 @@ name: post_translationally_modified_region
 alt_id: BS:00052
 def: "A region where a transformation occurs in a protein after it has been synthesized. This which may regulate, stabilize, crosslink or introduce new chemical functionalities in the protein." [EBIBS:GAM, UniProt:curation_manual]
 comment: Discrete.
-synonym: "mod_res" RELATED []
+synonym: "mod_res" EXACT [uniprot:feature_type]
 synonym: "modified residue" EXACT []
 synonym: "post_translational_modification" EXACT []
 is_a: SO:0100001 ! biochemical_region
@@ -797,7 +738,7 @@ name: metal_contact
 alt_id: BS:00027
 def: "Residue is part of a binding site for a metal ion." [EBIBS:GAR, UniProt:curation_manual]
 comment: Discrete.
-synonym: "metal" RELATED []
+synonym: "metal" EXACT [uniprot:feature_type]
 synonym: "metal_binding" EXACT []
 is_a: SO:0100002 ! molecular_contact_region
 
@@ -896,9 +837,8 @@ name: catalytic_residue
 alt_id: BS:00026
 def: "Amino acid involved in the activity of an enzyme." [EBIBS:GAR, UniProt:curation_manual]
 comment: Discrete.
-synonym: "act_site" RELATED []
+synonym: "act_site" EXACT [uniprot:feature_type]
 synonym: "active site residue" EXACT []
-synonym: "site" BROAD []
 is_a: SO:0100019 ! catalytic_motif
 
 [Term]
@@ -955,8 +895,7 @@ name: beta_strand
 alt_id: BS:00042
 def: "A beta strand describes a single length of polypeptide chain that forms part of a beta sheet. A single continuous stretch of amino acids adopting an extended conformation of hydrogen bonds between the N-O and the C=O of another part of the peptide. This forms a secondary protein structure in which two or more extended polypeptide regions are hydrogen-bonded to one another in a planar array." [EBIBS:GAR, UniProt:curation_manual]
 comment: Range.
-synonym: "beta_strand" EXACT []
-synonym: "strand" RELATED []
+synonym: "strand" EXACT [uniprot:feature_type]
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
@@ -1011,8 +950,7 @@ alt_id: BS:00040
 def: "The helix has 3.6 residues per turn which corersponds to a translation of 1.5 angstroms (= 0.15 nm) along the helical axis. Every backbone N-H group donates a hydrogen bond to the backbone C=O group of the amino acid four residues earlier." [EBIBS:GAR]
 comment: Range.
 synonym: "a-helix" EXACT []
-synonym: "alpha_helix" EXACT []
-synonym: "helix" RELATED []
+synonym: "helix" RELATED [uniprot:feature_type]
 is_a: SO:0001116 ! right_handed_helix
 
 [Term]
@@ -1111,9 +1049,8 @@ is_a: SO:0001078 ! polypeptide_secondary_structure
 id: SO:0001128
 name: turn
 alt_id: BS:00148
-def: "A reversal in the direction of the backbone of a protein that is stabilized by hydrogen bond between backbone NH and CO groups, involving no more than 4 amino acid residues." [EBIBS:GAR]
+def: "A reversal in the direction of the backbone of a protein that is stabilized by hydrogen bond between backbone NH and CO groups, involving no more than 4 amino acid residues." [EBIBS:GAR, uniprot:feature_type]
 comment: Range.
-synonym: "turn" EXACT []
 is_a: SO:0001078 ! polypeptide_secondary_structure
 
 [Term]
@@ -1290,7 +1227,7 @@ def: "Describes the natural sequence variants due to polymorphisms, disease-asso
 comment: Discrete.
 synonym: "natural_variant" EXACT []
 synonym: "sequence variation" RELATED []
-synonym: "variant" RELATED []
+synonym: "variant" EXACT [uniprot:feature_type]
 is_a: SO:0001146 ! polypeptide_variation_site
 
 [Term]
@@ -1299,8 +1236,8 @@ name: mutated_variant_site
 alt_id: BS:00036
 def: "Site which has been experimentally altered." [EBIBS:GAR, UniProt:curation_manual]
 comment: Discrete.
-synonym: "mutagen" RELATED []
-synonym: "mutagenesis" RELATED []
+synonym: "mutagen" EXACT [uniprot:feature_type]
+synonym: "mutagenesis" EXACT []
 synonym: "mutated_site" EXACT []
 is_a: SO:0001146 ! polypeptide_variation_site
 
@@ -1313,8 +1250,8 @@ def: "Description of sequence variants produced by alternative splicing, alterna
 comment: Discrete.
 synonym: "alternative_sequence" EXACT []
 synonym: "isoform" NARROW []
-synonym: "sequence variation" RELATED []
-synonym: "var_seq" RELATED []
+synonym: "sequence variation" NARROW []
+synonym: "var_seq" EXACT [uniprot:feature_type]
 synonym: "varsplic" NARROW []
 is_a: SO:0001146 ! polypeptide_variation_site
 
@@ -1426,7 +1363,6 @@ is_a: SO:0100011 ! cleaved_peptide_region
 id: SO:0100010
 name: no_output
 def: "An experimental region wherean analysis has been run and not produced any annotation." [EBIBS:GAR]
-isa: SO:0000703
 is_a: BS:00129
 
 [Term]
@@ -1487,6 +1423,7 @@ is_a: SO:0001067 ! polypeptide_motif
 id: SO:0100018
 name: binding_motif
 def: "A binding motif is a short (up to 20 amino acids) region of biological interest that contains one or more amino acids experimentally shown to bind to a ligand." [EBIBS:GAR]
+synonym: "binding" EXACT [uniprot:feature_type]
 is_a: SO:0100001 ! biochemical_region
 
 [Term]
@@ -25177,10 +25114,339 @@ property_value: Source: "Artifact"
 property_value: TermSpec: "none"
 is_a: MOD:00626 ! fluorescein-5-thiosemicarbazide
 
+format-version: 1.2
+date: 29:05:2008 14:01
+saved-by: gabby
+auto-generated-by: OBO-Edit 1.101
+default-namespace: biosapiens
+remark: BioSapiens PFO non-positional terms.
+
+[Term]
+id: BS:00043
+name: feature
+def: "Functional or structural regions of a protein." [EBIBS:GAR]
+is_a: BS:00330 ! biosapiens protein feature ontology
+
+[Term]
+id: BS:00126
+name: GO_term_annotation
+def: "An annotation that uses a GO term to describe the function of a protein." [EBIBS:GAR]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:00127
+name: nonpositional
+def: "Annotation which is not assigned to a specific subsequence of a protein. Type of annotation which can be associated with a database record." [EBIBS:GAR]
+is_a: BS:00043 ! feature
+
+[Term]
+id: BS:00129
+name: positional
+def: "Biological annotation that can be assigned to a specific subsequence of a protein." [EBI:GAR]
+is_a: BS:00043 ! feature
+
+
+[Term]
+id: BS:00132
+name: erroneous_protein
+def: "Protein suspected to be non-viable or chimeric." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:00138
+name: publication
+def: "Lists the details of a publication on this sequence." [EBIBS:GAR]
+is_a: BS:01038 ! external_sources_of_information
+
+[Term]
+id: BS:00160
+name: EC_annotation
+def: "An annotation that uses a EC term to describe the function of a protein." [EBIBS:GAR]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:00330
+name: biosapiens protein feature ontology
+def: "Protein features classification." [EBIBS:GAR]
+
+[Term]
+id: BS:00333
+name: family_annotation
+def: "Annotations which indicate the family to which the protein belongs." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:00334
+name: mispredicted_protein
+def: "Hypothetical protein predicted to be mislocalized, misfolded or chimeric, reflecting errors in computational gene prediction." [EBIBS:GAR]
+is_a: BS:00132 ! erroneous_protein
+
+[Term]
+id: BS:00335
+name: abnormal_protein
+def: "Annotations inclucing cDNA-supported hypothetical protein predicted to be mislocalized, misfolded or chimeric." [EBIBS:GAR]
+is_a: BS:00132 ! erroneous_protein
+
+[Term]
+id: BS:01001
+name: subunit_information
+def: "Description of the quaternary structure of a protein and any kind of interactions with other proteins or protein complexes; except for receptor-ligand interactions." [EBIBS:GAR]
+synonym: "subunit" EXACT [uniprot:cc_topic]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01002
+name: structural_information
+def: "Description of the tertiary and quaternary configuration that makes up the final functional form of the protein." [EBIBS:GAR, uniprot:curation_manual]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01004
+name: domain_information
+def: "Text description of the domain structure of a protein." [EBIBS:GAR]
+synonym: "domain" EXACT [uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01005
+name: enzyme_regulation
+def: "Description of an enzyme regulatory mechanism." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01006
+name: catalytic_activity
+def: "Description of the reaction(s) catalyzed by an enzyme." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01007
+name: pathway
+def: "Description of the metabolic pathway(s) with which a protein is associated." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01008
+name: cofactor
+def: "Description of any non-protein substance required by an enzyme for its catalytic activity." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01006 ! catalytic_activity
+
+[Term]
+id: BS:01009
+name: post_translational_modification_information
+def: "Description of any chemical alternation of a polypeptide (proteolytic cleavage, amino acid modifications including crosslinks)." [EBIBS:GAR]
+synonym: "PTM" RELATED [uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01010
+name: alternative_products
+def: "Description of the existence of related protein sequence(s) produced by polymorphisms, RNA-editing, alternative splicing (by alternative promoter usage, ribosomal frameshifting or by the use of alternative initiation codons)." [EBIBS:GAR, uniprot:cc_topic]
+synonym: "coding_sequence_diversity" NARROW [uniprot:keyword_category]
+is_a: BS:01011 ! sequence_variation
+
+[Term]
+id: BS:01011
+name: sequence_variation
+def: "Description in the differences in sequence between different products." [EBIBS:GAR, uniprot:curation_manual]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01012
+name: polymorphism
+def: "Provides information about polymorphic variants including descriptions of known alleles, blood group systems and repeat polymorphisms." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01010 ! alternative_products
+
+[Term]
+id: BS:01013
+name: RNA_editing
+def: "Description of any type of RNA editing that leads to one or more amino acid changes." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01011 ! sequence_variation
+
+[Term]
+id: BS:01014
+name: similarity
+def: "Description of the similaritie(s) (sequence or structural) of a protein with other proteins." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00333 ! family_annotation
+
+[Term]
+id: BS:01015
+name: physical_properties
+def: "Descriptions in relation to the overall physical properties of the protein." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01016
+name: allergen
+def: "Used for proteins that cause an allergic reaction in mammals. Describes in which organism the allergic reaction occurs and may also describe other information such as symptoms of the allergic reaction." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01017
+name: pharmaceutical
+def: "Description of the use of a protein as a pharmaceutical drug." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01018
+name: toxic_dose
+def: "Description of the lethal dose (LD), paralytic dose (PD) or effective dose of a protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01019 ! disease
+
+[Term]
+id: BS:01019
+name: disease
+def: "Description of the disease(s) associated with a deficiency of a protein." [EBIBS:GAR, uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01020
+name: sequence_caution
+def: "Description of protein sequence reports that differ from the sequence such as frameshifts, erroneous gene model predictions, etc." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00132 ! erroneous_protein
+
+[Term]
+id: BS:01021
+name: biological_process
+def: "A biological process is series of events accomplished by one or more ordered assemblies of molecular functions. Examples of broad biological process terms are cellular physiological process or signal transduction. Examples of more specific terms are pyrimidine metabolic process or alpha-glucoside transport. It can be difficult to distinguish between a biological process and a molecular function, but the general rule is that a process must have more than one distinct steps." [EBIBS:GAR, GO:0008150, uniprot:keyword_category]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01022
+name: induction
+def: "Description of the compound(s) or condition(s) that regulate gene expression." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01023
+name: biophysiochemical_properties
+def: "Description of the information relevant to biophysical and physicochemical data and information on pH dependence, temperature dependence, kinetic parameters, redox potentials, and maximal absorption." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01015 ! physical_properties
+
+[Term]
+id: BS:01024
+name: biotechnological_use
+def: "Description of the use of a protein in a biotechnological process. Some examples of biotechnological processes include use in the food industry as a food sweetener or food preservative, use in the brewing industry as a fermentation aid, and in agriculture in the ripening process or to confer insect resistance." [EBIBS:GAR]
+synonym: "biotechnology" EXACT [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01025
+name: developmental_stage
+def: "Description of the developmentally-specific expression of mRNA or protein." [EBIBS:GAR, uniprot:cc_topic, uniprot:keyword_category]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01026
+name: miscellaneous
+def: "Any comment which does not belong to any of the other defined topics." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01027
+name: web_resource
+def: "Description of a cross-reference to a network database/resource for a specific protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01038 ! external_sources_of_information
+
+[Term]
+id: BS:01028
+name: annotation_warnings
+def: "Warning about possible errors and/or grounds for confusion." [EBIBS:GAR]
+synonym: "caution" EXACT [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01029
+name: protein_protein_interactions
+def: "Conveys information relevant to binary protein-protein interaction." [EBIBS:GAR]
+synonym: "interaction" EXACT [uniprot:cc_topic]
+is_a: BS:01002 ! structural_information
+
+[Term]
+id: BS:01030
+name: functional_annotation
+def: "Terms describing functional aspects of the protein." [EBIBS:GAR]
+synonym: "function" RELATED [uniprot:cc_topic]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01031
+name: tissue_specificity
+def: "Description of the tissue-specific expression of mRNA or protein." [EBIBS:GAR, uniprot:cc_topic]
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01032
+name: mRNA_protein_expression
+def: "Annotations which indicate mRNA or protein expression including in which tissues and at which developmental stages an mRNA or protein is expressed and what conditions or factors induce the expression of an mRNA or protein." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01033
+name: cellular_component
+def: "A cellular component is just that, a component of a cell, but with the proviso that it is part of some larger object; this may be an anatomical structure (e.g. rough endoplasmic reticulum or nucleus) or a gene product group (e.g. ribosome, proteasome or a protein dimer). See the documentation on the cellular component ontology for more details." [EBIBS:GAR, GO:0005575, uniprot:keyword_category]
+synonym: "subcellular_location " EXACT [uniprot:cc_topic]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01032 ! mRNA_protein_expression
+
+[Term]
+id: BS:01035
+name: ligand_information
+def: "Keywords assigned to proteins because they bind, are associated with, or whose activity is dependent on some molecule." [EBIBS:GAR]
+synonym: "ligand" RELATED [uniprot:keyword_category]
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01036
+name: molecular_function
+def: "Molecular function describes activities, such as catalytic or binding activities, that occur at the molecular level. GO molecular function terms represent activities rather than the entities (molecules or complexes) that perform the actions, and do not specify where or when, or in what context, the action takes place. Molecular functions generally correspond to activities that can be performed by individual gene products, but some activities are performed by assembled complexes of gene products. Examples of broad functional terms are catalytic activity, transporter activity, or binding; examples of narrower functional terms are adenylate cyclase activity or Toll receptor binding." [EBIBS:GAR, GO:0003674, uniprot:keyword_category]
+is_a: BS:00126 ! GO_term_annotation
+is_a: BS:01030 ! functional_annotation
+
+[Term]
+id: BS:01037
+name: technical_term
+def: "Descriptions assigned to proteins according to 'technical' reasons." [EBIBS:GAR, uniprot:keyword_category]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01038
+name: external_sources_of_information
+def: "Links to external information resources." [EBIBS:GAR]
+is_a: BS:00127 ! nonpositional
+
+[Term]
+id: BS:01039
+name: mass_spectrometry
+def: "Reports the exact molecular weight of a protein or part of a protein as determined by mass spectrometric methods." [EBIBS:GAR, uniprot:cc_topic]
+synonym: "molecular weight" EXACT []
+is_a: BS:01015 ! physical_properties
+
+[Typedef]
+id: contains
+name: contains
+comment: The inverse relationship to "part of".
+is_transitive: true
+
+[Typedef]
+id: derives_from
+name: derives from
+is_transitive: true
+
 [Typedef]
 id: part_of
 name: part of
 is_transitive: true
+
+format-version: 1.2
+date: 05:29:2008 14:22
+saved-by: gabby
+auto-generated-by: OBO-Edit 1.101
+subsetdef: biosapiens "biosapiens protein feature ontology"
+subsetdef: SOFA "SO feature annotation"
+default-namespace: sequence
+remark: autogenerated-by\:   DAG-Edit version 1.417\nsaved-by\:       eilbeck\ndate\:         Tue May 11 15\:18\:44 PDT 2004\nversion\: $Revision\: 1.45 $
 
 [Typedef]
 id: contains
