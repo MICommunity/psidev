@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 22:05:2008 15:53
+date: 28:05:2008 22:06
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
@@ -3345,14 +3345,14 @@ relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrom
 id: MS:1000532
 name: Xcalibur
 def: "Thermo Finnigan software for data acquisition and analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000693 ! Thermo Finnigan software
 
 [Term]
 id: MS:1000533
 name: Bioworks
 def: "Thermo Finnigan software for data analysis of peptides and proteins." [PSI:MS]
 synonym: "Bioworks Browser" RELATED []
-is_a: MS:1000531 ! software
+is_a: MS:1000693 ! Thermo Finnigan software
 
 [Term]
 id: MS:1000534
@@ -3364,19 +3364,19 @@ is_a: MS:1000531 ! software
 id: MS:1000535
 name: FlexAnalysis
 def: "Bruker software for data analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000536
 name: data explorer
 def: "Applied Biosystems software for data acquisition and analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000691 ! Applied Biosystems software
 
 [Term]
 id: MS:1000537
 name: 4700 Explorer
 def: "Applied Biosystems software for data acquisition and analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000691 ! Applied Biosystems software
 
 [Term]
 id: MS:1000538
@@ -3388,13 +3388,13 @@ is_a: MS:1000531 ! software
 id: MS:1000539
 name: Voyager Biospectrometry Workstation System
 def: "Applied Biosystems MALDI-TOF data acquisition and analysis system." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000691 ! Applied Biosystems software
 
 [Term]
 id: MS:1000540
 name: FlexControl
 def: "Bruker software for data acquisition." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000541
@@ -3462,7 +3462,7 @@ is_a: MS:1000460 ! unit
 id: MS:1000551
 name: Analyst
 def: "AB SCIEX or Applied Biosystems|MDS SCIEX software for data acquisition." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000552
@@ -3776,7 +3776,7 @@ is_a: MS:1000531 ! software
 id: MS:1000601
 name: ProteinLynx Global Server
 def: "Waters software for data analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000694 ! Waters software
 
 [Term]
 id: MS:1000602
@@ -4079,7 +4079,7 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 id: MS:1000650
 name: Proteomics Discoverer
 def: "Thermo Scientific software for data analysis of peptides and proteins." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000693 ! Thermo Finnigan software
 
 [Term]
 id: MS:1000651
@@ -4133,91 +4133,482 @@ is_a: MS:1000495 ! Applied Biosystems instrument model
 id: MS:1000659
 name: 4000 Series Explorer Software
 def: "AB SCIEX or Applied Biosystems software for data acquisition and analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000661
 name: GPS Explorer
 def: "AB SCIEX or Applied Biosystems software for data acquisition and analysis." [PSI:MS]
-is_a: MS:1000531 ! software
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000662
 name: LightSight Software
-def: "AB SCIEX or Applied Biosystems|MDS SCIEX software metabolite identification" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX software metabolite identification." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000663
 name: ProteinPilot Software
-def: "AB SCIEX or Applied Biosystems|MDS SCIEX software for protein ID and quant" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX software for protein ID and quant." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000664
 name: TissueView Software
-def: "Applied Biosystems|MDS SCIEX software for tissue imaging" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for tissue imaging." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000665
 name: MarkerView Software
-def: "Applied Biosystems|MDS SCIEX software for metabolomics and biomarker profiling" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for metabolomics and biomarker profiling." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000666
 name: MRMPilot Software
-def: "Applied Biosystems|MDS SCIEX software for MRM assay development" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for MRM assay development." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000667
 name: BioAnalyst
-def: "Applied Biosystems|MDS SCIEX software for bio-related data exploration" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for bio-related data exploration." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000668
 name: Pro ID
-def: "Applied Biosystems|MDS SCIEX software for protein identification" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for protein identification." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000669
 name: Pro ICAT
-def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by ICAT" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by ICAT." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000670
 name: Pro Quant
-def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by iTRAQ" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for protein ID and quant by iTRAQ." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000671
 name: Pro BLAST
-def: "Applied Biosystems|MDS SCIEX software for MS-BLAST identification" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for MS-BLAST identification." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000672
-name: Cliquid
-def: "AB SCIEX or Applied Biosystems software" [PSI:MS]
-is_a: MS:1000531 ! software
+name: Cliquid?
+def: "AB SCIEX or Applied Biosystems software." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000673
 name: MIDAS Workflow Designer
-def: "Applied Biosystems|MDS SCIEX software for MRM assay development" [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Applied Biosystems|MDS SCIEX software for MRM assay development." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
 id: MS:1000674
 name: MultiQuant
-def: "Applied Biosystems|MDS SCIEX software for MRM-based quantitation" [PSI:MS]
+def: "Applied Biosystems|MDS SCIEX software for MRM-based quantitation." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
+
+[Term]
+id: MS:1000675
+name: 6220 Time-of-Flight LC/MS
+def: "The 6220 Time-of-Flight LC/MS is a Agilent liquid chromatography instrument combined with a Agilent time of flight mass spectrometer. This time of flight mass spectrometer has a m/z range of 50-12000, mass accuracy of less than 2 ppm and resolution greater than 13,000 at m/z 2722. It has multiple ion sources and can be used with multimode ion sources." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1000676
+name: 6510 Quadrupole Time-of-Flight LC/MS
+def: "The 6510 Quadrupole Time-of-Flight LC/MS is a Agilent liquid chromatography instrument combined with a Agilent time of flight mass spectrometer. This time of flight mass spectrometer has a m/z range of 50-12000, mass accuracy of less than 2 ppm and resolution greater than 13,000 at m/z 2722. It has multiple ion sources and can be used with multimode ion sources." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1000677
+name: 6520 Quadrupole Time-of-Flight LC/MS
+def: "The 6520 Quadrupole Time-of-Flight LC/MS is a Agilent liquid chromatography instrument combined with a Agilent time of flight mass spectrometer. This time of flight mass spectrometer has a m/z range of 50-12000, mass accuracy of less than 2 ppm and resolution greater than 26,000 at m/z 2722. It has multiple ion sources and can be used with multimode ion sources." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1000678
+name: MassHunter Data Acquisition
+def: "Software for data acquisition of 6000 series instruments." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000679
+name: MassHunter Easy Access
+def: "Software for open access data acquisition." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000680
+name: MassHunter Qualitative Analysis
+def: "Software for data analysis of data from 6000 series instruments." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000681
+name: MassHunter Quantitative Analysis
+def: "Software for quantitation of Triple Quadruople and Quadrupole Time-of-Flight data." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000682
+name: MassHunter Metabolite ID
+def: "Software for identification of metabolites." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000683
+name: MassHunter BioConfirm
+def: "Software for protein characterization." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000684
+name: Genespring MS
+def: "Software for quantitation and statistical analysis of TOF and Q-TOF LC/MS data." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000685
+name: MassHunter Mass Profiler
+def: "Software for quantitation and statistical analysis of TOF and Q-TOF LC/MS data." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000686
+name: METLIN
+def: "Personal Metabolite Database for MassHunter Workstation.\nSoftware for identification of human metabolites." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000687
+name: Spectrum Mill for MassHunter Workstation
+def: "Software for protein identification and characterization of complex protein digest mixtures." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000688
+name: 6300 Series Ion Trap Data Analysis Software
+def: "Software for data analysis of 6300 series ion trap mass spectrometers." [PSI:MS]
+is_a: MS:1000689 ! Agilent software
+
+[Term]
+id: MS:1000689
+name: Agilent software
+def: "Agilent software for data acquisition and analysis." [PSI:MS]
 is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000690
+name: AB SCIEX software
+def: "AB SCIEX or Applied Biosystems software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000691
+name: Applied Biosystems software
+def: "Applied Biosystems|MDS SCIEX software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000692
+name: Bruker software
+def: "Bruker software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000693
+name: Thermo Finnigan software
+def: "Thermo Finnigan software for data acquisition and analysis." [PSI:MS]
+synonym: "Bioworks Browser" RELATED []
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000694
+name: Waters software
+def: "Waters software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000695
+name: apex ultra
+def: "Bruker Daltonics apex ultra" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000696
+name: autoflex III smartbeam
+def: "Bruker Daltonics autoflex III smartbeam" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000697
+name: HCT Series
+def: "Bruker Daltonics HCT Series" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000698
+name: HCTultra
+def: "Bruker Daltonics HCTultra" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000699
+name: HCTultra PTM
+def: "Bruker Daltonics HCTultra PTM Discovery System" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000700
+name: HCTultra ETD II
+def: "Bruker Daltonics HCTultra ETD II System" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000701
+name: microflex LT
+def: "Bruker Daltonics microflex MS." [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000702
+name: micrOTOF
+def: "Bruker Daltonics micrOTOF" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000703
+name: micrOTOF-Q
+def: "Bruker Daltonics micrOTOF-Q" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000704
+name: micrOTOF-Q II
+def: "Bruker Daltonics micrOTOF-Q II" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000705
+name: ultraflex III TOF/TOF
+def: "Bruker Daltonics ultraflex III TOF/TOF" [PSI:MS]
+is_a: MS:1000122 ! Bruker Daltonics instrument model
+
+[Term]
+id: MS:1000706
+name: apexControl
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000707
+name: BioTools
+def: "Bruker software for data analysis." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000708
+name: CLINPROT
+def: "Bruker CLINPROT software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000709
+name: CLINPROT micro
+def: "Bruker CLINPROT micro software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000710
+name: CLINPROT robot
+def: "Bruker CLINPROT robot software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000711
+name: ClinProTools
+def: "Bruker ClinProTools software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000712
+name: Compass
+def: "Bruker Compass software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000713
+name: Compass for HCT/esquire
+def: "Bruker Compass for HCT/esquire software" [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000714
+name: Compass for micrOTOF
+def: "Bruker Compass for micrOTOF software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000715
+name: Compass OpenAccess
+def: "Bruker compass OpenAccess software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000716
+name: Compass Security Pack
+def: "Bruker compass Security Pack software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000717
+name: CompassXport
+def: "Bruker stand-alone software for data conversion." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000718
+name: CompassXtract
+def: "Bruker software library for data access." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000719
+name: DataAnalysis
+def: "Bruker software for data analysis." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000720
+name: dpControl
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000721
+name: esquireControl
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000722
+name: flexImaging
+def: "Bruker software for data analysis." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000723
+name: GENOLINK
+def: "Bruker GENOLINK software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000724
+name: GenoTools
+def: "Bruker GenoTools software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000725
+name: HCTcontrol
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000726
+name: micrOTOFcontrol
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000727
+name: PolyTools
+def: "Bruker PolyTools software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000728
+name: ProfileAnalysis
+def: "Bruker software for data analysis." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000729
+name: PROTEINEER
+def: "Bruker PROTEINEER software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000730
+name: PROTEINEER dp
+def: "Bruker PROTEINEER dp software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000731
+name: PROTEINEER fc
+def: "Bruker PROTEINEER fc software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000732
+name: PROTEINEER spII
+def: "Bruker PROTEINEER spII software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000733
+name: PROTEINEER-LC
+def: "Bruker PROTEINEER-LC software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000734
+name: ProteinScape
+def: "Bruker ProteinScape software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000735
+name: PureDisk
+def: "BrukerPureDisk software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000736
+name: QuantAnalysis
+def: "Bruker software for data analysis." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000737
+name: spControl
+def: "Bruker software for data acquisition." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000738
+name: TargetAnalysis
+def: "Bruker TargetAnalysis software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000739
+name: WARP-LC
+def: "Bruker WARP-LC software." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
 
 [Typedef]
 id: part_of
