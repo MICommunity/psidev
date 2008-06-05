@@ -1,5 +1,5 @@
 format-version: 1.2
-date: 29:05:2008 14:22
+date: 05:06:2008 11:56
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 default-namespace: biosapiens
@@ -362,7 +362,7 @@ name: part of
 is_transitive: true
 
 format-version: 1.2
-date: 05:29:2008 14:22
+date: 06:05:2008 11:55
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 subsetdef: biosapiens "biosapiens protein feature ontology"
@@ -25440,7 +25440,7 @@ name: part of
 is_transitive: true
 
 format-version: 1.2
-date: 05:29:2008 14:22
+date: 06:05:2008 11:55
 saved-by: gabby
 auto-generated-by: OBO-Edit 1.101
 subsetdef: biosapiens "biosapiens protein feature ontology"
