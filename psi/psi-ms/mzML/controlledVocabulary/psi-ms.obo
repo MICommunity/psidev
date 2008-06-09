@@ -3,7 +3,7 @@ date: 28:05:2008 22:06
 saved-by: luisa
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PSI-MS
-remark: version: x.y.z
+remark: version: 1.0.0
 import: unit.obo
 
 [Term]
