@@ -1,0 +1,31 @@
+Notes on using OBO-Edit
+-----------------------
+
+psi-ms.obo imports the Unit Ontology (unit.obo) via an import statement at the top of the file:
+import: unit.obo
+
+We would really like to do the following:
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
+But OBO-Edit has fatal errors on save due to strange characters in unit.obo.
+
+Saving psi-ms.obo from OBO-Edit is tricky.
+
+Before checking in psi-ms.obo, please verify the following:
+1) contains the import statement 
+2) does not contain terms from the Unit Ontology or other ontologies
+3) contains the MS relationships (e.g. part_of, has_units)
+
+We have not figured out yet how to accomplish #1 from within OBO-Edit, so the import statement
+must be added manually after saving with OBO-Edit.
+
+To save only the MS terms from OBO-Edit:
+1) File/Save As
+2) Advanced...
+3) + (add new "Stored adapter settings" profile)
+4) Add, the Browse (new save path)
+5) check "Filter terms"
+6) In "Object filtering" choose "Namespace" "contains" "MS"
+7) check "Allow dangling parents" (allows has_units UO:xxxxxxx) 
+8) select "OBO_1_2" for "Output Type"
+9) Ok
+
