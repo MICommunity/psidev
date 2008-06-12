@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 28:05:2008 22:06
-saved-by: luisa
+date: 12:06:2008 13:44
+saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
-default-namespace: PSI-MS
+default-namespace: MS
 remark: namespace: MS
-remark: version: 1.0.0
-remark: release date: 2008-06-01
+remark: version: 1.1.0
+remark: release date: 2008-06-12
 remark: coverage: Mass spectrometer output files
 remark: creator: Eric Deutsch <edeutsch@systemsbiology.org>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
@@ -109,8 +109,8 @@ is_a: MS:1000503 ! scan attribute
 [Term]
 id: MS:1000016
 name: scan time
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
 def: "The time taken for an acquisition by scanning analyzers." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 relationship: has_units UO:0000003 ! time unit
 
@@ -248,13 +248,13 @@ relationship: part_of MS:1000459 ! spectrum instrument description
 id: MS:1000038
 name: minute
 def: "Acquisition time in minutes. Replace by MS:1000016 - Scan Time." [PSI:MS]
-is_a: MS:1000550 ! time unit
+is_obsolete: true
 
 [Term]
 id: MS:1000039
 name: second
 def: "Acquisition time in seconds. Replace by MS:1000016 - Scan Time." [PSI:MS]
-is_a: MS:1000550 ! time unit
+is_obsolete: true
 
 [Term]
 id: MS:1000040
@@ -838,13 +838,13 @@ is_a: MS:1000465 ! scan polarity
 [Term]
 id: MS:1000131
 name: number of counts
-def: "TODO: Add definition." [PSI:MS]
+def: "The number of counted events observed in one or a group of elements of a detector." [PSI:MS]
 is_a: MS:1000043 ! intensity unit
 
 [Term]
 id: MS:1000132
 name: percent of base peak
-def: "TODO: Add definition." [PSI:MS]
+def: "The magnitude of a peak or measurement element expressed in terms of the percentage of the magnitude of the base peak intensity." [PSI:MS]
 is_a: MS:1000043 ! intensity unit
 
 [Term]
@@ -880,7 +880,7 @@ id: MS:1000137
 name: electron volt
 def: "A non-SI unit of energy (eV) defined as the energy acquired by a particle containing one unit of charge through a potential difference of one volt. An electron-volt is equal to 1.602 176 53(14) x 10^-19 J." [PSI:MS]
 synonym: "eV" EXACT []
-is_a: MS:1000046 ! energy unit
+is_obsolete: true
 
 [Term]
 id: MS:1000138
@@ -1340,7 +1340,7 @@ id: MS:1000212
 name: Dalton
 def: "A non-SI unit of mass (symbol Da) that is equal to the unified atomic mass unit: 1.660 538 86(28) x 10^-27 kg." [PSI:MS]
 synonym: "Da" EXACT []
-is_a: MS:1000464 ! mass unit
+is_obsolete: true
 
 [Term]
 id: MS:1000213
@@ -1500,7 +1500,7 @@ id: MS:1000237
 name: unified atomic mass unit
 def: "A non-SI unit of mass (u) defined as one twelfth of ^12 C in its ground state and equal to 1.660 538 86(28) x 10^-27 kg." [PSI:MS]
 synonym: "u" EXACT []
-is_a: MS:1000464 ! mass unit
+is_obsolete: true
 
 [Term]
 id: MS:1000238
@@ -2930,7 +2930,7 @@ relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrom
 id: MS:1000464
 name: mass unit
 def: "A unit of measurement for mass." [PSI:MS]
-is_a: MS:1000460 ! unit
+is_obsolete: true
 
 [Term]
 id: MS:1000465
@@ -3461,7 +3461,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000550
 name: time unit
 def: "Time Unit." [PSI:MS]
-is_a: MS:1000460 ! unit
+is_obsolete: true
 
 [Term]
 id: MS:1000551
@@ -4616,13 +4616,11 @@ def: "Bruker WARP-LC software." [PSI:MS]
 is_a: MS:1000692 ! Bruker software
 
 [Typedef]
+id: has_units
+name: has_units
+
+[Typedef]
 id: part_of
 name: part_of
 is_transitive: true
-
-[Typedef]
-id: has_units 
-name: has_units 
-is_transitive: false
-
 

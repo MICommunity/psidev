@@ -29,3 +29,12 @@ To save only the MS terms from OBO-Edit:
 8) select "OBO_1_2" for "Output Type"
 9) Ok
 
+
+Notes on versioning of the CV:
+-------------------------------
+Versions of the CV will be revioned: x.y.z
+  z means no new term (editing of names or definitions or other minor changes)
+  y means new term or obsoletion
+  x means change in root level terms (impacts mapping file)
+
+
