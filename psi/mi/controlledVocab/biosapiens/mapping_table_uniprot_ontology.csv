@@ -64,13 +64,21 @@ CC Topic,FUNCTION ,n/a,functional_annotation,BS:01030,ECO:0000001,inferred by cu
 CC Topic,TISSUE SPECIFICITY ,n/a,tissue_specificity,BS:01031,ECO:0000001,inferred by curator
 CC Topic,SUBCELLULAR LOCATION ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
 CC Topic,MASS SPECTROMETRY ,n/a,mass_spectrometry,BS:01039,ECO:0000001,inferred by curator
-CC Topic+keyword,DOMAIN ,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
-CC Topic+keyword,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
-CC Topic+keyword,DISEASE ,n/a,disease,BS:01019,ECO:0000001,inferred by curator
-CC Topic+keyword,DEVELOPMENTAL STAGE ,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
+CC Topic,DOMAIN ,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
+CC Topic,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
+CC Topic,DISEASE ,n/a,disease,BS:01019,ECO:0000001,inferred by curator
+CC Topic,DEVELOPMENTAL STAGE ,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
+Keyword,Domain,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
+Keyword,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
+Keyword,Disease,n/a,disease,BS:01019,ECO:0000001,inferred by curator
+Keyword,Developmental Stage,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
 Keyword,Coding sequence diversity ,n/a,alternative_products,BS:01010,ECO:0000001,inferred by curator
 Keyword,Biological process ,n/a,biological_process,BS:01021,ECO:0000001,inferred by curator
 Keyword,Cellular component ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
 Keyword,Ligand,n/a,ligand_information,BS:01035,ECO:0000001,inferred by curator
 Keyword,Molecular function ,n/a,molecular_function,BS:01036,ECO:0000001,inferred by curator
 Keyword,Technical term,n/a,technical_term,BS:01037,ECO:0000001,inferred by curator
+Description,Description,n/a,protein_name,BS:01003,ECO:0000001,inferred by curator
+Organism species,Organism species,n/a,organism_species,BS:01034,ECO:0000001,inferred by curator
+Taxonomy cross-reference,Taxonomy cross-reference,n/a,taxonomy,BS:01040,ECO:0000001,inferred by curator
+
