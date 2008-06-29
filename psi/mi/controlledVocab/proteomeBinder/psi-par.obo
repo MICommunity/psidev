@@ -1,5 +1,5 @@
 format-version: 1.0
-date: 07:05:2008 19:51
+date: 23:06:2008 22:07
 saved-by: David
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PAR
@@ -2574,7 +2574,7 @@ is_a: PAR:0461 ! interaction database
 [Term]
 id: PAR:0460
 name: rcsb pdb
-def: "The RCSB PDB provides a variety of tools and resources for studying the structures of biological macromolecules and their relationships to sequence, function, and disease. " [pubmed:14634627 "primary-reference"]
+def: "The RCSB PDB provides a variety of tools and resources for studying the structures of biological macromolecules and their relationships to sequence, function, and disease." [pubmed:14634627 "primary-reference"]
 related_synonym: "PDB" []
 xref_analog: id-validation-regexp:\"[0-9\][a-zA-Z0-9\]\{3}\" "ANNOTATION"
 xref_analog: search-url: http\://www.pdb.org/pdb/explore/explore.do?structureId=$\{ac} "ANNOTATION"
@@ -2847,7 +2847,7 @@ is_a: PAR:0683 ! sequence database
 [Term]
 id: PAR:0488
 name: psi-mi
-def: "Controlled vocabularies developed by HUPO Proteomic standard initiative for Molecular Interaction " [pubmed:14755292 "primary-reference"]
+def: "Controlled vocabularies developed by HUPO Proteomic standard initiative for Molecular Interaction" [pubmed:14755292 "primary-reference"]
 related_synonym: "PSI-MI" []
 xref_analog: id-validation-regexp:\"MI\:[0-9\]\{4}\" "ANNOTATION"
 xref_analog: search-url: http\://www.ebi.ac.uk/ontology-lookup/?termId=$\{ac} "ANNOTATION"
@@ -3543,7 +3543,6 @@ is_a: PAR:0669 ! organism attribute name
 id: PAR:0616
 name: example
 def: "Example generally associated to Cv terms. Test." [pubmed:14755292 "primary-reference"]
-related_synonym: "<new synonym>" []
 is_a: PAR:0300 ! alias type
 
 [Term]
@@ -4454,13 +4453,13 @@ is_a: PAR:0473 ! participant database
 [Term]
 id: PAR:0866
 name: tag visualisation
-def: "Molecule whose sequence identity is not checked after the interaction but its presence is detected through its tag" [pubmed:14755292 "primary-reference"]
+def: "Molecule whose sequence identity is not checked after the interaction but its presence is detected through its tag." [pubmed:14755292 "primary-reference"]
 is_a: PAR:0396 ! predetermined participant
 
 [Term]
 id: PAR:0867
 name: tag visualisation by fluorescence
-def: "Immunostaining assay performed when specific antibodies for the protein of interest are not available. Therefore the  protein is expressed as a hybrid protein fused to a tag peptide/protein for which efficient antibodies are available. The anti tag antibody may be either monoclonal or polyclonal." [pubmed:14755292 "primary-reference"]
+def: "Molecule whose sequence identity is not checked after the interaction but its presence is detected through a flouroscent tag." [pubmed:14755292 "primary-reference"]
 exact_synonym: "tag fluorescence" []
 is_a: PAR:0866 ! tag visualisation
 
@@ -4583,7 +4582,7 @@ id: PAR:1008
 name: antibody-producing hybridoma
 def: "Antibody-producing hybridomas are cells that have been engineered to It proliferate and produce a continuous supply of a specific monoclonal antibody. They are produced in the laboratory from the fusion of an antibody-producing lymphocyte and a nonantibody-producing cancer cell, usually a myeloma or lymphoma." [pubmed:14755292 "primary-reference"]
 exact_synonym: "Ab-produci hybridoma" []
-is_a: PAR:0313 ! interactor type
+is_a: PAR:1147 ! composite interactor
 
 [Term]
 id: PAR:1009
@@ -4794,8 +4793,8 @@ is_a: PAR:1100 ! engineered protein scaffold
 id: PAR:1054
 name: sensitivity determination
 def: "Determination the sensitivity of an assay for the detection of one or more biomolecules." [pubmed:14755292 "primary-reference"]
-related_synonym: "<new synonym>" []
 related_synonym: "detection limit determination" []
+exact_synonym: "sensitivity determin" []
 is_a: PAR:1314 ! molecule characterisation
 
 [Term]
@@ -4816,13 +4815,6 @@ id: PAR:1057
 name: single chain fv
 def: "A single chain Fv is a genetically engineered antibody derivate consisting of both the variable heavy chain (VH) and the light chain (VL) of an immunoglobulin. These entities are joined together by a flexible peptide linker." [pubmed:14755292 "primary-reference"]
 is_a: PAR:1029 ! antibody fragment
-
-[Term]
-id: PAR:1058
-name: data processing method
-def: "???\nThis term or a childterm is referenced by a cross reference of the type \"protein binders term for data processing method\"." [pubmed:14755292 "primary-reference"]
-exact_synonym: "processing method" []
-is_a: PAR:0001 ! interaction detection method
 
 [Term]
 id: PAR:1059
@@ -4865,7 +4857,7 @@ is_a: PAR:0252 ! biological feature
 id: PAR:1065
 name: virus
 def: "A sub-microscopic infectious agent that is unable to grow or reproduce outside a host cell. Each viral particle, or virion, consists of genetic material, DNA or RNA, within a protective protein coat called a capsid. Viruses infect cellular life forms and are grouped into animal, plant and bacterial types, according to the type of host infected." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0313 ! interactor type
+is_a: PAR:1147 ! composite interactor
 
 [Term]
 id: PAR:1066
@@ -4935,14 +4927,14 @@ is_a: PAR:1328 ! molecule production method
 
 [Term]
 id: PAR:1076
-name: fmoc -  spps
-def: "AA	CHEM	SYNT	fmoc -  SPPS" [pubmed:123456789 "primary-reference"]
+name: fmoc-spps
+def: "9H-(f)luoren-9-yl(m)eth(o)xy(c)arbonyl solid-phase peptide synthesis (fmoc-spps) is a method for peptide synthesis." [pubmed:123456789 "primary-reference"]
 is_a: PAR:0083 ! peptide synthesis
 
 [Term]
 id: PAR:1077
 name: boc-spps
-def: "AA	CHEM	SYNT	boc-SPPS" [pubmed:123456789 "primary-reference"]
+def: "(B)ut(o)xy(c)arbonyl Solid-phase peptide synthesis (boc-spps) is a method for peptide synthesis." [pubmed:123456789 "primary-reference"]
 is_a: PAR:0083 ! peptide synthesis
 
 [Term]
@@ -5013,7 +5005,6 @@ is_a: PAR:1029 ! antibody fragment
 id: PAR:1093
 name: competitor
 def: "Substance that is competing in a binding assay." [pubmed:14755292 "primary-reference"]
-related_synonym: "<new synonym>" []
 is_a: PAR:0495 ! experimental role
 
 [Term]
@@ -5022,7 +5013,7 @@ name: liquid-liquid extraction
 def: "Method to separate compounds based on their relative solubilities in two different immiscible liquids, usually water and an organic solvent. It is an extraction of a substance from one liquid phase into another liquid phase." [pubmed:123456789 "primary-reference"]
 related_synonym: "partitioning" []
 exact_synonym: "solvent extraction" []
-is_a: PAR:0001 ! interaction detection method
+is_a: PAR:1328 ! molecule production method
 
 [Term]
 id: PAR:1096
@@ -5034,7 +5025,7 @@ is_a: PAR:0666 ! participant attribute name
 id: PAR:1097
 name: normalised readout
 def: "The normalised value of a numeric experimental readout. The specific type of readout is defined by the associated experimental method, for example an absorbance value from an ELISA." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0640 ! parameter type
+is_a: PAR:1148 ! readout
 
 [Term]
 id: PAR:1099
@@ -5061,7 +5052,6 @@ is_a: PAR:0353 ! cross-reference type
 id: PAR:1102
 name: armadillo repeat
 def: "Armadillo repeat proteins are abundant eukaryotic proteins involved in several cellular processes, including signaling, transport, and cytoskeletal regulation. These sequences constitute the starting point for the generation of designed armadillo repeat protein libraries for the selection of peptide binders, exploiting their modular structure and their conserved binding mode." [pubmed:14755292 "primary-reference"]
-exact_synonym: "armadillo repeat" []
 is_a: PAR:1100 ! engineered protein scaffold
 
 [Term]
@@ -5105,9 +5095,10 @@ is_a: PAR:1124 ! experimental material attribute
 
 [Term]
 id: PAR:1109
-name: mw
+name: molecular weight
 def: "The molecular weight is the he sum of the relative atomic masses of the constituent atoms of a molecule. It may be only available as an experimentally acquired estimate. The unit is Dalton." [pubmed:14755292 "primary-reference"]
 related_synonym: "mass" []
+related_synonym: "mw" []
 is_a: PAR:0640 ! parameter type
 
 [Term]
@@ -5127,7 +5118,7 @@ id: PAR:1112
 name: complex biological mixture
 def: "A biological mixture extracted from an animal or plant." [pubmed:14755292 "primary-reference"]
 exact_synonym: "biological mixture" []
-is_a: PAR:0313 ! interactor type
+is_a: PAR:1147 ! composite interactor
 
 [Term]
 id: PAR:1113
@@ -5161,7 +5152,7 @@ name: protein affinity reagent
 def: "A molecule designed to bind to a protein target." [pubmed:14755292 "primary-reference"]
 related_synonym: "par" []
 exact_synonym: "affinity reagent" []
-is_a: PAR:0495 ! experimental role
+is_a: PAR:0500 ! biological role
 
 [Term]
 id: PAR:1118
@@ -5177,9 +5168,23 @@ is_a: PAR:1118 ! experimental control
 
 [Term]
 id: PAR:1120
-name: protein target
-def: "A protein that is bound by a protein affinity reagent." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0495 ! experimental role
+name: protein affinity reagent target
+def: "The target of the protein affinity reagent i.e. typically a protein." [pubmed:14755292 "primary-reference"]
+exact_synonym: "par target" []
+is_a: PAR:0500 ! biological role
+
+[Term]
+id: PAR:1121
+name: PSI-PAR term for experimental scope
+def: "Cross reference pointing to a term in the experimental scope CV subtype." [pubmed:14681407 "primary-reference"]
+exact_synonym: "exp scope" []
+is_a: PAR:1068 ! cv term
+
+[Term]
+id: PAR:1122
+name: protocol reference
+def: "Reference of a experiment pointing to a protocol that has been applied. A protocol is the formal plan of an experiment or research activity, including the objective, rationale, design, materials and methods for the conduct of the study; intervention description, and method of data analysis." [pubmed:14755292 "primary-reference"]
+is_a: PAR:0353 ! cross-reference type
 
 [Term]
 id: PAR:1123
@@ -5192,6 +5197,24 @@ id: PAR:1124
 name: experimental material attribute
 def: "Attribute name of annotation associated to an experimental material. A material is the specific biological (or chemical) components with which a particular experiment is performed." [pubmed:14755292 "primary-reference"]
 is_a: PAR:0665 ! experiment attibute name
+
+[Term]
+id: PAR:1125
+name: starting material
+def: "Biological material used as a starting material in the production of a molecule." [pubmed:14755292 "primary-reference"]
+is_a: PAR:0495 ! experimental role
+
+[Term]
+id: PAR:1126
+name: intermediate product
+def: "An intermediate generated in the process of a molecule production." [pubmed:14755292 "primary-reference"]
+is_a: PAR:0495 ! experimental role
+
+[Term]
+id: PAR:1127
+name: expression analysis
+def: "The determination of gene or protein expression." [pubmed:14755292 "primary-reference"]
+is_a: PAR:1314 ! molecule characterisation
 
 [Term]
 id: PAR:1128
@@ -5263,6 +5286,12 @@ exact_synonym: "mAb harvesting" []
 relationship: part_of PAR:1106 ! antibody production method
 
 [Term]
+id: PAR:1138
+name: expression level analysis
+def: "The determination of gene or protein expression level." [pubmed:14755292 "primary-reference"]
+is_a: PAR:1127 ! expression analysis
+
+[Term]
 id: PAR:1139
 name: folding state
 def: "Statement about the conformation of a protein." [pubmed:14755292 "primary-reference"]
@@ -5309,6 +5338,18 @@ related_synonym: "solid phase" []
 is_a: PAR:1142 ! microarray attribute
 
 [Term]
+id: PAR:1146
+name: expression distribution analysis
+def: "The determination of gene or protein expression level." [pubmed:14755292 "primary-reference"]
+is_a: PAR:1127 ! expression analysis
+
+[Term]
+id: PAR:1147
+name: composite interactor
+def: "A composite interactor." [pubmed:14755292 "primary-reference"]
+is_a: PAR:0313 ! interactor type
+
+[Term]
 id: PAR:1148
 name: readout
 def: "A numeric experimental readout. The specific type of readout, e.g. an ELISA score, is defined by the associated experiment." [pubmed:14755292 "primary-reference"]
@@ -5318,8 +5359,16 @@ is_a: PAR:0640 ! parameter type
 [Term]
 id: PAR:1149
 name: serum array
-def: "Array with cell lysate are spot on a surface to investigate protein expression in different cell lines." [pubmed:14755292 "primary-reference"]
+def: "Array spotted with serum samples." [pubmed:14755292 "primary-reference"]
 is_a: PAR:1288 ! reverse phase array
+
+[Term]
+id: PAR:1150
+name: PSI-PAR
+def: "Controlled vocabularies developed by HUPO Proteomic standard initiative for Protein Affinity Reagents." [pubmed:14755292 "primary-reference"]
+xref_analog: id-validation-regexp:\"MI\:[0-9\]\{4}\" "ANNOTATION"
+xref_analog: search-url: http\://www.ebi.ac.uk/ontology-lookup/?termId=$\{ac} "ANNOTATION"
+is_a: PAR:0444 ! database citation
 
 [Term]
 id: PAR:1151
@@ -5355,14 +5404,7 @@ is_a: PAR:1112 ! complex biological mixture
 id: PAR:1156
 name: growth medium
 def: "A growth medium or culture medium is a liquid or gel designed to support the growth of microorganisms, such as bacteria or yeast, or cells derived from plants or animals. The most common growth media for microorganisms are nutrient broths and agar plates." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0313 ! interactor type
-
-[Term]
-id: PAR:1157
-name: hybridization method
-def: "???\nThis term or a childterm is referenced by a cross reference of the type \"protein binders term for data processing method\"." [pubmed:14755292 "primary-reference"]
-exact_synonym: "hybridization" []
-is_a: PAR:0001 ! interaction detection method
+is_a: PAR:1147 ! composite interactor
 
 [Term]
 id: PAR:1158
@@ -5415,7 +5457,7 @@ is_a: PAR:1014 ! molecular state
 [Term]
 id: PAR:1169
 name: lysate array
-def: "Array with cell lysate are spot on a surface to investigate protein expression in different cell lines." [pubmed:14755292 "primary-reference"]
+def: "Array spotted with cell lysates. Are typically used to investigate protein expression in cells or cell lines." [pubmed:14755292 "primary-reference"]
 is_a: PAR:1288 ! reverse phase array
 
 [Term]
@@ -5441,7 +5483,7 @@ is_a: PAR:0665 ! experiment attibute name
 [Term]
 id: PAR:1173
 name: plasma array
-def: "Array with cell lysate are spot on a surface to investigate protein expression in different cell lines." [pubmed:14755292 "primary-reference"]
+def: "Array spotted with plasma samples." [pubmed:14755292 "primary-reference"]
 is_a: PAR:1288 ! reverse phase array
 
 [Term]
@@ -5506,6 +5548,13 @@ id: PAR:1189
 name: detection limit
 def: "The lowest substance quantity or signal strength that can be distinguished from the absence of that substance or signal." [pubmed:14755292 "primary-reference"]
 is_a: PAR:0640 ! parameter type
+
+[Term]
+id: PAR:1190
+name: immunogen
+def: "Substance that, when injected or absorbed into animal tissues, stimulates an immune response typically the production of antibodies. Immunogens, or antigens, are usually proteins or polysaccharides." [pubmed:14755292 "primary-reference"]
+related_synonym: "antigen" []
+is_a: PAR:0495 ! experimental role
 
 [Term]
 id: PAR:1191
@@ -5597,12 +5646,6 @@ exact_synonym: "ss rna" []
 is_a: PAR:0320 ! ribonucleic acid
 
 [Term]
-id: PAR:1261
-name: modification generation method
-def: "Check use of this term instead of 'predetermined feature'." [pubmed:14755292 "primary-reference"]
-is_a: PAR:0001 ! interaction detection method
-
-[Term]
 id: PAR:1263
 name: handling instructions
 def: "Handling instructions for a biomolecule (e.g. \"The antibody solution should be gently mixed before use\")." [pubmed:14755292 "primary-reference"]
@@ -5638,13 +5681,6 @@ id: PAR:1281
 name: recombinant protein expression
 def: "AA	REC	SYNT	recombinant protein expression	inferred from protein expression	ECO:0000010" [pubmed:123456789 "primary-reference"]
 is_a: PAR:1046 ! protein expression
-
-[Term]
-id: PAR:1287
-name: immunogen
-def: "Substance that, when injected or absorbed into animal tissues, stimulates an immune response typically the production of antibodies. Immunogens, or antigens, are usually proteins or polysaccharides." [pubmed:14755292 "primary-reference"]
-related_synonym: "antigen" []
-is_a: PAR:0495 ! experimental role
 
 [Term]
 id: PAR:1288
