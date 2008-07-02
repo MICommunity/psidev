@@ -1,84 +1,82 @@
-Term Type,"UniProt 
-Feature Keys","UniProt KB
-Long Name",Ontology term,ID,"Evidence Code from 
-the ECO",Evidence Code Term
-Feature Type,SE_CYS,Selenocysteine,L-selenocysteine ,MOD:00031,ECO:0000001,inferred by curator
-Feature Type,CROSSLNK,Cross-link,crosslinked residues,MOD:00033,ECO:0000001,inferred by curator
-Feature Type,DISULFID,Disulfide bond,disulfide crosslinked residues,MOD:00689,ECO:0000001,inferred by curator
-Feature Type,CARBOHYD,Glycosylation,glycosylated residue,MOD:00693,ECO:0000001,inferred by curator
-Feature Type,LIPID,Lipidation,lipoconjugated residue,MOD:01155,ECO:0000001,inferred by curator
-Feature Type,DOMAIN,Domain,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
-Feature Type,NP_BIND,Nucleotide binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
-Feature Type,DNA_BIND,DNA binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
-Feature Type,CA_BIND,Calcium binding,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
-Feature Type,ZN_FING,Zinc finger ,polypeptide_domain,SO:0000417,ECO:0000001,inferred by curator
-Feature Type,SIGNAL,Signal peptide,signal_peptide,SO:0000418,ECO:0000001,inferred by curator
-Feature Type,CHAIN,Chain ,mature_protein_region,SO:0000419,ECO:0000001,inferred by curator
-Feature Type,INIT_MET,Initiator methionine ,cleaved_initiator_methionine,SO:0000691,ECO:0000001,inferred by curator
-Feature Type,TRANSIT,Transit peptide,transit_peptide,SO:0000725,ECO:0000001,inferred by curator
-Feature Type,SITE,Site ,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator
-Feature Type,REGION,Region,polypeptide_region,SO:0000839,ECO:0000001,inferred by curator
-Feature Type,PROPEP,Propeptide ,propeptide,SO:0001062,ECO:0000001,inferred by curator
-Feature Type,PEPTIDE,Peptide,active_peptide,SO:0001064,ECO:0000001,inferred by curator
-Feature Type,COMPBIAS,Compositional bias ,compositionally_biased_region,SO:0001066,ECO:0000001,inferred by curator
-Feature Type,MOTIF,Motif ,polypeptide_motif,SO:0001067,ECO:0000001,inferred by curator
-Feature Type,REPEAT,Repeat,polypeptide_repeat,SO:0001068,ECO:0000001,inferred by curator
-Feature Type,TOPO_DOM,Topological domain,extramembrane,SO:0001072,ECO:0000001,inferred by curator
-Feature Type,TRANSMEM,Transmembrane,transmembrane,SO:0001077,ECO:0000001,inferred by curator
-Feature Type,COILED,Coiled coil,coiled_coil,SO:0001080,ECO:0000001,inferred by curator
-Feature Type,NON_CONS,Non-adjacent residues,non_adjacent_residue,SO:0001083,ECO:0000001,inferred by curator
-Feature Type,NON_TER,Non-terminal residue,non_terminal_residue,SO:0001084,ECO:0000001,inferred by curator
-Feature Type,CONFLICT,Sequence conflict,sequence_conflict,SO:0001085,ECO:0000001,inferred by curator
-Feature Type,UNSURE,Sequence uncertainty,sequence_uncertainty,SO:0001086,ECO:0000001,inferred by curator
-Feature Type,MOD_RES,Modified residue,post_translational_modification,SO:0001089,ECO:0000001,inferred by curator
-Feature Type,METAL,Metal binding,metal_contact,SO:0001092,ECO:0000001,inferred by curator
-Feature Type,ACT_SITE,Active site ,catalytic_residue,SO:0001104,ECO:0000001,inferred by curator
-Feature Type,STRAND,Beta Strand ,beta_strand,SO:0001111,ECO:0000001,inferred by curator
-Feature Type,HELIX,Helix,alpha_helix,SO:0001117,ECO:0000001,inferred by curator
-Feature Type,TURN,Turn,turn,SO:0001128,ECO:0000001,inferred by curator
-Feature Type,VARIANT,Natural variant,natural_variant_site,SO:0001147,ECO:0000001,inferred by curator
-Feature Type,MUTAGEN,Mutagenesis,mutated_variant_site,SO:0001148,ECO:0000001,inferred by curator
-Feature Type,VAR_SEQ,Alternative sequence ,alternative_sequence_site,SO:0001149,ECO:0000001,inferred by curator
-Feature Type,BINDING,Binding site,binding_motif,SO:0100018,ECO:0000001,inferred by curator
-CC Topic,SUBUNIT ,n/a,subunit_information,BS:01001,ECO:0000001,inferred by curator
-CC Topic,ENZYME REGULATION ,n/a,enzyme_regulation,BS:01005,ECO:0000001,inferred by curator
-CC Topic,CATALYTIC ACTIVITY ,n/a,catalytic_activity,BS:01006,ECO:0000001,inferred by curator
-CC Topic,PATHWAY ,n/a,pathway,BS:01007,ECO:0000001,inferred by curator
-CC Topic,COFACTOR ,n/a,cofactor,BS:01008,ECO:0000001,inferred by curator
-CC Topic,ALTERNATIVE PRODUCTS ,n/a,alternative_products,BS:01010,ECO:0000001,inferred by curator
-CC Topic,POLYMORPHISM ,n/a,polymorphism,BS:01012,ECO:0000001,inferred by curator
-CC Topic,RNA EDITING ,n/a,RNA_editing,BS:01013,ECO:0000001,inferred by curator
-CC Topic,SIMILARITY ,n/a,similarity,BS:01014,ECO:0000001,inferred by curator
-CC Topic,ALLERGEN  ,n/a,allergen,BS:01016,ECO:0000001,inferred by curator
-CC Topic,PHARMACEUTICAL ,n/a,pharmaceutical,BS:01017,ECO:0000001,inferred by curator
-CC Topic,TOXIC DOSE ,n/a,toxic_dose,BS:01018,ECO:0000001,inferred by curator
-CC Topic,SEQUENCE CAUTION ,n/a,sequence_caution,BS:01020,ECO:0000001,inferred by curator
-CC Topic,INDUCTION ,n/a,induction,BS:01022,ECO:0000001,inferred by curator
-CC Topic,BIOPHYSICOCHEMICAL PROPERTIES ,n/a,biophysiochemical_properties,BS:01023,ECO:0000001,inferred by curator
-CC Topic,BIOTECHNOLOGY ,n/a,biotechnological_use,BS:01024,ECO:0000001,inferred by curator
-CC Topic,MISCELLANEOUS ,n/a,miscellaneous,BS:01026,ECO:0000001,inferred by curator
-CC Topic,WEB RESOURCE ,n/a,web_resource,BS:01027,ECO:0000001,inferred by curator
-CC Topic,CAUTION ,n/a,annotation_warnings,BS:01028,ECO:0000001,inferred by curator
-CC Topic,INTERACTION ,n/a,protein_protein_interactions,BS:01029,ECO:0000001,inferred by curator
-CC Topic,FUNCTION ,n/a,functional_annotation,BS:01030,ECO:0000001,inferred by curator
-CC Topic,TISSUE SPECIFICITY ,n/a,tissue_specificity,BS:01031,ECO:0000001,inferred by curator
-CC Topic,SUBCELLULAR LOCATION ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
-CC Topic,MASS SPECTROMETRY ,n/a,mass_spectrometry,BS:01039,ECO:0000001,inferred by curator
-CC Topic,DOMAIN ,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
-CC Topic,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
-CC Topic,DISEASE ,n/a,disease,BS:01019,ECO:0000001,inferred by curator
-CC Topic,DEVELOPMENTAL STAGE ,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
-Keyword,Domain,n/a,domain_information,BS:01004,ECO:0000001,inferred by curator
-Keyword,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001,inferred by curator
-Keyword,Disease,n/a,disease,BS:01019,ECO:0000001,inferred by curator
-Keyword,Developmental Stage,n/a,developmental_stage,BS:01025,ECO:0000001,inferred by curator
-Keyword,Coding sequence diversity ,n/a,alternative_products,BS:01010,ECO:0000001,inferred by curator
-Keyword,Biological process ,n/a,biological_process,BS:01021,ECO:0000001,inferred by curator
-Keyword,Cellular component ,n/a,cellular_component,BS:01033,ECO:0000001,inferred by curator
-Keyword,Ligand,n/a,ligand_information,BS:01035,ECO:0000001,inferred by curator
-Keyword,Molecular function ,n/a,molecular_function,BS:01036,ECO:0000001,inferred by curator
-Keyword,Technical term,n/a,technical_term,BS:01037,ECO:0000001,inferred by curator
-Description,Description,n/a,protein_name,BS:01003,ECO:0000001,inferred by curator
-Organism species,Organism species,n/a,organism_species,BS:01034,ECO:0000001,inferred by curator
-Taxonomy cross-reference,Taxonomy cross-reference,n/a,taxonomy,BS:01040,ECO:0000001,inferred by curator
-
+Term Type,UniProt Feature Keys,UniProt KB Long Name,Ontology term,ID,Evidence Code - Term - Inference
+FEATURE,SE_CYS,Selenocysteine,L-selenocysteine ,MOD:00031,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,CROSSLNK,Cross-link,crosslinked residues,MOD:00033,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,DISULFID,Disulfide bond,disulfide crosslinked residues,MOD:00689,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,CARBOHYD,Glycosylation,glycosylated residue,MOD:00693,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,LIPID,Lipidation,lipoconjugated residue,MOD:01155,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,DOMAIN,Domain,polypeptide_domain,SO:0000417,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,NP_BIND,Nucleotide binding,polypeptide_domain,SO:0000417,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,DNA_BIND,DNA binding,polypeptide_domain,SO:0000417,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,CA_BIND,Calcium binding,polypeptide_domain,SO:0000417,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,ZN_FING,Zinc finger ,polypeptide_domain,SO:0000417,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,SIGNAL,Signal peptide,signal_peptide,SO:0000418,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,CHAIN,Chain ,mature_protein_region,SO:0000419,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,INIT_MET,Initiator methionine ,cleaved_initiator_methionine,SO:0000691,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,TRANSIT,Transit peptide,transit_peptide,SO:0000725,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,SITE,Site ,polypeptide_region,SO:0000839,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,REGION,Region,polypeptide_region,SO:0000839,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,PROPEP,Propeptide ,propeptide,SO:0001062,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,PEPTIDE,Peptide,active_peptide,SO:0001064,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,COMPBIAS,Compositional bias ,compositionally_biased_region,SO:0001066,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,MOTIF,Motif ,polypeptide_motif,SO:0001067,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,REPEAT,Repeat,polypeptide_repeat,SO:0001068,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,TOPO_DOM,Topological domain,extramembrane,SO:0001072,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,TRANSMEM,Transmembrane,transmembrane,SO:0001077,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,COILED,Coiled coil,coiled_coil,SO:0001080,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,NON_CONS,Non-adjacent residues,non_adjacent_residue,SO:0001083,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,NON_TER,Non-terminal residue,non_terminal_residue,SO:0001084,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,CONFLICT,Sequence conflict,sequence_conflict,SO:0001085,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,UNSURE,Sequence uncertainty,sequence_uncertainty,SO:0001086,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,MOD_RES,Modified residue,post_translational_modification,SO:0001089,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,METAL,Metal binding,metal_contact,SO:0001092,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,ACT_SITE,Active site ,catalytic_residue,SO:0001104,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,STRAND,Beta Strand ,beta_strand,SO:0001111,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,HELIX,Helix,alpha_helix,SO:0001117,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,TURN,Turn,turn,SO:0001128,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,VARIANT,Natural variant,natural_variant_site,SO:0001147,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,MUTAGEN,Mutagenesis,mutated_variant_site,SO:0001148,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,VAR_SEQ,Alternative sequence ,alternative_sequence_site,SO:0001149,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+FEATURE,BINDING,Binding site,binding_motif,SO:0100018,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,SUBUNIT ,n/a,subunit_information,BS:01001,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,ENZYME REGULATION ,n/a,enzyme_regulation,BS:01005,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,CATALYTIC ACTIVITY ,n/a,catalytic_activity,BS:01006,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,PATHWAY ,n/a,pathway,BS:01007,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,COFACTOR ,n/a,cofactor,BS:01008,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,ALTERNATIVE PRODUCTS ,n/a,alternative_products,BS:01010,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,POLYMORPHISM ,n/a,polymorphism,BS:01012,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,RNA EDITING ,n/a,RNA_editing,BS:01013,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,SIMILARITY ,n/a,similarity,BS:01014,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,ALLERGEN  ,n/a,allergen,BS:01016,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,PHARMACEUTICAL ,n/a,pharmaceutical,BS:01017,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,TOXIC DOSE ,n/a,toxic_dose,BS:01018,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,SEQUENCE CAUTION ,n/a,sequence_caution,BS:01020,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,INDUCTION ,n/a,induction,BS:01022,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,BIOPHYSICOCHEMICAL PROPERTIES ,n/a,biophysiochemical_properties,BS:01023,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,BIOTECHNOLOGY ,n/a,biotechnological_use,BS:01024,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,MISCELLANEOUS ,n/a,miscellaneous,BS:01026,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,WEB RESOURCE ,n/a,web_resource,BS:01027,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,CAUTION ,n/a,annotation_warnings,BS:01028,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,INTERACTION ,n/a,protein_protein_interactions,BS:01029,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,FUNCTION ,n/a,functional_annotation,BS:01030,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,TISSUE SPECIFICITY ,n/a,tissue_specificity,BS:01031,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,SUBCELLULAR LOCATION ,n/a,cellular_component,BS:01033,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,MASS SPECTROMETRY ,n/a,mass_spectrometry,BS:01039,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,DOMAIN ,n/a,domain_information,BS:01004,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,DISEASE ,n/a,disease,BS:01019,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+COMMENT,DEVELOPMENTAL STAGE ,n/a,developmental_stage,BS:01025,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,DOMAIN,n/a,domain_information,BS:01004,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,PTM ,n/a,post_translational_modification_information,BS:01009,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,DISEASE,n/a,disease,BS:01019,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,DEVELOPMENTAL STAGE,n/a,developmental_stage,BS:01025,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,CODING SEQUENCE DIVERSITY ,n/a,alternative_products,BS:01010,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,BIOLOGICAL PROCESS ,n/a,biological_process,BS:01021,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,CELLULAR COMPONENT ,n/a,cellular_component,BS:01033,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,LIGAND,n/a,ligand_information,BS:01035,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,MOLECULAR FUNCTION ,n/a,molecular_function,BS:01036,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+KEYWORD,TECHNICAL TERM,n/a,technical_term,BS:01037,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+PROTEIN NAME,PROTEIN NAME,n/a,protein_name,BS:01003,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+ORGANISM SPECIES,ORGANISM SPECIES,n/a,organism_species,BS:01034,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+TAXONOMY CROSS-REFERENCE,TAXONOMY CROSS-REFERENCE,n/a,taxonomy,BS:01040,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+REFERENCE,REFERENCE,n/a,publication,BS:00138,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
+EC NUMBER,EC NUMBER,n/a,EC_annotation,BS:00160,ECO:0000001 - inferred by curator - MANUAL; ECO:00000067 - inferred from electronic annotation - ELECTRONIC
