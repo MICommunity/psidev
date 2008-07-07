@@ -43,6 +43,7 @@ Value type and units specification (for easy copy/paste):
 
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 
 relationship: has_units UO:0000001 ! length unit
 relationship: has_units UO:0000002 ! mass unit
@@ -50,6 +51,7 @@ relationship: has_units UO:0000003 ! time unit
 relationship: has_units UO:0000051 ! concentration unit
 relationship: has_units UO:0000095 ! volume unit
 relationship: has_units UO:0000111 ! energy unit
+relationship: has_units UO:0000166 ! parts per notation
 relationship: has_units UO:0000217 ! electric potential difference
 relationship: has_units UO:0000227 ! magnetic flux density
 relationship: has_units MS:1000040 ! m/z
