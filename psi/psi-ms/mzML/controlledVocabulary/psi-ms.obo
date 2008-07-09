@@ -2906,12 +2906,14 @@ id: MS:1000451
 name: mass analyzer
 def: "Terms used to describe the Analyzer." [PSI:MS]
 relationship: part_of MS:1000463 ! instrument
+synonym: "analyzer" EXACT []
 
 [Term]
 id: MS:1000452
 name: data transformation
 def: "Terms used to describe types of data processing." [PSI:MS]
 relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Ontology
+synonym: "data processing" EXACT []
 
 [Term]
 id: MS:1000453
@@ -2937,6 +2939,7 @@ id: MS:1000456
 name: precursor activation
 def: "Terms to describe the precursor activation." [PSI:MS]
 relationship: part_of MS:1000442 ! spectrum
+synonym: "activation" EXACT []
 
 [Term]
 id: MS:1000457
@@ -2979,6 +2982,7 @@ id: MS:1000463
 name: instrument
 def: "Description of the instrument or the mass spectrometer." [PSI:MS]
 relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Ontology
+synonym: "instrument configuration" EXACT []
 
 [Term]
 id: MS:1000464
@@ -3700,6 +3704,7 @@ id: MS:1000577
 name: data file
 def: "Describes the type of file and its content." [PSI:MS]
 relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Ontology
+synonym: "source file" EXACT []
 
 [Term]
 id: MS:1000578
