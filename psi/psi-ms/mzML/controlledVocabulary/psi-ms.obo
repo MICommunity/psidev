@@ -10,7 +10,7 @@ remark: coverage: Mass spectrometer output files
 remark: creator: Eric Deutsch <edeutsch@systemsbiology.org>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
-import: unit.obo
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
 
 [Term]
 id: MS:0000000
