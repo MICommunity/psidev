@@ -4,10 +4,10 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.5.0
-remark: release date: 2008-13-11
+remark: version: 1.6.0
+remark: release date: 2008-13-13
 remark: coverage: Mass spectrometer output files
-remark: creator: Eric Deutsch <edeutsch@systemsbiology.org>
+remark: creator: Matt Chambers <matt.chambers <@> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
 import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
@@ -1018,7 +1018,7 @@ is_a: MS:1000125 ! Thermo Finnigan instrument model
 id: MS:1000155
 name: ELEMENT2
 def: "ThermoFinnigan ELEMENT2 MS." [PSI:MS]
-is_a: MS:1000492 ! Thermo Electron instrument model
+relationship: part_of MS:1000479 ! purgatory
 
 [Term]
 id: MS:1000156
@@ -4759,6 +4759,30 @@ id: MS:1000747
 name: completion time
 def: "The time that a data processing action was finished." [PSI:MS]
 is_a: MS:1000630 ! data processing parameter
+
+[Term]
+id: MS:1000748
+name: SSQ 7000
+def: "ThermoFinnigan SSQ 7000 MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
+
+[Term]
+id: MS:1000749
+name: TSQ 7000
+def: "ThermoFinnigan TSQ 7000 MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
+
+[Term]
+id: MS:1000750
+name: TSQ
+def: "ThermoFinnigan TSQ MS." [PSI:MS]
+is_a: MS:1000493 ! Finnigan MAT instrument model
+
+[Term]
+id: MS:1000751
+name: TSQ Quantum Ultra
+def: "Thermo Scientific TSQ Quantum Ultra." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 
 [Typedef]
