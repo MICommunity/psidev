@@ -23,7 +23,7 @@
     </xs:sequence>
     <xs:attribute name="accession" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional accession number for the mzML document.</xs:documentation>
+        <xs:documentation>An optional accession number for the mzML document used for storage, e.g. in PRIDE.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="version" type="xs:string" use="required">
@@ -33,7 +33,7 @@
     </xs:attribute>
     <xs:attribute name="id" type="xs:string" use="optional">
       <xs:annotation>
-        <xs:documentation>An optional id for the mzML document. It is recommended to use LSIDs when possible.</xs:documentation>
+        <xs:documentation>An optional id for the mzML document used for referencing from external files. It is recommended to use LSIDs when possible.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -715,7 +715,7 @@
         </xs:attribute>
         <xs:attribute name="spectrumRef" type="xs:IDREF" use="optional">
           <xs:annotation>
-            <xs:documentation>For acquisitions that are local to this document, this attribute must reference the 'id' attribute of the appropriate spectrum.</xs:documentation>
+            <xs:documentation>For acquisitions that are local to this document, this attribute can be used to reference the 'id' attribute of the spectrum corresponding to this acquisition.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="sourceFileRef" type="xs:IDREF" use="optional">
@@ -830,7 +830,11 @@
       <xs:documentation>List of binary data arrays.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element minOccurs="2" maxOccurs="unbounded" name="binaryDataArray" type="dx:BinaryDataArrayType" />
+      <xs:element minOccurs="2" maxOccurs="unbounded" name="binaryDataArray" type="dx:BinaryDataArrayType">
+		    <xs:annotation>
+		      <xs:documentation>Data point arrays for default data arrays (m/z, intensity, time) and meta data arrays. Default data arrays must not have the attributes 'arrayLength' and 'dataProcessingRef'.</xs:documentation>
+		    </xs:annotation>
+		  </xs:element>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
@@ -847,7 +851,7 @@
         <xs:sequence>
           <xs:element name="binary" type="xs:base64Binary">
             <xs:annotation>
-              <xs:documentation>The actual base64 encoded binary data.</xs:documentation>
+              <xs:documentation>The actual base64 encoded binary data. The byte order is always 'little endian'.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
