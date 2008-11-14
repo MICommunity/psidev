@@ -4,8 +4,8 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.6.0
-remark: release date: 2008-13-13
+remark: version: 1.7.0
+remark: release date: 2008-13-14
 remark: coverage: Mass spectrometer output files
 remark: creator: Matt Chambers <matt.chambers <@> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
@@ -1612,7 +1612,7 @@ id: MS:1000245
 name: charge stripping
 def: "The reaction of a positive ion with an atom or molecule that results in the removal of one or more electrons from the ion." [PSI:MS]
 synonym: "CS" EXACT []
-relationship: part_of MS:1000456 ! precursor activation
+is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000246
@@ -1620,7 +1620,6 @@ name: delayed extraction
 def: "The application of the accelerating voltage pulse after a time delay in desorption ionization from a surface. The extraction delay can produce energy focusing in a time-of-flight mass spectrometer." [PSI:MS]
 synonym: "DE" EXACT []
 is_a: MS:1000597 ! ion optics type
-relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000247
@@ -3288,7 +3287,7 @@ relationship: has_units UO:0000111 ! energy unit
 id: MS:1000510
 name: precursor activation attribute
 def: "Precursor Activation Attribute." [PSI:MS]
-relationship: part_of MS:1000442 ! Spectrum
+relationship: part_of MS:1000456 ! precursor activation
 
 [Term]
 id: MS:1000511
@@ -4076,7 +4075,7 @@ is_a: MS:1000126 ! Waters instrument model
 id: MS:1000633
 name: possible charge state
 def: "A possible charge state of the ion in a situation where the charge of an ion is known to be one of several possible values rather than a completely unknown value or determined to be a specific charge with reasonable certainty." [PSI:MS]
-xref: value-type:xsd\:int"The allowed value-type for this CV term."
+xref: value-type:xsd\:int" The allowed value-type for this CV term."
 is_a: MS:1000455 ! ion selection attribute
 
 [Term]
@@ -4759,6 +4758,7 @@ id: MS:1000747
 name: completion time
 def: "The time that a data processing action was finished." [PSI:MS]
 is_a: MS:1000630 ! data processing parameter
+xref: value-type:xsd\:date "The allowed value-type for this CV term."
 
 [Term]
 id: MS:1000748
