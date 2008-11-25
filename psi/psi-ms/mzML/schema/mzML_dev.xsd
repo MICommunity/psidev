@@ -44,7 +44,7 @@
     <xs:sequence>
       <xs:element name="fileContent" type="dx:ParamGroupType">
         <xs:annotation>
-          <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it.</xs:documentation>
+          <xs:documentation>This summarizes the different types of spectra that can be expected in the file. This is expected to aid processing software in skipping files that do not contain appropriate spectrum types for it. It should also describe the nativeID format used in the file by referring to an appropriate CV term.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="sourceFileList" type="dx:SourceFileListType" />
@@ -382,40 +382,20 @@
     <xs:annotation>
       <xs:documentation>Software information.</xs:documentation>
     </xs:annotation>
-    <xs:sequence>
-      <xs:element name="softwareParam" type="dx:SoftwareParamType">
-        <xs:annotation>
-          <xs:documentation>A description of the software, based on CV information and a software version.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-    <xs:attribute name="id" type="xs:ID" use="required">
-      <xs:annotation>
-        <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-  </xs:complexType>
-  <xs:complexType name="SoftwareParamType">
-    <xs:attribute name="cvRef" type="xs:IDREF" use="required">
-      <xs:annotation>
-        <xs:documentation>A reference to the CV 'id' attribute as defined in the cvList in this mzML file.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="accession" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The accession number for this CV term.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="name" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The preferred name in the CV for the accession number of this CV term.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
-    <xs:attribute name="version" type="xs:string" use="required">
-      <xs:annotation>
-        <xs:documentation>The software version.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
+    <xs:complexContent mixed="false">
+      <xs:extension base="dx:ParamGroupType">
+        <xs:attribute name="id" type="xs:ID" use="required">
+          <xs:annotation>
+            <xs:documentation>An identifier for this software that is unique across all SoftwareTypes.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="version" type="xs:string" use="required">
+          <xs:annotation>
+            <xs:documentation>The software version.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:complexType name="DataProcessingListType">
     <xs:annotation>
@@ -550,7 +530,7 @@
         </xs:attribute>
         <xs:attribute name="defaultInstrumentConfigurationRef" type="xs:IDREF" use="required">
           <xs:annotation>
-            <xs:documentation>This attribute must reference the 'id' of the default instrument configuration. If a scan does not reference an instrument configuration, it implicitly refers to this configuration.</xs:documentation>
+            <xs:documentation>This attribute can optionally reference the 'id' of the default instrument configuration. If an acquisition does not reference an instrument configuration, it implicitly refers to this configuration.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="sampleRef" type="xs:IDREF" use="optional">
@@ -599,54 +579,55 @@
         <xs:documentation>The number of spectra defined in this mzML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>This attribute can optionally reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectrumType">
     <xs:annotation>
       <xs:documentation>The structure that captures the generation of a peak list (including the underlying acquisitions)</xs:documentation>
     </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
-        <xs:sequence>
-          <xs:element name="spectrumDescription" type="dx:SpectrumDescriptionType" />
-          <xs:element minOccurs="0" maxOccurs="1" name="binaryDataArrayList" type="dx:BinaryDataArrayListType" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:ID" use="required">
-          <xs:annotation>
-            <xs:documentation>A unique identifier for this spectrum. It should be expected that external files may use this identifier together with the mzML filename or accession to reference a particular spectrum.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="nativeID" type="xs:string" use="required">
-          <xs:annotation>
-            <xs:documentation>The native identifier for the spectrum, used by the acquisition software.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="spotID" type="xs:string" use="optional">
-          <xs:annotation>
-            <xs:documentation>The identifier for the spot from which this spectrum was derived, if a MALDI or similar run.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
-          <xs:annotation>
-            <xs:documentation>The zero-based, consecutive index of  the spectrum in the SpectrumList.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="defaultArrayLength" type="xs:int" use="required">
-          <xs:annotation>
-            <xs:documentation>Default length of binary data arrays contained in this element.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
-          <xs:annotation>
-            <xs:documentation>This attribute can optionally reference the 'id' of the appropriate dataProcessing.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="sourceFileRef" type="xs:IDREF" use="optional">
-          <xs:annotation>
-            <xs:documentation>This attribute can optionally  reference the 'id' of the appropriate sourceFile.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
+    <xs:sequence>
+      <xs:element name="spectrumDescription" type="dx:SpectrumDescriptionType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="binaryDataArrayList" type="dx:BinaryDataArrayListType" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="required">
+      <xs:annotation>
+        <xs:documentation>A unique identifier for this spectrum. It should be expected that external files may use this identifier together with the mzML filename or accession to reference a particular spectrum.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="nativeID" type="xs:string" use="required">
+      <xs:annotation>
+        <xs:documentation>The native identifier for the spectrum, used by the acquisition software.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="spotID" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation>The identifier for the spot from which this spectrum was derived, if a MALDI or similar run.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="index" type="xs:nonNegativeInteger" use="required">
+      <xs:annotation>
+        <xs:documentation>The zero-based, consecutive index of  the spectrum in the SpectrumList.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="defaultArrayLength" type="xs:int" use="required">
+      <xs:annotation>
+        <xs:documentation>Default length of binary data arrays contained in this element.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="dataProcessingRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>This attribute can optionally reference the 'id' of the appropriate dataProcessing.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sourceFileRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>This attribute can optionally reference the 'id' of the appropriate sourceFile.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="SpectrumDescriptionType">
     <xs:annotation>
@@ -657,7 +638,6 @@
         <xs:sequence>
           <xs:element minOccurs="0" name="acquisitionList" type="dx:AcquisitionListType" />
           <xs:element minOccurs="0" name="precursorList" type="dx:PrecursorListType" />
-          <xs:element minOccurs="0" name="scan" type="dx:ScanType" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -708,6 +688,13 @@
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="dx:ParamGroupType">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="scanWindowList" type="dx:ScanWindowListType">
+            <xs:annotation>
+              <xs:documentation>Container for a list of select windows.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
         <xs:attribute name="number" type="xs:int" use="required">
           <xs:annotation>
             <xs:documentation>A number for this acquisition.</xs:documentation>
@@ -731,6 +718,11 @@
         <xs:attribute name="externalSpectrumID" type="xs:string" use="optional">
           <xs:annotation>
             <xs:documentation>For acquisitions that are external to this document which cannot be referenced by nativeID, this string must correspond to the 'id' attribute of a spectrum in the external document indicated by 'sourceFileRef'.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="instrumentConfigurationRef" type="xs:IDREF" use="optional">
+          <xs:annotation>
+            <xs:documentation>This attribute can optionally reference the 'id' attribute of the appropriate instrument configuration.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
@@ -804,37 +796,16 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ScanType">
-    <xs:annotation>
-      <xs:documentation>The instrument's 'run time' parameters; common to the whole of this spectrum.</xs:documentation>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="dx:ParamGroupType">
-        <xs:sequence>
-          <xs:element name="scanWindowList" type="dx:ScanWindowListType">
-            <xs:annotation>
-              <xs:documentation>Container for a list of select windows.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-        <xs:attribute name="instrumentConfigurationRef" type="xs:IDREF" use="optional">
-          <xs:annotation>
-            <xs:documentation>This attribute must reference the 'id' attribute of the appropriate instrument configuration.</xs:documentation>
-          </xs:annotation>
-        </xs:attribute>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="BinaryDataArrayListType">
     <xs:annotation>
       <xs:documentation>List of binary data arrays.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element minOccurs="2" maxOccurs="unbounded" name="binaryDataArray" type="dx:BinaryDataArrayType">
-		    <xs:annotation>
-		      <xs:documentation>Data point arrays for default data arrays (m/z, intensity, time) and meta data arrays. Default data arrays must not have the attributes 'arrayLength' and 'dataProcessingRef'.</xs:documentation>
-		    </xs:annotation>
-		  </xs:element>
+        <xs:annotation>
+          <xs:documentation>Data point arrays for default data arrays (m/z, intensity, time) and meta data arrays. Default data arrays must not have the attributes 'arrayLength' and 'dataProcessingRef'.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
     </xs:sequence>
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
@@ -883,6 +854,11 @@
     <xs:attribute name="count" type="xs:nonNegativeInteger" use="required">
       <xs:annotation>
         <xs:documentation>The number of chromatograms defined in this mzML file.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="optional">
+      <xs:annotation>
+        <xs:documentation>This attribute can optionally reference the 'id' of the default data processing for the chromatogram list. If an acquisition does not reference any data processing, it implicitly refers to this data processing.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
