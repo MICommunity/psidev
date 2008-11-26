@@ -579,9 +579,9 @@
         <xs:documentation>The number of spectra defined in this mzML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="optional">
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute can optionally reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing.</xs:documentation>
+        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the spectrum list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to mzML".</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
@@ -856,9 +856,9 @@
         <xs:documentation>The number of chromatograms defined in this mzML file.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="optional">
+    <xs:attribute name="defaultDataProcessingRef" type="xs:IDREF" use="required">
       <xs:annotation>
-        <xs:documentation>This attribute can optionally reference the 'id' of the default data processing for the chromatogram list. If an acquisition does not reference any data processing, it implicitly refers to this data processing.</xs:documentation>
+        <xs:documentation>This attribute MUST reference the 'id' of the default data processing for the chromatogram list. If an acquisition does not reference any data processing, it implicitly refers to this data processing. This attribute is required because the minimum amount of data processing that any format will undergo is "conversion to mzML".</xs:documentation>
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
