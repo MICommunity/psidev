@@ -426,11 +426,6 @@
         <xs:documentation>A unique identifier for this data processing that is unique across all DataProcessingTypes.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="softwareRef" type="xs:IDREF" use="required">
-      <xs:annotation>
-        <xs:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xs:documentation>
-      </xs:annotation>
-    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ProcessingMethodType">
     <xs:complexContent mixed="false">
@@ -438,6 +433,11 @@
         <xs:attribute name="order" type="xs:nonNegativeInteger" use="required">
           <xs:annotation>
             <xs:documentation>This attributes allows a series of consecutive steps to be placed in the correct order.</xs:documentation>
+          </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="softwareRef" type="xs:IDREF" use="required">
+          <xs:annotation>
+            <xs:documentation>This attribute must reference the 'id' of the appropriate SoftwareType.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
       </xs:extension>
