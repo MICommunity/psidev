@@ -4,8 +4,8 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.9.0
-remark: release date: 2008-11-25
+remark: version: 1.9.1
+remark: release date: 2008-12-04
 remark: coverage: Mass spectrometer output files
 remark: creator: Matt Chambers <matt.chambers <@> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
@@ -34,7 +34,7 @@ relationship: part_of MS:1000479 ! purgatory
 id: MS:1000003
 name: sample state
 def: "The chemical phase of a pure sample, or the state of a mixed sample." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000004
@@ -3293,7 +3293,7 @@ relationship: part_of MS:1000456 ! precursor activation
 id: MS:1000511
 name: ms level
 def: "Stages of ms achieved in a multi stage mass spectrometry experiment." [PSI:MS]
-xref: value-type:xsd\:int"The allowed value-type for this CV term."
+xref: value-type:xsd\:int" The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 
 [Term]
@@ -4051,6 +4051,7 @@ name: low intensity threshold
 def: "Threshold below which some action is taken." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000630 ! data processing parameter
+relationship: has_units MS:1000460 ! intensity unit 
 
 [Term]
 id: MS:1000630
@@ -4064,6 +4065,7 @@ name: high intensity threshold
 def: "Threshold above which some action is taken." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000630 ! data processing parameter
+relationship: has_units MS:1000460 ! intensity unit 
 
 [Term]
 id: MS:1000632
@@ -4999,6 +5001,25 @@ synonym: "box smoothing" EXACT []
 synonym: "boxcar smoothing" EXACT []
 synonym: "sliding average smoothing" EXACT []
 is_a: MS:1000592 ! smoothing
+
+id: MS:1000786
+name: non-standard data array
+def: "A data array that contains data not covered by any other term in this group. Please do not use this term, if the binary data array type might be commonly used - contact the PSI-MS working group in order to have another CV term added. If available, the name of the data array should be stored in the cvParam 'name'." [PSI:MS]
+is_a: MS:1000513 ! binary data array 
+
+id: MS:1000787
+name: inclusive low intensity threshold
+def: "Threshold at or below which some action is taken." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000630 ! data processing parameter
+relationship: has_units MS:1000460 ! intensity unit
+
+id: MS:1000788
+name: inclusive high intensity threshold
+def: "Threshold at or above which some action is taken." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000630 ! data processing parameter
+relationship: has_units MS:1000460 ! intensity unit 
 
 [Typedef]
 id: has_units
