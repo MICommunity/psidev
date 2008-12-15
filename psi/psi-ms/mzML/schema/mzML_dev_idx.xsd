@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
-<xs:schema xmlns="http://psi.hupo.org/schema_revision/mzML_1.0.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://psi.hupo.org/schema_revision/mzML_1.0.0" version="1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:include schemaLocation="mzML1.0.0.xsd" />
+<xs:schema xmlns="http://psi.hupo.org/schema_revision/mzML_1.0.0" xmlns:dx="http://psi.hupo.org/schema_revision/mzML_1.0.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://psi.hupo.org/schema_revision/mzML_1.0.0" version="1.0.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="mzML_dev.xsd" />
   <xs:element name="indexedmzML">
     <xs:annotation>
-      <xs:documentation>Container element for mzML which allows the addition  of an index.</xs:documentation>
+      <xs:documentation>Container element for mzML which allows the addition of an index.</xs:documentation>
     </xs:annotation>
     <xs:complexType>
       <xs:sequence>
@@ -28,14 +27,9 @@
                       <xs:complexType>
                         <xs:simpleContent>
                           <xs:extension base="xs:long">
-                            <xs:attribute name="idRef" type="xs:IDREF" use="required">
+                            <xs:attribute name="idRef" type="xs:string" use="required">
                               <xs:annotation>
                                 <xs:documentation>Reference to the 'id' attribute of the indexed element.</xs:documentation>
-                              </xs:annotation>
-                            </xs:attribute>
-                            <xs:attribute name="nativeID" type="xs:string" use="required">
-                              <xs:annotation>
-                                <xs:documentation>The native identifier for the spectrum, used by the acquisition software.</xs:documentation>
                               </xs:annotation>
                             </xs:attribute>
                             <xs:attribute name="spotID" type="xs:string" use="optional">
@@ -75,5 +69,13 @@
         </xs:element>
       </xs:sequence>
     </xs:complexType>
+    <xs:key name="KEY_ID_IDX">
+      <xs:selector xpath=".//dx:indexedmzML/dx:mzML/dx:run/dx:spectrumList/dx:spectrum | .//dx:indexedmzML/dx:mzML/dx:run/dx:chromatogramList/dx:chromatogram"/>
+      <xs:field xpath="@id"/>
+    </xs:key>
+    <xs:keyref refer="KEY_ID_IDX" name="FKNID">
+      <xs:selector xpath=".//dx:indexedmzML/dx:indexList/dx:index/dx:offset"/>
+      <xs:field xpath="@id"/>
+    </xs:keyref>
   </xs:element>
 </xs:schema>
