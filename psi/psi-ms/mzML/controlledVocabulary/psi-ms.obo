@@ -150,7 +150,7 @@ id: MS:1000020
 name: scanning method
 def: "Describes the acquisition data type produced by a tandem mass spectrometry experiment." [PSI:MS]
 synonym: "Tandem Scanning Method" RELATED []
-relationship: part_of MS:1000441 ! scan
+relationship: part_of MS:1000479 ! purgatory
 
 [Term]
 id: MS:1000021
@@ -3196,8 +3196,9 @@ relationship: part_of MS:1000463 ! instrument
 [Term]
 id: MS:1000497
 name: zoom scan
-def: "Feature of the ion trap mass spectrometer where MSMS data is acquired over a certain mass range." [PSI:MS]
-is_a: MS:1000020 ! scanning method
+def: "Special scan mode, where data with improved resoltuion is acquired. This is typically achieved by scanning a more narrow m/z window or scanning with a lower scan rate." [PSI:MS]
+is_a: MS:1000499 ! spectrum attribute
+synonym: "enhanced resolution scan" EXACT []
 
 [Term]
 id: MS:1000498
