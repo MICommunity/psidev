@@ -87,8 +87,7 @@ relationship: part_of MS:1000479 ! purgatory
 [Term]
 id: MS:1000011
 name: mass resolution
-def: "Smallest mass difference between two equal magnitude peaks so that the valley between
-them is a specified fraction of the peak height." [PSI:MS]
+def: "Smallest mass difference between two equal magnitude peaks so that the valley between them is a specified fraction of the peak height." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 
