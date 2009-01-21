@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
-<xs:schema xmlns="http://http://psidev.info/ms/mzML/xsd/mzML_1.1.0" xmlns:dx="http://psidev.info/ms/mzML/xsd/mzML_1.1.0" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://psidev.info/ms/mzML/xsd/mzML_1.1.0" version="1.1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:include schemaLocation="mzML_dev.xsd" />
+<xs:schema xmlns="http://psi.hupo.org/ms/mzml" xmlns:dx="http://psi.hupo.org/ms/mzml" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://psi.hupo.org/ms/mzml" version="1.1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:include schemaLocation="mzML1.1.0.xsd" />
   <xs:element name="indexedmzML">
     <xs:annotation>
       <xs:documentation>Container element for mzML which allows the addition of an index.</xs:documentation>
