@@ -5126,6 +5126,20 @@ def: "The observed mass divided by the difference between two masses that can be
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute 
 
+[Term]
+id: MS:1000801
+name: area peak picking
+def: "Spectral peak processing conducted on the acquired data to convert profile data to centroided data. The area defined by all raw data points that belong to the peak is reported." [PSI:MS]
+synonym: "sum peak picking" EXACT []
+is_a: MS:1000035 ! peak picking
+
+[Term]
+id: MS:1000802
+name: heigh peak picking
+def: "Spectral peak processing conducted on the acquired data to convert profile data to centroided data. The maximum intensity of all raw data points that belong to the peak is reported." [PSI:MS]
+synonym: "max peak picking" EXACT []
+is_a: MS:1000035 ! peak picking
+
 [Typedef]
 id: has_units
 name: has_units
