@@ -4,7 +4,7 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.12.0
+remark: version: 1.12.1
 remark: release date: 2008-12-17
 remark: coverage: Mass spectrometer output files
 remark: creator: Fredrik Levander <fredrik.levander <@> immun.lth.se>
