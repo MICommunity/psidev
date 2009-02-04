@@ -5,9 +5,9 @@ auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
 remark: version: 1.12.1
-remark: release date: 2008-12-17
+remark: release date: 2009-02-04
 remark: coverage: Mass spectrometer output files
-remark: creator: Fredrik Levander <fredrik.levander <@> immun.lth.se>
+remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
 import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo?revision=1.15
