@@ -4,8 +4,8 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.16.0
-remark: release date: 2009-02-13
+remark: version: 1.17.0
+remark: release date: 2009-02-24
 remark: coverage: Mass spectrometer output files
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
@@ -5290,6 +5290,36 @@ id: MS:1000814
 name: counts per second
 def: "The number of counted events observed per second in one or a group of elements of a detector." [PSI:MS]
 is_a: MS:1000043 ! intensity unit
+
+[Term]
+id: MS:1000815
+name: Bruker BAF file
+def: "Bruker BAF raw file format." [PSI:MS]
+is_a: MS:1000560 ! source file type
+
+[Term]
+id: MS:1000816
+name: Bruker U2 file
+def: "Bruker HyStar U2 file format." [PSI:MS]
+is_a: MS:1000560 ! source file type
+
+[Term]
+id: MS:1000817
+name: HyStar
+def: "Bruker software for hyphenated experiments." [PSI:MS]
+is_a: MS:1000692 ! Bruker software
+
+[Term]
+id: MS:1000818
+name: Acquity UPLC PDA
+def: "Acquity UPLC Photodiode Array Detector." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1000819
+name: Acquity UPLC FLR
+def: "Acquity UPLC Fluorescence Detector." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
 
 
 [Typedef]
