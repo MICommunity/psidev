@@ -5366,7 +5366,7 @@ is_a: PAR:1288 ! reverse phase array
 id: PAR:1150
 name: PSI-PAR
 def: "Controlled vocabularies developed by HUPO Proteomic standard initiative for Protein Affinity Reagents." [pubmed:14755292 "primary-reference"]
-xref_analog: id-validation-regexp:\"MI\:[0-9\]\{4}\" "ANNOTATION"
+xref_analog: id-validation-regexp:\"PAR\:[0-9\]\{4}\" "ANNOTATION"
 xref_analog: search-url: http\://www.ebi.ac.uk/ontology-lookup/?termId=$\{ac} "ANNOTATION"
 is_a: PAR:0444 ! database citation
 
