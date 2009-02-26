@@ -5321,6 +5321,32 @@ name: Acquity UPLC FLR
 def: "Acquity UPLC Fluorescence Detector." [PSI:MS]
 is_a: MS:1000126 ! Waters instrument model
 
+[Term]
+id: MS:1000820
+name: flow rate array
+def: "A data array of flow rate measurements." [PSI:MS]
+is_a: MS:1000513 ! binary data array (needs a unit, but must get it added to unit.obo first)
+
+[Term]
+id: MS:1000821
+name: pressure array
+def: "A data array of pressure measurements." [PSI:MS]
+is_a: MS:1000513 ! binary data array
+relationship: has_units UO:0000110 ! pascal
+
+[Term]
+id: MS:1000822
+name: temperature array
+def: "A data array of temperature measurements." [PSI:MS]
+is_a: MS:1000513 ! binary data array
+relationship: has_units UO:0000012 ! kelvin
+
+[Term]
+id: MS:1000823
+name: Bruker U2 nativeID format
+def: "declaration=xsd:nonNegativeInteger collection=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger" [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
+
 
 [Typedef]
 id: has_units
