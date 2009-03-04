@@ -4037,8 +4037,8 @@ relationship: has_units UO:0000018 ! nanometer
 
 [Term]
 id: MS:1000618
-name: highest wavelength value
-def: "Highest wavelength value observed in the uv/vis spectrum." [PSI:MS]
+name: highest observed wavelength
+def: "Highest wavelength observed in an EMR spectrum." [PSI:MS]
 is_a: MS:1000499 ! spectrum attribute
 is_a: MS:1000808 ! chromatogram attribute
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
@@ -4046,8 +4046,8 @@ relationship: has_units UO:0000018 ! nanometer
 
 [Term]
 id: MS:1000619
-name: lowest wavelength value
-def: "Lowest wavelength value observed in the uv/vis spectrum." [PSI:MS]
+name: lowest observed wavelength
+def: "Lowest wavelength observed in an EMR spectrum." [PSI:MS]
 is_a: MS:1000499 ! spectrum attribute
 is_a: MS:1000808 ! chromatogram attribute
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
