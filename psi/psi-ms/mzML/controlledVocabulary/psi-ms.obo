@@ -5344,9 +5344,14 @@ relationship: has_units UO:0000012 ! kelvin
 [Term]
 id: MS:1000823
 name: Bruker U2 nativeID format
-def: "declaration=xsd:nonNegativeInteger collection=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger" [PSI:MS]
+def: "declaration=xsd:nonNegativeInteger collection=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
+[Term]
+id: MS:1000824
+name: no nativeID format
+def: "No nativeID format indicates that the file tagged with this term does not contain spectra that can have a nativeID format." [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
 
 [Typedef]
 id: has_units
