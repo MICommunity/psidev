@@ -5356,7 +5356,7 @@ is_a: MS:1000767 ! native spectrum identifier format
 [Term]
 id: MS:1000825
 name: Bruker FID file
-def: "Bruker FID file format."
+def: "Bruker FID file format." [PSI:MS]
 is_a: MS:1000560 ! source file type
 
 [Typedef]
