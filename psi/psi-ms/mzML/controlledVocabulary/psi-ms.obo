@@ -4,8 +4,8 @@ saved-by: David Sparkman
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 1.18.0
-remark: release date: 2009-03-09
+remark: version: 1.18.1
+remark: release date: 2009-03-10
 remark: coverage: Mass spectrometer output files
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group
@@ -2068,6 +2068,7 @@ name: electric field strength
 def: "The magnitude of the force per unit charge at a given point in space." [PSI:MS]
 is_a: MS:1000487 ! ion optics attribute
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
+relationship: has_units UO:0000268 ! volt per meter
 
 [Term]
 id: MS:1000309
