@@ -1,6 +1,6 @@
 format-version: 1.0
-date: 23:06:2008 22:07
-saved-by: David
+date: 11:03:2009 20:53
+saved-by: dg
 auto-generated-by: OBO-Edit 1.101
 default-namespace: PAR
 
@@ -4812,8 +4812,9 @@ is_a: PAR:1328 ! molecule production method
 
 [Term]
 id: PAR:1057
-name: single chain fv
+name: single chain Fv
 def: "A single chain Fv is a genetically engineered antibody derivate consisting of both the variable heavy chain (VH) and the light chain (VL) of an immunoglobulin. These entities are joined together by a flexible peptide linker." [pubmed:14755292 "primary-reference"]
+related_synonym: "scFv" []
 is_a: PAR:1029 ! antibody fragment
 
 [Term]
