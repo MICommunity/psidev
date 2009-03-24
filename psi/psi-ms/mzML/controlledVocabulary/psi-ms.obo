@@ -3277,7 +3277,7 @@ name: dwell time
 def: "The time spent gathering data across a peak." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 synonym: "Scan Duration" RELATED []
-is_a: MS:1000549 ! selection window attribute
+is_a: MS:1000503 ! scan attribute
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
 
