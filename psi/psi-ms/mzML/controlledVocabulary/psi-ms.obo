@@ -3371,6 +3371,8 @@ id: MS:1000515
 name: intensity array
 def: "A data array of intensity values." [PSI:MS]
 is_a: MS:1000513 ! binary data array
+relationship: has_units MS:1000131 ! number of counts
+relationship: has_units MS:1000814 ! counts per second
 
 [Term]
 id: MS:1000516
