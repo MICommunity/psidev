@@ -1,0 +1,33 @@
+<!-- AtomTabl.DTD -->
+<!-- Prepared by John S. Garavelli 10-Apr-2009 -->
+<!-- provisional, validated version 01.00 13-Apr-2009 -->
+<!-- Currently the psimod namespace is emulated in DTD. -->
+<!ELEMENT isotope_table (element+)>
+<!ELEMENT element (
+  element.atom_no,
+  element.name,
+  element.symbol,
+  element.avg_mass?,
+  element.isotope*)
+>
+<!ATTLIST element iso_count CDATA #REQUIRED>
+
+<!ELEMENT element.atom_no  (#PCDATA)>
+<!ELEMENT element.name     (#PCDATA)>
+<!ELEMENT element.symbol   (#PCDATA)>
+<!ELEMENT element.avg_mass (#PCDATA)>
+
+<!ELEMENT element.isotope  (
+  element.isotope.mass_no,
+  element.isotope.name?,
+  element.isotope.symbol,
+  element.isotope.mass,
+  element.isotope.fract)
+>
+<!ATTLIST element.isotope most_common (TRUE|FALSE) "FALSE">
+
+<!ELEMENT element.isotope.mass_no (#PCDATA)>
+<!ELEMENT element.isotope.name    (#PCDATA)>
+<!ELEMENT element.isotope.symbol  (#PCDATA)>
+<!ELEMENT element.isotope.mass    (#PCDATA)>
+<!ELEMENT element.isotope.fract   (#PCDATA)>
