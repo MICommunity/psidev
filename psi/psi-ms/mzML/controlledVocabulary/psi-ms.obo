@@ -1,10 +1,10 @@
 format-version: 1.2
 date: 30:04:2009 11:14
-saved-by: luisa
+saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.0.0
+remark: version: 2.1.0
 remark: release date: 2009-05-05
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
@@ -5665,6 +5665,24 @@ id: MS:1000853
 name: free electron laser
 def: "Free electron laser uses a relativistic electron beam as the lasing medium which move freely through a magnetic structure, hence the term." [PSI:MS]
 relationship: is_a MS:1000842 ! Laser Type
+
+[Term]
+id: MS:1000854
+name: LTQ XL
+def: "Thermo Scientific LTQ XL MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1000855
+name: LTQ Velos
+def: "Thermo Scientific LTQ Velos MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1000856
+name: LTQ Velos ETD
+def: "Thermo Scientific LTQ Velos MS with ETD." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1001000
