@@ -5685,6 +5685,19 @@ def: "Thermo Scientific LTQ Velos MS with ETD." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
+id: MS:1000857
+name: run attribute
+def: "Properties of the described run." [PSI:MS]
+
+[Term]
+id: MS:1000858
+name: fraction identifier
+def: "Identier string that describes the sample fraction. This identifer should contain the fraction number(s) or similar information." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000857 ! run attribute
+
+
+[Term]
 id: MS:1001000
 name: spectrum interpretation
 def: "Collection of terms from the PSI Proteome Informatics standards describing the interpretation of spectra." [PSI:PI]
