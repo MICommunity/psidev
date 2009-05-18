@@ -4,8 +4,8 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.2.0
-remark: release date: 2009-05-18
+remark: version: 2.2.1
+remark: release date: 2009-05-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
@@ -2247,6 +2247,7 @@ id: MS:1000336
 name: neutral loss
 def: "The loss of an uncharged species during a rearrangement process." [PSI:MS]
 is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1001055 ! modification parameters
 
 [Term]
 id: MS:1000337
@@ -5279,6 +5280,7 @@ def: "A free-form text title describing a spectrum." [PSI:MS]
 comment: This is the preferred storage place for the spectrum TITLE from an MGF peak list. This term corresponds to Protein Informatics CV term PI:00416
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000499 ! spectrum attribute
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1000797
@@ -6013,8 +6015,10 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: MS:1001061
 name: neutral loss
-def: "Leave this to PSI-MOD?" [PSI:PI]
+def: "OBSOLETE: replaced by MS:1000336 (neutral loss): Leave this to PSI-MOD?" [PSI:PI]
 is_a: MS:1001055 ! modification parameters
+is_obsolete: true
+replaced_by: MS:1000336 ! neutral loss
 
 [Term]
 id: MS:1001062
@@ -7984,9 +7988,11 @@ is_a: MS:1001405 ! spectrum identification result details
 [Term]
 id: MS:1001416
 name: spectrum title
-def: "Holds the spectrum title from different input file formats, e.g. MGF TITLE." [PSI:PI]
+def: "OBSOLETE: replaced by MS:1000796 (spectrum title): Holds the spectrum title from different input file formats, e.g. MGF TITLE." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
+is_obsolete: true
+replaced_by: MS:1000796 ! spectrum title
 
 [Term]
 id: MS:1001417
