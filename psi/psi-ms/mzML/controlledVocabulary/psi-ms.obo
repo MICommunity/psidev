@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.3.1
+remark: version: 2.4.0
 remark: release date: 2009-05-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
@@ -5701,6 +5701,156 @@ def: "Identier string that describes the sample fraction. This identifer should 
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000857 ! run attribute
 
+[Term]
+id: MS:1000859
+name: molecule
+def: "A molecules is a fundamental component of a chemical compound that is the smallest part of the compound that can participate in a chemical reaction." [PSI:MS]
+relationship: part_of MS:1000881 ! chemical compound
+
+[Term]
+id: MS:1000860
+name: peptide
+def: "A compound of low molecular weight that is composed of two or more amino acids." [PSI:MS]
+is_a: MS:1000881 ! chemical compound
+
+[Term]
+id: MS:1000861
+name: chemical compound attribute
+def: "A describable property of a chemical compound." [PSI:MS]
+relationship: part_of MS:1000881 ! chemical compound
+
+[Term]
+id: MS:1000862
+name: isoelectric point
+def: "The pH of a solution at which a charged molecule does not migrate in an electric field." [PSI:MS]
+exact_synonym: "pI" []
+is_a: MS:1000861 ! chemical compound attribute
+
+[Term]
+id: MS:1000863
+name: predicted isoelectric point
+def: "The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm." [PSI:MS]
+exact_synonym: "predicted pI" []
+is_a: MS:1000862 ! isoelectric point
+
+[Term]
+id: MS:1000864
+name: chemical compound formula
+def: "A combination of symbols used to express the chemical composition of a compound." [PSI:MS]
+relationship: part_of MS:1000881 ! chemical compound
+
+[Term]
+id: MS:1000865
+name: empirical formula
+def: "A chemical formula which expresses the proportions of the elements present in a substance." [PSI:MS]
+is_a: MS:1000864 ! chemical compound formula
+
+[Term]
+id: MS:1000866
+name: molecular formula
+def: "A chemical compound formula expressing the number of atoms of each element present in a compound, without indicating how they are linked." [PSI:MS]
+is_a: MS:1000864 ! chemical compound formula
+
+[Term]
+id: MS:1000867
+name: structural formula
+def: "A chemical formula showing the number of atoms of each element in a molecule, their spatial arrangement, and their linkage to each other." [PSI:MS]
+is_a: MS:1000864 ! chemical compound formula
+
+[Term]
+id: MS:1000868
+name: SMILES string
+def: "The simplified molecular input line entry specification or SMILES is a specification for unambiguously describing the structure of a chemical compound using a short ASCII string." [PSI:MS]
+is_a: MS:1000864 ! chemical compound formula
+
+[Term]
+id: MS:1000869
+name: collision gas pressure
+def: "The gas pressure of the collision gas used for collisional excitation." [PSI:MS]
+xref_analog: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000510 ! precursor activation attribute
+relationship: has_units UO:0000110 ! pascal
+
+[Term]
+id: MS:1000870
+name: 4000 QTRAP
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX QTRAP 4000." [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
+
+[Term]
+id: MS:1000871
+name: SRM software
+def: "Software used to predict, select, or optimize transitions or analyze the results of selected reaction monitoring runs." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000872
+name: MaRiMba
+def: "SRM software used to select candidate SRM transitions from a spectral library." [PSI:MS]
+is_a: MS:1000711 ! SRM software
+
+[Term]
+id: MS:1000873
+name: peptide attribute calculation software
+def: "Software used to predict or calculate numberical attributes of peptides." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1000874
+name: SSRCalc
+def: "Sequence Specific Retention Calculator esimates the retention time of peptides based on their sequence. It is available at http://hs2.proteome.ca/SSRCalc/SSRCalc.html." [PSI:MS]
+is_a: MS:1000873 ! peptide attribute calculation software
+
+[Term]
+id: MS:1000875
+name: declustering potential
+def: "Potential difference between the orifice and the skimmer in volts." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000218 ! volt
+
+[Term]
+id: MS:1000876
+name: cone voltage
+def: "Potential difference between the sampling cone/orifice and the what? in volts." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000218 ! volt
+
+[Term]
+id: MS:1000877
+name: tube lens
+def: "No ideas." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000218 ! volt
+
+[Term]
+id: MS:1000878
+name: external reference identifier
+def: "An identifier/accession number to an external reference database." [PSI:MS]
+relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
+
+[Term]
+id: MS:1000879
+name: PubMed identifier
+def: "A unique identifier for a publication in the PubMed database (MIR:00000015)." [PSI:MS]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference
+
+[Term]
+id: MS:1000880
+name: interchannel delay
+def: "The duration of intervals between scanning, during which the instrument configuration is switched." [PSI:MS]
+xref_analog: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000503 ! scan attribute
+relationship: has_units UO:0000010 ! second
+
+[Term]
+id: MS:1000881
+name: chemical compound
+def: "A substance formed by chemical union of two or more elements or ingredients in definite proportion by weight." [PSI:MS]
+relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
 
 [Term]
 id: MS:1001000
