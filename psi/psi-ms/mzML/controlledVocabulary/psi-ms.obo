@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.2.1
+remark: version: 2.3.0
 remark: release date: 2009-05-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
@@ -5277,7 +5277,7 @@ is_a: MS:1000570 ! spectra combination
 id: MS:1000796
 name: spectrum title
 def: "A free-form text title describing a spectrum." [PSI:MS]
-comment: This is the preferred storage place for the spectrum TITLE from an MGF peak list. This term corresponds to Protein Informatics CV term PI:00416
+comment: This is the preferred storage place for the spectrum TITLE from an MGF peak list.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000499 ! spectrum attribute
 is_a: MS:1001405 ! spectrum identification result details
@@ -5286,17 +5286,19 @@ is_a: MS:1001405 ! spectrum identification result details
 id: MS:1000797
 name: peak list scans
 def: "A list of scan numbers and or scan ranges associated with a peak list. If possible the list of scans should be converted to native spectrum identifiers instead of using this term." [PSI:MS]
-comment: This is the preferred storage place for the spectrum SCANS attribute from an MGF peak list. This term corresponds to CV term MS:1001414.
+comment: This is the preferred storage place for the spectrum SCANS attribute from an MGF peak list.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000499 ! spectrum attribute
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1000798
 name: peak list raw scans
 def: "A list of raw scans and or scan ranges used to generate a peak list. If possible the list of scans should be converted to native spectrum identifiers instead of using this term." [PSI:MS]
-comment: This is the preferred storage place for the spectrum RAWSCANS attribute from an MGF peak list. This term corresponds to CV term MS:1001415.
+comment: This is the preferred storage place for the spectrum RAWSCANS attribute from an MGF peak list.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000499 ! spectrum attribute
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1000799
@@ -7974,16 +7976,20 @@ relationship: has_units UO:0000221 ! dalton
 [Term]
 id: MS:1001414
 name: MGF scans
-def: "This term can hold the scans attribute from an MGF input file." [PSI:PI]
+def: "OBSOLETE: replaced by MS:1000797 (peak list scans): This term can hold the scans attribute from an MGF input file." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
+is_obsolete: true
+replaced_by: MS:1000797 ! peak list scans
 
 [Term]
 id: MS:1001415
 name: MGF raw scans
-def: "This term can hold the raw scans attribute from an MGF input file." [PSI:PI]
+def: "OBSOLETE: replaced by MS:1000798 (peak list raw scans): This term can hold the raw scans attribute from an MGF input file." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
+is_obsolete: true
+replaced_by: MS:1000798 ! peak list raw scans
 
 [Term]
 id: MS:1001416
