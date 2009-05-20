@@ -606,7 +606,13 @@
     </xs:attribute>
   </xs:complexType>
   <xs:complexType name="ScanWindowListType">
-    <xs:sequence />
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" name="scanWindow" type="dx:ParamGroupType">
+        <xs:annotation>
+          <xs:documentation>A range of m/z values over which the instrument scans and acquires a spectrum.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
     <xs:attribute name="count" type="xs:int" use="required">
       <xs:annotation>
         <xs:documentation>The number of scan windows defined in this list.</xs:documentation>
