@@ -619,15 +619,6 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="ScanWindowType">
-    <xs:sequence>
-      <xs:element minOccurs="2" maxOccurs="unbounded" name="cvParam" type="dx:CVParamType">
-        <xs:annotation>
-          <xs:documentation>Two or more CV parameters defining the scan window.</xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="ScanListType">
     <xs:annotation>
       <xs:documentation>List and descriptions of scans.</xs:documentation>
