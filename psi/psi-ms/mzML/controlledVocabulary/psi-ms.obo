@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.5.0
+remark: version: 2.6.0
 remark: release date: 2009-05-22
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
@@ -7014,6 +7014,13 @@ id: MS:1001212
 name: parent mass type average
 def: "Mass type setting for parent mass was average isotopic." [PSI:PI]
 is_a: MS:1001210 ! mass type settings
+
+[Term]
+id: MS:1001213 	 
+name: search result details 	 
+def: "OBSOLETE: Scores and global result characteristics." [PSI:PI]
+relationship: part_of MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1001214
