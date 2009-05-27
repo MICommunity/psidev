@@ -4,13 +4,13 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.6.1
-remark: release date: 2009-05-22
+remark: version: 2.7.0
+remark: release date: 2009-05-27
 remark: coverage: Mass spectrometer output files and spectra interpretation
-remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>, Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de> 
+remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
-import: import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo?revision=1.20
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo?revision=1.20
 
 [Term]
 id: MS:0000000
@@ -7016,7 +7016,7 @@ def: "Mass type setting for parent mass was average isotopic." [PSI:PI]
 is_a: MS:1001210 ! mass type settings
 
 [Term]
-id: MS:1001213 	 
+id: MS:1001213
 name: search result details 	 
 def: "OBSOLETE: Scores and global result characteristics." [PSI:PI]
 relationship: part_of MS:1000479 ! purgatory
@@ -8501,6 +8501,32 @@ id: MS:1001471
 name: peptide modification details
 def: "The children of this term can be used to describe modifications." [PSI:PI]
 relationship: part_of MS:1001000 ! spectrum interpretation
+
+[Term]
+id: MS:1001472
+name: selected ion monitoring chromatogram
+def: "Chromatogram created by creating an array of the measurements of a selectively monitored ion at each time point." [PSI:MS]
+synonym: "SIM chromatogram" EXACT []
+is_a: MS:1000524 ! data file content
+is_a: MS:1000810 ! mass chromatogram
+
+[Term]
+id: MS:1001473
+name: selected reaction monitoring chromatogram
+def: "Chromatogram created by creating an array of the measurements of a selectively monitored reaction at each time point." [PSI:MS]
+synonym: "SRM chromatogram" EXACT []
+is_a: MS:1000524 ! data file content
+is_a: MS:1000810 ! mass chromatogram
+
+[Term]
+id: MS:1001474
+name: consecutive reaction monitoring chromatogram
+def: "OBSOLETE Chromatogram created by creating an array of the measurements of a series of monitored reactions at each time point." [PSI:MS]
+comment: This term was made obsolete because, by design, it can't be properly represented in mzML 1.1. CRM experiments must be represented in a spectrum-centric way.
+synonym: "CRM chromatogram" EXACT []
+is_a: MS:1000524 ! data file content
+is_a: MS:1000810 ! mass chromatogram
+is_obsolete: true
 
 [Typedef]
 id: has_regexp
