@@ -5597,7 +5597,7 @@ name: wavelength
 def: "The distance between two peaks of the emitted laser beam." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000841 ! laser attribute
-relationship: has_units UO:0000001 ! Lenght Unit
+relationship: has_units UO:0000001 ! length unit
 
 [Term]
 id: MS:1000844
@@ -5605,7 +5605,7 @@ name: focus diameter x
 def: "Describes the diameter of the laser beam in x direction." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000841 ! laser attribute
-relationship: has_units UO:0000001 ! Lenght Unit
+relationship: has_units UO:0000001 ! length unit
 
 [Term]
 id: MS:1000845
@@ -5613,7 +5613,7 @@ name: focus diameter y
 def: "Describes the diameter of the laser beam in y direction." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000841 ! laser attribute
-relationship: has_units UO:0000001 ! Lenght Unit
+relationship: has_units UO:0000001 ! length unit
 
 [Term]
 id: MS:1000846
