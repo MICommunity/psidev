@@ -8542,8 +8542,14 @@ is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001477
-def: "SpectraST was used to analyze the spectra." [PSI:PI]
 name: SpectraST
+def: "SpectraST was used to analyze the spectra." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1001477
+name: Mascot Parser
+def: "Mascot Parser was used to analyze the spectra." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Typedef]
