@@ -8528,6 +8528,24 @@ is_a: MS:1000524 ! data file content
 is_a: MS:1000810 ! mass chromatogram
 is_obsolete: true
 
+[Term]
+id: MS:1001475
+name: OMSSA
+def: "Open Mass Spectrometry Search Algorithm was used to analyze the spectra." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1001476
+name: xtandem
+def: "X!Tandem was used to analyze the spectra." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1001477
+def: "SpectraST was used to analyze the spectra." [PSI:PI]
+name: SpectraST
+is_a: MS:1001456 ! analysis software
+
 [Typedef]
 id: has_regexp
 name: has regexp
