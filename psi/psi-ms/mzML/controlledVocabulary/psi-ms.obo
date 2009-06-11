@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.9.0
+remark: version: 2.01.0
 remark: release date: 2009-06-11
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -8577,6 +8577,24 @@ id: MS:1001479
 name: null-terminated ASCII string
 def: "Sequence of zero or more non-zero ASCII characters terminated by a single null (0) byte." [PSI:MS]
 is_a: MS:1000518 ! binary data type
+
+[Term]
+id: MS:1001480
+name: AB SCIEX TOF/TOF nativeID format
+def: "jobRun=xsd:nonNegativeInteger spotLabel=xsd:string spectrum=xsd:nonNegativeInteger." [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
+ 
+[Term]
+id: MS:1001481
+name: AB SCIEX TOF/TOF database
+def: "Applied Biosystems/MDS Analytical Technologies TOF/TOF instrument database." [PSI:MS]
+is_a: MS:1000560 ! source file type
+ 
+[Term]
+id: MS:1001482
+name: AB SCIEX TOF/TOF 5800
+def: "AB SCIEX or Applied Biosystems|MDS Analytical Technologies AB SCIEX TOF/TOF 5800 Analyzer" [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Typedef]
 id: has_regexp
