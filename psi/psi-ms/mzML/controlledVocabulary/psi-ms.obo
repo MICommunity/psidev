@@ -8588,7 +8588,7 @@ is_a: MS:1000767 ! native spectrum identifier format
 id: MS:1001481
 name: AB SCIEX TOF/TOF database
 def: "Applied Biosystems/MDS Analytical Technologies TOF/TOF instrument database." [PSI:MS]
-is_a: MS:1000560 ! source file type
+is_a: MS:1000560 ! mass spectrometer file format
  
 [Term]
 id: MS:1001482
