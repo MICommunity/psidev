@@ -8596,6 +8596,15 @@ name: AB SCIEX TOF/TOF 5800
 def: "AB SCIEX or Applied Biosystems|MDS Analytical Technologies AB SCIEX TOF/TOF 5800 Analyzer" [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
+[Term]
+id: MS:1001483
+name: AB SCIEX TOF/TOF Series Explorer Software
+def: "AB SCIEX or Applied Biosystems software for TOF/TOF data acquisition and analysis." [PSI:MS]
+is_a: MS:1000690 ! AB SCIEX software
+is_a: MS:1001455 ! acquisition software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
 [Typedef]
 id: has_regexp
 name: has regexp
