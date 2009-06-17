@@ -4,8 +4,8 @@ saved-by: abertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.14.0
-remark: release date: 2009-06-16
+remark: version: 2.14.1
+remark: release date: 2009-06-17
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
@@ -4874,6 +4874,7 @@ id: MS:1000734
 name: ProteinScape
 def: "Bruker ProteinScape software." [PSI:MS]
 is_a: MS:1000692 ! Bruker software
+is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1000735
