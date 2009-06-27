@@ -4,7 +4,7 @@ saved-by: abertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.14.4
+remark: version: 2.15.0
 remark: release date: 2009-06-23
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -5969,6 +5969,7 @@ id: MS:1001020
 name: DB filter taxonomy
 def: "The taxonomy filter applied (if any) to the database search." [PSI:PI]
 is_a: MS:1001019 ! database filtering
+is_obsolete: true
 
 [Term]
 id: MS:1001021
@@ -8239,7 +8240,7 @@ is_a: MS:1001011 ! search database details
 [Term]
 id: MS:1001424
 name: ProteinExtractor:Methodname
-xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
@@ -8257,19 +8258,19 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001427
 name: ProteinExtractor:MaxNumberOfProteins
-xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001428
 name: ProteinExtractor:MaxProteinMass
-xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001429
 name: ProteinExtractor:MinNumberOfPeptides
-xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
@@ -8380,6 +8381,8 @@ name: prot:FDR threshold
 def: "False-discovery rate threshold for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001060 ! quality estimation details
+relationship: has_units UO:0000186 ! dimensionless unit
+relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: MS:1001448
@@ -8496,13 +8499,13 @@ is_a: MS:1001040 ! intermediate analysis format
 id: MS:1001467
 name: taxonomy: NCBI TaxID
 def: "This term is used if a NCBI TaxID is specified, e.g. 9606 for Homo sapiens." [PSI:PI]
-xref: value-type:xsd\:string "The allowed value-type for this CV term."
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001089 ! molecule taxonomy
 
 [Term]
 id: MS:1001468
 name: taxonomy: common name
-def: "This term is used if a common name is specified, e.g. human." [PSI:PI]
+def: "This term is used if a common name is specified, e.g. human. Recommend using MS:1001467 (taxonomy: NCBI TaxID) where possible." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001089 ! molecule taxonomy
 
@@ -8510,7 +8513,7 @@ is_a: MS:1001089 ! molecule taxonomy
 [Term]
 id: MS:1001469
 name: taxonomy: scientific name
-def: "This term is used if a scientific name is specified, e.g. Homo sapiens." [PSI:PI]
+def: "This term is used if a scientific name is specified, e.g. Homo sapiens. Recommend using MS:1001467 (taxonomy: NCBI TaxID) where possible." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001089 ! molecule taxonomy
 
@@ -8518,7 +8521,7 @@ is_a: MS:1001089 ! molecule taxonomy
 [Term]
 id: MS:1001470
 name: taxonomy: Swiss-Prot ID
-def: "This term is used if a swiss prot taxonomy id is specified, e.g. Human." [PSI:PI]
+def: "This term is used if a swiss prot taxonomy id is specified, e.g. Human. Recommend using MS:1001467 (taxonomy: NCBI TaxID) where possible." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001089 ! molecule taxonomy
 
@@ -8684,6 +8687,109 @@ name: no threshold
 def: "In case no threshold was used." [PSI:MS]
 is_a: MS:1001060 ! quality estimation details
 
+[Term]
+id: MS:1001495
+name: ProteinScape:SearchResultId
+def: "The SearchResultId of this peptide as SearchResult in the ProteinScape database." [PSI:MS]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001496
+name: ProteinScape:SearchEventId
+def: "The SearchEventId of the SearchEvent in the ProteinScape database." [PSI:MS]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001597
+name: ProteinScape:ProfoundProbability
+def: "The Profound probability score stored by ProteinScape." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001498
+name: Profound:z value
+def: "The Profound z value." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001499
+name: Profound:Cluster
+def: "The Profound cluster score." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001500
+name: Profound:ClusterRank
+def: "The Profound cluster rank." [PSI:MS]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001501
+name: MSFit:Mowse score
+def: "The MSFit Mowse score." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001502
+name: Sonar:Score
+def: "The Sonar score." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001503
+name: ProteinScape:PFFSolverExp
+def: "The ProteinSolver exp value stored by ProteinScape." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001504
+name: ProteinScape:PFFSolverScore
+def: "The ProteinSolver score stored by ProteinScape." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001505
+name: ProteinScape:IntensityCoverage
+def: "The intensity coverage of the identified peaks in the spectrum calculated by ProteinScape." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001506
+name: ProteinScape:SequestMetaScore
+def: "The Sequest meta score calculated by ProteinScape from the original Sequest scores." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001507
+name: ProteinExtractor:Score
+def: "The score calculated by ProteinExtractor." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001116 ! single protein result details
+is_a: MS:1001153 ! search engine specific score
 
 [Typedef]
 id: has_regexp
