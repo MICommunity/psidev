@@ -31,3 +31,10 @@
 #Sends mail for mi development to mi cvs mailing list
 psi-ms $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-cvs@lists.sourceforge.net %s
 psi/mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net %s
+
+# Sends mail for ms controlled vocabulary to ms-vocab mailing list
+psi/psi-ms/mzML/controlledVocabulary $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-vocab@lists.sourceforge.net %s
+
+# Sends mail for ms controlled vocabulary to mi-vocab mailing list
+psi/mi/rel25/data $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-vocab@lists.sourceforge.net %s
+
