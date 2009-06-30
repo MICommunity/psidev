@@ -29,7 +29,7 @@
 #commit mailing list via the web page http://sf.net/projects/psidev and then via 'mailing lists'
 #
 #Sends mail for mi development to mi cvs mailing list
-psi-ms $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-cvs@lists.sourceforge.net %s
+psi/psi-ms $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-ms-cvs@lists.sourceforge.net %s
 psi/mi $CVSROOT/CVSROOT/log -s -f /dev/null -m psidev-mi-cvs@lists.sourceforge.net %s
 
 # Sends mail for ms controlled vocabulary to ms-vocab mailing list
