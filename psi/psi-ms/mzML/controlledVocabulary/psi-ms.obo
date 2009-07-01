@@ -1,11 +1,11 @@
 format-version: 1.2
 date: 30:04:2009 11:14
-saved-by: abertsch
+saved-by: Matt Chambers
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.15.0
-remark: release date: 2009-06-23
+remark: version: 2.16.0
+remark: release date: 2009-07-01
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
@@ -8790,6 +8790,24 @@ def: "The score calculated by ProteinExtractor." [PSI:MS]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001508
+name: Agilent MassHunter nativeID format
+def: "scanId=xsd:nonNegativeInteger." [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
+
+[Term]
+id: MS:100509
+name: Agilent MassHunter file
+def: "A data file found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:MS]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1001510
+name: TSQ Vantage
+def: "TSQ Vantage." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Typedef]
 id: has_regexp
