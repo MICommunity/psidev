@@ -1,11 +1,11 @@
 format-version: 1.2
 date: 30:04:2009 11:14
-saved-by: Matt Chambers
+saved-by: Andreas Bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.16.0
-remark: release date: 2009-07-01
+remark: version: 2.17.0
+remark: release date: 2009-07-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
@@ -5968,29 +5968,25 @@ is_a: MS:1001011 ! search database details
 id: MS:1001020
 name: DB filter taxonomy
 def: "The taxonomy filter applied (if any) to the database search." [PSI:PI]
-is_a: MS:1001019 ! database filtering
-is_obsolete: true
+is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001021
 name: DB filter on accession numbers
 def: "Filtering applied specifically by accession number pattern." [PSI:PI]
-xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001019 ! database filtering
+is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001022
 name: DB MW filter
 def: "Filtering applied specifically by protein molecular weight, specified as either a range or above/below a threshold value." [PSI:PI]
-xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001019 ! database filtering
+is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001023
 name: DB PI filter
 def: "Filtering applied specifically by predicted protein isoelectric focussing point (pI), specified as either a range or above/below a threshold value." [PSI:PI]
-xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001019 ! database filtering
+is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001024
@@ -6015,7 +6011,7 @@ is_a: MS:1001302 ! search engine specific input parameter
 id: MS:1001027
 name: DB filter on sequences
 def: "Filtering applied specifically by amino acid sequence pattern." [PSI:PI]
-is_a: MS:1001019 ! database filtering
+is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001028
@@ -6315,6 +6311,7 @@ def: "The taxonomy of the resultant molecule from the search." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001085 ! protein result details
 is_a: MS:1001342 ! database sequence details
+is_a: MS:1001512 ! Sequence database filters
 
 [Term]
 id: MS:1001090
@@ -6838,6 +6835,7 @@ is_a: MS:1001153 ! search engine specific score
 id: MS:1001170
 name: paragon:contrib
 def: "The Paragon result 'Contrib'." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 
 [Term]
@@ -6988,22 +6986,27 @@ is_a: MS:1001040 ! intermediate analysis format
 [Term]
 id: MS:1001201
 name: DB MW filter maximum
-is_a: MS:1001022 ! DB MW filter
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
 
 [Term]
 id: MS:1001202
 name: DB MW filter minimum
-is_a: MS:1001022 ! DB MW filter
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
 
 [Term]
 id: MS:1001203
 name: DB PI filter maximum
-is_a: MS:1001023 ! DB PI filter
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
 
 [Term]
 id: MS:1001204
 name: DB PI filter minimum
-is_a: MS:1001023 ! DB PI filter
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
+
 
 [Term]
 id: MS:1001207
@@ -8381,8 +8384,6 @@ name: prot:FDR threshold
 def: "False-discovery rate threshold for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001060 ! quality estimation details
-relationship: has_units UO:0000186 ! dimensionless unit
-relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: MS:1001448
@@ -8798,7 +8799,7 @@ def: "scanId=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
-id: MS:100509
+id: MS:1001509
 name: Agilent MassHunter file
 def: "A data file found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
@@ -8808,6 +8809,30 @@ id: MS:1001510
 name: TSQ Vantage
 def: "TSQ Vantage." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001511
+name: Sequence database filter types
+def: "Filter types which are used to filter a sequence database." [PSI:MS]
+is_a: MS:1001019 ! database filtering
+
+[Term]
+id: MS:1001512
+name: Sequence database filters
+def: "Sequence database filters which actually can contains values, e.g. to limit PI value of the sequences used to search." [PSI:MS]
+is_a: MS:1001019 ! database filtering
+
+[Term]
+id: MS:1001513
+name: DB sequence filter pattern
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
+
+[Term]
+id: MS:1001514
+name: DB accession filter string
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001512 ! Sequence database filters
 
 [Typedef]
 id: has_regexp
