@@ -4,7 +4,7 @@ saved-by: Andreas Bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.17.0
+remark: version: 2.17.1
 remark: release date: 2009-07-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -6169,7 +6169,7 @@ is_a: MS:1001055 ! modification parameters
 id: MS:1001058
 name: quality estimation by manual validation
 def: "The quality estimation was done manually." [PSI:PI]
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001059
@@ -6178,7 +6178,7 @@ is_a: MS:1001041 ! sequest:sortCV
 
 [Term]
 id: MS:1001060
-name: quality estimation details
+name: quality estimation method details
 def: "Method for quality estimation (manually or wih decoy database)." [PSI:PI]
 is_a: MS:1001249 ! search input details
 
@@ -6239,13 +6239,13 @@ is_a: MS:1001041 ! sequest:sortCV
 
 [Term]
 id: MS:1001073
-name: database type AA
+name: database type aa
 def: "Database contains amino acid sequences." [PSI:PI]
 is_a: MS:1001018 ! database type
 
 [Term]
 id: MS:1001079
-name: database type NA
+name: database type nucleotide
 def: "Database contains nucleid acid sequences." [PSI:PI]
 is_a: MS:1001018 ! database type
 
@@ -6336,7 +6336,7 @@ is_a: MS:1001105 ! peptide result details
 
 [Term]
 id: MS:1001093
-name: coverage
+name: sequence coverage
 def: "The percent coverage for the protein based upon the matched peptide sequences (can be calculated)." [PSI:PI]
 xref: value-type:xsd\:decimal "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
@@ -6945,7 +6945,7 @@ is_a: MS:1001198 ! protein quality estimation measure
 id: MS:1001194
 name: quality estimation with decoy database
 def: "Quality estimation by decoy database." [PSI:PI]
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001195
@@ -7120,18 +7120,21 @@ is_a: MS:1001221 ! fragmentation information
 [Term]
 id: MS:1001225
 name: product ion m/z
+synonym: "fragment ion m/z" EXACT []
 def: "The m/z of the product ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001226
 name: product ion intensity
+synonym: "fragment ion intensity" EXACT []
 def: "The intensity of the product ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001227
 name: product ion m/z error
+synonym: "product ion m/z error" EXACT []
 def: "The product ion m/z error (ADD more docu here)." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
@@ -7355,7 +7358,7 @@ is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001270
-name: lab personnell
+name: lab personnel
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001266 ! role type
 
@@ -8383,14 +8386,14 @@ id: MS:1001447
 name: prot:FDR threshold
 def: "False-discovery rate threshold for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001448
 name: pep:FDR threshold
 def: "False-discovery rate threshold for peptides." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001449
@@ -8428,7 +8431,7 @@ is_a: MS:1001450 ! decoy DB details
 id: MS:1001454
 name: quality estimation with implicite decoy sequences
 def: "Decoy entries are generated during the search, not explicitly stored in a database (like Mascot Decoy)." [PSI:PI]
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001455
@@ -8686,7 +8689,7 @@ is_a: MS:1001143 ! search engine specific score for peptides
 id: MS:1001494
 name: no threshold
 def: "In case no threshold was used." [PSI:MS]
-is_a: MS:1001060 ! quality estimation details
+is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001495
