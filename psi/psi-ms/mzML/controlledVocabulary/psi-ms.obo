@@ -4,7 +4,7 @@ saved-by: Andreas Bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.19.0
+remark: version: 2.20.0
 remark: release date: 2009-07-14
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -6143,9 +6143,10 @@ is_a: MS:1001041 ! sequest:sortCV
 [Term]
 id: MS:1001051
 name: multiple enzyme combination rules
-def: "Description of multiple enzyme digestion protocol, if any." [PSI:PI]
+def: "OBSOLETE: use attribute independent in mzIdentML instead. Description of multiple enzyme digestion protocol, if any." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001044 ! cleavage agent details
+relationship: part_of MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1001052
@@ -8916,6 +8917,22 @@ id: MS:1001523
 name: frag: precursor ion
 def: "Type of fragment: precursor ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001524
+name: fragment neutral loss
+def: "This term can describe a neutral loss m/z value that is lost from an ion." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001471 ! peptide modification details
+relationship: has_units UO:0000221 ! dalton
+
+[Term]
+id: MS:1001525
+name: precursor neutral loss 
+def: "This term can describe a neutral loss m/z value that is lost from an ion." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001471 ! peptide modification details
+relationship: has_units UO:0000221 ! dalton
 
 [Typedef]
 id: has_regexp
