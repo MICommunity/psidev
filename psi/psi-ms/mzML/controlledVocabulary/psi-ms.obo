@@ -1,13 +1,14 @@
 format-version: 1.2
-date: 30:04:2009 11:14
+date: 14:07:2009 03:33
 saved-by: Andreas Bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.17.1
-remark: release date: 2009-07-02
+remark: version: 2.18.0
+remark: release date: 2009-07-14
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
+remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
 import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo?revision=1.20
@@ -4842,37 +4843,37 @@ is_a: MS:1001457 ! data processing software
 [Term]
 id: MS:1000729
 name: PROTEINEER
-def: "Bruker PROTEINEER software." [PSI:MS]
+def: "Bruker PROTEINEER software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000730
 name: PROTEINEER dp
-def: "Bruker PROTEINEER dp software." [PSI:MS]
+def: "Bruker PROTEINEER dp software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000731
 name: PROTEINEER fc
-def: "Bruker PROTEINEER fc software." [PSI:MS]
+def: "Bruker PROTEINEER fc software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000732
 name: PROTEINEER spII
-def: "Bruker PROTEINEER spII software." [PSI:MS]
+def: "Bruker PROTEINEER spII software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000733
 name: PROTEINEER-LC
-def: "Bruker PROTEINEER-LC software." [PSI:MS]
+def: "Bruker PROTEINEER-LC software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 
 [Term]
 id: MS:1000734
 name: ProteinScape
-def: "Bruker ProteinScape software." [PSI:MS]
+def: "Bruker ProteinScape software." [PSI:PI]
 is_a: MS:1000692 ! Bruker software
 is_a: MS:1001456 ! analysis software
 
@@ -5894,6 +5895,7 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001007
 name: sequest:OutputLines
+xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
@@ -5930,27 +5932,30 @@ is_a: MS:1001011 ! search database details
 [Term]
 id: MS:1001014
 name: database local file path
-def: "Local file path of the search database from the search engine's point of view." [PSI:PI]
+def: "OBSOLETE: Use attribute in mzIdentML instead. Local file path of the search database from the search engine's point of view." [PSI:PI]
 is_a: MS:1001011 ! search database details
+is_obsolete: true
 
 [Term]
 id: MS:1001015
 name: database original uri
 def: "URI, from where the search database was originally downloaded." [PSI:PI]
-xref: value-type:xsd\:string "The allowed value-type for this CV term."
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
 is_a: MS:1001011 ! search database details
 
 [Term]
 id: MS:1001016
 name: database version
-def: "Version of the search database ." [PSI:PI]
+def: "OBSOLETE: Use attribute in mzIdentML instead. Version of the search database ." [PSI:PI]
 is_a: MS:1001011 ! search database details
+is_obsolete: true
 
 [Term]
 id: MS:1001017
 name: database release date
-def: "Release date of the search database." [PSI:PI]
+def: "OBSOLETE: Use attribute in mzIdentML instead. Release date of the search database." [PSI:PI]
 is_a: MS:1001011 ! search database details
+is_obsolete: true
 
 [Term]
 id: MS:1001018
@@ -5961,13 +5966,13 @@ is_a: MS:1001011 ! search database details
 [Term]
 id: MS:1001019
 name: database filtering
-def: "Was there filtering used on the database(s), public or private." [PSI:PI]
+def: "Was there filtering used on the database." [PSI:PI]
 is_a: MS:1001011 ! search database details
 
 [Term]
 id: MS:1001020
 name: DB filter taxonomy
-def: "The taxonomy filter applied (if any) to the database search." [PSI:PI]
+def: "A taxonomy filter was to the database search." [PSI:PI]
 is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
@@ -5991,8 +5996,9 @@ is_a: MS:1001511 ! Sequence database filter types
 [Term]
 id: MS:1001024
 name: translation frame
-def: "The translated open reading frames from a nucleotide database considered in the search (range: 1-6)." [PSI:PI]
+def: "OSBOLETE: use attribute in mzIdentML instead. The translated open reading frames from a nucleotide database considered in the search (range: 1-6)." [PSI:PI]
 is_a: MS:1001011 ! search database details
+is_obsolete: true
 
 [Term]
 id: MS:1001025
@@ -6009,13 +6015,14 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001027
-name: DB filter on sequences
+name: DB filter on sequence pattern
 def: "Filtering applied specifically by amino acid sequence pattern." [PSI:PI]
 is_a: MS:1001511 ! Sequence database filter types
 
 [Term]
 id: MS:1001028
 name: sequest:SequenceHeaderFilter
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
@@ -6042,13 +6049,15 @@ is_a: MS:1001080 ! search type
 [Term]
 id: MS:1001032
 name: sequest:SequencePartialFilter
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001035
 name: date / time search performed
-def: "Date and time of the actual search run." [PSI:PI]
+def: "OBSOLETE: use attribute in mzIdentML instead. Date and time of the actual search run." [PSI:PI]
 is_a: MS:1001184 ! search statistics
+is_obsolete: true
 
 [Term]
 id: MS:1001036
@@ -6060,12 +6069,14 @@ is_a: MS:1001184 ! search statistics
 [Term]
 id: MS:1001037
 name: sequest:ShowFragmentIons
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001038
 name: sequest:Consensus
 def: "Specify depth as value of the CVParam!" [PSI:PI]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001006 ! sequest:ViewCV
 
 [Term]
@@ -6133,6 +6144,7 @@ is_a: MS:1001041 ! sequest:sortCV
 id: MS:1001051
 name: multiple enzyme combination rules
 def: "Description of multiple enzyme digestion protocol, if any." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001044 ! cleavage agent details
 
 [Term]
@@ -6162,8 +6174,9 @@ is_a: MS:1001055 ! modification parameters
 [Term]
 id: MS:1001057
 name: tolerance on types
-def: "Tolerance on types." [PSI:PI]
+def: "OBSOLETE: Tolerance on types." [PSI:PI]
 is_a: MS:1001055 ! modification parameters
+is_obsolete: true
 
 [Term]
 id: MS:1001058
@@ -6239,7 +6252,7 @@ is_a: MS:1001041 ! sequest:sortCV
 
 [Term]
 id: MS:1001073
-name: database type aa
+name: database type amino acid
 def: "Database contains amino acid sequences." [PSI:PI]
 is_a: MS:1001018 ! database type
 
@@ -6891,7 +6904,7 @@ is_a: MS:1001184 ! search statistics
 [Term]
 id: MS:1001178
 name: database EST
-is_a: MS:1001013 ! database name
+is_a: MS:1001079 ! database type nucleotide
 
 [Term]
 id: MS:1001180
@@ -6988,12 +7001,16 @@ id: MS:1001201
 name: DB MW filter maximum
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001512 ! Sequence database filters
+relationship: has_units UO:0000221 ! dalton
+relationship: has_units UO:0000222 ! kilodalton
 
 [Term]
 id: MS:1001202
 name: DB MW filter minimum
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001512 ! Sequence database filters
+relationship: has_units UO:0000221 ! dalton
+relationship: has_units UO:0000222 ! kilodalton
 
 [Term]
 id: MS:1001203
@@ -7090,7 +7107,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001220
 name: frag: y ion
-def: "Type of fragment: y ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: y ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -7102,19 +7119,19 @@ is_a: MS:1001105 ! peptide result details
 [Term]
 id: MS:1001222
 name: frag: b ion - H2O
-def: "Type of fragment: b ion without water (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: b ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001223
 name: frag: y ion - H2O
-def: "Type of fragment: y ion without water (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: y ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001224
 name: frag: b ion
-def: "Type of fragment: b ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: b ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -7135,91 +7152,91 @@ is_a: MS:1001221 ! fragmentation information
 id: MS:1001227
 name: product ion m/z error
 synonym: "product ion m/z error" EXACT []
-def: "The product ion m/z error (ADD more docu here)." [PSI:PI]
+def: "The product ion m/z error." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001228
 name: frag: x ion
-def: "Type of fragment: x ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: x ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001229
 name: frag: a ion
-def: "Type of fragment: a ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: a ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001230
 name: frag: z ion
-def: "Type of fragment: z ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: z ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001231
 name: frag: c ion
-def: "Type of fragment: c ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: c ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001232
 name: frag: b ion - NH3
-def: "Type of fragment: b ion without ammonium ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: b ion without ammonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001233
 name: frag: y ion - NH3
-def: "Type of fragment: y ion without ammonium ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: y ion without ammonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001234
 name: frag: a ion - H2O
-def: "Type of fragment: a ion without water (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: a ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001235
 name: frag: a ion - NH3
-def: "Type of fragment: a ion without ammonium ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: a ion without ammonium." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001236
 name: frag: d ion
-def: "Type of fragment: d ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: d ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001237
 name: frag: v ion
-def: "Type of fragment: v ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: v ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001238
 name: frag: w ion
-def: "Type of fragment: w ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: w ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001239
 name: frag: immonium ion
-def: "Type of fragment: immonium ion (ADD more documentation here)." [PSI:PI]
+def: "Type of fragment: immonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001240
 name: non-identified ion
-def: "Non-identified ion (ADD more documentation here)." [PSI:PI]
+def: "Non-identified ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001241
 name: co-eluting ion
-def: "Co-eluting ion (ADD more documentation here)." [PSI:PI]
+def: "Co-eluting ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -7847,6 +7864,7 @@ name: alternate mass
 def: "List of masses a non-standard letter code is replaced with." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001359 ! ambiguous residues
+relationship: has_units UO:0000221 ! dalton
 
 [Term]
 id: MS:1001362
@@ -8219,7 +8237,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001420
 name: SpectraST:delta
-def: "SpectraST normalised difference between dot product of top hit and runner-up." [:PSI-PI]
+def: "SpectraST normalised difference between dot product of top hit and runner-up." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8646,25 +8664,25 @@ is_a: MS:1000692 ! Bruker software
 [Term]
 id: MS:1001488
 name: Mascot Distiller 
-def: "Mascot Distiller." [PSI:MS]
+def: "Mascot Distiller." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001489
 name: Mascot Integra 
-def: "Mascot Integra." [PSI:MS]
+def: "Mascot Integra." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001490
 name: Percolator 
-def: "Percolator." [PSI:MS]
+def: "Percolator." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001491
 name: percolator:Q value
-def: "percolator:Q value." [PSI:MS]
+def: "percolator:Q value." [PSI:PI]
 is_a: MS:1001153 ! search engine specific score 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides    
@@ -8672,7 +8690,7 @@ is_a: MS:1001143 ! search engine specific score for peptides
 [Term]
 id: MS:1001492
 name: percolator:score 
-def: "percolator:score." [PSI:MS]
+def: "percolator:score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score 
 is_a: MS:1001143 ! search engine specific score for peptides    
@@ -8680,7 +8698,7 @@ is_a: MS:1001143 ! search engine specific score for peptides
 [Term]
 id: MS:1001493
 name: percolaror:PEP 
-def: "Posterior error probability." [PSI:MS]
+def: "Posterior error probability." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score 
 is_a: MS:1001143 ! search engine specific score for peptides    
@@ -8688,13 +8706,13 @@ is_a: MS:1001143 ! search engine specific score for peptides
 [Term]
 id: MS:1001494
 name: no threshold
-def: "In case no threshold was used." [PSI:MS]
+def: "In case no threshold was used." [PSI:PI]
 is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001495
 name: ProteinScape:SearchResultId
-def: "The SearchResultId of this peptide as SearchResult in the ProteinScape database." [PSI:MS]
+def: "The SearchResultId of this peptide as SearchResult in the ProteinScape database." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8702,7 +8720,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001496
 name: ProteinScape:SearchEventId
-def: "The SearchEventId of the SearchEvent in the ProteinScape database." [PSI:MS]
+def: "The SearchEventId of the SearchEvent in the ProteinScape database." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8710,7 +8728,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001597
 name: ProteinScape:ProfoundProbability
-def: "The Profound probability score stored by ProteinScape." [PSI:MS]
+def: "The Profound probability score stored by ProteinScape." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8718,7 +8736,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001498
 name: Profound:z value
-def: "The Profound z value." [PSI:MS]
+def: "The Profound z value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8726,7 +8744,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001499
 name: Profound:Cluster
-def: "The Profound cluster score." [PSI:MS]
+def: "The Profound cluster score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8734,7 +8752,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001500
 name: Profound:ClusterRank
-def: "The Profound cluster rank." [PSI:MS]
+def: "The Profound cluster rank." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8742,7 +8760,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001501
 name: MSFit:Mowse score
-def: "The MSFit Mowse score." [PSI:MS]
+def: "The MSFit Mowse score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8750,7 +8768,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001502
 name: Sonar:Score
-def: "The Sonar score." [PSI:MS]
+def: "The Sonar score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8758,7 +8776,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001503
 name: ProteinScape:PFFSolverExp
-def: "The ProteinSolver exp value stored by ProteinScape." [PSI:MS]
+def: "The ProteinSolver exp value stored by ProteinScape." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8766,7 +8784,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001504
 name: ProteinScape:PFFSolverScore
-def: "The ProteinSolver score stored by ProteinScape." [PSI:MS]
+def: "The ProteinSolver score stored by ProteinScape." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8774,7 +8792,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001505
 name: ProteinScape:IntensityCoverage
-def: "The intensity coverage of the identified peaks in the spectrum calculated by ProteinScape." [PSI:MS]
+def: "The intensity coverage of the identified peaks in the spectrum calculated by ProteinScape." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8782,7 +8800,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001506
 name: ProteinScape:SequestMetaScore
-def: "The Sequest meta score calculated by ProteinScape from the original Sequest scores." [PSI:MS]
+def: "The Sequest meta score calculated by ProteinScape from the original Sequest scores." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8790,7 +8808,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001507
 name: ProteinExtractor:Score
-def: "The score calculated by ProteinExtractor." [PSI:MS]
+def: "The score calculated by ProteinExtractor." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
@@ -8798,13 +8816,13 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001508
 name: Agilent MassHunter nativeID format
-def: "scanId=xsd:nonNegativeInteger." [PSI:MS]
+def: "scanId=xsd:nonNegativeInteger." [PSI:PI]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1001509
 name: Agilent MassHunter file
-def: "A data file found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:MS]
+def: "A data file found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:PI]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -8816,13 +8834,13 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 [Term]
 id: MS:1001511
 name: Sequence database filter types
-def: "Filter types which are used to filter a sequence database." [PSI:MS]
+def: "Filter types which are used to filter a sequence database." [PSI:PI]
 is_a: MS:1001019 ! database filtering
 
 [Term]
 id: MS:1001512
 name: Sequence database filters
-def: "Sequence database filters which actually can contains values, e.g. to limit PI value of the sequences used to search." [PSI:MS]
+def: "Sequence database filters which actually can contains values, e.g. to limit PI value of the sequences used to search." [PSI:PI]
 is_a: MS:1001019 ! database filtering
 
 [Term]
@@ -8836,6 +8854,54 @@ id: MS:1001514
 name: DB accession filter string
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001512 ! Sequence database filters
+
+[Term]
+id: MS:1001515
+name: frag: c ion - H2O
+def: "Type of fragment: c ion without water." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001516
+name: frag: c ion - NH3
+def: "Type of fragment: c ion without ammonia." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001517
+name: frag: z ion - H2O
+def: "Type of fragment: z ion without water." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001518
+name: frag: z ion - NH3
+def: "Type of fragment: z ion without ammonia." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001519
+name: frag: x ion - H2O
+def: "Type of fragment: x ion without water." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001520
+name: frag: x ion - NH3
+def: "Type of fragment: x ion without ammonia." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001521
+name: frag: precursor ion - H2O
+def: "Type of fragment: precursor ion without water." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001522
+name: frag: precursor ion - NH3
+def: "Type of fragment: precursor ion without ammonia." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
 
 [Typedef]
 id: has_regexp
