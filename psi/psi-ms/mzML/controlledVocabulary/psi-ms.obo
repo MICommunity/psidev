@@ -4,7 +4,7 @@ saved-by: Andreas Bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.18.0
+remark: version: 2.19.0
 remark: release date: 2009-07-14
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -6187,6 +6187,7 @@ is_a: MS:1001060 ! quality estimation method details
 [Term]
 id: MS:1001059
 name: sequest:sort_by_RSp
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! sequest:sortCV
 
 [Term]
@@ -6357,12 +6358,13 @@ is_a: MS:1001116 ! single protein result details
 [Term]
 id: MS:1001094
 name: sequest:sort_by_z
-xref: value-type:xsd\:bool "The allowed value-type for this CV term."
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! sequest:sortCV
 
 [Term]
 id: MS:1001095
 name: sequest:ProcessAll
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001087 ! sequest:ProcessCV
 
 [Term]
@@ -6433,6 +6435,7 @@ is_a: MS:1001405 ! spectrum identification result details
 id: MS:1001106
 name: sequest:TopNumber
 def: "Specify \"number\" as value of the CVParam!" [PSI:PI]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001087 ! sequest:ProcessCV
 
 [Term]
@@ -6490,8 +6493,9 @@ relationship: has_units UO:0000031 ! minute
 [Term]
 id: MS:1001115
 name: scan number(s)
-def: "Take from mzData. TODO: What does this mean?" [PSI:PI]
-is_a: MS:1001105 ! peptide result details
+def: "OBSOLETE: use spectrumID attribute of SpectrumIdentificationResult. Take from mzData." [PSI:PI]
+relationship: part_of MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1001116
@@ -6899,6 +6903,7 @@ is_a: MS:1001180 ! Cleavage agent regular expression
 id: MS:1001177
 name: number of molecular hypothesis considered
 def: "Number of Molecular Hypothesis Considered - This is the number of molecules (e.g. peptides for proteomics) considered for a particular search." [PSI:PI]
+xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
 is_a: MS:1001184 ! search statistics
 
 [Term]
@@ -7154,6 +7159,8 @@ name: product ion m/z error
 synonym: "product ion m/z error" EXACT []
 def: "The product ion m/z error." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
+relationship: has_units MS:1000040 ! m/z
+relationship: has_units UO:0000166 ! parts per notation
 
 [Term]
 id: MS:1001228
@@ -7658,7 +7665,8 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001326
 name: TODO_add_others
-is_a: MS:1001302 ! search engine specific input parameter
+relationship: part_of MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1001328
@@ -8901,6 +8909,12 @@ is_a: MS:1001221 ! fragmentation information
 id: MS:1001522
 name: frag: precursor ion - NH3
 def: "Type of fragment: precursor ion without ammonia." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
+
+[Term]
+id: MS:1001523
+name: frag: precursor ion
+def: "Type of fragment: precursor ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Typedef]
