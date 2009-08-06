@@ -1,0 +1,17 @@
+id	psi_ms
+title	Mass spectrometry
+namespace	MS
+foundry	yes
+status	Discussion and review
+download	http://psidev.cvs.sourceforge.net/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo
+source	http://psidev.cvs.sourceforge.net/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo
+home	PSI Mass spectrometry|http://www.psidev.info/index.php?q=node/257
+documentation	http://www.psidev.info/index.php?q=node/257
+contact	PSI MS CV Administrators|psidev-ms-vocab@lists.sourceforge.net
+format	obo
+description	A structured controlled vocabulary for the annotation of mass spectrometry experiments. Developed by the HUPO Proteomics Standards Initiative.
+relevant_to	
+subtypes_of	
+patho_type	
+granularity	
+domain	experiments
