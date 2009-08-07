@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.22.0
+remark: version: 2.23.0
 remark: release date: 2009-08-06
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -6094,6 +6094,12 @@ id: MS:1000913
 name: transition predicted by informatic analysis
 def: "The transition has been predicted by informatics software without any direct spectral evidence." [PSI:MS]
 is_a: MS:1000909 ! transition validation method
+
+[Term]
+id: MS:1000914
+name: tab delimited text file
+def: "A file that has two or more columns of tabular data where each column is separated by a TAB character." [PSI:MS]
+is_a: MS:1001459 ! file format
 
 [Term]
 id: MS:1001000
