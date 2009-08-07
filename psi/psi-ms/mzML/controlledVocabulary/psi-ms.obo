@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.23.0
+remark: version: 2.23.1
 remark: release date: 2009-08-06
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -4065,7 +4065,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1000615
 name: ProteoWizard
-def: "ProteoWizard software for data analysis. Currently developed and maintained by Darren Kessner at Parag Mallick's lab SFCAP at Cedars-Sinai." [PSI:MS]
+def: "ProteoWizard software for data analysis. Currently developed and maintained by Darren Kessner at Parag Mallick's lab (Center for Applied Molecular Medicine at the University of Southern California)." [PSI:MS]
 synonym: "pwiz" EXACT []
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
