@@ -5974,18 +5974,24 @@ id: MS:1000895
 name: local retention time
 def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit an unspecified local chromatographic column and instrumental setup." [PSI:MS]
 is_a: MS:1000894 ! retention time
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
 
 [Term]
 id: MS:1000896
 name: normalized retention time
 def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit a standardized reference chromatographic column and instrumental setup." [PSI:MS]
 is_a: MS:1000894 ! retention time
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
 
 [Term]
 id: MS:1000897
 name: predicted retention time
 def: "A time interval relative to the beginning of a mass spectrometric run when a peptide will exit a chromatographic column as predicted by a referenced software application." [PSI:MS]
 is_a: MS:1000894 ! retention time
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
 
 [Term]
 id: MS:1000898
@@ -6042,8 +6048,6 @@ name: peak intensity rank
 def: "Ordinal specifying the rank in intensity of a peak in a spectrum. Base peak is 1. The next most intense peak is 2, etc." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000455 ! ion selection attribute
-relationship: has_units MS:1000132 ! percent of base peak
-relationship: has_units MS:1000905 ! percent of base peak times 100
 relationship: part_of MS:1000231 ! peak
 
 [Term]
@@ -6052,8 +6056,6 @@ name: peak targeting suitability rank
 def: "Ordinal specifying the rank of a peak in a spectrum in terms of suitability for targeting. The most suitable peak is 1. The next most suitability peak is 2, etc. Suitability is algorithm and context dependant." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000455 ! ion selection attribute
-relationship: has_units MS:1000132 ! percent of base peak
-relationship: has_units MS:1000905 ! percent of base peak times 100
 relationship: part_of MS:1000231 ! peak
 
 [Term]
