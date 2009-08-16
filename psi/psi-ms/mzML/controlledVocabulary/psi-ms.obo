@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.23.1
+remark: version: 2.24.0
 remark: release date: 2009-08-06
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -6715,6 +6715,7 @@ id: MS:1001114
 name: retention time(s)
 def: "Retention time of the spectrum from the source file" [PSI:PI]
 is_a: MS:1001105 ! peptide result details
+is_a: MS:1001405 ! spectrum identification result details
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
 
