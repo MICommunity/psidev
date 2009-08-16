@@ -9160,6 +9160,27 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001471 ! peptide modification details
 relationship: has_units UO:0000221 ! dalton
 
+[Term]
+id: MS:1001526
+name: spectrum from database nativeID format
+def: "databasekey=xsd:Long" [PSI:MS]
+comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
+is_a: MS:1000767 ! native spectrum identifier format
+
+[Term]
+id: MS:1001527
+name: Proteinscape spectra
+def: "Spectra from Bruker/Protagen Proteinscape database." [PSI:MS]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1001528
+name: Mascot query number
+def: "index=xsd:nonNegativeInteger" [PSI:MS]
+comment: The spectrum (query) number in a Mascot results file, starting from 1.
+is_a: MS:1000767 ! native spectrum identifier format
+is_a: MS:1001405 ! spectrum identification result details
+
 [Typedef]
 id: has_regexp
 name: has regexp
