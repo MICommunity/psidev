@@ -65,7 +65,7 @@
 <description>Protein feature description from UniProtKB</description>
 </synonymtypedef>
 <default-namespace>PSI-MOD</default-namespace>
-<remark>version: 1.008</remark>
+<remark>version: 1.007.3</remark>
 <remark>Annotation note 1 - "[PSI-MOD:ref]" has been replaced by PubMed:18688235.</remark>
 <remark>Annotation note 2 - When an entry in the RESID Database is annotated with different sources because the same modification can arise from different encoded amino acids, then the PSI-MOD definition for each different source instance carries the RESID cross-reference followed by the quoted tag "resulting". When an entry in the RESID Database is annotated as a general modification with the same enzymatic activity producing different chemical structures depending on natural variation in the nonproteinaceous substrate or on secondary modifications that do not change the nature of the primary modification, then the PSI-MOD definition for each different instance carries the RESID cross-reference followed by the quoted tag "variant".</remark>
 <remark>Annotation note 3 - When an entry in the UniMod database is annotated as a general modification, and one or more instance sites are listed, then the PSI-MOD definition for each different site instance carries the UniMod cross-reference followed by the quoted tag "site".</remark>
@@ -4593,6 +4593,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 13 H 22 N 5 O 2</name>
 </xref_analog>
@@ -6873,6 +6878,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 6 H 13 N 1 O 1</name>
 </xref_analog>
@@ -7300,6 +7310,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>29.039125</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -8264,6 +8279,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>43.054775</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -33601,6 +33621,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 25 H 25 N 4 O 4 S 1</name>
 </xref_analog>
@@ -34376,6 +34401,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 24 Fe 4 H 34 N 9 O 8 S 8</name>
 </xref_analog>
@@ -34634,6 +34664,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>59.049690</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -64819,6 +64854,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 6 H 13 N 2 O 1</name>
 </xref_analog>
@@ -64874,6 +64914,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>42.046950</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -64939,6 +64984,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 3 H 7 N 1 O 1</name>
 </xref_analog>
@@ -64994,6 +65044,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>42.046950</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -66931,6 +66986,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 5 H 9 N 1 O 1</name>
 </xref_analog>
@@ -66987,6 +67047,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>28.031300</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -99015,6 +99080,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 8 H 17 N 1 O 1 S 1</name>
 </xref_analog>
@@ -103878,6 +103948,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 10 H 16 N 1 O 6 P 1</name>
 </xref_analog>
@@ -104377,6 +104452,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 5 H 11 N 1 O 1 S 1</name>
 </xref_analog>
@@ -104432,6 +104512,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>42.046950</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -108126,6 +108211,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 5 (13)C 1 H 13 (14)N 2</name>
 </xref_analog>
@@ -108185,6 +108275,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -108250,6 +108345,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 4 (13)C 2 H 13 (14)N 1 (15)N 1</name>
 </xref_analog>
@@ -108309,6 +108409,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -113100,6 +113205,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>C 8 H 18 N 2 O 5 P 1</name>
 </xref_analog>
@@ -113361,6 +113471,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 6 H 13 (14)N 2</name>
 </xref_analog>
@@ -113420,6 +113535,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -113485,6 +113605,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 5 (13)C 1 H 13 (14)N 1 (15)N 1</name>
 </xref_analog>
@@ -113544,6 +113669,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -113609,6 +113739,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 3 (13)C 3 H 13 (14)N 1 (15)N 1</name>
 </xref_analog>
@@ -113668,6 +113803,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
@@ -113733,6 +113873,11 @@
 </xref_analog>
 <xref_analog>
 <acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
 <dbname>Formula</dbname>
 <name>(12)C 2 (13)C 4 H 13 (15)N 2</name>
 </xref_analog>
@@ -113792,6 +113937,11 @@
 <acc></acc>
 <dbname>DiffMono</dbname>
 <name>none</name>
+</xref_analog>
+<xref_analog>
+<acc></acc>
+<dbname>FormalCharge</dbname>
+<name>1+</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
