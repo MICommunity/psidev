@@ -1,6 +1,7 @@
 format-version: 1.2
-date: 03:09:2009 11:02
-auto-generated-by: OBO-Edit 2.0
+date: 05:11:2009 15:59
+saved-by: john.garavelli
+auto-generated-by: OBO-Edit 1.101
 subsetdef: PSI-MOD slim "subset of protein modifications"
 synonymtypedef: DeltaMass-label "Label from MS DeltaMass" EXACT
 synonymtypedef: PSI-MOD-alternate "Alternate label curated by PSI-MOD" EXACT
@@ -16,7 +17,7 @@ synonymtypedef: UniMod-interim "Interim label from UniMod" RELATED
 synonymtypedef: UniMod-label "Label (title) from UniMod" RELATED
 synonymtypedef: UniProt-feature "Protein feature description from UniProtKB" EXACT
 default-namespace: PSI-MOD
-remark: version: 1.008
+remark: version: 1.008.1
 remark: Annotation note 1 - "[PSI-MOD:ref]" has been replaced by PubMed:18688235.
 remark: Annotation note 2 - When an entry in the RESID Database is annotated with different sources because the same modification can arise from different encoded amino acids, then the PSI-MOD definition for each different source instance carries the RESID cross-reference followed by the quoted tag "resulting". When an entry in the RESID Database is annotated as a general modification with the same enzymatic activity producing different chemical structures depending on natural variation in the nonproteinaceous substrate or on secondary modifications that do not change the nature of the primary modification, then the PSI-MOD definition for each different instance carries the RESID cross-reference followed by the quoted tag "variant".
 remark: Annotation note 3 - When an entry in the UniMod database is annotated as a general modification, and one or more instance sites are listed, then the PSI-MOD definition for each different site instance carries the UniMod cross-reference followed by the quoted tag "site".
@@ -2876,7 +2877,7 @@ is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:00125
-name: Hypusine
+name: hypusine
 def: "A protein modification that effectively converts an L-lysine residue to hypusine, N6-(4-amino-2-hydroxybutyl)-L-lysine." [DeltaMass:0, PubMed:6806267, PubMed:8108861, RESID:AA0116, UniMod:379]
 subset: PSI-MOD slim
 synonym: "(S,R)-2-amino-6-(4-amino-2-hydroxybutylamino)hexanoic acid" EXACT RESID-systematic []
@@ -11542,7 +11543,7 @@ is_obsolete: true
 [Term]
 id: MOD:00540
 name: 9x(13)C labeled residue
-def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:184]
+def: "A protein modification that effectively converts a residue containing common isotopes to a 9x(13)C labeled residue." [PubMed:12716131, UniMod:184]
 synonym: "13C(9) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(9)" RELATED PSI-MS-label []
 xref: DiffAvg: "9.03"
@@ -11558,8 +11559,8 @@ is_a: MOD:00842 ! (13)C labeled residue
 
 [Term]
 id: MOD:00541
-name: 9x(13)C labeled phosphotyrosine
-def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:185]
+name: 9x(13)C labeled L-phosphotyrosine
+def: "A protein modification that effectively converts an L-tyrosine residue to 9x(13)C labeled L-phosphotyrosine." [PubMed:12716131, UniMod:185]
 synonym: "C13 label (Phosphotyrosine)" RELATED UniMod-description []
 synonym: "Label:13C(9)+Phospho" RELATED PSI-MS-label []
 xref: DiffAvg: "89.00"
@@ -11572,6 +11573,8 @@ xref: Origin: "Y"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00540 ! 9x(13)C labeled residue
+is_a: MOD:00919 ! modified L-tyrosine residue
+relationship: has_functional_parent MOD:00048 ! O4'-phospho-L-tyrosine
 
 [Term]
 id: MOD:00542
@@ -11611,7 +11614,7 @@ is_a: MOD:00003 ! UniMod
 [Term]
 id: MOD:00544
 name: 6x(13)C labeled residue
-def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:188]
+def: "A protein modification that effectively converts a residue containing common isotopes to a 6x(13)C labeled residue." [PubMed:12716131, UniMod:188]
 synonym: "13C(6) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.02"
@@ -11747,8 +11750,8 @@ is_a: MOD:01431 ! (2)H deuterium tagged reagent
 
 [Term]
 id: MOD:00552
-name: 4x(2)H labeled dimethyl residue
-def: "Isotopic label from UniMod." [PubMed:14670044, UniMod:199]
+name: 4x(2)H labeled dimethylated residue
+def: "A protein modification that effectively converts a residue containing common isotopes to a 4x(2)H labeled dimethylated residue." [PubMed:14670044, UniMod:199]
 comment: Supposed to be alpha-amino and Lys-N6 derivatized by C(2)H2O and reduction.
 synonym: "DiMethyl-CHD2" RELATED UniMod-description []
 synonym: "Dimethyl:2H(4)" RELATED PSI-MS-label []
@@ -12231,8 +12234,8 @@ is_a: MOD:00845 ! (18)O substituted residue
 
 [Term]
 id: MOD:00582
-name: 6x(13)C13,2x(15)N labeled lysine
-def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:259]
+name: 6x(13)C,2x(15)N labeled L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 6x(13)C,2x(15)N labeled L-lysine." [PubMed:12716131, UniMod:259]
 synonym: "13C(6) 15N(2) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)15N(2)" RELATED PSI-MS-label []
 xref: DiffAvg: "8.01"
@@ -12246,6 +12249,8 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00912 ! modified L-lysine residue
+relationship: has_functional_parent MOD:00021 ! L-lysine residue
 
 [Term]
 id: MOD:00583
@@ -12319,8 +12324,8 @@ is_a: MOD:00003 ! UniMod
 
 [Term]
 id: MOD:00587
-name: 6x(13)C, 4x(15)N labeled arginine
-def: "modification from UniMod Isotopic label" [PubMed:12716131, UniMod:267]
+name: 6x(13)C, 4x(15)N labeled L-arginine
+def: "A protein modification that effectively converts an L-arginine residue to 6x(13)C, 4x(15)N labeled L-arginine." [PubMed:12716131, UniMod:267]
 synonym: "13C(6) 15N(4) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)15N(4)" RELATED PSI-MS-label []
 xref: DiffAvg: "10.01"
@@ -12334,11 +12339,13 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00902 ! modified L-arginine residue
+relationship: has_functional_parent MOD:00011 ! L-arginine residue
 
 [Term]
 id: MOD:00588
-name: 5x(13)C, (15)N labeled valine
-def: "modification from UniMod Isotopic label" [PubMed:12771378, UniMod:268]
+name: 5x(13)C, (15)N labeled L-valine
+def: "A protein modification that effectively converts an L-valine residue to 5x(13)C, (15)N labeled L-valine." [PubMed:12771378, UniMod:268]
 synonym: "13C(5) 15N(1) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(5)15N(1)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.01"
@@ -12352,11 +12359,13 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00920 ! modified L-valine residue
+relationship: has_functional_parent MOD:00029 ! L-valine residue
 
 [Term]
 id: MOD:00589
-name: (13)C,(15)N labeled phenylalanine
-def: "modification from UniMod Isotopic label" [PubMed:12771378, UniMod:269]
+name: (13)C,(15)N labeled L-phenylalanine
+def: "A protein modification that effectively converts an L-phenylalanine residue to (13)C,(15)N labeled L-phenylalanine." [PubMed:12771378, UniMod:269]
 synonym: "13C(9) 15N(1) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(9)15N(1)" RELATED PSI-MS-label []
 xref: DiffAvg: "10.03"
@@ -12370,6 +12379,8 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00842 ! (13)C labeled residue
 is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00914 ! modified L-phenylalanine residue
+relationship: has_functional_parent MOD:00023 ! L-phenylalanine residue
 
 [Term]
 id: MOD:00590
@@ -12587,8 +12598,8 @@ is_obsolete: true
 
 [Term]
 id: MOD:00604
-name: 2x(2)H methyllysine
-def: "modification from UniMod Isotopic label" [PubMed:15525938, UniMod:284]
+name: 2x(2)H monomethylated L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 2x(2)H labeled monomethylated L-lysine." [PubMed:15525938, UniMod:284]
 synonym: "Deuterium Methylation of Lysine" RELATED UniMod-description []
 synonym: "Methyl:2H(2)" RELATED PSI-MS-label []
 xref: DiffAvg: "16.03"
@@ -12601,6 +12612,8 @@ xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00839 ! (2)H deuterium labeled residue
+is_a: MOD:00912 ! modified L-lysine residue
+relationship: has_functional_parent MOD:00085 ! N6-methyl-L-lysine
 
 [Term]
 id: MOD:00605
@@ -12802,7 +12815,7 @@ is_a: MOD:00538 ! protein modification categorized by isobaric sets
 [Term]
 id: MOD:00617
 name: 3x(2)H residue methyl ester
-def: "modification from UniMod Isotopic label" [UniMod:298]
+def: "A protein modification that effectively converts a residue containing common isotopes to a 3x(2)H labeled residue methyl ester." [UniMod:298]
 synonym: "deuterated methyl ester" RELATED UniMod-description []
 synonym: "Methyl:2H(3)" RELATED PSI-MS-label []
 xref: DiffAvg: "17.03"
@@ -13147,8 +13160,8 @@ is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
 id: MOD:00637
-name: (13)C,3x(2)H-monomethylated arginine
-def: "modification from UniMod Isotopic label" [UniMod:329]
+name: (13)C,3x(2)H labeled monomethylated L-arginine
+def: "A protein modification that effectively converts an L-arginine residue to (13)C,3x(2)H labeled monomethylated L-arginine." [UniMod:329]
 synonym: "Methyl:2H(3)13C(1)" RELATED PSI-MS-label []
 synonym: "monomethylated arginine" RELATED UniMod-description []
 xref: DiffAvg: "18.04"
@@ -13167,8 +13180,8 @@ relationship: has_functional_parent MOD:00414 ! monomethylated L-arginine
 
 [Term]
 id: MOD:00638
-name: 2x(13)C,6x(2)H-dimethylated arginine
-def: "modification from UniMod Isotopic label" [PubMed:15782174, UniMod:330]
+name: 2x(13)C,6x(2)H labeled dimethylated L-arginine
+def: "A protein modification that effectively converts an L-arginine residue to 2x(13)C,6x(2)H labeled dimethylated L-arginine." [PubMed:15782174, UniMod:330]
 synonym: "Dimethyl:2H(6)13C(2)" RELATED PSI-MS-label []
 synonym: "dimethylated arginine" RELATED UniMod-description []
 xref: DiffAvg: "36.08"
@@ -15046,7 +15059,7 @@ is_a: MOD:01458 ! N-alpha-acetylated residue
 [Term]
 id: MOD:00786
 name: deuterium substituted residue
-def: "A protein modification that effectively substitutes one or more deuterium atoms for protium atoms." [PubMed:18688235]
+def: "A protein modification that effectively substitutes one or more (2)H deuterium atoms for (1)H protium atoms." [PubMed:18688235]
 synonym: "D(H)Res" EXACT PSI-MOD-short []
 is_a: MOD:00839 ! (2)H deuterium labeled residue
 
@@ -15143,7 +15156,7 @@ is_a: MOD:00852 ! 1x(18)O labeled deamidated residue
 [Term]
 id: MOD:00792
 name: deuterium monosubstituted residue
-def: "A protein modification that effectively substitutes one deuterium atom for one protium atom." [PubMed:18688235]
+def: "A protein modification that effectively substitutes one (2)H deuterium atom for one (1)H protium atom." [PubMed:18688235]
 synonym: "D(H)1Res" EXACT PSI-MOD-short []
 is_a: MOD:00786 ! deuterium substituted residue
 
@@ -16123,8 +16136,8 @@ is_a: MOD:00786 ! deuterium substituted residue
 
 [Term]
 id: MOD:00838
-name: ((2)H3)leucine
-def: "A protein modification that effectively substitutes three (1)H protium atoms with three (2)H deuterium atoms to produce ((2)H3)leucine." [UniMod:262 "site"]
+name: 3x(2)H labeled L-leucine
+def: "A protein modification that effectively substitutes three (1)H protium atoms with three (2)H deuterium atoms to produce 3x(2)H labeled L-leucine." [UniMod:262 "site"]
 synonym: "D(H)3Leu" EXACT PSI-MOD-short []
 synonym: "Label:2H(3)" RELATED PSI-MS-label []
 synonym: "Trideuteration" RELATED UniMod-description []
@@ -16138,11 +16151,13 @@ xref: Origin: "L"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00585 ! deuterium trisubstituted residue
+is_a: MOD:00911 ! modified L-leucine residue
+relationship: has_functional_parent MOD:00020 ! L-leucine residue
 
 [Term]
 id: MOD:00839
 name: (2)H deuterium labeled residue
-def: "A protein modification that effectively substitutes atoms of particular common isotopes with atoms of or groups containing deuterium." [PubMed:18688235]
+def: "A protein modification that effectively substitutes atoms of particular common isotopes with atoms of or groups containing deuteriumm, (2)H." [PubMed:18688235]
 is_a: MOD:00702 ! isotope labeled residue
 
 [Term]
@@ -17263,7 +17278,7 @@ is_obsolete: true
 [Term]
 id: MOD:00927
 name: 2x(13)C,4x(2)H labeled dimethylated residue
-def: "modification from UniMod Isotopic label" [PubMed:16335955, PubMed:3802193, UniMod:510]
+def: "A protein modification that effectively converts a residue containing common isotopes to a 2x(13)C,4x(2)H labeled dimethylated residue." [PubMed:16335955, PubMed:3802193, UniMod:510]
 synonym: "DiMethyl-C13HD2" RELATED UniMod-description []
 synonym: "Dimethyl:2H(4)13C(2)" RELATED PSI-MS-label []
 xref: DiffAvg: "34.06"
@@ -17527,8 +17542,8 @@ is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:00942
-name: (4,4,5,5-(2)H4)lysine
-def: "A protein modification that effectively substitutes four (1)H protium atoms with four (2)H deuterium atoms to produce (4,4,5,5-(2)H4)lysine." [UniMod:481]
+name: (4,4,5,5-(2)H4)-L-lysine
+def: "A protein modification that effectively substitutes four (1)H protium atoms with four (2)H deuterium atoms to produce (4,4,5,5-(2)H4)-L-lysine." [UniMod:481]
 comment: For SILAC experiments.
 synonym: "4,4,5,5-D4 Lysine" RELATED UniMod-description []
 synonym: "4,4,5,5-tetradeuterolysine" EXACT PSI-MOD-alternate []
@@ -22418,6 +22433,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00916 ! modified L-serine residue
+relationship: has_functional_parent MOD:00025 ! L-serine residue
 
 [Term]
 id: MOD:01235
@@ -22436,6 +22452,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00917 ! modified L-threonine residue
+relationship: has_functional_parent MOD:00026 ! L-threonine residue
 
 [Term]
 id: MOD:01236
@@ -22454,6 +22471,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00581 ! (18)O monosubstituted residue
 is_a: MOD:00919 ! modified L-tyrosine residue
+relationship: has_functional_parent MOD:00028 ! L-tyrosine residue
 
 [Term]
 id: MOD:01237
@@ -22528,7 +22546,7 @@ relationship: derives_from MOD:01148 ! ubiquitinylated lysine
 [Term]
 id: MOD:01241
 name: 3x(2)H labeled L-aspartic acid 4-methyl ester
-def: "modification from UniMod Isotopic label -" [PubMed:12185208, UniMod:298 "site"]
+def: "A protein modification that effectively converts an L-lysine residue to 3x(2)H labeled L-aspartic acid 4-methyl ester." [PubMed:12185208, UniMod:298 "site"]
 synonym: "deuterated methyl ester" RELATED UniMod-description []
 synonym: "Methyl:2H(3)" RELATED PSI-MS-label []
 xref: DiffAvg: "17.03"
@@ -22541,12 +22559,13 @@ xref: Origin: "D"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00617 ! 3x(2)H residue methyl ester
-is_a: MOD:01181 ! L-aspartic acid 4-methyl ester
+is_a: MOD:00904 ! modified L-aspartic acid residue
+relationship: has_functional_parent MOD:01181 ! L-aspartic acid 4-methyl ester
 
 [Term]
 id: MOD:01242
 name: 3x(2)H labeled L-glutamic acid 5-methyl ester
-def: "modification from UniMod Isotopic label -" [PubMed:1326520, UniMod:298 "site"]
+def: "A protein modification that effectively converts an L-lysine residue to 3x(2)H labeled L-glutamic acid 5-methyl ester." [PubMed:1326520, UniMod:298 "site"]
 synonym: "deuterated methyl ester" RELATED UniMod-description []
 synonym: "Methyl:2H(3)" RELATED PSI-MS-label []
 xref: DiffAvg: "17.03"
@@ -22559,7 +22578,8 @@ xref: Origin: "E"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00617 ! 3x(2)H residue methyl ester
-is_a: MOD:01453 ! L-glutamic acid 5-methyl ester
+is_a: MOD:00906 ! modified L-glutamic acid residue
+relationship: has_functional_parent MOD:01453 ! L-glutamic acid 5-methyl ester
 
 [Term]
 id: MOD:01243
@@ -22757,8 +22777,8 @@ is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:01254
-name: 4x(2)H labeled dimethyllysine
-def: "modification from UniMod Isotopic label -" [PubMed:14670044, UniMod:199 "site"]
+name: 4x(2)H labeled dimethylated L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 4x(2)H labeled dimethylated L-lysine." [PubMed:14670044, UniMod:199 "site"]
 synonym: "DiMethyl-CHD2" RELATED UniMod-description []
 synonym: "Dimethyl:2H(4)" RELATED PSI-MS-label []
 xref: DiffAvg: "32.06"
@@ -22770,8 +22790,9 @@ xref: MassMono: "160.151370"
 xref: Origin: "K"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-is_a: MOD:00084 ! N6,N6-dimethyl-L-lysine
-is_a: MOD:00552 ! 4x(2)H labeled dimethyl residue
+is_a: MOD:00552 ! 4x(2)H labeled dimethylated residue
+is_a: MOD:00912 ! modified L-lysine residue
+relationship: has_functional_parent MOD:00084 ! N6,N6-dimethyl-L-lysine
 
 [Term]
 id: MOD:01255
@@ -23316,8 +23337,8 @@ is_a: MOD:00905 ! modified L-cysteine residue
 
 [Term]
 id: MOD:01285
-name: 6x(13)C,1x(15)N isotope labeled L-leucine
-def: "modification from UniMod Isotopic label -" [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695 "site"]
+name: 6x(13)C,1x(15)N labeled L-leucine
+def: "A protein modification that effectively converts an L-leucine residue to 6x(13)C,1x(15)N isotope labeled L-leucine." [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695 "site"]
 synonym: "13C(6) 15N(1) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)15N(1)" RELATED PSI-MS-label []
 xref: DiffAvg: "7.02"
@@ -23329,12 +23350,14 @@ xref: MassMono: "120.101228"
 xref: Origin: "L"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-is_a: MOD:01370 ! 6x(13)C,1x(15)N isotope labeled residue
+is_a: MOD:00911 ! modified L-leucine residue
+is_a: MOD:01370 ! 6x(13)C,1x(15)N labeled residue
+relationship: has_functional_parent MOD:00020 ! L-leucine residue
 
 [Term]
 id: MOD:01286
-name: 6x(13)C,1x(15)N isotope labeled L-isoleucine
-def: "modification from UniMod Isotopic label -" [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695 "site"]
+name: 6x(13)C,1x(15)N labeled L-isoleucine
+def: "A protein modification that effectively converts an L-isoleucine residue to 6x(13)C,1x(15)N isotope labeled L-isoleucine." [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695 "site"]
 synonym: "13C(6) 15N(1) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)15N(1)" RELATED PSI-MS-label []
 xref: DiffAvg: "7.02"
@@ -23346,7 +23369,9 @@ xref: MassMono: "120.101228"
 xref: Origin: "I"
 xref: Source: "artifact"
 xref: TermSpec: "none"
-is_a: MOD:01370 ! 6x(13)C,1x(15)N isotope labeled residue
+is_a: MOD:00910 ! modified L-isoleucine residue
+is_a: MOD:01370 ! 6x(13)C,1x(15)N labeled residue
+relationship: has_functional_parent MOD:00019 ! L-isoleucine residue
 
 [Term]
 id: MOD:01287
@@ -23542,6 +23567,8 @@ xref: Origin: "P"
 xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00842 ! (13)C labeled residue
+is_a: MOD:00915 ! modified L-proline residue
+relationship: has_functional_parent MOD:00024 ! L-proline residue
 
 [Term]
 id: MOD:01298
@@ -24060,8 +24087,8 @@ is_a: MOD:00912 ! modified L-lysine residue
 
 [Term]
 id: MOD:01326
-name: 9x(13)C labeled tyrosine
-def: "modification from UniMod Isotopic label - Used in SILAC experiment" [PubMed:11510821, PubMed:12422359, PubMed:12716131, UniMod:184 "site"]
+name: 9x(13)C labeled L-tyrosine
+def: "A protein modification that effectively converts an L-tyrosine residue to 9x(13)C labeled L-tyrosine." [PubMed:11510821, PubMed:12422359, PubMed:12716131, UniMod:184 "site"]
 synonym: "13C(9) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(9)" RELATED PSI-MS-label []
 xref: DiffAvg: "9.03"
@@ -24075,11 +24102,12 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00540 ! 9x(13)C labeled residue
 is_a: MOD:00919 ! modified L-tyrosine residue
+relationship: has_functional_parent MOD:00028 ! L-tyrosine residue
 
 [Term]
 id: MOD:01327
-name: 9x(13)C labeled phenylalanine
-def: "modification from UniMod Isotopic label -" [PubMed:12716131, UniMod:184 "site"]
+name: 9x(13)C labeled L-phenylalanine
+def: "A protein modification that effectively converts an L-phenylalanine residue to 9x(13)C labeled L-phenylalanine." [PubMed:12716131, UniMod:184 "site"]
 synonym: "13C(9) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(9)" RELATED PSI-MS-label []
 xref: DiffAvg: "9.03"
@@ -24093,6 +24121,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00540 ! 9x(13)C labeled residue
 is_a: MOD:00914 ! modified L-phenylalanine residue
+relationship: has_functional_parent MOD:00023 ! L-phenylalanine residue
 
 [Term]
 id: MOD:01328
@@ -24151,8 +24180,8 @@ is_obsolete: true
 
 [Term]
 id: MOD:01331
-name: 6x(13)C labeled arginine
-def: "modification from UniMod Isotopic label - Used in SILAC experiment" [PubMed:12716131, UniMod:188 "site"]
+name: 6x(13)C labeled L-arginine
+def: "A protein modification that effectively converts an Larginine residue to 6x(13)C labeled arginine." [PubMed:12716131, UniMod:188 "site"]
 synonym: "13C(6) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.02"
@@ -24166,11 +24195,12 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00544 ! 6x(13)C labeled residue
 is_a: MOD:00902 ! modified L-arginine residue
+relationship: has_functional_parent MOD:00011 ! L-arginine residue
 
 [Term]
 id: MOD:01332
-name: 6x(13)C labeled leucine
-def: "modification from UniMod Isotopic label - Used in SILAC experiment" [PubMed:12716131, UniMod:188 "site"]
+name: 6x(13)C labeled L-leucine
+def: "A protein modification that effectively converts an Lleucine residue to 6x(13)C labeled L-leucine." [PubMed:12716131, UniMod:188 "site"]
 synonym: "13C(6) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.02"
@@ -24184,11 +24214,12 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00544 ! 6x(13)C labeled residue
 is_a: MOD:00911 ! modified L-leucine residue
+relationship: has_functional_parent MOD:00020 ! L-leucine residue
 
 [Term]
 id: MOD:01333
-name: 6x(13)C labeled isoleucine
-def: "modification from UniMod Isotopic label - Used in SILAC experiment" [PubMed:12716131, PubMed:12766232, UniMod:188 "site"]
+name: 6x(13)C labeled L-isoleucine
+def: "A protein modification that effectively converts an Lisoleucine residue to 6x(13)C labeled isoleucine." [PubMed:12716131, PubMed:12766232, UniMod:188 "site"]
 synonym: "13C(6) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.02"
@@ -24202,11 +24233,12 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00544 ! 6x(13)C labeled residue
 is_a: MOD:00910 ! modified L-isoleucine residue
+relationship: has_functional_parent MOD:00019 ! L-isoleucine residue
 
 [Term]
 id: MOD:01334
-name: 6x(13)C labeled lysine
-def: "modification from UniMod Isotopic label - Used in SILAC experiment" [PubMed:11857757, PubMed:11999733, PubMed:12175151, PubMed:12716131, UniMod:188 "site"]
+name: 6x(13)C labeled L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 6x(13)C labeled L-lysine." [PubMed:11857757, PubMed:11999733, PubMed:12175151, PubMed:12716131, UniMod:188 "site"]
 synonym: "13C(6) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)" RELATED PSI-MS-label []
 xref: DiffAvg: "6.02"
@@ -24220,6 +24252,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00544 ! 6x(13)C labeled residue
 is_a: MOD:00912 ! modified L-lysine residue
+relationship: has_functional_parent MOD:00021 ! L-lysine residue
 
 [Term]
 id: MOD:01335
@@ -24624,8 +24657,8 @@ is_a: MOD:00916 ! modified L-serine residue
 
 [Term]
 id: MOD:01357
-name: 2x(13)C,4x(2)H labeled dimethyllysine
-def: "modification from UniMod Isotopic label -" [PubMed:12686488, PubMed:16335955, UniMod:510 "site"]
+name: 2x(13)C,4x(2)H labeled dimethylated L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 2x(13)C,4x(2)H labeled dimethylated L-lysine." [PubMed:12686488, PubMed:16335955, UniMod:510 "site"]
 synonym: "DiMethyl-C13HD2" RELATED UniMod-description []
 synonym: "Dimethyl:2H(4)13C(2)" RELATED PSI-MS-label []
 xref: DiffAvg: "34.06"
@@ -24639,6 +24672,7 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:00912 ! modified L-lysine residue
 is_a: MOD:00927 ! 2x(13)C,4x(2)H labeled dimethylated residue
+relationship: has_functional_parent MOD:00084 ! N6,N6-dimethyl-L-lysine
 
 [Term]
 id: MOD:01358
@@ -24857,8 +24891,8 @@ is_a: MOD:00400 ! deamidated residue
 
 [Term]
 id: MOD:01370
-name: 6x(13)C,1x(15)N isotope labeled residue
-def: "modification from UniMod Isotopic label -" [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695]
+name: 6x(13)C,1x(15)N labeled residue
+def: "A protein modification that effectively converts a residue containing common isotopes to a 6x(13)C,1x(15)N labeled residue." [PubMed:11857757, PubMed:11999733, PubMed:12175151, UniMod:695]
 synonym: "13C(6) 15N(1) Silac label" RELATED UniMod-description []
 synonym: "Label:13C(6)15N(1)" RELATED PSI-MS-label []
 xref: DiffAvg: "7.02"
@@ -26423,8 +26457,8 @@ is_a: MOD:00408 ! N-acetylated residue
 
 [Term]
 id: MOD:01459
-name: 4x(2)H labeled dimethyl N-terminal amino
-def: "Isotopic label from UniMod." [PubMed:14670044, UniMod:199 "site"]
+name: 4x(2)H labeled alpha-dimethylamino N-terminal residue
+def: "A protein modification that effectively converts an N-terminal residue to an 4x(2)H labeled alpha-dimethylamino N-terminal residue." [PubMed:14670044, UniMod:199 "site"]
 comment: Supposed to be alpha-amino and Lys-N6 derivatized by C(2)H2O and reduction.
 synonym: "DiMethyl-CHD2" RELATED UniMod-description []
 synonym: "Dimethyl:2H(4)" RELATED PSI-MS-label []
@@ -26437,7 +26471,7 @@ xref: MassMono: "none"
 xref: Origin: "X"
 xref: Source: "artifact"
 xref: TermSpec: "N-term"
-is_a: MOD:00552 ! 4x(2)H labeled dimethyl residue
+is_a: MOD:00552 ! 4x(2)H labeled dimethylated residue
 
 [Term]
 id: MOD:01460
@@ -28941,7 +28975,7 @@ xref: DiffMono: "166.063305"
 xref: FormalCharge: "1+"
 xref: Formula: "C 8 H 18 N 2 O 5 P 1"
 xref: MassAvg: "253.21"
-xref: MassMono: "253.095333"
+xref: MassMono: "253.094785"
 xref: Origin: "S"
 xref: Source: "natural"
 xref: TermSpec: "none"
@@ -29141,6 +29175,60 @@ xref: Source: "artifact"
 xref: TermSpec: "none"
 is_a: MOD:01593 ! iTRAQ8plex reporter fragment
 relationship: derives_from MOD:01577 ! iTRAQ8plex-121 reporter+balance reagent derivatized residue
+
+[Term]
+id: MOD:01602
+name: S-(L-lysyl)-L-methionine sulfilimine
+def: "A protein modification that effectively converts an L-lysine residue, and an L-methionine residue to S-(L-lysyl)-L-methionine sulfilimine." [PubMed:12011424, PubMed:15951440, PubMed:19729652, RESID:AA0501]
+comment: Cross-link 2.
+synonym: "(E)-N6-([(3S)-3-amino-3-carboxypropyl](methyl)-lambda4-sulfanylidene)-L-lysine" EXACT RESID-systematic []
+synonym: "CROSSLNK S-Lysyl-methionine sulfilimine (Met-Lys) (interchain with K-...)" EXACT UniProt-feature []
+synonym: "S-lysyl-methionine" EXACT RESID-alternate []
+xref: DiffAvg: "-2.02"
+xref: DiffFormula: "C 0 H -2 N 0 O 0 S 0"
+xref: DiffMono: "-2.015650"
+xref: Formula: "C 11 H 19 N 3 O 2 S 1"
+xref: MassAvg: "257.35"
+xref: MassMono: "257.119798"
+xref: Origin: "K, M"
+xref: Source: "natural"
+xref: TermSpec: "none"
+is_a: MOD:00912 ! modified L-lysine residue
+is_a: MOD:00913 ! modified L-methionine residue
+
+[Term]
+id: MOD:01603
+name: 2x(15)N labeled L-lysine
+def: "A protein modification that effectively converts an L-lysine residue to 2x(15)N labeled L-lysine." [PubMed:18688235, URL:http\://www.sigmaaldrich.com/catalog/ProductDetail.do?N4=609021|ALDRICH&N5=SEARCH_CONCAT_PNO|BRAND_KEY&F=SPEC&lang=en_US%3E]
+xref: DiffAvg: "1.99"
+xref: DiffFormula: "(14)N -2 (15)N 2"
+xref: DiffMono: "1.994070"
+xref: Formula: "C 6 H 12 (15)N 2 O 1"
+xref: MassAvg: "130.09"
+xref: MassMono: "130.089033"
+xref: Origin: "K"
+xref: Source: "artifact"
+xref: TermSpec: "none"
+is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00912 ! modified L-lysine residue
+relationship: has_functional_parent MOD:00021 ! L-lysine residue
+
+[Term]
+id: MOD:01604
+name: 4x(15)N labeled L-arginine
+def: "A protein modification that effectively converts an L-arginine residue to 4x(15)N labeled L-arginine." [PubMed:18688235, URL:http\://www.sigmaaldrich.com/catalog/ProductDetail.do?N4=600113|ALDRICH&N5=SEARCH_CONCAT_PNO|BRAND_KEY&F=SPEC&lang=en_US%3E]
+xref: DiffAvg: "75.99"
+xref: DiffFormula: "C 6 (14)N -4 (15)N 4"
+xref: DiffMono: "75.988140"
+xref: Formula: "C 6 H 12 (15)N 4 O 1"
+xref: MassAvg: "160.09"
+xref: MassMono: "160.089251"
+xref: Origin: "R"
+xref: Source: "artifact"
+xref: TermSpec: "none"
+is_a: MOD:00843 ! (15)N labeled residue
+is_a: MOD:00902 ! modified L-arginine residue
+relationship: has_functional_parent MOD:00011 ! L-arginine residue
 
 [Typedef]
 id: contains
