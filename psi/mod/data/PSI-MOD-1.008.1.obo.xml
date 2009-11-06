@@ -114243,17 +114243,17 @@
 <xref_analog>
 <acc></acc>
 <dbname>DiffAvg</dbname>
-<name>75.99</name>
+<name>3.99</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
 <dbname>DiffFormula</dbname>
-<name>C 6 (14)N -4 (15)N 4</name>
+<name>(14)N -4 (15)N 4</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>
 <dbname>DiffMono</dbname>
-<name>75.988140</name>
+<name>3.988140</name>
 </xref_analog>
 <xref_analog>
 <acc></acc>

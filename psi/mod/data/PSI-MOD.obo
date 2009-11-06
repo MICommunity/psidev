@@ -1,7 +1,7 @@
 format-version: 1.2
-date: 05:11:2009 15:59
-saved-by: john.garavelli
-auto-generated-by: OBO-Edit 1.101
+date: 06:11:2009 16:13
+saved-by: John S. Garavelli
+auto-generated-by: FormulaOBO.PL
 subsetdef: PSI-MOD slim "subset of protein modifications"
 synonymtypedef: DeltaMass-label "Label from MS DeltaMass" EXACT
 synonymtypedef: PSI-MOD-alternate "Alternate label curated by PSI-MOD" EXACT
@@ -29217,9 +29217,9 @@ relationship: has_functional_parent MOD:00021 ! L-lysine residue
 id: MOD:01604
 name: 4x(15)N labeled L-arginine
 def: "A protein modification that effectively converts an L-arginine residue to 4x(15)N labeled L-arginine." [PubMed:18688235, URL:http\://www.sigmaaldrich.com/catalog/ProductDetail.do?N4=600113|ALDRICH&N5=SEARCH_CONCAT_PNO|BRAND_KEY&F=SPEC&lang=en_US%3E]
-xref: DiffAvg: "75.99"
-xref: DiffFormula: "C 6 (14)N -4 (15)N 4"
-xref: DiffMono: "75.988140"
+xref: DiffAvg: "3.99"
+xref: DiffFormula: "(14)N -4 (15)N 4"
+xref: DiffMono: "3.988140"
 xref: Formula: "C 6 H 12 (15)N 4 O 1"
 xref: MassAvg: "160.09"
 xref: MassMono: "160.089251"
@@ -29255,4 +29255,3 @@ id: part_of
 name: part of
 def: "'Entity A' part_of 'Entity B' implies that 'Entity A' is a part of the structure of 'Entity B'." [PubMed:18688235]
 is_transitive: true
-
