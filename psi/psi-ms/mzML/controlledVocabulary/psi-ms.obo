@@ -9419,6 +9419,20 @@ id: MS:1001556
 name: Bruker Daltonics apex series
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
+[Term]
+id: MS:1001557
+name: Shimadzu Biotech software
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1001558
+name: MALDI Solutions
+def: "Shimadzu Biotech software for data acquisition, processing, and analysis." [PSI:MS]
+is_a: MS:1001557 ! Shimadzu Biotech software
+is_a: MS:1001455 ! acquisition software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
 [Typedef]
 id: has_regexp
 name: has regexp
