@@ -4,7 +4,6 @@ saved-by: George Gkoutos
 auto-generated-by: OBO-Edit 1.100-beta22
 default-namespace: unit.ontology
 namespace-id-rule: * UO:$sequence(7,0,9999999)$
-import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/quality.obo?revision=1.95
 
 [Term]
 id: UO:0000000

@@ -5920,6 +5920,7 @@ relationship: part_of MS:1000882 ! protein
 id: MS:1000885
 name: protein accession
 def: "Accession number for a specific protein in a database." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000884 ! protein attribute
 
 [Term]
@@ -5981,6 +5982,7 @@ is_a: MS:1000887 ! peptide attribute
 id: MS:1000895
 name: local retention time
 def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit an unspecified local chromatographic column and instrumental setup." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
@@ -5989,6 +5991,7 @@ relationship: has_units UO:0000031 ! minute
 id: MS:1000896
 name: normalized retention time
 def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit a standardized reference chromatographic column and instrumental setup." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
@@ -5997,6 +6000,7 @@ relationship: has_units UO:0000031 ! minute
 id: MS:1000897
 name: predicted retention time
 def: "A time interval relative to the beginning of a mass spectrometric run when a peptide will exit a chromatographic column as predicted by a referenced software application." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
@@ -6175,6 +6179,7 @@ name: MaRiMba
 def: "OBSOLETE Software used to predict transitions for selected reaction monitoring experiments based on observed spectrum libraries developed and distributed by the Institute for Systems Biology. http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP-MaRiMba." [PSI:MS]
 comment: This term was made obsolete because it was redundant with an existing term (MS:1000872)
 is_obsolete: true
+replaced_by: MS:1000872 ! MaRiMba
 
 [Term]
 id: MS:1000925
@@ -7431,7 +7436,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001220
 name: frag: y ion
-def: "Type of fragment: y ion." [PSI:PI]
+def: "Fragmentation information, type of product: y ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -7443,19 +7448,19 @@ is_a: MS:1001105 ! peptide result details
 [Term]
 id: MS:1001222
 name: frag: b ion - H2O
-def: "Type of fragment: b ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: b ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001223
 name: frag: y ion - H2O
-def: "Type of fragment: y ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: y ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001224
 name: frag: b ion
-def: "Type of fragment: b ion." [PSI:PI]
+def: "Fragmentation information, type of product: b ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -7483,73 +7488,73 @@ relationship: has_units UO:0000166 ! parts per notation
 [Term]
 id: MS:1001228
 name: frag: x ion
-def: "Type of fragment: x ion." [PSI:PI]
+def: "Fragmentation information, type of product: x ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001229
 name: frag: a ion
-def: "Type of fragment: a ion." [PSI:PI]
+def: "Fragmentation information, type of product: a ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001230
 name: frag: z ion
-def: "Type of fragment: z ion." [PSI:PI]
+def: "Fragmentation information, type of product: z ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001231
 name: frag: c ion
-def: "Type of fragment: c ion." [PSI:PI]
+def: "Fragmentation information, type of product: c ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001232
 name: frag: b ion - NH3
-def: "Type of fragment: b ion without ammonium ion." [PSI:PI]
+def: "Fragmentation information, type of product: b ion without ammonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001233
 name: frag: y ion - NH3
-def: "Type of fragment: y ion without ammonium ion." [PSI:PI]
+def: "Fragmentation information, type of product: y ion without ammonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001234
 name: frag: a ion - H2O
-def: "Type of fragment: a ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: a ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001235
 name: frag: a ion - NH3
-def: "Type of fragment: a ion without ammonium." [PSI:PI]
+def: "Fragmentation information, type of product: a ion without ammonium." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001236
 name: frag: d ion
-def: "Type of fragment: d ion." [PSI:PI]
+def: "Fragmentation information, type of product: d ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001237
 name: frag: v ion
-def: "Type of fragment: v ion." [PSI:PI]
+def: "Fragmentation information, type of product: v ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001238
 name: frag: w ion
-def: "Type of fragment: w ion." [PSI:PI]
+def: "Fragmentation information, type of product: w ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001239
 name: frag: immonium ion
-def: "Type of fragment: immonium ion." [PSI:PI]
+def: "Fragmentation information, type of product: immonium ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
@@ -9184,55 +9189,55 @@ is_a: MS:1001512 ! Sequence database filters
 [Term]
 id: MS:1001515
 name: frag: c ion - H2O
-def: "Type of fragment: c ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: c ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001516
 name: frag: c ion - NH3
-def: "Type of fragment: c ion without ammonia." [PSI:PI]
+def: "Fragmentation information, type of product: c ion without ammonia." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001517
 name: frag: z ion - H2O
-def: "Type of fragment: z ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: z ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001518
 name: frag: z ion - NH3
-def: "Type of fragment: z ion without ammonia." [PSI:PI]
+def: "Fragmentation information, type of product: z ion without ammonia." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001519
 name: frag: x ion - H2O
-def: "Type of fragment: x ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: x ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001520
 name: frag: x ion - NH3
-def: "Type of fragment: x ion without ammonia." [PSI:PI]
+def: "Fragmentation information, type of product: x ion without ammonia." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001521
 name: frag: precursor ion - H2O
-def: "Type of fragment: precursor ion without water." [PSI:PI]
+def: "Fragmentation information, type of product: precursor ion without water." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001522
 name: frag: precursor ion - NH3
-def: "Type of fragment: precursor ion without ammonia." [PSI:PI]
+def: "Fragmentation information, type of product: precursor ion without ammonia." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
 id: MS:1001523
 name: frag: precursor ion
-def: "Type of fragment: precursor ion." [PSI:PI]
+def: "Fragmentation information, type of product: precursor ion." [PSI:PI]
 is_a: MS:1001221 ! fragmentation information
 
 [Term]
