@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 19:08:2009 0:07
+date: 15:02:2010 10:00
 saved-by: andreas_bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.32.0
-remark: release date: 2010-01-05
+remark: version: 2.33.0
+remark: release date: 2010-02-15
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9471,6 +9471,137 @@ id: MS:1001560
 name: AB SCIEX TOF/TOF T2D file
 def: "Applied Biosystems/MDS Analytical Technologies TOF/TOF instrument export format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1001561
+name: Scaffold
+def: "Scaffold analysis software, see www.proteomesoftware.com." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1001562
+name: Scaffold nativeID format
+def: "Scaffold native ID format." [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
+
+[Term]
+id: MS:1001563
+name: Sequest SQT
+def: "Source file for this mzIdentML was a Sequest SQT." [PSI:PI]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001564
+name: Discoverer MSF
+def: "Source file for this mzIdentML was in Thermo Scientific Discoverer MSF format." [PSI:PI]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001565
+name: IdentityE XML
+def: "Source file for this mzIdentML was in Waters IdentityE XML format." [PSI:PI]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001566
+name: ProteinLynx XML
+def: "Source file for this mzIdentML was in Waters ProteinLynx XML format." [PSI:PI]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001567
+name: SpectrumMill directories
+def: "Source file for this mzIdentML was in Agilent SpectrumMill directory format." [PSI:PI]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001568
+name: Scaffold: Peptide Probability
+def: "Scaffold peptide probability score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001569
+name: IdentityE Score
+def: "Waters IdentityE peptide score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001570
+name: ProteinLynx: Log Likelihood
+def: "ProteinLynx log likelihood score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001571
+name: ProteinLynx: Ladder Score
+def: "Waters ProteinLynx Ladder score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001572
+name: SpectrumMill: Score
+def: "Spectrum mill peptide score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001573
+name: SpectrumMill: SPI
+def: "SpectrumMill SPI score (%)." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001574
+name: Report Only Spectra Assigned to Identified Proteins
+def: "." [PSI:PI]
+is_a: MS:1001060 ! quality estimation method details
+
+[Term]
+id: MS:1001575
+name: Scaffold: Minimum Peptide Count
+def "Minimum number of peptides a protein must have to be accepted." [PSI:PI]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001576
+name: Scaffold: Minimum Protein Probability
+def "Minimum protein probability a protein must have to be accepted." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001577
+name: Scaffold: Minimum Peptide Probability
+def "Minimum probability a peptide must have to be accepted for protein scoring." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001578
+name: Minimum Number of Enzymatic Termini
+def "Minimum number of enzymatic termini a pepide must have to be accepted." [PSI:PI]
+xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001579
+name: Scaffold: Protein Probability
+def: "Scaffold protein probability score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001116 ! single protein result details
 
 [Typedef]
 id: has_regexp
