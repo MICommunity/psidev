@@ -4,8 +4,8 @@ saved-by: andreas_bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.33.0
-remark: release date: 2010-02-15
+remark: version: 2.33.1
+remark: release date: 2010-02-23
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9564,35 +9564,35 @@ is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001574
-name: Report Only Spectra Assigned to Identified Proteins
+name: report only spectra assigned to identified proteins
 def: "." [PSI:PI]
 is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001575
 name: Scaffold: Minimum Peptide Count
-def "Minimum number of peptides a protein must have to be accepted." [PSI:PI]
+def: "Minimum number of peptides a protein must have to be accepted." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001576
 name: Scaffold: Minimum Protein Probability
-def "Minimum protein probability a protein must have to be accepted." [PSI:PI]
+def: "Minimum protein probability a protein must have to be accepted." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001577
 name: Scaffold: Minimum Peptide Probability
-def "Minimum probability a peptide must have to be accepted for protein scoring." [PSI:PI]
+def: "Minimum probability a peptide must have to be accepted for protein scoring." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001578
-name: Minimum Number of Enzymatic Termini
-def "Minimum number of enzymatic termini a pepide must have to be accepted." [PSI:PI]
+name: minimum number of enzymatic termini
+def: "Minimum number of enzymatic termini a pepide must have to be accepted." [PSI:PI]
 xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
