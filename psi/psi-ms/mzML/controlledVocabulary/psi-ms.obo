@@ -4,7 +4,7 @@ saved-by: andreas_bertsch
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.34.0
+remark: version: 2.35.0
 remark: release date: 2010-03-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -9627,6 +9627,14 @@ name: Scaffold: Protein Probability
 def: "Scaffold protein probability score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
+
+[Term]
+id: MS:1001580
+name: SpectrumMill: Discriminant Score
+def: "Discriminant score from Agilent SpectrumMill software." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
 
 [Typedef]
 id: has_regexp
