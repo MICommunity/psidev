@@ -1,10 +1,10 @@
 format-version: 1.2
-date: 15:02:2010 10:00
-saved-by: andreas_bertsch
+date: 19:07:2010 12:00
+saved-by: eisenach
 auto-generated-by: OBO-Edit 1.101
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.36.0
+remark: version: 2.37.0
 remark: release date: 2010-04-08
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -4315,7 +4315,7 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000650
-name: Proteomics Discoverer
+name: Proteome Discoverer
 def: "Thermo Scientific software for data analysis of peptides and proteins." [PSI:MS]
 is_a: MS:1000693 ! Thermo Finnigan software
 is_a: MS:1001456 ! analysis software
@@ -7011,6 +7011,7 @@ is_a: MS:1001129 ! quantification information
 id: MS:1001139
 name: quantitation software name
 def: "Quantitation software name." [PSI:PI]
+is_a: MS:1000531 ! software
 is_a: MS:1001129 ! quantification information
 
 [Term]
@@ -9649,6 +9650,18 @@ def: "Bioconductor package XCMS for preprocessing high-throughput, untargeted an
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
 
+[Term]
+id: MS:1001583
+name: MaxQuant
+def: "MaxQuant is a quantitative proteomics software package designed for analyzing large mass spectrometric data sets. It is specifically aimed at high resolution MS data." [PSI:MS]
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1001584
+name: combined pmf + ms-ms search
+def: "Search that includes data from Peptide Mass Fingerprint (PMF) and MS/MS (aka Peptide Fragment Fingerprint - PFF)." [PSI:MS]
+is_a: MS:1001080 ! search type
 
 [Typedef]
 id: has_regexp
