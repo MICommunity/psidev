@@ -2,22 +2,21 @@
 <!DOCTYPE psimod:isotope_table SYSTEM "AtomTabl.DTD">
 <!-- XML Table of Isotope Standard Atomic Weights
   Prepared by John S. Garavelli
-  based on the IUPAC Standard Atom Weights Revised 2009 (http://iupac.org/publications/pac/asap/PAC-REP-10-09-14/ ),
+  based on the IUPAC Standard Atom Weights Revised 2007 (http://www.iupac.org/publications/pac/81/11/2131/ ),
   the IUPAC Isotopic Composition of the Elements 2001 (J. Phys. Chem. Ref. Data 34, 57-67, 2005; DOI:10.1063/1.1836764)
   the AME2003 Atomic Mass Evaluation (http://ie.lbl.gov/mass/2003AWMass_3.pdf) -->
 <!-- When this table is used with the PSI-MOD Protein Modification Ontology,
-  all average atomic masses in daltons are rounded to 2 decimal place significance,
-  because the average atomic masses of the biologically significant elements sulfur, zinc, molybdenum,
-  and selenium, as well as lithium, and boron, are not currently defined with a precision of more than
-  2 decimal places, and there are no laboratory devices capable of actually measuring aggregate average 
-  molecular masses with an accuracy of more than 1 decimal place. -->
+  all average atomic masses are rounded to 2 decimal place significance,
+  because the average atomic masses of the biologically significant elements zinc, molybdenum, and
+  selenium, are not currently defined with a precision of more than 2 decimal places, the variation
+  in the average atomic masses of sulfur from biological sources and of lithium have a precision of
+  less than 3 decimal places, and there are no laboratory devices capable of actually measuring 
+  aggregate average molecular masses with an accuracy of more than 1 decimal place. -->
 <!-- The mass values are followed in parentheses by the uncertainty in the final digits. -->
 <!-- The mass of the electron is included as element atom_no=0 in order to make the corrections to
   the mass of entities in PSI-MOD with a formal charge; a positive charge requires a mass deduction,
   CODATA 2006 -->
 <psimod:isotope_table>
-<psimod:version>02.00</psimod:version>
-<psimod:date>2010-12-31</psimod:date>
   <psimod:element iso_count="0">
     <psimod:element.atom_no>0</psimod:element.atom_no>
     <psimod:element.name>electron</psimod:element.name>
@@ -29,8 +28,7 @@
     <psimod:element.atom_no>1</psimod:element.atom_no>
     <psimod:element.name>hydrogen</psimod:element.name>
     <psimod:element.symbol>H</psimod:element.symbol>
-    <psimod:element.avg_mass>1.008</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[1.00784; 1.00811]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>1.00794(7)</psimod:element.avg_mass>
     <psimod:element.isotope most_common="TRUE">
       <psimod:element.isotope.mass_no>1</psimod:element.isotope.mass_no>
       <psimod:element.isotope.name>protium</psimod:element.isotope.name>
@@ -76,8 +74,7 @@
     <psimod:element.atom_no>3</psimod:element.atom_no>
     <psimod:element.name>lithium</psimod:element.name>
     <psimod:element.symbol>Li</psimod:element.symbol>
-    <psimod:element.avg_mass>6.94</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[6.938; 6.997]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>6.941(2)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>6</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(6)Li</psimod:element.isotope.symbol>
@@ -119,8 +116,7 @@
     <psimod:element.atom_no>5</psimod:element.atom_no>
     <psimod:element.name>boron</psimod:element.name>
     <psimod:element.symbol>B</psimod:element.symbol>
-    <psimod:element.avg_mass>10.81</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[10.806; 10.821]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>10.811(7)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>8</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(8)B</psimod:element.isotope.symbol>
@@ -144,8 +140,7 @@
     <psimod:element.atom_no>6</psimod:element.atom_no>
     <psimod:element.name>carbon</psimod:element.name>
     <psimod:element.symbol>C</psimod:element.symbol>
-    <psimod:element.avg_mass>12.011</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[12.0096; 12.0116]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>12.0107(8)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>11</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(11)C</psimod:element.isotope.symbol>
@@ -175,8 +170,7 @@
     <psimod:element.atom_no>7</psimod:element.atom_no>
     <psimod:element.name>nitrogen</psimod:element.name>
     <psimod:element.symbol>N</psimod:element.symbol>
-    <psimod:element.avg_mass>14.007</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[14.00643; 14.00728]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>14.0067(2)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>12</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(12)N</psimod:element.isotope.symbol>
@@ -206,8 +200,7 @@
     <psimod:element.atom_no>8</psimod:element.atom_no>
     <psimod:element.name>oxygen</psimod:element.name>
     <psimod:element.symbol>O</psimod:element.symbol>
-    <psimod:element.avg_mass>15.999</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[15.99903; 15.99977]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>15.9994(3)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>14</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(14)O</psimod:element.isotope.symbol>
@@ -346,8 +339,7 @@
     <psimod:element.atom_no>14</psimod:element.atom_no>
     <psimod:element.name>silicon</psimod:element.name>
     <psimod:element.symbol>Si</psimod:element.symbol>
-    <psimod:element.avg_mass>28.085</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[28.084; 28.086]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>28.0855(3)</psimod:element.avg_mass>
     <psimod:element.isotope most_common="TRUE">
       <psimod:element.isotope.mass_no>28</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(28)Si</psimod:element.isotope.symbol>
@@ -383,8 +375,7 @@
     <psimod:element.atom_no>16</psimod:element.atom_no>
     <psimod:element.name>sulfur</psimod:element.name>
     <psimod:element.symbol>S</psimod:element.symbol>
-    <psimod:element.avg_mass>32.06</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[32.059; 32.076]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>32.065(5)</psimod:element.avg_mass>
     <psimod:element.isotope most_common="TRUE">
       <psimod:element.isotope.mass_no>32</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(32)S</psimod:element.isotope.symbol>
@@ -414,8 +405,7 @@
     <psimod:element.atom_no>17</psimod:element.atom_no>
     <psimod:element.name>chlorine</psimod:element.name>
     <psimod:element.symbol>Cl</psimod:element.symbol>
-    <psimod:element.avg_mass>35.45</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[35.446; 35.457]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>35.453(2)</psimod:element.avg_mass>
     <psimod:element.isotope most_common="TRUE">
       <psimod:element.isotope.mass_no>35</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(35)Cl</psimod:element.isotope.symbol>
@@ -782,7 +772,7 @@
     <psimod:element.atom_no>32</psimod:element.atom_no>
     <psimod:element.name>germanium</psimod:element.name>
     <psimod:element.symbol>Ge</psimod:element.symbol>
-    <psimod:element.avg_mass>72.63(1)</psimod:element.avg_mass>
+    <psimod:element.avg_mass>72.64(1)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>70</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(70)Ge</psimod:element.isotope.symbol>
@@ -2260,8 +2250,7 @@
     <psimod:element.atom_no>81</psimod:element.atom_no>
     <psimod:element.name>thallium</psimod:element.name>
     <psimod:element.symbol>Tl</psimod:element.symbol>
-    <psimod:element.avg_mass>204.38</psimod:element.avg_mass>
-    <psimod:element.avg_mass_range>[204.382; 204.385]</psimod:element.avg_mass_range>
+    <psimod:element.avg_mass>204.3833(2)</psimod:element.avg_mass>
     <psimod:element.isotope>
       <psimod:element.isotope.mass_no>203</psimod:element.isotope.mass_no>
       <psimod:element.isotope.symbol>(203)Tl</psimod:element.isotope.symbol>
@@ -2518,8 +2507,8 @@
   </psimod:element>
   <psimod:element iso_count="0">
     <psimod:element.atom_no>112</psimod:element.atom_no>
-    <psimod:element.name>copernicium</psimod:element.name>
-    <psimod:element.symbol>Cn</psimod:element.symbol>
+    <psimod:element.name>ununbium</psimod:element.name>
+    <psimod:element.symbol>Uub</psimod:element.symbol>
     <psimod:element.avg_mass>[285]</psimod:element.avg_mass>
   </psimod:element>
   <psimod:element iso_count="0">
