@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 19:07:2010 12:00
+date: 01:04:2011 16:16
 saved-by: edeutsch
-auto-generated-by: OBO-Edit 1.101
+auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.39.0
-remark: release date: 2010-12-22
+remark: version: 2.40.0
+remark: release date: 2011-04-01
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9717,6 +9717,784 @@ synonym: "Pepitome:mzFidelity" EXACT []
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
 
+[Term]
+id: MS:1001591
+name: ProteomeDiscoverer:DynamicModification
+def: "Determine post-translational modifications (PTMs)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001592
+name: ProteomeDiscoverer:StaticModification
+def: "Modification to all occurrences of a named amino acid." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001593
+name: ProteomeDiscoverer:FragmentMassTolerance
+def: "Mass tolerance used for matching fragment peaks in Da or mmu." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+relationship: has_units UO:0000267 ! millimassunit
+
+[Term]
+id: MS:1001594
+name: ProteomeDiscoverer:MaximumMissedCleavageSites
+def: "Maximum number of missed cleavage sites to consider during the digest." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001595
+name: ProteomeDiscoverer:TargetFDRRelaxed
+def: "Specifies the relaxed target false discovery rate (FDR, 0.0 ... 1.0) for peptide hits with moderate confidence." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:10001596
+name: ProteomeDiscoverer:TargetFDRStrict
+def: "Specifies the strict target false discovery rate (FDR, 0.0 ... 1.0) for peptide hits with high confidence." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001597
+name: ProteomeDiscoverer:MaxModificationsPerPeptide
+def: "Maximum number of different modifications that a peptide can have, e.g. because of steric hindrance." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001598
+name: ProteomeDiscoverer:MaximumPeptidesOutput
+def: "Maximum number of peptide matches reported per spectrum." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001599
+name: ProteomeDiscoverer:MaximumProteinReferencesPerPeptide
+def: "Maximum number of proteins that a single identified peptide can be associated with during protein assembly." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001600
+name: ProteomeDiscoverer:ExportFormat
+def: "Format of the exported spectra (*.dta, *.mgf or *.mzData.)" [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001601
+name: ProteomeDiscoverer:ActivationType
+def: "Fragmentation method used (CID, MPD, ECD, PQD, ETD, HCD, Any)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001602
+name: ProteomeDiscoverer:MassAnalyzer
+def: "Type of mass spectrometer used (ITMS, FTMS, TOFMS, SQMS, TQMS, SectorMS)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001603
+name: ProteomeDiscoverer:MSOrder
+def: "Level of the mass spectrum (MS/MS=MS2 ... MS10)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001604
+name: ProteomeDiscoverer:FileName
+def: "Name of the output file." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001605
+name: ProteomeDiscoverer:SEQUESTAbsoluteXCorrThreshold
+def: "Minimum cross-correlation threshold that determines whether peptides in an .srf file are imported." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001606
+name: ProteomeDiscoverer:SRFFilePath
+def: "Path and name of the .srf (Sequest Result Format) file." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001607
+name: ProteomeDiscoverer:IonizationSource
+def: "Ionization source (electro-, nano-, thermospray, electron impact, APCI, MALDI, FAB, ...)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001608
+name: ProteomeDiscoverer:LowerRTLimit
+def: "Lower retention-time limit." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1001609
+name: ProteomeDiscoverer:MaxPrecursorMass
+def: "Maximum mass limit of a singly charged precursor ion." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001610
+name: ProteomeDiscoverer:MinPrecursorMass
+def: "Minimum mass limit of a singly charged precursor ion." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001611
+name: ProteomeDiscoverer:MinimumPeakCount
+def: "Minimum number of peaks in a tandem mass spectrum that is allowed to pass the filter and to be subjected to further processing in the workflow." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001612
+name: ProteomeDiscoverer:PolarityMode
+def: "Polarity mode (positive or negative)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001613
+name: ProteomeDiscoverer:PrecursorSelection
+def: "Determines which precursor mass to use for a given MSn scan. This option applies only to higher-order MSn scans (n >= 3)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001614
+name: ProteomeDiscoverer:SNThreshold
+def: "Signal-to-Noise ratio below which peaks are removed." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001615
+name: ProteomeDiscoverer:ScanType
+def: "Scan type for the precursor ion (full, Single Ion Monitoring (SIM), Single Reaction Monitoring (SRM))." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001616
+name: ProteomeDiscoverer:TotalIntensityThreshold
+def: "Used to filter out tandem mass spectra that have a total intensity current(sum of the intensities of all peaks in a spectrum) below the specified value." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001617
+name: ProteomeDiscoverer:UnrecognizedActivationTypeReplacements
+def: "Specifies the fragmentation method to use in the search algorithm if it is not included in the scan header." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001618
+name: ProteomeDiscoverer:UnrecognizedChargeReplacements
+def: "Specifies the charge state of the precursor ions, if it is not defined in the scan header." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001619
+name: ProteomeDiscoverer:UnrecognizedMassAnalyzerReplacements
+def: "Specifies the mass spectrometer to use to produce the spectra, if it is not included in the scan header." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001620
+name: ProteomeDiscoverer:UnrecognizedMSOrderReplacements
+def: "Specifies the MS scan order used to produce the product spectra, if it is not included in the scan header." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001621
+name: ProteomeDiscoverer:UnrecognizedPolarityReplacements
+def: "Specifies the polarity of the ions monitored if it is not included in the scan header." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001622
+name: ProteomeDiscoverer:UpperRTLimit
+def: "Upper retention-time limit." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1001623
+name: ProteomeDiscoverer:MassWindowOffset
+def: "Specifies the size of the mass-to-charge ratio (m/z) window in daltons used to remove precursors." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001624
+name: ProteomeDiscoverer:MaximumNeutralLossMass
+def: "Maximum allowed mass of a neutral loss." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001625
+name: ProteomeDiscoverer:RemoveChargeReducedPrecursor
+def: "Determines whether the charge-reduced precursor peaks found in an ETD or ECD spectrum are removed." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001626
+name: ProteomeDiscoverer:RemoveNeutralLossPeaks
+def: "Determines whether neutral loss peaks are removed from ETD and ECD spectra." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001627
+name: ProteomeDiscoverer:RemoveOnlyKnownMasses
+def: "Determines whether overtone peaks are removed from LTQ FT or LTQ FT Ultra ECD spectra." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001628
+name: ProteomeDiscoverer:RemovePrecursorOvertones
+def: "Determines whether precursor overtone peaks in the spectrum are removed from the input spectrum." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001629
+name: ProteomeDiscoverer:RemovePrecursorPeak
+def: "Determines whether precursor artifact peaks from the MS/MS input spectra are removed." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001630
+name: ProteomeDiscoverer:AllowMassAnalyzerMismatch
+def: "Determines whether the fragment spectrum for scans with the same precursor mass is grouped, regardless of mass analyzer and activation type." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001631
+name: ProteomeDiscoverer:AllowMSOrderMismatch
+def: "Determines whether spectra from different MS order scans can be grouped together." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001632
+name: ProteomeDiscoverer:MaxRTDifference
+def: "Chromatographic window where precursors to be grouped must reside to be considered the same species." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1001633
+name: ProteomeDiscoverer:PrecursorMassCriterion
+def: "Groups spectra measured within the given mass and retention-time tolerances into a single spectrum for analysis." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001634
+name: ProteomeDiscoverer:PrecursorMassTolerance
+def: "Mass window for which precursor ions are considered to be the same species." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000169 ! parts per million
+
+[Term]
+id: MS:1001635
+name: ProteomeDiscoverer:HighestCharge
+def: "Highest charge state that is allowed for the deconvolution of multiply charged data." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001636
+name: ProteomeDiscoverer:HighestMZ
+def: "Highest mass-to-charge (mz) value for spectral peaks in the measured spectrum that are considered for Xtract." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001637
+name: ProteomeDiscoverer:LowestCharge
+def: "Lowest charge state that is allowed for the deconvolution of multiply charged data." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001638
+name: ProteomeDiscoverer:LowestMZ
+def: "Lowest mass-to-charge (mz) value for spectral peaks in the measured spectrum that are considered for Xtract." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000002 ! dalton
+
+[Term]
+id: MS:1001639
+name: ProteomeDiscoverer:MonoIsotopicMassOnly
+def: "Determines whether the isotopic pattern, i.e. all isotopes of a mass are removed from the spectrum." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001640
+name: ProteomeDiscoverer:OverlappingRemainder
+def: "Fraction of the more abundant peak that an overlapping multiplet must exceed in order to be processed (deconvoluted)." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001641
+name: ProteomeDiscoverer:RequiredFittingAccuracy
+def: "Accuracy required for a pattern fit to be considered valid." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001642
+name: ProteomeDiscoverer:ResolutionAt400
+def: "Resolution at mass 400." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001643
+name: ProteomeDiscoverer:LowestChargeState
+def: "Minimum charge state below which peptides are filtered out." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001644
+name: ProteomeDiscoverer:HighestChargeState
+def: "Maximum charge above which peptides are filtered out." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001645
+name: ProteomeDiscoverer:LetPassAboveScores
+def: "Determines whether spectra with scores above the threshold score are retained rather than filtered out." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001646
+name: ProteomeDiscoverer:MascotPeptideCutOffScore
+def: "Minimum score in the IonScore column that each peptide must exceed in order to be reported." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001647
+name: ProteomeDiscoverer:MascotProteinCutOffScore
+def: "Minimum protein score in the IonScore column that each protein must exceed in order to be reported." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001648
+name: ProteomeDiscoverer:MascotProteinRelevanceFactor
+def: "Specifies a factor that is used in calculating a threshold that determines whether a protein appears in the results report." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001649
+name: ProteomeDiscoverer:MascotUseMudPITScoring
+def: "Determines whether to use MudPIT scoring (used by Mascot for generating the protein score from data sets with a large numbers of peptide matches) or normal scoring." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001650
+name: ProteomeDiscoverer:SEQUESTCalculateProbabilityScore
+def: "Determines whether to calculate a probability score for every peptide match." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001651
+name: ProteomeDiscoverer:SEQUESTCTerminalModification
+def: "Dynamic C-terminal modification that is used during the search." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001652
+name: ProteomeDiscoverer:SEQUESTFragmentIonCutoffPercentage
+def: "Percentage of the theoretical ions that must be found in order for a peptide to be scored and retained." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001653
+name: ProteomeDiscoverer:SEQUESTMaxIdenticalModificationsPerPeptide
+def: "Maximum number of identical modifications that a single peptide can have." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001654
+name: ProteomeDiscoverer:SEQUESTMaximumPeptidesConsidered
+def: "Maximum number of peptides that are searched and scored per spectrum." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001655
+name: ProteomeDiscoverer:SEQUESTNTerminalModification
+def: "Dynamic N-terminal modification that is used during the search." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001656
+name: ProteomeDiscoverer:PeptideCTerminus
+def: "Static modification for the C terminal of the peptide used during the search." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001657
+name: ProteomeDiscoverer:SEQUESTPeptideNTerminus
+def: "Static modification for the N terminal of the peptide used during the search." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001658
+name: ProteomeDiscoverer:SEQUESTPeptideRelevanceFactor
+def: "Specifies a factor to apply to the protein score." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001659
+name: ProteomeDiscoverer:SEQUESTProteinRelevanceThreshold
+def: "Specifies a peptide threshold that determines whether the protein that it is a part of is scored and retained in the report." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001660
+name: ProteomeDiscoverer:SEQUESTUseNeutralLossAIons
+def: "Determines whether a ions with neutral loss are used for spectrum matching." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001661
+name: ProteomeDiscoverer:SEQUESTUseNeutralLossBIons
+def: "Determines whether b ions with neutral loss are used for spectrum matching." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001662
+name: ProteomeDiscoverer:SEQUESTUseNeutralLossYIons
+def: "Determines whether y ions with neutral loss are used for spectrum matching." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001663
+name: ProteomeDiscoverer:SEQUESTWeightOfAIons
+def: "Uses a ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001664
+name: ProteomeDiscoverer:SEQUESTWeightOfBIons
+def: "Uses b ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001665
+name: ProteomeDiscoverer:SEQUESTWeightOfCIons
+def: "Uses c ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001666
+name: ProteomeDiscoverer:SEQUESTWeightOfXIons
+def: "Uses x ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001667
+name: ProteomeDiscoverer:SEQUESTWeightOfYIons
+def: "Uses y ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001668
+name: ProteomeDiscoverer:SEQUESTWeightOfZIons
+def: "Uses z ions for spectrum matching with this relative factor." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001669
+name: ProteomeDiscoverer:ZCoreProteinScoreCutoff
+def: "Sets a minimum protein score that each protein must exceed in order to be reported." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001670
+name: ProteomeDiscoverer:ReporterIonsIntegrationMethod
+def: "Specifies which peak to select if more than one peak is found inside the integration window." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001671
+name: ProteomeDiscoverer:ReporterIonsIntegrationWindowTolerance
+def: "Specifies the mass-to-charge window that enables one to look for the reporter peaks." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000169 ! parts per million
+
+[Term]
+id: MS:1001672
+name: ProteomeDiscoverer:ReporterIonsQuantitationMethod
+def: "Quantitation method for isobarically labeled quantitation." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001673
+name: ProteomeDiscoverer:ProteinConfidenceCategory
+def: "Confidence of inferred ambiguity groups (conclusive, non conclusive, ambiguous group, indistinguishable)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001674
+name: ProteomeDiscoverer:SearchModificationsOnlyForIdentifiedProteins
+def: "Influences the modifications search." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001675
+name: ProteomeDiscoverer:CutOffStdCharge1High
+def: "Standard high confidence XCorr parameter for charge = 1." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001676
+name: ProteomeDiscoverer:CutOffStdCharge2High
+def: "Standard high confidence XCorr parameter for charge = 2." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001677
+name: ProteomeDiscoverer:CutOffStdCharge3High
+def: "Standard high confidence XCorr parameter for charge = 3." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001678
+name: ProteomeDiscoverer:CutOffStdCharge4High
+def: "Standard high confidence XCorr parameter for charge >= 4." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001679
+name: ProteomeDiscoverer:CutOffStdCharge1Middle
+def: "Standard middle confidence XCorr parameter for charge = 1." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001680
+name: ProteomeDiscoverer:CutOffStdCharge2Middle
+def: "Standard middle confidence XCorr parameter for charge = 2." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001681
+name: ProteomeDiscoverer:CutOffStdCharge3Middle
+def: "Standard middle confidence XCorr parameter for charge = 3." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001682
+name: ProteomeDiscoverer:CutOffStdCharge4Middle
+def: "Standard middle confidence XCorr parameter for charge >= 4." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001683
+name: ProteomeDiscoverer:CutOffFTCharge1High
+def: "FT high confidence XCorr parameter for charge = 1." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001684
+name: ProteomeDiscoverer:CutOffFTCharge2High
+def: "FT high confidence XCorr parameter for charge = 2." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001685
+name: ProteomeDiscoverer:CutOffFTCharge3High
+def: "FT high confidence XCorr parameter for charge = 3." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001686
+name: ProteomeDiscoverer:CutOffFTCharge4High
+def: "FT high confidence XCorr parameter for charge >= 4." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001687
+name: ProteomeDiscoverer:CutOffFTCharge1Middle
+def: "FT middle confidence XCorr parameter for charge = 1." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001688
+name: ProteomeDiscoverer:CutOffFTCharge2Middle
+def: "FT middle confidence XCorr parameter for charge = 2." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001689
+name: ProteomeDiscoverer:CutOffFTCharge3Middle
+def: "FT middle confidence XCorr parameter for charge = 3." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001670
+name: ProteomeDiscoverer:CutOffFTCharge4Middle
+def: "FT middle confidence XCorr parameter for charge >= 4." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001671
+name: anchor protein
+def: "A representative protein selected from a set of sequence same-set or spectrum same-set proteins." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001672
+name: family member protein
+def: "A protein with significant homology to another protein, but some distinguishing peptide matches." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001673
+name: group member with undefined relationship OR ortholog protein
+def: "TO ENDETAIL: a really generic relationship OR ortholog protein." [PSI:PI]
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001674
+name: sequence same-set protein
+def: "A protein which is indistinguishable or equivalent to another protein, having matches to an identical set of peptide sequences." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001675
+name: spectrum same-set protein
+def: "A protein which is indistinguishable or equivalent to another protein, having matches to a set of peptide sequences that cannot be distinguished using the evidence in the mass spectra." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001676
+name: sequence sub-set protein
+def: "A protein with a sub-set of the peptide sequence matches for another protein, and no distinguishing peptide matches." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001677
+name: spectrum sub-set protein
+def: "A protein with a sub-set of the matched spectra for another protein, where the matches cannot be distinguished using the evidence in the mass spectra, and no distinguishing peptide matches." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001678
+name: sequence subsumable protein
+def: "A sequence same-set or sequence sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
+[Term]
+id: MS:1001679
+name: spectrum subsumable protein
+def: "A spectrum same-set or spectrum sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001101 ! protein group/subset relationship
+
 [Typedef]
 id: has_regexp
 name: has regexp
@@ -9729,4 +10507,3 @@ name: has_units
 id: part_of
 name: part_of
 is_transitive: true
-
