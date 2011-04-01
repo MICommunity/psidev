@@ -2164,6 +2164,14 @@ exact_synonym: "electron volt" []
 exact_synonym: "eV" []
 is_a: UO:0000111 ! energy unit
 
+[Term]
+id: UO:0000267
+name: millimassunit
+namespace: unit.ontology
+def: "1/1000 of the unified atomic mass unit (u)." [Wikipedia:Wikipedia"http://en.wikipedia.org/wiki/Milli_mass_unit"]
+exact_synonym: "mmu" []
+is_a: UO:0000002 ! mass unit
+
 [Typedef]
 id: is_magnitude_of
 name: is_magnitude_of
