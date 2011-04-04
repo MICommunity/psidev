@@ -1,8 +1,9 @@
 format-version: 1.0
-date: 20:12:2007 16:24
+date: 04:04:2011 14:45
 saved-by: George Gkoutos
-auto-generated-by: OBO-Edit 1.100-beta22
+auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: unit.ontology
+remark: version: 1.21
 namespace-id-rule: * UO:$sequence(7,0,9999999)$
 
 [Term]
@@ -46,7 +47,6 @@ def: "A base unit which is a standard measure of the dimension in which events o
 is_a: UO:0000045 ! base unit
 relationship: unit_of PATO:0000011 ! age
 relationship: unit_of PATO:0000050 ! life span
-relationship: unit_of PATO:0000081 ! period
 relationship: unit_of PATO:0000165 ! time
 relationship: unit_of PATO:0001309 ! duration
 relationship: unit_of PATO:0001310 ! duration of temperature
@@ -1221,7 +1221,6 @@ def: "A derived unit which is a standard measure of the dimension in which event
 is_a: UO:0000046 ! derived unit
 relationship: unit_of PATO:0000011 ! age
 relationship: unit_of PATO:0000050 ! life span
-relationship: unit_of PATO:0000081 ! period
 relationship: unit_of PATO:0000165 ! time
 relationship: unit_of PATO:0001309 ! duration
 relationship: unit_of PATO:0001310 ! duration of temperature
