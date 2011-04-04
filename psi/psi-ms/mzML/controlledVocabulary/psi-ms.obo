@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 01:04:2011 16:16
+date: 04:04:2011 11:27
 saved-by: edeutsch
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.42
-remark: release date: 2011-04-01
+remark: version: 2.43
+remark: release date: 2011-04-04
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -10168,7 +10168,7 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001653
-name: ProteomeDiscoverer:SEQUEST Max Identica lModifications Per Peptide
+name: ProteomeDiscoverer:SEQUEST Max identical Modifications Per Peptide
 def: "Maximum number of identical modifications that a single peptide can have." [PSI:PI]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
@@ -10477,61 +10477,206 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001697
+name: ProteomeDiscoverer:Use Average Fragment Masses
+def: "Use average masses for the fragments." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001698
+name: ProteomeDiscoverer:Use Average Precursor Mass
+def: "Use average mass for the precursor." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001699
+name: ProteomeDiscoverer:Initial minimal peptide probability
+def: "Minimal initial peptide probability to contribute to analysis." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001700
+name: ProteomeDiscoverer:Minimal peptide probability
+def: "Minimum adjusted peptide probability contributing to protein probability." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001701
+name: ProteomeDiscoverer:Minimal peptide weight
+def: "Minimum peptide weight contributing to protein probability." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001702
+name: ProteomeDiscoverer:Number of input1 spectra
+def: "Number of spectra from 1+ precursor ions." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000294 ! mass spectrum
+is_a: MS:1000524 ! data file content
+
+[Term]
+id: MS:1001703
+name: ProteomeDiscoverer:Number of input2 spectra
+def: "Number of spectra from 2+ precursor ions." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000294 ! mass spectrum
+is_a: MS:1000524 ! data file content
+
+[Term]
+id: MS:1001704
+name: ProteomeDiscoverer:Number of input3 spectra
+def: "Number of spectra from 3+ precursor ions." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000294 ! mass spectrum
+is_a: MS:1000524 ! data file content
+
+[Term]
+id: MS:1001705
+name: ProteomeDiscoverer:Number of input4 spectra
+def: "Number of spectra from 4+ precursor ions." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000294 ! mass spectrum
+is_a: MS:1000524 ! data file content
+
+[Term]
+id: MS:1001706
+name: ProteomeDiscoverer:Number of input5 spectra
+def: "Number of spectra from 5+ precursor ions." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1000294 ! mass spectrum
+is_a: MS:1000524 ! data file content
+
+[Term]
+id: MS:1001707
+name: ProteomeDiscoverer:Number of predicted correct proteins
+def: "Total number of predicted correct protein ids (sum of probabilities)." [PSI:PI]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001085 ! protein result details
+
+[Term]
+id: MS:1001708
+name: ProteomeDiscoverer:Organism
+def: "Sample organism (used for annotation purposes)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+is-a: MS:1001468 ! taxonomy: common name
+is-a: MS:1001469 ! taxonomy: scientific name
+
+[Term]
+id: MS:1001709
+name: ProteomeDiscoverer:Reference Database
+def: "Full path database name." [PSI:PI]
+xref: value-type:xsd\:string  "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001011 ! search database details
+
+[Term]
+id: MS:1001710
+name: ProteomeDiscoverer:Residue substitution list
+def: "Residues considered equivalent when comparing peptides." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001711
+name: ProteomeDiscoverer:Source file extension
+def: "File type (if not pepXML)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001459 ! file format
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1001712
+name: ProteomeDiscoverer:Source Files
+def: "Input pepXML files." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001421 ! pepXML file
+
+[Term]
+id: MS:1001713
+name: ProteomeDiscoverer:Source Files (old)
+def: "Input pepXML files (old)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001714
+name: ProteomeDiscoverer:WinCyg reference database
+def: "Windows full path for database." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001011 ! search database details
+
+[Term]
+id: MS:1001715
+name: ProteomeDiscoverer:WinCyg source files
+def: "Windows pepXML file names." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001421 ! pepXML file
+
+[Term]
+id: MS:1001716
 name: anchor protein
 def: "A representative protein selected from a set of sequence same-set or spectrum same-set proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001698
+id: MS:1001717
 name: family member protein
 def: "A protein with significant homology to another protein, but some distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001699
+id: MS:1001718
 name: group member with undefined relationship OR ortholog protein
 def: "TO ENDETAIL: a really generic relationship OR ortholog protein." [PSI:PI]
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001700
+id: MS:1001719
 name: sequence same-set protein
 def: "A protein which is indistinguishable or equivalent to another protein, having matches to an identical set of peptide sequences." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001701
+id: MS:1001720
 name: spectrum same-set protein
 def: "A protein which is indistinguishable or equivalent to another protein, having matches to a set of peptide sequences that cannot be distinguished using the evidence in the mass spectra." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001702
+id: MS:1001721
 name: sequence sub-set protein
 def: "A protein with a sub-set of the peptide sequence matches for another protein, and no distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001703
+id: MS:1001722
 name: spectrum sub-set protein
 def: "A protein with a sub-set of the matched spectra for another protein, where the matches cannot be distinguished using the evidence in the mass spectra, and no distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001704
+id: MS:1001723
 name: sequence subsumable protein
 def: "A sequence same-set or sequence sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001705
+id: MS:1001724
 name: spectrum subsumable protein
 def: "A spectrum same-set or spectrum sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
