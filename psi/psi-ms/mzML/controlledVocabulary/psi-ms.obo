@@ -4,7 +4,7 @@ saved-by: edeutsch
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.40.0
+remark: version: 2.42
 remark: release date: 2011-04-01
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -9720,14 +9720,14 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001591
 name: ProteomeDiscoverer:Dynamic Modification
-def: "Determine post-translational modifications (PTMs)." [PSI:PI]
+def: "Determine dynamic post-translational modifications (PTMs)." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001592
 name: ProteomeDiscoverer:Static Modification
-def: "Modification to all occurrences of a named amino acid." [PSI:PI]
+def: "Static Modification to all occurrences of a named amino acid." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -10217,21 +10217,21 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001660
-name: ProteomeDiscoverer:SEQUEST Use Neutral Loss AIons
+name: ProteomeDiscoverer:SEQUEST Use Neutral Loss a Ions
 def: "Determines whether a ions with neutral loss are used for spectrum matching." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001661
-name: ProteomeDiscoverer:SEQUEST Use Neutral Loss BIons
+name: ProteomeDiscoverer:SEQUEST Use Neutral Loss b Ions
 def: "Determines whether b ions with neutral loss are used for spectrum matching." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001662
-name: ProteomeDiscoverer:SEQUEST Use Neutral Loss YIons
+name: ProteomeDiscoverer:SEQUEST Use Neutral Loss y Ions
 def: "Determines whether y ions with neutral loss are used for spectrum matching." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
@@ -10457,74 +10457,81 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001694
 name: ProteomeDiscoverer:1. Dynamic Modification
-def: "Determine post-translational modifications (PTMs)." [PSI:PI]
+def: "Determine 1st dynamic post-translational modifications (PTMs)." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001695
 name: ProteomeDiscoverer:2. Dynamic Modification
-def: "Determine post-translational modifications (PTMs)." [PSI:PI]
+def: "Determine 2nd dynamic post-translational modifications (PTMs)." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001696
+name: ProteomeDiscoverer:Static Modification for X
+def: "Static Modification for X." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001697
 name: anchor protein
 def: "A representative protein selected from a set of sequence same-set or spectrum same-set proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001697
+id: MS:1001698
 name: family member protein
 def: "A protein with significant homology to another protein, but some distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001698
+id: MS:1001699
 name: group member with undefined relationship OR ortholog protein
 def: "TO ENDETAIL: a really generic relationship OR ortholog protein." [PSI:PI]
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001699
+id: MS:1001700
 name: sequence same-set protein
 def: "A protein which is indistinguishable or equivalent to another protein, having matches to an identical set of peptide sequences." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001700
+id: MS:1001701
 name: spectrum same-set protein
 def: "A protein which is indistinguishable or equivalent to another protein, having matches to a set of peptide sequences that cannot be distinguished using the evidence in the mass spectra." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001701
+id: MS:1001702
 name: sequence sub-set protein
 def: "A protein with a sub-set of the peptide sequence matches for another protein, and no distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001702
+id: MS:1001703
 name: spectrum sub-set protein
 def: "A protein with a sub-set of the matched spectra for another protein, where the matches cannot be distinguished using the evidence in the mass spectra, and no distinguishing peptide matches." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001703
+id: MS:1001704
 name: sequence subsumable protein
 def: "A sequence same-set or sequence sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
-id: MS:1001704
+id: MS:1001705
 name: spectrum subsumable protein
 def: "A spectrum same-set or spectrum sub-set protein where the matches are distributed across two or more proteins." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
