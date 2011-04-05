@@ -4,7 +4,8 @@ saved-by: gmayer
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.49
+data-version: 2.50.0
+remark: version: 2.50.0
 remark: release date: 2011-04-05
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -10826,6 +10827,12 @@ def: "Windows pepXML file names." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 is_a: MS:1001421 ! pepXML file
+
+[Term]
+id: MS:1001742
+name: LTQ Orbitrap Velos
+def: "Finnigan LTQ Orbitrap Velos MS." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Typedef]
 id: has_regexp
