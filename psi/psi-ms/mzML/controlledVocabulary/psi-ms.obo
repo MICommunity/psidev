@@ -9782,14 +9782,14 @@ is_a: MS:1001101 ! protein group/subset relationship
 
 [Term]
 id: MS:1001600
-name: ProteomeDiscoverer:Protein Inference Confidence Category
-def: "Confidence category of inferred protein ambiguity groups (conclusive, non conclusive, ambiguous group or indistinguishable)." [PSI:MS]
+name: Protein Inference Confidence Category
+def: "Confidence category of inferred protein (conclusive, non conclusive, ambiguous group or indistinguishable)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein quality estimation measure
 
 [Term]
 id: MS:1001601
-name: ProteomeDiscoverer:Spectrum Files:Raw File name(s)
+name: ProteomeDiscoverer:Spectrum Files:Raw File names
 def: "Name and location of the .raw file or files." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
@@ -9808,7 +9808,6 @@ def: "Ionization source (electro-, nano-, thermospray, electron impact, APCI, MA
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 is_a: MS:1000008 ! ionization type
-synonym: "ProteomeDiscoverer:Scan Event Filter:Ionization Source" EXACT []
 
 [Term]
 id: MS:1001604
