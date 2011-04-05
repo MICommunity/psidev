@@ -11016,11 +11016,12 @@ is_a: MS:1001421 ! pepXML file
 
 [Term]
 id: MS:1001763
-name: ProteomeDiscoverer:Source Files (old)
+name: ProteomeDiscoverer:Source Files old
 def: "Input pepXML files (old)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 is_a: MS:1001421 ! pepXML file
+is_a: MS:1001762 ! ProteomeDiscoverer:Source Files
 
 [Term]
 id: MS:1001764
