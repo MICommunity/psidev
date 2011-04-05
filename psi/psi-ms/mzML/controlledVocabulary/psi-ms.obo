@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 04:04:2011 16:55
+date: 04:05:2011 16:55
 saved-by: edeutsch
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-remark: version: 2.44
-remark: release date: 2011-04-04
+remark: version: 2.45
+remark: release date: 2011-04-05
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9802,6 +9802,7 @@ name: ProteomeDiscoverer:Spectrum Selector:MS Order
 def: "Level of the mass spectrum (MS/MS=MS2 ... MS10)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1000511 ! ms level
 
 [Term]
 id: MS:1001602
@@ -9889,6 +9890,7 @@ name: ProteomeDiscoverer:Noise Peak Filter:SN Threshold
 def: "Signal-to-Noise ratio below which peaks are removed." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001614
@@ -9896,6 +9898,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Mass Window Offset
 def: "Specifies the size of the mass-to-charge ratio (m/z) window in daltons used to remove precursors." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 relationship: has_units UO:0000002 ! dalton
 
 [Term]
@@ -9904,6 +9907,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Maximum Neutral Loss Mass
 def: "Maximum allowed mass of a neutral loss." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 relationship: has_units UO:0000002 ! dalton
 
 [Term]
@@ -9912,6 +9916,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Remove Charge Reduced Precursor
 def: "Determines whether the charge-reduced precursor peaks found in an ETD or ECD spectrum are removed." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001617
@@ -9919,6 +9924,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Remove Neutral Loss Peaks
 def: "Determines whether neutral loss peaks are removed from ETD and ECD spectra." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001618
@@ -9926,6 +9932,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Remove Only Known Masses
 def: "Determines whether overtone peaks are removed from LTQ FT or LTQ FT Ultra ECD spectra." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001619
@@ -9933,6 +9940,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Remove Precursor Overtones
 def: "Determines whether precursor overtone peaks in the spectrum are removed from the input spectrum." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001620
@@ -9940,6 +9948,7 @@ name: ProteomeDiscoverer:Non-Fragment Filter:Remove Precursor Peak
 def: "Determines whether precursor artifact peaks from the MS/MS input spectra are removed." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001486 ! data filtering
 
 [Term]
 id: MS:1001621
@@ -10076,6 +10085,7 @@ name: ProteomeDiscoverer:Scan Event Filter:MS Order
 def: "Level of the mass spectrum (MS/MS=MS2 ... MS10)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1000511 ! ms level
 
 [Term]
 id: MS:1001639
@@ -10711,6 +10721,7 @@ name: ProteomeDiscoverer:Reporter Ions Quantizer:MS Order
 def: "Level of the mass spectrum (MS/MS=MS2 ... MS10)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1000511 ! ms level
 
 [Term]
 id: MS:1001723
