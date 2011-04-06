@@ -10095,14 +10095,14 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001641
-name: ProteomeDiscoverer:Spectrum Properties Filter:Lowest Charge State
+name: ProteomeDiscoverer:Lowest Charge State
 def: "Minimum charge state below which peptides are filtered out." [PSI:MS]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001642
-name: ProteomeDiscoverer:Spectrum Properties Filter:Highest Charge State
+name: ProteomeDiscoverer:Highest Charge State
 def: "Maximum charge above which peptides are filtered out." [PSI:MS]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
