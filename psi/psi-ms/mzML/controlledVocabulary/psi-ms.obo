@@ -10440,63 +10440,63 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001688
-name: ProteomeDiscoverer:Weight of a Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of a Ions
 def: "Uses a ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001689
-name: ProteomeDiscoverer:Weight of b Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of b Ions
 def: "Uses b ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001690
-name: ProteomeDiscoverer:Weight of c Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of c Ions
 def: "Uses c ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001691
-name: ProteomeDiscoverer:Weight of d Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of d Ions
 def: "Uses c ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001692
-name: ProteomeDiscoverer:Weight of v Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of v Ions
 def: "Uses c ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001693
-name: ProteomeDiscoverer:Weight of w Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of w Ions
 def: "Uses c ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001694
-name: ProteomeDiscoverer:Weight of x Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of x Ions
 def: "Uses x ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001695
-name: ProteomeDiscoverer:Weight of y Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of y Ions
 def: "Uses y ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001696
-name: ProteomeDiscoverer:Weight of z Ions
+name: ProteomeDiscoverer:SEQUEST:Weight of z Ions
 def: "Uses z ions for spectrum matching with this relative factor." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
@@ -10833,6 +10833,69 @@ id: MS:1001742
 name: LTQ Orbitrap Velos
 def: "Finnigan LTQ Orbitrap Velos MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001743
+name: ProteomeDiscoverer:Mascot:Weight of A Ions
+def: "Determines if to use A ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001744
+name: ProteomeDiscoverer:Mascot:Weight of B Ions
+def: "Determines if to use B ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001745
+name: ProteomeDiscoverer:Mascot:Weight of C Ions
+def: "Determines if to use C ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001746
+name: ProteomeDiscoverer:Mascot:Weight of D Ions
+def: "Determines if to use D ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001747
+name: ProteomeDiscoverer:Mascot:Weight of V Ions
+def: "Determines if to use V ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001748
+name: ProteomeDiscoverer:Mascot:Weight of W Ions
+def: "Determines if to use W ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001749
+name: ProteomeDiscoverer:Mascot:Weight of X Ions
+def: "Determines if to use X ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001750
+name: ProteomeDiscoverer:Mascot:Weight of Y Ions
+def: "Determines if to use Y ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001751
+name: ProteomeDiscoverer:Mascot:Weight of Z Ions
+def: "Determines if to use z ions for spectrum matching." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
 
 [Typedef]
 id: has_regexp
