@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 04:05:2011 14:00
+date: 04:07:2011 16:50
 saved-by: gmayer
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 2.50.0
-remark: version: 2.50.0
-remark: release date: 2011-04-05
+data-version: 2.51.0
+remark: version: 2.51.0
+remark: release date: 2011-04-07
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -10895,6 +10895,27 @@ id: MS:1001751
 name: ProteomeDiscoverer:Mascot:Weight of Z Ions
 def: "Determines if to use z ions for spectrum matching." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001752
+name: ProteomeDiscoverer:Spectrum Selector:Use New Precursor Reevaluation
+def: "Determines if to use precursor reevaluation." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001753
+name: ProteomeDiscoverer:Spectrum Selector:S/N Threshold (FTonly)
+def: "Signal-to-Noise ratio below which peaks are removed (in FT mode only)." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001754
+name: ProteomeDiscoverer:Mascot:Please Don't Touch this
+def: "Unknown Mascot parameter which ProteomeDiscoverer uses for mascot searches." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Typedef]
