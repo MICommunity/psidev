@@ -10554,112 +10554,112 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001704
-name: ProteomeDiscoverer:Std High Confidence XCorr Charge1
+name: ProteomeDiscoverer:SEQUEST:Std High Confidence XCorr Charge1
 def: "Standard high confidence XCorr parameter for charge = 1." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001705
-name: ProteomeDiscoverer:Std High Confidence XCorr Charge2
+name: ProteomeDiscoverer:SEQUEST:Std High Confidence XCorr Charge2
 def: "Standard high confidence XCorr parameter for charge = 2." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001706
-name: ProteomeDiscoverer:Std High Confidence XCorr Charge3
+name: ProteomeDiscoverer:SEQUEST:Std High Confidence XCorr Charge3
 def: "Standard high confidence XCorr parameter for charge = 3." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001707
-name: ProteomeDiscoverer:Std High Confidence XCorr Charge4
+name: ProteomeDiscoverer:SEQUEST:Std High Confidence XCorr Charge4
 def: "Standard high confidence XCorr parameter for charge >= 4." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001708
-name: ProteomeDiscoverer:Std Medium Confidence XCorr Charge1
+name: ProteomeDiscoverer:SEQUEST:Std Medium Confidence XCorr Charge1
 def: "Standard medium confidence XCorr parameter for charge = 1." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001709
-name: ProteomeDiscoverer:Std Medium Confidence XCorr Charge2
+name: ProteomeDiscoverer:SEQUEST:Std Medium Confidence XCorr Charge2
 def: "Standard medium confidence XCorr parameter for charge = 2." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001710
-name: ProteomeDiscoverer:Std Medium Confidence XCorr Charge3
+name: ProteomeDiscoverer:SEQUEST:Std Medium Confidence XCorr Charge3
 def: "Standard medium confidence XCorr parameter for charge = 3." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001711
-name: ProteomeDiscoverer:Std Medium Confidence XCorr Charge4
+name: ProteomeDiscoverer:SEQUEST:Std Medium Confidence XCorr Charge4
 def: "Standard medium confidence XCorr parameter for charge >= 4." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001712
-name: ProteomeDiscoverer:FT High Confidence XCorr Charge1
+name: ProteomeDiscoverer:SEQUEST:FT High Confidence XCorr Charge1
 def: "FT high confidence XCorr parameter for charge = 1." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001713
-name: ProteomeDiscoverer:FT High Confidence XCorr Charge2
+name: ProteomeDiscoverer:SEQUEST:FT High Confidence XCorr Charge2
 def: "FT high confidence XCorr parameter for charge = 2." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001714
-name: ProteomeDiscoverer:FT High Confidence XCorr Charge3
+name: ProteomeDiscoverer:SEQUEST:FT High Confidence XCorr Charge3
 def: "FT high confidence XCorr parameter for charge = 3." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001715
-name: ProteomeDiscoverer:FT High Confidence XCorr Charge4
+name: ProteomeDiscoverer:SEQUEST:FT High Confidence XCorr Charge4
 def: "FT high confidence XCorr parameter for charge >= 4." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001716
-name: ProteomeDiscoverer:FT Medium Confidence XCorr Charge1
+name: ProteomeDiscoverer:SEQUEST:FT Medium Confidence XCorr Charge1
 def: "FT medium confidence XCorr parameter for charge = 1." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001717
-name: ProteomeDiscoverer:FT Medium Confidence XCorr Charge2
+name: ProteomeDiscoverer:SEQUEST:FT Medium Confidence XCorr Charge2
 def: "FT medium confidence XCorr parameter for charge = 2." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001718
-name: ProteomeDiscoverer:FT Medium Confidence XCorr Charge3
+name: ProteomeDiscoverer:SEQUEST:FT Medium Confidence XCorr Charge3
 def: "FT medium confidence XCorr parameter for charge = 3." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001719
-name: ProteomeDiscoverer:FT Medium Confidence XCorr Charge4
+name: ProteomeDiscoverer:SEQUEST:FT Medium Confidence XCorr Charge4
 def: "FT medium confidence XCorr parameter for charge >= 4." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
