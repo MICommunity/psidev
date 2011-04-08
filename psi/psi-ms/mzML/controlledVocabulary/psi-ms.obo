@@ -9873,6 +9873,7 @@ name: ProteomeDiscoverer:Polarity Mode
 def: "Polarity mode (positive or negative)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1000037 ! polarity
 
 [Term]
 id: MS:1001612
@@ -10177,6 +10178,7 @@ name: ProteomeDiscoverer:Mascot:User Name
 def: "Number of attempts to submit the Mascot search." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001653
@@ -10206,7 +10208,7 @@ relationship: has_units UO:0000267 ! millimassunit
 [Term]
 id: MS:1001656
 name: ProteomeDiscoverer:Mascot:Instrument
-def: "type of instrument used to acquire the data in the .raw file." [PSI:MS]
+def: "Type of instrument used to acquire the data in the .raw file." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -10246,6 +10248,7 @@ name: ProteomeDiscoverer:Protein Database
 def: "Database to use in the search (configured on the Mascot server)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+is_a: MS:1001011 ! search database details
 is_a: MS:1001013 ! database name
 
 [Term]
@@ -10906,14 +10909,14 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001753
-name: ProteomeDiscoverer:Spectrum Selector:S/N Threshold (FTonly)
+name: ProteomeDiscoverer:Spectrum Selector:SN Threshold FTonly
 def: "Signal-to-Noise ratio below which peaks are removed (in FT mode only)." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001754
-name: ProteomeDiscoverer:Mascot:Please Don't Touch this
+name: ProteomeDiscoverer:Mascot:Please Do not Touch this
 def: "Unknown Mascot parameter which ProteomeDiscoverer uses for mascot searches." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
