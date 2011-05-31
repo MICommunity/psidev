@@ -5,7 +5,7 @@ auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
 data-version: 2.51.0
-remark: version: 2.51.0
+remark: version: 3.01.1
 remark: release date: 2011-04-07
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -16,7 +16,7 @@ remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
-import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo?revision=1.21
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
 
 [Term]
 id: MS:0000000
@@ -2281,7 +2281,6 @@ id: MS:1000339
 name: nth generation product ion spectrum
 def: "OBSOLETE The mass spectrum recorded from any mass spectrometer in which the appropriate scan function can be set to record the appropriate generation product ion or ions of m/z selected precursor ions." [PSI:MS]
 comment: This term was made obsolete because it was merged with MSn spectrum (MS:1000580)
-is_a: MS:1000343 ! product ion spectrum
 is_obsolete: true
 
 [Term]
@@ -5741,6 +5740,7 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 id: MS:1000857
 name: run attribute
 def: "Properties of the described run." [PSI:MS]
+is_a: MS:1000547 ! object attribute
 
 [Term]
 id: MS:1000858
@@ -5866,7 +5866,7 @@ relationship: has_units UO:0000218 ! volt
 [Term]
 id: MS:1000876
 name: cone voltage
-def: "Potential difference between the sampling cone/orifice and the what? in volts." [PSI:MS]
+def: "Potential difference between the sampling cone/orifice in volts." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
 relationship: has_units UO:0000218 ! volt
@@ -5874,7 +5874,7 @@ relationship: has_units UO:0000218 ! volt
 [Term]
 id: MS:1000877
 name: tube lens
-def: "No ideas." [PSI:MS]
+def: "Potential difference setting of the tube lens in volts." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
 relationship: has_units UO:0000218 ! volt
