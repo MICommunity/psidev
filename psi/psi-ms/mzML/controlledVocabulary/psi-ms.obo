@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 06:02:2011 12:47
+date: 06:02:2011 13:07
 saved-by: dovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.03.1
-remark: version: 3.03.1
+data-version: 3.03.2
+remark: version: 3.03.2
 remark: release date: 2011-06-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -9419,13 +9419,13 @@ is_a: MS:1001545 ! Bruker Daltonics amaZon series
 [Term]
 id: MS:1001543
 name: microflex LRF
-def: "Bruker Daltonics' microflex LRF: MALDI TOF." [PSI-MS]
+def: "Bruker Daltonics' microflex LRF: MALDI TOF." [PSI:MS]
 is_a: MS:1001534 ! Bruker Daltonics flex series
 
 [Term]
 id: MS:1001544
 name: ultrafleXtreme
-def: "Bruker Daltonics' ultrafleXtreme: MALDI TOF." [PSI-MS]
+def: "Bruker Daltonics' ultrafleXtreme: MALDI TOF." [PSI:MS]
 is_a: MS:1001534 ! Bruker Daltonics flex series
 
 [Term]
@@ -9459,7 +9459,7 @@ is_a: MS:1001548 ! Bruker Daltonics solarix series
 [Term]
 id: MS:1001550
 name: microflex II
-def: "Bruker Daltonics' microflex II: MALDI TOF." [PSI-MS]
+def: "Bruker Daltonics' microflex II: MALDI TOF." [PSI:MS]
 is_a: MS:1001534 ! Bruker Daltonics flex series
 
 [Term]
