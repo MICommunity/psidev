@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 06:02:2011 12:45
+date: 06:02:2011 12:47
 saved-by: dovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.02.1
-remark: version: 3.02.1
+data-version: 3.03.1
+remark: version: 3.03.1
 remark: release date: 2011-06-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -9111,7 +9111,7 @@ is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
 
 [Term]
-id: MS:1001597
+id: MS:1001497
 name: ProteinScape:ProfoundProbability
 def: "The Profound probability score stored by ProteinScape." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
