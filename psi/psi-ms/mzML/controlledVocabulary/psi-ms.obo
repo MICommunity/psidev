@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 06:02:2011 13:07
+date: 06:02:2011 13:25
 saved-by: dovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.03.2
-remark: version: 3.03.2
+data-version: 3.03.3
+remark: version: 3.03.3
 remark: release date: 2011-06-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -5771,7 +5771,7 @@ relationship: part_of MS:1000881 ! chemical compound
 id: MS:1000862
 name: isoelectric point
 def: "The pH of a solution at which a charged molecule does not migrate in an electric field." [PSI:MS]
-exact_synonym: "pI" []
+synonym: "pI" EXACT []
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000861 ! chemical compound attribute
 
@@ -5779,7 +5779,7 @@ is_a: MS:1000861 ! chemical compound attribute
 id: MS:1000863
 name: predicted isoelectric point
 def: "The pH of a solution at which a charged molecule would not migrate in an electric field, as predicted by a software algorithm." [PSI:MS]
-exact_synonym: "predicted pI" []
+synonym: "predicted pI" EXACT []
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000862 ! isoelectric point
 
@@ -5975,7 +5975,7 @@ is_a: MS:1000890 ! peptide labeling state
 id: MS:1000892
 name: unlabeled peptide
 def: "A peptide that has not been labeled with heavier-than-usual isotopes. This is often referred to as \"light\" to distinguish from \"heavy\"." [PSI:MS]
-exact_synonym: "light labeled peptide" []
+synonym: "light labeled peptide" EXACT []
 is_a: MS:1000890 ! peptide labeling state
 
 [Term]
