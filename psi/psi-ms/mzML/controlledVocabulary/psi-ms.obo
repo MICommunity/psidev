@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 05:31:2011 12:45
+date: 06:02:2011 12:45
 saved-by: dovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.01.2
-remark: version: 3.01.2
-remark: release date: 2011-05-31
+data-version: 3.02.1
+remark: version: 3.02.1
+remark: release date: 2011-06-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -10230,14 +10230,14 @@ xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
-id: MS:10001664
+id: MS:1001664
 name: ProteomeDiscoverer:Target FDR Strict
 def: "Specifies the strict target false discovery rate (FDR, 0.0 ... 1.0) for peptide hits with high confidence." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
-id: MS:10001665
+id: MS:1001665
 name: ProteomeDiscoverer:Mascot:Taxonomy
 def: "Limits searches to entries from a particular species or group of species." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
