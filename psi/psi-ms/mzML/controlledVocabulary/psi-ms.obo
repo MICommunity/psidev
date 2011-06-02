@@ -1,11 +1,11 @@
 format-version: 1.2
-date: 06:02:2011 13:25
+date: 06:02:2011 13:51
 saved-by: dovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 10
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.03.3
-remark: version: 3.03.3
+data-version: 3.03.4
+remark: version: 3.03.4
 remark: release date: 2011-06-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -3380,8 +3380,8 @@ relationship: part_of MS:1000625 ! chromatogram
 id: MS:1000514
 name: m/z array
 def: "A data array of m/z values." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units MS:1000040 ! m/z
 
@@ -3389,8 +3389,8 @@ relationship: has_units MS:1000040 ! m/z
 id: MS:1000515
 name: intensity array
 def: "A data array of intensity values." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units MS:1000131 ! number of counts
 relationship: has_units MS:1000132 ! percent of base peak
@@ -3409,8 +3409,8 @@ is_a: MS:1000513 ! binary data array
 id: MS:1000517
 name: signal to noise array
 def: "A data array of signal-to-noise values." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 
 [Term]
@@ -3944,8 +3944,8 @@ is_a: MS:1001486 ! data filtering
 id: MS:1000595
 name: time array
 def: "A data array of relative time offset values from a reference time." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
@@ -4090,8 +4090,8 @@ is_a: MS:1000503 ! scan attribute
 id: MS:1000617
 name: wavelength array
 def: "A data array of electromagnetic radiation wavelength values." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units UO:0000018 ! nanometer
 
@@ -5229,10 +5229,10 @@ name: non-standard data array
 def: "A data array that contains data not covered by any other term in this group. Please do not use this term, if the binary data array type might be commonly used - contact the PSI-MS working group in order to have another CV term added." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 xref: binary-data-type:MS\:1000519 ! 32-bit integer
-xref: binary-data-type:MS\:1000521 ! 32-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
 xref: binary-data-type:MS\:1000522 ! 64-bit integer
-xref: binary-data-type:MS\:1000523 ! 64-bit float
-xref: binary-data-type:MS\:1001479 ! null-terminated ASCII string
+xref: binary-data-type:MS\:1000523 "64-bit float"
+xref: binary-data-type:MS\:1001479 "null-terminated ASCII string"
 is_a: MS:1000513 ! binary data array
 
 [Term]
@@ -5489,16 +5489,16 @@ is_a: MS:1000126 ! Waters instrument model
 id: MS:1000820
 name: flow rate array
 def: "A data array of flow rate measurements." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 
 [Term]
 id: MS:1000821
 name: pressure array
 def: "A data array of pressure measurements." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units UO:0000110 ! pascal
 
@@ -5506,8 +5506,8 @@ relationship: has_units UO:0000110 ! pascal
 id: MS:1000822
 name: temperature array
 def: "A data array of temperature measurements." [PSI:MS]
-xref: binary-data-type:MS\:1000521 ! 32-bit float
-xref: binary-data-type:MS\:1000523 ! 64-bit float
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
 relationship: has_units UO:0000012 ! kelvin
 
