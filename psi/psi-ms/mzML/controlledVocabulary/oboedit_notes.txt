@@ -1,12 +1,5 @@
-Notes on using OBO-Edit
+Notes on using OBO-Edit (Updated by D.Ovelleiro June 2011, OBO-Edit version 2.1 beta13)
 -----------------------
-
-psi-ms.obo imports the Unit Ontology (unit.obo) via an import statement at the top of the file:
-import: unit.obo
-
-We would really like to do the following:
-import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
-But OBO-Edit has fatal errors on save due to strange characters in unit.obo.
 
 Saving psi-ms.obo from OBO-Edit is tricky.
 
@@ -15,19 +8,34 @@ Before checking in psi-ms.obo, please verify the following:
 2) does not contain terms from the Unit Ontology or other ontologies
 3) contains the MS relationships (e.g. part_of, has_units)
 
-We have not figured out yet how to accomplish #1 from within OBO-Edit, so the import statement
+psi-ms.obo imports the Unit Ontology (unit.obo) via an import statement at the top of the file:
+import: unit.obo
+We would really like to do the following:
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
+But OBO-Edit replaces this by "ontology: pato"
+
+
+
+We have not figured out yet how to accomplish #1 from within OBO-Edit, so the whole header
 must be added manually after saving with OBO-Edit.
 
 To save only the MS terms from OBO-Edit:
 1) File/Save As
-2) Advanced...
-3) + (add new "Stored adapter settings" profile)
-4) Add, the Browse (new save path)
-5) check "Filter terms"
-6) In "Object filtering" choose "Namespace" "contains" "MS"
-7) check "Allow dangling parents" (allows has_units UO:xxxxxxx) 
-8) select "OBO_1_2" for "Output Type"
-9) Ok
+2) Select Advanced...
+3) Select "OBO_1_2" for "Output Type"
+4) + (add new "Stored adapter settings" profile)
+5) "Save path:" (with browse button) for the output psi-ms.obo file
+6) Check "Filter terms"
+7) In "Object filtering" choose -> Fin terms that:"have" a:"Namespace" that:"contains" the value:"MS"
+8) check "Allow dangling parents" (allows has_units UO:xxxxxxx)  
+9) check "include is_a closure for cross-referenced terms" 
+  (allows the terms from unit.obo to be included 
+  as relationship, e.g.: has_units UO:0000166 ! parts per notation)
+10) Root selection algorithm :"GREEDY"
+11) ID Rules: "Don't write ID rules"
+12) Press Ok
+13) Once the new obo file is generated, delete the complete header (everything before the first [Term])
+   and paste the Header Template (below) with the correct information instead of the XXXXXX
 
 
 Notes on versioning of the CV:
@@ -38,22 +46,26 @@ Versions of the CV will be revioned: x.y.z
   x means change in root level terms (impacts mapping file)
 
 
-Value type and units specification (for easy copy/paste):
----------------------------------------------------------
-
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
-xref: value-type:xsd\:string "The allowed value-type for this CV term."
-
-relationship: has_units UO:0000001 ! length unit
-relationship: has_units UO:0000002 ! mass unit
-relationship: has_units UO:0000003 ! time unit
-relationship: has_units UO:0000051 ! concentration unit
-relationship: has_units UO:0000095 ! volume unit
-relationship: has_units UO:0000111 ! energy unit
-relationship: has_units UO:0000166 ! parts per notation
-relationship: has_units UO:0000217 ! electric potential difference
-relationship: has_units UO:0000227 ! magnetic flux density
-relationship: has_units MS:1000040 ! m/z
+HEADER TEMPLATE FOR COPY-PASTE (Change the XXXXXX values!)
+-----------------------------------------------------------
+format-version: 1.2
+date: XX:XX:XXXX XX:XX
+saved-by: XXXXXXXXX
+auto-generated-by: OBO-Edit 2.1-beta 13
+default-namespace: MS
+remark: namespace: MS
+data-version: X.XX.X
+remark: version: X.XX.X
+remark: release date: XXXX-XX-X
+remark: coverage: Mass spectrometer output files and spectra interpretation
+remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
+remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
+remark: creator: Marius Kallhardt <Marius.Kallhardt <-at-> bdal.de>
+remark: creator: Eric Deutsch <edeutsch <-at-> systemsbiology.org>
+remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
+remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
+remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
+remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
+import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
 
 
