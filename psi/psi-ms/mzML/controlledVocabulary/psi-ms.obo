@@ -3875,45 +3875,45 @@ is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000585
-name: contact person attribute
-def: "Details about a person to contact in case of concern or dicussion about the file." [PSI:MS]
+name: contact attribute
+def: "Details about a person or organization to contact in case of concern or discussion about the file." [PSI:MS]
 is_a: MS:1000547 ! object attribute
 relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
 
 [Term]
 id: MS:1000586
 name: contact name
-def: "Name of a contact person." [PSI:MS]
+def: "Name of the contact person or organization." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1000587
 name: contact address
-def: "Postal address of a contact person." [PSI:MS]
+def: "Postal address of the contact person or organization." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1000588
 name: contact URL
-def: "Uniform Resource Locator related to the contact person." [PSI:MS]
+def: "Uniform Resource Locator related to the contact person or organization." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1000589
 name: contact email
-def: "Email adress of the contact person." [PSI:MS]
+def: "Email address of the contact person or organization." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1000590
 name: contact organization
 def: "Home institution of the contact person." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1000591
@@ -7752,7 +7752,7 @@ is_a: MS:1001066 ! ions series considered in search
 id: MS:1001266
 name: role type
 def: "Role of a Person or Organization." [PSI:PI]
-is_a: MS:1000585 ! contact person attribute
+is_a: MS:1000585 ! contact attribute
 
 [Term]
 id: MS:1001267
@@ -10876,6 +10876,27 @@ name: ProteomeDiscoverer:Mascot:Please Do not Touch this
 def: "Unknown Mascot parameter which ProteomeDiscoverer uses for mascot searches." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001755
+name: contact phone number
+def: "Phone number of the contact person or organization." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000585 ! contact attribute
+
+[Term]
+id: MS:1001756
+name: contact fax number
+def: "Fax number for the contact person or organization." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000585 ! contact attribute
+
+[Term]
+id: MS:1001757
+name: contact toll-free phone number
+def: "Toll-free phone number of the contact person or organization." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000585 ! contact attribute
 
 [Typedef]
 id: has_regexp
