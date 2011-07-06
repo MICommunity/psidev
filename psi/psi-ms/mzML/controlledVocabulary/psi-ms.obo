@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 06:07:2011 15:05
-saved-by: edeutsch
+date: 07:07:2011 16:55
+saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.4.1
-remark: version: 3.4.1
-remark: release date: 2011-06-08
+data-version: 3.5.1
+remark: version: 3.5.1
+remark: release date: 2011-07-07
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6262,7 +6262,6 @@ def: "Name of the gene from which the protein is translated." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000884 ! protein attribute
 
-
 [Term]
 id: MS:1001000
 name: spectrum interpretation
@@ -10897,6 +10896,27 @@ name: contact toll-free phone number
 def: "Toll-free phone number of the contact person or organization." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000585 ! contact attribute
+
+[Term]
+id: MS:1001758
+name: Mascot:SigThresholdType
+def: "Significance threshold type used in Mascot reporting (either 'identity' or 'homology')." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001759
+name: Mascot:ProteinGrouping
+def: "Strategy used by Mascot to group proteins with same peptide matches (one of 'none', 'Occam's razor' or 'family clustering')." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1001760
+name: Percolator:features
+def: "List of Percolator features that were used in processing the peptide matches. Typical Percolator features are 'retentionTime', 'dM', 'mScore', 'lgDScore', 'mrCalc', 'charge' and 'dMppm'." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
 
 [Typedef]
 id: has_regexp
