@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 07:07:2011 16:55
+date: 11:07:2011 16:29
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.5.1
-remark: version: 3.5.1
-remark: release date: 2011-07-07
+data-version: 3.6.1
+remark: version: 3.6.1
+remark: release date: 2011-07-11
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -5483,6 +5483,198 @@ is_a: MS:1000126 ! Waters instrument model
 id: MS:1000819
 name: Acquity UPLC FLR
 def: "Acquity UPLC Fluorescence Detector." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001761
+name: ACQUITY UPLC
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001762
+name: ACQUITY UPLC H-Class
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001763
+name: ACQUITY UPLC H-Class Bio
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001764
+name: ACQUITY UPLC I-Class
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001765
+name: ACQUITY UPLC Systems with 2D Technology
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001766
+name: nanoACQUITY UPLC
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001767
+name: nanoACQUITY UPLC System with Technology
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001768
+name: nanoACQUITY UPLC with HDX Technology
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001769
+name: TRIZAIC UPLC nanoTile
+def: "Waters LC-system." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001770
+name: GCT Premier
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001771
+name: MALDI Synapt G2 HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001772
+name: MALDI Synapt G2 MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001773
+name: MALDI Synapt G2-S HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001774
+name: MALDI Synapt G2-S MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001775
+name: MALDI Synapt HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001776
+name: MALDI Synapt MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001777
+name: Synapt G2 HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001778
+name: Synapt G2 MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001779
+name: Synapt G2-S HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001780
+name: Synapt G2-S MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001781
+name: Synapt HDMS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001782
+name: Synapt MS
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001783
+name: Xevo G2 Q-Tof
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001784
+name: Xevo G2 Tof
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001785
+name: Xevo Q-Tof
+def: "Waters oa-ToF based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001786
+name: 3100
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001787
+name: Acquity SQD
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001788
+name: Acquity TQD
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001789
+name: Quattro micro GC
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001790
+name: Xevo TQ MS
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001791
+name: Xevo TQD
+def: "Waters quadrupole based." [PSI:MS]
+is_a: MS:1000126 ! Waters instrument model
+
+[Term]
+id: MS:1001792
+name: Xevo TQ-S
+def: "Waters quadrupole based." [PSI:MS]
 is_a: MS:1000126 ! Waters instrument model
 
 [Term]
