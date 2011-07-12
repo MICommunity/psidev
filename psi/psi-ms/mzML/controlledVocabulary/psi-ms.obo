@@ -7,6 +7,9 @@ remark: namespace: MS
 data-version: 3.7.2
 remark: version: 3.7.2
 remark: release date: 2011-07-12
+remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
+remark: increment 'y' when any other term is added or obsoleted.
+remark: increment 'z' when a term name, definition, or relationship is edited.
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -3996,14 +3999,6 @@ is_a: MS:1001457 ! data processing software
 id: MS:1000601
 name: ProteinLynx Global Server
 def: "Waters software for data analysis." [PSI:MS]
-is_a: MS:1000694 ! Waters software
-is_a: MS:1001456 ! analysis software
-is_a: MS:1001457 ! data processing software
-
-[Term]
-id: MS:1001794
-name: MassLynx
-def: "Waters software for Mass spectrometry acquisition, processing and data analysis." [PSI:MS]
 is_a: MS:1000694 ! Waters software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
