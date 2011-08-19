@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 13:07:2011 14:32
+date: 19:08:2011 10:21
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.7.3
-remark: version: 3.7.3
-remark: release date: 2011-07-13
+data-version: 3.8.3
+remark: version: 3.8.3
+remark: release date: 2011-08-19
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -11143,6 +11143,51 @@ name: travelling wave ion mobility mass spectrometer
 def: "An ion mobility mass spectrometry technique based on the superimposition of travelling voltage waves on a radially-confining RF voltage in a gas-filled, stacked-ring ion guide." [PSI:MS]
 synonym: "TWIMS" EXACT []
 is_a: MS:1000261 ! ion mobility spectrometry
+
+[Term]
+id: MS:1001798
+name: LECO software
+def: "LECO software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1001799
+name: ChromaTOF software
+def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
+is_a: MS:1001798 ! LECO software
+is_a: MS:1001455 ! acquisition software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001800
+name: LECO instrument model
+def: "LECO instrument model." [PSI:MS]
+is_a: MS:1000031 ! instrument model
+
+[Term]
+id: MS:1001801
+name: Pegasus HRT
+def: "LECO high resolution time-of-flight GC mass spectrometer." [PSI:MS]
+is_a: MS:1001800 ! LECO instrument model
+
+[Term]
+id: MS:1001802
+name: Citius HRT
+def: "LECO high resolution time-of-flight LC mass spectrometer." [PSI:MS]
+is_a: MS:1001800 ! LECO instrument model
+
+[Term]
+id: MS:1001803
+name: Pegasus
+def: "LECO GC time-of-flight mass spectrometer." [PSI:MS]
+is_a: MS:1001800 ! LECO instrument model
+
+[Term]
+id: MS:1001804
+name: TruTOF
+def: "LECO bench-top GC time-of-flight mass spectrometer." [PSI:MS]
+is_a: MS:1001800 ! LECO instrument model
 
 [Typedef]
 id: has_regexp
