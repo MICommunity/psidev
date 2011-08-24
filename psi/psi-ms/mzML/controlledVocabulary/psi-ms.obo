@@ -4,8 +4,8 @@ saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.9.1
-remark: version: 3.9.1
+data-version: 3.10.0
+remark: version: 3.10.0
 remark: release date: 2011-08-24
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
@@ -11570,6 +11570,15 @@ id: MS:1001867
 name: Progenesis normalization
 def: "Normalization as performed by Progenesis LC-MS." [PSI:MS]
 is_a: MS:1001861 ! quantification data processing
+
+[Term]
+id: MS:1001868
+name: ChromaTOF HRT software
+def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
+is_a: MS:1001798 ! LECO software
+is_a: MS:1001455 ! acquisition software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
 
 [Typedef]
 id: has_regexp
