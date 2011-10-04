@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 24:08:2011 11:44
+date: 4:10:2011 11:40
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.10.0
-remark: version: 3.10.0
-remark: release date: 2011-08-24
+data-version: 3.11.0
+remark: version: 3.11.0
+remark: release date: 2011-10-4
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -4334,7 +4334,7 @@ is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000652
-name: 4800 Plus MALDI TOF-TOF Analyzer
+name: 4800 Plus MALDI TOF/TOF
 def: "AB SCIEX or Applied Biosystems|MDS SCIEX 4800 Plus MALDI TOF-TOF Analyzer." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
@@ -4474,7 +4474,7 @@ is_a: MS:1001457 ! data processing software
 
 [Term]
 id: MS:1000672
-name: Cliquid?
+name: Cliquid
 def: "AB SCIEX or Applied Biosystems software." [PSI:MS]
 is_a: MS:1000690 ! AB SCIEX software
 
@@ -5833,8 +5833,10 @@ relationship: has_units UO:0000110 ! pascal
 [Term]
 id: MS:1000870
 name: 4000 QTRAP
-def: "AB SCIEX or Applied Biosystems|MDS SCIEX QTRAP 4000." [PSI:MS]
+def: "OBSOLETE AB SCIEX or Applied Biosystems|MDS SCIEX QTRAP 4000." [PSI:MS]
+comment: This term was obsoleted because was redundant to MS:1000139
 is_a: MS:1000121 ! AB SCIEX instrument model
+is_obsolete: true
 
 [Term]
 id: MS:1000871
@@ -6243,13 +6245,13 @@ is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000931
-name: AB SCIEX QTRAP 5500
+name: QTRAP 5500
 def: "Applied Biosystems|MDS SCIEX QTRAP 5500." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000932
-name: AB SCIEX TripleTOF 5600
+name: TripleTOF 5600
 def: "Applied Biosystems|MDS SCIEX TripleTOF 5500, a quadrupole - quadrupole - time-of-flight mass spectrometer." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
@@ -6739,7 +6741,8 @@ is_a: MS:1001045 ! cleavage agent name
 
 [Term]
 id: MS:1001092
-name: peptide quality estimation measure
+name: peptide identification confidence metric
+def: "Peptide identification confidence metric for a peptide (p-value, Expect value, confidence, local FDR)." [PSI:PI]
 is_a: MS:1001105 ! peptide result details
 
 [Term]
@@ -6955,8 +6958,8 @@ id: MS:1001125
 name: manual validation
 def: "Result of quality estimation: decision of a manual validation." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001092 ! peptide quality estimation measure
-is_a: MS:1001198 ! protein quality estimation measure
+is_a: MS:1001092 ! peptide identification confidence metric
+is_a: MS:1001198 ! protein identification confidence metric
 
 [Term]
 id: MS:1001126
@@ -7242,6 +7245,7 @@ name: Paragon:expression change p-value
 def: "The Paragon result 'Expression change P-value'." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001871 ! p-value for proteins
 
 [Term]
 id: MS:1001170
@@ -7333,26 +7337,28 @@ is_a: MS:1001056 ! modification specificity rule
 [Term]
 id: MS:1001191
 name: p-value
-def: "Quality estimation by p-value." [PSI:PI]
+def: "OBSOLETE Quality estimation by p-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
+comment: This term was made obsolete because now is split into peptide and protein terms
 is_a: MS:1001092 ! peptide quality estimation measure
 is_a: MS:1001198 ! protein quality estimation measure
+is_obsolete: true
 
 [Term]
 id: MS:1001192
 name: Expect value
 def: "Result of quality estimation: Expect value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001092 ! peptide quality estimation measure
-is_a: MS:1001198 ! protein quality estimation measure
+is_a: MS:1001092 ! peptide identification confidence metric
+is_a: MS:1001198 ! protein identification confidence metric
 
 [Term]
 id: MS:1001193
 name: confidence score
 def: "Result of quality estimation: confidence score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001092 ! peptide quality estimation measure
-is_a: MS:1001198 ! protein quality estimation measure
+is_a: MS:1001092 ! peptide identification confidence metric
+is_a: MS:1001198 ! protein identification confidence metric
 
 [Term]
 id: MS:1001194
@@ -7380,8 +7386,8 @@ is_a: MS:1001450 ! decoy DB details
 
 [Term]
 id: MS:1001198
-name: protein quality estimation measure
-def: "Quality estimation score for a protein (p-value, Expect value, confidence, local FDR)." [PSI:PI]
+name: protein identification confidence metric
+def: "Protein identification confidence metric (p-value, Expect value, confidence, local FDR)." [PSI:PI]
 is_a: MS:1001085 ! protein result details
 
 [Term]
@@ -7539,6 +7545,7 @@ name: product ion m/z
 def: "The m/z of the product ion." [PSI:PI]
 synonym: "fragment ion m/z" EXACT []
 is_a: MS:1001221 ! fragmentation information
+relationship: has_units MS:1000040 ! m/z
 
 [Term]
 id: MS:1001226
@@ -7546,6 +7553,10 @@ name: product ion intensity
 def: "The intensity of the product ion." [PSI:PI]
 synonym: "fragment ion intensity" EXACT []
 is_a: MS:1001221 ! fragmentation information
+relationship: has_units MS:1000131 ! number of counts
+relationship: has_units MS:1000132 ! percent of base peak
+relationship: has_units MS:1000814 ! counts per second
+relationship: has_units MS:1000905 ! percent of base peak times 100
 
 [Term]
 id: MS:1001227
@@ -7677,8 +7688,8 @@ id: MS:1001250
 name: local FDR
 def: "Result of quality estimation: the local FDR at the current position of a sorted list." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001092 ! peptide quality estimation measure
-is_a: MS:1001198 ! protein quality estimation measure
+is_a: MS:1001092 ! peptide identification confidence metric
+is_a: MS:1001198 ! protein identification confidence metric
 relationship: has_units UO:0000166 ! parts per notation unit
 relationship: has_units UO:0000187 ! percent
 
@@ -8068,6 +8079,7 @@ def: "OMSSA E-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001872 ! E-value for peptides
 
 [Term]
 id: MS:1001329
@@ -8076,6 +8088,7 @@ def: "OMSSA p-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001870 ! p-value for peptides
 
 [Term]
 id: MS:1001330
@@ -8084,6 +8097,7 @@ def: "The X!Tandem expectation value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001872 ! E-value for peptides
 
 [Term]
 id: MS:1001331
@@ -8495,6 +8509,7 @@ name: Phenyx:PepPvalue
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001870 ! p-value for peptides
 
 [Term]
 id: MS:1001397
@@ -9022,7 +9037,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1001482
-name: AB SCIEX TOF/TOF 5800
+name: TOF/TOF 5800
 def: "AB SCIEX or Applied Biosystems|MDS Analytical Technologies AB SCIEX TOF/TOF 5800 Analyzer." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
@@ -9086,6 +9101,7 @@ def: "percolator:Q value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1001868 ! q-value for peptides
 
 [Term]
 id: MS:1001492
@@ -9801,7 +9817,7 @@ id: MS:1001600
 name: Protein Inference Confidence Category
 def: "Confidence category of inferred protein (conclusive, non conclusive, ambiguous group or indistinguishable)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001198 ! protein quality estimation measure
+is_a: MS:1001198 ! protein identification confidence metric
 
 [Term]
 id: MS:1001601
@@ -11573,6 +11589,71 @@ is_a: MS:1001861 ! quantification data processing
 
 [Term]
 id: MS:1001868
+name: q-value for peptides
+def: "Peptide identification confidence metric q-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001092 ! peptide identification confidence metric
+relationship: has_units UO:0000166 ! parts per notation unit
+relationship: has_units UO:0000187 ! percent
+
+[Term]
+id: MS:1001869
+name: q-value for proteins
+def: "Protein identification confidence metric q-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001198 ! protein identification confidence metric
+relationship: has_units UO:0000166 ! parts per notation unit
+relationship: has_units UO:0000187 ! percent
+
+[Term]
+id: MS:1001870
+name: p-value for peptides
+def: "Peptide identification confidence metric p-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001092 ! peptide identification confidence metric
+
+[Term]
+id: MS:1001871
+name: p-value for proteins
+def: "Protein identification confidence metric p-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001198 ! protein identification confidence metric
+
+[Term]
+id: MS:1001872
+name: E-value for peptides
+def: "Peptide identification confidence metric E-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001092 ! peptide identification confidence metric
+
+[Term]
+id: MS:1001873
+name: E-value for proteins
+def: "Protein identification confidence metric E-value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001198 ! protein identification confidence metric
+
+[Term]
+id: MS:1001874
+name: FDRScore
+def: "Quality measurement as defined in http://www.ncbi.nlm.nih.gov/pubmed/19253293." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1001875
+name: modification motif
+def: "The regular expression describing the sequence motif for a modification." [PSI:PI]
+is_a: MS:1001056 ! modification specificity rule
+
+[Term]
+id: MS:1001876
+name: modification probability
+def: "The a priori probability of a modification." [PSI:PI]
+is_a: MS:1001056 ! modification specificity rule
+
+[Term]
+id: MS:1001877
 name: ChromaTOF HRT software
 def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
 is_a: MS:1001798 ! LECO software
