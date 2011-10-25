@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 4:10:2011 11:40
+date: 25:10:2011 10:41
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.11.0
-remark: version: 3.11.0
-remark: release date: 2011-10-4
+data-version: 3.12.0
+remark: version: 3.12.0
+remark: release date: 2011-10-25
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -11657,6 +11657,15 @@ id: MS:1001877
 name: ChromaTOF HRT software
 def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
 is_a: MS:1001798 ! LECO software
+is_a: MS:1001455 ! acquisition software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001878
+name: MALDI Solutions Microbial Identification
+def: "Shimadzu Biotech software for data acquisition, processing, and analysis." [PSI:MS]
+is_a: MS:1001558 ! MALDI Solutions
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
