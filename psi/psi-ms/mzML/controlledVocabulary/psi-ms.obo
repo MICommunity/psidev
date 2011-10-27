@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 25:10:2011 10:41
+date: 26:10:2011 13:59
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.12.0
-remark: version: 3.12.0
-remark: release date: 2011-10-25
+data-version: 3.13.0
+remark: version: 3.13.0
+remark: release date: 2011-10-26
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -953,7 +953,7 @@ is_a: MS:1000510 ! precursor activation attribute
 
 [Term]
 id: MS:1000139
-name: 4000 Q TRAP
+name: 4000 QTRAP
 def: "Applied Biosystems/MDS SCIEX Q 4000 TRAP MS." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
@@ -4475,7 +4475,7 @@ is_a: MS:1001457 ! data processing software
 [Term]
 id: MS:1000672
 name: Cliquid
-def: "AB SCIEX or Applied Biosystems software." [PSI:MS]
+def: "AB SCIEX Cliquid software for data analysis and quantitation." [PSI:MS]
 is_a: MS:1000690 ! AB SCIEX software
 
 [Term]
@@ -5880,7 +5880,7 @@ relationship: has_units UO:0000218 ! volt
 
 [Term]
 id: MS:1000877
-name: tube lens
+name: tube lens voltage
 def: "Potential difference setting of the tube lens in volts." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
@@ -6252,7 +6252,7 @@ is_a: MS:1000121 ! AB SCIEX instrument model
 [Term]
 id: MS:1000932
 name: TripleTOF 5600
-def: "Applied Biosystems|MDS SCIEX TripleTOF 5500, a quadrupole - quadrupole - time-of-flight mass spectrometer." [PSI:MS]
+def: "AB SCIEX TripleTOF 5600, a quadrupole - quadrupole - time-of-flight mass spectrometer." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
@@ -11669,6 +11669,52 @@ is_a: MS:1001558 ! MALDI Solutions
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001879
+name: offset voltage
+def: "The potential difference between two adjacent interface voltages affecting in-source collision induced dissociation." [PSI:MS]
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000218 ! volt
+
+[Term]
+id: MS:1001880
+name: in-source collision-induced dissociation
+def: "The dissociation of an ion as a result of collisional excitation during ion transfer from an atmospheric pressure ion source and the mass spectrometer vacuum." [PSI:MS]
+is_a:  MS:1000044 ! dissociation method
+
+[Term]
+id: MS:1001881
+name: mz5 file
+def: "mz5 file format, modeled after mzML." [PSI:MS]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1001882
+name: transition validation attribute
+def: "Attributes of the quality of a transition that affect its selection as appropriate." [PSI:MS]
+relationship: part_of MS:1000908 ! transition
+
+[Term]
+id: MS:1001883
+name: coefficient of variation
+def: "Variation of a set of signal measurements calculated as the standard deviation relative to the mean." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001881 ! transition validation attribute
+
+[Term]
+id: MS:1001884
+name: signal-to-noise ratio
+def: "Unitless number providing the ratio of the total measured intensity of a signal relative to the estimated noise level for that signal." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001881 ! transition validation attribute
+
+[Term]
+id: MS:1001885
+name: command-line parameters
+def: "Parameters string passed to a command-line interface software application, omitting the executable name." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000630 ! data processing parameter
 
 [Typedef]
 id: has_regexp
