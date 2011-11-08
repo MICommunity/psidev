@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 26:10:2011 13:59
+date: 08:11:2011 11:11
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.13.0
-remark: version: 3.13.0
-remark: release date: 2011-10-26
+data-version: 3.14.0
+remark: version: 3.14.0
+remark: release date: 2011-11-08
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -11715,6 +11715,34 @@ name: command-line parameters
 def: "Parameters string passed to a command-line interface software application, omitting the executable name." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000630 ! data processing parameter
+
+[Term]
+id: MS:1001886
+name: SQID
+def: "Software for data analysis of peptides and proteins." [PSI:MS]
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001887
+name: SQID:score
+def: "The SQID result 'Score'." [PSI:PI]
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001888
+name: SQID:deltaScore
+def: "The SQID result 'deltaScore'." [PSI:PI]
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001889
+name: SQID:protein score
+def: "The SQID result 'protein score'." [PSI:PI]
+is_a: MS:1001116 ! single protein result details
+is_a: MS:1001153 ! search engine specific score
 
 [Typedef]
 id: has_regexp
