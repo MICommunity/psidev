@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 08:11:2011 11:11
+date: 09:11:2011 16:43
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.14.0
-remark: version: 3.14.0
-remark: release date: 2011-11-08
+data-version: 3.15.0
+remark: version: 3.15.0
+remark: release date: 2011-11-09
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -11439,21 +11439,23 @@ is_a: MS:1001805 ! quantification datatype
 
 [Term]
 id: MS:1001843
-name: peak intensity
-def: "Maximum intensity of MS1 peak (e.g. SILAC, 15N)." [PSI:PI]
+name: MS1 feature maximum intensity
+def: "Maximum intensity of MS1 feature." [PSI:PI]
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
 id: MS:1001844
-name: peak area
-def: "Area of MS1 peak (e.g. SILAC, 15N)." [PSI:PI]
+name: MS1 feature area
+def: "Area of MS1 feature." [PSI:PI]
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
 id: MS:1001845
 name: peak area
-def: "Area of MS1 peak (e.g. SILAC, 15N)." [PSI:PI]
+def: "OBSOLETE Area of MS1 peak (e.g. SILAC, 15N)." [PSI:PI]
+comment: This term was made obsolete because it was a duplication of MS:1001844
 is_a: MS:1001805 ! quantification datatype
+is_obsolete: true
 
 [Term]
 id: MS:1001846
@@ -11743,6 +11745,117 @@ name: SQID:protein score
 def: "The SQID result 'protein score'." [PSI:PI]
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001890
+name: Progenesis:protein normalised abundance
+def: "The data type normalised abundance for proteins produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001891
+name: Progenesis:peptide normalised abundance
+def: "The data type normalised abundance for peptides produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001892
+name: Progenesis:protein raw abundance
+def: "The data type raw abundance for proteins produced by Progenesis LC-MS."  [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001893
+name: Progenesis:peptide raw abundance
+def: "The data type raw abundance for peptide produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001894
+name: Progenesis:confidence score
+def: "The data type confidence score  produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001895
+name: Progenesis:peptide count
+def: "The data type peptide count produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001896
+name: Progenesis:feature intensity
+def: "The data type feature intensity produced by Progenesis LC-MS." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001897
+name: MaxQuant:peptide counts (unique)
+def: "The data type peptide counts (unique) produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001898
+name: MaxQuant:peptide counts (all)
+def: "The data type peptide counts (all) produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001899
+name: MaxQuant:peptide counts (razor+unique)
+def: "The data type peptide counts (razor+unique)  produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001900
+name: MaxQuant:sequence length
+def: "The data type sequence length produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001901
+name: MaxQuant:PEP
+def: "The data type PEP (posterior error probability) produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001902
+name: MaxQuant:LFQ intensity
+def: "The data type LFQ intensity produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001903
+name: MaxQuant:feature intensity
+def: "The data type feature intensity produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001904
+name: MaxQuant:MS/MS count
+def: "The data type MS/MS count produced by MaxQuant." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001905
+name: emPAI value
+def: "The emPAI value of protein abundance, produced from the emPAI algorithm." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001906
+name: APEX value
+def: "The APEX value of protein abundance, produced from the APEX software." [PSI:MS]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1001907
+name: retention time window width
+def: "The full width of a retention time window for a chromatographic peak." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000915 ! retention time window attribute
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
 
 [Typedef]
 id: has_regexp
