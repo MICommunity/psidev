@@ -1,12 +1,12 @@
 format-version: 1.2
-date: 09:11:2011 16:43
+date: 22:11:2011 12:43
 saved-by: david ovelleiro
 auto-generated-by: OBO-Edit 2.1-beta 13
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.15.0
-remark: version: 3.15.0
-remark: release date: 2011-11-09
+data-version: 3.16.0
+remark: version: 3.16.0
+remark: release date: 2011-11-22
 remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
 remark: increment 'y' when any other term is added or obsoleted.
 remark: increment 'z' when a term name, definition, or relationship is edited.
@@ -19,7 +19,7 @@ remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
-import: http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/unit.obo
+import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 
 [Term]
 id: MS:0000000
@@ -11856,6 +11856,46 @@ xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000915 ! retention time window attribute
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1001908
+name: ISQ
+def: "Thermo Scientific ISQ single quadrupole MS with the ExtractraBrite source." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001909
+name: Velos Plus
+def: "Thermo Scientific second generation Velos." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001910
+name: LTQ Orbitrap Elite
+def: "Thermo Scientific second generation Velos and Orbitrap." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001911
+name: Q Exactive
+def: "Thermo Scientific Q Exactive." [PSI:MS]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1001912
+name: PinPoint
+def: "Thermo Scientific PinPoint SRM analysis software." [PSI:MS]
+is_a: MS:1000693 ! Thermo Finnigan software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001913
+name: S-lens voltage
+def: "Potential difference setting of the Thermo Scientific S-lens stacked-ring ion guide in volts." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000218 ! volt
 
 [Typedef]
 id: has_regexp
