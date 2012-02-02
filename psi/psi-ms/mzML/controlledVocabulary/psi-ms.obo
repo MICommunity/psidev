@@ -1,15 +1,13 @@
 format-version: 1.2
-date: 22:11:2011 12:43
-saved-by: david ovelleiro
-auto-generated-by: OBO-Edit 2.1-beta 13
+data-version: 3.17.0
+date: 02:02:2012 11:52
+saved-by: Gerhard Mayer
+auto-generated-by: OBO-Edit 2.1
+import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-data-version: 3.16.0
-remark: version: 3.16.0
-remark: release date: 2011-11-22
-remark: increment 'x' when a first level term is renamed, added, deleted, or rearranged in the structure.
-remark: increment 'y' when any other term is added or obsoleted.
-remark: increment 'z' when a term name, definition, or relationship is edited.
+remark: version: 3.17.0
+remark: release date: 2012-02-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -17,9 +15,21 @@ remark: creator: Marius Kallhardt <Marius.Kallhardt <-at-> bdal.de>
 remark: creator: Eric Deutsch <edeutsch <-at-> systemsbiology.org>
 remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
-remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group 
+remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
-import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
+
+[Typedef]
+id: has_regexp
+name: has regexp
+
+[Typedef]
+id: has_units
+name: has_units
+
+[Typedef]
+id: part_of
+name: part_of
+is_transitive: true
 
 [Term]
 id: MS:0000000
@@ -234,7 +244,7 @@ relationship: has_units UO:0000106 ! hertz
 [Term]
 id: MS:1000030
 name: vendor
-def: "OBSOLETE Name of instrument vendor" [PSI:MS]
+def: "OBSOLETE Name of instrument vendor." [PSI:MS]
 comment: This term was made obsolete because it was replaced by instrument model (MS:1000031)
 is_obsolete: true
 
@@ -272,7 +282,7 @@ is_a: MS:1000543 ! data processing action
 [Term]
 id: MS:1000036
 name: scan mode
-def: "OBSOLETE" [PSI:MS]
+def: "OBSOLETE." [PSI:MS]
 comment: This term was made obsolete because...just because.
 is_obsolete: true
 
@@ -541,14 +551,14 @@ is_a: MS:1000247 ! desorption ionization
 [Term]
 id: MS:1000076
 name: negative ion mode
-def: "OBSOLETE" [PSI:MS]
+def: "OBSOLETE." [PSI:MS]
 comment: This term was made obsolete because it was replaced by negative scan (MS:1000129)
 is_obsolete: true
 
 [Term]
 id: MS:1000077
 name: positive ion mode
-def: "OBSOLETE" [PSI:MS]
+def: "OBSOLETE." [PSI:MS]
 comment: This term was made obsolete because it was replaced by positive scan (MS:1000130)
 is_obsolete: true
 
@@ -556,7 +566,7 @@ is_obsolete: true
 id: MS:1000078
 name: axial ejection linear ion trap
 def: "A linear ion trap mass spectrometer where ions are ejected along the axis of the analyzer." [PSI:MS]
-is_a: MS:1000264 ! ion trap
+is_a: MS:1000291 ! linear ion trap
 
 [Term]
 id: MS:1000079
@@ -590,7 +600,7 @@ is_a: MS:1000264 ! ion trap
 id: MS:1000083
 name: radial ejection linear ion trap
 def: "A linear ion trap mass spectrometer where ions are ejected along the radius of the analyzer." [PSI:MS]
-is_a: MS:1000264 ! ion trap
+is_a: MS:1000291 ! linear ion trap
 
 [Term]
 id: MS:1000084
@@ -1832,7 +1842,7 @@ id: MS:1000270
 name: multiple stage mass spectrometry
 def: "Multiple stages of precursor ion m/z selection followed by product ion detection for successive progeny ions." [PSI:MS]
 synonym: "MSn" EXACT []
-is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1000445 ! sequential m/z separation method
 
 [Term]
 id: MS:1000271
@@ -2014,9 +2024,11 @@ is_a: MS:1000479 ! purgatory
 [Term]
 id: MS:1000297
 name: paul ion trap
-def: "A device that permits the trapping of ions by means of an alternating current voltage. The ejection of ions with a m/z less than a prescribed value and retention of those with higher mass depends on the application of radio frequency voltages between a ring electrode and two end-cap electrodes to confine the ions in a circular path. The choice of these voltages determines the m/z below which ions are ejected." [PSI:MS]
+def: "OBSOLETE A device that permits the trapping of ions by means of an alternating current voltage. The ejection of ions with a m/z less than a prescribed value and retention of those with higher mass depends on the application of radio frequency voltages between a ring electrode and two end-cap electrodes to confine the ions in a circular path. The choice of these voltages determines the m/z below which ions are ejected." [PSI:MS]
+comment: This term was made obsolete because it is redundant to quadrupole ion trap
 synonym: "quadrupole ion trap" RELATED []
 is_a: MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1000298
@@ -2164,7 +2176,7 @@ is_a: MS:1000597 ! ion optics type
 id: MS:1000321
 name: 2E Mass Spectrum
 def: "A mass spectrum obtained by setting the electric sector field E to twice the value required to transmit the main ion-beam thereby allowing ions with a kinetic energy-to-charge ratio twice that of the main ion-beam to be transmitted. Product ions resulting from partial charge transfer reactions such as m^2+ + N ? m^+ + N^+ that occur in a collision cell (containing a gas, N) located in a field-free region preceding a magnetic and electric sector combination are detected. When the magnetic sector field B is scanned, a mass spectrum of singly charged product ions of doubly charged precursor ions is obtained." [PSI:MS]
-is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1000445 ! sequential m/z separation method
 
 [Term]
 id: MS:1000322
@@ -2251,19 +2263,19 @@ is_a: MS:1000329 ! linked scan
 id: MS:1000334
 name: MS/MS in Time
 def: "A tandem mass spectrometry method in which product ion spectra are recorded in a single m/z analyzer (such as a Paul Ion Trap or FTMS) in discreet steps over time. Ions in a specific m/z range are selected, dissociated, and the product ions analyzed sequentially in time." [PSI:MS]
-is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1000445 ! sequential m/z separation method
 
 [Term]
 id: MS:1000335
 name: MS/MS in Space
 def: "A tandem mass spectrometry method in which product ion spectra are recorded in m/z analyzers separated in space. Specific m/z separation functions are designed such that in one section of the instrument ions are selected, dissociated in an intermediate region, and the product ions are then transmitted to another analyser for m/z separation and data acquisition." [PSI:MS]
-is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1000445 ! sequential m/z separation method
 
 [Term]
 id: MS:1000336
 name: neutral loss
 def: "The loss of an uncharged species during a rearrangement process." [PSI:MS]
-is_a: MS:1000445 ! sequential m/z separation method ?
+is_a: MS:1000445 ! sequential m/z separation method
 is_a: MS:1001055 ! modification parameters
 
 [Term]
@@ -2296,7 +2308,7 @@ is_a: MS:1000506 ! ion role
 [Term]
 id: MS:1000341
 name: precursor ion spectrum
-def: "Spectrum generated by scanning precursor m/z while monitoring a fixed product m/z" [PSI:MS]
+def: "Spectrum generated by scanning precursor m/z while monitoring a fixed product m/z." [PSI:MS]
 is_a: MS:1000294 ! mass spectrum
 is_a: MS:1000524 ! data file content
 
@@ -2928,7 +2940,7 @@ relationship: part_of MS:1000479 ! purgatory
 [Term]
 id: MS:1000445
 name: sequential m/z separation method
-def: "sequential m/z separation method." [PSI:MS]
+def: "Sequential m/z separation method." [PSI:MS]
 relationship: part_of MS:1000479 ! purgatory
 
 [Term]
@@ -3531,10 +3543,10 @@ is_a: MS:1001457 ! data processing software
 id: MS:1000534
 name: MassLynx
 def: "Micromass software for data acquisition and analysis." [PSI:MS]
+is_a: MS:1000694 ! Waters software
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
-is_a: MS:1000694 ! Waters software
 
 [Term]
 id: MS:1000535
@@ -4225,61 +4237,61 @@ is_a: MS:1000455 ! ion selection attribute
 [Term]
 id: MS:1000634
 name: DSQ
-def: "ThermoFinnigan DSQ GC-MS" [PSI:MS]
+def: "ThermoFinnigan DSQ GC-MS." [PSI:MS]
 is_a: MS:1000125 ! Thermo Finnigan instrument model
 
 [Term]
 id: MS:1000635
 name: ITQ 700
-def: "Thermo Scientific ITQ 700 GC-MS" [PSI:MS]
+def: "Thermo Scientific ITQ 700 GC-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000636
 name: ITQ 900
-def: "Thermo Scientific ITQ 900 GC-MS" [PSI:MS]
+def: "Thermo Scientific ITQ 900 GC-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000637
 name: ITQ 1100
-def: "Thermo Scientific ITQ 1100 GC-MS" [PSI:MS]
+def: "Thermo Scientific ITQ 1100 GC-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000638
 name: LTQ XL ETD
-def: "Thermo Scientific LTQ XL MS with ETD" [PSI:MS]
+def: "Thermo Scientific LTQ XL MS with ETD." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000639
 name: LTQ Orbitrap XL ETD
-def: "Thermo Scientific LTQ Orbitrap XL MS with ETD" [PSI:MS]
+def: "Thermo Scientific LTQ Orbitrap XL MS with ETD." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000640
 name: DFS
-def: "Thermo Scientific DFS HR GC-MS" [PSI:MS]
+def: "Thermo Scientific DFS HR GC-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000641
 name: DSQ II
-def: "Thermo Scientific DSQ II GC-MS" [PSI:MS]
+def: "Thermo Scientific DSQ II GC-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000642
 name: MALDI LTQ XL
-def: "Thermo Scientific MALDI LTQ XL MS" [PSI:MS]
+def: "Thermo Scientific MALDI LTQ XL MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000643
 name: MALDI LTQ Orbitrap
-def: "Thermo Scientific MALDI LTQ Orbitrap MS" [PSI:MS]
+def: "Thermo Scientific MALDI LTQ Orbitrap MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
@@ -4291,31 +4303,31 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 [Term]
 id: MS:1000645
 name: Element XR
-def: "Thermo Scientific Element XR HR-ICP-MS" [PSI:MS]
+def: "Thermo Scientific Element XR HR-ICP-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000646
 name: Element 2
-def: "Thermo Scientific Element 2 HR-ICP-MS" [PSI:MS]
+def: "Thermo Scientific Element 2 HR-ICP-MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000647
 name: Element GD
-def: "Thermo Scientific Element GD Glow Discharge MS" [PSI:MS]
+def: "Thermo Scientific Element GD Glow Discharge MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000648
 name: GC IsoLink
-def: "Thermo Scientific GC IsoLink Isotope Ratio MS" [PSI:MS]
+def: "Thermo Scientific GC IsoLink Isotope Ratio MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
 id: MS:1000649
 name: Exactive
-def: "Thermo Scientific Exactive MS" [PSI:MS]
+def: "Thermo Scientific Exactive MS." [PSI:MS]
 is_a: MS:1000494 ! Thermo Scientific instrument model
 
 [Term]
@@ -4353,19 +4365,19 @@ is_a: MS:1000121 ! AB SCIEX instrument model
 [Term]
 id: MS:1000655
 name: QSTAR Elite
-def: "AB SCIEX or Applied Biosystems|MDS SCIEX QSTAR Elite" [PSI:MS]
+def: "AB SCIEX or Applied Biosystems|MDS SCIEX QSTAR Elite." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000656
 name: QSTAR Pulsar
-def: "Applied Biosystems|MDS SCIEX QSTAR Pulsar" [PSI:MS]
+def: "Applied Biosystems|MDS SCIEX QSTAR Pulsar." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
 id: MS:1000657
 name: QSTAR XL
-def: "Applied Biosystems|MDS SCIEX QSTAR XL" [PSI:MS]
+def: "Applied Biosystems|MDS SCIEX QSTAR XL." [PSI:MS]
 is_a: MS:1000121 ! AB SCIEX instrument model
 
 [Term]
@@ -4649,7 +4661,7 @@ is_a: MS:1001534 ! Bruker Daltonics flex series
 [Term]
 id: MS:1000697
 name: Bruker Daltonics HCT Series
-def: "Bruker Daltonics HCT Series" [PSI:MS]
+def: "Bruker Daltonics HCT Series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
@@ -4661,13 +4673,13 @@ is_a: MS:1000697 ! Bruker Daltonics HCT Series
 [Term]
 id: MS:1000699
 name: HCTultra PTM
-def: "Bruker Daltonics' HCTultra PTM: ESI TOF, Nanospray, APCI, APPI, PTR" [PSI:MS]
+def: "Bruker Daltonics' HCTultra PTM: ESI TOF, Nanospray, APCI, APPI, PTR." [PSI:MS]
 is_a: MS:1000697 ! Bruker Daltonics HCT Series
 
 [Term]
 id: MS:1000700
 name: HCTultra ETD II
-def: "Bruker Daltonics' HCTultra ETD II: ESI Q-TOF, Nanospray, APCI, APPI, ETD" [PSI:MS]
+def: "Bruker Daltonics' HCTultra ETD II: ESI Q-TOF, Nanospray, APCI, APPI, ETD." [PSI:MS]
 is_a: MS:1000697 ! Bruker Daltonics HCT Series
 
 [Term]
@@ -4697,7 +4709,7 @@ is_a: MS:1001536 ! Bruker Daltonics micrOTOF series
 [Term]
 id: MS:1000705
 name: ultraflex III TOF/TOF
-def: "Bruker Daltonics' ultraflex III TOF/TOF: MALDI TOF" [PSI:MS]
+def: "Bruker Daltonics' ultraflex III TOF/TOF: MALDI TOF." [PSI:MS]
 is_a: MS:1001534 ! Bruker Daltonics flex series
 
 [Term]
@@ -4754,7 +4766,7 @@ is_a: MS:1001457 ! data processing software
 [Term]
 id: MS:1000713
 name: Compass for HCT/esquire
-def: "Bruker Compass for HCT/esquire software" [PSI:MS]
+def: "Bruker Compass for HCT/esquire software." [PSI:MS]
 is_a: MS:1000692 ! Bruker software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
@@ -4964,7 +4976,7 @@ is_a: MS:1000494 ! Thermo Scientific instrument model
 [Term]
 id: MS:1000744
 name: selected ion m/z
-def: "Mass-to-charge ratio of the ion selected for fragmentation" [PSI:MS]
+def: "Mass-to-charge ratio of the ion selected for fragmentation." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000455 ! ion selection attribute
 relationship: has_units MS:1000040 ! m/z
@@ -5143,35 +5155,35 @@ is_a: MS:1000767 ! native spectrum identifier format
 [Term]
 id: MS:1000773
 name: Bruker FID nativeID format
-def: "file=xsd:IDREF" [PSI:MS]
+def: "file=xsd:IDREF." [PSI:MS]
 comment: The nativeID must be the same as the source file ID.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000774
 name: multiple peak list nativeID format
-def: "index=xsd:nonNegativeInteger" [PSI:MS]
+def: "index=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion of peak list files with multiple spectra, i.e. MGF, PKL, merged DTA files. Index is the spectrum number in the file, starting from 0.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000775
 name: single peak list nativeID format
-def: "file=xsd:IDREF" [PSI:MS]
+def: "file=xsd:IDREF." [PSI:MS]
 comment: The nativeID must be the same as the source file ID. Used for conversion of peak list files with one spectrum per file, typically folder of PKL or DTAs, each sourceFileRef is different.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000776
 name: scan number only nativeID format
-def: "scan=xsd:nonNegativeInteger" [PSI:MS]
+def: "scan=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion from mzXML, or DTA folder where native scan numbers can be derived.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000777
 name: spectrum identifier nativeID format
-def: "spectrum=xsd:nonNegativeInteger" [PSI:MS]
+def: "spectrum=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion from mzData. The spectrum id attribute is referenced.
 is_a: MS:1000767 ! native spectrum identifier format
 
@@ -5267,14 +5279,14 @@ relationship: has_units UO:0000269 ! absorbance unit
 [Term]
 id: MS:1000789
 name: enhanced multiply charged spectrum
-def: "MS1 spectrum that is enriched in multiply-charged ions compared to singly-charged ions" [PSI:MS]
+def: "MS1 spectrum that is enriched in multiply-charged ions compared to singly-charged ions." [PSI:MS]
 is_a: MS:1000524 ! data file content
 is_a: MS:1000579 ! MS1 spectrum
 
 [Term]
 id: MS:1000790
 name: time-delayed fragmentation spectrum
-def: "MSn spectrum in which the product ions are collected after a time delay, which allows the observation of lower energy fragmentation processes after precursor ion activation" [PSI:MS]
+def: "MSn spectrum in which the product ions are collected after a time delay, which allows the observation of lower energy fragmentation processes after precursor ion activation." [PSI:MS]
 is_a: MS:1000524 ! data file content
 is_a: MS:1000580 ! MSn spectrum
 
@@ -5603,27 +5615,28 @@ relationship: has_units UO:0000175 ! gram per liter
 
 [Term]
 id: MS:1000836
-name: dried dropplet
-def: "Def." [PSI:MS]
+name: dried droplet MALDI matrix preparation
+def: "Dried droplet in MALDI matrix preparation." [PSI:MS]
 is_a: MS:1000833 ! matrix application type
 
 [Term]
 id: MS:1000837
-name: printed
-def: "Def." [PSI:MS]
+name: printed MALDI matrix preparation
+def: "Printed MALDI matrix preparation." [PSI:MS]
 is_a: MS:1000833 ! matrix application type
 
 [Term]
 id: MS:1000838
-name: sprayed
-def: "Def." [PSI:MS]
+name: sprayed MALDI matrix preparation
+def: "Sprayed MALDI matrix preparation." [PSI:MS]
 is_a: MS:1000833 ! matrix application type
 
 [Term]
 id: MS:1000839
-name: precoated plate
-def: "Def." [PSI:MS]
+name: precoated MALDI sample plate
+def: "Precoated MALDI sample plate." [PSI:MS]
 is_a: MS:1000833 ! matrix application type
+is_a: MS:1001938 ! sample plate type
 
 [Term]
 id: MS:1000840
@@ -6882,7 +6895,7 @@ is_a: MS:1001105 ! peptide result details
 [Term]
 id: MS:1001114
 name: retention time(s)
-def: "Retention time of the spectrum from the source file" [PSI:PI]
+def: "Retention time of the spectrum from the source file." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
 is_a: MS:1001405 ! spectrum identification result details
@@ -7049,7 +7062,7 @@ is_a: MS:1001129 ! quantification information
 [Term]
 id: MS:1001140
 name: quantitation software version
-def: "OBSOLETE Quantitation software version" [PSI:PI]
+def: "OBSOLETE Quantitation software version." [PSI:PI]
 comment: This term was made obsolete because part of mzQuantML schema.
 is_a: MS:1001129 ! quantification information
 is_obsolete: true
@@ -7338,10 +7351,10 @@ is_a: MS:1001056 ! modification specificity rule
 id: MS:1001191
 name: p-value
 def: "OBSOLETE Quality estimation by p-value." [PSI:PI]
-xref: value-type:xsd\:double "The allowed value-type for this CV term."
 comment: This term was made obsolete because now is split into peptide and protein terms
-is_a: MS:1001092 ! peptide quality estimation measure
-is_a: MS:1001198 ! protein quality estimation measure
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001092 ! peptide identification confidence metric
+is_a: MS:1001198 ! protein identification confidence metric
 is_obsolete: true
 
 [Term]
@@ -7931,6 +7944,8 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: MS:1001303
 name: Arg-C
+def: "Endoproteinase Arg-C." [PSI:PI]
+synonym: "Clostripain" EXACT []
 is_a: MS:1001045 ! cleavage agent name
 relationship: has_regexp MS:1001272 ! (?<=R)(?!P)
 
@@ -7955,6 +7970,7 @@ relationship: has_regexp MS:1001332 ! (?<=[FYWL])(?!P)
 [Term]
 id: MS:1001307
 name: CNBr
+def: "Cyanogen bromide." [PSI:PI]
 is_a: MS:1001045 ! cleavage agent name
 relationship: has_regexp MS:1001333 ! (?<=M)
 
@@ -8202,7 +8218,7 @@ is_a: MS:1001347 ! database file formats
 [Term]
 id: MS:1001349
 name: ASN.1
-def: "The sequence database was storen in the ASN.1 format." [PSI:PI]
+def: "The sequence database was stored in the ASN.1 format." [PSI:PI]
 is_a: MS:1001347 ! database file formats
 
 [Term]
@@ -8907,7 +8923,7 @@ is_a: MS:1001471 ! peptide modification details
 [Term]
 id: MS:1001461
 name: greylag
-def: "greylag identification software, wee greylag.org." [PSI:PI]
+def: "Greylag identification software, see greylag.org." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
@@ -9079,8 +9095,8 @@ is_a: MS:1001456 ! analysis software
 id: MS:1001488
 name: Mascot Distiller
 def: "Mascot Distiller." [PSI:PI]
-is_a: MS:1001456 ! analysis software
 is_a: MS:1001139 ! quantitation software name
+is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001489
@@ -9097,7 +9113,7 @@ is_a: MS:1001456 ! analysis software
 [Term]
 id: MS:1001491
 name: percolator:Q value
-def: "percolator:Q value." [PSI:PI]
+def: "Percolator:Q value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -9106,7 +9122,7 @@ is_a: MS:1001868 ! q-value for peptides
 [Term]
 id: MS:1001492
 name: percolator:score
-def: "percolator:score." [PSI:PI]
+def: "Percolator:score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -9344,7 +9360,7 @@ relationship: has_units UO:0000221 ! dalton
 [Term]
 id: MS:1001526
 name: spectrum from database nativeID format
-def: "databasekey=xsd:Long" [PSI:MS]
+def: "databasekey=xsd:Long." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
 
@@ -9357,7 +9373,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1001528
 name: Mascot query number
-def: "query=xsd:nonNegativeInteger" [PSI:MS]
+def: "query=xsd:nonNegativeInteger." [PSI:MS]
 comment: The spectrum (query) number in a Mascot results file, starting from 1.
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001405 ! spectrum identification result details
@@ -9371,14 +9387,14 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: MS:1001530
 name: mzML unique identifier
-def: "mzMLid=xsd:IDREF" [PSI:MS]
-comment: A unique identifier of a spectrum stored in an mzML file
+def: "mzMLid=xsd:IDREF." [PSI:MS]
+comment: A unique identifier of a spectrum stored in an mzML file.
 is_a: MS:1001529 ! spectra data details
 
 [Term]
 id: MS:1001531
 name: spectrum from ProteinScape database nativeID format
-def: "databasekey=xsd:long" [PSI:MS]
+def: "databasekey=xsd:long." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a ProteinScape database.
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001529 ! spectra data details
@@ -9386,7 +9402,7 @@ is_a: MS:1001529 ! spectra data details
 [Term]
 id: MS:1001532
 name: spectrum from database nativeID format
-def: "databasekey=xsd:string" [PSI:MS]
+def: "databasekey=xsd:string." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001529 ! spectra data details
@@ -9414,13 +9430,13 @@ is_a: MS:1000122 ! Bruker Daltonics instrument model
 [Term]
 id: MS:1001537
 name: BioTOF
-def: "Bruker Daltonics' BioTOF: ESI TOF" [PSI:MS]
+def: "Bruker Daltonics' BioTOF: ESI TOF." [PSI:MS]
 is_a: MS:1001535 ! Bruker Daltonics BioTOF series
 
 [Term]
 id: MS:1001538
 name: BioTOF III
-def: "Bruker Daltonics' BioTOF III: ESI TOF" [PSI:MS]
+def: "Bruker Daltonics' BioTOF III: ESI TOF." [PSI:MS]
 is_a: MS:1001535 ! Bruker Daltonics BioTOF series
 
 [Term]
@@ -9836,7 +9852,7 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001603
 name: ProteomeDiscoverer:Spectrum Selector:Ionization Source
-def: "Ionization source (electro-, nano-, thermospray, electron impact, APCI, MALDI, FAB, ...)." [PSI:MS]
+def: "Ionization source (electro-, nano-, thermospray, electron impact, APCI, MALDI, FAB etc)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -10256,14 +10272,14 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001663
 name: ProteomeDiscoverer:Target FDR Relaxed
-def: "Specifies the relaxed target false discovery rate (FDR, 0.0 ... 1.0) for peptide hits with moderate confidence." [PSI:MS]
+def: "Specifies the relaxed target false discovery rate (FDR, 0.0 - 1.0) for peptide hits with moderate confidence." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001664
 name: ProteomeDiscoverer:Target FDR Strict
-def: "Specifies the strict target false discovery rate (FDR, 0.0 ... 1.0) for peptide hits with high confidence." [PSI:MS]
+def: "Specifies the strict target false discovery rate (FDR, 0.0 - 1.0) for peptide hits with high confidence." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -10522,7 +10538,7 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001701
 name: ProteomeDiscoverer:Spectrum Exporter:Export Format
-def: "Format of the exported spectra (*.dta, *.mgf or *.mzData.)" [PSI:MS]
+def: "Format of the exported spectra (*.dta, *.mgf or *.mzData)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -11170,10 +11186,10 @@ is_a: MS:1000531 ! software
 id: MS:1001799
 name: ChromaTOF software
 def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
-is_a: MS:1001798 ! LECO software
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
+is_a: MS:1001798 ! LECO software
 
 [Term]
 id: MS:1001800
@@ -11226,7 +11242,7 @@ is_a: MS:1001806 ! quantification object attribute
 [Term]
 id: MS:1001808
 name: technical replicate
-def: "The study variable is 'technical replicate'. The string value denotes the category of technical replicate, e.g. 'run generated from same sample'" [PSI:MS]
+def: "The study variable is 'technical replicate'. The string value denotes the category of technical replicate, e.g. 'run generated from same sample'." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001807 ! StudyVariable attribute
 
@@ -11362,13 +11378,13 @@ is_a: MS:1001828 ! Feature attribute
 [Term]
 id: MS:1001830
 name: Progenesis LC-MS
-def: "Software from Nonlinear Dynamics for LC-MS label-free workflow" [PSI:MS]
+def: "Software from Nonlinear Dynamics for LC-MS label-free workflow." [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
 
 [Term]
 id: MS:1001831
 name: SILACAnalyzer
-def: "Software for SILAC workflow" [PSI:MS]
+def: "Software for SILAC workflow." [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
 
 [Term]
@@ -11398,7 +11414,7 @@ is_a: MS:1001833 ! quantitation analysis summary
 [Term]
 id: MS:1001836
 name: spectral counting
-def: "Spectral counting workflow (number of identified MS/MS spectra as approximation of peptide / protein quant.)." [PSI:PI]
+def: "Spectral counting workflow (number of identified MS/MS spectra as approximation of peptide / protein quant)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
@@ -11638,7 +11654,7 @@ is_a: MS:1001198 ! protein identification confidence metric
 [Term]
 id: MS:1001874
 name: FDRScore
-def: "Quality measurement as defined in http://www.ncbi.nlm.nih.gov/pubmed/19253293." [PSI:PI]
+def: "Quality measurement score." [pubmed:http://www.ncbi.nlm.nih.gov/pubmed/19253293 ""]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
 
@@ -11658,19 +11674,19 @@ is_a: MS:1001056 ! modification specificity rule
 id: MS:1001877
 name: ChromaTOF HRT software
 def: "Software for acquisition, processing and analysis of data for LECO instruments." [PSI:MS]
-is_a: MS:1001798 ! LECO software
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
+is_a: MS:1001798 ! LECO software
 
 [Term]
 id: MS:1001878
 name: MALDI Solutions Microbial Identification
 def: "Shimadzu Biotech software for data acquisition, processing, and analysis." [PSI:MS]
-is_a: MS:1001558 ! MALDI Solutions
 is_a: MS:1001455 ! acquisition software
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
+is_a: MS:1001558 ! MALDI Solutions
 
 [Term]
 id: MS:1001879
@@ -11683,7 +11699,7 @@ relationship: has_units UO:0000218 ! volt
 id: MS:1001880
 name: in-source collision-induced dissociation
 def: "The dissociation of an ion as a result of collisional excitation during ion transfer from an atmospheric pressure ion source and the mass spectrometer vacuum." [PSI:MS]
-is_a:  MS:1000044 ! dissociation method
+is_a: MS:1000044 ! dissociation method
 
 [Term]
 id: MS:1001881
@@ -11702,14 +11718,14 @@ id: MS:1001883
 name: coefficient of variation
 def: "Variation of a set of signal measurements calculated as the standard deviation relative to the mean." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1001881 ! transition validation attribute
+is_a: MS:1001881 ! mz5 file
 
 [Term]
 id: MS:1001884
 name: signal-to-noise ratio
 def: "Unitless number providing the ratio of the total measured intensity of a signal relative to the estimated noise level for that signal." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1001881 ! transition validation attribute
+is_a: MS:1001881 ! mz5 file
 
 [Term]
 id: MS:1001885
@@ -11761,7 +11777,7 @@ is_a: MS:1001805 ! quantification datatype
 [Term]
 id: MS:1001892
 name: Progenesis:protein raw abundance
-def: "The data type raw abundance for proteins produced by Progenesis LC-MS."  [PSI:MS]
+def: "The data type raw abundance for proteins produced by Progenesis LC-MS." [PSI:MS]
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
@@ -11897,16 +11913,213 @@ xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
 relationship: has_units UO:0000218 ! volt
 
-[Typedef]
-id: has_regexp
-name: has regexp
+[Term]
+id: MS:1001914
+name: pymzML
+def: "Python module to interface mzML Data." [PSI:MS]
+is_a: MS:1001457 ! data processing software
 
-[Typedef]
-id: has_units
-name: has_units
+[Term]
+id: MS:1001915
+name: leukocyte elastase
+def: "Enzyme leukocyte elastase (EC 3.4.21.37)." [http://www.brenda-enzymes.info/php/result_flat.php4?ecno=3.4.21.37 "BRENDA"]
+is_a: MS:1001045 ! cleavage agent name
+relationship: has_regexp MS:1001176 ! (?<=[ALIV])(?!P)
 
-[Typedef]
-id: part_of
-name: part_of
-is_transitive: true
+[Term]
+id: MS:1001916
+name: proline endopeptidase
+def: "Enzyme proline endopeptidase (EC 3.4.21.26)." [http://www.brenda-enzymes.info/php/result_flat.php4?ecno=3.4.21.26 "BRENDA"]
+is_a: MS:1001045 ! cleavage agent name
+relationship: has_regexp MS:1001176 ! (?<=[HKR]P)(?!P)
 
+[Term]
+id: MS:1001917
+name: glutamyl endopeptidase
+def: "Enzyme glutamyl endopeptidase (EC 3.4.21.19)." [http://www.brenda-enzymes.info/php/result_flat.php4?ecno=3.4.21.19 "BRENDA"]
+synonym: "staphylococcal protease" EXACT []
+synonym: "Glu-C" EXACT []
+is_a: MS:1001045 ! cleavage agent name
+relationship: has_regexp MS:1001176 ! (?<=[^E]E)
+
+[Term]
+id: MS:1001918
+name: 2-iodobenzoate
+def: "Chemical iodobenzoate. Cleaves after W." [http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=search&db=pccompound&term=4739928 "PubChem"]
+is_a: MS:1001045 ! cleavage agent name
+relationship: has_regexp MS:1001176 ! (?<=W)
+
+[Term]
+id: MS:1001919
+name: ProteomeXchange accession number
+def: "Main identifier of a ProteomeXchange dataset." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001921
+name: ProteomeXchange accession number version number
+def: "Version number of a ProteomeXchange accession number." [PSI:PI]
+xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001922
+name: Digital Object Identifier (DOI)
+def: "DOI unique identifier." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+relationship: has_regexp MS:1001176 ! (10\.(\d)+(\.(\d)*)?/[^\*].+)
+
+[Term]
+id: MS:1001923
+name: external reference keyword
+def: "Free text attribute that can enrich the information about an entity." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001924
+name: journal article keyword
+def: "Keyword present in a scientific publication." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001923 ! external reference keyword
+
+[Term]
+id: MS:1001925
+name: submitter keyword
+def: "Keyword assigned by the data submitter." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001923 ! external reference keyword
+
+[Term]
+id: MS:1001926
+name: curator keyword
+def: "Keyword assigned by a data curator." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001923 ! external reference keyword
+
+[Term]
+id: MS:1001927
+name: Tranche file hash
+def: "Hash assigned by the Tranche resource to an individual file." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001928
+name: Tranche project hash
+def: "Hash assigned by the Tranche resource to a whole project." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001929
+name: PRIDE experiment URI
+def: "URI that allows the access to one experiment in the PRIDE database." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001930
+name: PRIDE project URI
+def: "URI that allows the access to one project in the PRIDE database." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1001931
+name: source interface
+def: "The source interface." [PSI:MS]
+relationship: part_of MS:1000458 ! source
+
+[Term]
+id: MS:1001932
+name: source interface model
+def: "The source interface model." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001931 ! source interface
+
+[Term]
+id: MS:1001933
+name: source sprayer
+def: "The source sprayer." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1000458 ! source
+
+[Term]
+id: MS:1001934
+name: source sprayer type
+def: "The source sprayer type." [PSI:MS]
+relationship: part_of MS:1001933 ! source sprayer
+
+[Term]
+id: MS:1001935
+name: source sprayer manufacturer
+def: "The source sprayer manufacturer." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001933 ! source sprayer
+
+[Term]
+id: MS:1001936
+name: source sprayer model
+def: "The source sprayer model." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001933 ! source sprayer
+
+[Term]
+id: MS:1001937
+name: sample plate
+def: "Plate where the sample solution is spotted in a MALDI or similar instrument." [PSI:MS]
+relationship: part_of MS:1000458 ! source
+
+[Term]
+id: MS:1001938
+name: sample plate type
+def: "The sample plate type." [PSI:MS]
+relationship: part_of MS:1001937 ! sample plate
+
+[Term]
+id: MS:1001939
+name: stainless steel plate
+def: "Stainless steel plate." [PSI:MS]
+is_a: MS:1001938 ! sample plate type
+
+[Term]
+id: MS:1001940
+name: coated glass plate
+def: "Coated glass plate." [PSI:MS]
+is_a: MS:1001938 ! sample plate type
+
+[Term]
+id: MS:1001941
+name: electrospray supply type
+def: "Whether the sprayer is fed or is loaded with sample once." [PSI:MS]
+relationship: part_of MS:1000458 ! source
+
+[Term]
+id: MS:1001942
+name: static supply electrospray
+def: "The sprayer is loaded with sample once." [PSI:MS]
+is_a: MS:1001941 ! electrospray supply type
+
+[Term]
+id: MS:1001943
+name: fed supply electrospray
+def: "The sprayer is continuously fed with sample." [PSI:MS]
+is_a: MS:1001941 ! electrospray supply type
+
+[Term]
+id: MS:1001944
+name: Collision cell exit potential
+def: "Potential difference between Q2 and Q3 in a triple quadrupole instrument in volts." [PSI:MS]	
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000510 ! precursor activation attribute
+relationship: has_units UO:0000218 ! volt
+synonym: "CXP" EXACT []
+
+[Term]
+id: MS:1001945
+name: Pegasus 4D
+def: "LECO nominal mass resolution time-of-flight GCxGC mass spectrometer." [PSI:MS]
+is_a: MS:1001800 ! LECO instrument model
