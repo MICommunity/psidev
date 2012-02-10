@@ -33,7 +33,6 @@ To save only the MS terms from OBO-Edit:
 13) Once the new obo file is generated, delete the complete header (everything before the first [Term])
     and paste the Header Template (below) with the correct information instead of the XXXXXX
 
-
 Notes on versioning of the CV:
 -------------------------------
 Versions of the CV will be revioned: x.y.z
@@ -46,14 +45,14 @@ HEADER TEMPLATE FOR COPY-PASTE (Change the XXXXXX values!)
 -----------------------------------------------------------
 format-version: 1.2
 data-version: X.XX.X
-date: XX:XX:XXXX XX:XX
+date: DD:MM:YYYY HH:MM
 saved-by: XXXXXXXXX
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
 remark: version: X.XX.X
-remark: release date: XXXX-XX-X
+remark: release date: YYYY-MM-DD
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>

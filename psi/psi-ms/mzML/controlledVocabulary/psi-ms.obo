@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.17.0
-date: 02:02:2012 11:52
+data-version: 3.18.0
+date: 10:02:2012 17:09
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.17.0
-remark: release date: 2012-02-02
+remark: version: 3.18.0
+remark: release date: 2012-02-10
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6751,6 +6751,8 @@ replaced_by: MS:1001470
 id: MS:1001091
 name: NoEnzyme
 is_a: MS:1001045 ! cleavage agent name
+comment: This term was made obsolete because it is ambiguous and is replaced by NoCleavage (MS:1001955) and unspecific cleavage (MS:1001956).
+is_obsolete: true
 
 [Term]
 id: MS:1001092
@@ -9359,8 +9361,8 @@ relationship: has_units UO:0000221 ! dalton
 
 [Term]
 id: MS:1001526
-name: spectrum from database nativeID format
-def: "databasekey=xsd:Long." [PSI:MS]
+name: spectrum from database integer nativeID format
+def: "databasekey=xsd:long." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
 
@@ -9401,7 +9403,7 @@ is_a: MS:1001529 ! spectra data details
 
 [Term]
 id: MS:1001532
-name: spectrum from database nativeID format
+name: spectrum from database string nativeID format
 def: "databasekey=xsd:string." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
@@ -11401,37 +11403,37 @@ is_a: MS:1001129 ! quantification information
 
 [Term]
 id: MS:1001834
-name: LC-MS label-free
+name: LC-MS label-free quantitation analysis
 def: "LC-MS label-free workflow (RT m/z map)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
 id: MS:1001835
-name: SILAC
+name: SILAC quantitation analysis
 def: "SILAC workflow (heavy, light, and sometimes medium peak)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
 id: MS:1001836
-name: spectral counting
+name: spectral counting quantitation analysis
 def: "Spectral counting workflow (number of identified MS/MS spectra as approximation of peptide / protein quant)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
 id: MS:1001837
-name: iTraq
+name: iTraq quantitation analysis
 def: "iTraq workflow (reporter ions on MS/MS level)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
 id: MS:1001838
-name: SRM
+name: SRM quantitation analysis
 def: "Selected Reaction Monitoring workflow (XIC quant. of precursor / fragment mass pair)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
 id: MS:1001839
-name: metabolic labeling 14N / 15N
+name: metabolic labeling 14N / 15N quantitation analysis
 def: "Metabolic labeling workflow (heavy and light versions of peptides, depending on number of nitrogens)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
@@ -11924,14 +11926,14 @@ id: MS:1001915
 name: leukocyte elastase
 def: "Enzyme leukocyte elastase (EC 3.4.21.37)." [http://www.brenda-enzymes.info/php/result_flat.php4?ecno=3.4.21.37 "BRENDA"]
 is_a: MS:1001045 ! cleavage agent name
-relationship: has_regexp MS:1001176 ! (?<=[ALIV])(?!P)
+relationship: has_regexp MS:1001957 ! (?<=[ALIV])(?!P)
 
 [Term]
 id: MS:1001916
 name: proline endopeptidase
 def: "Enzyme proline endopeptidase (EC 3.4.21.26)." [http://www.brenda-enzymes.info/php/result_flat.php4?ecno=3.4.21.26 "BRENDA"]
 is_a: MS:1001045 ! cleavage agent name
-relationship: has_regexp MS:1001176 ! (?<=[HKR]P)(?!P)
+relationship: has_regexp MS:1001958 ! (?<=[HKR]P)(?!P)
 
 [Term]
 id: MS:1001917
@@ -11940,14 +11942,14 @@ def: "Enzyme glutamyl endopeptidase (EC 3.4.21.19)." [http://www.brenda-enzymes.
 synonym: "staphylococcal protease" EXACT []
 synonym: "Glu-C" EXACT []
 is_a: MS:1001045 ! cleavage agent name
-relationship: has_regexp MS:1001176 ! (?<=[^E]E)
+relationship: has_regexp MS:1001959 ! (?<=[^E]E)
 
 [Term]
 id: MS:1001918
 name: 2-iodobenzoate
 def: "Chemical iodobenzoate. Cleaves after W." [http://www.ncbi.nlm.nih.gov/sites/entrez?cmd=search&db=pccompound&term=4739928 "PubChem"]
 is_a: MS:1001045 ! cleavage agent name
-relationship: has_regexp MS:1001176 ! (?<=W)
+relationship: has_regexp MS:1001960 ! (?<=W)
 
 [Term]
 id: MS:1001919
@@ -12123,3 +12125,102 @@ id: MS:1001945
 name: Pegasus 4D
 def: "LECO nominal mass resolution time-of-flight GCxGC mass spectrometer." [PSI:MS]
 is_a: MS:1001800 ! LECO instrument model
+
+[Term]
+id: MS:1001946
+name: PEAKS Studio
+def: "PEAKS Studio software for data analysis." [PSI:MS]
+is_a: MS:1001139 ! quantitation software name
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001947
+name: PEAKS Online
+def: "PEAKS Online software for high throughput data analysis." [PSI:MS]
+is_a: MS:1001139 ! quantitation software name
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001948
+def: "PEAKS Node software for high throughput data analysis." [PSI:MS]
+is_a: MS:1001139 ! quantitation software name
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1001949
+name: BSI software
+def: "Bioinformatics Solutions Inc. Software for data processing and analysis." [PSI:MS]
+is_a: MS:1000531 ! software
+
+[Term]
+id: MS:1001950
+name: PEAKS:peptideScore
+def: "The PEAKS peptide '-10lgP Score'." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001951
+name: PEAKS:proteinScore
+def: "The PEAKS protein '-10lgP Score'." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001116 ! single protein result details
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001952
+name: ZCore:probScore
+def: "The ZCore probability score." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1001953
+name: source interface manufacturer
+def: "The source interface manufacturer." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001931 ! source interface
+
+[Term]
+id: MS:1001954
+name: acquisition parameter
+def: "Parameters used in the mass spectrometry acquisition." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001458 ! spectrum generation information
+
+[Term]
+id: MS:1001955
+name: no cleavage
+def: "No cleavage." [PSI:MS]
+is_a: MS:1001045 ! cleavage agent name
+
+[Term]
+id: MS:1001956
+name: unspecific cleavage
+def: "Unspecific cleavage." [PSI:MS]
+is_a: MS:1001045 ! cleavage agent name
+
+[Term]
+id: MS:1001957
+name: (?<=[ALIV])(?!P)
+is_a: MS:1001180 ! Cleavage agent regular expression
+
+[Term]
+id: MS:1001958
+name: (?<=[HKR]P)(?!P)
+is_a: MS:1001180 ! Cleavage agent regular expression
+
+[Term]
+id: MS:1001959
+name: (?<=[^E]E)
+is_a: MS:1001180 ! Cleavage agent regular expression
+
+[Term]
+id: MS:1001960
+name: (?<=W)
+is_a: MS:1001180 ! Cleavage agent regular expression
