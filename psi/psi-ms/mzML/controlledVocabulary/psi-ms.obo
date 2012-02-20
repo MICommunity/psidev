@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.18.0
-date: 10:02:2012 17:09
+data-version: 3.19.0
+date: 20:02:2012 09:25
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.18.0
-remark: release date: 2012-02-10
+remark: version: 3.19.0
+remark: release date: 2012-02-20
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6621,8 +6621,11 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1001065
 name: TODOscoring model
-def: "DELETE. There is Phenyx:ScoringModel for Phenyx! Scoring model (more detailed granularity). TODO: add some child terms!" [PSI:PI]
+def: "OBSOLETE: There is Phenyx:ScoringModel for Phenyx! Scoring model (more detailed granularity). TODO: add some child terms!" [PSI:PI]
+comment: This term was made obsolete and is replaced by the term (MS:1001961).
 is_a: MS:1001249 ! search input details
+is_obsolete: true
+replaced_by: MS:1001961
 
 [Term]
 id: MS:1001066
@@ -10224,8 +10227,8 @@ is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001656
-name: ProteomeDiscoverer:Mascot:Instrument
-def: "Type of instrument used to acquire the data in the .raw file." [PSI:MS]
+name: Mascot:Instrument
+def: "Type of instrument used to acquire the data in the raw file." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -12224,3 +12227,17 @@ is_a: MS:1001180 ! Cleavage agent regular expression
 id: MS:1001960
 name: (?<=W)
 is_a: MS:1001180 ! Cleavage agent regular expression
+
+[Term]
+id: MS:1001961
+name: peptide spectrum match scoring algorithm
+def: "Algorithm used to score the match between a spectrum and a peptide ion." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+relationship: part_of MS:1001458 ! spectrum generation information
+
+[Term]
+id: MS:1001962
+name: Mascot:C13 counts
+def: "C13 peaks to use in peak detection." [PSI:MS]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
