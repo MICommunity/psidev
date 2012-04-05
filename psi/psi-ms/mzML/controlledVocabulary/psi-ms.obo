@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.21.0
-date: 30:03:2012 15:57
+data-version: 3.22.0
+date: 05:04:2012 14:38
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.21.0
-remark: release date: 2012-03-30
+remark: version: 3.22.0
+remark: release date: 2012-04-05
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -12423,3 +12423,88 @@ id: MS:1001986
 name: H-Score
 def: "H-Score for peptide phosphorylation site location." [DOI:10.1021/pr1006813, PMID:20836569]
 is_a: MS:1001968 ! PTM localization score
+
+[Term]
+id: MS:1001987
+name: vacuum drying MALDI sample preparation
+def: "Vacuum-drying MALDI sample preparation crystallization method." [PSI:MS]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001988
+name: crushed crystal MALDI sample preparation
+def: "Crushed-crystal MALDI sample preparation method." [PSI:MS]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001989
+name: fast evaporation MALDI sample preparation
+def: "Fast-evaporation MALDI sample preparation method." [DOI:10.1021/ac00091a044]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001990
+name: overlayer MALDI sample preparation
+def: "Overlayer method combining features of the crushed-crystal method and the fast-evaporation method." [PSI:MS]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001991
+name: sandwich MALDI sample preparation
+def: "Sandwich MALDI sample preparation method." [DOI:10.1002/(SICI)1096-9888(199706)32:6<593::AID-JMS511>3.3.CO;2-4]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001992
+name: spin coating MALDI sample preparation
+def: "Spin coating MALDI sample preparation method." [DOI:10.1021/cc0500710, PMID:16283807]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001993
+name: quick and dirty MALDI sample preparation
+def: "Quick & dirty (Q&D) sample preparation separating matrix handling from sample handling." [PSI:MS]
+is_a: MS:1000833 ! matrix application type
+
+[Term]
+id: MS:1001994
+name: top hat baseline reduction
+def: "Top-hat morphological filter based on the basic morphological operations 'erosion' and 'dilatation'." [PSI:MS]
+is_a: MS:1000593 ! baseline reduction
+
+[Term]
+id: MS:1001995
+name: convex hull baseline reduction
+def: "Constructs the baseline by fitting multiple parabolas to the spectrum starting with the large scale structures." [PSI:MS]
+is_a: MS:1000593 ! baseline reduction
+
+[Term]
+id: MS:1001996
+name: median baseline reduction
+def: "The spectrum that will be baseline subtracted is divided into a number of segments." [PSI:MS]
+is_a: MS:1000593 ! baseline reduction
+
+[Term]
+id: MS:1001997
+name: wavelet transformation smoothing
+def: "The random noise is removed by using the undecimated wavelet transform." [DOI:10.1093/bioinformatics/btl355, PMID:16820428]
+is_a: MS:1000592 ! smoothing
+
+[Term]
+id: MS:1001998
+name: sophisticated numerical annotation procedure
+def: "It searches for known patterns in the measured spectrum." [DOI:10.1021/ac951158i, PMID:21619291]
+synonym: "SNAP" EXACT []
+is_a: MS:1000801 ! area peak picking
+
+[Term]
+id: MS:1001999
+name: area normalization
+def: "Normalization of areas below the curves." [PSI:MS]
+is_a: MS:1001484 ! intensity normalization
+
+[Term]
+id: MS:1002000
+name: LIFT
+def: "A Bruker's proprietary technique where molecular ions are initially accelerated at lower energy, then collide with inert gas in a collision cell that is then 'lifted' to high potential. The use of inert gas is optional, as it could lift also fragments provided by LID." [DOI:10.1007/s00216-003-2057-0 , PMID:12830354]
+is_a: MS:1000044 ! dissociation method
