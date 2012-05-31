@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.27.0
-date: 29:05:2012 17:19
+data-version: 3.28.0
+date: 31:05:2012 18:10
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.27.0
-remark: release date: 2012-05-29
+remark: version: 3.28.0
+remark: release date: 2012-05-31
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9139,7 +9139,7 @@ is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001493
-name: percolaror:PEP
+name: percolator:PEP
 def: "Posterior error probability." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
@@ -11782,14 +11782,14 @@ id: MS:1001883
 name: coefficient of variation
 def: "Variation of a set of signal measurements calculated as the standard deviation relative to the mean." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1001881 ! mz5 file
+is_a: MS:1001882 ! transition validation attribute
 
 [Term]
 id: MS:1001884
 name: signal-to-noise ratio
 def: "Unitless number providing the ratio of the total measured intensity of a signal relative to the estimated noise level for that signal." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1001881 ! mz5 file
+is_a: MS:1001882 ! transition validation attribute
 
 [Term]
 id: MS:1001885
@@ -12206,6 +12206,7 @@ is_a: MS:1001457 ! data processing software
 
 [Term]
 id: MS:1001948
+name: PEAKS Node
 def: "PEAKS Node software for high throughput data analysis." [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
 is_a: MS:1001456 ! analysis software
@@ -12804,3 +12805,45 @@ id: MS:1002037
 name: dataset submitter
 def: "A person who submits a dataset to a repository." [PSI:MS]
 is_a: MS:1002033 ! contact role
+
+[Term]
+id: MS:1002038
+name: unlabeled sample
+def: "A sample that has not been labelled or modified. This is often referred to as \"light\" to distinguish from \"heavy\"." [PSI:PI]
+synonym: "light labeled sample" EXACT []
+is_a: MS:1002018 ! MS1 label-based analysis
+
+[Term]
+id: MS:1002039
+name: inlet attribute
+def: "Inlet properties that are associated with a value." [PSI:MS]
+is_a: MS:1000547 ! object attribute
+relationship: part_of MS:1000458 ! source
+
+[Term]
+id: MS:1002040
+name: inlet temperature
+def: "The temperature of the inlet of a mass spectrometer." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+is_a: MS:1002039 ! inlet attribute
+relationship: has_units UO:0000012 ! kelvin
+relationship: has_units UO:0000027 ! degree celsius
+
+[Term]
+id: MS:1002041
+name: source temperature
+def: "The temperature of the source of a mass spectrometer." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000482 ! source attribute
+relationship: has_units UO:0000012 ! kelvin
+relationship: has_units UO:0000027 ! degree celsius
+
+[Term]
+id: MS:1002042
+name: modulation time
+def: "The duration of a complete cycle of modulation in a comprehensive two-dimensional separation system, equals the length of a second dimension chromatogram, i.e., the time between two successive injections into the second column." [http://chromatographyonline.findanalytichem.com/lcgc/Column:+Coupling+Matters/Nomenclature-and-Conventions-in-Comprehensive-Mult/ArticleStandard/Article/detail/58429 ""]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000857 ! run attribute
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
