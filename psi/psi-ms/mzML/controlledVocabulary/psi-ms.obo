@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.28.0
-date: 31:05:2012 18:10
+data-version: 3.29.0
+date: 02:07:2012 18:04
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.1
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.28.0
-remark: release date: 2012-05-31
+remark: version: 3.29.0
+remark: release date: 2012-07-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6817,7 +6817,7 @@ is_a: MS:1001116 ! single protein result details
 
 [Term]
 id: MS:1001100
-name: confident peptide
+name: confident peptide sequence number
 def: "This counts the number of peptide sequences without regard to whether they are distinct. Multiple charges states and multiple modification states DO count as multiple peptides. The definition of 'confident' must be qualified elsewhere." [PSI:PI]
 xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
@@ -9698,6 +9698,7 @@ name: Scaffold:Protein Probability
 def: "Scaffold protein probability score." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
+is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001580
@@ -12811,7 +12812,7 @@ id: MS:1002038
 name: unlabeled sample
 def: "A sample that has not been labelled or modified. This is often referred to as \"light\" to distinguish from \"heavy\"." [PSI:PI]
 synonym: "light labeled sample" EXACT []
-is_a: MS:1002018 ! MS1 label-based analysis
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1002039
@@ -12828,7 +12829,7 @@ xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
 is_a: MS:1002039 ! inlet attribute
 relationship: has_units UO:0000012 ! kelvin
-relationship: has_units UO:0000027 ! degree celsius
+relationship: has_units UO:0000027 ! degree Celsius
 
 [Term]
 id: MS:1002041
@@ -12837,7 +12838,7 @@ def: "The temperature of the source of a mass spectrometer." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000482 ! source attribute
 relationship: has_units UO:0000012 ! kelvin
-relationship: has_units UO:0000027 ! degree celsius
+relationship: has_units UO:0000027 ! degree Celsius
 
 [Term]
 id: MS:1002042
@@ -12847,3 +12848,31 @@ xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000857 ! run attribute
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1002043
+name: ProteinProspector
+def: "ProteinProspector software for data acquisition and analysis." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002044
+name: ProteinProspector:score
+def: "The ProteinProspector result 'Score'." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002045
+name: ProteinProspector:expectation value
+def: "The ProteinProspector result 'Expectation value'." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for peptides
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002046
+name: native source path
+def: "The original source path used for directory-based sources." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
