@@ -1,13 +1,13 @@
 format-version: 1.2
-data-version: 3.30.0
-date: 06:08:2012 08:01
+data-version: 3.31.0
+date: 30:08:2012 10:50
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.2
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.30.0
-remark: release date: 2012-08-06
+remark: version: 3.31.0
+remark: release date: 2012-08-30
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -7347,14 +7347,14 @@ is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1001189
-name: modification specificity N-term
-def: "As parameter for search engine: apply the modification only N-terminal." [PSI:PI]
+name: modification specificity peptide N-term
+def: "As parameter for search engine: apply the modification only at the N-terminus of a peptide." [PSI:PI]
 is_a: MS:1001056 ! modification specificity rule
 
 [Term]
 id: MS:1001190
-name: modification specificity C-term
-def: "As parameter for search engine: apply the modification only C-terminal." [PSI:PI]
+name: modification specificity peptide C-term
+def: "As parameter for search engine: apply the modification only at the C-terminus of a peptide." [PSI:PI]
 is_a: MS:1001056 ! modification specificity rule
 
 [Term]
@@ -12881,12 +12881,13 @@ is_a: MS:1001458 ! spectrum generation information
 [Term]
 id: MS:1002047
 name: MS-GF
-def: "MS-GF software used to re-score the peptide-spectrum matches." [DOI:10.1021/pr8001244, PMID:18597511]
+def: "MS-GF software used to re-score the peptide-spectrum matches." [DOI:10.1074/mcp.M110.003731, PMID:20829449]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1002048
 name: MS-GF+
+synonym: "MS-GFDB" EXACT []
 def: "MS-GF+ software used to analyze the spectra." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
@@ -12956,3 +12957,15 @@ def: "MS-GF posterior error probability." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002057
+name: modification specificity protein N-term
+def: "As parameter for search engine: apply the modification only at the N-terminus of a protein." [PSI:PI]
+is_a: MS:1001056 ! modification specificity rule
+
+[Term]
+id: MS:1002058
+name: modification specificity protein C-term
+def: "As parameter for search engine: apply the modification only at the C-terminus of a protein." [PSI:PI]
+is_a: MS:1001056 ! modification specificity rule
