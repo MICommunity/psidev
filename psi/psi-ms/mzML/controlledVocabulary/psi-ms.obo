@@ -1,13 +1,14 @@
 format-version: 1.2
-data-version: 3.31.0
-date: 30:08:2012 10:50
+data-version: 3.32.0
+date: 04:09:2012 14:11
 saved-by: Gerhard Mayer
-auto-generated-by: OBO-Edit 2.2
+auto-generated-by: OBO-Edit 2.3
+import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.31.0
-remark: release date: 2012-08-30
+remark: version: 3.32.0
+remark: release date: 2012-09-04
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -17,6 +18,8 @@ remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
+ontology: pato
+ontology: uo
 
 [Typedef]
 id: has_regexp
@@ -95,7 +98,7 @@ relationship: part_of MS:1000458 ! source
 id: MS:1000009
 name: ionization mode
 def: "OBSOLETE Whether positive or negative ions are selected for analysis by the spectrometer." [PSI:MS]
-comment: This term was made obsolete because it was replaced by scan polarity (MS:1000465)
+comment: This term was made obsolete because it was replaced by scan polarity (MS:1000465).
 is_obsolete: true
 
 [Term]
@@ -245,7 +248,7 @@ relationship: has_units UO:0000106 ! hertz
 id: MS:1000030
 name: vendor
 def: "OBSOLETE Name of instrument vendor." [PSI:MS]
-comment: This term was made obsolete because it was replaced by instrument model (MS:1000031)
+comment: This term was made obsolete because it was replaced by instrument model (MS:1000031).
 is_obsolete: true
 
 [Term]
@@ -283,7 +286,7 @@ is_a: MS:1000543 ! data processing action
 id: MS:1000036
 name: scan mode
 def: "OBSOLETE." [PSI:MS]
-comment: This term was made obsolete because...just because.
+comment: This term was made obsolete because ... just because.
 is_obsolete: true
 
 [Term]
@@ -296,14 +299,14 @@ relationship: part_of MS:1000459 ! spectrum instrument description
 id: MS:1000038
 name: minute
 def: "OBSOLETE Acquisition time in minutes." [PSI:MS]
-comment: This term was made obsolete because it was replaced by scan time (MS:1000016)
+comment: This term was made obsolete because it was replaced by scan time (MS:1000016).
 is_obsolete: true
 
 [Term]
 id: MS:1000039
 name: second
 def: "OBSOLETE Acquisition time in seconds." [PSI:MS]
-comment: This term was made obsolete because it was replaced by scan time (MS:1000016)
+comment: This term was made obsolete because it was replaced by scan time (MS:1000016).
 is_obsolete: true
 
 [Term]
@@ -361,7 +364,7 @@ relationship: has_units UO:0000266 ! electronvolt
 id: MS:1000046
 name: energy unit
 def: "OBSOLETE Energy units are represented in either eV or Joules." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology energy unit (UO:0000111)
+comment: This term was made obsolete because it was redundant with the Unit Ontology energy unit (UO:0000111).
 is_a: MS:1000460 ! unit
 is_obsolete: true
 
@@ -522,8 +525,8 @@ is_a: MS:1000008 ! ionization type
 [Term]
 id: MS:1000072
 name: Electronic Ionization
-def: "OBSOLETE The ionization of an atom or molecule by electrons that are typically accelerated to energies between 50 and 150 eV. Usually 70 eV electrons are used to produce positive ions. The term 'electron impact' is not recommended. " [PSI:MS]
-comment: This term was made obsolete because it was replaced by electron ionization (MS:1000389)
+def: "OBSOLETE The ionization of an atom or molecule by electrons that are typically accelerated to energies between 50 and 150 eV. Usually 70 eV electrons are used to produce positive ions. The term 'electron impact' is not recommended." [PSI:MS]
+comment: This term was made obsolete because it was replaced by electron ionization (MS:1000389).
 synonym: "EI" EXACT []
 is_obsolete: true
 
@@ -552,14 +555,14 @@ is_a: MS:1000247 ! desorption ionization
 id: MS:1000076
 name: negative ion mode
 def: "OBSOLETE." [PSI:MS]
-comment: This term was made obsolete because it was replaced by negative scan (MS:1000129)
+comment: This term was made obsolete because it was replaced by negative scan (MS:1000129).
 is_obsolete: true
 
 [Term]
 id: MS:1000077
 name: positive ion mode
 def: "OBSOLETE." [PSI:MS]
-comment: This term was made obsolete because it was replaced by positive scan (MS:1000130)
+comment: This term was made obsolete because it was replaced by positive scan (MS:1000130).
 is_obsolete: true
 
 [Term]
@@ -698,7 +701,7 @@ is_a: MS:1000479 ! purgatory
 id: MS:1000099
 name: multiple reaction monitoring
 def: "OBSOLETE This term is not recommended. See Selected Reaction Monitoring." [PSI:MS]
-comment: This term was made obsolete because it was merged with selected reaction monitoring (MS:1000206)
+comment: This term was made obsolete because it was merged with selected reaction monitoring (MS:1000206).
 synonym: "MRM" EXACT []
 is_obsolete: true
 
@@ -718,21 +721,21 @@ is_a: MS:1000479 ! purgatory
 id: MS:1000102
 name: single ion monitoring
 def: "OBSOLETE The operation of a mass spectrometer to monitor a single ion rather than scanning entire mass spectrum." [PSI:MS]
-comment: This term was made obsolete because it was replaced by single ion monitoring (MS:100205)
+comment: This term was made obsolete because it was replaced by single ion monitoring (MS:100205).
 is_obsolete: true
 
 [Term]
 id: MS:1000103
 name: single reaction monitoring
 def: "OBSOLETE This term is not recommended. See Selected Reaction Monitoring." [PSI:MS]
-comment: This term was made obsolete because it was replaced by selected reaction monitoring (MS:1000206)
+comment: This term was made obsolete because it was replaced by selected reaction monitoring (MS:1000206).
 is_obsolete: true
 
 [Term]
 id: MS:1000104
-name: None  ??
+name: None ??
 def: "OBSOLETE None." [PSI:MS]
-comment: This term was made obsolete because...just because.
+comment: This term was made obsolete because ... just because.
 is_obsolete: true
 
 [Term]
@@ -952,7 +955,7 @@ is_a: MS:1000044 ! dissociation method
 id: MS:1000137
 name: electron volt
 def: "OBSOLETE A non-SI unit of energy (eV) defined as the energy acquired by a particle containing one unit of charge through a potential difference of one volt. An electron-volt is equal to 1.602 176 53(14) x 10^-19 J." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology electron volt (UO:0000266)
+comment: This term was made obsolete because it was redundant with the Unit Ontology electron volt (UO:0000266).
 synonym: "eV" EXACT []
 is_obsolete: true
 
@@ -1422,7 +1425,7 @@ is_obsolete: true
 id: MS:1000212
 name: dalton
 def: "OBSOLETE A non-SI unit of mass (symbol Da) that is equal to the unified atomic mass unit: 1.660 538 86(28) x 10^-27 kg." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology dalton (UO:0000221)
+comment: This term was made obsolete because it was redundant with the Unit Ontology dalton (UO:0000221).
 synonym: "Da" EXACT []
 is_obsolete: true
 
@@ -1465,7 +1468,7 @@ is_a: MS:1000437 ! ion reaction
 id: MS:1000218
 name: ionization efficiency
 def: "OBSOLETE The ratio of the number of ions formed to the number of electrons, molecules or photons used." [PSI:MS]
-comment: This term was made obsolete because it was replaced by ionization efficiency (MS:1000392)
+comment: This term was made obsolete because it was replaced by ionization efficiency (MS:1000392).
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_obsolete: true
 
@@ -1566,7 +1569,7 @@ relationship: part_of MS:1000442 ! spectrum
 id: MS:1000232
 name: peak intensity
 def: "OBSOLETE The height or area of a peak in a mass spectrum." [PSI:MS]
-comment: This term was made obsolete because it was replaced by base peak intensity (MS:1000505)
+comment: This term was made obsolete because it was replaced by base peak intensity (MS:1000505).
 is_obsolete: true
 
 [Term]
@@ -1581,7 +1584,7 @@ is_a: MS:1000507 ! ion attribute
 id: MS:1000234
 name: mass resolving power
 def: "OBSOLETE In a mass spectrum, the observed mass divided by the difference between two masses that can be separated. The method by which delta m was obtained and the mass at which the measurement was made should be reported." [PSI:MS]
-comment: This term was made obsolete because it was replaced by mass resolving power (MS:1000800)
+comment: This term was made obsolete because it was replaced by mass resolving power (MS:1000800).
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000444 ! m/z Separation Method
 is_obsolete: true
@@ -1605,7 +1608,7 @@ is_a: MS:1000496 ! instrument attribute
 id: MS:1000237
 name: unified atomic mass unit
 def: "OBSOLETE A non-SI unit of mass (u) defined as one twelfth of ^12 C in its ground state and equal to 1.660 538 86(28) x 10^-27 kg." [PSI:MS]
-comment: This term was made obsolete because it was redundant with Unit Ontology dalton (UO:0000221)
+comment: This term was made obsolete because it was redundant with Unit Ontology dalton (UO:0000221).
 synonym: "u" EXACT []
 is_obsolete: true
 
@@ -1634,7 +1637,7 @@ is_a: MS:1000008 ! ionization type
 id: MS:1000241
 name: Atmostpheric Pressure Photoionization
 def: "OBSOLETE Atmospheric pressure chemical ionization in which the reactant ions are generated by photo-ionization." [PSI:MS]
-comment: This term was made obsolete because it was replaced by atmospheric pressure photoionization (MS:1000382)
+comment: This term was made obsolete because it was replaced by atmospheric pressure photoionization (MS:1000382).
 synonym: "APPI" EXACT []
 is_obsolete: true
 
@@ -1813,7 +1816,7 @@ id: MS:1000266
 name: Laser Desorption
 alt_id: MS:1000394
 def: "OBSOLETE The formation of ions through the interaction of a laser with a material or with gas-phase ions or molecules." [PSI:MS]
-comment: This term was made obsolete because it was replaced by laser desorption ionization (MS:1000393)
+comment: This term was made obsolete because it was replaced by laser desorption ionization (MS:1000393).
 synonym: "Laser Ionization MERGE" EXACT []
 synonym: "LD" EXACT []
 is_obsolete: true
@@ -1913,7 +1916,7 @@ is_a: MS:1000406 ! surface ionization
 id: MS:1000280
 name: suface ionization
 def: "OBSOLETE The ionization of a neutral species when it interacts with a solid surface with an appropriate work function and temperature." [PSI:MS]
-comment: This term was made obsolete because it was replaced by surface ionization (MS:1000406)
+comment: This term was made obsolete because it was replaced by surface ionization (MS:1000406).
 synonym: "SI" EXACT []
 is_obsolete: true
 
@@ -1935,7 +1938,7 @@ is_a: MS:1000044 ! dissociation method
 id: MS:1000283
 name: Spark Source Mass Spectrometry
 def: "OBSOLETE Mass spectrometry using spark ionization." [PSI:MS]
-comment: This term was made obsolete because it was replaced by spark ionization (MS:1000404)
+comment: This term was made obsolete because it was replaced by spark ionization (MS:1000404).
 synonym: "SSMS" EXACT []
 is_obsolete: true
 
@@ -2027,7 +2030,7 @@ is_a: MS:1000479 ! purgatory
 id: MS:1000297
 name: paul ion trap
 def: "OBSOLETE A device that permits the trapping of ions by means of an alternating current voltage. The ejection of ions with a m/z less than a prescribed value and retention of those with higher mass depends on the application of radio frequency voltages between a ring electrode and two end-cap electrodes to confine the ions in a circular path. The choice of these voltages determines the m/z below which ions are ejected." [PSI:MS]
-comment: This term was made obsolete because it is redundant to quadrupole ion trap
+comment: This term was made obsolete because it is redundant to quadrupole ion trap.
 synonym: "quadrupole ion trap" RELATED []
 is_a: MS:1000479 ! purgatory
 is_obsolete: true
@@ -2222,7 +2225,7 @@ is_a: MS:1000524 ! data file content
 id: MS:1000327
 name: consecutive reaction monitoring
 def: "OBSOLETE A type of MS/MS experiments with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored." [PSI:MS]
-comment: This term was made obsolete because it was replaced by consecutive reaction monitoring (MS:1000244)
+comment: This term was made obsolete because it was replaced by consecutive reaction monitoring (MS:1000244).
 is_obsolete: true
 
 [Term]
@@ -2297,7 +2300,7 @@ is_a: MS:1000479 ! purgatory
 id: MS:1000339
 name: nth generation product ion spectrum
 def: "OBSOLETE The mass spectrum recorded from any mass spectrometer in which the appropriate scan function can be set to record the appropriate generation product ion or ions of m/z selected precursor ions." [PSI:MS]
-comment: This term was made obsolete because it was merged with MSn spectrum (MS:1000580)
+comment: This term was made obsolete because it was merged with MSn spectrum (MS:1000580).
 is_obsolete: true
 
 [Term]
@@ -2325,7 +2328,7 @@ is_a: MS:1000506 ! ion role
 id: MS:1000343
 name: product ion spectrum
 def: "OBSOLETE A mass spectrum recorded from any spectrometer in which the appropriate m/z separation scan function is set to record the product ion or ions of selected precursor ions." [PSI:MS]
-comment: This term was made obsolete because it was merged with MSn spectrum (MS:1000580)
+comment: This term was made obsolete because it was merged with MSn spectrum (MS:1000580).
 is_a: MS:1000294 ! mass spectrum
 is_a: MS:1000524 ! data file content
 is_obsolete: true
@@ -2455,7 +2458,7 @@ is_a: MS:1000508 ! ion chemical type
 id: MS:1000364
 name: fragment ion
 def: "OBSOLETE A product ion that results from the dissociation of a precursor ion." [PSI:MS]
-comment: This term was made obsolete because it was replaced by product ion (MS:1000342)
+comment: This term was made obsolete because it was replaced by product ion (MS:1000342).
 is_obsolete: true
 
 [Term]
@@ -3065,7 +3068,7 @@ relationship: part_of MS:1001458 ! spectrum generation information
 id: MS:1000464
 name: mass unit
 def: "OBSOLETE A unit of measurement for mass." [PSI:MS]
-comment: This term was made obsolete because it was redundant with Unit Ontology mass unit (UO:0000002)
+comment: This term was made obsolete because it was redundant with Unit Ontology mass unit (UO:0000002).
 is_obsolete: true
 
 [Term]
@@ -3078,7 +3081,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000466
 name: alternating
 def: "OBSOLETE Alternating." [PSI:MS]
-comment: This term was made obsolete because...just because.
+comment: This term was made obsolete because ... just because.
 is_obsolete: true
 
 [Term]
@@ -3581,7 +3584,7 @@ is_a: MS:1001457 ! data processing software
 [Term]
 id: MS:1000538
 name: massWolf
-def: "A software for converting Waters raw directory format to mzXML or mzML. massWolf was originally developed at the Institute for Systems Biology." [PSI:MS]
+def: "A software for converting Waters raw directory format to mzXML or mzML. MassWolf was originally developed at the Institute for Systems Biology." [PSI:MS]
 synonym: "wolf" EXACT []
 is_a: MS:1001457 ! data processing software
 
@@ -3661,7 +3664,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000550
 name: time unit
 def: "OBSOLETE Time Unit." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology time unit (UO:0000003)
+comment: This term was made obsolete because it was redundant with the Unit Ontology time unit (UO:0000003).
 is_obsolete: true
 
 [Term]
@@ -3880,7 +3883,7 @@ is_a: MS:1000524 ! data file content
 [Term]
 id: MS:1000583
 name: SRM spectrum
-def: "Spectrum obtained when data are acquired from specific product ions corresponding to m/z values of selected precursor ions a recorded via two or more stages of mass spectrometry. The precursor/product ion pair is called a transition pair.  Data can be obtained for a single transition pair or multiple transition pairs.  Multiple time segments of different transition pairs can exist in a single file. Single precursor ions can have multiple product ions consitituting multiple transition pairs.  Selected reaction monitoring can be performed as tandem mass spectrometry in time or tandem mass spectrometry in space." [PSI:MS]
+def: "Spectrum obtained when data are acquired from specific product ions corresponding to m/z values of selected precursor ions a recorded via two or more stages of mass spectrometry. The precursor/product ion pair is called a transition pair. Data can be obtained for a single transition pair or multiple transition pairs. Multiple time segments of different transition pairs can exist in a single file. Single precursor ions can have multiple product ions consitituting multiple transition pairs. Selected reaction monitoring can be performed as tandem mass spectrometry in time or tandem mass spectrometry in space." [PSI:MS]
 synonym: "MRM spectrum" EXACT []
 synonym: "multiple reaction monitoring spectrum" EXACT []
 synonym: "selected reaction monitoring spectrum" EXACT []
@@ -4001,7 +4004,7 @@ is_a: MS:1000437 ! ion reaction
 [Term]
 id: MS:1000600
 name: Proteios
-def: "Database application and analysis platform for proteomics." [PSI:MS, source:www.proteios.org]
+def: "Database application and analysis platform for proteomics." [PSI:MS, source:http://www.proteios.org]
 is_a: MS:1001456 ! analysis software
 is_a: MS:1001457 ! data processing software
 
@@ -4137,7 +4140,7 @@ relationship: has_units UO:0000018 ! nanometer
 id: MS:1000620
 name: PDA spectrum
 def: "OBSOLETE Spectrum generated from a photodiode array detector (ultraviolet/visible spectrum)." [PSI:MS]
-comment: This term was made obsolete because it was replaced by absorption spectrum (MS:1000806)
+comment: This term was made obsolete because it was replaced by absorption spectrum (MS:1000806).
 is_a: MS:1000524 ! data file content
 is_a: MS:1000559 ! spectrum type
 is_obsolete: true
@@ -5298,7 +5301,7 @@ is_a: MS:1000580 ! MSn spectrum
 id: MS:1000791
 name: enhanced resolution scan
 def: "OBSOLETE Scan with enhanced resolution." [PSI:MS]
-comment: This term was made obsolete because it was merged with zoom scan (MS:1000497)
+comment: This term was made obsolete because it was merged with zoom scan (MS:1000497).
 is_a: MS:1000020 ! scanning method
 is_obsolete: true
 
@@ -5313,7 +5316,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000793
 name: isolation window upper limit
 def: "OBSOLETE The highest m/z being isolated in an isolation window." [PSI:MS]
-comment: This term was obsoleted in favor of using a target, lower, upper offset scheme. See terms 1000827-1000829
+comment: This term was obsoleted in favor of using a target, lower, upper offset scheme. See terms 1000827-1000829.
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000792 ! isolation window attribute
 relationship: has_units MS:1000040 ! m/z
@@ -5323,7 +5326,7 @@ is_obsolete: true
 id: MS:1000794
 name: isolation window lower limit
 def: "OBSOLETE The lowest m/z being isolated in an isolation window." [PSI:MS]
-comment: This term was obsoleted in favor of using a target, lower, upper offset scheme. See terms 1000827-1000829
+comment: This term was obsoleted in favor of using a target, lower, upper offset scheme. See terms 1000827-1000829.
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000792 ! isolation window attribute
 relationship: has_units MS:1000040 ! m/z
@@ -5851,7 +5854,7 @@ relationship: has_units UO:0000110 ! pascal
 id: MS:1000870
 name: 4000 QTRAP
 def: "OBSOLETE AB SCIEX or Applied Biosystems|MDS SCIEX QTRAP 4000." [PSI:MS]
-comment: This term was obsoleted because was redundant to MS:1000139
+comment: This term was obsoleted because was redundant to MS:1000139.
 is_a: MS:1000121 ! AB SCIEX instrument model
 is_obsolete: true
 
@@ -5864,7 +5867,7 @@ is_a: MS:1000531 ! software
 [Term]
 id: MS:1000872
 name: MaRiMba
-def: "Software used to predict transitions for selected reaction monitoring experiments based on observed spectrum libraries developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP-MaRiMba ""]
+def: "Software used to predict transitions for selected reaction monitoring experiments based on observed spectrum libraries developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP-MaRiMba]
 is_a: MS:1000871 ! SRM software
 
 [Term]
@@ -5876,7 +5879,7 @@ is_a: MS:1000531 ! software
 [Term]
 id: MS:1000874
 name: SSRCalc
-def: "Sequence Specific Retention Calculator esimates the retention time of peptides based on their sequence." [http://hs2.proteome.ca/SSRCalc/SSRCalc.html ""]
+def: "Sequence Specific Retention Calculator esimates the retention time of peptides based on their sequence." [http://hs2.proteome.ca/SSRCalc/SSRCalc.html]
 is_a: MS:1000873 ! peptide attribute calculation software
 
 [Term]
@@ -6205,20 +6208,20 @@ is_a: MS:1000919 ! target inclusion exclusion priority
 [Term]
 id: MS:1000922
 name: Skyline
-def: "Software used to predict, select, and optimize transitions as well as analyze the results of selected reaction monitoring runs developed and distributed by the MacCoss lab at the University of Washington. https://brendanx-uw1.gs.washington.edu/labkey/wiki/home/software/Skyline/page.view?name=default." [PSI:MS]
+def: "Software used to predict, select, and optimize transitions as well as analyze the results of selected reaction monitoring runs developed and distributed by the MacCoss lab at the University of Washington." [https://brendanx-uw1.gs.washington.edu/labkey/wiki/home/software/Skyline/page.view?name=default ""]
 is_a: MS:1000871 ! SRM software
 
 [Term]
 id: MS:1000923
 name: TIQAM
-def: "Software used to predict, select, and optimize transitions for selected reaction monitoring experiments developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/TIQAM/TIQAM.html ""]
+def: "Software used to predict, select, and optimize transitions for selected reaction monitoring experiments developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/TIQAM/TIQAM.html]
 is_a: MS:1000871 ! SRM software
 
 [Term]
 id: MS:1000924
 name: MaRiMba
-def: "OBSOLETE Software used to predict transitions for selected reaction monitoring experiments based on observed spectrum libraries developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP-MaRiMba ""]
-comment: This term was made obsolete because it was redundant with an existing term (MS:1000872)
+def: "OBSOLETE Software used to predict transitions for selected reaction monitoring experiments based on observed spectrum libraries developed and distributed by the Institute for Systems Biology." [http://tools.proteomecenter.org/wiki/index.php?title=Software:TPP-MaRiMba]
+comment: This term was made obsolete because it was redundant with an existing term (MS:1000872).
 is_obsolete: true
 replaced_by: MS:1000872
 
@@ -6495,7 +6498,7 @@ is_a: MS:1001006 ! Sequest:ViewCV
 [Term]
 id: MS:1001040
 name: intermediate analysis format
-def: "Type of the source file, the  mzIdentML was created from." [PSI:PI]
+def: "Type of the source file, the mzIdentML was created from." [PSI:PI]
 is_a: MS:1001459 ! file format
 
 [Term]
@@ -6842,8 +6845,8 @@ is_a: MS:1001006 ! Sequest:ViewCV
 
 [Term]
 id: MS:1001104
-name: database SwissProt
-is_a: MS:1001013 ! database name
+name: database UniProtKB/Swiss-Prot
+is_a: MS:1001013 ! UniProtKB/database name
 
 [Term]
 id: MS:1001105
@@ -7361,7 +7364,7 @@ is_a: MS:1001056 ! modification specificity rule
 id: MS:1001191
 name: p-value
 def: "OBSOLETE Quality estimation by p-value." [PSI:PI]
-comment: This term was made obsolete because now is split into peptide and protein terms
+comment: This term was made obsolete because now is split into peptide and protein terms.
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001092 ! peptide identification confidence metric
 is_a: MS:1001198 ! protein identification confidence metric
@@ -7920,7 +7923,7 @@ is_a: MS:1001284 ! decoy DB derived from
 
 [Term]
 id: MS:1001297
-name: decoy DB from SwissProt
+name: decoy DB from UniProtKB/Swiss-Prot
 is_a: MS:1001284 ! decoy DB derived from
 
 [Term]
@@ -8228,7 +8231,7 @@ is_a: MS:1001347 ! database file formats
 [Term]
 id: MS:1001349
 name: ASN.1
-def: "The sequence database was stored in the ASN.1 format." [PSI:PI]
+def: "The sequence database was stored in the Abstract Syntax Notation 1 format." [PSI:PI]
 is_a: MS:1001347 ! database file formats
 
 [Term]
@@ -8933,7 +8936,7 @@ is_a: MS:1001471 ! peptide modification details
 [Term]
 id: MS:1001461
 name: greylag
-def: "Greylag identification software, see greylag.org." [PSI:PI]
+def: "Greylag identification software." [http://greylag.org/]
 is_a: MS:1001456 ! analysis software
 
 [Term]
@@ -9571,7 +9574,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1001561
 name: Scaffold
-def: "Scaffold analysis software, see www.proteomesoftware.com." [PSI:PI]
+def: "Scaffold analysis software." [http://www.proteomesoftware.com]
 is_a: MS:1001456 ! analysis software
 
 [Term]
@@ -9868,7 +9871,7 @@ is_obsolete: true
 id: MS:1001603
 name: ProteomeDiscoverer:Spectrum Selector:Ionization Source
 def: "OBSOLETE Ionization source (electro-, nano-, thermospray, electron impact, APCI, MALDI, FAB etc)." [PSI:MS]
-comment: This term was made obsolete because it's recommended to use one of the 'inlet type' (MS:1000007) or 'ionization type' (MS:1000008) terms  instead.
+comment: This term was made obsolete because it's recommended to use one of the 'inlet type' (MS:1000007) or 'ionization type' (MS:1000008) terms instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 is_obsolete: true
@@ -11425,7 +11428,7 @@ is_a: MS:1001825 ! FeatureList attribute
 [Term]
 id: MS:1001827
 name: mass trace reporting: polygons
-def: "The mass trace of the features of this feature list specifies polygons. Each mass trace has the syntax (RT_1,MZ_1,RT_2,MZ_2,...,RT_i,MZ_i,...,RT_n,MZ_n), where the line (RT_n,MZ_n)->(RT_1,MZ_1) is implicite." [PSI:MS]
+def: "The mass trace of the features of this feature list specifies polygons. Each mass trace has the syntax (RT_1, MZ_1, RT_2, MZ_2, ... , RT_i, MZ_i, ... , RT_n, MZ_n), where the line (RT_n, MZ_n)->(RT_1, MZ_1) is implicite." [PSI:MS]
 is_a: MS:1001825 ! FeatureList attribute
 
 [Term]
@@ -11456,6 +11459,7 @@ is_a: MS:1001139 ! quantitation software name
 id: MS:1001832
 name: quantitation software comment / customizations
 def: "Quantitation software comment or any customizations to the default setup of the software." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001129 ! quantification information
 
 [Term]
@@ -11491,7 +11495,7 @@ is_a: MS:1002009 ! isobaric label quantitation analysis
 [Term]
 id: MS:1001838
 name: SRM quantitation analysis
-def: "Selected Reaction Monitoring workflow (XIC quant. of precursor / fragment mass pair)." [PSI:PI]
+def: "Selected Reaction Monitoring workflow (XIC quantitation of precursor / fragment mass pair)." [PSI:PI]
 is_a: MS:1001833 ! quantitation analysis summary
 
 [Term]
@@ -11534,7 +11538,7 @@ is_a: MS:1001805 ! quantification datatype
 id: MS:1001845
 name: peak area
 def: "OBSOLETE Area of MS1 peak (e.g. SILAC, 15N)." [PSI:PI]
-comment: This term was made obsolete because it was a duplication of MS:1001844
+comment: This term was made obsolete because it was a duplication of MS:1001844.
 is_a: MS:1001805 ! quantification datatype
 is_obsolete: true
 
@@ -11552,9 +11556,9 @@ is_a: MS:1001805 ! quantification datatype
 
 [Term]
 id: MS:1001848
-name: simple ratio of two value
+name: simple ratio of two values
 def: "Simple ratio of two values (enumerator and denominator)." [PSI:PI]
-is_a: MS:1001805 ! quantification datatype
+is_a: MS:1002066 ! ratio calculation method
 
 [Term]
 id: MS:1001849
@@ -11854,7 +11858,7 @@ is_a: MS:1001805 ! quantification datatype
 [Term]
 id: MS:1001894
 name: Progenesis:confidence score
-def: "The data type confidence score  produced by Progenesis LC-MS." [PSI:MS]
+def: "The data type confidence score produced by Progenesis LC-MS." [PSI:MS]
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
@@ -11884,7 +11888,7 @@ is_a: MS:1001805 ! quantification datatype
 [Term]
 id: MS:1001899
 name: MaxQuant:peptide counts (razor+unique)
-def: "The data type peptide counts (razor+unique)  produced by MaxQuant." [PSI:MS]
+def: "The data type peptide counts (razor+unique) produced by MaxQuant." [PSI:MS]
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
@@ -12596,7 +12600,7 @@ is_a: MS:1002018 ! MS1 label-based analysis
 [Term]
 id: MS:1002005
 name: iRT retention time normalization standard
-def: "A de facto standard providing the retention times at which a specific set of 10 reference peptides exit the reference chromatographic column. The kit may be obtain from Biognosys." [DOI:10.1002/pmic.201100463, http://www.biognosys.ch/products/rt-kit.html ""]
+def: "A de facto standard providing the retention times at which a specific set of 10 reference peptides exit the reference chromatographic column. The kit may be obtain from Biognosys." [DOI:10.1002/pmic.201100463, http://www.biognosys.ch/products/rt-kit.html]
 is_a: MS:1000901 ! retention time normalization standard
 
 [Term]
@@ -12642,7 +12646,7 @@ is_a: MS:1000240 ! atmospheric pressure ionization
 [Term]
 id: MS:1002012
 name: Mascot:PTM site assignment confidence
-def: "Relative probability that PTM site assignment is correct, derived from the Mascot score difference between matches to the same spectrum (Mascot Delta Score)." [http://www.matrixscience.com/help/pt_mods_help.html#SITE ""]
+def: "Relative probability that PTM site assignment is correct, derived from the Mascot score difference between matches to the same spectrum (Mascot Delta Score)." [http://www.matrixscience.com/help/pt_mods_help.html#SITE]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for peptides
@@ -12843,7 +12847,7 @@ relationship: has_units UO:0000027 ! degree Celsius
 [Term]
 id: MS:1002042
 name: modulation time
-def: "The duration of a complete cycle of modulation in a comprehensive two-dimensional separation system, equals the length of a second dimension chromatogram, i.e., the time between two successive injections into the second column." [http://chromatographyonline.findanalytichem.com/lcgc/Column:+Coupling+Matters/Nomenclature-and-Conventions-in-Comprehensive-Mult/ArticleStandard/Article/detail/58429 ""]
+def: "The duration of a complete cycle of modulation in a comprehensive two-dimensional separation system, equals the length of a second dimension chromatogram, i.e., the time between two successive injections into the second column." [http://chromatographyonline.findanalytichem.com/lcgc/Column:+Coupling+Matters/Nomenclature-and-Conventions-in-Comprehensive-Mult/ArticleStandard/Article/detail/58429]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000857 ! run attribute
 relationship: has_units UO:0000010 ! second
@@ -12969,3 +12973,49 @@ id: MS:1002058
 name: modification specificity protein C-term
 def: "As parameter for search engine: apply the modification only at the C-terminus of a protein." [PSI:PI]
 is_a: MS:1001056 ! modification specificity rule
+
+[Term]
+id: MS:1002059
+name: Microsoft Excel
+def: "Microsoft Excel (can be used for spectral counting)." [PSI:PI]
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1002060
+name: database UniProtKB/TrEMBL
+is_a: MS:1001013 ! UniProtKB/database name
+
+[Term]
+id: MS:1002061
+name: decoy DB from UniProtKB/TrEMBL
+is_a: MS:1001284 ! decoy DB derived from
+
+[Term]
+id: MS:1002062
+name: metabolic labelling: natural N (mainly 14N)
+def: "Metabolic labelling: natural N (mainly 14N)." [PSI:PI]
+is_a: MS:1001055 ! modification parameters
+
+[Term]
+id: MS:1002063
+name: FindPairs
+def: "Software e.g. for SILAC and 14N/15N workflow, part of the PeakQuant suite." [http://www.medizinisches-proteom-center.de/software]
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1002064
+name: peptide consensus RT
+def: "Peptide consensus retention time." [PSI:PI]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002065
+name: peptide consensus m/z
+def: "Peptide consensus mass/charge ratio." [PSI:PI]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002066
+name: ratio calculation method
+def: "Method used to calculate the ratio." [PSI:PI]
+is_a: MS:1001805 ! quantification datatype
