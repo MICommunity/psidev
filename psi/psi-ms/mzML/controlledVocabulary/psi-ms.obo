@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.32.0
-date: 04:09:2012 14:11
+data-version: 3.33.0
+date: 12:09:2012 08:48
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.32.0
-remark: release date: 2012-09-04
+remark: version: 3.33.0
+remark: release date: 2012-09-12
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -11292,7 +11292,7 @@ is_a: MS:1001800 ! LECO instrument model
 [Term]
 id: MS:1001805
 name: quantification datatype
-def: "The data type of the value reported in a QuantLayer for a feature, matchedfeature, peptide, protein, protein group." [PSI:MS]
+def: "The data type of the value reported in a QuantLayer for a feature, peptide, protein, protein group." [PSI:MS]
 is_a: MS:1001129 ! quantification information
 
 [Term]
@@ -11563,8 +11563,10 @@ is_a: MS:1002066 ! ratio calculation method
 [Term]
 id: MS:1001849
 name: sum of MatchedFeature values
-def: "Peptide quantification value calculated as sum of MatchedFeature quantification values." [PSI:PI]
+def: "OBSOLETE Peptide quantification value calculated as sum of MatchedFeature quantification values." [PSI:PI]
+comment: This term was made obsolete because the concept MatchedFeature was dropped.
 is_a: MS:1001805 ! quantification datatype
+is_obsolete: true
 
 [Term]
 id: MS:1001850
@@ -13019,3 +13021,67 @@ id: MS:1002066
 name: ratio calculation method
 def: "Method used to calculate the ratio." [PSI:PI]
 is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002067
+name: protein value: median of peptide ratios
+def: "Protein quantification value calculated as median of peptide ratios." [PSI:PI]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002068
+name: metabolic labelling: heavy N (mainly 15N)
+def: "Metabolic labelling: heavy N (mainly 15N)." [PSI:PI]
+is_a: MS:1001055 ! modification parameters
+
+[Term]
+id: MS:1002069
+name: metabolic labelling: labelling purity
+def: "Metabolic labelling: Description of labelling purity. Usually the purity of feeding material (e.g. 95%), or the inclusion rate derived from isotopic peak pattern shape." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001055 ! modification parameters
+
+[Term]
+id: MS:1002070
+name: t-test
+def: "Perform a t-test (two groups). Specify in string value, whether paired / unpaired, variance equal / different, one- / two-sided version is performed." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001861 ! quantification data processing
+
+[Term]
+id: MS:1002071
+name: ANOVA-test
+def: "Perform an ANOVA-test (more than two groups). Specify in string value, which version is performed." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001861 ! quantification data processing
+
+[Term]
+id: MS:1002072
+name: p-value
+def: "P-value as result of one of the processing steps described. Specify in the description, which processing step it was." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002073
+name: mzIdentML
+def: "Proteomics Standards Inititative mzIdentML file format. File extension '.mzid'." [PSI:MS]
+is_a: MS:1001040 ! intermediate analysis format
+
+[Term]
+id: MS:1002074
+name: quantification file format
+def: "File format containing quantification results." [PSI:PI]
+is_a: MS:1001459 ! file format
+
+[Term]
+id: MS:1002075
+name: mzQuantML
+def: "Proteomics Standards Inititative mzQuantML file format. File extension '.mzq'." [PSI:MS]
+is_a: MS:1002074 ! quantification file format
+
+[Term]
+id: MS:1002076
+name: PAnalyzer
+def: "PAnalyzer software for getting protein evidence categories." [http://code.google.com/p/ehu-bio/wiki/PAnalyzer]
+is_a: MS:1001456 ! analysis software
