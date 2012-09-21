@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.33.0
-date: 12:09:2012 08:48
+data-version: 3.34.0
+date: 21:09:2012 08:36
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.33.0
-remark: release date: 2012-09-12
+remark: version: 3.34.0
+remark: release date: 2012-09-21
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -9423,21 +9423,25 @@ is_a: MS:1001529 ! spectra data details
 [Term]
 id: MS:1001533
 name: Bruker Daltonics esquire series
+def: "Bruker Daltonics esquire series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1001534
 name: Bruker Daltonics flex series
+def: "Bruker Daltonics flex series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1001535
 name: Bruker Daltonics BioTOF series
+def: "Bruker Daltonics BioTOF series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1001536
 name: Bruker Daltonics micrOTOF series
+def: "Bruker Daltonics micrOTOF series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
@@ -9491,6 +9495,7 @@ is_a: MS:1001534 ! Bruker Daltonics flex series
 [Term]
 id: MS:1001545
 name: Bruker Daltonics amaZon series
+def: "Bruker Daltonics amaZon series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
@@ -9502,6 +9507,7 @@ is_a: MS:1001545 ! Bruker Daltonics amaZon series
 [Term]
 id: MS:1001547
 name: Bruker Daltonics maXis series
+def: "Bruker Daltonics maXis series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
@@ -9543,11 +9549,13 @@ is_a: MS:1001534 ! Bruker Daltonics flex series
 [Term]
 id: MS:1001556
 name: Bruker Daltonics apex series
+def: "Bruker Daltonics apex series." [PSI:MS]
 is_a: MS:1000122 ! Bruker Daltonics instrument model
 
 [Term]
 id: MS:1001557
 name: Shimadzu Biotech software
+def: "Shimadzu Biotech software." [PSI:MS]
 is_a: MS:1000531 ! software
 
 [Term]
@@ -13085,3 +13093,39 @@ id: MS:1002076
 name: PAnalyzer
 def: "PAnalyzer software for getting protein evidence categories." [http://code.google.com/p/ehu-bio/wiki/PAnalyzer]
 is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002077
+name: maXis impact
+def: "maXis impact." [PSI:MS]
+is_a: MS:1001547 ! Bruker Daltonics maXis series
+
+[Term]
+id: MS:1002078
+name: ProteomeDiscoverer:1. Static Modification
+def: "Determine 1st static post-translational modifications (PTMs)." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002079
+name: ProteomeDiscoverer:2. Static Modification
+def: "Determine 2nd static post-translational modifications (PTMs)." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002080
+name: ProteomeDiscoverer:Spectrum Selector:Precursor Clipping Range Before
+def: "Precursor clipping range before." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000221 ! dalton
+
+[Term]
+id: MS:1002081
+name: ProteomeDiscoverer:Spectrum Selector:Precursor Clipping Range After
+def: "Precursor clipping range after." [PSI:MS]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+relationship: has_units UO:0000221 ! dalton
