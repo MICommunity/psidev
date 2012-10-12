@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.34.0
-date: 21:09:2012 08:36
+data-version: 3.35.0
+date: 12:10:2012 16:28
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.34.0
-remark: release date: 2012-09-21
+remark: version: 3.35.0
+remark: release date: 2012-10-12
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -5556,7 +5556,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1000826
 name: elution time
-def: "The time of elution from a chromatographic column, relative to the start of the chromatography." [PSI:MS]
+def: "The time of elution from all used chromatographic columns (one or more) in the chromatographic separation step, relative to the start of the chromatography." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 relationship: has_units UO:0000010 ! second
@@ -6311,12 +6311,14 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1001007
 name: Sequest:OutputLines
+def: "Number of peptide results to show." [PSI:MS]
 xref: value-type:xsd\:nonNegativeInteger "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
 [Term]
 id: MS:1001009
 name: Sequest:DescriptionLines
+def: "Number of full protein descriptions to show for top N peptides." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -6438,6 +6440,7 @@ is_a: MS:1001511 ! Sequence database filter types
 [Term]
 id: MS:1001028
 name: Sequest:SequenceHeaderFilter
+def: "String in the header of a sequence entry for that entry to be searched." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -6485,6 +6488,7 @@ is_a: MS:1001184 ! search statistics
 [Term]
 id: MS:1001037
 name: Sequest:ShowFragmentIons
+def: "Flag indicating that fragment ions should be shown." [PSI:MS]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 
@@ -6624,6 +6628,7 @@ replaced_by: MS:1000336
 [Term]
 id: MS:1001062
 name: Mascot MGF file
+def: "Mascot MGF file." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -9291,12 +9296,14 @@ is_a: MS:1001019 ! database filtering
 [Term]
 id: MS:1001513
 name: DB sequence filter pattern
+def: "DB sequence filter pattern." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001512 ! Sequence database filters
 
 [Term]
 id: MS:1001514
 name: DB accession filter string
+def: "DB accession filter string." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001512 ! Sequence database filters
 
@@ -13129,3 +13136,79 @@ def: "Precursor clipping range after." [PSI:MS]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001302 ! search engine specific input parameter
 relationship: has_units UO:0000221 ! dalton
+
+[Term]
+id: MS:1002082
+name: first column elution time
+def: "The time of elution from the first chromatographic column in the chromatographic separation step, relative to the start of chromatography on the first column."[PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000503 ! scan attribute
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1002083
+name: second column elution time
+def: "The time of elution from the second chromatographic column in the chromatographic separation step, relative to the start of the chromatography on the second column." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000503 ! scan attribute
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+
+[Term]
+id: MS:1002084
+name: multidimensional chromatography modulation description
+def: "Multidimensional chromatography modulation description." [PSI:MS]
+is_a: MS:1000857 ! run attribute
+
+[Term]
+id: MS:1002085
+name: two-dimensional gas chromatography with fixed modulation time
+def: "Two-dimensional gas chromatography where a single modulation time is used throughout the acquisition." [PSI:MS]
+is_a: MS:1002084 ! multidimensional chromatography modulation description
+
+[Term]
+id: MS:1002086
+name: two-dimensional gas chromatography with discrete modulation time steps
+def: "Two-dimensional gas chromatography where the acquisition is divided into steps, each with a different modulation time." [PSI:MS]
+is_a: MS:1002084 ! multidimensional chromatography modulation description
+
+[Term]
+id: MS:1002087
+name: two-dimensional liquid chromatography with fixed modulation time
+def: "Two-dimensional liquid chromatography where a single modulation time is used throughout the acquisition." [PSI:MS]
+is_a: MS:1002084 ! multidimensional chromatography modulation description
+
+[Term]
+id: MS:1002088
+name: two-dimensional liquid chromatography with discrete modulation time steps
+def: "Two-dimensional liquid chromatography where the acquisition is divided into steps, each with a different modulation time." [PSI:MS]
+is_a: MS:1002084 ! multidimensional chromatography modulation description
+
+[Term]
+id: MS:1002089
+name: ProteomeDiscoverer:Peptide Without Protein XCorr Threshold
+def: "XCorr threshold for storing peptides that do not belong to a protein." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002090
+name: Calculate Probability Scores
+def: "Flag indicating that a probability score for the assessment that a reported peptide match is a random occurence is calculated." [PSI:MS]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002091
+name: ProteomeDiscoverer:Maximum Delta Cn
+def: "Delta Cn threshold for filtering out PSM's." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002092
+name: Percolator:Validation based on
+def: "Algorithm (e.g. q-value or PEP) used for calculation of the validation score using Percolator." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001302 ! search engine specific input parameter
