@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.36.0
-date: 30:10:2012 11:43
+data-version: 3.38.0
+date: 08:11:2012 09:59
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.36.0
-remark: release date: 2012-10-30
+remark: version: 3.38.0
+remark: release date: 2012-11-08
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -17,7 +17,7 @@ remark: creator: Eric Deutsch <edeutsch <-at-> systemsbiology.org>
 remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group
-remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html.
+remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html and http://mass-spec.lsu.edu/msterms/index.php/Main_Page
 ontology: pato
 ontology: uo
 
@@ -286,7 +286,7 @@ is_a: MS:1000543 ! data processing action
 id: MS:1000036
 name: scan mode
 def: "OBSOLETE." [PSI:MS]
-comment: This term was made obsolete because ... just because.
+comment: This term was made obsolete because .
 is_obsolete: true
 
 [Term]
@@ -735,7 +735,7 @@ is_obsolete: true
 id: MS:1000104
 name: None ??
 def: "OBSOLETE None." [PSI:MS]
-comment: This term was made obsolete because ... just because.
+comment: This term was made obsolete because .
 is_obsolete: true
 
 [Term]
@@ -2941,7 +2941,7 @@ relationship: part_of MS:1000451 ! mass analyzer
 [Term]
 id: MS:1000444
 name: m/z Separation Method
-def: "m/z Separation Method." [PSI:MS]
+def: "Mass/charge separation Method." [PSI:MS]
 relationship: part_of MS:1000479 ! purgatory
 
 [Term]
@@ -3081,7 +3081,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000466
 name: alternating
 def: "OBSOLETE Alternating." [PSI:MS]
-comment: This term was made obsolete because ... just because.
+comment: This term was made obsolete because .
 is_obsolete: true
 
 [Term]
@@ -6305,7 +6305,7 @@ is_a: MS:1002096 ! Sequest input parameter
 [Term]
 id: MS:1001006
 name: Sequest:ViewCV
-def: "Branch containing the CV terms for Sequest View Input Parameters." [PSI:PI]
+def: "Sequest View Input Parameters." [PSI:PI]
 is_a: MS:1002096 ! Sequest input parameter
 
 [Term]
@@ -6495,7 +6495,7 @@ is_a: MS:1002096 ! Sequest input parameter
 [Term]
 id: MS:1001038
 name: Sequest:Consensus
-def: "Specify depth as value of the CVParam!" [PSI:PI]
+def: "Specify depth as value of the CVParam." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001006 ! Sequest:ViewCV
 
@@ -6508,13 +6508,13 @@ is_a: MS:1001459 ! file format
 [Term]
 id: MS:1001041
 name: Sequest:sortCV
-def: "Branch containing the CV terms for Sequest View / Sort Input Parameters." [PSI:PI]
+def: "Sequest View / Sort Input Parameters." [PSI:PI]
 is_a: MS:1001006 ! Sequest:ViewCV
 
 [Term]
 id: MS:1001042
 name: Sequest:LimitTo
-def: "Specify \"number of dtas shown\" as value of the CVParam!" [PSI:PI]
+def: "Specify \"number of dtas shown\" as value of the CVParam." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1002096 ! Sequest input parameter
 
@@ -6634,7 +6634,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1001065
 name: TODOscoring model
-def: "OBSOLETE: There is Phenyx:ScoringModel for Phenyx! Scoring model (more detailed granularity). TODO: add some child terms!" [PSI:PI]
+def: "OBSOLETE: There is Phenyx:ScoringModel for Phenyx! Scoring model (more detailed granularity). TODO: add some child terms." [PSI:PI]
 comment: This term was made obsolete and is replaced by the term (MS:1001961).
 is_a: MS:1001249 ! search input details
 is_obsolete: true
@@ -6732,7 +6732,7 @@ is_a: MS:1001041 ! Sequest:sortCV
 [Term]
 id: MS:1001087
 name: Sequest:ProcessCV
-def: "Branch containing the CV terms for Sequest View / Process Input Parameters." [PSI:PI]
+def: "Sequest View / Process Input Parameters." [PSI:PI]
 is_a: MS:1002096 ! Sequest input parameter
 
 [Term]
@@ -6798,7 +6798,7 @@ is_a: MS:1001087 ! Sequest:ProcessCV
 [Term]
 id: MS:1001096
 name: Sequest:TopPercentMostIntense
-def: "Specify \"percentage\" as value of the CVParam!" [PSI:PI]
+def: "Specify \"percentage\" as value of the CVParam." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001087 ! Sequest:ProcessCV
 
@@ -6833,7 +6833,7 @@ is_a: MS:1001116 ! single protein result details
 [Term]
 id: MS:1001101
 name: protein group/subset relationship
-def: "Branch containing protein group/subset relationships." [PSI:PI]
+def: "Protein group/subset relationships." [PSI:PI]
 is_a: MS:1001085 ! protein result details
 
 [Term]
@@ -6862,7 +6862,7 @@ is_a: MS:1001405 ! spectrum identification result details
 [Term]
 id: MS:1001106
 name: Sequest:TopNumber
-def: "Specify \"number\" as value of the CVParam!" [PSI:PI]
+def: "Specify \"number\" as value of the CVParam." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001087 ! Sequest:ProcessCV
 
@@ -6880,20 +6880,20 @@ is_a: MS:1001066 ! ions series considered in search
 [Term]
 id: MS:1001109
 name: Sequest:CullTo
-def: "Specify cull string as value of the CVParam!" [PSI:PI]
+def: "Specify cull string as value of the CVParam." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001087 ! Sequest:ProcessCV
 
 [Term]
 id: MS:1001110
 name: Sequest:modeCV
-def: "Branch containing the CV terms for Sequest Mode Input Parameters." [PSI:PI]
+def: "Sequest Mode Input Parameters." [PSI:PI]
 is_a: MS:1002096 ! Sequest input parameter
 
 [Term]
 id: MS:1001111
 name: Sequest:Full
-xref: value-type:xsd\:bool "The allowed value-type for this CV term."
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001110 ! Sequest:modeCV
 
 [Term]
@@ -6954,7 +6954,7 @@ is_a: MS:1001066 ! ions series considered in search
 [Term]
 id: MS:1001120
 name: Sequest:FormatAndLinks
-xref: value-type:xsd\:bool "The allowed value-type for this CV term."
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001110 ! Sequest:modeCV
 
 [Term]
@@ -6995,7 +6995,7 @@ is_a: MS:1001198 ! protein identification confidence metric
 [Term]
 id: MS:1001126
 name: Sequest:Fast
-xref: value-type:xsd\:bool "The allowed value-type for this CV term."
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001110 ! Sequest:modeCV
 
 [Term]
@@ -7007,7 +7007,7 @@ is_a: MS:1001105 ! peptide result details
 [Term]
 id: MS:1001128
 name: Sequest:selectCV
-def: "Branch containing the CV terms for Sequest Select Input Parameters." [PSI:PI]
+def: "Sequest Select Input Parameters." [PSI:PI]
 is_a: MS:1002096 ! Sequest input parameter
 
 [Term]
@@ -7113,7 +7113,7 @@ is_a: MS:1001128 ! Sequest:selectCV
 [Term]
 id: MS:1001145
 name: Sequest:SelectAdvancedCV
-def: "Branch containing the CV terms for Sequest Select Advanced Input Parameters." [PSI:PI]
+def: "Sequest Select Advanced Input Parameters." [PSI:PI]
 is_a: MS:1001128 ! Sequest:selectCV
 
 [Term]
@@ -7348,7 +7348,7 @@ is_a: MS:1001079 ! database type nucleotide
 [Term]
 id: MS:1001180
 name: Cleavage agent regular expression
-def: "Branch containing regular expressions for cleavage enzymes." [PSI:PI]
+def: "Regular expressions for cleavage enzymes." [PSI:PI]
 relationship: part_of MS:1001044 ! cleavage agent details
 
 [Term]
@@ -7960,7 +7960,7 @@ is_a: MS:1001147 ! protein ambiguity group result details
 [Term]
 id: MS:1001302
 name: search engine specific input parameter
-def: "This branch contains search engine specific input parameters (e.g. Mascot Sig Threshold)." [PSI:PI]
+def: "Search engine specific input parameters." [PSI:PI]
 is_a: MS:1002093 ! search engine input parameter
 
 [Term]
@@ -11459,7 +11459,7 @@ is_a: MS:1001806 ! quantification object attribute
 [Term]
 id: MS:1001829
 name: SRM transition ID
-def: "SRM transition ID." [PSI:MS]
+def: "Identifier for an SRM transition in an external document describing additional information about the transition." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001828 ! Feature attribute
 
@@ -13221,13 +13221,13 @@ is_a: MS:1002107 ! Percolator input parameter
 [Term]
 id: MS:1002093
 name: search engine input parameter
-def: "This branch contains search engine input parameters." [PSI:PI]
+def: "Search engine input parameter." [PSI:PI]
 is_a: MS:1001249 ! search input details
 
 [Term]
 id: MS:1002094
 name: common search engine input parameter
-def: "This branch contains search engine input parameters that are shared by more than one search engine." [PSI:PI]
+def: "Search engine input parameter that is shared by more than one search engine." [PSI:PI]
 is_a: MS:1002093 ! search engine input parameter
 
 [Term]
@@ -13275,19 +13275,19 @@ is_a: MS:1001302 ! search engine specific input parameter
 [Term]
 id: MS:1002103
 name: software input parameter
-def: "This branch contains software input parameters." [PSI:PI]
+def: "Software input parameters." [PSI:PI]
 is_a: MS:1001249 ! search input details
 
 [Term]
 id: MS:1002104
 name: common software input parameter
-def: "This branch contains software input parameters that are shared by more than one software." [PSI:PI]
+def: "Software input parameter that is shared by more than one software." [PSI:PI]
 is_a: MS:1002103 ! software input parameter
 
 [Term]
 id: MS:1002105
 name: software specific input parameter
-def: "This branch contains software input parameters that are shared by more than one software." [PSI:PI]
+def: "Software specific input parameter." [PSI:PI]
 is_a: MS:1002103 ! software input parameter
 
 [Term]
