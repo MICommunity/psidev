@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.37.0
-date: 08:11:2012 10:06
+data-version: 3.38.0
+date: 19:11:2012 08:56
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.37.0
-remark: release date: 2012-11-08
+remark: version: 3.38.0
+remark: release date: 2012-11-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -33,6 +33,10 @@ name: has_units
 id: part_of
 name: part_of
 is_transitive: true
+
+[Typedef]
+id: has_order
+name: has_order
 
 [Term]
 id: MS:0000000
@@ -5951,6 +5955,7 @@ id: MS:1000884
 name: protein attribute
 def: "An nonphysical attribute describing a specific protein." [PSI:MS]
 relationship: part_of MS:1000882 ! protein
+is_a: MS:1001806 ! quantification object attribute
 
 [Term]
 id: MS:1000885
@@ -6156,6 +6161,7 @@ id: MS:1000914
 name: tab delimited text file
 def: "A file that has two or more columns of tabular data where each column is separated by a TAB character." [PSI:MS]
 is_a: MS:1001459 ! file format
+is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1000915
@@ -6715,6 +6721,7 @@ is_a: MS:1001080 ! search type
 [Term]
 id: MS:1001084
 name: database nr
+def: "Non-redundant GenBank sequence database." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
@@ -6851,6 +6858,7 @@ is_a: MS:1001006 ! Sequest:ViewCV
 [Term]
 id: MS:1001104
 name: database UniProtKB/Swiss-Prot
+def: "Ssiss-Prot protein sequence database." [PSI:PI]
 is_a: MS:1001013 ! UniProtKB/database name
 
 [Term]
@@ -7098,6 +7106,7 @@ is_a: MS:1001805 ! quantification datatype
 [Term]
 id: MS:1001142
 name: database IPI_human
+def: "International Protein Index database for Homo sapiens sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
@@ -7175,6 +7184,7 @@ def: "The SEQUEST result 'XCorr'." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
+has_order: MS:1002108 ! higher score better
 
 [Term]
 id: MS:1001156
@@ -7343,6 +7353,7 @@ is_a: MS:1001184 ! search statistics
 [Term]
 id: MS:1001178
 name: database EST
+def: "Expressed sequence tag nucleotide sequence database." [PSI:PI]
 is_a: MS:1001079 ! database type nucleotide
 
 [Term]
@@ -7805,29 +7816,34 @@ is_a: MS:1000585 ! contact attribute
 [Term]
 id: MS:1001267
 name: software vendor
+def: "Software vendor role." [PSI:PI]
 is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001268
 name: programmer
+def: "Programmer role." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001269
 name: instrument vendor
+def: "Instrument vendor role." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001270
 name: lab personnel
+def: "Lab personnel role." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001266 ! role type
 
 [Term]
 id: MS:1001271
 name: researcher
+def: "Researcher role." [PSI:PI]
 is_a: MS:1001266 ! role type
 
 [Term]
@@ -7867,89 +7883,126 @@ is_a: MS:1001450 ! decoy DB details
 [Term]
 id: MS:1001284
 name: decoy DB derived from
-def: "The name of the database, the search database was derived from." [PSI:PI]
+def: "OBSOLETE The name of the database, the search database was derived from." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001450 ! decoy DB details
+is_obsolete: true
 
 [Term]
 id: MS:1001285
 name: database IPI_mouse
+def: "International Protein Index database for Mus musculus sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001286
 name: database IPI_rat
+def: "International Protein Index database for Rattus norvegicus sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001287
 name: database IPI_zebrafish
+def: "International Protein Index database for Danio rerio sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001288
 name: database IPI_chicken
+def: "International Protein Index database for Gallus gallus sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001289
 name: database IPI_cow
+def: "International Protein Index database for Bos taurus sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001290
 name: database IPI_arabidopsis
+def: "International Protein Index database for Arabidopsis thaliana sequences." [PSI:PI]
 is_a: MS:1001013 ! database name
 
 [Term]
 id: MS:1001291
 name: decoy DB from nr
+def: "OBSOLETE Decoy database from a non-redundant GenBank sequence database." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001292
 name: decoy DB from IPI_rat
+def: "OBSOLETE Decoy database from a International Protein Index database for Rattus norvegicus." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001293
 name: decoy DB from IPI_mouse
+def: "OBSOLETE Decoy database from a International Protein Index database for Mus musculus." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001294
 name: decoy DB from IPI_arabidopsis
+def: "OBSOLETE Decoy database from a International Protein Index database for Arabidopsis thaliana." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001295
 name: decoy DB from EST
+def: "OBSOLETE Decoy database from an expressed sequence tag nucleotide sequence database." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001296
 name: decoy DB from IPI_zebrafish
+def: "OBSOLETE Decoy database from a International Protein Index database for Danio rerio." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001297
 name: decoy DB from UniProtKB/Swiss-Prot
+def: "OBSOLETE Decoy database from a Swiss-Prot protein sequence database." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001298
 name: decoy DB from IPI_chicken
+def: "OBSOLETE Decoy database from a International Protein Index database for Gallus gallus." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001299
 name: decoy DB from IPI_cow
+def: "OBSOLETE Decoy database from a International Protein Index database for Bos taurus." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1001300
 name: decoy DB from IPI_human
+def: "OBSOLETE Decoy database from a International Protein Index database for Homo sapiens." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
-
+is_obsolete: true
 [Term]
 id: MS:1001301
 name: protein rank
@@ -8047,60 +8100,70 @@ relationship: has_regexp MS:1001341 ! (?<=[EZ])(?!P)
 [Term]
 id: MS:1001316
 name: Mascot:SigThreshold
+def: "Significance threshold below which the p-value of a peptide match must lie to be considered statistically significant (default 0.05)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001317
 name: Mascot:MaxProteinHits
+def: "The number of protein hits to display in the report. If 'Auto', all protein hits that have a protein score exceeding the average peptide identity threshold are reported. Otherwise an integer at least 1." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001318
 name: Mascot:ProteinScoringMethod
+def: "Mascot protein scoring method; either 'Standard' or 'MudPIT'." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001319
 name: Mascot:MinMSMSThreshold
+def: "Mascot peptide match ion score threshold. If between 0 and 1, then peptide matches whose expect value exceeds the thresholds are suppressed; if at least 1, then peptide matches whose ion score is below the threshold are suppressed." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001320
 name: Mascot:ShowHomologousProteinsWithSamePeptides
+def: "If true, show (sequence or spectrum) same-set proteins. Otherwise they are suppressed." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001321
 name: Mascot:ShowHomologousProteinsWithSubsetOfPeptides
+def: "If true, show (sequence or spectrum) sub-set and subsumable proteins. Otherwise they are suppressed." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001322
 name: Mascot:RequireBoldRed
+def: "Only used in Peptide Summary and Select Summary reports. If true, a peptide match must be 'bold red' to be included in the report; bold red means the peptide is a top ranking match in a query and appears for the first time (in linear order) in the list of protein hits." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001323
 name: Mascot:UseUnigeneClustering
+def: "If true, then the search results are against a nucleic acid database and Unigene clustering is enabled. Otherwise UniGene clustering is not in use." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001324
 name: Mascot:IncludeErrorTolerantMatches
+def: "If true, then the search results are error tolerant and peptide matches from the second pass are included in search results. Otherwise no error tolerant peptide matches are included." [http://www.matrixscience.com/help/error_tolerant_help.html]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
 [Term]
 id: MS:1001325
 name: Mascot:ShowDecoyMatches
+def: "If true, then the search results are against an automatically generated decoy database and the reported peptide matches and protein hits come from the decoy database. Otherwise peptide matches and protein hits come from the original database." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002095 ! Mascot input parameter
 
@@ -8754,6 +8817,7 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001430
 name: ProteinExtractor:UseMascot
+def: "Flag indicating to include Mascot scoring for calculation of the ProteinExtractor metascore." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8784,6 +8848,7 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001435
 name: ProteinExtractor:UseSequest
+def: "Flag indicating to include Sequest scoring for calculation of the ProteinExtractor metascore." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8808,6 +8873,7 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001439
 name: ProteinExtractor:UseProteinSolver
+def: "Flag indicating to include ProteinSolver scoring for calculation of the ProteinExtractor metascore." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8832,6 +8898,7 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001443
 name: ProteinExtractor:UsePhenyx
+def: "Flag indicating to include Phenyx scoring for calculation of the ProteinExtractor metascore." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -11452,7 +11519,7 @@ is_a: MS:1001825 ! FeatureList attribute
 
 [Term]
 id: MS:1001828
-name: Feature attribute
+name: feature attribute
 def: "Attribute describing a Feature." [PSI:MS]
 is_a: MS:1001806 ! quantification object attribute
 
@@ -11461,7 +11528,7 @@ id: MS:1001829
 name: SRM transition ID
 def: "Identifier for an SRM transition in an external document describing additional information about the transition." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001828 ! Feature attribute
+is_a: MS:1001828 ! feature attribute
 
 [Term]
 id: MS:1001830
@@ -11477,7 +11544,7 @@ is_a: MS:1001139 ! quantitation software name
 
 [Term]
 id: MS:1001832
-name: quantitation software comment / customizations
+name: quantitation software comment or customizations
 def: "Quantitation software comment or any customizations to the default setup of the software." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001129 ! quantification information
@@ -12696,18 +12763,21 @@ relationship: has_units UO:0000266 ! electronvolt
 id: MS:1002015
 name: spectral count peptide level quantitation
 def: "Spectral count peptide level quantitation." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001836 ! spectral counting quantitation analysis
 
 [Term]
 id: MS:1002016
 name: spectral count protein level quantitation
 def: "Spectral count protein level quantitation." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001836 ! spectral counting quantitation analysis
 
 [Term]
 id: MS:1002017
 name: spectral count proteingroup level quantitation
 def: "Spectral count proteingroup level quantitation." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001836 ! spectral counting quantitation analysis
 
 [Term]
@@ -13005,12 +13075,16 @@ is_a: MS:1001139 ! quantitation software name
 [Term]
 id: MS:1002060
 name: database UniProtKB/TrEMBL
+def: "TrEMBL protein sequence database." [PSI:PI]
 is_a: MS:1001013 ! UniProtKB/database name
 
 [Term]
 id: MS:1002061
 name: decoy DB from UniProtKB/TrEMBL
+def: "OBSOLETE Decoy database from a TrEMBL protein sequence database." [PSI:PI]
+comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
+is_obsolete: true
 
 [Term]
 id: MS:1002062
@@ -13301,3 +13375,105 @@ id: MS:1002107
 name: Percolator input parameter
 def: "Search engine input parameters specific to Percolator." [PSI:PI]
 is_a: MS:1002105 ! software specific input parameter
+
+[Term]
+id: MS:1002108
+name: higher score better
+def: "Indicates that a higher score is better." [PSI:PI]
+relationship: part_of MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002109
+name: lower score better
+def: "Indicates that a lower score is better." [PSI:PI]
+relationship: part_of MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002110
+name: assay attribute
+def: "Attribute describing an assay." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002111
+name: assay label attribute
+def: "Attribute describing an assay label." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002112
+name: protein group list attribute
+def: "Attribute describing a protein group list." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002113
+name: protein group attribute
+def: "Attribute describing a protein group." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002114
+name: protein list attribute
+def: "Attribute describing a protein list." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002115
+name: peptide consensus list attribute
+def: "Attribute describing a peptide consensus list." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002116
+name: peptide consensus attribute
+def: "Attribute describing a peptide consensus." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002117
+name: small molecule list attribute
+def: "Attribute describing a small mollecule list." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002118
+name: small molecule attribute
+def: "Attribute describing a small molecule." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002119
+name: small molecule modification attribute
+def: "Attribute describing a small molecule modification." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002120
+name: experiment name
+def: "The name for identifying an experiment." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002121
+name: spectral count feature
+def: "Dummy decribing a spectral count feature." [PSI:PI]
+is_a: MS:1001828 ! feature attribute
+
+[Term]
+id: MS:1002122
+name: counts reporting
+def: "FeatureList of spectral counts." [PSI:PI]
+is_a: MS:1001825 ! FeatureList attribute
+
+[Term]
+id: MS:1002123
+name: x-Tracker
+def: "x-Tracker generic tool for quantitative proteomics." [http://www.x-tracker.info/]
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1002124
+name: ProteoSuite
+def: "ProteoSuite software for the analysis of quantitative proteomics data." [DOI:10.1089/omi.2012.0022, PMID:22804616, http://www.proteosuite.org/]
+is_a: MS:1001139 ! quantitation software name
