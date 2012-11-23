@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.39.0
-date: 20:11:2012 16:56
+data-version: 3.40.0
+date: 23:11:2012 09:25
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.39.0
-remark: release date: 2012-11-20
+remark: version: 3.40.0
+remark: release date: 2012-11-23
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6858,8 +6858,8 @@ is_a: MS:1001006 ! Sequest:ViewCV
 [Term]
 id: MS:1001104
 name: database UniProtKB/Swiss-Prot
-def: "Ssiss-Prot protein sequence database." [PSI:PI]
-is_a: MS:1001013 ! UniProtKB/database name
+def: "The name of the UniProtKB/Swiss-Prot knowledgebase." [PSI:PI]
+is_a: MS:1002126 ! database UniProtKB
 
 [Term]
 id: MS:1001105
@@ -7479,16 +7479,19 @@ is_a: MS:1001512 ! Sequence database filters
 [Term]
 id: MS:1001207
 name: Mascot
+def: "The name of the Mascot search engine." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001208
 name: Sequest
+def: "The name of the Sequest search engine." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001209
 name: Phenyx
+def: "The name of the Phenyx search engine." [PSI:PI]
 is_a: MS:1001456 ! analysis software
 
 [Term]
@@ -8471,84 +8474,98 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001375
 name: Phenyx:Instrument Type
+def: "The instrument type parameter value in Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001376
 name: Phenyx:Scoring Model
+def: "The selected scoring model in Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001377
 name: Phenyx:Default Parent Charge
+def: "The default parent charge value in Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001378
 name: Phenyx:Trust Parent Charge
+def: "The parameter in Phenyx that specifies if the experimental charge state is to be considered as correct." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001379
 name: Phenyx:Turbo
+def: "The turbo mode parameter in Phenyx." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001380
 name: Phenyx:Turbo:ErrorTol
+def: "The maximal allowed fragment m/z error filter considered in the turbo mode of Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001381
 name: Phenyx:Turbo:Coverage
+def: "The minimal peptide sequence coverage value, expressed in percent, considered in the turbo mode of Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001382
 name: Phenyx:Turbo:Series
+def: "The list of ion series considered in the turbo mode of Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001383
 name: Phenyx:MinPepLength
+def: "The minimal number of residues for a peptide to be considered for a valid identification in Phenyx." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001384
 name: Phenyx:MinPepzscore
+def: "The minimal peptide z-score for a peptide to be considered for a valid identification in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001385
 name: Phenyx:MaxPepPvalue
+def: "The maximal peptide p-value for a peptide to be considered for a valid identification in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001386
 name: Phenyx:AC Score
+def: "The minimal protein score required for a protein database entry to be displayed in the list of identified proteins in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001387
 name: Phenyx:Conflict Resolution
+def: "The parameter in Phenyx that specifies if the conflict resolution algorithm is to be used." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1002097 ! Phenyx input parameter
 
 [Term]
 id: MS:1001388
 name: Phenyx:AC
+def: "The primary sequence database identifier of a protein in Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
@@ -8557,12 +8574,14 @@ is_a: MS:1001153 ! search engine specific score
 id: MS:1001389
 name: Phenyx:ID
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
+def: "A secondary sequence database identifier of a protein in Phenyx." [PSI:PI]
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001390
 name: Phenyx:Score
+def: "The protein score of a protein match in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
@@ -8586,6 +8605,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001393
 name: Phenyx:Auto
+def: "The value of the automatic peptide acceptance filter in Phenyx." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8593,6 +8613,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001394
 name: Phenyx:User
+def: "The value of the user-defined peptide acceptance filter in Phenyx." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8600,6 +8621,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001395
 name: Phenyx:Pepzscore
+def: "The z-score value of a peptide sequence match in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8607,6 +8629,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001396
 name: Phenyx:PepPvalue
+def: "The p-value of a peptide sequence match in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8615,6 +8638,7 @@ is_a: MS:1001870 ! p-value for peptides
 [Term]
 id: MS:1001397
 name: Phenyx:NumberOfMC
+def: "The number of missed cleavages of a peptide sequence in Phenyx." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8622,6 +8646,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001398
 name: Phenyx:Modif
+def: "The expression of the nature and position(s) of modified residue(s) on a matched peptide sequence in Phenyx." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for peptides
 is_a: MS:1001153 ! search engine specific score
@@ -8824,12 +8849,14 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001431
 name: ProteinExtractor:MascotPeptideScoreThreshold
+def: "Only peptides with scores higher than that threshold are taken into account in Mascot scoring for calculation of the ProteinExtractor metascore." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001432
 name: ProteinExtractor:MascotUniqueScore
+def: "In the final result each protein must have at least one peptide above this Mascot score threshold in ProteinExtractor metascore calculation." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8842,6 +8869,7 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001434
 name: ProteinExtractor:MascotWeighting
+def: "Influence of Mascot search engine in the process of merging the search engine specific protein lists into the global protein list of ProteinExtractor." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8855,18 +8883,21 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001436
 name: ProteinExtractor:SequestPeptideScoreThreshold
+def: "Only peptides with scores higher than that threshold are taken into account in Sequest scoring for calculation of the ProteinExtractor metascore." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001437
 name: ProteinExtractor:SequestUniqueScore
+def: "In the final result each protein must have at least one peptide above this Sequest score threshold in ProteinExtractor metascore calculation." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001438
 name: ProteinExtractor:SequestWeighting
+def: "Influence of Sequest search engine in the process of merging the search engine specific protein lists into the global protein list of ProteinExtractor." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8880,18 +8911,21 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001440
 name: ProteinExtractor:ProteinSolverPeptideScoreThreshold
+def: "Only peptides with scores higher than that threshold are taken into account in ProteinSolver scoring for calculation of the ProteinExtractor metascore." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001441
 name: ProteinExtractor:ProteinSolverUniqueScore
+def: "In the final result each protein must have at least one peptide above this ProteinSolver score threshold in ProteinExtractor metascore calculation." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001442
 name: ProteinExtractor:ProteinSolverWeighting
+def: "Influence of ProteinSolver search engine in the process of merging the search engine specific protein lists into the global protein list of ProteinExtractor." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -8905,18 +8939,21 @@ is_a: MS:1002098 ! ProteinExtractor input parameter
 [Term]
 id: MS:1001444
 name: ProteinExtractor:PhenyxPeptideScoreThreshold
+def: "Only peptides with scores higher than that threshold are taken into account in Phenyx scoring for calculation of the ProteinExtractor metascore." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001445
 name: ProteinExtractor:PhenyxUniqueScore
+def: "In the final result each protein must have at least one peptide above this Phenyx score threshold in ProteinExtractor metascore calculation." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
 [Term]
 id: MS:1001446
 name: ProteinExtractor:PhenyxWeighting
+def: "Influence of Phenyx search engine in the process of merging the search engine specific protein lists into the global protein list of ProteinExtractor." [DOI:10.4172/jpb.1000056]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002098 ! ProteinExtractor input parameter
 
@@ -9750,7 +9787,7 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001574
 name: report only spectra assigned to identified proteins
-def: "." [PSI:PI]
+def: "Flag indicating to report only the spectra assigned to identified proteins." [PSI:PI]
 is_a: MS:1001060 ! quality estimation method details
 
 [Term]
@@ -11389,7 +11426,7 @@ is_a: MS:1001129 ! quantification information
 
 [Term]
 id: MS:1001807
-name: StudyVariable attribute
+name: study variable attribute
 def: "Attribute describing a study variable." [PSI:MS]
 is_a: MS:1001806 ! quantification object attribute
 
@@ -11398,62 +11435,62 @@ id: MS:1001808
 name: technical replicate
 def: "The study variable is 'technical replicate'. The string value denotes the category of technical replicate, e.g. 'run generated from same sample'." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001809
 name: biological replicate
 def: "The study variable is 'biological replicate'. This means, the run was generated from another individuum or sample." [PSI:MS]
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001810
 name: experimental condition 'case'
 def: "The experimental condition is 'case' in contrast to 'control'." [PSI:MS]
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001811
 name: experimental condition 'control'
 def: "The experimental condition is 'control' in contrast to 'case'." [PSI:MS]
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001812
 name: experimental condition 'disease'
 def: "The experimental condition is 'disease' in contrast to 'healthy'." [PSI:MS]
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001813
 name: experimental condition 'healthy'
 def: "The experimental condition is 'healthy' in contrast to 'disease'." [PSI:MS]
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001814
 name: generic experimental condition
 def: "The experimental condition is given in the value of this term." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001815
 name: time series, time point X
 def: "The experimental design followed a time series design. The time point of this run is given in the value of this term." [PSI:MS]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001816
 name: dilution series, concentration X
 def: "The experimental design followed a dilution series design. The concentration of this run is given in the value of this term." [PSI:MS]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001807 ! StudyVariable attribute
+is_a: MS:1001807 ! study variable attribute
 
 [Term]
 id: MS:1001817
-name: RawFile attribute
+name: raw file attribute
 def: "Attribute describing a raw file." [PSI:MS]
 is_a: MS:1001806 ! quantification object attribute
 
@@ -11461,35 +11498,35 @@ is_a: MS:1001806 ! quantification object attribute
 id: MS:1001818
 name: one sample run
 def: "The raw file contains the run of one sample (e.g. spectral counting, LC-MS label-free)." [PSI:MS]
-is_a: MS:1001817 ! RawFile attribute
+is_a: MS:1001817 ! raw file attribute
 
 [Term]
 id: MS:1001819
 name: two sample run
 def: "The raw file contains the run of two samples (e.g. SILAC, metabolic labeling)." [PSI:MS]
-is_a: MS:1001817 ! RawFile attribute
+is_a: MS:1001817 ! raw file attribute
 
 [Term]
 id: MS:1001820
 name: three sample run
 def: "The raw file contains the run of three samples (e.g. 3-plex SILAC)." [PSI:MS]
-is_a: MS:1001817 ! RawFile attribute
+is_a: MS:1001817 ! raw file attribute
 
 [Term]
 id: MS:1001821
 name: four sample run
 def: "The raw file contains the run of four samples (e.g. 4-plex iTraq)." [PSI:MS]
-is_a: MS:1001817 ! RawFile attribute
+is_a: MS:1001817 ! raw file attribute
 
 [Term]
 id: MS:1001822
 name: eight sample run
 def: "The raw file contains the run of eight samples (e.g. 8-plex iTraq)." [PSI:MS]
-is_a: MS:1001817 ! RawFile attribute
+is_a: MS:1001817 ! raw file attribute
 
 [Term]
 id: MS:1001823
-name: RawFilesGroup attribute
+name: raw files group attribute
 def: "Attribute describing, how raw files build a raw file group." [PSI:MS]
 is_a: MS:1001806 ! quantification object attribute
 
@@ -11497,25 +11534,25 @@ is_a: MS:1001806 ! quantification object attribute
 id: MS:1001824
 name: merge of runs of 1D gel bands
 def: "Attribute describing, how raw files build a raw file group." [PSI:MS]
-is_a: MS:1001823 ! RawFilesGroup attribute
+is_a: MS:1001823 ! raw files group attribute
 
 [Term]
 id: MS:1001825
-name: FeatureList attribute
-def: "Attribute describing a FeatureList." [PSI:MS]
+name: feature list attribute
+def: "Attribute describing a feature list." [PSI:MS]
 is_a: MS:1001806 ! quantification object attribute
 
 [Term]
 id: MS:1001826
 name: mass trace reporting: rectangles
 def: "The mass trace of the features of this feature list specifies rectangles. Each mass trace has the syntax (RT_start,MZ_start,RT_end,MZ_end), i.e. opposite corners are given." [PSI:MS]
-is_a: MS:1001825 ! FeatureList attribute
+is_a: MS:1001825 ! feature list attribute
 
 [Term]
 id: MS:1001827
 name: mass trace reporting: polygons
 def: "The mass trace of the features of this feature list specifies polygons. Each mass trace has the syntax (RT_1, MZ_1, RT_2, MZ_2, ... , RT_i, MZ_i, ... , RT_n, MZ_n), where the line (RT_n, MZ_n)->(RT_1, MZ_1) is implicite." [PSI:MS]
-is_a: MS:1001825 ! FeatureList attribute
+is_a: MS:1001825 ! feature list attribute
 
 [Term]
 id: MS:1001828
@@ -11541,6 +11578,7 @@ id: MS:1001831
 name: SILACAnalyzer
 def: "Software for SILAC workflow." [PSI:MS]
 is_a: MS:1001139 ! quantitation software name
+is_a: MS:1000752 ! TOPP software
 
 [Term]
 id: MS:1001832
@@ -12711,7 +12749,7 @@ id: MS:1002008
 name: decoy SRM transition
 def: "A transition not expected to be present in the sample and used to calculate statistical confidence of target transition detections in some workflows." [PSI:MS]
 synonym: "decoy MRM transition" EXACT []
-is_a: MS:1002006 ! MRM transition type
+is_a: MS:1002006 ! SRM transition type
 
 [Term]
 id: MS:1002009
@@ -13075,8 +13113,8 @@ is_a: MS:1001139 ! quantitation software name
 [Term]
 id: MS:1002060
 name: database UniProtKB/TrEMBL
-def: "TrEMBL protein sequence database." [PSI:PI]
-is_a: MS:1001013 ! UniProtKB/database name
+def: "The name of the UniProtKB/TrEMBL database." [PSI:PI]
+is_a: MS:1002126 ! database UniProtKB
 
 [Term]
 id: MS:1002061
@@ -13464,7 +13502,7 @@ is_a: MS:1001828 ! feature attribute
 id: MS:1002122
 name: counts reporting
 def: "FeatureList of spectral counts." [PSI:PI]
-is_a: MS:1001825 ! FeatureList attribute
+is_a: MS:1001825 ! feature list attribute
 
 [Term]
 id: MS:1002123
@@ -13484,3 +13522,28 @@ name: combined FDRScore
 def: "Quality measurement score." [PMID:19253293]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002126
+name: database UniProtKB
+def: "The name of the UniProtKB knowledgebase." [PSI:PI]
+is_a: MS:1001013 ! database name
+
+[Term]
+id: MS:1002127
+name: identification file attribute
+def: "Attribute describing an identification file." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002128
+name: method file attribute
+def: "Attribute describing a method file." [PSI:PI]
+is_a: MS:1001806 ! quantification object attribute
+
+[Term]
+id: MS:1002129
+name: ITRAQAnalyzer
+def: "Software for iTRAQ workflow." [http://www-bs2.informatik.uni-tuebingen.de/services/OpenMS/OpenMS-release/html/TOPP__ITRAQAnalyzer.html]
+is_a: MS:1001139 ! quantitation software name
+is_a: MS:1000752 ! TOPP software
