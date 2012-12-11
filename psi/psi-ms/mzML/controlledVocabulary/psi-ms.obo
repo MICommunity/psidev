@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.42.0
-date: 03:12:2012 18:20
+data-version: 3.43.0
+date: 11:12:2012 14:42
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.42.0
-remark: release date: 2012-12-03
+remark: version: 3.43.0
+remark: release date: 2012-12-11
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -2389,7 +2389,7 @@ is_a: MS:1000026 ! detector type
 [Term]
 id: MS:1000352
 name: secondary electron
-def: "Electrons that are ejected from a sample surface as a result of bombardment by a primary beam of atoms, ions or photons. WAS IN DETECTOR TYPE. Where should it go?" [PSI:MS]
+def: "Electrons that are ejected from a sample surface as a result of bombardment by a primary beam of atoms, ions or photons. WAS IN DETECTOR TYPE. Where should it go." [PSI:MS]
 is_a: MS:1000479 ! purgatory
 
 [Term]
@@ -6546,33 +6546,33 @@ is_a: MS:1001044 ! cleavage agent details
 
 [Term]
 id: MS:1001046
-name: Sequest:sort_by_dCn
+name: Sequest:sort by dCn
 def: "Sort order of Sequest search results by the delta of the normalized correlation score." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001047
-name: Sequest:sort_by_dM
+name: Sequest:sort by dM
 def: "Sort order of Sequest search results by the difference between a theoretically calculated and the corresponding experimentally measured molecular mass M." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001048
-name: Sequest:sort_by_Ions
+name: Sequest:sort by Ions
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001049
-name: Sequest:sort_by_MH+
+name: Sequest:sort by MH+
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001050
-name: Sequest:sort_by_P
+name: Sequest:sort by P
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
@@ -6586,13 +6586,13 @@ is_obsolete: true
 
 [Term]
 id: MS:1001052
-name: Sequest:sort_by_PreviousAminoAcid
+name: Sequest:sort by PreviousAminoAcid
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001053
-name: Sequest:sort_by_Ref
+name: Sequest:sort by Ref
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
@@ -6623,7 +6623,7 @@ is_a: MS:1001060 ! quality estimation method details
 
 [Term]
 id: MS:1001059
-name: Sequest:sort_by_RSp
+name: Sequest:sort by RSp
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
@@ -6636,7 +6636,7 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: MS:1001061
 name: neutral loss
-def: "OBSOLETE: replaced by MS:1000336 (neutral loss): Leave this to PSI-MOD?" [PSI:PI]
+def: "OBSOLETE: replaced by MS:1000336 (neutral loss): Leave this to PSI-MOD." [PSI:PI]
 is_a: MS:1001055 ! modification parameters
 is_obsolete: true
 replaced_by: MS:1000336
@@ -6664,32 +6664,32 @@ is_a: MS:1001249 ! search input details
 
 [Term]
 id: MS:1001068
-name: Sequest:sort_by_Sp
+name: Sequest:sort by Sp
 def: "Sort order of Sequest search results by the Sp score." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001069
-name: Sequest:sort_by_TIC
+name: Sequest:sort by TIC
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001070
-name: Sequest:sort_by_Scan
+name: Sequest:sort by Scan
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001071
-name: Sequest:sort_by_Sequence
+name: Sequest:sort by Sequence
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
 [Term]
 id: MS:1001072
-name: Sequest:sort_by_Sf
+name: Sequest:sort by Sf
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
@@ -6743,7 +6743,7 @@ is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1001086
-name: Sequest:sort_by_XCorr
+name: Sequest:sort by XCorr
 def: "Sort order of Sequest search results by the correlation score." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
@@ -6804,7 +6804,7 @@ is_a: MS:1001116 ! single protein result details
 
 [Term]
 id: MS:1001094
-name: Sequest:sort_by_z
+name: Sequest:sort by z
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001041 ! Sequest:sortCV
 
@@ -10030,10 +10030,10 @@ is_a: MS:1001101 ! protein group or subset relationship
 
 [Term]
 id: MS:1001600
-name: Protein Inference Confidence Category
+name: protein inference confidence category
 def: "Confidence category of inferred protein (conclusive, non conclusive, ambiguous group or indistinguishable)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-is_a: MS:1001198 ! protein identification confidence metric
+is_a: MS:1001101 ! protein group or subset relationship
 
 [Term]
 id: MS:1001601
@@ -13375,7 +13375,7 @@ relationship: has_units UO:0000221 ! dalton
 [Term]
 id: MS:1002082
 name: first column elution time
-def: "The time of elution from the first chromatographic column in the chromatographic separation step, relative to the start of chromatography on the first column."[PSI:MS]
+def: "The time of elution from the first chromatographic column in the chromatographic separation step, relative to the start of chromatography on the first column." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 relationship: has_units UO:0000010 ! second
@@ -14165,3 +14165,31 @@ id: MS:1002212
 name: IPTL quantitation analysis
 def: "Quantification analysis using a labeling strategy where both peptide termini are labeled so that the peptides from different labeling schema are isobaric." [PSI:PI]
 is_a: MS:1002009 ! isobaric label quantitation analysis
+
+[Term]
+id: MS:1002213
+name: conclusive protein
+def: "A protein identified by at least one unique (distinct, discrete) peptide (peptides are considered different only if they can be distinguished by evidence in mass spectrum)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001600 ! protein inference confidence category
+
+[Term]
+id: MS:1002214
+name: indistinguishable protein
+def: "A member of a group of proteins sharing all peptides that are exclusive to the group (peptides are considered different only if they can be distinguished by evidence in mass spectrum)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001600 ! protein inference confidence category
+
+[Term]
+id: MS:1002215
+name: non-conclusive protein
+def: "A protein sharing all its matched peptides with either conclusive or indistinguishable proteins (peptides are considered different only if they can be distinguished by evidence in mass spectrum)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001600 ! protein inference confidence category
+
+[Term]
+id: MS:1002216
+name: ambiguous group member
+def: "A protein sharing at least one peptide not matched to either conclusive or indistinguishable proteins (peptides are considered different only if they can be distinguished by evidence in mass spectrum)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001600 ! protein inference confidence category
