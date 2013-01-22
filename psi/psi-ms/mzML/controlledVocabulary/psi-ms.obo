@@ -1,14 +1,14 @@
 format-version: 1.2
-data-version: 3.44.0
-date: 19:12:2012 17:00
+data-version: 3.45.0
+date: 22:01:2013 08:53
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://purl.obolibrary.org/obo/pato.obo
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
-remark: version: 3.44.0
-remark: release date: 2012-12-19
+remark: version: 3.45.0
+remark: release date: 2013-01-22
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -14193,3 +14193,10 @@ name: PAnalyzer:ambiguous group member
 def: "A protein sharing at least one peptide not matched to either conclusive or indistinguishable proteins (peptides are considered different only if they can be distinguished by evidence in mass spectrum)." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001600 ! protein inference confidence category
+
+[Term]
+id: MS:1002217
+name: decoy peptide
+def: "An identified peptide issued from a decoy sequence database." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001105 ! peptide result details
