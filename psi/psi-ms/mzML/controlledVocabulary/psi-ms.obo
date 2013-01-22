@@ -14197,6 +14197,6 @@ is_a: MS:1001600 ! protein inference confidence category
 [Term]
 id: MS:1002217
 name: decoy peptide
-def: "An identified peptide issued from a decoy sequence database." [PSI:PI]
+def: "A putative identified peptide issued from a decoy sequence database." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
