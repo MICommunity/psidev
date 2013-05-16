@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.48.0
-date: 29:04:2013 18:47
+data-version: 3.49.0
+date: 16:05:2013 13:01
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.48.0
-remark: release date: 2013-04-29
+remark: version: 3.49.0
+remark: release date: 2013-05-16
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -38,6 +38,10 @@ is_transitive: true
 [Typedef]
 id: has_order
 name: has_order
+
+[Typedef]
+id: has_domain
+name: has_domain
 
 [Term]
 id: MS:0000000
@@ -7597,7 +7601,7 @@ is_a: MS:1001153 ! search engine specific score
 id: MS:1001220
 name: frag: y ion
 def: "Fragmentation information, type of product: y ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001221
@@ -7609,19 +7613,19 @@ is_a: MS:1001105 ! peptide result details
 id: MS:1001222
 name: frag: b ion - H2O
 def: "Fragmentation information, type of product: b ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001223
 name: frag: y ion - H2O
 def: "Fragmentation information, type of product: y ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001224
 name: frag: b ion
 def: "Fragmentation information, type of product: b ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001225
@@ -7655,73 +7659,73 @@ relationship: has_units UO:0000166 ! parts per notation unit
 id: MS:1001228
 name: frag: x ion
 def: "Fragmentation information, type of product: x ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001229
 name: frag: a ion
 def: "Fragmentation information, type of product: a ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001230
 name: frag: z ion
 def: "Fragmentation information, type of product: z ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001231
 name: frag: c ion
 def: "Fragmentation information, type of product: c ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001232
 name: frag: b ion - NH3
 def: "Fragmentation information, type of product: b ion without ammonium ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001233
 name: frag: y ion - NH3
 def: "Fragmentation information, type of product: y ion without ammonium ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001234
 name: frag: a ion - H2O
 def: "Fragmentation information, type of product: a ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001235
 name: frag: a ion - NH3
 def: "Fragmentation information, type of product: a ion without ammonium." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001236
 name: frag: d ion
 def: "Fragmentation information, type of product: d ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001237
 name: frag: v ion
 def: "Fragmentation information, type of product: v ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001238
 name: frag: w ion
 def: "Fragmentation information, type of product: w ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001239
 name: frag: immonium ion
 def: "Fragmentation information, type of product: immonium ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001240
@@ -8056,6 +8060,7 @@ def: "OBSOLETE Decoy database from a International Protein Index database for Ho
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
 is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
+
 [Term]
 id: MS:1001301
 name: protein rank
@@ -8422,7 +8427,7 @@ is_a: MS:1001357 ! spectrum quality descriptions
 [Term]
 id: MS:1001359
 name: ambiguous residues
-def: "Children of this term describe abiguous residues." [PSI:PI]
+def: "Children of this term describe ambiguous residues." [PSI:PI]
 relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
@@ -8464,25 +8469,25 @@ is_a: MS:1001405 ! spectrum identification result details
 id: MS:1001365
 name: frag: internal yb ion
 def: "Fragmentation information, type of product: internal yb ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001366
 name: frag: internal ya ion
 def: "Fragmentation information, type of product: internal ya ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001367
 name: frag: z+1 ion
 def: "Fragmentation information, type of product: z+1 ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001368
 name: frag: z+2 ion
 def: "Fragmentation information, type of product: z+2 ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001369
@@ -9485,55 +9490,55 @@ is_a: MS:1001512 ! Sequence database filters
 id: MS:1001515
 name: frag: c ion - H2O
 def: "Fragmentation information, type of product: c ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001516
 name: frag: c ion - NH3
 def: "Fragmentation information, type of product: c ion without ammonia." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001517
 name: frag: z ion - H2O
 def: "Fragmentation information, type of product: z ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001518
 name: frag: z ion - NH3
 def: "Fragmentation information, type of product: z ion without ammonia." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001519
 name: frag: x ion - H2O
 def: "Fragmentation information, type of product: x ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001520
 name: frag: x ion - NH3
 def: "Fragmentation information, type of product: x ion without ammonia." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001521
 name: frag: precursor ion - H2O
 def: "Fragmentation information, type of product: precursor ion without water." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001522
 name: frag: precursor ion - NH3
 def: "Fragmentation information, type of product: precursor ion without ammonia." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001523
 name: frag: precursor ion
 def: "Fragmentation information, type of product: precursor ion." [PSI:PI]
-is_a: MS:1001221 ! fragmentation information
+is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001524
@@ -11801,14 +11806,14 @@ id: MS:1001854
 name: ANOVA p-value
 def: "Global datatype: p-value of ANOVA of group means (e.g. Progenesis)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001805 ! quantification datatype
+is_a: MS:1002072 ! p-value
 
 [Term]
 id: MS:1001855
 name: t-test p-value
 def: "P-value of t-Test of two groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001805 ! quantification datatype
+is_a: MS:1002072 ! p-value
 
 [Term]
 id: MS:1001856
@@ -11911,6 +11916,7 @@ name: p-value for peptides
 def: "Peptide identification confidence metric p-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001092 ! peptide identification confidence metric
+has_domain: MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001871
@@ -11918,6 +11924,7 @@ name: p-value for proteins
 def: "Protein identification confidence metric p-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein identification confidence metric
+has_domain: MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001872
@@ -11925,6 +11932,7 @@ name: E-value for peptides
 def: "Peptide identification confidence metric E-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001092 ! peptide identification confidence metric
+has_domain: MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1001873
@@ -11932,6 +11940,7 @@ name: E-value for proteins
 def: "Protein identification confidence metric E-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein identification confidence metric
+has_domain: MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1001874
@@ -11945,6 +11954,7 @@ is_a: MS:1001153 ! search engine specific score
 id: MS:1001875
 name: modification motif
 def: "The regular expression describing the sequence motif for a modification." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001056 ! modification specificity rule
 
 [Term]
@@ -13316,6 +13326,7 @@ name: p-value
 def: "P-value as result of one of the processing steps described. Specify in the description, which processing step it was." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001805 ! quantification datatype
+has_domain: MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002073
@@ -14655,12 +14666,6 @@ def: "Bruker Daltonics' compact: ESI Q-TOF, Nanospray, APCI, APPI, GC-APCI, Capt
 is_a: MS:1001536 ! Bruker Daltonics micrOTOF series
 
 [Term]
-id: MS:1002280
-name: compact
-def: "Bruker Daltonics' compact." [PSI:MS]
-is_a: MS:1001536 ! Bruker Daltonics micrOTOF series
-
-[Term]
 id: MS:1002281
 name: SRM feature level quantitation
 def: "Selected Reaction Monitoring feature level quantitation." [PSI:PI]
@@ -14793,3 +14798,40 @@ id: MS:1002301
 name: amaZon Speed
 def: "Bruker Daltonics' amaZon ETD: ESI quadrupole ion trap, Nanospray, APCI, APPI, GC-APCI, CaptiveSpray." [PSI:MS]
 is_a: MS:1001545 ! Bruker Daltonics amaZon series
+
+[Term]
+id: MS:1002302
+name: Bruker Container file
+def: "Bruker Container raw file format." [PSI:MS]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1002303
+name: Bruker Container nativeID format
+def: "Native identifier (UUID)." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000767 ! native spectrum identifier format
+
+[Term]
+id: MS:1002304
+name: domain range
+def: "Domain range of a numerical value." [PSI:PI]
+relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
+
+[Term]
+id: MS:1002305
+name: value between 0 and 1 inclusive
+def: "Value range for probabilities." [PSI:PI]
+is_a: MS:1002304 ! domain range
+
+[Term]
+id: MS:1002306
+name: value greater than zero
+def: "Positive value range." [PSI:PI]
+is_a: MS:1002304 ! domain range
+
+[Term]
+id: MS:1002307
+name: fragmentation ion type
+def: "Type of fragment ion based on where the backbone breaks, such as a y ion or a c ion." [PSI:PI]
+is_a: MS:1001221 ! fragmentation information
