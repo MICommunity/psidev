@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.50.0
-date: 31:05:2013 09:01
+data-version: 3.51.0
+date: 01:07:2013 09:45
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.50.0
-remark: release date: 2013-05-31
+remark: version: 3.51.0
+remark: release date: 2013-07-01
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6388,7 +6388,7 @@ is_a: MS:1001011 ! search database details
 [Term]
 id: MS:1001016
 name: database version
-def: "OBSOLETE: Use attribute in mzIdentML instead. Version of the search database ." [PSI:PI]
+def: "OBSOLETE: Use attribute in mzIdentML instead. Version of the search database." [PSI:PI]
 is_a: MS:1001011 ! search database details
 is_obsolete: true
 
@@ -14711,7 +14711,7 @@ relationship: part_of MS:1002285 ! Trans-Proteomic Pipeline
 
 [Term]
 id: MS:1002287
-name:PeptideProphet
+name: PeptideProphet
 def: "A program in the TPP that calculates PSM probabilities for MS/MS proteomics data searched with any of the supported sequence or spectral library search engines via the pepXML format." [PMID:12403597, PMID:23176103]
 is_a: MS:1002286 ! Trans-Proteomic Pipeline software
 
@@ -14741,7 +14741,7 @@ is_a: MS:1002286 ! Trans-Proteomic Pipeline software
 
 [Term]
 id: MS:1002291
-name:Libra
+name: Libra
 def: "A program in the TPP that calculates PSM, peptide, and protein-level abundances based on N-channel isobaric label peptide data such as iTRAQ, TMT, etc." [PSI:PI]
 is_a: MS:1002286 ! Trans-Proteomic Pipeline software
 
@@ -14874,3 +14874,27 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
 has_order: MS:1002108 ! higher score better
+
+[Term]
+id: MS:1002312
+name: MS-Numpress linear prediction compression
+def: "Compression using MS-Numpress linear prediction compression." [https://github.com/fickludd/ms-numpress]
+is_a: MS:1000572 ! binary data compression type
+
+[Term]
+id: MS:1002313
+name: MS-Numpress positive integer compression
+def: "Compression using MS-Numpress positive integer compression." [https://github.com/fickludd/ms-numpress]
+is_a: MS:1000572 ! binary data compression type
+
+[Term]
+id: MS:1002314
+name: MS-Numpress short logged float compression
+def: "Compression using MS-Numpress short logged float compression." [https://github.com/fickludd/ms-numpress]
+is_a: MS:1000572 ! binary data compression type
+
+[Term]
+id: MS:1002315
+name: consensus result
+def: "Indicates a consensus result from several search engine runs." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
