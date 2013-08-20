@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.51.0
-date: 01:07:2013 09:45
+data-version: 3.52.0
+date: 20:08:2013 13:57
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.51.0
-remark: release date: 2013-07-01
+remark: version: 3.52.0
+remark: release date: 2013-08-20
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -7451,6 +7451,7 @@ is_a: MS:1001198 ! protein identification confidence metric
 id: MS:1001194
 name: quality estimation with decoy database
 def: "Quality estimation by decoy database." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001060 ! quality estimation method details
 
 [Term]
@@ -14897,4 +14898,170 @@ is_a: MS:1000572 ! binary data compression type
 id: MS:1002315
 name: consensus result
 def: "Indicates a consensus result from several search engine runs." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002316
+name: ProteomeDiscoverer:Amanda:high confidence threshold
+def: "Strict confidence probability score." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002317
+name: ProteomeDiscoverer:Amanda:middle confidence threshold
+def: "Relaxed confidence probability score." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002318
+name: ProteomeDiscoverer:automatic workload
+def: "Flag indicating automatic estimation of the workload level." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002319
+name: Amanda:AmandaScore
+def: "The Amanda score of the scoring function for a PSM." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for PSMs
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002320
+name: ProteomeDiscoverer:max differential modifications
+def: "Maximum dynamic modifications per PSM." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002321
+name: ProteomeDiscoverer:max equal modifications
+def: "Maximum equal modifications per PSM." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002322
+name: ProteomeDiscoverer:min peptide length
+def: "Minimum peptide length." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002323
+name: ProteomeDiscoverer:max peptide length
+def: "Maximum peptide length." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002324
+name: ProteomeDiscoverer:max number neutral loss
+def: "Maximum number of same neutral losses." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002325
+name: ProteomeDiscoverer:max number neutral loss modifications
+def: "Max number of same neutral losses of modifications." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002326
+name: ProteomeDiscoverer:use flanking ions
+def: "Flag for usage of flanking ions." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002327
+name: ProteomeDiscoverer:max number of same modifs
+def: "The maximum number of possible equal modifications per PSM." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002328
+name: ProteomeDiscoverer:perform deisotoping
+def: "Defines whether a simple deisotoping shall be performed." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002329
+name: ProteomeDiscoverer:ion settings
+def: "Specifies the fragment ions and neutral losses that are calculated." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002330
+name: ProteomeDiscoverer:3. Static Modification
+def: "Determine 3rd static (fixed) post-translational modifications (PTMs)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002331
+name: ProteomeDiscoverer:5. Dynamic Modification
+def: "Determine 5th dynamic (variable) post-translational modifications (PTMs)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+
+[Term]
+id: MS:1002332
+name: lab head
+def: "The scientist responsible for personnel, grants, and instrumentation in a functional laboratory group." [PSI:PI]
+is_a: MS:1002033 ! contact role
+
+[Term]
+id: MS:1002333
+name: conversion software
+def: "Computer software primarily designed to convert data represented in one format to another format, sometimes with minor data alterations in the process." [PSI:PI]
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1002334
+name: ProCon
+def: "Java software designed to convert one of several proteomics identification results formats into mzIdentML or PRIDE XML." [PSI:PI, http://www.medizinisches-proteom-center.de/procon]
+is_a: MS:1002333 ! conversion software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1002335
+name: PRIDE Converter2
+def: "Java software designed to convert one of several proteomics identification results formats into PRIDE XML." [PMID:22949509]
+is_a: MS:1002333 ! conversion software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1002336
+name: Amanda
+def: "Amanda scoring system for PSM identification." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002337
+name: Andromeda
+def: "Andromeda is a peptide search engine." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002338
+name: Andromeda:score
+def: "The probability based score of the Andromeda search engine." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for PSMs
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002339
+name: site:global FDR
+def: "Estimation of global false discovery rate of peptides with a posttranslational modification." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
