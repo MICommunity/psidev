@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.52.0
-date: 20:08:2013 13:57
+data-version: 3.53.0
+date: 01:09:2013 09:07
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.52.0
-remark: release date: 2013-08-20
+remark: version: 3.53.0
+remark: release date: 2013-09-01
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -15058,6 +15058,7 @@ def: "The probability based score of the Andromeda search engine." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
+has_order: MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002339
@@ -15065,3 +15066,10 @@ name: site:global FDR
 def: "Estimation of global false discovery rate of peptides with a posttranslational modification." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002340
+name: ProteomeXchange project tag
+def: "Tag that can be added to a ProteomeXchange dataset, to enable the grouping of datasets. One tag can be used for indicating that a given dataset is part of a bigger project, like e.g. the Human Proteome Project." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
