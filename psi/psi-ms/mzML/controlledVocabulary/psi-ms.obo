@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.53.0
-date: 01:09:2013 09:07
+data-version: 3.54.0
+date: 11:09:2013 16:56
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.53.0
-remark: release date: 2013-09-01
+remark: version: 3.54.0
+remark: release date: 2013-09-11
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -6039,13 +6039,16 @@ is_a: MS:1000887 ! peptide attribute
 [Term]
 id: MS:1000894
 name: retention time
-def: "A measure of the interval relative to the beginning of a mass spectrometric run." [PSI:MS]
+def: "A time interval from the start of chromatography when an analyte exits a chromatographic column." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000887 ! peptide attribute
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
 
 [Term]
 id: MS:1000895
 name: local retention time
-def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit an unspecified local chromatographic column and instrumental setup." [PSI:MS]
+def: "A time interval from the start of chromatography when an analyte exits an unspecified local chromatographic column and instrumental setup." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
@@ -6054,7 +6057,7 @@ relationship: has_units UO:0000031 ! minute
 [Term]
 id: MS:1000896
 name: normalized retention time
-def: "A measure of the interval relative to the beginning of a mass spectrometric run when a peptide will exit a standardized reference chromatographic column and instrumental setup." [PSI:MS]
+def: "A time interval from the start of chromatography when an analyte exits a standardized reference chromatographic column and instrumental setup." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
@@ -6063,7 +6066,7 @@ relationship: has_units UO:0000031 ! minute
 [Term]
 id: MS:1000897
 name: predicted retention time
-def: "A time interval relative to the beginning of a mass spectrometric run when a peptide will exit a chromatographic column as predicted by a referenced software application." [PSI:MS]
+def: "A time interval from the start of chromatography when an analyte exits a chromatographic column as predicted by a referenced software application." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000894 ! retention time
 relationship: has_units UO:0000010 ! second
@@ -6438,9 +6441,8 @@ is_a: MS:1001511 ! Sequence database filter types
 [Term]
 id: MS:1001024
 name: translation frame
-def: "OSBOLETE: use attribute in mzIdentML instead. The translated open reading frames from a nucleotide database considered in the search (range: 1-6)." [PSI:PI]
+def: "The translated open reading frames from a nucleotide database considered in the search (range: 1-6)." [PSI:PI]
 is_a: MS:1001011 ! search database details
-is_obsolete: true
 
 [Term]
 id: MS:1001025
@@ -15073,3 +15075,10 @@ name: ProteomeXchange project tag
 def: "Tag that can be added to a ProteomeXchange dataset, to enable the grouping of datasets. One tag can be used for indicating that a given dataset is part of a bigger project, like e.g. the Human Proteome Project." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1002341
+name: second-pass peptide identification
+def: "A putative identified peptide found in a second-pass search of protein sequences selected from a first-pass search." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001105 ! peptide result details
