@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.54.0
-date: 11:09:2013 16:56
+data-version: 3.55.0
+date: 22:10:2013 10:01
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.54.0
-remark: release date: 2013-09-11
+remark: version: 3.55.0
+remark: release date: 2013-10-22
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -58,8 +58,9 @@ is_a: MS:1000548 ! sample attribute
 [Term]
 id: MS:1000002
 name: sample name
-def: "A reference string relevant to the sample under study." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE A reference string relevant to the sample under study." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000003
@@ -113,8 +114,9 @@ is_obsolete: true
 [Term]
 id: MS:1000010
 name: analyzer type
-def: "The common name of the particular analyzer stage being described. Synonym of mass analyzer, should be obsoleted." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE The common name of the particular analyzer stage being described. Synonym of mass analyzer, should be obsoleted." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000011
@@ -205,10 +207,11 @@ relationship: has_units UO:0000008 ! meter
 [Term]
 id: MS:1000023
 name: isolation width
-def: "The total width (i.e. not half for plus-or-minus) of the gate applied around a selected precursor ion." [PSI:MS]
+def: "OBSOLETE The total width (i.e. not half for plus-or-minus) of the gate applied around a selected precursor ion." [PSI:MS]
+comment: This former purgatory term was made obsolete.
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1000479 ! purgatory
 relationship: has_units MS:1000040 ! m/z
+is_obsolete: true
 
 [Term]
 id: MS:1000024
@@ -303,21 +306,23 @@ is_obsolete: true
 [Term]
 id: MS:1000037
 name: polarity
-def: "Terms to describe the polarity setting of the instrument." [PSI:MS]
+def: "OBSOLETE Terms to describe the polarity setting of the instrument." [PSI:MS]
+comment: This term was made obsolete because it was redundant with the Pato Ontology term polarity (UO:0002186).
 relationship: part_of MS:1000459 ! spectrum instrument description
+is_obsolete: true
 
 [Term]
 id: MS:1000038
 name: minute
 def: "OBSOLETE Acquisition time in minutes." [PSI:MS]
-comment: This term was made obsolete because it was replaced by scan time (MS:1000016).
+comment: This term was made obsolete because it was redundant with Unit Ontology minute (UO:0000031).
 is_obsolete: true
 
 [Term]
 id: MS:1000039
 name: second
 def: "OBSOLETE Acquisition time in seconds." [PSI:MS]
-comment: This term was made obsolete because it was replaced by scan time (MS:1000016).
+comment: This term was made obsolete because it was redundant with Unit Ontology second (UO:0000010).
 is_obsolete: true
 
 [Term]
@@ -327,7 +332,7 @@ def: "Three-character symbol m/z is used to denote the quantity formed by dividi
 synonym: "mass-to-charge ratio" EXACT []
 synonym: "Th" EXACT []
 synonym: "thomson" EXACT []
-is_a: MS:1000460 ! unit
+is_a: UO:0000000 ! unit
 
 [Term]
 id: MS:1000041
@@ -354,7 +359,7 @@ relationship: part_of MS:1000231 ! peak
 id: MS:1000043
 name: intensity unit
 def: "Intensity units are commonly arbitrary. Detected in counts per second (cps) when using counting detectors, but measured in volts when using analog detectors." [PSI:MS]
-is_a: MS:1000460 ! unit
+is_a: UO:0000000 ! unit
 
 [Term]
 id: MS:1000044
@@ -375,8 +380,8 @@ relationship: has_units UO:0000266 ! electronvolt
 id: MS:1000046
 name: energy unit
 def: "OBSOLETE Energy units are represented in either eV or Joules." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology energy unit (UO:0000111).
-is_a: MS:1000460 ! unit
+comment: This term was made obsolete because it was redundant with the Unit Ontology term energy unit (UO:0000111).
+is_a: UO:0000000 ! unit
 is_obsolete: true
 
 [Term]
@@ -387,19 +392,19 @@ is_a: MS:1000003 ! sample state
 
 [Term]
 id: MS:1000048
-name: gas
+name: gaseous sample state
 def: "State if the sample is in gaseous form." [PSI:MS]
 is_a: MS:1000003 ! sample state
 
 [Term]
 id: MS:1000049
-name: liquid
+name: liquid sample state
 def: "State if the sample is in liquid form." [PSI:MS]
 is_a: MS:1000003 ! sample state
 
 [Term]
 id: MS:1000050
-name: solid
+name: solid sample state
 def: "State if the sample is in solid form." [PSI:MS]
 is_a: MS:1000003 ! sample state
 
@@ -425,8 +430,9 @@ is_a: MS:1000548 ! sample attribute
 [Term]
 id: MS:1000054
 name: chromatography
-def: "Chromatographic conditions used to obtain the sample." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE Chromatographic conditions used to obtain the sample." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000055
@@ -687,8 +693,10 @@ is_a: MS:1000019 ! scan law
 [Term]
 id: MS:1000095
 name: linear
-def: "The mass scan is done in linear mode." [PSI:MS]
+def: "OBSOLETE The mass scan is done in linear mode." [PSI:MS]
+comment: This term was made obsolete because it was redundant with the Pato Ontology term linear (UO:0001199).
 is_a: MS:1000019 ! scan law
+is_obsolete: true
 
 [Term]
 id: MS:1000096
@@ -699,14 +707,16 @@ is_a: MS:1000019 ! scan law
 [Term]
 id: MS:1000097
 name: constant neutral mass loss
-def: "A spectrum formed of all product ions that have been produced with a selected m/z decrement from any precursor ions. The spectrum shown correlates to the precursor ion spectrum. See also neutral loss spectrum." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE A spectrum formed of all product ions that have been produced with a selected m/z decrement from any precursor ions. The spectrum shown correlates to the precursor ion spectrum. See also neutral loss spectrum." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000098
 name: multiple ion monitoring
-def: "Data acquired when monitoring the ion current of a few specific m/z values. Remap to MS:1000205 -Selected Ion Monitoring." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE Data acquired when monitoring the ion current of a few specific m/z values. Remap to MS:1000205 -Selected Ion Monitoring." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000099
@@ -719,14 +729,16 @@ is_obsolete: true
 [Term]
 id: MS:1000100
 name: precursor ion scan
-def: "The specific scan function or process that will record a precursor ion spectrum." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE The specific scan function or process that will record a precursor ion spectrum." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000101
 name: product ion scan
-def: "The specific scan function or process that records product ion spectrum." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE The specific scan function or process that records product ion spectrum." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000102
@@ -909,14 +921,14 @@ is_a: MS:1000525 ! spectrum representation
 id: MS:1000129
 name: negative scan
 def: "Polarity of the scan is negative." [PSI:MS]
-is_a: MS:1000037 ! polarity
+is_a: PATO:0002186 ! polarity
 is_a: MS:1000465 ! scan polarity
 
 [Term]
 id: MS:1000130
 name: positive scan
 def: "Polarity of the scan is positive." [PSI:MS]
-is_a: MS:1000037 ! polarity
+is_a: PATO:0002186 ! polarity
 is_a: MS:1000465 ! scan polarity
 
 [Term]
@@ -966,7 +978,7 @@ is_a: MS:1000044 ! dissociation method
 id: MS:1000137
 name: electron volt
 def: "OBSOLETE A non-SI unit of energy (eV) defined as the energy acquired by a particle containing one unit of charge through a potential difference of one volt. An electron-volt is equal to 1.602 176 53(14) x 10^-19 J." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology electron volt (UO:0000266).
+comment: This term was made obsolete because it was redundant with the Unit Ontology term electron volt (UO:0000266).
 synonym: "eV" EXACT []
 is_obsolete: true
 
@@ -1077,8 +1089,9 @@ is_a: MS:1000125 ! Thermo Finnigan instrument model
 [Term]
 id: MS:1000155
 name: ELEMENT2
-def: "ThermoFinnigan ELEMENT2 MS." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE ThermoFinnigan ELEMENT2 MS." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000156
@@ -1381,7 +1394,7 @@ def: "The operation of a mass spectrometer in which the intensities of several s
 synonym: "MIM" RELATED []
 synonym: "Multiple Ion Monitoring" EXACT []
 synonym: "SIM" EXACT []
-is_a: MS:1000479 ! purgatory
+is_a: MS:1000596 ! measurement method
 
 [Term]
 id: MS:1000206
@@ -1390,7 +1403,7 @@ def: "Data acquired from specific product ions corresponding to m/z selected pre
 synonym: "MRM" RELATED []
 synonym: "Multiple Reaction Monitoring" RELATED []
 synonym: "SRM" EXACT []
-is_a: MS:1000479 ! purgatory
+is_a: MS:1000596 ! measurement method
 
 [Term]
 id: MS:1000207
@@ -1437,7 +1450,7 @@ is_obsolete: true
 id: MS:1000212
 name: dalton
 def: "OBSOLETE A non-SI unit of mass (symbol Da) that is equal to the unified atomic mass unit: 1.660 538 86(28) x 10^-27 kg." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology dalton (UO:0000221).
+comment: This term was made obsolete because it was redundant with the Unit Ontology term dalton (UO:0000221).
 synonym: "Da" EXACT []
 is_obsolete: true
 
@@ -1452,8 +1465,9 @@ is_a: MS:1000507 ! ion attribute
 [Term]
 id: MS:1000214
 name: electron energy obsolete
-def: "The potential difference through which electrons are accelerated before they are used to bring about electron ionization." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE The potential difference through which electrons are accelerated before they are used to bring about electron ionization." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000215
@@ -1671,9 +1685,10 @@ is_a: MS:1000437 ! ion reaction
 [Term]
 id: MS:1000244
 name: consecutive reaction monitoring
-def: "MSn experiment with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored." [PSI:MS]
+def: "OBSOLETE MSn experiment with three or more stages of m/z separation and in which a particular multi-step reaction path is monitored." [PSI:MS]
+comment: This former purgatory term was made obsolete.
 synonym: "CRM" EXACT []
-is_a: MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1000245
@@ -2010,8 +2025,9 @@ is_a: MS:1000264 ! ion trap
 [Term]
 id: MS:1000292
 name: mass spectrograph obsolete
-def: "An instrument that separates a beam of ions according to their mass-to-charge ratio in which the ions are directed onto a focal plane detector such as a photographic plate." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE An instrument that separates a beam of ions according to their mass-to-charge ratio in which the ions are directed onto a focal plane detector such as a photographic plate." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000293
@@ -2029,14 +2045,16 @@ is_a: MS:1000559 ! spectrum type
 [Term]
 id: MS:1000295
 name: mattauch-herzog geometry
-def: "An arrangement for a double-focusing mass spectrometer in which a deflection of ?/(4 ?(2)) radians in a radial electric field is followed by a magnetic deflection of ?/2 radians." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE An arrangement for a double-focusing mass spectrometer in which a deflection of ?/(4 ?(2)) radians in a radial electric field is followed by a magnetic deflection of ?/2 radians." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000296
 name: nier-johnson geometry
-def: "An arrangement for a double-focusing mass spectrometer in which a deflection of ?/2 radians in a radial electric field analyzer is followed by a magnetic deflection of ?/3 radians." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE An arrangement for a double-focusing mass spectrometer in which a deflection of ?/2 radians in a radial electric field analyzer is followed by a magnetic deflection of ?/3 radians." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000297
@@ -2044,7 +2062,6 @@ name: paul ion trap
 def: "OBSOLETE A device that permits the trapping of ions by means of an alternating current voltage. The ejection of ions with a m/z less than a prescribed value and retention of those with higher mass depends on the application of radio frequency voltages between a ring electrode and two end-cap electrodes to confine the ions in a circular path. The choice of these voltages determines the m/z below which ions are ejected." [PSI:MS]
 comment: This term was made obsolete because it is redundant to quadrupole ion trap.
 synonym: "quadrupole ion trap" RELATED []
-is_a: MS:1000479 ! purgatory
 is_obsolete: true
 
 [Term]
@@ -2056,8 +2073,9 @@ is_a: MS:1000293 ! mass spectrometer
 [Term]
 id: MS:1000299
 name: quistor
-def: "An abbreviation of quadrupole ion storage trap. This term is synonymous with Paul Ion Trap. If so then add a synonym to paul and obsolete this term." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE An abbreviation of quadrupole ion storage trap. This term is synonymous with Paul Ion Trap. If so then add a synonym to paul and obsolete this term." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000300
@@ -2138,14 +2156,16 @@ is_a: MS:1000597 ! ion optics type
 [Term]
 id: MS:1000312
 name: mass limit
-def: "The m/z value above which ions cannot be detected in a mass spectrometer." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE The m/z value above which ions cannot be detected in a mass spectrometer." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000313
 name: scan m/z range?
-def: "The limit of m/z over which a mass spectrometer can detect ions." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE The limit of m/z over which a mass spectrometer can detect ions." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000314
@@ -2205,17 +2225,19 @@ is_a: MS:1000524 ! data file content
 [Term]
 id: MS:1000323
 name: constant neutral loss scan
-def: "Spectrum of all precursor ions that undergo a selected m/z decrement." [PSI:MS]
+def: "OBSOLETE Spectrum of all precursor ions that undergo a selected m/z decrement." [PSI:MS]
+comment: This former purgatory term was made obsolete.
 synonym: "constant neutral mass loss scan" RELATED []
 synonym: "fixed neutral fragment scan" RELATED []
-is_a: MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1000324
 name: constant neutral gain scan
-def: "Spectrum of all precursor ions that undergo a selected m/z increment." [PSI:MS]
+def: "OBSOLETE Spectrum of all precursor ions that undergo a selected m/z increment." [PSI:MS]
+comment: This former purgatory term was made obsolete.
 synonym: "Constant Neutral Mass Gain Scan" EXACT []
-is_a: MS:1000479 ! purgatory
+is_obsolete: true
 
 [Term]
 id: MS:1000325
@@ -2305,8 +2327,9 @@ is_a: MS:1000342 ! product ion
 [Term]
 id: MS:1000338
 name: nth generation product ion scan
-def: "The specific scan functions or processes that record the appropriate generation of product ion or ions of any m/z selected precursor ions." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE The specific scan functions or processes that record the appropriate generation of product ion or ions of any m/z selected precursor ions." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000339
@@ -2397,8 +2420,9 @@ is_a: MS:1000026 ! detector type
 [Term]
 id: MS:1000352
 name: secondary electron
-def: "Electrons that are ejected from a sample surface as a result of bombardment by a primary beam of atoms, ions or photons. WAS IN DETECTOR TYPE. Where should it go." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE Electrons that are ejected from a sample surface as a result of bombardment by a primary beam of atoms, ions or photons. WAS IN DETECTOR TYPE. Where should it go." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000353
@@ -2495,7 +2519,7 @@ is_a: MS:1000508 ! ion chemical type
 id: MS:1000368
 name: metastable ion
 def: "An ion that is formed with internal energy higher than the threshold for dissociation but with a lifetime great enough to allow it to exit the ion source and enter the mass spectrometer where it dissociates before detection." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+is_a: MS:1002343 ! ion stability type
 
 [Term]
 id: MS:1000369
@@ -2555,13 +2579,13 @@ is_a: MS:1000508 ! ion chemical type
 id: MS:1000378
 name: stable ion
 def: "An ion with internal energy sufficiently low that it does not rearrange or dissociate prior to detection in a mass spectrometer." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+is_a: MS:1002343 ! ion stability type
 
 [Term]
 id: MS:1000379
 name: unstable ion
-def: "An ion with sufficient enerrgy to dissociate within the ion source." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "An ion with sufficient energy to dissociate within the ion source." [PSI:MS]
+is_a: MS:1002343 ! ion stability type
 
 [Term]
 id: MS:1000380
@@ -2837,8 +2861,9 @@ is_a: MS:1000437 ! ion reaction
 [Term]
 id: MS:1000425
 name: ion energy loss spectrum
-def: "A plot of the relative abundance of a beam or other collection of ions as a function their loss of translational energy in reactions with neutral species." [PSI:MS]
-is_a: MS:1000479 ! purgatory
+def: "OBSOLETE A plot of the relative abundance of a beam or other collection of ions as a function their loss of translational energy in reactions with neutral species." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000426
@@ -3016,8 +3041,9 @@ relationship: part_of MS:1000463 ! instrument
 [Term]
 id: MS:1000454
 name: instrument additional description
-def: "Additional terms to describe the instrument as outlined in the mass spec doc, Appendix 1, section 1.5." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE Additional terms to describe the instrument as outlined in the mass spec doc, Appendix 1, section 1.5." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000455
@@ -3054,14 +3080,17 @@ relationship: part_of MS:1000479 ! purgatory
 [Term]
 id: MS:1000460
 name: unit
-def: "Terms to describe units." [PSI:MS]
+def: "OBSOLETE Terms to describe units." [PSI:MS]
+comment: This term was made obsolete because it was redundant with the Unit Ontology term unit (UO:0000000).
 relationship: part_of MS:1001458 ! spectrum generation information
+is_obsolete: true
 
 [Term]
 id: MS:1000461
 name: additional description
-def: "Terms to describe Additional." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE Terms to describe Additional." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000462
@@ -3637,7 +3666,7 @@ is_a: MS:1000452 ! data transformation
 [Term]
 id: MS:1000544
 name: Conversion to mzML
-def: "Conversion of a file format to Proteomics Standards Initiative mzData file format." [PSI:MS]
+def: "Conversion of a file format to Proteomics Standards Initiative mzML file format." [PSI:MS]
 is_a: MS:1000530 ! file format conversion
 
 [Term]
@@ -3676,7 +3705,7 @@ relationship: part_of MS:1000441 ! scan
 id: MS:1000550
 name: time unit
 def: "OBSOLETE Time Unit." [PSI:MS]
-comment: This term was made obsolete because it was redundant with the Unit Ontology time unit (UO:0000003).
+comment: This term was made obsolete because it was redundant with the Unit Ontology term time unit (UO:0000003).
 is_obsolete: true
 
 [Term]
@@ -3691,8 +3720,9 @@ is_a: MS:1001457 ! data processing software
 [Term]
 id: MS:1000552
 name: maldi spot identifier
-def: "Maldi Spot Identifier." [PSI:MS]
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE Maldi Spot Identifier." [PSI:MS]
+comment: This former purgatory term was made obsolete.
+is_obsolete: true
 
 [Term]
 id: MS:1000553
@@ -5447,7 +5477,7 @@ is_a: MS:1000559 ! spectrum type
 id: MS:1000807
 name: Th/s
 def: "Unit describing the scan rate of a spectrum in Thomson per second." [PSI:MS]
-is_a: MS:1000460 ! unit
+is_a: UO:0000000 ! unit
 
 [Term]
 id: MS:1000808
@@ -5688,10 +5718,12 @@ relationship: part_of MS:1000840 ! laser
 [Term]
 id: MS:1000843
 name: wavelength
-def: "The distance between two peaks of the emitted laser beam." [PSI:MS]
+def: "OBSOLETE The distance between two peaks of the emitted laser beam." [PSI:MS]
+comment: This term was made obsolete because it was redundant with the Pato Ontology term wavelength (UO:0001242).
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000841 ! laser attribute
 relationship: has_units UO:0000018 ! nanometer
+is_obsolete: true
 
 [Term]
 id: MS:1000844
@@ -6593,7 +6625,6 @@ id: MS:1001051
 name: multiple enzyme combination rules
 def: "OBSOLETE: use attribute independent in mzIdentML instead. Description of multiple enzyme digestion protocol, if any." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
-relationship: part_of MS:1000479 ! purgatory
 is_obsolete: true
 
 [Term]
@@ -6959,7 +6990,7 @@ is_obsolete: true
 id: MS:1001115
 name: scan number(s)
 def: "OBSOLETE: use spectrumID attribute of SpectrumIdentificationResult. Take from mzData." [PSI:PI]
-relationship: part_of MS:1000479 ! purgatory
+comment: This former purgatory term was made obsolete.
 is_obsolete: true
 
 [Term]
@@ -7564,7 +7595,7 @@ is_a: MS:1001210 ! mass type settings
 id: MS:1001213
 name: search result details
 def: "OBSOLETE: Scores and global result characteristics." [PSI:PI]
-relationship: part_of MS:1000479 ! purgatory
+comment: This former purgatory term was made obsolete.
 is_obsolete: true
 
 [Term]
@@ -7995,7 +8026,6 @@ id: MS:1001291
 name: decoy DB from nr
 def: "OBSOLETE Decoy database from a non-redundant GenBank sequence database." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8003,7 +8033,6 @@ id: MS:1001292
 name: decoy DB from IPI_rat
 def: "OBSOLETE Decoy database from a International Protein Index database for Rattus norvegicus." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8011,7 +8040,6 @@ id: MS:1001293
 name: decoy DB from IPI_mouse
 def: "OBSOLETE Decoy database from a International Protein Index database for Mus musculus." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8019,7 +8047,6 @@ id: MS:1001294
 name: decoy DB from IPI_arabidopsis
 def: "OBSOLETE Decoy database from a International Protein Index database for Arabidopsis thaliana." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8027,7 +8054,6 @@ id: MS:1001295
 name: decoy DB from EST
 def: "OBSOLETE Decoy database from an expressed sequence tag nucleotide sequence database." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8035,7 +8061,6 @@ id: MS:1001296
 name: decoy DB from IPI_zebrafish
 def: "OBSOLETE Decoy database from a International Protein Index database for Danio rerio." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8043,7 +8068,6 @@ id: MS:1001297
 name: decoy DB from UniProtKB/Swiss-Prot
 def: "OBSOLETE Decoy database from a Swiss-Prot protein sequence database." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8051,7 +8075,6 @@ id: MS:1001298
 name: decoy DB from IPI_chicken
 def: "OBSOLETE Decoy database from a International Protein Index database for Gallus gallus." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8059,7 +8082,6 @@ id: MS:1001299
 name: decoy DB from IPI_cow
 def: "OBSOLETE Decoy database from a International Protein Index database for Bos taurus." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8067,7 +8089,6 @@ id: MS:1001300
 name: decoy DB from IPI_human
 def: "OBSOLETE Decoy database from a International Protein Index database for Homo sapiens." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -8242,7 +8263,8 @@ is_a: MS:1002095 ! Mascot input parameter
 [Term]
 id: MS:1001326
 name: add_others
-relationship: part_of MS:1000479 ! purgatory
+def: "OBSOLETE." [PSI:PI]
+comment: This former purgatory term was made obsolete.
 is_obsolete: true
 
 [Term]
@@ -13259,7 +13281,6 @@ id: MS:1002061
 name: decoy DB from UniProtKB/TrEMBL
 def: "OBSOLETE Decoy database from a TrEMBL protein sequence database." [PSI:PI]
 comment: This term was made obsolete, because a combination of database name, DB composition , decoy DB type , decoy DB generation algorithm, decoy DB accession regexp and decoy DB details suffices.
-is_a: MS:1001284 ! decoy DB derived from
 is_obsolete: true
 
 [Term]
@@ -15082,3 +15103,23 @@ name: second-pass peptide identification
 def: "A putative identified peptide found in a second-pass search of protein sequences selected from a first-pass search." [PSI:PI]
 xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS:1002342
+name: MZmine
+def: "A framework for differential analysis of mass spectrometry data." [PMID:16403790, PMID:20650010]
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1002343
+name: ion stability type
+def: "Stability type of the ion." [PSI:PI]
+is_a: MS:1000365 ! ion?
+
+[Term]
+id: MS:1002344
+name: Maltcms
+def: "Modular Application Toolkit for Chromatography Mass-Spectrometry is an application framework mainly for developers." [PSI:PI, http://maltcms.sf.net]
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
