@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.57.0
-date: 12:12:2013 09:34
+data-version: 3.58.0
+date: 20:12:2013 10:51
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.57.0
-remark: release date: 2013-12-12
+remark: version: 3.58.0
+remark: release date: 2013-12-20
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -3528,8 +3528,8 @@ relationship: part_of MS:1000442 ! spectrum
 
 [Term]
 id: MS:1000526
-name: Waters raw file
-def: "Waters data file found in a Waters RAW directory, generated from an MS acquisition." [PSI:MS]
+name: Waters raw format
+def: "Waters data file format found in a Waters RAW directory, generated from an MS acquisition." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -3780,37 +3780,37 @@ relationship: part_of MS:1000577 ! raw data file
 
 [Term]
 id: MS:1000562
-name: ABI WIFF file
+name: ABI WIFF format
 def: "Applied Biosystems WIFF file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000563
-name: Thermo RAW file
+name: Thermo RAW format
 def: "Thermo Scientific RAW file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000564
-name: PSI mzData file
+name: PSI mzData format
 def: "Proteomics Standards Inititative mzData file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000565
-name: Micromass PKL file
+name: Micromass PKL format
 def: "Micromass PKL file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000566
-name: ISB mzXML file
+name: ISB mzXML format
 def: "Institute of Systems Biology mzXML file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000567
-name: Bruker/Agilent YEP file
+name: Bruker/Agilent YEP format
 def: "Bruker/Agilent YEP file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -3934,7 +3934,7 @@ is_a: MS:1000524 ! data file content
 
 [Term]
 id: MS:1000584
-name: mzML file
+name: mzML format
 def: "Proteomics Standards Inititative mzML file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -4126,13 +4126,13 @@ is_a: MS:1000602 ! Shimadzu MALDI-TOF instrument model
 
 [Term]
 id: MS:1000613
-name: DTA file
+name: DTA format
 def: "SEQUEST DTA file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000614
-name: ProteinLynx Global Server mass spectrum XML file
+name: ProteinLynx Global Server mass spectrum XML format
 def: "Peak list file format used by ProteinLynx Global Server." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -5011,7 +5011,7 @@ is_a: MS:1000530 ! file format conversion
 
 [Term]
 id: MS:1000742
-name: Bioworks SRF file
+name: Bioworks SRF format
 def: "Thermo Finnigan SRF file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 is_a: MS:1001040 ! intermediate analysis format
@@ -5182,65 +5182,65 @@ relationship: part_of MS:1000577 ! raw data file
 [Term]
 id: MS:1000768
 name: Thermo nativeID format
-def: "controllerType=xsd:nonNegativeInteger controllerNumber=xsd:positiveInteger scan=xsd:positiveInteger." [PSI:MS]
+def: "Native format defined by controllerType=xsd:nonNegativeInteger controllerNumber=xsd:positiveInteger scan=xsd:positiveInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000769
 name: Waters nativeID format
-def: "function=xsd:positiveInteger process=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by function=xsd:positiveInteger process=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000770
 name: WIFF nativeID format
-def: "sample=xsd:nonNegativeInteger period=xsd:nonNegativeInteger cycle=xsd:nonNegativeInteger experiment=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by sample=xsd:nonNegativeInteger period=xsd:nonNegativeInteger cycle=xsd:nonNegativeInteger experiment=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000771
 name: Bruker/Agilent YEP nativeID format
-def: "scan=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by scan=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000772
 name: Bruker BAF nativeID format
-def: "scan=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by scan=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000773
 name: Bruker FID nativeID format
-def: "file=xsd:IDREF." [PSI:MS]
+def: "Native format defined by file=xsd:IDREF." [PSI:MS]
 comment: The nativeID must be the same as the source file ID.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000774
 name: multiple peak list nativeID format
-def: "index=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by index=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion of peak list files with multiple spectra, i.e. MGF, PKL, merged DTA files. Index is the spectrum number in the file, starting from 0.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000775
 name: single peak list nativeID format
-def: "file=xsd:IDREF." [PSI:MS]
+def: "Native format defined by file=xsd:IDREF." [PSI:MS]
 comment: The nativeID must be the same as the source file ID. Used for conversion of peak list files with one spectrum per file, typically folder of PKL or DTAs, each sourceFileRef is different.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000776
 name: scan number only nativeID format
-def: "scan=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by scan=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion from mzXML, or DTA folder where native scan numbers can be derived.
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000777
 name: spectrum identifier nativeID format
-def: "spectrum=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by spectrum=xsd:nonNegativeInteger." [PSI:MS]
 comment: Used for conversion from mzData. The spectrum id attribute is referenced.
 is_a: MS:1000767 ! native spectrum identifier format
 
@@ -5531,13 +5531,13 @@ is_a: MS:1000043 ! intensity unit
 
 [Term]
 id: MS:1000815
-name: Bruker BAF file
+name: Bruker BAF format
 def: "Bruker BAF raw file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1000816
-name: Bruker U2 file
+name: Bruker U2 format
 def: "Bruker HyStar U2 file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -5590,7 +5590,7 @@ relationship: has_units UO:0000012 ! kelvin
 [Term]
 id: MS:1000823
 name: Bruker U2 nativeID format
-def: "declaration=xsd:nonNegativeInteger collection=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by declaration=xsd:nonNegativeInteger collection=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
@@ -5601,7 +5601,7 @@ is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1000825
-name: Bruker FID file
+name: Bruker FID format
 def: "Bruker FID file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -6211,8 +6211,8 @@ is_a: MS:1000909 ! transition validation method
 
 [Term]
 id: MS:1000914
-name: tab delimited text file
-def: "A file that has two or more columns of tabular data where each column is separated by a TAB character." [PSI:MS]
+name: tab delimited text format
+def: "A file format that has two or more columns of tabular data where each column is separated by a TAB character." [PSI:MS]
 is_a: MS:1001459 ! file format
 is_a: MS:1001040 ! intermediate analysis format
 
@@ -6269,6 +6269,7 @@ id: MS:1000922
 name: Skyline
 def: "Software used to predict, select, and optimize transitions as well as analyze the results of selected reaction monitoring runs developed and distributed by the MacCoss lab at the University of Washington." [https://brendanx-uw1.gs.washington.edu/labkey/wiki/home/software/Skyline/page.view?name=default ""]
 is_a: MS:1000871 ! SRM software
+is_a: MS:1001139 ! quantitation software name
 
 [Term]
 id: MS:1000923
@@ -6314,7 +6315,7 @@ is_a: MS:1000559 ! spectrum type
 [Term]
 id: MS:1000929
 name: Shimadzu Biotech nativeID format
-def: "source=xsd:string start=xsd:nonNegativeInteger end=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by source=xsd:string start=xsd:nonNegativeInteger end=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
@@ -6686,8 +6687,8 @@ replaced_by: MS:1000336
 
 [Term]
 id: MS:1001062
-name: Mascot MGF file
-def: "Mascot MGF file." [PSI:MS]
+name: Mascot MGF format
+def: "Mascot MGF file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -7513,14 +7514,14 @@ is_a: MS:1001116 ! single protein result details
 
 [Term]
 id: MS:1001199
-name: Mascot DAT file
-def: "Source file for this mzIdentML was a Mascot DAT file." [PSI:PI]
+name: Mascot DAT format
+def: "Source file for this mzIdentML was in Mascot DAT file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001200
-name: SEQUEST out file
-def: "Source file for this mzIdentML was ONE SEQUEST out file." [PSI:PI]
+name: SEQUEST out file format
+def: "Source file for this mzIdentML was in SEQUEST out file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
@@ -7794,20 +7795,20 @@ is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001245
-name: PerSeptive PKS file
+name: PerSeptive PKS format
 def: "PerSeptive peak list file format." [http://www.matrixscience.com/help/data_file_help.html#PKS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1001246
-name: Sciex API III file
+name: Sciex API III format
 def: "PE Sciex peak list file format." [http://www.matrixscience.com/help/data_file_help.html#API]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1001247
-name: Bruker XML file
-def: "Bruker data exchange xml." [PSI:PI]
+name: Bruker XML format
+def: "Bruker data exchange XML format." [PSI:PI]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -8524,8 +8525,8 @@ is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001369
-name: text file
-def: "Simple text file of \"m/z [intensity]\" values for a PMF (or single MS-MS) search." [PSI:PI]
+name: text format
+def: "Simple text file format of \"m/z [intensity]\" values for a PMF (or single MS-MS) search." [PSI:PI]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -8751,20 +8752,20 @@ is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001399
-name: OMSSA csv file
-def: "Source file for this mzIdentML was an OMSSA csv file." [PSI:PI]
+name: OMSSA csv format
+def: "Source file for this mzIdentML was in OMSSA csv file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001400
-name: OMSSA xml file
-def: "Source file for this mzIdentML was an OMSSA xml file." [PSI:PI]
+name: OMSSA xml format
+def: "Source file for this mzIdentML was in OMSSA xml file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001401
-name: X\!Tandem xml file
-def: "Source file for this mzIdentML was an X!Tandem xml file." [PSI:PI]
+name: X\!Tandem xml format
+def: "Source file for this mzIdentML was in X!Tandem xml file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
@@ -8888,14 +8889,14 @@ is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001421
-name: pepXML file
-def: "Source file for this mzIdentML was a pepXML file." [PSI:PI]
+name: pepXML format
+def: "Source file for this mzIdentML was in a pepXML file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001422
-name: protXML file
-def: "Source file for this mzIdentML was a protXML file." [PSI:PI]
+name: protXML format
+def: "Source file for this mzIdentML was in protXML file format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
@@ -9169,14 +9170,14 @@ is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001464
-name: DTASelect file
-def: "DTASelect file." [PMID:12643522, http://www.scripps.edu/cravatt/protomap/dtaselect_instructions.html]
+name: DTASelect format
+def: "DTASelect file format." [PMID:12643522, http://www.scripps.edu/cravatt/protomap/dtaselect_instructions.html]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001466
-name: MS2 file
-def: "MS2 file for MS/MS spectral data." [PMID:15317041, DOI:10.1002/rcm.1603, http://fields.scripps.edu/sequest/SQTFormat.html]
+name: MS2 format
+def: "MS2 file format for MS/MS spectral data." [PMID:15317041, DOI:10.1002/rcm.1603, http://fields.scripps.edu/sequest/SQTFormat.html]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
@@ -9272,7 +9273,7 @@ is_a: MS:1000518 ! binary data type
 [Term]
 id: MS:1001480
 name: AB SCIEX TOF/TOF nativeID format
-def: "jobRun=xsd:nonNegativeInteger spotLabel=xsd:string spectrum=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by jobRun=xsd:nonNegativeInteger spotLabel=xsd:string spectrum=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
@@ -9478,13 +9479,13 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1001508
 name: Agilent MassHunter nativeID format
-def: "scanId=xsd:nonNegativeInteger." [PSI:PI]
+def: "Native format defined by scanId=xsd:nonNegativeInteger." [PSI:PI]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1001509
-name: Agilent MassHunter file
-def: "A data file found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:PI]
+name: Agilent MassHunter format
+def: "A data file format found in an Agilent MassHunter directory which contains raw data acquired by an Agilent mass spectrometer." [PSI:PI]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
@@ -9592,7 +9593,7 @@ relationship: has_units UO:0000221 ! dalton
 [Term]
 id: MS:1001526
 name: spectrum from database integer nativeID format
-def: "databasekey=xsd:long." [PSI:MS]
+def: "Native format defined by databasekey=xsd:long." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
 
@@ -9605,7 +9606,7 @@ is_a: MS:1000560 ! mass spectrometer file format
 [Term]
 id: MS:1001528
 name: Mascot query number
-def: "query=xsd:nonNegativeInteger." [PSI:MS]
+def: "Native format defined by query=xsd:nonNegativeInteger." [PSI:MS]
 comment: The spectrum (query) number in a Mascot results file, starting from 1.
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001405 ! spectrum identification result details
@@ -9619,14 +9620,14 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: MS:1001530
 name: mzML unique identifier
-def: "mzMLid=xsd:IDREF." [PSI:MS]
+def: "Native format defined by mzMLid=xsd:IDREF." [PSI:MS]
 comment: A unique identifier of a spectrum stored in an mzML file.
 is_a: MS:1001529 ! spectra data details
 
 [Term]
 id: MS:1001531
 name: spectrum from ProteinScape database nativeID format
-def: "databasekey=xsd:long." [PSI:MS]
+def: "Native format defined by databasekey=xsd:long." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a ProteinScape database.
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001529 ! spectra data details
@@ -9634,7 +9635,7 @@ is_a: MS:1001529 ! spectra data details
 [Term]
 id: MS:1001532
 name: spectrum from database string nativeID format
-def: "databasekey=xsd:string." [PSI:MS]
+def: "Native format defined by databasekey=xsd:string." [PSI:MS]
 comment: A unique identifier of a spectrum stored in a database (e.g. a PRIMARY KEY identifier).
 is_a: MS:1000767 ! native spectrum identifier format
 is_a: MS:1001529 ! spectra data details
@@ -9789,12 +9790,12 @@ is_a: MS:1001557 ! Shimadzu Corporation software
 [Term]
 id: MS:1001559
 name: AB SCIEX TOF/TOF T2D nativeID format
-def: "file=xsd:IDREF." [PSI:MS]
+def: "Native format defined by file=xsd:IDREF." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1001560
-name: AB SCIEX TOF/TOF T2D file
+name: AB SCIEX TOF/TOF T2D format
 def: "Applied Biosystems/MDS Analytical Technologies TOF/TOF instrument export format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -9812,25 +9813,25 @@ is_a: MS:1000767 ! native spectrum identifier format
 
 [Term]
 id: MS:1001563
-name: SEQUEST SQT
-def: "Source file for this mzIdentML was a SEQUEST SQT." [PSI:PI]
+name: SEQUEST SQT format
+def: "Source file for this mzIdentML was in SEQUEST SQT format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001564
-name: Discoverer MSF
+name: Discoverer MSF format
 def: "Source file for this mzIdentML was in Thermo Scientific Discoverer MSF format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001565
-name: IdentityE XML
+name: IdentityE XML format
 def: "Source file for this mzIdentML was in Waters IdentityE XML format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
 id: MS:1001566
-name: ProteinLynx XML
+name: ProteinLynx XML format
 def: "Source file for this mzIdentML was in Waters ProteinLynx XML format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
@@ -12034,7 +12035,7 @@ is_a: MS:1000044 ! dissociation method
 
 [Term]
 id: MS:1001881
-name: mz5 file
+name: mz5 format
 def: "mz5 file format, modeled after mzML." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -13069,12 +13070,14 @@ is_a: MS:1001471 ! peptide modification details
 id: MS:1002031
 name: PASSEL transition group browser URI
 def: "URI to retrieve transition group data for a PASSEL (PeptideAtlas SRM Experiment Library) experiment." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
 is_a: MS:1000878 ! external reference identifier
 
 [Term]
 id: MS:1002032
 name: PeptideAtlas dataset URI
 def: "URI that allows access to a PeptideAtlas dataset." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
 is_a: MS:1000878 ! external reference identifier
 
 [Term]
@@ -13366,8 +13369,8 @@ has_domain: MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002073
-name: mzIdentML
-def: "Proteomics Standards Inititative mzIdentML file format. File extension '.mzid'." [PSI:MS]
+name: mzIdentML format
+def: "The mzIdentML format for peptide and protein identification data from the PSI. File extension '.mzid'." [PSI:PI, http://www.psidev.info/mzidentml]
 is_a: MS:1001040 ! intermediate analysis format
 
 [Term]
@@ -13378,8 +13381,8 @@ is_a: MS:1001459 ! file format
 
 [Term]
 id: MS:1002075
-name: mzQuantML
-def: "Proteomics Standards Inititative mzQuantML file format. File extension '.mzq'." [PSI:MS]
+name: mzQuantML format
+def: "The mzQuantML format for quantification data from the PSI. File extension '.mzq'." [PSI:PI, http://www.psidev.info/mzquantml]
 is_a: MS:1002074 ! quantification file format
 
 [Term]
@@ -13710,9 +13713,9 @@ is_a: MS:1001806 ! quantification object attribute
 
 [Term]
 id: MS:1002128
-name: method file format attribute
+name: method file format
 def: "Attribute describing a method file format." [PSI:PI]
-is_a: MS:1001806 ! quantification object attribute
+is_a: MS:1001459 ! file format
 
 [Term]
 id: MS:1002129
@@ -13723,9 +13726,9 @@ is_a: MS:1000752 ! TOPP software
 
 [Term]
 id: MS:1002130
-name: identification file format attribute
+name: identification file format
 def: "Attribute describing an identification file format." [PSI:PI]
-is_a: MS:1001806 ! quantification object attribute
+is_a: MS:1001459 ! file format
 
 [Term]
 id: MS:1002131
@@ -14839,7 +14842,7 @@ is_a: MS:1001545 ! Bruker Daltonics amaZon series
 
 [Term]
 id: MS:1002302
-name: Bruker Container file
+name: Bruker Container format
 def: "Bruker Container raw file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
@@ -15440,25 +15443,25 @@ is_a: MS:1001457 ! data processing software
 
 [Term]
 id: MS:1002385
-name: SCiLS Lab file
+name: SCiLS Lab format
 def: "SCiLS Lab file format." [PSI:MS]
 is_a: MS:1000560 ! mass spectrometer file format
 
 [Term]
 id: MS:1002386
 name: preprocessing software
-def: "Preprocessing software." [PSI:MS]
-is_a: MS:1000531 ! software
+def: "Preprocessing software." [PSI:PI]
+is_a: MS:1001457 ! data processing software
 
 [Term]
 id: MS:1002387
 name: PIA
 def: "PIA - Protein Inference Algorithms, a toolbox for protein inference and identification analysis." [PSI:PI, http://www.medizinisches-proteom-center.de/pia]
-is_a: MS:1002386 ! preprocessing software
+is_a: MS:1002414 ! postprocessing software
 
 [Term]
 id: MS:1002388
-name: PIA XML file
+name: PIA XML format
 def: "A compilation of search engine results in the PIA XML format." [PSI:PI]
 is_a: MS:1001040 ! intermediate analysis format
 
@@ -15544,3 +15547,132 @@ name: PIA:filter
 def: "A filter used for the report generation." [PSI:PI]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002389 ! PIA workflow parameter
+
+[Term]
+id: MS:1002401
+name: leading protein
+def: "At least one protein within each group should be annotated as a leading protein to indicate it has the strongest evidence, or approximately equal evidence as other group members." [PSI:PI]
+is_a: MS:1001101 ! protein group or subset relationship
+
+[Term]
+id: MS:1002402
+name: non-leading protein
+def: "Zero to many proteins within each group should be annotated as non-leading to indicate that other proteins have stronger evidence." [PSI:PI]
+is_a: MS:1001101 ! protein group or subset relationship
+
+[Term]
+id: MS:1002403
+name: group representative
+def: "An arbitrary and optional flag applied to exactly one protein per group to indicate it can serve as the representative of the group, amongst leading proteins, in effect serving as a tiebreaker for approaches that require exactly one group representative." [PSI:PI]
+is_a: MS:1001101 ! protein group or subset relationship
+
+[Term]
+id: MS:1002404
+name: count of identified proteins
+def: "The number of proteins that have been identified, which must match the number of groups that pass the threshold in the file." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001085 ! protein result details
+
+[Term]
+id: MS:1002405
+name: protein cluster details
+def: "Details describing a protein cluster." [PSI:PI]
+is_a: MS:1001085 ! protein result details
+
+[Term]
+id: MS:1002406
+name: count of identified clusters
+def: "The number of protein clusters that have been identified, which must match the number of clusters that pass the threshold in the file." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002405 ! protein cluster details
+
+[Term]
+id: MS:1002407
+name: cluster identifier
+def: "An identifier applied to protein groups to indicate that they are linked by shared peptides." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001147 ! protein ambiguity group result details
+
+[Term]
+id: MS:1002408
+name: number of distinct protein sequences
+def: "The number of protein clusters that have been identified, which must match the number of clusters that pass the threshold in the file." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1002405 ! protein cluster details
+
+[Term]
+id: MS:1002409
+name: marginally distinguished protein
+def: "Assigned to a non-leading protein that has some independent evidence to support its presence relative to the leading protein(s), e.g. the protein may have a unique peptide but not sufficient to be promoted as a leading protein of another group." [PSI:PI]
+is_a: MS:1001101 ! protein group or subset relationship
+
+[Term]
+id: MS:1002410
+name: Anubis
+def: "Anubis software for selected reaction monitoring data." [PSI:PI, http://quantitativeproteomics.org/anubis]
+is_a: MS:1000871 ! SRM software
+is_a: MS:1001139 ! quantitation software name
+
+[Term]
+id: MS:1002411
+name: TraML format
+def: "The TraML format for transitions in SRM from the PSI. File extension '.TraML'." [PSI:PI,  http://www.psidev.info/traml]
+is_a: MS:1002128 ! method file format
+
+[Term]
+id: MS:1002412
+name: total XIC area
+def: "Summed area of all the extracted ion chromatogram for the peptide (e.g. of all the transitions in SRM)." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002413
+name: product background
+def: "The background area for the quantified transition." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002414
+name: postprocessing software
+def: "Postprocessing software." [PSI:PI]
+is_a: MS:1001457 ! data processing software
+
+[Term]
+id: MS:1002415
+name: protein group passes threshold
+def: "A Boolean attribute to determine whether the protein group has passed the threshold indicated in the file." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001147 ! protein ambiguity group result details
+
+[Term]
+id: MS:1002416
+name: Orbitrap Fusion
+def: "Thermo Scientific Orbitrap Fusion." [PSI:PI]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1002417
+name: Orbitrap Fusion ETD
+def: "Thermo Scientific Orbitrap Fusion with ETD." [PSI:PI]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1002418
+name: TSQ Quantiva
+def: "Thermo Scientific TSQ Quantiva MS." [PSI:PI]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1002419
+name: TSQ Endura
+def: "Thermo Scientific TSQ Endura MS." [PSI:PI]
+is_a: MS:1000494 ! Thermo Scientific instrument model
+
+[Term]
+id: MS:1002420
+name: PASSEL experiment URI
+def: "URI that allows access to a PASSEL experiment." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier

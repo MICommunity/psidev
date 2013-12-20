@@ -47,7 +47,7 @@ format-version: 1.2
 data-version: X.XX.X
 date: DD:MM:YYYY HH:MM
 saved-by: XXXXXXXXX
-auto-generated-by: OBO-Edit 2.1
+auto-generated-by: OBO-Edit 2.3
 import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 remark: namespace: MS
