@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.58.0
-date: 20:12:2013 10:51
+data-version: 3.59.0
+date: 22:01:2014 13:56
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.58.0
-remark: release date: 2013-12-20
+remark: version: 3.59.0
+remark: release date: 2014-01-22
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -19,6 +19,8 @@ remark: creator: Fredrik Levander <fredrik.levander <-at-> immun.lth.se>
 remark: creator: Gerhard Mayer <mayerg97 <-at-> rub.de>
 remark: publisher: HUPO Proteomics Standards Initiative Mass Spectrometry Standards Working Group and HUPO Proteomics Standards Initiative Proteomics Informatics Working Group
 remark: When appropriate the definition and synonyms of a term are reported exactly as in the chapter 12 of IUPAC orange book. See http://www.iupac.org/projects/2003/2003-056-2-500.html and http://mass-spec.lsu.edu/msterms/index.php/Main_Page
+remark: This work is licensed under the Creative Commons Attribution 3.0 Unported License.
+remark: To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/ or send a letter to Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.
 ontology: pato
 ontology: uo
 
@@ -7259,7 +7261,7 @@ def: "The SEQUEST result 'XCorr'." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1001156
@@ -7605,7 +7607,7 @@ name: protein-level global FDR
 def: "Estimation of the global false discovery rate of proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001215
@@ -8497,7 +8499,7 @@ name: distinct peptide-level global FDR
 def: "Estimation of the global false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001365
@@ -11934,7 +11936,7 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
 relationship: has_units UO:0000166 ! parts per notation unit
 relationship: has_units UO:0000187 ! percent
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001869
@@ -11944,7 +11946,7 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein identification confidence metric
 relationship: has_units UO:0000166 ! parts per notation unit
 relationship: has_units UO:0000187 ! percent
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001870
@@ -11952,7 +11954,7 @@ name: distinct peptide-level p-value
 def: "Estimation of the p-value for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001871
@@ -11960,7 +11962,7 @@ name: protein-level p-value
 def: "Estimation of the p-value for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1001872
@@ -11968,7 +11970,7 @@ name: distinct peptide-level e-value
 def: "Estimation of the e-value for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
-has_domain: MS:1002306 ! value greater than zero
+relationship: has_domain MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1001873
@@ -11976,7 +11978,7 @@ name: protein-level e-value
 def: "Estimation of the e-value for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001198 ! protein identification confidence metric
-has_domain: MS:1002306 ! value greater than zero
+relationship: has_domain MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1001874
@@ -13365,7 +13367,7 @@ name: p-value
 def: "P-value as result of one of the processing steps described. Specify in the description, which processing step it was." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001805 ! quantification datatype
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002073
@@ -14496,7 +14498,7 @@ def: "The Comet result 'XCorr'." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002253
@@ -14573,7 +14575,7 @@ def: "The Byonic score is the primary indicator of PSM correctness. The Byonic s
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002263
@@ -14582,7 +14584,7 @@ def: "The drop in Byonic score from the top-scoring peptide to the next peptide 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002264
@@ -14591,7 +14593,7 @@ def: "The drop in Byonic score from the top-scoring peptide to the next peptide 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002265
@@ -14600,7 +14602,7 @@ def: "Byonic posterior error probability." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002109 ! lower score better
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002266
@@ -14609,7 +14611,7 @@ def: "The log p-value of the PSM. This is the log of the probability that the PS
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002109 ! lower score better
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002267
@@ -14618,7 +14620,7 @@ def: "The log p-value of the protein." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002109 ! lower score better
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002268
@@ -14627,7 +14629,7 @@ def: "Best (most negative) log p-value of an individual PSM." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002109 ! lower score better
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002269
@@ -14636,7 +14638,7 @@ def: "Best (largest) Byonic score of a PSM." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002270
@@ -14890,7 +14892,7 @@ def: "The absolute value of the log-base10 of the Byonic posterior error probabi
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002310
@@ -14899,7 +14901,7 @@ def: "The absolute value of the log-base10 of the Byonic posterior error probabi
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002311
@@ -14908,7 +14910,7 @@ def: "The absolute value of the log-base10 Byonic two-dimensional posterior erro
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002312
@@ -15092,7 +15094,7 @@ def: "The probability based score of the Andromeda search engine." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_order: MS:1002108 ! higher score better
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002339
@@ -15171,7 +15173,7 @@ name: PSM-level global FDR
 def: "Estimation of the global false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002351
@@ -15179,7 +15181,7 @@ name: PSM-level local FDR
 def: "Estimation of the local false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002352
@@ -15187,7 +15189,7 @@ name: PSM-level p-value
 def: "Estimation of the p-value for peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002353
@@ -15195,7 +15197,7 @@ name: PSM-level e-value
 def: "Estimation of the e-value for peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
-has_domain: MS:1002306 ! value greater than zero
+relationship: has_domain MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1002354
@@ -15205,7 +15207,7 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
 relationship: has_units UO:0000166 ! parts per notation unit
 relationship: has_units UO:0000187 ! percent
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002355
@@ -15214,7 +15216,7 @@ def: "FDRScore for peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to 1
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to 1
 
 [Term]
 id: MS:1002356
@@ -15223,7 +15225,7 @@ def: "Combined FDRScore for peptide spectrum matches specifically obtained for d
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to 1
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to 1
 
 [Term]
 id: MS:1002357
@@ -15231,7 +15233,7 @@ name: PSM-level probability
 def: "Probability that the reported peptide ion is truly responsible for some or all of the components of the specified mass spectrum." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002347 ! PSM-level identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002358
@@ -15245,7 +15247,7 @@ name: distinct peptide-level local FDR
 def: "Estimation of the local false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002360
@@ -15254,7 +15256,7 @@ def: "FDRScore for distinct peptides once redundant identifications of the same 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002358 ! search engine specific score for distinct peptides
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002361
@@ -15263,7 +15265,7 @@ def: "Combined FDRScore for peptides once redundant identifications of the same 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002358 ! search engine specific score for distinct peptides
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002362
@@ -15271,7 +15273,7 @@ name: distinct peptide-level probability
 def: "Probability that the reported distinct peptide sequence (irrespective of mass modifications) has been correctly identified via the referenced PSMs." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001192 ! peptide identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002363
@@ -15293,7 +15295,7 @@ def: "FDRScore for proteins specifically obtained for distinct combinations of s
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002363 ! search engine specific score for proteins
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002366
@@ -15302,7 +15304,7 @@ def: "Combined FDRScore for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002363 ! search engine specific score for proteins
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002367
@@ -15310,7 +15312,7 @@ name: probability for proteins
 def: "Probability that a specific protein sequence has been correctly identified from the PSM and distinct peptide evidence, and based on the available protein sequences presented to the analysis software." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001192 ! protein identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002368
@@ -15338,7 +15340,7 @@ name: protein group-level p-value
 def: "Estimation of the p-value for protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002348 ! protein group-level identification confidence metric
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002372
@@ -15346,7 +15348,7 @@ name: protein group-level e-value
 def: "Estimation of the e-value for protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002348 ! protein group-level identification confidence metric
-has_domain: MS:1002306 ! value greater than zero
+relationship: has_domain MS:1002306 ! value greater than zero
 
 [Term]
 id: MS:1002373
@@ -15356,7 +15358,7 @@ xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002348 ! protein group-level identification confidence metric
 relationship: has_units UO:0000166 ! parts per notation unit
 relationship: has_units UO:0000187 ! percent
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002374
@@ -15365,7 +15367,7 @@ def: "FDRScore for protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002368 ! search engine specific score for protein groups
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002375
@@ -15374,7 +15376,7 @@ def: "Combined FDRScore for proteins specifically obtained for distinct combinat
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002368 ! search engine specific score for protein groups
 is_a: MS:1001153 ! search engine specific score
-has_domain: MS:1002349 ! value greater than zero but less than or equal to one
+relationship: has_domain MS:1002349 ! value greater than zero but less than or equal to one
 
 [Term]
 id: MS:1002376
@@ -15382,7 +15384,7 @@ name: protein group-level probability
 def: "Probability that at least one of the members of a group of protein sequences has been correctly identified from the PSM and distinct peptide evidence, and based on the available protein sequences presented to the analysis software." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002368 ! search engine specific score for protein groups
-has_domain: MS:1002305 ! value between 0 and 1 inclusive
+relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
 id: MS:1002377
@@ -15458,6 +15460,8 @@ id: MS:1002387
 name: PIA
 def: "PIA - Protein Inference Algorithms, a toolbox for protein inference and identification analysis." [PSI:PI, http://www.medizinisches-proteom-center.de/pia]
 is_a: MS:1002414 ! postprocessing software
+is_a: MS:1001456 ! analysis software
+is_a: MS:1001457 ! data processing software
 
 [Term]
 id: MS:1002388
