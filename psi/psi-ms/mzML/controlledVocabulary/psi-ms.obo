@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.59.0
-date: 22:01:2014 13:56
+data-version: 3.60.0
+date: 18:02:2014 08:37
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.59.0
-remark: release date: 2014-01-22
+remark: version: 3.60.0
+remark: release date: 2014-02-18
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -12667,7 +12667,6 @@ name: DeBunker:score
 def: "Score specific to DeBunker." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PTM localization score
 
 [Term]
@@ -12702,7 +12701,6 @@ name: MSQuant:PTM-score
 def: "The PTM score from MSQuant software." [DOI:10.1021/pr900721e, PMID:19888749]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PTM localization score
 
 [Term]
@@ -12711,7 +12709,6 @@ name: MaxQuant:PTM Score
 def: "The PTM score from MaxQuant software." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PTM localization score
 
 [Term]
@@ -12747,7 +12744,6 @@ name: MaxQuant:PTM Delta Score
 def: "The PTM Delta Score value from MaxQuant software (Difference between highest scoring site and second highest)." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PTM localization score
 
 [Term]
@@ -12762,7 +12758,6 @@ name: Ascore:Ascore
 def: "The Ascore score value from Ascore software." [DOI:10.1038/nbt1240, PMID:16964243]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PTM localization score
 
 [Term]
@@ -15680,3 +15675,120 @@ name: PASSEL experiment URI
 def: "URI that allows access to a PASSEL experiment." [PSI:PI]
 xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
 is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1002421
+name: Paragon input parameter
+def: "Search engine input parameters specific to Paragon." [PSI:PI]
+is_a: MS:1001302 ! search engine specific input parameter
+
+[Term]
+id: MS:1002422
+name: Paragon: sample type
+def: "The Paragon method setting indicating the type of sample at the high level, generally meaning the type of quantitation labeling or lack thereof. 'Identification' is indicated for samples without any labels for quantitation." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002423
+name: Paragon: cysteine alkylation
+def: "The Paragon method setting indicating the actual cysteine alkylation agent; 'None' is indicated if there was no cysteine alkylation." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002424
+name: Paragon: instrument setting
+def: "The Paragon method setting (translating to a large number of lower level settings) indicating the instrument used or a category of instrument." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002425
+name: Paragon: search effort
+def: "The Paragon method setting that controls the two major modes of search effort of the Paragon algorithm: the Rapid mode uses a conventional database search, while the Thorough mode uses a hybrid search, starting with the same approach as the Rapid mode but then follows it with a separate tag-based approach enabling a more extensive search." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002426
+name: Paragon: ID focus
+def: "A Paragon method setting that allows the inclusion of large sets of features such as biological modification or substitutions." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002427
+name: Paragon: FDR analysis
+def: "The Paragon method setting that controls whether FDR analysis is conducted." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002428
+name: Paragon: quantitation
+def: "The Paragon method setting that controls whether quantitation analysis is conducted." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002429
+name: Paragon: background correction
+def: "The Paragon method setting that controls whether the 'Background Correction' analysis is conducted; this processing estimates a correction to the attenuation in extremity ratios that can occur in isobaric quantatitation workflows on complex samples." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002430
+name: Paragon: bias correction
+def: "The Paragon method setting that controls whether 'Bias Correction' is invoked in quantitation analysis; this correction is a normalization to set the central tendency of protein ratios to unity." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002431
+name: Paragon: channel to use as denominator in ratios
+def: "The Paragon method setting that controls which label channel is used as the denominator in calculating relative expression ratios." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002432
+name: search engine specific input metadata
+def: "Search engine specific metadata that are not user-controlled settings." [PSI:PI]
+is_a: MS:1001249 ! search input details
+
+[Term]
+id: MS:1002433
+name: Paragon: modified data dictionary or parameter translation
+def: "This metric detects if any changes have been made to the originally installed key control files for the software; if no changes have been made, then the software version and settings are sufficient to enable exact reproduction; if changes have been made, then the modified ParameterTranslation- and ProteinPilot DataDictionary-XML files much also be provided in order to exactly reproduce a result." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1002432 ! search engine specific input metadata
+
+[Term]
+id: MS:1002434
+name: number of spectra searched
+def: "Number of spectra in a search." [PSI:PI]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: MS:1001249 ! search input details
+
+[Term]
+id: MS:1002435
+name: data processing start time
+def: "The time that a data processing action was started." [PSI:MS]
+xref: value-type:xsd\:date "The allowed value-type for this CV term."
+is_a: MS:1000630 ! data processing parameter
+
+[Term]
+id: MS:1002436
+name: Paragon: digestion
+def: "The Paragon method setting indicating the actual digestion agent - unlike other search tools, this setting does not include options that control partial specificity like 'semitrypsin'; if trypsin is used, trypsin is set, and partially conforming peptides are found in the Thorough mode of search; 'None' should be indicated only if there was really no digestion done." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001249 ! search input details
+
+[Term]
+id: MS:1002437
+name: number of decoy sequences
+def: "The number of decoy sequences, if the concatenated target-decoy approach is used." [PSI:PI]
+xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
+is_a: MS:1001011 ! search database details
