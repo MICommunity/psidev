@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.60.0
-date: 18:02:2014 08:37
+data-version: 3.61.0
+date: 05:03:2014 09:04
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.60.0
-remark: release date: 2014-02-18
+remark: version: 3.61.0
+remark: release date: 2014-03-05
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -15792,3 +15792,39 @@ name: number of decoy sequences
 def: "The number of decoy sequences, if the concatenated target-decoy approach is used." [PSI:PI]
 xref: value-type:xsd\:positiveInteger "The allowed value-type for this CV term."
 is_a: MS:1001011 ! search database details
+
+[Term]
+id: MS:1002438
+name: spectrum identification list result details
+def: "Information about the list of PSMs (SpectrumIdentificationList)." [PSI:PI]
+relationship: part_of MS:1001000 ! spectrum interpretation
+
+[Term]
+id: MS:1002439
+name: final PSM list
+def: "A flag on a list of PSMs (SpectrumIdentificationList) to indicate that this is the final set of identifications to be interpreted by consuming software. Amongst the set of SpectrumIdentificationList(s) that are flagged with the term, each spectrum must not be referenced from more than one SpectrumIdentificationResult." [PSI:PI]
+is_a: MS:1002438 ! spectrum identification list result details
+
+[Term]
+id: MS:1002440
+name: intermediate PSM list
+def: "A flag on a list of PSMs (SpectrumIdentificationList) to indicate that this is not the final set of identifications to be interpreted by consuming software. This term should be used when results are provided from multiple search engines for the results from each search engine before they are combined to give consensus identifications. Amongst the set of SpectrumIdentificationList(s) that are flagged with the term, each spectrum may be referenced from more than one SpectrumIdentificationResult." [PSI:PI]
+is_a: MS:1002438 ! spectrum identification list result details
+
+[Term]
+id: MS:1002441
+name: Andi-MS format
+def: "AIA Analytical Data Interchange file format for mass spectrometry data." [PSI:PI]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1002442
+name: chromatograph file format
+def: "The format of the chromatography file being used. This could be a instrument or vendor specific proprietary file format or a converted open file format." [PSI:PI]
+is_a: MS:1001459 ! file format
+
+[Term]
+id: MS:1002443
+name: Andi-CHROM format
+def: "AIA Analytical Data Interchange file format for chromatography data." [PSI:PI]
+is_a: MS:1002442 ! chromatograph file format
