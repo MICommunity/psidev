@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.61.0
-date: 05:03:2014 09:04
+data-version: 3.62.0
+date: 19:03:2014 09:13
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.61.0
-remark: release date: 2014-03-05
+remark: version: 3.62.0
+remark: release date: 2014-03-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -15828,3 +15828,21 @@ id: MS:1002443
 name: Andi-CHROM format
 def: "AIA Analytical Data Interchange file format for chromatography data." [PSI:PI]
 is_a: MS:1002442 ! chromatograph file format
+
+[Term]
+id: MS:1002444
+name: 6420 Triple Quadrupole LC/MS
+def: "The 6420 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a Agilent triple quadrupole mass spectrometer." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1002445
+name: 6460 Triple Quadrupole LC/MS
+def: "The 6460 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a Agilent triple quadrupole mass spectrometer. It is similar to the 6420 but adds Agilent Jet Stream (AJS) technology to increase sensitivity." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1002446
+name: 6490 Triple Quadrupole LC/MS
+def: "The 6490 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a Agilent triple quadrupole mass spectrometer. It is similar to the 6420 but adds the Agilent iFunnel technology to increase sensitivity." [PSI:MS]
+is_a: MS:1000490 ! Agilent instrument model
