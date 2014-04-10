@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.62.0
-date: 19:03:2014 09:13
+data-version: 3.63.0
+date: 10:04:2014 15:25
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.62.0
-remark: release date: 2014-03-19
+remark: version: 3.63.0
+remark: release date: 2014-04-10
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -7038,7 +7038,7 @@ is_a: MS:1001105 ! peptide result details
 [Term]
 id: MS:1001122
 name: ions series considered
-def: "The ion series that were used during the calculation of the count (e.g. b, y, a, b, c, y, z, b, b-NH3, b-H20, b+, z, z-, z+, y-H3PO4, immonium)." [PSI:PI]
+def: "The ion series that were used during the calculation of the count (e.g. a, b, c, d, v, w, x, y, z, a-H2O, a-NH3, b-H2O, b-NH3, y-H2O, y-NH3, b-H20, b+, z-, z+1, z+2, b-H3PO4, y-H3PO4, immonium, internal ya, internal yb)." [PSI:PI]
 is_a: MS:1001105 ! peptide result details
 
 [Term]
@@ -7202,7 +7202,7 @@ is_a: MS:1001128 ! SEQUEST:selectCV
 [Term]
 id: MS:1001146
 name: param: a ion-NH3
-def: "Parameter information, type of product: a ion with lost ammonium." [PSI:PI]
+def: "Ion a-NH3 parameter information, type of product: a ion with lost ammonia." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
@@ -7213,31 +7213,31 @@ is_a: MS:1001085 ! protein result details
 [Term]
 id: MS:1001148
 name: param: a ion-H2O
-def: "Ion a - H2O if a significant and fragment includes STED." [PSI:PI]
+def: "Ion a-H2O if a significant and fragment includes STED." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
 id: MS:1001149
 name: param: b ion-NH3
-def: "Parameter information, type of product: b ion with lost ammonium." [PSI:PI]
+def: "Ion b-NH3 parameter information, type of product: b ion with lost ammonia." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
 id: MS:1001150
 name: param: b ion-H2O
-def: "Ion b - H2O if b significant and fragment includes STED." [PSI:PI]
+def: "Ion b-H2O if b significant and fragment includes STED." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
 id: MS:1001151
 name: param: y ion-NH3
-def: "Parameter information, type of product: y ion with lost ammonium." [PSI:PI]
+def: "Ion y-NH3 parameter information, type of product: y ion with lost ammonia." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
 id: MS:1001152
 name: param: y ion-H2O
-def: "Ion y - H2O if y significant and fragment includes STED." [PSI:PI]
+def: "Ion y-H2O if y significant and fragment includes STED." [PSI:PI]
 is_a: MS:1001066 ! ions series considered in search
 
 [Term]
@@ -7726,13 +7726,13 @@ is_a: MS:1002307 ! fragmentation ion type
 [Term]
 id: MS:1001232
 name: frag: b ion - NH3
-def: "Fragmentation information, type of product: b ion without ammonium ion." [PSI:PI]
+def: "Ion b-NH3 fragmentation information, type of product: b ion without ammonia." [PSI:PI]
 is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
 id: MS:1001233
 name: frag: y ion - NH3
-def: "Fragmentation information, type of product: y ion without ammonium ion." [PSI:PI]
+def: "Ion y-NH3 fragmentation information, type of product: y ion without ammonia." [PSI:PI]
 is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
@@ -7744,7 +7744,7 @@ is_a: MS:1002307 ! fragmentation ion type
 [Term]
 id: MS:1001235
 name: frag: a ion - NH3
-def: "Fragmentation information, type of product: a ion without ammonium." [PSI:PI]
+def: "Ion a-NH3 fragmentation information, type of product: a ion without ammonia." [PSI:PI]
 is_a: MS:1002307 ! fragmentation ion type
 
 [Term]
@@ -15846,3 +15846,38 @@ id: MS:1002446
 name: 6490 Triple Quadrupole LC/MS
 def: "The 6490 Quadrupole LC/MS system is a Agilent liquid chromatography instrument combined with a Agilent triple quadrupole mass spectrometer. It is similar to the 6420 but adds the Agilent iFunnel technology to increase sensitivity." [PSI:MS]
 is_a: MS:1000490 ! Agilent instrument model
+
+[Term]
+id: MS:1002447
+name: Paragon:special factor
+def: "The Paragon method setting indicating a list of one or more 'special factors', which generally capture secondary effects (relative to other settings) as a set of probabilities of modification features that override the assumed levels. For example the 'gel-based ID' special factor causes an increase probability of oxidation on several resides because of the air exposure impact on a gel, in addition to other effects." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002421 ! Paragon input parameter
+
+[Term]
+id: MS:1002448
+name: PEAKS:inChorusPeptideScore
+def: "The PEAKS inChorus peptide score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for PSMs
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002449
+name: PEAKS:inChorusProteinScore
+def: "The PEAKS inChorus protein score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001116 ! single protein result details
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002450
+name: param: b ion-H3PO4
+def: "Ion b-H3PO4: b ion with lost phosphoric acid." [PSI:PI]
+is_a: MS:1001066 ! ions series considered in search
+
+[Term]
+id: MS:1002451
+name: param: y ion-H3PO4
+def: "Ion y-H3PO4: y ion with lost phosphoric acid." [PSI:PI]
+is_a: MS:1001066 ! ions series considered in search
