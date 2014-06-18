@@ -1,6 +1,6 @@
 format-version: 1.2
 data-version: 3.64.0
-date: 21:05:2014 08:30
+date: 18:06:2014 08:42
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -9,7 +9,7 @@ default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
 remark: version: 3.64.0
-remark: release date: 2014-05-21
+remark: release date: 2014-06-18
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -12380,7 +12380,7 @@ name: Digital Object Identifier (DOI)
 def: "DOI unique identifier of a publication." [PSI:PI, http://dx.doi.org]
 synonym: "doi" EXACT []
 is_a: MS:1000878 ! external reference identifier
-relationship: has_regexp MS:1002480 ! (10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)
+relationship: has_regexp MS:1002480 ! (10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)
 
 [Term]
 id: MS:1001923
@@ -12523,7 +12523,7 @@ is_a: MS:1001941 ! electrospray supply type
 [Term]
 id: MS:1001944
 name: Collision cell exit potential
-def: "Potential difference between Q2 and Q3 in a triple quadrupole instrument in volts." [PSI:MS]	
+def: "Potential difference between Q2 and Q3 in a triple quadrupole instrument in volts." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000510 ! precursor activation attribute
 relationship: has_units UO:0000218 ! volt
@@ -14416,7 +14416,7 @@ is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 
 [Term]
 id: MS:1002231
-name: ([A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12})
+name: ([A-Fa-f0-9]\{8\}-([A-Fa-f0-9]\{4\}-)\{3\}[A-Fa-f0-9]\{12\})
 is_a: MS:1002479 ! regular expression
 
 [Term]
@@ -14424,7 +14424,7 @@ id: MS:1002232
 name: ProteomeDiscoverer:Default FDR calculator
 def: "The default FDR calculator as globally unique identifier (GUID)." [PSI:PI]
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
-relationship: has_regexp MS:1002231 ! ([A-Fa-f0-9]{8}-([A-Fa-f0-9]{4}-){3}[A-Fa-f0-9]{12})
+relationship: has_regexp MS:1002231 ! ([A-Fa-f0-9]\{8\}-([A-Fa-f0-9]\{4\}-)\{3\}[A-Fa-f0-9]\{12\})
 
 [Term]
 id: MS:1002233
@@ -16142,6 +16142,6 @@ relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrom
 
 [Term]
 id: MS:1002480
-name: (10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)
+name: (10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)
 def: "Regular expression for a digital object identifier (DOI)." [PSI:PI, http://dx.doi.org/]
 is_a: MS:1002479 ! regular expression
