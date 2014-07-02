@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.64.0
-date: 18:06:2014 08:42
+data-version: 3.65.0
+date: 02:07:2014 08:55
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.64.0
-remark: release date: 2014-06-18
+remark: version: 3.65.0
+remark: release date: 2014-07-02
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -959,7 +959,7 @@ name: collision-induced dissociation
 def: "The dissociation of an ion after collisional excitation. The term collisional-activated dissociation is not recommended." [PSI:MS]
 synonym: "CID" EXACT []
 synonym: "CAD" EXACT []
-synonym: "collision activated dissociation" EXACT []
+synonym: "collisionally activated dissociation" EXACT []
 is_a: MS:1000044 ! dissociation method
 
 [Term]
@@ -2360,7 +2360,7 @@ is_obsolete: true
 [Term]
 id: MS:1000340
 name: precursor ion
-def: "An ion that reacts to form particular product ions. The reaction can be unimolecular dissociation, ion/molecule reaction, isomerization, or change in charge state. The term parent ion is not recommended." [PSI:MS]
+def: "An ion that reacts to form particular product ions. The reaction can be unimolecular dissociation, ion/molecule reaction, isomerization, or change in charge state. The term parent ion is deprecated." [PSI:MS]
 synonym: "parent ion" RELATED []
 is_a: MS:1000506 ! ion role
 
@@ -2859,7 +2859,7 @@ is_a: MS:1000437 ! ion reaction
 
 [Term]
 id: MS:1000422
-name: higher-energy beam-type collision-induced dissociation
+name: beam-type collision-induced dissociation
 def: "A collision-induced dissociation process that occurs in a beam-type collision cell." [PSI:MS]
 synonym: "HCD" EXACT []
 is_a: MS:1000133 ! collision-induced dissociation
@@ -7239,6 +7239,7 @@ is_a: MS:1001066 ! ions series considered in search
 id: MS:1001147
 name: protein ambiguity group result details
 is_a: MS:1001085 ! protein result details
+is_a: MS:1001153 ! search engine specific score
 
 [Term]
 id: MS:1001148
@@ -8552,6 +8553,7 @@ name: distinct peptide-level global FDR
 def: "Estimation of the global false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
+is_a: MS:1002484 ! peptide-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -9127,14 +9129,14 @@ id: MS:1001447
 name: prot:FDR threshold
 def: "False-discovery rate threshold for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001060 ! quality estimation method details
+is_a: MS:1002485 ! protein-level target-decoy threshold
 
 [Term]
 id: MS:1001448
 name: pep:FDR threshold
 def: "False-discovery rate threshold for peptides." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001060 ! quality estimation method details
+is_a: MS:1002484 ! peptide-level target-decoy threshold
 
 [Term]
 id: MS:1001449
@@ -14416,7 +14418,8 @@ is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 
 [Term]
 id: MS:1002231
-name: ([A-Fa-f0-9]\{8\}-([A-Fa-f0-9]\{4\}-)\{3\}[A-Fa-f0-9]\{12\})
+name: regular expressions for a GUID
+def: "([A-Fa-f0-9]\{8\}-([A-Fa-f0-9]\{4\}-)\{3\}[A-Fa-f0-9]\{12\})." [PSI:PI]
 is_a: MS:1002479 ! regular expression
 
 [Term]
@@ -14424,7 +14427,7 @@ id: MS:1002232
 name: ProteomeDiscoverer:Default FDR calculator
 def: "The default FDR calculator as globally unique identifier (GUID)." [PSI:PI]
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
-relationship: has_regexp MS:1002231 ! ([A-Fa-f0-9]\{8\}-([A-Fa-f0-9]\{4\}-)\{3\}[A-Fa-f0-9]\{12\})
+relationship: has_regexp MS:1002231 ! regular expressions for a GUID
 
 [Term]
 id: MS:1002233
@@ -14621,7 +14624,7 @@ id: MS:1002260
 name: PSM:FDR threshold
 def: "False-discovery rate threshold for peptide-spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001060 ! quality estimation method details
+is_a: MS:1002483 ! PSM-level target-decoy threshold
 
 [Term]
 id: MS:1002261
@@ -15234,6 +15237,7 @@ name: PSM-level global FDR
 def: "Estimation of the global false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
+is_a: MS:1002483 ! PSM-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15242,6 +15246,7 @@ name: PSM-level local FDR
 def: "Estimation of the local false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
+is_a: MS:1002483 ! PSM-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15308,6 +15313,7 @@ name: distinct peptide-level local FDR
 def: "Estimation of the local false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
+is_a: MS:1002484 ! peptide-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15387,6 +15393,7 @@ name: protein group-level global FDR
 def: "Estimation of the global false discovery rate of protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002346 ! protein group-level result details
+is_a: MS:1002486 ! protein group-level target-decoy threshold
 
 [Term]
 id: MS:1002370
@@ -15394,6 +15401,7 @@ name: protein group-level local FDR
 def: "Estimation of the local false discovery rate of protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002346 ! protein group-level result details
+is_a: MS:1002486 ! protein group-level target-decoy threshold
 
 [Term]
 id: MS:1002371
@@ -15867,13 +15875,13 @@ relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
 id: MS:1002439
-name: final PSM list
+name: final PSM list UNDER DISCUSSION
 def: "A flag on a list of PSMs (SpectrumIdentificationList) to indicate that this is the final set of identifications to be interpreted by consuming software. Amongst the set of SpectrumIdentificationList(s) that are flagged with the term, each spectrum must not be referenced from more than one SpectrumIdentificationResult." [PSI:PI]
 is_a: MS:1002438 ! spectrum identification list result details
 
 [Term]
 id: MS:1002440
-name: intermediate PSM list
+name: intermediate PSM list UNDER DISCUSSION
 def: "A flag on a list of PSMs (SpectrumIdentificationList) to indicate that this is not the final set of identifications to be interpreted by consuming software. This term should be used when results are provided from multiple search engines for the results from each search engine before they are combined to give consensus identifications. Amongst the set of SpectrumIdentificationList(s) that are flagged with the term, each spectrum may be referenced from more than one SpectrumIdentificationResult." [PSI:PI]
 is_a: MS:1002438 ! spectrum identification list result details
 
@@ -16006,6 +16014,7 @@ name: protein group-level global FNR
 def: "Estimation of the global false negative rate of protein groups." [PSI:PI]
 is_a: MS:1002346 ! protein group-level result details
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
+is_a: MS:1002486 ! protein group-level target-decoy threshold
 
 [Term]
 id: MS:1002461
@@ -16018,6 +16027,7 @@ id: MS:1002462
 name: distinct peptide-level global FNR
 def: "Estimation of the global false negative rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 is_a: MS:1001105 ! peptide result details
+is_a: MS:1002484 ! peptide-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -16031,6 +16041,7 @@ id: MS:1002464
 name: PSM-level global FNR
 def: "Estimation of the global false negative rate of peptide spectrum matches." [PSI:PI]
 is_a: MS:1002345 ! PSM-level result details
+is_a: MS:1002483 ! PSM-level target-decoy threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -16142,6 +16153,255 @@ relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrom
 
 [Term]
 id: MS:1002480
-name: (10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)
-def: "Regular expression for a digital object identifier (DOI)." [PSI:PI, http://dx.doi.org/]
+name: regular expression for a digital object identifier (DOI)
+def: "(10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)." [PSI:PI, http://dx.doi.org/]
 is_a: MS:1002479 ! regular expression
+
+[Term]
+id: MS:1002481
+name: higher energy beam-type collision-induced dissociation
+def: "A collision-induced dissociation process wherein the projectile ion has the translational energy higher than approximately 1000 eV." [PSI:MS]
+is_a: MS:1000422 ! beam-type collision-induced dissociation
+
+[Term]
+id: MS:1002482
+name: statistical threshold
+def: "Estimated statistical threshold." [PSI:MS]
+is_a: MS:1001060 ! quality estimation method details
+
+[Term]
+id: MS:1002483
+name: PSM-level statistical threshold
+def: "Estimated statistical threshold at PSM-level." [PSI:MS]
+is_a: MS:1002482 ! statistical threshold
+
+[Term]
+id: MS:1002484
+name: peptide-level statistical threshold
+def: "Estimated statistical threshold at peptide-level." [PSI:MS]
+is_a: MS:1002482 ! statistical threshold
+
+[Term]
+id: MS:1002485
+name: protein-level statistical threshold
+def: "Estimated statistical threshold at protein-level." [PSI:MS]
+is_a: MS:1002482 ! statistical threshold
+
+[Term]
+id: MS:1002486
+name: protein group-level statistical threshold
+def: "Estimated statistical threshold at protein group-level." [PSI:PI]
+is_a: MS:1002482 ! statistical threshold
+
+[Term]
+id: MS:1002487
+name: MassIVE dataset identifier
+def: "Dataset identifier issued by the MassIVE repository. A dataset can refer to either a single sample as part of a study, or all samples that are part of the study corresponding to a publication." [PSI:PI]
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1002488
+name: MassIVE dataset URI
+def: "URI that allows the access to one dataset in the MassIVE repository. A dataset can refer to either a single sample as part of a study, or all samples that are part of the study corresponding to a publication." [PSI:PI]
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
+is_a: MS:1000878 ! external reference identifier
+
+[Term]
+id: MS:1002489
+name: special processing
+def: "Details describing a special processing." [PSI:PI]
+relationship: part_of MS:1001000 ! spectrum interpretation
+
+[Term]
+id: MS:1002490
+name: peptide-level scoring
+def: "Peptide-level scoring performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002491
+name: modification localization scoring
+def: "Modification localization scoring performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002492
+name: consensus scoring
+def: "Consensus multiple search engine approach performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002493
+name: sample pre-fractionation
+def: "Sample pre-fractionation performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002494
+name: cross-linking search
+def: "Cross-linking search performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002495
+name: no special processing
+def: "No special processing performed." [PSI:PI]
+is_a: MS:1002489 ! special processing
+
+[Term]
+id: MS:1002496
+name: group PSMs by sequence
+def: "Group PSMs by distinct peptide sequence ignoring modifications." [PSI:PI]
+is_a: MS:1002345 ! PSM-level result details
+
+[Term]
+id: MS:1002497
+name: group PSMs by sequence with modifications
+def: "Group PSMs by distinct peptide sequence with taking modifications into account." [PSI:PI]
+is_a: MS:1002345 ! PSM-level result details
+
+[Term]
+id: MS:1002498
+name: group PSMs by sequence with modifications and charge
+def: "Group PSMs by distinct peptide sequence with taking modifications and charge into account." [PSI:PI]
+is_a: MS:1002345 ! PSM-level result details
+
+[Term]
+id: MS:1002499
+name: peptide level score
+def: "Peptide level score." [PSI:PI]
+is_a: MS:1002358 ! search engine specific score for distinct peptides
+
+[Term]
+id: MS:1002500
+name: peptide passes threshold
+def: "A Boolean attribute to determine whether the peptide has passed the threshold indicated in the file." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS:1002501
+name: no PSM threshold
+def: "Indicating that no PSM threshold was used." [PSI:PI]
+is_a: MS:1002345 ! PSM-level result details
+
+[Term]
+id: MS:1002502
+name: no peptide-level threshold
+def: "Indicating that no peptide-level threshold was used." [PSI:PI]
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS:1002503
+name: PSM is used for peptide-level scoring
+def: "Flags a PSM that it is used for peptide-level scoring." [PSI:PI]
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS:1002504
+name: order
+def: "The order of modifications to be referenced elsewhere in the document." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1001055 ! modification parameters
+
+[Term]
+id: MS:1002505
+name: regular expression for modification localization scoring
+def: "([:digit:]+:[0|1]\{1\}.[:digit:]+:[:digit:]+[|:digit:]*:(true|false)\{1\})." [PSI:PI]
+is_a: MS:1002479 ! regular expression
+
+[Term]
+id: MS:1002506
+name: modification position score
+def: "Modification position score." [PSI:PI]
+is_a: MS:1001055 ! modification parameters
+
+[Term]
+id: MS:1002507
+name: modification rescoring:false localization rate
+def: "Mod position score: false localization rate." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002506 ! modification position score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
+
+[Term]
+id: MS:1002508
+name: cross-linking attribute
+def: "Cross-linking attribute." [PSI:PI]
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS:1002509
+name: cross-link donor
+def: "The Cross-linking donor, assigned according to the following rules: the export software SHOULD use the following rules to choose the cross-link donor as the: longer peptide, then higher peptide neutral mass, then alphabetical order." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002508 ! cross-linking attribute
+
+[Term]
+id: MS:1002510
+name: cross-link receiver
+def: "Cross-linking receiver, assigned according to the following rules: the export software SHOULD use the following rules to choose the cross-link donor as the: longer peptide, then higher peptide neutral mass, then alphabetical order." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002508 ! cross-linking attribute
+
+[Term]
+id: MS:1002511
+name: cross-link spectrum identification item
+def: "Cross-linked spectrum identification item." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1002508 ! cross-linking attribute
+
+[Term]
+id: MS:1002512
+name: cross-linking score
+def: "Cross-linking scoring value." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002513
+name: molecules per cell 
+def: "The absolute abundance of protein in a cell." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002514
+name: absolute quantitation analysis
+def: "Absolute quantitation analysis." [PSI:PI]
+is_a: MS:1001833 ! quantitation analysis summary
+
+[Term]
+id: MS:1002515
+name: internal peptide reference used
+def: "States whether an internal peptide reference is used or not in absolute quantitation analysis." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001832 ! quantitation software comment or customizations
+
+[Term]
+id: MS:1002516
+name: internal protein reference used
+def: "States whether an internal protein reference is used or not in absolute quantitation analysis." [PSI:PI]
+xref: value-type:xsd\:boolean "The allowed value-type for this CV term."
+is_a: MS:1001832 ! quantitation software comment or customizations
+
+[Term]
+id: MS:1002517
+name: internal reference abundance
+def: "The absolute abundance of the spiked in reference peptide or protein used for absolute quantitation analysis." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002518
+name: Progenesis:protein group normalised abundance
+def: "The data type normalised abundance for protein groups produced by Progenesis LC-MS." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002519
+name: Progenesis:protein group raw abundance
+def: "The data type raw abundance for protein groups produced by Progenesis LC-MS." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
