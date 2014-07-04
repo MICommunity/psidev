@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.65.0
-date: 02:07:2014 08:55
+data-version: 3.65.1
+date: 04:07:2014 08:55
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.65.0
-remark: release date: 2014-07-02
+remark: version: 3.65.1
+remark: release date: 2014-07-04
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -16113,7 +16113,7 @@ def: "The sum of peptide-level scores for peptides mapped only to non-canonical 
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001147 ! protein ambiguity group result details
 relationship: has_order MS:1002108 ! higher score better
- 
+
 [Term]
 id: MS:1002475
 name: ProteoAnnotator:count alternative peptides
