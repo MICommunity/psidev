@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.65.1
-date: 04:07:2014 08:55
+data-version: 3.66.0
+date: 11:07:2014 16:48
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.65.1
-remark: release date: 2014-07-04
+remark: version: 3.66.0
+remark: release date: 2014-07-11
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -8553,7 +8553,7 @@ name: distinct peptide-level global FDR
 def: "Estimation of the global false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
-is_a: MS:1002484 ! peptide-level target-decoy threshold
+is_a: MS:1002484 ! peptide-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -9129,14 +9129,14 @@ id: MS:1001447
 name: prot:FDR threshold
 def: "False-discovery rate threshold for proteins." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1002485 ! protein-level target-decoy threshold
+is_a: MS:1002485 ! protein-level statistical threshold
 
 [Term]
 id: MS:1001448
 name: pep:FDR threshold
 def: "False-discovery rate threshold for peptides." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1002484 ! peptide-level target-decoy threshold
+is_a: MS:1002484 ! peptide-level statistical threshold
 
 [Term]
 id: MS:1001449
@@ -14624,7 +14624,7 @@ id: MS:1002260
 name: PSM:FDR threshold
 def: "False-discovery rate threshold for peptide-spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1002483 ! PSM-level target-decoy threshold
+is_a: MS:1002483 ! PSM-level statistical threshold
 
 [Term]
 id: MS:1002261
@@ -15237,7 +15237,7 @@ name: PSM-level global FDR
 def: "Estimation of the global false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
-is_a: MS:1002483 ! PSM-level target-decoy threshold
+is_a: MS:1002483 ! PSM-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15246,7 +15246,7 @@ name: PSM-level local FDR
 def: "Estimation of the local false discovery rate of peptide spectrum matches." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002345 ! PSM-level result details
-is_a: MS:1002483 ! PSM-level target-decoy threshold
+is_a: MS:1002483 ! PSM-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15313,7 +15313,7 @@ name: distinct peptide-level local FDR
 def: "Estimation of the local false discovery rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
-is_a: MS:1002484 ! peptide-level target-decoy threshold
+is_a: MS:1002484 ! peptide-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15393,7 +15393,7 @@ name: protein group-level global FDR
 def: "Estimation of the global false discovery rate of protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002346 ! protein group-level result details
-is_a: MS:1002486 ! protein group-level target-decoy threshold
+is_a: MS:1002486 ! protein group-level statistical threshold
 
 [Term]
 id: MS:1002370
@@ -15401,7 +15401,7 @@ name: protein group-level local FDR
 def: "Estimation of the local false discovery rate of protein groups." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1002346 ! protein group-level result details
-is_a: MS:1002486 ! protein group-level target-decoy threshold
+is_a: MS:1002486 ! protein group-level statistical threshold
 
 [Term]
 id: MS:1002371
@@ -16014,7 +16014,7 @@ name: protein group-level global FNR
 def: "Estimation of the global false negative rate of protein groups." [PSI:PI]
 is_a: MS:1002346 ! protein group-level result details
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
-is_a: MS:1002486 ! protein group-level target-decoy threshold
+is_a: MS:1002486 ! protein group-level statistical threshold
 
 [Term]
 id: MS:1002461
@@ -16027,7 +16027,7 @@ id: MS:1002462
 name: distinct peptide-level global FNR
 def: "Estimation of the global false negative rate for distinct peptides once redundant identifications of the same peptide have been removed (id est multiple PSMs have been collapsed to one entry)." [PSI:PI]
 is_a: MS:1001105 ! peptide result details
-is_a: MS:1002484 ! peptide-level target-decoy threshold
+is_a: MS:1002484 ! peptide-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -16041,7 +16041,7 @@ id: MS:1002464
 name: PSM-level global FNR
 def: "Estimation of the global false negative rate of peptide spectrum matches." [PSI:PI]
 is_a: MS:1002345 ! PSM-level result details
-is_a: MS:1002483 ! PSM-level target-decoy threshold
+is_a: MS:1002483 ! PSM-level statistical threshold
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -16210,6 +16210,7 @@ is_a: MS:1000878 ! external reference identifier
 id: MS:1002489
 name: special processing
 def: "Details describing a special processing." [PSI:PI]
+is_a: MS:1001080 ! search type
 relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
@@ -16307,7 +16308,7 @@ is_a: MS:1001055 ! modification parameters
 [Term]
 id: MS:1002505
 name: regular expression for modification localization scoring
-def: "([:digit:]+:[0|1]\{1\}.[:digit:]+:[:digit:]+[|:digit:]*:(true|false)\{1\})." [PSI:PI]
+def: "([:digit:]+:[0|1]\{1\}.[:digit:]+:[:digit:]+[|]\{1\}[:digit:]+:(true|false)\{1\})" [PSI:PI]
 is_a: MS:1002479 ! regular expression
 
 [Term]
@@ -16405,3 +16406,16 @@ name: Progenesis:protein group raw abundance
 def: "The data type raw abundance for protein groups produced by Progenesis LC-MS." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002520
+name: peptide group ID
+def: "Peptide group identifier for peptide-level stats." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: MS: 1002521
+name: mass spectrometry imaging
+def: "A technique in which mass spectra are acquired in a spatially resolved manner. This is typically achieved by scanning a laser or primary ion beam over a sample and acquiring a mass spectrum at each position." [PSI:MS]
+is_a: MS:1000857 ! run attribute
