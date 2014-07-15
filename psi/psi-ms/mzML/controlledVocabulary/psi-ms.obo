@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.66.0
-date: 11:07:2014 16:48
+data-version: 3.66.1
+date: 15:07:2014 09:09
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.66.0
-remark: release date: 2014-07-11
+remark: version: 3.66.1
+remark: release date: 2014-07-15
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -16154,7 +16154,7 @@ relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrom
 [Term]
 id: MS:1002480
 name: regular expression for a digital object identifier (DOI)
-def: "(10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)." [PSI:PI, http://dx.doi.org/]
+def: "(10[.][0-9]\{4,\}(?:[.][0-9]+)*/(?:(?![\"&\'<>])\S)+)." [PSI:PI, http://dx.doi.org/]
 is_a: MS:1002479 ! regular expression
 
 [Term]
@@ -16415,7 +16415,7 @@ xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001105 ! peptide result details
 
 [Term]
-id: MS: 1002521
+id: MS:1002521
 name: mass spectrometry imaging
 def: "A technique in which mass spectra are acquired in a spatially resolved manner. This is typically achieved by scanning a laser or primary ion beam over a sample and acquiring a mass spectrum at each position." [PSI:MS]
 is_a: MS:1000857 ! run attribute
