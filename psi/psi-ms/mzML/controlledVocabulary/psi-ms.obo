@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.67.1
-date: 26:08:2014 13:34
+data-version: 3.68.0
+date: 15:09:2014 08:20
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.67.0
-remark: release date: 2014-08-26
+remark: version: 3.68.0
+remark: release date: 2014-09-15
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -61,9 +61,9 @@ is_a: MS:1000548 ! sample attribute
 [Term]
 id: MS:1000002
 name: sample name
-def: "OBSOLETE A reference string relevant to the sample under study." [PSI:MS]
-comment: This former purgatory term was made obsolete.
-is_obsolete: true
+def: "A reference string relevant to the sample under study." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1000548 ! sample attribute
 
 [Term]
 id: MS:1000003
@@ -16567,3 +16567,19 @@ name: synchronous prefilter selection
 def: "Synchronous prefilter selection." [PSI:PI]
 synonym: "SPS" EXACT []
 is_a: MS:1002527 ! instrument specific scan attribute
+
+[Term]
+id: MS:1002529
+name: resolution array
+def: "A data array of resolution values." [PSI:MS]
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
+is_a: MS:1000513 ! binary data array
+
+[Term]
+id: MS:1002530
+name: baseline array
+def: "A data array of signal baseline values (the signal in the absence of analytes)." [PSI:MS]
+xref: binary-data-type:MS\:1000521 "32-bit float"
+xref: binary-data-type:MS\:1000523 "64-bit float"
+is_a: MS:1000513 ! binary data array
