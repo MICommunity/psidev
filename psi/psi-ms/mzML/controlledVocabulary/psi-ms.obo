@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.68.0
-date: 15:09:2014 08:20
+data-version: 3.69.0
+date: 10:10:2014 10:26
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.68.0
-remark: release date: 2014-09-15
+remark: version: 3.69.0
+remark: release date: 2014-10-10
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -13392,7 +13392,8 @@ def: "MS-GF spectral E-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-is_a: MS:1001872 ! distinct peptide-level e-value
+is_a: MS:1002353 ! PSM-level e-value
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002053
@@ -13401,7 +13402,8 @@ def: "MS-GF E-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-is_a: MS:1001872 ! distinct peptide-level e-value
+is_a: MS:1002353 ! PSM-level e-value
+relationship: has_order MS:1002109 ! lower score better
 
 [Term]
 id: MS:1002054
@@ -13410,7 +13412,7 @@ def: "MS-GF Q-value." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-is_a: MS:1001868 ! distinct peptide-level q-value
+is_a: MS:1002354 ! PSM-level q-value
 
 [Term]
 id: MS:1002055
@@ -15682,6 +15684,7 @@ name: PIA:protein score
 def: "The score given to a protein by any protein inference." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001116 ! single protein result details
+relationship: has_order MS:1002108 ! higher score better
 
 [Term]
 id: MS:1002395
@@ -16583,3 +16586,15 @@ def: "A data array of signal baseline values (the signal in the absence of analy
 xref: binary-data-type:MS\:1000521 "32-bit float"
 xref: binary-data-type:MS\:1000523 "64-bit float"
 is_a: MS:1000513 ! binary data array
+
+[Term]
+id: MS:1002531
+name: UIMF format
+def: "SQLite-based file format created at Pacific Northwest National Lab. It stores an intermediate analysis of ion-mobility mass spectrometry data." [PSI:MS]
+is_a: MS:1000560 ! mass spectrometer file format
+
+[Term]
+id: MS:1002532
+name: UIMF nativeID format
+def: "Native format defined by frame=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger frameType=xsd:nonNegativeInteger." [PSI:MS]
+is_a: MS:1000767 ! native spectrum identifier format
