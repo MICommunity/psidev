@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.69.0
-date: 10:10:2014 10:26
+data-version: 3.70.0
+date: 03:11:2014 09:16
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.69.0
-remark: release date: 2014-10-10
+remark: version: 3.70.0
+remark: release date: 2014-11-03
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -14434,7 +14434,7 @@ id: MS:1002218
 name: percent collision energy ramp start
 def: "Collision energy at the start of the collision energy ramp in percent, normalized to the mass of the ion." [PSI:PI]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1000138 ! percent collision energy
+is_a: MS:1000138 ! normalized collision energy
 relationship: has_units UO:0000187 ! percent
 
 [Term]
@@ -14442,7 +14442,7 @@ id: MS:1002219
 name: percent collision energy ramp end
 def: "Collision energy at the end of the collision energy ramp in percent, normalized to the mass of the ion." [PSI:PI]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: MS:1000138 ! percent collision energy
+is_a: MS:1000138 ! normalized collision energy
 relationship: has_units UO:0000187 ! percent
 
 [Term]
@@ -15445,7 +15445,7 @@ id: MS:1002362
 name: distinct peptide-level probability
 def: "Probability that the reported distinct peptide sequence (irrespective of mass modifications) has been correctly identified via the referenced PSMs." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001192 ! peptide identification confidence metric
+is_a: MS:1001192 ! Expect value
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15484,7 +15484,7 @@ id: MS:1002367
 name: probability for proteins
 def: "Probability that a specific protein sequence has been correctly identified from the PSM and distinct peptide evidence, and based on the available protein sequences presented to the analysis software." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001192 ! protein identification confidence metric
+is_a: MS:1001192 ! Expect value
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -16598,3 +16598,9 @@ id: MS:1002532
 name: UIMF nativeID format
 def: "Native format defined by frame=xsd:nonNegativeInteger scan=xsd:nonNegativeInteger frameType=xsd:nonNegativeInteger." [PSI:MS]
 is_a: MS:1000767 ! native spectrum identifier format
+
+[Term]
+id: MS:1002533
+name: TripleTOF 6600
+def: "AB SCIEX TripleTOF 6600, a quadrupole - quadrupole - time-of-flight mass spectrometer." [PSI:MS]
+is_a: MS:1000121 ! AB SCIEX instrument model
