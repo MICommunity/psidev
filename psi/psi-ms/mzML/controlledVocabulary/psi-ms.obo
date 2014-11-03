@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.70.0
-date: 03:11:2014 09:16
+data-version: 3.70.1
+date: 03:11:2014 14:22
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,7 +8,7 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.70.0
+remark: version: 3.70.1
 remark: release date: 2014-11-03
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
@@ -15445,7 +15445,7 @@ id: MS:1002362
 name: distinct peptide-level probability
 def: "Probability that the reported distinct peptide sequence (irrespective of mass modifications) has been correctly identified via the referenced PSMs." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001192 ! Expect value
+is_a: MS:1001092 ! peptide identification confidence metric
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
@@ -15484,7 +15484,7 @@ id: MS:1002367
 name: probability for proteins
 def: "Probability that a specific protein sequence has been correctly identified from the PSM and distinct peptide evidence, and based on the available protein sequences presented to the analysis software." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
-is_a: MS:1001192 ! Expect value
+is_a: MS:1001198 ! protein identification confidence metric 
 relationship: has_domain MS:1002305 ! value between 0 and 1 inclusive
 
 [Term]
