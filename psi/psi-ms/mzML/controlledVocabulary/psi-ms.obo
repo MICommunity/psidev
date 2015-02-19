@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.71.0
-date: 14:11:2014 15:47
+data-version: 3.72.0
+date: 19:02:2014 09:11
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.71.0
-remark: release date: 2014-11-14
+remark: version: 3.72.0
+remark: release date: 2015-02-19
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -10567,14 +10567,14 @@ is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 
 [Term]
 id: MS:1001644
-name: ProteomeDiscoverer:Dynamic Modifications
+name: ProteomeDiscoverer:Dynamic Modification
 def: "Determine dynamic post-translational modifications (PTMs)." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 
 [Term]
 id: MS:1001645
-name: ProteomeDiscoverer:Static Modifications
+name: ProteomeDiscoverer:Static Modification
 def: "Static Modification to all occurrences of a named amino acid." [PSI:MS]
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
@@ -11122,30 +11122,38 @@ is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 [Term]
 id: MS:1001720
 name: ProteomeDiscoverer:1. Dynamic Modification
-def: "Determine 1st dynamic post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 1st dynamic post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Dynamic Modification (MS:1001644) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1001721
 name: ProteomeDiscoverer:2. Dynamic Modification
-def: "Determine 2nd dynamic post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 2nd dynamic post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Dynamic Modification (MS:1001644) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1001722
 name: ProteomeDiscoverer:3. Dynamic Modification
-def: "Determine 3rd dynamic post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 3rd dynamic post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Dynamic Modification (MS:1001644) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1001723
 name: ProteomeDiscoverer:4. Dynamic Modification
-def: "Determine 4th dynamic post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 4th dynamic post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Dynamic Modification (MS:1001644) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1001724
@@ -12796,27 +12804,27 @@ is_obsolete: true
 
 [Term]
 id: MS:1001968
-name: PTM localization score
-def: "A score that assign confidence to the localization of an amino acid modification on a peptide sequence." [PSI:MS]
+name: PSM-level PTM localization score
+def: "A score that assign confidence to the localization of an amino acid modification on a peptide sequence at the PSM-level." [PSI:PI]
 is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: MS:1001969
 name: phosphoRS score
 def: "Peptide score based on the cumulative binomial probability that the observed match is a random event." [DOI:10.1021/pr200611n, PMID:22073976]
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001970
 name: phosphoRS sequence probability
 def: "Probability that the respective isoform is correct." [DOI:10.1021/pr200611n, PMID:22073976]
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001971
 name: phosphoRS site probability
 def: "Estimate of the probability that the respective site is truly phosphorylated." [DOI:10.1021/pr200611n, PMID:22073976]
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001972
@@ -12837,7 +12845,7 @@ name: DeBunker:score
 def: "Score specific to DeBunker." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001975
@@ -12871,7 +12879,7 @@ name: MSQuant:PTM-score
 def: "The PTM score from MSQuant software." [DOI:10.1021/pr900721e, PMID:19888749]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001979
@@ -12879,7 +12887,7 @@ name: MaxQuant:PTM Score
 def: "The PTM score from MaxQuant software." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001980
@@ -12888,7 +12896,7 @@ def: "The Phospho (STY) Probabilities from MaxQuant software." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001981
@@ -12897,7 +12905,7 @@ def: "The Phospho (STY) Score Diffs from MaxQuant software." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001982
@@ -12906,7 +12914,7 @@ def: "The P-site localization probability value from MaxQuant software." [PSI:MS
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001983
@@ -12914,7 +12922,7 @@ name: MaxQuant:PTM Delta Score
 def: "The PTM Delta Score value from MaxQuant software (Difference between highest scoring site and second highest)." [PSI:MS]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001984
@@ -12928,13 +12936,13 @@ name: Ascore:Ascore
 def: "The Ascore score value from Ascore software." [DOI:10.1038/nbt1240, PMID:16964243]
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001986
 name: H-Score
 def: "H-Score for peptide phosphorylation site location." [DOI:10.1021/pr1006813, PMID:20836569]
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 
 [Term]
 id: MS:1001987
@@ -13104,7 +13112,7 @@ xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
-is_a: MS:1001968 ! PTM localization score
+is_a: MS:1001968 ! PSM-level PTM localization score
 relationship: has_units UO:0000187 ! percent
 
 [Term]
@@ -13569,16 +13577,20 @@ is_a: MS:1001536 ! Bruker Daltonics micrOTOF series
 [Term]
 id: MS:1002078
 name: ProteomeDiscoverer:1. Static Modification
-def: "Determine 1st static post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 1st static post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Static Modification (MS:1001645) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1002079
 name: ProteomeDiscoverer:2. Static Modification
-def: "Determine 2nd static post-translational modifications (PTMs)." [PSI:MS]
+def: "OBSOLETE ProteomeDiscoverer's 2nd static post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Static Modification (MS:1001645) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1002080
@@ -15206,16 +15218,20 @@ is_a: MS:1002101 ! ProteomeDiscoverer input parameter
 [Term]
 id: MS:1002330
 name: ProteomeDiscoverer:3. Static Modification
-def: "Determine 3rd static (fixed) post-translational modifications (PTMs)." [PSI:PI]
+def: "OBSOLETE ProteomeDiscoverer's 3rd static post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Static Modification (MS:1001645) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1002331
 name: ProteomeDiscoverer:5. Dynamic Modification
-def: "Determine 5th dynamic (variable) post-translational modifications (PTMs)." [PSI:PI]
+def: "OBSOLETE ProteomeDiscoverer's 5th dynamic post-translational modification (PTM) input parameter." [PSI:PI]
+comment: This term was made obsolete because it's recommended to use ProteomeDiscoverer:Dynamic Modification (MS:1001644) instead.
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002101 ! ProteomeDiscoverer input parameter
+is_obsolete: true
 
 [Term]
 id: MS:1002332
@@ -16620,3 +16636,126 @@ def: "The ProLuCID result 'DeltaCn'." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
+
+[Term]
+id: MS:1002536
+name: D-Score
+def: "D-Score for phosphorylation site location at the PSM-level." [DOI:10.1002/pmic.201200408, PMID:23307401]
+is_a: MS:1001968 ! PSM-level PTM localization score
+
+[Term]
+id: MS:1002537
+name: MD-Score
+def: "MD-Score for phosphorylation site location at the PSM-level." [DOI:10.1074/mcp.M110.003830–1, PMID:21057138]
+is_a: MS:1001968 ! PSM-level PTM localization score
+
+[Term]
+id: MS:1002538
+name: PTM localization confidence metric
+def: "Localization confidence metric for a post translational modification (PTM)." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002539
+name: PeptideShaker PTM confidence type
+def: "PeptideShaker quality criteria for the confidence of PTM localizations." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002538 ! PTM localization confidence metric
+
+[Term]
+id: MS:1002540
+name: PeptideShaker PSM confidence type
+def: "PeptideShaker quality criteria for the confidence of PSM's." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1002347 ! PSM-level identification confidence metric
+
+[Term]
+id: MS:1002541
+name: PeptideShaker peptide confidence type
+def: "PeptideShaker quality criteria for the confidence of peptide identifications." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001092 ! peptide identification confidence metric
+
+[Term]
+id: MS:1002542
+name: PeptideShaker protein confidence type
+def: "PeptideShaker quality criteria for the confidence of protein identifications." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+is_a: MS:1001198 ! protein identification confidence metric
+
+[Term]
+id: MS:1002543
+name: xiFDR
+def: "Target/Decoy based FDR estimation for cross-linking peptide-identifications." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002544
+name: xi
+def: "Search engine for cross-linked peptides." [PSI:PI]
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002545
+name: xi:score
+def: "The xi result 'Score'." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001143 ! search engine specific score for PSMs
+is_a: MS:1001153 ! search engine specific score
+relationship: has_order MS:1002108 ! higher score better
+
+[Term]
+id: MS:1002546
+name: Skyline mzQuantML converter 
+def: "A software package to convert Skyline report to mzQuantML." [PSI:PI, http://code.google.com/p/srm-mzquantml-convertor/]
+is_a: MS:1001139 ! quantitation software name
+is_a: MS:1001456 ! analysis software
+
+[Term]
+id: MS:1002547
+name: normalized spectral abundance factor
+def: "A normalized spectral abundance factor (NSAF)." [DOI:10.1021/pr060161n, PMID:16944946]
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002548
+name: distributed normalized spectral abundance factor
+def: "A distributed normalized spectral abundance factor (dNSAF." [DOI:10.1021/ac9023999, PMID:20166708] 
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: MS:1002549
+name: peptide-level PTM localization score
+def: "A score that assign confidence to the localization of an amino acid modification on a peptide sequence at the peptide-level." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002550
+name: peptide:phosphoRS score
+def: "Peptide score based on the cumulative binomial probability that the observed match is a random event at the peptide-level." [PSI:PI]
+is_a: MS:1002549 ! peptide-level PTM localization score
+
+[Term]
+id: MS:1002551
+name: peptide:Ascore
+def: "Ascore score for peptide phosphorylation site location at the peptide-level." [PSI:PI]
+is_a: MS:1002549 ! peptide-level PTM localization score
+
+[Term]
+id: MS:1002552
+name: peptide:H-Score
+def: "H-Score for peptide phosphorylation site location at the peptide-level." [PSI:PI]
+is_a: MS:1002549 ! peptide-level PTM localization score
+
+[Term]
+id: MS:1002553
+name: peptide:D-Score
+def: "D-Score for phosphorylation site location at the peptide-level." [PSI:PI]
+is_a: MS:1002549 ! peptide-level PTM localization score
+
+[Term]
+id: MS:1002554
+name: peptide:MD-Score
+def: "MD-Score for phosphorylation site location at the peptide-level." [PSI:PI]
+is_a: MS:1002549 ! peptide-level PTM localization score
