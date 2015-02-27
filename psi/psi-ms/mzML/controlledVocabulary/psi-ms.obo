@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.72.0
-date: 19:02:2014 09:11
+data-version: 3.73.0
+date: 27:02:2014 09:05
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.72.0
-remark: release date: 2015-02-19
+remark: version: 3.73.0
+remark: release date: 2015-02-27
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -12811,20 +12811,26 @@ is_a: MS:1001405 ! spectrum identification result details
 [Term]
 id: MS:1001969
 name: phosphoRS score
-def: "Peptide score based on the cumulative binomial probability that the observed match is a random event." [DOI:10.1021/pr200611n, PMID:22073976]
+def: "phosphoRS score for PTM site location at the PSM-level." [DOI:10.1021/pr200611n, PMID:22073976]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001970
 name: phosphoRS sequence probability
 def: "Probability that the respective isoform is correct." [DOI:10.1021/pr200611n, PMID:22073976]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001971
 name: phosphoRS site probability
 def: "Estimate of the probability that the respective site is truly phosphorylated." [DOI:10.1021/pr200611n, PMID:22073976]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001972
@@ -12843,9 +12849,11 @@ is_a: MS:1001456 ! analysis software
 id: MS:1001974
 name: DeBunker:score
 def: "Score specific to DeBunker." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001975
@@ -12877,31 +12885,38 @@ is_a: MS:1001456 ! analysis software
 id: MS:1001978
 name: MSQuant:PTM-score
 def: "The PTM score from MSQuant software." [DOI:10.1021/pr900721e, PMID:19888749]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001979
 name: MaxQuant:PTM Score
 def: "The PTM score from MaxQuant software." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001980
 name: MaxQuant:Phospho (STY) Probabilities
 def: "The Phospho (STY) Probabilities from MaxQuant software." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001981
 name: MaxQuant:Phospho (STY) Score Diffs
 def: "The Phospho (STY) Score Diffs from MaxQuant software." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
@@ -12911,18 +12926,22 @@ is_a: MS:1001968 ! PSM-level PTM localization score
 id: MS:1001982
 name: MaxQuant:P-site localization probability
 def: "The P-site localization probability value from MaxQuant software." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001983
 name: MaxQuant:PTM Delta Score
 def: "The PTM Delta Score value from MaxQuant software (Difference between highest scoring site and second highest)." [PSI:MS]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001984
@@ -12932,17 +12951,21 @@ is_a: MS:1001456 ! analysis software
 
 [Term]
 id: MS:1001985
-name: Ascore:Ascore
-def: "The Ascore score value from Ascore software." [DOI:10.1038/nbt1240, PMID:16964243]
+name: Ascore
+def: "A-score for PTM site location at the PSM-level." [DOI:10.1038/nbt1240, PMID:16964243]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001986
 name: H-Score
 def: "H-Score for peptide phosphorylation site location." [DOI:10.1021/pr1006813, PMID:20836569]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1001987
@@ -13108,7 +13131,7 @@ is_a: MS:1000240 ! atmospheric pressure ionization
 id: MS:1002012
 name: Mascot:PTM site assignment confidence
 def: "Relative probability that PTM site assignment is correct, derived from the Mascot score difference between matches to the same spectrum (Mascot Delta Score)." [http://www.matrixscience.com/help/pt_mods_help.html#SITE]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001153 ! search engine specific score
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001405 ! spectrum identification result details
@@ -16422,7 +16445,7 @@ is_a: MS:1001105 ! peptide result details
 
 [Term]
 id: MS:1002504
-name: order
+name: modification index
 def: "The order of modifications to be referenced elsewhere in the document." [PSI:PI]
 xref: value-type:xsd\:integer "The allowed value-type for this CV term."
 is_a: MS:1001055 ! modification parameters
@@ -16640,14 +16663,18 @@ is_a: MS:1001153 ! search engine specific score
 [Term]
 id: MS:1002536
 name: D-Score
-def: "D-Score for phosphorylation site location at the PSM-level." [DOI:10.1002/pmic.201200408, PMID:23307401]
+def: "D-Score for PTM site location at the PSM-level." [DOI:10.1002/pmic.201200408, PMID:23307401]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002537
 name: MD-Score
-def: "MD-Score for phosphorylation site location at the PSM-level." [DOI:10.1074/mcp.M110.003830–1, PMID:21057138]
+def: "MD-Score for PTM site location at the PSM-level." [DOI:10.1074/mcp.M110.003830–1, PMID:21057138]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1001968 ! PSM-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002538
@@ -16733,29 +16760,137 @@ is_a: MS:1001405 ! spectrum identification result details
 [Term]
 id: MS:1002550
 name: peptide:phosphoRS score
-def: "Peptide score based on the cumulative binomial probability that the observed match is a random event at the peptide-level." [PSI:PI]
+def: "phosphoRS score for PTM site location at the peptide-level." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002549 ! peptide-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002551
 name: peptide:Ascore
-def: "Ascore score for peptide phosphorylation site location at the peptide-level." [PSI:PI]
+def: "A-score for PTM site location at the peptide-level." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002549 ! peptide-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002552
 name: peptide:H-Score
 def: "H-Score for peptide phosphorylation site location at the peptide-level." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002549 ! peptide-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002553
 name: peptide:D-Score
-def: "D-Score for phosphorylation site location at the peptide-level." [PSI:PI]
+def: "D-Score for PTM site location at the peptide-level." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002549 ! peptide-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
 
 [Term]
 id: MS:1002554
 name: peptide:MD-Score
-def: "MD-Score for phosphorylation site location at the peptide-level." [PSI:PI]
+def: "MD-Score for PTM site location at the peptide-level." [PSI:PI]
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
 is_a: MS:1002549 ! peptide-level PTM localization score
+relationship: has_regexp MS:1002505 ! regular expression for modification localization scoring
+
+[Term]
+id: MS:1002555
+name: PTM localization score threshold
+def: "Threshold for PTM site location score." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1002556
+name: Ascore threshold
+def: "Threshold for Ascore PTM site location score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002557
+name: D-Score threshold
+def: "Threshold for D-score PTM site location score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002558
+name: MD-Score threshold
+def: "Threshold for MD-score PTM site location score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002559
+name: H-Score threshold
+def: "Threshold for H-score PTM site location score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:10025560
+name: DeBunker:score threshold
+def: "Threshold for DeBunker PTM site location score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002561
+name: Mascot:PTM site assignment confidence threshold
+def: "Threshold for Mascot PTM site assignment confidence." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002562
+name: MSQuant:PTM-score threshold
+def: "Threshold for MSQuant:PTM-score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002563
+name: MaxQuant:PTM Score threshold
+def: "Threshold for MaxQuant:PTM Score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002564
+name: MaxQuant:P-site localization probability threshold
+def: "Threshold for MaxQuant:P-site localization probability." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002565
+name: MaxQuant:PTM Delta Score threshold
+def: "Threshold for MaxQuant:PTM Delta Score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002566
+name: MaxQuant:Phospho (STY) Probabilities threshold
+def: "Threshold for MaxQuant:Phospho (STY) Probabilities." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002567
+name: phosphoRS score threshold
+def: "Threshold for phosphoRS score." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
+[Term]
+id: MS:1002568
+name: phosphoRS site probability threshold
+def: "Threshold for phosphoRS site probability." [PSI:PI]
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1002555 ! PTM localization score threshold
+
