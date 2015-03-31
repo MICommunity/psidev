@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 3.74.0
-date: 10:03:2015 16:37
+data-version: 3.75.0
+date: 31:03:2015 09:02
 saved-by: Gerhard Mayer
 auto-generated-by: OBO-Edit 2.3
 import: http://pato.googlecode.com/svn/trunk/quality.obo
@@ -8,8 +8,8 @@ import: http://unit-ontology.googlecode.com/svn/trunk/unit.obo
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 remark: namespace: MS
-remark: version: 3.74.0
-remark: release date: 2015-03-10
+remark: version: 3.75.0
+remark: release date: 2015-03-31
 remark: coverage: Mass spectrometer output files and spectra interpretation
 remark: creator: Matt Chambers <matt.chambers <-at-> vanderbilt.edu>
 remark: creator: Andreas Bertsch <bertsch <-at-> informatik.uni-tuebingen.de>
@@ -8890,7 +8890,7 @@ def: "The p-value of a peptide sequence match in Phenyx." [PSI:PI]
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: MS:1001143 ! search engine specific score for PSMs
 is_a: MS:1001153 ! search engine specific score
-is_a: MS:1001870 ! p-value for peptides
+is_a: MS:1001870 ! distinct peptide-level p-value
 
 [Term]
 id: MS:1001397
@@ -16216,6 +16216,7 @@ id: MS:1002468
 name: PeptideShaker peptide score
 def: "The probability based PeptideShaker peptide score." [PSI:PI]
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1002358 ! search engine specific score for distinct peptides
 relationship: has_order MS:1002108 ! higher score better
 
 [Term]
@@ -16230,6 +16231,7 @@ id: MS:1002470
 name: PeptideShaker protein group score
 def: "The probability based PeptideShaker protein group score." [PSI:PI]
 is_a: MS:1001153 ! search engine specific score
+is_a: MS:1002368 ! search engine specific score for protein groups
 relationship: has_order MS:1002108 ! higher score better
 
 [Term]
